@@ -71,8 +71,8 @@
                         </div>
                         <ul>
                             <li><a href="./Identity.html">Identity</a></li>
-                            <li><a>Protect</a></li>
-                            <li><a>Detect</a></li>
+                            <li><a href="./Protect.html">Protect</a></li>
+                            <li><a href="./Detect.html">Detect</a></li>
                             <li><a>Respond</a></li>
                             <li><a>Recover</a></li>
                         </ul>
@@ -103,6 +103,14 @@
                     <img src="./images/firewall.png" alt="">
                 </div>
 
+                <!-- 네트워크 -->
+                <button class="Dashboard_network_btn"></button>
+                <div class="Dashboard_network_wrap">
+                    <div class="img_wrap">
+                        <img src="./images/Dashboard_network.png" alt="">
+                        <div class="blinkers"></div>
+                    </div>
+                </div>
 
 
 
@@ -526,7 +534,7 @@
             })
         </script>
 
-
+        
 
 
         <!-- 방화벽 -->
@@ -540,7 +548,16 @@
         </script>
 
 
-        
+        <!-- 대시보드 네트워크 -->
+        <script>
+            $(".Dashboard_network_btn").click(function () {
+                $(".Dashboard_network_wrap").addClass("open");
+                $(".Dashboard_network_wrap").click(function () {
+                    $(".Dashboard_network_wrap").removeClass("open");
+                })
+            })
+        </script>
+
 
 
 
