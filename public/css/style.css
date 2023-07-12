@@ -111,6 +111,7 @@
 .main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .ip_wrap { width: 100%; display: flex; flex-direction: column; margin-bottom: 10px; }
 .main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .ip_wrap li { width: 100%; height: 32px; display: flex; }
 .main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .ip_wrap li div { width: calc(100% / 3); height: 100%; display: flex; justify-content: center; align-items: center; color: #fff; background-color: #ffffff1a; }
+.main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .ip_wrap li div input { width: 100%; text-align: center; color: #fff; font-size: 16px; border: 1px solid #fff; }
 .main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .ip_wrap li:first-child div:nth-child(2) { width: calc(100% - (100% / 3)); }
 .main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .btn_wrap { display: flex; justify-content: flex-end; }
 .main_wrap .Add_firewall_policy_wrap .Add_firewall_policy_box .btn_wrap .Additional_btn { width: 108px; height: 32px; background-color: #502ecf; color: #fff; }
