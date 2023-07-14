@@ -47,7 +47,7 @@
                         <ul>
                             <li><a>User Settings</a></li>
                             <li><a>Backup Settings</a></li>
-                            <li><a>Manual</a></li>
+                            <li><button class="Manual_pop_open">Manual</button></li>
                             <li><a>Preferences</a></li>
                         </ul>
                     </div>
@@ -73,8 +73,8 @@
                             <li><a href="./Identity.html">Identity</a></li>
                             <li><a href="./Protect.html">Protect</a></li>
                             <li><a href="./Detect.html">Detect</a></li>
-                            <li><a>Respond</a></li>
-                            <li><a>Recover</a></li>
+                            <li><a href="./Respond.html">Respond</a></li>
+                            <li><a href="./Recover.html">Recover</a></li>
                         </ul>
                     </div>
                 </div>
@@ -272,6 +272,82 @@
                 </div>
 
                 
+
+                <!-- Manual -->
+                <div class="Manual_pop_wrap" id="Manual_folder1">
+                    <div class="Manual_pop_box">
+                        <div class="title_wrap">
+                            <p>Manual</p>
+
+                            <button class="Manual_folder_close_btn"><i class="xi-close"></i></button>
+                        </div>
+                        <div class="file_list_wrap">
+                            <ul>
+                                <li>
+                                    <button>
+                                        <i class="xi-folder-open"></i>
+                                        <p>Cyber Security Incident Response Manual</p>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <i class="xi-folder-open"></i>
+                                        <p>DDoS Manual</p>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <i class="xi-folder-open"></i>
+                                        <p>Firewall Recover</p>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="Manual_folder2_open">
+                                        <i class="xi-folder-open"></i>
+                                        <p>PC Recover</p>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <i class="xi-folder-open"></i>
+                                        <p>Server Recover</p>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="Manual_pop_wrap" id="Manual_folder2">
+                    <div class="Manual_pop_box">
+                        <div class="title_wrap">
+                            <p>Manual</p>
+
+                            <button class="Manual_folder_close_btn"><i class="xi-close"></i></button>
+                        </div>
+                        <div class="file_list_wrap">
+                            <ul>
+                                <li>
+                                    <button class="PC_Recover_open_btn">
+                                        <i class="xi-file"></i>
+                                        <p>PC Recover.DOP</p>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="PC_Recover_wrap">
+                    <img src="./images/Disorder.png" alt="">
+                </div>
+
+
+                <!-- phone -->
+                <button class="phone_open_btn"></button>
+                <div class="phone_img_wrap">
+                    <img src="./images/phone_img.png" alt="">
+                </div>
+
+
             </div>
         </main>
         <!-- //main -->
@@ -559,9 +635,39 @@
         </script>
 
 
+        <!-- Manual -->
+        <script>
+            $(".Manual_pop_open").click(function () {
+                $("#Manual_folder1").addClass("open");
+                $(".Manual_folder2_open").click(function () {
+                    $("#Manual_folder1").removeClass("open");
+                    $("#Manual_folder2").addClass("open");
+                })
+            })
+
+            $(".Manual_folder_close_btn").click(function () {
+                $(".Manual_pop_wrap").removeClass("open");
+            })
+
+            $(".PC_Recover_open_btn").click(function () {
+                $(".PC_Recover_wrap").addClass("open");
+                $(".PC_Recover_wrap").click(function () {
+                    $(".PC_Recover_wrap").removeClass("open");
+                })
+            })
+
+        </script>
 
 
-
+        <!-- phone -->
+        <script>
+            $(".phone_open_btn").click(function () {
+                $(".phone_img_wrap").addClass("open");
+                $(".phone_img_wrap").click(function () {
+                    $(".phone_img_wrap").removeClass("open");
+                })
+            })
+        </script>
 
 
     </div>
