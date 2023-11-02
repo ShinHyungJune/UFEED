@@ -1,0 +1,3359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header">
+            <div class="header-wrap col-group">
+                <div class="header-logo-wrap col-group">
+                    <img src="images/logo_hd.png" alt="" class="logo">
+                    <img src="images/logo_hs.png" alt="" class="logo">
+                </div>
+                <div class="header-utc-wrap col-group">
+                    <p class="utc">
+                        UTC
+                    </p>
+                    <p class="utc-txt">
+                        23.09.18 17:53
+                    </p>
+                </div>
+                <div class="header-menu-wrap col-group">
+                    <div class="header-menu-btn col-group">
+                        <i class="xi-profile icon"></i>
+                        Admin
+                    </div>
+                    <button class="header-menu-btn col-group">
+                        <i class="xi-log-out icon"></i>
+                        Logout
+                    </button>
+                    <button class="header-menu-btn dimming-btn col-group">
+                        Dimming
+                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div class="gnb">
+
+            <div class="gnb-container row-group">
+                <div class="gnb-wrap row-group active">
+                    <div class="gnb-title col-group">
+                        MAIN MENU
+                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                    </div>
+                    <div class="gnb-menu-list row-group">
+                        <div class="gnb-menu dashboard_href active">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-dashboard icon"></i>
+                                Dashboard
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-security icon"></i>
+                                Firewall
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-globus icon"></i>
+                                NAC
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-network-server icon"></i>
+                                NMS
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+
+                            <div class="sub-gnb-menu-list row-group">
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Devices
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Favorite Devices
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Device List
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Dependencies
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Group
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Auto-Discovery Group
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Device
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Libraries
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Library
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Select Library
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All Bandwidth sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All CPU load sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All Disk space sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All Memory sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All sensors grouped by status
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All Vmware sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Sensors grouped by priority
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Sensors
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Sensors
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Favorite Sensors
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Top 10 Lists
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All Sensors
+                                                    </div>
+                                                </div>
+
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Local Probe
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Network Discovery
+                                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                            </div>
+
+                                                            <div class="sub-gnb-menu-list row-group">
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Network Infrastructure
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Windows
+                                                                        <i
+                                                                            class="xi-angle-down-min icon toggle-icon"></i>
+                                                                    </div>
+
+                                                                    <div class="sub-gnb-menu-list row-group">
+                                                                        <div class="sub-gnb-menu">
+                                                                            <div class="sub-gnb-menu-title col-group">
+                                                                                Clients
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="sub-gnb-menu">
+                                                                            <div class="sub-gnb-menu-title col-group">
+                                                                                Servers
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Virtual Systems
+                                                                        <i
+                                                                            class="xi-angle-down-min icon toggle-icon"></i>
+                                                                    </div>
+
+                                                                    <div class="sub-gnb-menu-list row-group">
+                                                                        <div class="sub-gnb-menu">
+                                                                            <div class="sub-gnb-menu-title col-group">
+                                                                                Vmware
+                                                                                <i
+                                                                                    class="xi-angle-down-min icon toggle-icon"></i>
+                                                                            </div>
+
+                                                                            <div class="sub-gnb-menu-list row-group">
+                                                                                <div class="sub-gnb-menu">
+                                                                                    <div
+                                                                                        class="sub-gnb-menu-title col-group">
+                                                                                        Vmware Hosts
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="sub-gnb-menu">
+                                                                                    <div
+                                                                                        class="sub-gnb-menu-title col-group">
+                                                                                        Vmware vCenter Servers
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="sub-gnb-menu">
+                                                                            <div class="sub-gnb-menu-title col-group">
+                                                                                Hyper-V
+                                                                                <i
+                                                                                    class="xi-angle-down-min icon toggle-icon"></i>
+                                                                            </div>
+
+                                                                            <div class="sub-gnb-menu-list row-group">
+                                                                                <div class="sub-gnb-menu">
+                                                                                    <div
+                                                                                        class="sub-gnb-menu-title col-group">
+                                                                                        Hyper-V Hosts
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="sub-gnb-menu">
+                                                                                    <div
+                                                                                        class="sub-gnb-menu-title col-group">
+                                                                                        Hyper-V Virtual Machines
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Linus / macOS / Unix
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Printers
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Unknown Devies
+                                                                        <i
+                                                                            class="xi-angle-down-min icon toggle-icon"></i>
+                                                                    </div>
+
+                                                                    <div class="sub-gnb-menu-list row-group">
+                                                                        <div class="sub-gnb-menu">
+                                                                            <div class="sub-gnb-menu-title col-group">
+                                                                                Subnet 192.168.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                By Current Value
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Fastest Value
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Ping
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Port
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Web Pages
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                IMAP / POP3 / SMTP
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                FTP
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Slowest Value
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Ping
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Port
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Web Pages
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                IMAP / POP3 / SMTP
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                FTP
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Highest Value
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Bandwidth
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                CPU
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Disk
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Memory
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Lowest Value
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Bandwidth
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                CPU
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Disk
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Memory
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                By Current Status
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Up
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Warning
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Down
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Down(Acknowledged)
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Unusual
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Paused
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Unknown
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                By Uptime/Downtime
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Best Uptime(%)
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Highest Uptime (Time)
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Worst Dwontime(%)
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Down(Acknowledged)
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Highest Downtime (Time)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                By Type
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        C…
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Common SaaS
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Core Health
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Core Health (Autonomous)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        H…
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                HTTP
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        P…
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Ping
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Probe Health
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        S…
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                SNMP RMON
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                SNMP System Uptime
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                SNMP Traffic
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                SSL Certificate
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                SSL Security Check
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                System Health
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        W…
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Windows Network Card
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                WMI Free Disk Space (Multi Disk)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                By Tag
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        autonomous
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        bandwidthsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        certificate
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        commonsass
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        corehealthsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        diskspacesensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        httpsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        pingsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        probehealthsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        saas
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        snmpmon
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        snmptrafficsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        snmpuptimesensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        ssl
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        sslcertificate
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        sslsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        systemhealthsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        wmibandwidthsensor
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        wmidiskspacesensor
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                By Performance Impact
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Very High
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        High
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Medium
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Low
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Very Low
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Cross Reference
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        By Type
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                C…
+                                                            </div>
+
+                                                            <div class="sub-gnb-menu-list row-group">
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Common SaaS
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Core Health
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Core Health (Autonomous)
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                H…
+                                                            </div>
+
+                                                            <div class="sub-gnb-menu-list row-group">
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        HTTP
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                P…
+                                                            </div>
+
+                                                            <div class="sub-gnb-menu-list row-group">
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Ping
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Probe Health
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                S…
+                                                            </div>
+
+                                                            <div class="sub-gnb-menu-list row-group">
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        SNMP RMON
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        SNMP System Uptime
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        SNMP Traffic
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        SSL Certificate
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        SSL Security Check
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        System Health
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                W…
+                                                            </div>
+
+                                                            <div class="sub-gnb-menu-list row-group">
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        Windows Network Card
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sub-gnb-menu">
+                                                                    <div class="sub-gnb-menu-title col-group">
+                                                                        WMI Free Disk Space (Multi Disk)
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        By Tag
+                                                    </div>
+
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                autonomous
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                bandwidthsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                certificate
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                commonsass
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                corehealthsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                diskspacesensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                httpsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                pingsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                probehealthsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                saas
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                snmpmon
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                snmptrafficsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                snmpuptimesensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                ssl
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                sslcertificate
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                sslsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                systemhealthsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                wmibandwidthsensor
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                wmidiskspacesensor
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Low
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Very Low
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Dependencies
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Similar Sensors Overview
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Alarms
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Show as Gauges
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Errors Only
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Warnings Only
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Unusuals Only
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Maps
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Map
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Reports
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Report
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Select Report
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Summary report for all sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Busy/Idle Processor Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Fastest/Slowest HTTP Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Fastest/Slowest Ping Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Free/Full Disk Space Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Most/Least Used Bandwidth Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Most/Least Used Memory Sensors
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Top 100 Uptime/Downtime Report
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Configuration Reports
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Maps
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Reports
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Users & User Groups
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        System Configuration
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Logs
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Status Changes
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Up & Down
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Down
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Warning
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Unusual
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        UP
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Paused/Resumed
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Acknowledged Alarms
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                System Events
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Probe Related
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Auto-Discovery Related
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Notofocation Related
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Status Message Related
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Obeject History
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Tickets
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                My Tickets
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Open
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Resolved
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Closed
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                All Tickets
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Open
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Resolved
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Closed
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                ToDo Tickets
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Open
+                                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                                    </div>
+                                                    <div class="sub-gnb-menu-list row-group">
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                All
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Reports Related
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Auto-Discovery Related
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                Probe Related
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                System Errors
+                                                            </div>
+                                                        </div>
+                                                        <div class="sub-gnb-menu">
+                                                            <div class="sub-gnb-menu-title col-group">
+                                                                New Software version
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Resolved
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Closed
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Add Ticket
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Setup
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Overview
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Account Setting
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        My Account
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Notification Templates
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Notification Contacts
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Schedules
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                System Administration
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        User Interface
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Monitoring
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Notification Delivery
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Core & Probes
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        User Accounts
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        User Groups
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Administrative Tools
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                PRTG Status
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                License Information
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Auto-Update
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Status
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Setting
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Optional Downloads
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        PRTG Apps
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        PRTG Desktop
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Remote Probe Installer
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                PRTG API
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Help and Support Center
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Contact Support
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-chart-bar-square icon"></i>
+                                Report
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-log icon"></i>
+                                Log
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="gnb-wrap row-group">
+                    <div class="gnb-title col-group">
+                        Quick Function
+                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                    </div>
+                    <div class="gnb-menu-list row-group">
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-view-module icon"></i>
+                                Security Control
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+
+                            <div class="sub-gnb-menu-list row-group">
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group policy-add">
+                                        Policy Add
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group ip-block">
+                                        IP Block
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group remote-access">
+                                        Remote Access
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group allowed-devices">
+                                        Allowed Devices
+                                        <span class="badge">50</span>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group blocked-devices">
+                                        Blocked Devices
+                                        <span class="badge">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="gnb-wrap row-group">
+                    <div class="gnb-title col-group">
+                        Cyber Resilience of ship
+                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                    </div>
+                    <div class="gnb-menu-list row-group">
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-label-o icon"></i>
+                                Identify
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-shield-checked-o icon"></i>
+                                Protect
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-eye-o icon"></i>
+                                Detect
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-pen-o icon"></i>
+                                Respond
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="gnb-menu">
+                            <div class="gnb-menu-title col-group">
+                                <i class="xi-renew icon"></i>
+                                Recover
+                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container active col-group">
+                <div class="dashboard-wrap row-group">
+                    <div class="dashboard-top col-group">
+                        <div class="dashboard-section">
+                            <div class="dashboard-section-title">
+                                STANDARD
+                            </div>
+                            <div class="dashboard-section-wrap col-group">
+                                <div class="dashboard-top-item red row-group">
+                                    <div class="num">
+                                        36
+                                    </div>
+                                    <div class="txt">
+                                        Critical
+                                    </div>
+                                </div>
+                                <div class="dashboard-top-item yellow row-group">
+                                    <div class="num">
+                                        192
+                                    </div>
+                                    <div class="txt">
+                                        Warning
+                                    </div>
+                                </div>
+                                <div class="dashboard-top-item green row-group">
+                                    <div class="num">
+                                        0
+                                    </div>
+                                    <div class="txt">
+                                        Devies UP
+                                    </div>
+                                </div>
+                                <div class="dashboard-top-item row-group">
+                                    <div class="num">
+                                        5
+                                    </div>
+                                    <div class="txt">
+                                        Devies Down
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-section">
+                            <div class="dashboard-section-title">
+                                CBS PROTECTION
+                            </div>
+                            <div class="dashboard-section-wrap col-group">
+                                <div class="dashboard-top-item yellow row-group">
+                                    <div class="num">
+                                        5
+                                    </div>
+                                    <div class="txt">
+                                        Anti-Virus
+                                    </div>
+                                </div>
+                                <div class="dashboard-top-item yellow row-group">
+                                    <div class="num">
+                                        5
+                                    </div>
+                                    <div class="txt">
+                                        Anti-Malwa
+                                    </div>
+                                </div>
+                                <div class="dashboard-top-item yellow row-group">
+                                    <div class="num">
+                                        5
+                                    </div>
+                                    <div class="txt">
+                                        Anti-Ransomware
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <!-- <div id="cy"></div> -->
+                        <img src="images/dashboard_sample.jpg" alt="">
+                    </div>
+                    <div class="dashboard-btm">
+                        <div class="dashboard-section-tab-wrap">
+                            <div class="dashboard-section-tab-list col-group">
+                                <div class="dashboard-section-tab active">
+                                    FW#1
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#2
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#3
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#4
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#5
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#6
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-section-wrap col-group">
+                            <div class="dashboard-section">
+                                <div class="dashboard-section-title-wrap col-group">
+                                    <div class="dashboard-section-title">
+                                        Firewall
+                                        <strong>
+                                            11
+                                        </strong>
+                                    </div>
+                                    <div class="dashboard-section-title">
+                                        Medium
+                                    </div>
+                                </div>
+                                <div class="dashboard-section-sub-title">
+                                    Traffic Blocked Top 10
+                                </div>
+                                <div class="dashboard-table-wrap">
+                                    <table>
+                                        <colgroup>
+                                            <col width="auto">
+                                            <col width="80px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    IP
+                                                </th>
+                                                <th>
+                                                    value
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    120.142.1.119
+                                                </td>
+                                                <td>
+                                                    2.45 MB
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="dashboard-section">
+                                <div class="dashboard-section-title-wrap col-group">
+                                    <div class="dashboard-section-title">
+                                        IPS
+                                        <strong>
+                                            17
+                                        </strong>
+                                    </div>
+                                    <div class="dashboard-section-title">
+                                        Critical
+                                    </div>
+                                </div>
+                                <div class="dashboard-table-wrap">
+                                    <table>
+                                        <colgroup>
+                                            <col width="20%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Source IP
+                                                </th>
+                                                <th>
+                                                    Destination IP
+                                                </th>
+                                                <th>
+                                                    Attack code
+                                                </th>
+                                                <th>
+                                                    Category
+                                                </th>
+                                                <th>
+                                                    Attack name
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    192.168.223.250
+                                                </td>
+                                                <td>
+                                                    37.187.95.110
+                                                </td>
+                                                <td>
+                                                    4014
+                                                </td>
+                                                <td>
+                                                    패턴 블럭
+                                                </td>
+                                                <td>
+                                                    Win32Miner.Monero.Connection.H
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="dashboard-section">
+                                <div class="dashboard-section-title-wrap col-group">
+                                    <div class="dashboard-section-title">
+                                        Endpoint AV
+                                        <strong>
+                                            11
+                                        </strong>
+                                    </div>
+                                    <div class="dashboard-section-title">
+                                        Medium
+                                    </div>
+                                </div>
+                                <div class="dashboard-table-wrap">
+                                    <table>
+                                        <colgroup>
+                                            <col width="auto">
+                                            <col width="80px">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Number of risks
+                                                </td>
+                                                <td>
+                                                    00 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Web
+                                                </td>
+                                                <td>
+                                                    04 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Network traffic
+                                                </td>
+                                                <td>
+                                                    01 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Cloud sync
+                                                </td>
+                                                <td>
+                                                    02 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    E-Mail
+                                                </td>
+                                                <td>
+                                                    08 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Local or Network Drive
+                                                </td>
+                                                <td>
+                                                    03 건
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="dashboard-section">
+                                <div class="dashboard-section-title-wrap col-group">
+                                    <div class="dashboard-section-title">
+                                        Network APT
+                                        <strong>
+                                            20
+                                        </strong>
+                                    </div>
+                                    <div class="dashboard-section-title">
+                                        Critical
+                                    </div>
+                                </div>
+                                <div class="dashboard-table-wrap">
+                                    <table>
+                                        <colgroup>
+                                            <col width="auto">
+                                            <col width="80px">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Attack detection
+                                                </td>
+                                                <td>
+                                                    00 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    C&C Communication detection
+                                                </td>
+                                                <td>
+                                                    04 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Radio wave detection
+                                                </td>
+                                                <td>
+                                                    01 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Ransomware detection
+                                                </td>
+                                                <td>
+                                                    02 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    potential threat
+                                                </td>
+                                                <td>
+                                                    08 건
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    E-mail threats
+                                                </td>
+                                                <td>
+                                                    03 건
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-side row-group">
+                    <div class="dashboard-section">
+                        <div class="dashboard-section-title">
+                            Real-time traffic
+                        </div>
+                        <div class="dashboard-section-tab-wrap">
+                            <div class="dashboard-section-tab-list col-group">
+                                <div class="dashboard-section-tab active">
+                                    ALL
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#1
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#2
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#3
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#4
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#5
+                                </div>
+                                <div class="dashboard-section-tab">
+                                    FW#6
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-section-wrap">
+                            <canvas id="chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="dashboard-top-tab-wrap">
+                            <div class="dashboard-top-tab-list col-group">
+                                <div class="dashboard-top-tab active">
+                                    Traffic Top 10
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-table-wrap">
+                            <table>
+                                <colgroup>
+                                    <col width="auto">
+                                    <col width="140px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            IP
+                                        </th>
+                                        <th>
+                                            Bandwidth
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                        <td>
+                                            11.2Mbps
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="dashboard-section">
+                        <div class="dashboard-section-title">
+                            Real-time notrfication status
+                        </div>
+                        <div class="dashboard-table-wrap">
+                            <table>
+                                <colgroup>
+                                    <col width="40px">
+                                    <col width="140px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            DOWN TIME
+                                        </th>
+                                        <th>
+                                            DEVICE
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            13 m 32 s
+                                        </td>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            15 m 2 s
+                                        </td>
+                                        <td>
+                                            DESKTOP-U14HTP2
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            13 m 32 s
+                                        </td>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            15 m 2 s
+                                        </td>
+                                        <td>
+                                            DESKTOP-U14HTP2
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            13 m 32 s
+                                        </td>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            15 m 2 s
+                                        </td>
+                                        <td>
+                                            DESKTOP-U14HTP2
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            13 m 32 s
+                                        </td>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            15 m 2 s
+                                        </td>
+                                        <td>
+                                            DESKTOP-U14HTP2
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            13 m 32 s
+                                        </td>
+                                        <td>
+                                            192.168.0.176
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="state red"></span>
+                                        </td>
+                                        <td>
+                                            15 m 2 s
+                                        </td>
+                                        <td>
+                                            DESKTOP-U14HTP2
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+        <!-- policy add -->
+        <div class="modal-container policy-add-wrap" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    <i class="xi-close close-btn"></i>
+                </div>
+
+                <form action="">
+                    <div class="modal-form row-group">
+                        <div class="form-item row-group">
+                            <p class="item-title">
+                                Policy name
+                            </p>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-list col-group">
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Source IP
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Name
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Period of use
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-list col-group">
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Destination IP
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Name
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-list col-group">
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Service Port
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Name
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-btn-wrap col-group">
+                    <button class="modal-btn">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ip block -->
+        <div class="modal-container ip-block-wrap" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Add Black List IP
+                    <i class="xi-close close-btn"></i>
+                </div>
+
+                <form action="">
+                    <div class="modal-form row-group">
+                        <div class="form-list col-group">
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Black IP
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-item row-group">
+                                <p class="item-title">
+                                    Name
+                                </p>
+                                <input type="text" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-btn-wrap col-group">
+                    <button class="modal-btn">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- remote access -->
+        <div class="modal-container remote-access-wrap" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Emote Policy Management
+                    <i class="xi-close close-btn"></i>
+                </div>
+
+                <form action="">
+                    <div class="modal-form row-group">
+                        <div class="form-wrap">
+                            <div class="form-item-title">
+                                Maintenance #1
+                            </div>
+                            <div class="form-list col-group">
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Source IP
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Purpose
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Disable/Enable
+                                    </p>
+                                    <label for="switch_1" class="switch-wrap">
+                                        <input type="checkbox" id="switch_1">
+                                        <div class="switch-icon">
+                                            <div class="switch-core"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-wrap">
+                            <div class="form-item-title">
+                                Maintenance #2
+                            </div>
+                            <div class="form-list col-group">
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Source IP
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Purpose
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Disable/Enable
+                                    </p>
+                                    <label for="switch_2" class="switch-wrap">
+                                        <input type="checkbox" id="switch_2">
+                                        <div class="switch-icon">
+                                            <div class="switch-core"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-wrap">
+                            <div class="form-item-title">
+                                Maintenance #3
+                            </div>
+                            <div class="form-list col-group">
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Source IP
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Purpose
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Disable/Enable
+                                    </p>
+                                    <label for="switch_3" class="switch-wrap">
+                                        <input type="checkbox" id="switch_3">
+                                        <div class="switch-icon">
+                                            <div class="switch-core"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-btn-wrap col-group">
+                    <button class="modal-btn">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Allowed Devices -->
+        <div class="modal-container allowed-devices-wrap"  style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Allowed devices
+                    <i class="xi-close close-btn"></i>
+                </div>
+                
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap dashboard-table-wrap">
+                        <table>
+                            <thead>
+                                <th>
+                                    host
+                                </th>
+                                <th>
+                                    IP
+                                </th>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    MAC
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state red"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state green"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal-btn-wrap col-group">
+                    <button class="modal-btn">
+                        Blocked
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- blocked Devices -->
+        <div class="modal-container blocked-devices-wrap"  style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Blocked devices
+                    <i class="xi-close close-btn"></i>
+                </div>
+                
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap dashboard-table-wrap">
+                        <table>
+                            <thead>
+                                <th>
+                                    host
+                                </th>
+                                <th>
+                                    IP
+                                </th>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    MAC
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state red"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Firewall#1
+                                    </td>
+                                    <td>
+                                        120.142.1.119
+                                    </td>
+                                    <td>
+                                        com
+                                    </td>
+                                    <td>
+                                        FO:1 E;02:00
+                                    </td>
+                                    <td>
+                                        <span class="state red"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal-btn-wrap col-group">
+                    <button class="modal-btn">
+                        Allow
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+
+    // 대메뉴
+    const gnbTitles = document.querySelectorAll('.gnb-title');
+
+    gnbTitles.forEach((gnbTitle) => {
+        gnbTitle.addEventListener('click', function () {
+            const gnbWrap = this.parentElement;
+
+            document.querySelectorAll('.gnb-wrap').forEach((wrap) => {
+                if (wrap !== gnbWrap) {
+                    wrap.classList.remove('active');
+                }
+            });
+
+            gnbWrap.classList.toggle('active');
+        });
+    });
+
+    // 중메뉴
+    const gnbMenuTitles = document.querySelectorAll('.gnb-menu-title');
+
+    gnbMenuTitles.forEach((gnbMenuTitle) => {
+        gnbMenuTitle.addEventListener('click', function () {
+            const gnbWrap = this.parentElement;
+
+            document.querySelectorAll('.gnb-menu').forEach((wrap) => {
+                if (wrap !== gnbWrap) {
+                    wrap.classList.remove('active');
+                }
+            });
+
+            if (gnbWrap.classList.contains('dashboard_href')) {
+                document.querySelector('.dashboard-container').classList.add('active');
+            }
+
+            gnbWrap.classList.toggle('active');
+        });
+    });
+
+    // 소메뉴
+    const subGnbMenuTitles = document.querySelectorAll('.sub-gnb-menu-title');
+
+    subGnbMenuTitles.forEach((subGnbMenuTitle) => {
+        subGnbMenuTitle.addEventListener('click', function () {
+
+            document.querySelector('.dashboard-container').classList.remove('active');
+
+            const subGnbMenu = this.parentElement;
+
+            subGnbMenu.classList.toggle('active');
+
+            const subGnbMenuList = subGnbMenu.querySelector('.sub-gnb-menu-list');
+            if (subGnbMenuList) {
+                subGnbMenuList.style.display = subGnbMenu.classList.contains('active') ? 'block' : 'none';
+            }
+
+            const siblings = subGnbMenu.parentElement.querySelectorAll('.sub-gnb-menu');
+            siblings.forEach((sibling) => {
+                if (sibling !== subGnbMenu) {
+                    sibling.classList.remove('active');
+
+                    const siblingList = sibling.querySelector('.sub-gnb-menu-list');
+                    if (siblingList) {
+                        siblingList.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+
+    // 탭
+    const tabs = document.querySelectorAll('.dashboard-section-tab');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const parent = this.parentElement;
+            const tabContents = parent.querySelectorAll('.dashboard-section-tab');
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            this.classList.add('active');
+        });
+    });
+
+
+    //차트
+    const main_ctx = document.getElementById('chart');
+
+    new Chart(main_ctx, {
+        type: 'line',
+        data: {
+            labels: ['18:05', '18:15', '18:25', '18:35', '18:45', '18:55'],
+            datasets: [
+                {
+                    label: 'IN',
+                    data: [52, 58, 56, 35, 61, 67],
+                    borderWidth: 1,
+                    borderColor: '#502ecf',
+                },
+                {
+                    label: 'OUT',
+                    data: [0, 22, 24, 28, 43, 2],
+                    borderWidth: 1,
+                    borderColor: '#359832',
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    ticks: {
+                        // forces step size to be 50 units
+                        stepSize: 20,
+                        font: function () {
+                            return {
+                                size: 12,
+                                family: 'Pretendard'
+                            }
+                        },
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: function () {
+                            return {
+                                size: 12,
+                                family: 'Pretendard'
+                            }
+                        },
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: function () {
+                            return {
+                                size: 12,
+                                family: 'Pretendard'
+                            }
+                        },
+                    },
+                    position: 'bottom'
+                },
+
+            }
+        },
+    });
+
+    //모달
+    $('.modal-container .close-btn').click(function () {
+        $(this).closest('.modal-container').fadeOut();
+    });
+
+    $('.policy-add').click(function () {
+        $('.policy-add-wrap').fadeIn();
+    });
+
+    $('.ip-block').click(function () {
+        $('.ip-block-wrap').fadeIn();
+    });
+
+    $('.remote-access').click(function () {
+        $('.remote-access-wrap').fadeIn();
+    });
+
+    $('.allowed-devices').click(function () {
+        $('.allowed-devices-wrap').fadeIn();
+    });
+
+    $('.blocked-devices').click(function () {
+        $('.blocked-devices-wrap').fadeIn();
+    });
+
+</script>
+
+<!-- 마인드맵 -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.27.0/cytoscape.min.js"
+    integrity="sha512-ZNCw/dHSJygOg60ih5fI0f2RKqa8EeVm2ivm3PcrD6SEv2WzK8VJoe5IxS4QzvLcaSIQeaxgZMRCW01QlVJTZA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var cy = cytoscape({
+
+        container: document.getElementById('cy'), // container to render in
+
+        wheelSensitivity: 0.4,
+        elements: [ // list of graph elements to start with
+            {
+                "data": { "id": 'a', "label": 'a' }
+            },
+            {
+                "data": { "id": 'b', "label": 'b' }
+            },
+            {
+                "data": { "id": 'c', "label": 'c' }
+            },
+            {
+                "data": { "id": 'd', "label": 'd' }
+            },
+            {
+                "data": { "id": 'e', "label": 'e' }
+            },
+            {
+                "data": { "id": 'f', "label": 'f' }
+            },
+            {
+                "data": { "id": 'ab', "source": 'a', "target": 'b' }
+            },
+            {
+                "data": { "id": 'ac', "source": 'a', "target": 'c' }
+            },
+            {
+                "data": { "id": 'ad', "source": 'a', "target": 'd' }
+            },
+            {
+                "data": { "id": 'ae', "source": 'a', "target": 'e' }
+            },
+            {
+                "data": { "id": 'af', "source": 'a', "target": 'f' }
+            }
+        ],
+
+        style: [ // the stylesheet for the graph
+            {
+                selector: 'node',
+                style: {
+                    'height': 20,
+                    'width': 20,
+                    'background-color': '#30c9bc',
+                    'label': 'data(label)'
+                }
+            },
+
+            {
+                selector: 'edge',
+                style: {
+                    'width': 2,
+                    'line-color': '#a8eae5',
+                    'target-arrow-color': '#a8eae5',
+                    'target-arrow-shape': 'triangle'
+                }
+            }
+        ],
+
+        layout: {
+            name: 'concentric',
+            concentric: function (node) {
+                return node.degree();
+            },
+            levelWidth: function (nodes) {
+                return 2;
+            }
+        },
+
+    });
+</script> -->
+
+</html>
