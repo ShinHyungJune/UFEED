@@ -241,7 +241,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-btm .dashboard-table-wrap tr:nth-child(2n-1) td { background: #fff; }
 
 .dashboard-content { height: calc( 100% - 124px - 296px - 16px ); background: #fff; border-radius: 14px; border: 1px solid #e4e4e4; overflow: auto; }
-
+.dashboard-content img { display: block; height: 100%; object-fit: contain; object-position: center; }
 
 
 
