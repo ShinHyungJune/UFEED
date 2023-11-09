@@ -8,7 +8,7 @@
 <title></title>
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 
 <body>
     <div id="wrap">
@@ -33,10 +33,10 @@
                         <i class="xi-profile icon"></i>
                         Admin
                     </div>
-                    <a href="index.html" class="header-menu-btn col-group">
+                    <button class="header-menu-btn col-group">
                         <i class="xi-log-out icon"></i>
                         Logout
-                    </a>
+                    </button>
                     <button class="header-menu-btn dimming-btn col-group">
                         Dimming
                         <i class="xi-angle-down-min icon toggle-icon"></i>
@@ -69,6 +69,583 @@
                                 Firewall
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
                             </div>
+
+                            <div class="sub-gnb-menu-list row-group">
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Object
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                IP Address
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Address
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Group
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                FQDN
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Domain Address
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Domain Address Group
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                User
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        User Account
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        User Group
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Schedule
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Service
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Service
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Service Group
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Policy
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Policy
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Policy
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Session Limit
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                NAT
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Interface-based NAT
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Policy-based NAT
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Option
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        FTP
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        SQL*NET
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Sefurity Profiles
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                IPS
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPS Profile
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPS Setting
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Proxy
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Proxy
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Proxy Group
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Anti-Virus
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        AV Profiles
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Email
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Website
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        FTP
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        VPN
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                SSLVPN
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Intranet
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        SSL VPN User
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        User Template
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        SSL VPN Settings
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Network
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Network Interface
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Network Interface
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Routing
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Route
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        System
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Administrator
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Account Management
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Admin Privilege
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Address
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Session Management
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Backup & Restore
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Backdup System
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Restoring System
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Log
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Log Server
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Disk Clearnup/Backup
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Alert
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Alert Method
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Alert Level
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Log & Report
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Traffic Integration Log
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Detect and Block Log
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPS Log
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        App Control Log
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Anti-Virus Log
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                VPN Log
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        SSL VPN User Log
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Event Log
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        All
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Settinigs/Status Log
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Error Log
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Administrator Log
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Update Log
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Monitor Center
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Association Analysis
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Threat Analysis
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Traffic Analysis
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Network Monitor
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Network Interface
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Network Connection
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Policy Monitor
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Traffic by Policy
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Session(Top 100)
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        IPv4 Session
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Security ProfileMonitor
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Proxy Session
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                VPN Monitor
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        SSL VPN
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                System Monitor
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Process Status
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="gnb-menu">
@@ -76,6 +653,181 @@
                                 <i class="xi-globus icon"></i>
                                 NAC
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
+                            </div>
+
+                            <div class="sub-gnb-menu-list row-group">
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Management
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Node
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                IP Address
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Switch
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                WLAN
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                User
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Request
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Log
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Log
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Report
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Report
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Policy
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Node Policy
+                                                    </div>
+                                                </div>
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Enforcement Policy
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Group
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Node
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Object
+                                                <i class="xi-angle-down-min icon toggle-icon"></i>
+                                            </div>
+
+                                            <div class="sub-gnb-menu-list row-group">
+                                                <div class="sub-gnb-menu">
+                                                    <div class="sub-gnb-menu-title col-group">
+                                                        Permission
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Preferences
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                Node Type
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                IP Request
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                User Purpose
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                General
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        System
+                                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                                    </div>
+
+                                    <div class="sub-gnb-menu-list row-group">
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                System_Policy
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                System_Sensor
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                User Purpose
+                                            </div>
+                                        </div>
+                                        <div class="sub-gnb-menu">
+                                            <div class="sub-gnb-menu-title col-group">
+                                                License
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1652,6 +2404,28 @@
                                 Report
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
                             </div>
+                            <div class="sub-gnb-menu-list row-group">
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Daily
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Weekly
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Monthly
+                                    </div>
+                                </div>
+                                <div class="sub-gnb-menu">
+                                    <div class="sub-gnb-menu-title col-group">
+                                        Weak Score
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="gnb-menu">
@@ -1845,7 +2619,25 @@
                     </div>
                     <div class="dashboard-content">
                         <!-- <div id="cy"></div> -->
-                        <img src="images/dashboard_sample.jpg" alt="">
+                        <div class="dashboard-sample-wrap">
+                            <img src="images/dashboard_sample.png" alt="" id="dashboard_sample" class="renew">
+                        </div>
+
+                        <!-- 확대/축소버튼 -->
+                        <div class="dashboard-btn-wrap row-group">
+                            <button type="button" class="dashboard-btn renew-btn">
+                                <i class="xi-renew"></i>
+                            </button>
+
+                            <div class="dashboard-btn-list row-group">
+                                <button type="button" class="dashboard-btn plus-btn">
+                                    <i class="xi-plus-circle-o"></i>
+                                </button>
+                                <button type="button" class="dashboard-btn minus-btn">
+                                    <i class="xi-minus-circle-o"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="dashboard-btm">
                         <div class="dashboard-section-tab-wrap">
@@ -2800,13 +3592,13 @@
         </div>
 
         <!-- Allowed Devices -->
-        <div class="modal-container allowed-devices-wrap"  style="display: none;">
+        <div class="modal-container allowed-devices-wrap" style="display: none;">
             <div class="modal-wrap">
                 <div class="modal-title">
                     Allowed devices
                     <i class="xi-close close-btn"></i>
                 </div>
-                
+
                 <div class="modal-table-container">
                     <div class="modal-table-wrap dashboard-table-wrap">
                         <table>
@@ -3012,13 +3804,13 @@
         </div>
 
         <!-- blocked Devices -->
-        <div class="modal-container blocked-devices-wrap"  style="display: none;">
+        <div class="modal-container blocked-devices-wrap" style="display: none;">
             <div class="modal-wrap">
                 <div class="modal-title">
                     Blocked devices
                     <i class="xi-close close-btn"></i>
                 </div>
-                
+
                 <div class="modal-table-container">
                     <div class="modal-table-wrap dashboard-table-wrap">
                         <table>
@@ -3090,7 +3882,7 @@
     </div>
 </body>
 
-<script src="js/jquery.js"></script>
+<script src="/js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
 
@@ -3271,6 +4063,19 @@
 
     $('.blocked-devices').click(function () {
         $('.blocked-devices-wrap').fadeIn();
+    });
+
+    //확대축소버튼
+    $('.renew-btn').click(function(){
+        $('#dashboard_sample').removeClass();
+    });
+    $('.plus-btn').click(function(){
+        $('#dashboard_sample').removeClass();
+        $('#dashboard_sample').addClass('plus');
+    });
+    $('.minus-btn').click(function(){
+        $('#dashboard_sample').removeClass();
+        $('#dashboard_sample').addClass('minus');
     });
 
 </script>

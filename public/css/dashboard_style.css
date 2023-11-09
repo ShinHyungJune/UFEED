@@ -240,12 +240,18 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-btm .dashboard-table-wrap td:last-child { padding-right: 16px; }
 .dashboard-btm .dashboard-table-wrap tr:nth-child(2n-1) td { background: #fff; }
 
-.dashboard-content { height: calc( 100% - 124px - 296px - 16px ); background: #fff; border-radius: 14px; border: 1px solid #e4e4e4; overflow: auto; }
-.dashboard-content img { display: block; height: 100%; object-fit: contain; object-position: center; }
+.dashboard-content { height: calc( 100% - 124px - 296px - 16px ); background: #fff; border-radius: 14px; border: 1px solid #e4e4e4; position: relative; }
+.dashboard-sample-wrap { width: 100%; height: 100%; overflow: auto; position: relative; }
+#dashboard_sample { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+#dashboard_sample.plus { transform: scale(1.5); }
+#dashboard_sample.minus { transform: scale(.5); }
 
-
-
-
+.dashboard-btn-wrap { width: 56px; position: absolute; left: -1px; bottom: -1px; gap: 8px; z-index: 9; }
+.dashboard-btn-list { width: 100%; border: 1px solid #e4e4e4; border-top-right-radius: 14px; overflow: hidden; position: relative }
+.dashboard-btn-list::after { content: ''; display: block; position: absolute; width: 26px; height: 2px; background: #202020; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.dashboard-btn { width: 100%; height: 60px; text-align: center; background: #fff; }
+.dashboard-btn i { font-size: 30px; line-height: 60px; }
+.dashboard-btn.renew-btn { border: 1px solid #e4e4e4; border-top-right-radius: 14px; border-bottom-right-radius: 14px; }
 
 /**/
 .dashboard-container.active { background-image: none; }
