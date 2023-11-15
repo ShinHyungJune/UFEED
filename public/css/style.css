@@ -6,10 +6,11 @@
 .login_wrap .logo_wrap { margin-bottom: 40px; }
 .login_wrap .login_box { background-color: #363b42; padding: 40px; display: flex; flex-direction: column; gap: 16px; }
 .login_wrap .login_box .input_wrap { width: 320px; height: 40px; display: flex; align-items: center; background-color: #ffffff1A; padding: 0 12px; }
-.login_wrap .login_box .input_wrap .label_wrap { display: flex; align-items: center; opacity: 0.4; gap: 8px; width: 110px; }
-.login_wrap .login_box .input_wrap .label_wrap i { font-size: 19px; color: #fff; }
+.login_wrap .login_box .input_wrap .label_wrap { display: flex; align-items: center; opacity: 0.4; gap: 8px; }
+.login_wrap .login_box .input_wrap .label_wrap i { font-size: 20px; color: #fff; }
 .login_wrap .login_box .input_wrap .label_wrap p { color: #fff; }
-.login_wrap .login_box .input_wrap input { width: calc(100% - 110px); color: #fff; }
+.login_wrap .login_box .input_wrap input { width: calc(100% - 20px ); color: #fff; }
+.login_wrap .login_box .input_wrap input::placeholder { opacity: 0.4; }
 .login_wrap .login_box a { display: flex; justify-content: center; align-items: center; border-radius: 4px; background-color: #502ecf; color: #fff; width: 320px; height: 40px; }
 
 /* 메인 */
