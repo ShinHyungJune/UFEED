@@ -50,13 +50,13 @@
         <div class="gnb">
 
             <div class="gnb-container row-group">
-                <div class="gnb-wrap row-group active">
+                <div class="gnb-wrap row-group">
                     <div class="gnb-title col-group">
                         MAIN MENU
                         <i class="xi-angle-down-min icon toggle-icon"></i>
                     </div>
                     <div class="gnb-menu-list row-group">
-                        <div class="gnb-menu active dashboard_href">
+                        <div class="gnb-menu">
                             <a href="dashboard_index.html" class="gnb-menu-title col-group">
                                 <i class="xi-dashboard icon"></i>
                                 Dashboard
@@ -2493,21 +2493,21 @@
                     </div>
                 </div>
 
-                <div class="gnb-wrap row-group">
+                <div class="gnb-wrap row-group active">
                     <div class="gnb-title col-group">
                         Cyber Resilience of ship
                         <i class="xi-angle-down-min icon toggle-icon"></i>
                     </div>
                     <div class="gnb-menu-list row-group">
 
-                        <div class="gnb-menu">
+                        <div class="gnb-menu active">
                             <div class="gnb-menu-title col-group">
                                 <i class="xi-label-o icon"></i>
                                 Identify
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
                             </div>
                             <div class="sub-gnb-menu-list row-group">
-                                <div class="sub-gnb-menu prepare">
+                                <div class="sub-gnb-menu prepare active">
                                     <a href="indentify_hardware.html" class="sub-gnb-menu-title col-group">
                                         Hardware
                                     </a>
@@ -2648,940 +2648,365 @@
 
         <!-- 대시보드 -->
         <div class="dashboard">
-            <div class="dashboard-container col-group active">
-                <div class="dashboard-wrap row-group">
-                    <div class="dashboard-top col-group">
-                        <div class="dashboard-section">
-                            <div class="dashboard-section-title">
-                                STANDARD
-                            </div>
-                            <div class="dashboard-section-wrap col-group">
-                                <div class="dashboard-top-item green row-group">
-                                    <div class="num">
-                                        0
-                                    </div>
-                                    <div class="txt">
-                                        Devies UP
-                                    </div>
-                                </div>
-                                <div class="dashboard-top-item row-group">
-                                    <div class="num">
-                                        5
-                                    </div>
-                                    <div class="txt">
-                                        Devies Down
-                                    </div>
-                                </div>
-                                <div class="dashboard-top-item red row-group">
-                                    <div class="num">
-                                        36
-                                    </div>
-                                    <div class="txt">
-                                        Critical
-                                    </div>
-                                </div>
-                                <div class="dashboard-top-item yellow row-group">
-                                    <div class="num">
-                                        192
-                                    </div>
-                                    <div class="txt">
-                                        Warning
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dashboard-section">
-                            <div class="dashboard-section-title">
-                                CBS PROTECTION
-                            </div>
-                            <div class="dashboard-section-wrap col-group">
-                                <div class="dashboard-top-item yellow row-group">
-                                    <div class="num">
-                                        5
-                                    </div>
-                                    <div class="txt">
-                                        Anti-Virus
-                                    </div>
-                                </div>
-                                <div class="dashboard-top-item yellow row-group">
-                                    <div class="num">
-                                        5
-                                    </div>
-                                    <div class="txt">
-                                        Anti-Malwa
-                                    </div>
-                                </div>
-                                <div class="dashboard-top-item yellow row-group">
-                                    <div class="num">
-                                        5
-                                    </div>
-                                    <div class="txt">
-                                        Anti-Ransomware
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dashboard-content">
-                        <!-- <div id="cy"></div> -->
-                        <div class="dashboard-sample-wrap">
-                            <img src="images/dashboard_sample.png" alt="" id="dashboard_sample" class="renew">
-                        </div>
-
-                        <!-- 확대/축소버튼 -->
-                        <div class="dashboard-btn-wrap row-group">
-                            <button type="button" class="dashboard-btn renew-btn">
-                                <i class="xi-renew"></i>
-                            </button>
-
-                            <div class="dashboard-btn-list row-group">
-                                <button type="button" class="dashboard-btn plus-btn">
-                                    <i class="xi-plus-circle-o"></i>
-                                </button>
-                                <button type="button" class="dashboard-btn minus-btn">
-                                    <i class="xi-minus-circle-o"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dashboard-btm">
-                        <div class="dashboard-section-tab-wrap">
-                            <div class="dashboard-section-tab-list col-group">
-                                <div class="dashboard-section-tab active">
-                                    FW#1
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#2
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#3
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#4
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#5
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#6
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="dashboard-section-wrap col-group">
-                            <div class="dashboard-section">
-                                <div class="dashboard-section-title-wrap col-group">
-                                    <div class="dashboard-section-title">
-                                        Firewall
-                                        <strong>
-                                            11
-                                        </strong>
-                                    </div>
-                                    <div class="dashboard-section-title">
-                                        Medium
-                                    </div>
-                                </div>
-                                <div class="dashboard-section-sub-title">
-                                    Traffic Blocked Top 10
-                                </div>
-                                <div class="dashboard-table-wrap">
-                                    <table>
-                                        <colgroup>
-                                            <col width="auto">
-                                            <col width="80px">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    IP
-                                                </th>
-                                                <th>
-                                                    value
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    120.142.1.119
-                                                </td>
-                                                <td>
-                                                    2.45 MB
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="dashboard-section">
-                                <div class="dashboard-section-title-wrap col-group">
-                                    <div class="dashboard-section-title">
-                                        IPS
-                                        <strong>
-                                            17
-                                        </strong>
-                                    </div>
-                                    <div class="dashboard-section-title">
-                                        Critical
-                                    </div>
-                                </div>
-                                <div class="dashboard-table-wrap">
-                                    <table>
-                                        <colgroup>
-                                            <col width="20%">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    Source IP
-                                                </th>
-                                                <th>
-                                                    Destination IP
-                                                </th>
-                                                <th>
-                                                    Attack code
-                                                </th>
-                                                <th>
-                                                    Category
-                                                </th>
-                                                <th>
-                                                    Attack name
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    192.168.223.250
-                                                </td>
-                                                <td>
-                                                    37.187.95.110
-                                                </td>
-                                                <td>
-                                                    4014
-                                                </td>
-                                                <td>
-                                                    패턴 블럭
-                                                </td>
-                                                <td>
-                                                    Win32Miner.Monero.Connection.H
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="dashboard-section">
-                                <div class="dashboard-section-title-wrap col-group">
-                                    <div class="dashboard-section-title">
-                                        Endpoint AV
-                                        <strong>
-                                            11
-                                        </strong>
-                                    </div>
-                                    <div class="dashboard-section-title">
-                                        Medium
-                                    </div>
-                                </div>
-                                <div class="dashboard-table-wrap">
-                                    <table>
-                                        <colgroup>
-                                            <col width="auto">
-                                            <col width="80px">
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    Number of risks
-                                                </td>
-                                                <td>
-                                                    00 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Web
-                                                </td>
-                                                <td>
-                                                    04 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Network traffic
-                                                </td>
-                                                <td>
-                                                    01 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Cloud sync
-                                                </td>
-                                                <td>
-                                                    02 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    E-Mail
-                                                </td>
-                                                <td>
-                                                    08 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Local or Network Drive
-                                                </td>
-                                                <td>
-                                                    03 건
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="dashboard-section">
-                                <div class="dashboard-section-title-wrap col-group">
-                                    <div class="dashboard-section-title">
-                                        Network APT
-                                        <strong>
-                                            20
-                                        </strong>
-                                    </div>
-                                    <div class="dashboard-section-title">
-                                        Critical
-                                    </div>
-                                </div>
-                                <div class="dashboard-table-wrap">
-                                    <table>
-                                        <colgroup>
-                                            <col width="auto">
-                                            <col width="80px">
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    Attack detection
-                                                </td>
-                                                <td>
-                                                    00 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    C&C Communication detection
-                                                </td>
-                                                <td>
-                                                    04 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Radio wave detection
-                                                </td>
-                                                <td>
-                                                    01 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Ransomware detection
-                                                </td>
-                                                <td>
-                                                    02 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    potential threat
-                                                </td>
-                                                <td>
-                                                    08 건
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    E-mail threats
-                                                </td>
-                                                <td>
-                                                    03 건
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dashboard-side row-group">
-                    <div class="dashboard-section">
-                        <div class="dashboard-section-title">
-                            Real-time traffic
-                        </div>
-                        <div class="dashboard-section-tab-wrap">
-                            <div class="dashboard-section-tab-list col-group">
-                                <div class="dashboard-section-tab active">
-                                    ALL
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#1
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#2
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#3
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#4
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#5
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#6
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dashboard-section-wrap">
-                            <canvas id="chart"></canvas>
-                        </div>
+            <div class="dashboard-container active">
+                <div class="detail-table-container">
+                    <div class="detail-table-btn-wrap col-group">
+                        <button class="detail-table-btn">
+                            Add
+                        </button>
+                        <button class="detail-table-btn">
+                            Del
+                        </button>
+                        <button class="detail-table-btn">
+                            Save
+                        </button>
+                        <button class="detail-table-btn">
+                            Export
+                        </button>
                     </div>
 
-                    <div class="dashboard-section">
-                        <div class="dashboard-top-tab-wrap">
-                            <div class="dashboard-top-tab-list col-group">
-                                <div class="dashboard-top-tab active">
-                                    Traffic Top 10
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dashboard-table-wrap">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            IP
-                                        </th>
-                                        <th>
-                                            Asset Name
-                                        </th>
-                                        <th>
-                                            Bandwidth
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="dashboard-section">
-                        <div class="dashboard-section-title">
-                            Real-time notrfication status
-                        </div>
-                        <div class="dashboard-table-wrap">
-                            <table>
-                                <colgroup>
-                                    <col width="40px">
-                                    <col width="140px">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>
-                                            DOWN TIME
-                                        </th>
-                                        <th>
-                                            Asset Name
-                                        </th>
-                                        <th>
-                                            DEVICE
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            13 m 32 s
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            15 m 2 s
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            DESKTOP-U14HTP2
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            13 m 32 s
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            15 m 2 s
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            DESKTOP-U14HTP2
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            13 m 32 s
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            15 m 2 s
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            DESKTOP-U14HTP2
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            13 m 32 s
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            15 m 2 s
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            DESKTOP-U14HTP2
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            13 m 32 s
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            15 m 2 s
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            DESKTOP-U14HTP2
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            13 m 32 s
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="state red"></span>
-                                        </td>
-                                        <td>
-                                            15 m 2 s
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            DESKTOP-U14HTP2
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="detail-table-wrap">
+                        <table class="detail-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Security Zone</th>
+                                    <th rowspan="2">System Category</th>
+                                    <th rowspan="2">System CBS Name</th>
+                                    <th rowspan="2">Asset Name (component)</th>
+                                    <th rowspan="2">Description (prupose)</th>
+                                    <th rowspan="2">Location</th>
+                                    <th colspan="3">Hardware</th>
+                                    <th colspan="7">Interface</th>
+                                    <th colspan="3">Firmware</th>
+                                    <th colspan="3">OS</th>
+                                    <th colspan="5">Application SW</th>
+                                </tr>
+                                <tr>
+                                    <th>Manufaturer (or Brand)</th>
+                                    <th>Model (or Type)</th>
+                                    <th>Technical Spec.</th>
+                                    <th>Mac Address</th>
+                                    <th>IP Address</th>
+                                    <th>USB</th>
+                                    <th>LAN</th>
+                                    <th>Serial</th>
+                                    <th>CAN</th>
+                                    <th>Linked System</th>
+                                    <th>Name</th>
+                                    <th>Version</th>
+                                    <th>Last Update</th>
+                                    <th>Name</th>
+                                    <th>Version</th>
+                                    <th>Last Update</th>
+                                    <th>Name</th>
+                                    <th>Manufacture</th>
+                                    <th>Last Update</th>
+                                    <th>Function</th>
+                                    <th>License Info. (Expiry Date)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="11">Navigation and communication Zone</td>
+                                    <td rowspan="7">Navigation system</td>
+                                    <td>No. 1 ECDIS</td>
+                                    <td>PC</td>
+                                    <td>Electronic Chart</td>
+                                    <td>W/H</td>
+                                    <td>Dell</td>
+                                    <td>Mini 7040M</td>
+                                    <td>CPU : i5-11500 2.5Ghz <br>
+                                        Mem : 16Gb <br>
+                                        Disk : 1TB</td>
+                                    <td>B4-72-C6-26-3D-06</td>
+                                    <td>192.168.0.110</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>-</td>
+                                    <td>VDR, AIS</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Win 10 Pro</td>
+                                    <td>22H2</td>
+                                    <td>'23-06-30</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">AIS</td>
+                                    <td>Antenna</td>
+                                    <td>AIS</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Tranceiver Unit</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Monitor Unit</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">VDR</td>
+                                    <td>Ficed Data Recording Unit</td>
+                                    <td>AIS</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Float-Free Data Recording Unit</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>VDR Interface  Unit</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Network</td>
+                                    <td>NVG-L2#1</td>
+                                    <td>L2 S/W</td>
+                                    <td>L2 Switch</td>
+                                    <td>Deck</td>
+                                    <td>Cisco</td>
+                                    <td>C9200</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>NVG-L3#1</td>
+                                    <td>L3 S/W</td>
+                                    <td>L3 Switch</td>
+                                    <td>Deck</td>
+                                    <td>Cisco</td>
+                                    <td>C9200</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Security</td>
+                                    <td>NVG-FW#1</td>
+                                    <td>F/W</td>
+                                    <td>Firewall</td>
+                                    <td>Deck</td>
+                                    <td>Secui</td>
+                                    <td>NGF 300</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>NVG-IDS#1</td>
+                                    <td>IDS</td>
+                                    <td>IDS</td>
+                                    <td>Deck</td>
+                                    <td>Secui</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
