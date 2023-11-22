@@ -293,6 +293,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-form .form-item .red { color: #ff4620; }
 .dashboard-form .form-item-title { font-size: 20px; font-weight: bold; color: #7f7f7f; margin-bottom: 16px; }
 .dashboard-form .form-input { width: 100%; height: 32px; border: 1px solid #e4e4e4; font-size: 16px; padding: 0 8px; }
+.dashboard-form input[type='checkbox'] { display: none; }
 .dashboard-form-btn-wrap { padding: 8px 0 24px; justify-content: center; gap: 16px; }
 .dashboard-form-btn { width: 160px; height: 40px; border-radius: 20px; background: #502ecf; font-size: 16px; font-weight: 600; color: #fff; }
 .switch-wrap .switch-icon { width: 120px; height: 32px; border-radius: 16px; background: #a4a4a4; position: relative; }
@@ -311,6 +312,14 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-form-wrap .dashboard-table-wrap { height: auto; }
 .dashboard-form-wrap .modal-table-wrap th { font-size: 16px; }
 .dashboard-form-wrap .modal-table-wrap td { font-size: 16px; }
+
+.firewall-interface-wrap .form-list { flex-flow: wrap; }
+.firewall-interface-wrap .form-item { width: 120px; }
+.interface-state { width: 120px; height: 85px; position: relative; }
+.interface-state.disable { background: #292d33; }
+.interface-state.enable { background: #359832; }
+.interface-state.error { background: #ff4620; }
+.interface-num { position: absolute; font-size: 20px; font-weight: bold; color: #fff; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 /* 모달 - 알림창 */
 .modal-alert-wrap { text-align: center; }
