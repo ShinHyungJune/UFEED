@@ -312,3 +312,22 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .detail-table { border-collapse: collapse; }
 .detail-table th { background: #efefef; border: 1px solid #e4e4e4; font-size: 18px; padding: 16px; line-height: 1.25; white-space: nowrap; }
 .detail-table td { background: #fff; border: 1px solid #e4e4e4; font-size: 18px; font-weight: 600; padding: 16px; line-height: 1.25; }
+
+/* 상세 페이지 - 탭 메뉴 */
+.dashboard-menu-wrap { gap: 8px; padding-bottom: 16px; border-bottom: 1px solid #e4e4e4; margin-bottom: 40px; justify-content: center; }
+.dashboard-menu-item { width: 240px; background: #fff; text-align: center; border: 1px solid #a4a4a4; border-radius: 4px; height: 30px; line-height: 28px; font-size: 16px; font-weight: 500; color: #4d4d4d; cursor: pointer; }
+.dashboard-menu-item:hover { background: #f4f4f4; }
+.dashboard-menu-item.active { background: #502ecf; border: 1px solid #502ecf; color: #fff; }
+
+/* 상세 페이지 - 로그 테이블 */
+.detail-log-table-wrap { height: calc( 100% - 191px ); }
+.detail-log-table { width: 100%; }
+.detail-log-table th { background: #fff; border: 0; border-bottom: 1px solid #e4e4e4; text-transform: capitalize; }
+.detail-log-table td { border: 0; border-bottom: 1px solid #e4e4e4; font-size: 14px; color: #aeaeae; }
+.detail-log-table td strong { font-size: 16px; }
+
+.log-date-input-wrap { gap: 40px; margin-bottom: 40px; }
+.log-date-input-group { width: 100%; position: relative; }
+.log-date-input-group .icon { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 24px; }
+.log-date-input { width: 100%; height: 64px; border: 2px solid #e4e4e4; border-radius: 8px; padding: 0 24px; font-size: 24px; font-weight: 600; }
+.log-date-input::placeholder { opacity: 0.6; }

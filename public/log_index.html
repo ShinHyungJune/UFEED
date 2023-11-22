@@ -9,7 +9,8 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
 <body>
     <div id="wrap">
 
@@ -750,7 +751,7 @@
                             </div>
                         </div>
 
-                        <div class="gnb-menu active">
+                        <div class="gnb-menu">
                             <div class="gnb-menu-title col-group">
                                 <i class="xi-network-server icon"></i>
                                 NMS
@@ -817,14 +818,14 @@
                                     </div>
                                 </div>
 
-                                <div class="sub-gnb-menu active">
+                                <div class="sub-gnb-menu">
                                     <div class="sub-gnb-menu-title col-group">
                                         Alarms
                                         <i class="xi-angle-down-min icon toggle-icon"></i>
                                     </div>
 
                                     <div class="sub-gnb-menu-list row-group">
-                                        <div class="sub-gnb-menu active">
+                                        <div class="sub-gnb-menu">
                                             <a href="alarms_all.html" class="sub-gnb-menu-title col-group">
                                                 All
                                             </a>
@@ -1080,7 +1081,7 @@
                             </div>
                         </div>
 
-                        <div class="gnb-menu">
+                        <div class="gnb-menu active">
                             <a href="/log_index.html" class="gnb-menu-title col-group">
                                 <i class="xi-log icon"></i>
                                 Log
@@ -1152,7 +1153,7 @@
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
                             </div>
                             <div class="sub-gnb-menu-list row-group">
-                                <div class="sub-gnb-menu prepare">
+                                <div class="sub-gnb-menu">
                                     <a href="identify_hardware.html" class="sub-gnb-menu-title col-group">
                                         Hardware
                                     </a>
@@ -1294,7 +1295,538 @@
         <!-- 대시보드 -->
         <div class="dashboard">
             <div class="dashboard-container active">
-                <iframe src="http://175.197.192.127/sensors.htm" frameborder="0" class="dashboard_iframe" width="100%" height="100%"></iframe>
+                <div class="detail-table-container">
+                    <div class="dashboard-menu-wrap col-group">
+                        <div class="dashboard-menu-item">
+                            Overview
+                        </div>
+                        <div class="dashboard-menu-item">
+                            Daily
+                        </div>
+                        <div class="dashboard-menu-item">
+                            Weekly
+                        </div>
+                        <div class="dashboard-menu-item">
+                            Monthly
+                        </div>
+                        <div class="dashboard-menu-item">
+                            Historic Data
+                        </div>
+                    </div>
+
+                    <div class="log-date-input-wrap col-group">
+                        <div class="log-date-input-group">
+                            <input type="text" class="log-date-input datepicker-start" placeholder="Start">
+                            <i class="xi-calendar icon"></i>
+                        </div>
+                        <div class="log-date-input-group">
+                            <input type="text" class="log-date-input datepicker-end" placeholder="End">
+                            <i class="xi-calendar icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="detail-table-wrap detail-log-table-wrap">
+                        <table class="detail-table detail-log-table">
+                            <thead>
+                                <th>
+                                    Date Time
+                                </th>
+                                <th>
+                                    parent
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Object
+                                </th>
+                                <th>
+                                    status
+                                </th>
+                                <th>
+                                    message
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2023-11-02 오전 10:49:33
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            None
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        Notification Template
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="xi-bell"></i>
+                                        </button>
+                                        Email and push notification to admin
+                                    </td>
+                                    <td>
+                                        Notification Info
+                                    </td>
+                                    <td>
+                                        Status sending Email: DNS Server: 192.1643.2334.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 대시보드 -->
@@ -2015,6 +2547,12 @@
         $('#dashboard_sample').addClass('minus');
     });
 
+    //상세 메뉴 탭
+    $('.dashboard-menu-item').click(function(){
+        $('.dashboard-menu-item').removeClass('active');
+        $(this).addClass('active');
+    });
+
 </script>
 
 <!-- 마인드맵 -->
@@ -2098,4 +2636,10 @@
     });
 </script> -->
 
+<!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('.datepicker-start').datepicker();
+    $('.datepicker-end').datepicker();
+</script>
 </html>
