@@ -1183,14 +1183,14 @@
                     </div>
                     <div class="gnb-menu-list row-group">
 
-                        <div class="gnb-menu active">
+                        <div class="gnb-menu">
                             <div class="gnb-menu-title col-group">
                                 <i class="xi-label-o icon"></i>
                                 Identify
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
                             </div>
                             <div class="sub-gnb-menu-list row-group">
-                                <div class="sub-gnb-menu active">
+                                <div class="sub-gnb-menu">
                                     <a href="identify_hardware.html" class="sub-gnb-menu-title col-group">
                                         Hardware
                                     </a>
@@ -1257,14 +1257,14 @@
                             </div>
                         </div>
 
-                        <div class="gnb-menu">
+                        <div class="gnb-menu active">
                             <div class="gnb-menu-title col-group">
                                 <i class="xi-pen-o icon"></i>
                                 Response
                                 <i class="xi-angle-down-min icon toggle-icon"></i>
                             </div>
                             <div class="sub-gnb-menu-list row-group">
-                                <a href="reponse_plan.html" class="sub-gnb-menu">
+                                <a href="reponse_plan.html" class="sub-gnb-menu active">
                                     <div class="sub-gnb-menu-title col-group">
                                         Incident response plan
                                     </div>
@@ -1323,366 +1323,67 @@
         <div class="dashboard">
             <div class="dashboard-container active">
                 <div class="detail-table-container">
-                    <div class="detail-table-btn-wrap col-group">
-                        <a href="identify_hardware_add.html" class="detail-table-btn">
-                            Add
-                        </a>
-                        <a href="identify_hardware_del.html" class="detail-table-btn">
-                            Del
-                        </a>
-                        <button class="detail-table-btn">
-                            Edit
-                        </button>
-                        <button class="detail-table-btn">
-                            Save
-                        </button>
-                        <button class="detail-table-btn">
-                            Export
-                        </button>
-                    </div>
-
                     <div class="detail-table-wrap">
-                        <table class="detail-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">Security Zone</th>
-                                    <th rowspan="2">System Category</th>
-                                    <th rowspan="2">System CBS Name</th>
-                                    <th rowspan="2">Asset Name (component)</th>
-                                    <th rowspan="2">Description (prupose)</th>
-                                    <th rowspan="2">Location</th>
-                                    <th colspan="3">Hardware</th>
-                                    <th colspan="7">Interface</th>
-                                    <th colspan="3">Firmware</th>
-                                    <th colspan="3">OS</th>
-                                    <th colspan="5">Application SW</th>
-                                </tr>
-                                <tr>
-                                    <th>Manufaturer (or Brand)</th>
-                                    <th>Model (or Type)</th>
-                                    <th>Technical Spec.</th>
-                                    <th>Mac Address</th>
-                                    <th>IP Address</th>
-                                    <th>USB</th>
-                                    <th>LAN</th>
-                                    <th>Serial</th>
-                                    <th>CAN</th>
-                                    <th>Linked System</th>
-                                    <th>Name</th>
-                                    <th>Version</th>
-                                    <th>Last Update</th>
-                                    <th>Name</th>
-                                    <th>Version</th>
-                                    <th>Last Update</th>
-                                    <th>Name</th>
-                                    <th>Manufacture</th>
-                                    <th>Last Update</th>
-                                    <th>Function</th>
-                                    <th>License Info. (Expiry Date)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="11">Navigation and communication Zone</td>
-                                    <td rowspan="7">Navigation system</td>
-                                    <td>No. 1 ECDIS</td>
-                                    <td>PC</td>
-                                    <td>Electronic Chart</td>
-                                    <td>W/H</td>
-                                    <td>Dell</td>
-                                    <td>Mini 7040M</td>
-                                    <td>CPU : i5-11500 2.5Ghz <br>
-                                        Mem : 16Gb <br>
-                                        Disk : 1TB</td>
-                                    <td>B4-72-C6-26-3D-06</td>
-                                    <td>192.168.0.110</td>
-                                    <td>2</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>VDR, AIS</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Win 10 Pro</td>
-                                    <td>22H2</td>
-                                    <td>'23-06-30</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3">AIS</td>
-                                    <td>Antenna</td>
-                                    <td>AIS</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Tranceiver Unit</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Monitor Unit</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3">VDR</td>
-                                    <td>Ficed Data Recording Unit</td>
-                                    <td>AIS</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Float-Free Data Recording Unit</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>VDR Interface  Unit</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="2">Network</td>
-                                    <td>NVG-L2#1</td>
-                                    <td>L2 S/W</td>
-                                    <td>L2 Switch</td>
-                                    <td>Deck</td>
-                                    <td>Cisco</td>
-                                    <td>C9200</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>NVG-L3#1</td>
-                                    <td>L3 S/W</td>
-                                    <td>L3 Switch</td>
-                                    <td>Deck</td>
-                                    <td>Cisco</td>
-                                    <td>C9200</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="2">Security</td>
-                                    <td>NVG-FW#1</td>
-                                    <td>F/W</td>
-                                    <td>Firewall</td>
-                                    <td>Deck</td>
-                                    <td>Secui</td>
-                                    <td>NGF 300</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>NVG-IDS#1</td>
-                                    <td>IDS</td>
-                                    <td>IDS</td>
-                                    <td>Deck</td>
-                                    <td>Secui</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="detail-txt-wrap row-group">
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    1. 장애가 발생한 장비에 대한 격리
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    물리적 : Port 차단  네트워크 라인 제거 <br>
+                                    논리적 : NAC에서 해당 장비 네트워크 통신 차단
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    2. 사이버 이벤트 발생 및 이벤트로 인한 이상증상이 감지 되었음을 알리는 경보 및 알림기에 대한 설명                                
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    방화벽에서 IPS나 DDoS에 대한 Critical 이벤트 발생시 알람 기능 제공 화면 표시및 설정 화면 표시?
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    3. 사이버 사고와 관련하여 예상되는 주요 결과에 대한 기술
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    몇가지 큰 사이버 사고를 나열하고 각각에 대한 현상 및 조치사항을 기술 <br>
+                                    예) 좀비 PC 감지
+                                    <div class="sub">
+                                        - CBS 및 네트워크에 연결 된 장비중에 이상 트래픽을 발생시켜 해당 네트워크 대역 및 전체(선박) 네트워크에 영향을 줘 각 Zone 및 외부 통신이 안되는 상황이 발생 <br>
+                                        -> 해당 증상이 발견되면 NMS를 통해 이상 트래픽을 발생시키는 장비를 찾아 물리적으로 차단 및 격리 시킨다. <br>
+                                        -> 격리된 장비는 기존에 설치된 HDD를 제거하고 여분의 HDD를 설치한 후 운용시스템을 설치 후 백업 데이터가 있으면 데이터를 restore 시키고, 보안검사(백신검사 등)를 실시한 후 이상이 없을 시 네트워크에 붙인 후 원격 유지보수 업체를 통해 장비 검증 및 데이터 복구를 시도                                
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    4. 셧다운, 물리적 격리, 로컬제어에 의존하지 않는 대응 계획 순위를 지정해야 함
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    사이버 사고 및 장애시 대응 계획들의 순위를 지정<br>
+                                    현상에 대해 대응 계획 순위를 지정<br>
+                                    예) DDoS 공격시                                    
+                                    <div class="sub">
+                                        1 순위 외부 인터넷 라인 차단<br>
+                                        2 순위 DDoS 장비에서 공격 IP 차단<br>
+                                        3 순위 각 장비들에 대한 데이터 백업 / 운영시스템 상태 점검<br>
+                                        4 방화벽 및 DDoS 장비에서 공격에 대한 대비 후 외부 인터넷 라인 연결<br>
+                                        5 DDoS 공격이 차단되고 모든 선박 시스템이 정상적으로 운영되는지 확인                               
+                                    </div>                                         
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    5. 접근이 가능한 전자 장치가 완전히 손실된 경우 사고 대응 계획은 하드 카피로 보관되어야 합니다
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    전자장치가 무엇을 뜻하는지?<br>
+                                    하드카피를 해야 하는건지?<br>
+                                    하드카피(이미지백업) 솔루션이 있는지?
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
