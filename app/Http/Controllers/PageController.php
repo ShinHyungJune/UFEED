@@ -22,18 +22,7 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        $request->validate([
-            "category_id" => "nullable|integer"
-        ]);
-
-        $banners = Banner::latest()->paginate(12);
-
-        $reviews = Review::latest()->paginate(30);
-
-        return Inertia::render("Index", [
-            "banners" => BannerResource::collection($banners),
-            "reviews" => ReviewResource::collection($reviews),
-        ]);
+        return response()->file(public_path("/index.html"));
     }
 
     public function front()
