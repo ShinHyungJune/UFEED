@@ -22,6 +22,7 @@ Route::get("/test", function(){
 Route::post("/users", [\App\Http\Controllers\UserController::class, "store"]);
 
 Route::get('/', [\App\Http\Controllers\PageController::class, "index"])->name("home");
+Route::get('/sample', [\App\Http\Controllers\PageController::class, "sample"]);
 Route::get('/home', [\App\Http\Controllers\PageController::class, "index"]);
 
 

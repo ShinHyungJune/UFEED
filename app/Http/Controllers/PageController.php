@@ -25,6 +25,11 @@ class PageController extends Controller
         return response()->file(public_path("/index.html"));
     }
 
+    public function sample()
+    {
+        return Inertia::render("Sample");
+    }
+
     public function front()
     {
         return Inertia::render("Contents/Front");

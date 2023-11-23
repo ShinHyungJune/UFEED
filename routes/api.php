@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 
+Route::get("/nodes", [\App\Http\Controllers\Api\NodeController::class, "index"]);
 Route::middleware('auth')->group(function () {
 
 });
