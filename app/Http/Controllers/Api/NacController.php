@@ -15,7 +15,7 @@ class NacController extends ApiController
             "verify" => false
         ]);
 
-        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes", $request->all());
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
 
         $body = $response->json();
 
