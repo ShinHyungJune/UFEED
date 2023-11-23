@@ -5,22 +5,20 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class NodeController extends ApiController
 {
     public function index(Request $request)
     {
-        $client = new Client();
-
-        $response = $client->request('GET', 'https://nac.iscope.kr:8443/mc2/rest/nodes',  [
-            "form_params" => $request->all()
+        $client = new Client([
+            "verify" => false
         ]);
 
-        $body = $response->getBody();
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes", $request->all());
 
-        // JSON 형식의 응답을 배열로 변환
-        $data = json_decode($body, true);
+        $body = $response->json();
 
-        return $this->respondSuccessfully($data);
+        return $this->respondSuccessfully($body);
     }
 }
