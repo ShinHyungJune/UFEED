@@ -64,9 +64,6 @@ export default {
                 this.items.data = response.data.data.result;
                 console.log(this.items.data);
             })
-
-
-            console.log(data.result);
         },
         // ?page=1&pageSize=30&view=node&nid=All&apiKey={}
     },

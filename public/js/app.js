@@ -3360,7 +3360,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.items.data = response.data.data.result;
         console.log(_this.items.data);
       });
-      console.log(data.result);
     } // ?page=1&pageSize=30&view=node&nid=All&apiKey={}
   },
   mounted: function mounted() {

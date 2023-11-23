@@ -108,7 +108,7 @@
 ============================================================================*/
 * { font-family: "Pretendard", sans-serif; box-sizing:border-box; margin:0; padding:0; }
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, em, img, strong, b, i, dl, dt, dd, ol, ul, li, form, label, legend, caption, article, aside, footer, header, menu, nav, section, video, a {border:0; outline:0; font-size:100%; color:#202020; line-height:1;}
-body { line-height:1; -ms-overflow-style: none; height: 100%; 
+body { line-height:1; -ms-overflow-style: none; height: 100%;
 /*드래그 막기*/
 -webkit-user-select: none;
 -moz-user-select: none;
@@ -146,9 +146,9 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .img-container img { width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; object-fit: cover; object-position: center; }
 .video-container { width: 100%; padding-top: 56.25%; position: relative; }
 .video-container iframe { width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { width: 4px; background: #d1d2d5; border-radius: 2px;}
+::-webkit-scrollbar-thumb { width: 8px; background: #d1d2d5; border-radius: 2px;}
 .null-txt { font-size: 20px; font-weight: 300; text-align: center; color: #9f9b9b; padding: 96px 0; }
 #wrap { background: #e4e4e4; min-height: 100vh; }
 
@@ -201,8 +201,8 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .sub-gnb-menu.active > .sub-gnb-menu-title { color: #502ecf; font-weight: bold; }
 .sub-gnb-menu.active > .sub-gnb-menu-title .icon { color: #502ecf; transform: translateY(-50%) rotate(180deg); }
 
-.dashboard { width: 100%; padding-left: 252px; height: calc( 100vh - 40px ); }
-.dashboard-container { background-color: #efefef; background-image: url(../images/dashboard_bg.png); background-repeat: no-repeat; background-position: center; background-size: contain; padding: 8px; border-radius: 20px; height: 100%; gap: 8px;justify-content: space-between; }
+.dashboard { width: 100%; max-width:100vw; padding-left: 252px; height: calc( 100vh - 40px ); overflow:auto; }
+.dashboard-container {overflow:auto; background-color: #efefef; background-image: url(../images/dashboard_bg.png); background-repeat: no-repeat; background-position: center; background-size: contain; padding: 8px; border-radius: 20px; height: 100%; gap: 8px;justify-content: space-between; }
 .dashboard-wrap { width: calc( 100% - 440px - 8px ); gap: 8px; display: none; }
 
 .dashboard-side { width: 440px; gap: 8px; display: none; }
@@ -371,3 +371,18 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .detail-txt-item-txt, .detail-txt-item-txt *:not(.detail-txt-item-title) { font-size: 18px; font-weight: 500; line-height: 1.5; }
 .detail-txt-item-txt .detail-txt-item-title { font-size: 20px; padding: 16px 0; }
 .detail-txt-item .sub { padding-left: 16px; }
+
+
+.m-table.type01 th {
+    padding:8px 12px;
+    font-weight:bold;
+    background-color:#fff; color:#502ecf;
+}
+.m-table.type01 {}
+.m-table.type01 td {
+    padding:8px 12px;
+    font-size:14px;
+}
+.m-table.type01 {
+    border-bottom:1px solid #e1e1e1;
+}

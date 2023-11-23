@@ -2,6 +2,8 @@
 
 use App\Enums\KakaoTemplate;
 use App\Models\Kakao;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
+    $client = new Client([
+        "verify" => false
+    ]);
 
+    $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/faces/stat/nodeSensorStat.xhtml?mode=ipmgmt", [
+        "page" => 1,
+            "pageSize" =>30,
+            "apiKey" => "f9c61147-737e-4b8d-8210-0fc7b2c19751"
+    ]);
+
+    dd($response->body());
+    $body = $response->json();
+
+    return $this->respondSuccessfully($body);
 });
 
 

@@ -20,7 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 
-Route::get("/nodes", [\App\Http\Controllers\Api\NodeController::class, "index"]);
+Route::get("/nac/nodes", [\App\Http\Controllers\Api\NacController::class, "nodes"]);
+Route::get("/nac/ips", [\App\Http\Controllers\Api\NacController::class, "ips"]);
 Route::middleware('auth')->group(function () {
 
 });
