@@ -1323,16 +1323,19 @@
         <!-- 대시보드 -->
         <div class="dashboard">
             <div class="dashboard-container active">
-                <table class="m-table type01">
-                    <thead>
-                    <tr>
+                <div class="dashboard-wrap">
+                    <table class="m-table type01">
+                        <thead>
+                        <tr>
 
-                    </tr>
-                    </thead>
-                    <tbody>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
         <!-- 대시보드 -->
@@ -2099,6 +2102,7 @@
         response.data.data.result.map((item, index) => {
             if(index === 0)
                 for(const key in item){
+                    console.log(key);
                     $(".m-table.type01 thead tr").append(`<th>${key}</th>`)
                 }
 
@@ -2106,9 +2110,9 @@
 
             for(const key in item){
                 if(item[key] === "")
-                    $(".m-table.type01 tbody tr").append(`<td>-</td>`)
+                    $(".m-table.type01 tbody tr").eq(index).append(`<td>-</td>`)
                 else
-                    $(".m-table.type01 tbody tr").append(`<td>${item[key]}</td>`)
+                    $(".m-table.type01 tbody tr").eq(index).append(`<td>${item[key]}</td>`)
             }
         });
     });
