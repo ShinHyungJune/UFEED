@@ -14,39 +14,11 @@
     <div id="wrap">
 
         <!-- 상단 헤더 -->
-        <header id="header">
-            <div class="header-wrap col-group">
-                <div class="header-logo-wrap col-group">
-                    <img src="images/logo_hd.png" alt="" class="logo">
-                    <img src="images/logo_hs.png" alt="" class="logo">
-                </div>
-                <div class="header-utc-wrap col-group">
-                    <p class="utc">
-                        UTC
-                    </p>
-                    <p class="utc-txt">
-                        23.09.18 17:53
-                    </p>
-                </div>
-                <div class="header-menu-wrap col-group">
-                    <a href="account_add.html" class="header-menu-btn col-group">
-                        <i class="xi-profile icon"></i>
-                        Admin
-                    </a>
-                    <button class="header-menu-btn col-group">
-                        <i class="xi-log-out icon"></i>
-                        Logout
-                    </button>
-                    <button class="header-menu-btn dimming-btn col-group">
-                        Dimming
-                        <i class="xi-angle-down-min icon toggle-icon"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
+        <header id="header"></header>
         <!-- //상단 헤더 -->
 
         <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
         <div class="gnb">
 
             <div class="gnb-container row-group">
@@ -776,15 +748,15 @@
                                                 Favorite Devices
                                             </a>
                                         </div>
-                                        <div class="sub-gnb-menu active">
+                                        <div class="sub-gnb-menu">
                                             <a href="devices_dependencies.html" class="sub-gnb-menu-title col-group">
                                                 Dependencies
                                             </a>
                                         </div>
-                                        <div class="sub-gnb-menu prepare">
-                                            <div class="sub-gnb-menu-title col-group">
+                                        <div class="sub-gnb-menu active">
+                                            <a href="devices_add.html" class="sub-gnb-menu-title col-group">
                                                 Add Device
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1320,8 +1292,8 @@
 
         <!-- 대시보드 -->
         <div class="dashboard">
-            <div class="dashboard-container active">
-                <iframe src="http://121.189.254.119/dependencies.htm?id=0&tabid=1" frameborder="0" class="dashboard_iframe" width="100%" height="100%"></iframe>
+            <div class="dashboard-container">
+                <iframe src="http://175.197.192.127/group.htm?id=0&tabid=1" frameborder="0" class="dashboard_iframe" width="100%" height="100%"></iframe>
             </div>
         </div>
         <!-- 대시보드 -->
@@ -2075,6 +2047,7 @@
 </body>
 
 <script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
 
