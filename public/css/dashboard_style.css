@@ -277,8 +277,9 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .modal-title { position: relative; background: #e4e4e4; height: 32px; text-align: center; line-height: 32px; font-size: 16px; }
 .modal-title .close-btn { font-size: 16px; position: absolute; top: 8px; right: 8px; cursor: pointer; }
 
-.dashboard-form-wrap { max-width: 560px; margin: 0 auto; padding-top: 80px; }
-.dashboard-form-title { font-size: 32px; font-weight: 600; text-align: center; margin-bottom: 80px; }
+.dashboard-form-wrap { max-width: 560px; margin: 0 auto; padding-top: 40px; }
+.dashboard-form-title { font-size: 32px; font-weight: 600; text-align: center; margin-bottom: 40px; }
+.dashboard-form-wrap .modal-title { background: none; }
 .dashboard-form { padding: 16px; gap: 16px; }
 .dashboard-form .form-wrap:not(:last-child) { padding-bottom: 16px; border-bottom: 1px solid #e4e4e4; }
 .dashboard-form .form-list { gap: 12px; }
@@ -289,6 +290,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-form .form-item-title { font-size: 20px; font-weight: bold; color: #7f7f7f; margin-bottom: 16px; }
 .dashboard-form .item-user { gap: 8px; }
 .dashboard-form .form-input, .dashboard-form .form-select { width: 100%; height: 32px; border: 1px solid #e4e4e4; font-size: 16px; padding: 0 8px; border-radius: 4px; }
+.dashboard-form .form-input::placeholder { text-align: right; }
 .dashboard-form .form-user-btn { width: fit-content; height: 32px; background: #292d33; font-size: 16px; padding: 0 16px; border-radius: 4px; color: #fff; white-space: nowrap; }
 .dashboard-form input[type='checkbox'] { display: none; }
 .dashboard-form-btn-wrap { padding: 8px 0 24px; justify-content: center; gap: 16px; }
@@ -299,7 +301,6 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .switch-wrap input:checked + .switch-icon { background: #502ecf; }
 .switch-wrap input:checked + .switch-icon .switch-core { transform: translateX(58px); }
 
-.check-label { }
 .check-label .check-input { display: none; }
 .check-label .check-item { margin: 0 auto; width: 20px; height: 20px; border-radius: 4px; background: #fff; border: 1px solid #e4e4e4; }
 .check-label .check-item i { color: #fff; font-size: 14px; text-align: center; line-height: 18px; }
@@ -315,7 +316,6 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 
 .dashboard-form-wrap .dashboard-table-wrap { height: auto; }
 .dashboard-form-wrap .modal-table-wrap th { font-size: 16px; }
-.dashboard-form-wrap .modal-table-wrap tr:hover td { background: #f1eefb; }
 .dashboard-form-wrap .modal-table-wrap td { font-size: 16px; }
 
 .firewall-interface-wrap .form-list { flex-flow: wrap; }
@@ -338,7 +338,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .modal-alert-wrap.warning .dashboard-form-btn.submit-btn { background: #ff4620; }
 
 /* 상세 페이지 - 테이블 */
-.detail-table-container { background: #fff; height: 100%; border-radius: 14px; padding: 24px; }
+.detail-table-container { background: #fff; overflow: auto; height: 100%; border-radius: 14px; padding: 24px; }
 .detail-table-btn-wrap { justify-content: flex-end; gap: 8px; margin-bottom: 16px; }
 .detail-table-btn { min-width: 80px; padding: 0 12px; height: 30px; border: 1px solid #a4a4a4; text-align: center; border-radius: 4px; background: #fff; font-size: 16px; font-weight: 500; line-height: 28px; }
 .detail-table-btn:hover { background: #f4f4f4; }
@@ -373,6 +373,32 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-modify-wrap { max-width: 1200px; }
 .dashboard-modify-wrap .modify-group { gap: 56px; }
 .dashboard-modify-wrap .modify-group> * { width: 100%; padding: 0; }
+.setting-txt-wrap { margin-bottom: 48px; }
+.setting-txt { font-size: 16px; line-height: 1.5; color: #7f7f7f; text-align: center; justify-content: center; gap: 8px; align-items: center; }
+.setting-txt.red { color: #ff4620; }
+.setting-input { width: 64px; height: 20px; border: 1px solid #202020; background: #fff; text-align: center; font-size: 16px; }
+.dashboard-form-group { gap: 56px; margin-bottom: 48px; }
+.dashboard-form-group .dashboard-form { width: 100%; padding: 0; }
+
+/* 상세 페이지 - report 관리 */
+.report-wrap {  }
+.report-title-wrap { margin-bottom: 40px; align-items: baseline; gap: 12px; }
+.report-title { font-size: 32px; font-weight: 600; }
+.report-sub-title { font-size: 18px; font-weight: 600; }
+.report-date { font-size: 18px; font-weight: 300; }
+.report-table { table-layout: fixed; width: 100%; border-collapse: collapse; }
+.report-table th { font-size: 18px; padding: 12px 0; border-bottom: 1px solid #e4e4e4; }
+.report-table td { font-size: 14px; font-weight: 600; color: #7f7f7f; line-height: 1.5; border-bottom: 1px solid #e4e4e4; text-align: center; }
+.report-table td strong { font-size: 16px; }
+.report-table .percent { justify-content: center; gap: 8px; padding-top: 12px; }
+.report-table .percent-txt-group { justify-content: space-between; padding-bottom: 8px; }
+.report-table .percent-txt-group.left { text-align: right; align-items: flex-end; }
+.report-table .percent-txt-group.right { text-align: left; align-items: flex-start; }
+.report-table .percent-txt span  { color: #7f7f7f; }
+.report-table .percent-txt .num { width: 64px; }
+.report-table .percent-bar { width: 8px; height: 56px; }
+.report-table .percent-bar.green { background: #359832; }
+
 
 /* pdf텍스트 */
 .detail-txt-wrap { gap: 48px; padding: 24px; }
@@ -381,7 +407,6 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .detail-txt-item-txt, .detail-txt-item-txt *:not(.detail-txt-item-title) { font-size: 18px; font-weight: 500; line-height: 1.5; }
 .detail-txt-item-txt .detail-txt-item-title { font-size: 20px; padding: 16px 0; }
 .detail-txt-item .sub { padding-left: 16px; }
-
 
 /* .m-table.type01 th {
     padding:8px 12px;
