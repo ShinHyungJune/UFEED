@@ -25,27 +25,24 @@
         <div class="dashboard">
             <div class="dashboard-container">
                 <div class="detail-table-container">
-                    <div class="detail-table-btn-wrap col-group">
-                        <a href="identify_hardware_add.html" class="detail-table-btn">
-                            Add
+                    <div class="dashboard-menu-wrap col-group">
+                        <a href="HiSecure_account_add.html" class="dashboard-menu-item">
+                            Account Add
                         </a>
-                        <a href="identify_hardware_del.html" class="detail-table-btn active">
-                            Del
+                        <a href="HiSecure_account_del.html" class="dashboard-menu-item active">
+                            Account Delete
                         </a>
-                        <button class="detail-table-btn">
-                            Edit
-                        </button>
-                        <button class="detail-table-btn">
-                            Save
-                        </button>
-                        <button class="detail-table-btn">
-                            Export
-                        </button>
+                        <a href="HiSecure_account_modify.html" class="dashboard-menu-item">
+                            Account Modify
+                        </a>
+                        <a href="HiSecure_account_setting.html" class="dashboard-menu-item">
+                            Account Global Setting
+                        </a>
                     </div>
 
                     <div class="dashboard-form-wrap">
                         <div class="dashboard-form-title">
-                            Hardware Inbentory
+                            Hi-Secure Account Delete
                         </div>
 
                         <div class="modal-table-container">
@@ -54,27 +51,33 @@
                                     <thead>
                                         <tr>
                                             <th>
-                                                Zone
+                                                ID
                                             </th>
                                             <th>
-                                                Asset Name
+                                                User Name
                                             </th>
                                             <th>
-                                                IP
+                                                Authority
+                                            </th>
+                                            <th>
+                                                E-Mail
                                             </th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td rowspan="3">
-                                                A Zone
+                                            <td>
+                                                admin
                                             </td>
                                             <td>
-                                                CBS#1
+                                                홍길동
                                             </td>
                                             <td>
-                                                192.168.0.176
+                                                Level 1
+                                            </td>
+                                            <td>
+                                                111@hd.com
                                             </td>
                                             <td>
                                                 <label for="check_1" class="check-label">
@@ -87,10 +90,16 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                CBS#1
+                                                admin
                                             </td>
                                             <td>
-                                                192.168.0.176
+                                                홍길동
+                                            </td>
+                                            <td>
+                                                Level 1
+                                            </td>
+                                            <td>
+                                                111@hd.com
                                             </td>
                                             <td>
                                                 <label for="check_2" class="check-label">
@@ -103,14 +112,42 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                CBS#1
+                                                admin
                                             </td>
                                             <td>
-                                                192.168.0.176
+                                                홍길동
+                                            </td>
+                                            <td>
+                                                Level 1
+                                            </td>
+                                            <td>
+                                                111@hd.com
                                             </td>
                                             <td>
                                                 <label for="check_3" class="check-label">
                                                     <input type="checkbox" class="check-input" id="check_3">
+                                                    <div class="check-item">
+                                                        <i class="xi-check"></i>
+                                                    </div>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                admin
+                                            </td>
+                                            <td>
+                                                홍길동
+                                            </td>
+                                            <td>
+                                                Level 1
+                                            </td>
+                                            <td>
+                                                111@hd.com
+                                            </td>
+                                            <td>
+                                                <label for="check_4" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_4">
                                                     <div class="check-item">
                                                         <i class="xi-check"></i>
                                                     </div>
@@ -122,9 +159,8 @@
                             </div>
                         </div>
 
-
                         <div class="dashboard-form-btn-wrap col-group">
-                            <button class="dashboard-form-btn hardware_del_btn">
+                            <button class="dashboard-form-btn del_btn">
                                 Delete
                             </button>
                         </div>
@@ -179,10 +215,9 @@
         $(this).closest('.modal-container').fadeOut();
     });
 
-    $('.hardware_del_btn').click(function () {
+    $('.del_btn').click(function () {
         $('.modal-alert').fadeIn();
     });
 
 </script>
-
 </html>
