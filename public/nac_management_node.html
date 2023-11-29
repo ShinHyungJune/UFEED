@@ -40,7 +40,27 @@
                     <table class="m-table type01 detail-table">
                         <thead>
                         <tr>
+                            <!--
+                            <td>직급코드</td>
+                            <td>직급명</td>
+                            <td>WI-FI G/W MAC</td>
+                            <td>아이디</td>
+                            -->
+                            <td>플랫폼</td>
+                            <td>스위치명/포트</td>
 
+                            <td>노드정책</td>
+                            <td>MAC</td>
+                            <!--
+                            <td>Wi-FI</td>
+                            -->
+                            <td>노드ID</td>
+                            <td>플랫폼</td>
+                            <!--
+                            <td>웹브라우저</td>
+                            -->
+                            <td>IP</td>
+                            <td>장비ID</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -67,20 +87,34 @@
         }
     }).then(response => {
         response.data.data.result.map((item, index) => {
-            if(index === 0)
+            /*if(index === 0)
                 for(const key in item){
                     console.log(key);
                     $(".m-table.type01 thead tr").append(`<th>${key}</th>`)
-                }
+                }*/
 
             $(".m-table.type01 tbody").append(`<tr></tr>`)
 
-            for(const key in item){
-                if(item[key] === "")
-                    $(".m-table.type01 tbody tr").eq(index).append(`<td>-</td>`)
-                else
-                    $(".m-table.type01 tbody tr").eq(index).append(`<td>${item[key]}</td>`)
-            }
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_AUTHUSERPOSITIONCODE' || "-"]}</td>`);
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['DL_AUTHUSERPOSITIONNAME' || "-"]}</td>`);
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['PLATFORM' || "-"]}</td>`);
+
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_APMAC' || "-"]}</td>`);
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_AUTHUSER' || "-"]}</td>`);
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['SwitchNamePort' || "-"]}</td>`);
+
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_NODESYSTEM' || "-"]}</td>`);
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_MAC' || "-"]}</td>`);
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_SSID' || "-"]}</td>`);
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_NODEID' || "-"]}</td>`);
+
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_PLATFORM' || "-"]}</td>`);
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_WEBBROWSER' || "-"]}</td>`);
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_IPSTR' || "-"]}</td>`);
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['NL_DEVID' || "-"]}</td>`);
+
+
+
         });
     });
 

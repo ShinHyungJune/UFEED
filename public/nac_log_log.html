@@ -41,7 +41,15 @@
                     <table class="m-table type01 detail-table">
                         <thead>
                         <tr>
-
+                            <th>_index</th>
+                            <th>LOG_PARENTID</th>
+                            <th>LOG_TIME</th>
+                            <th>_type</th>
+                            <th>LOG_MAC</th>
+                            <th>LOG_PARENTNAME</th>
+                            <th>LOG_MSG</th>
+                            <th>_id</th>
+                            <th>LOG_LOGID</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -70,19 +78,30 @@
     }).then(response => {
         console.log(response.data);
         response.data.data.result.map((item, index) => {
-            if(index === 0)
+            /*if(index === 0)
                 for(const key in item){
                     $(".m-table.type01 thead tr").append(`<th>${key}</th>`)
-                }
+                }*/
 
-            $(".m-table.type01 tbody").append(`<tr></tr>`)
+            $(".m-table.type01 tbody").append(`<tr></tr>`);
 
-            for(const key in item){
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['_index'] || '-'}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_PARENTID']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_TIME']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['_type']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_MAC']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_PARENTNAME']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_MSG']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['_id']}</td>`)
+            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_LOGID']}</td>`)
+
+            /*for(const key in item){
                 if(item[key] === "")
                     $(".m-table.type01 tbody tr").append(`<td>-</td>`)
                 else
                     $(".m-table.type01 tbody tr").append(`<td>${item[key]}</td>`)
-            }
+            }*/
+
         });
     });
 </script>
