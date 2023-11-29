@@ -25,6 +25,18 @@
         <!-- 대시보드 -->
         <div class="dashboard">
             <div class="dashboard-container">
+                <div class="dashboard-head">
+                    <div class="fragment"></div>
+
+                    <div class="fragment">
+                        <div class="m-input-text type01">
+                            <input type="text">
+
+                            <i class="xi-search"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="detail-table-wrap">
                     <table class="m-table type01 detail-table">
                         <thead>
@@ -49,7 +61,7 @@
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
-    axios.get("http://121.189.254.119:90/api/nac/ips", {
+    axios.get("http://localhost:90/api/nac/ips", {
         params: {
             page: 1,
             pageSize:30,

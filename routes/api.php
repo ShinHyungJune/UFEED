@@ -22,6 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get("/nac/nodes", [\App\Http\Controllers\Api\NacController::class, "nodes"]);
 Route::get("/nac/ips", [\App\Http\Controllers\Api\NacController::class, "ips"]);
+Route::get("/nac/wlan", [\App\Http\Controllers\Api\NacController::class, "wlan"]);
+Route::get("/nac/log", [\App\Http\Controllers\Api\NacController::class, "log"]);
+Route::get("/nac/condition", [\App\Http\Controllers\Api\NacController::class, "condition"]);
+
+
 Route::middleware('auth')->group(function () {
 
 });

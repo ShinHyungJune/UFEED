@@ -36,6 +36,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="detail-table-wrap">
                     <table class="m-table type01 detail-table">
                         <thead>
@@ -48,6 +49,7 @@
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
         <!-- 대시보드 -->
@@ -59,41 +61,15 @@
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
-    axios.get("http://localhost:90/api/nac/nodes", {
+    axios.get("http://localhost:90/api/nac/log", {
         params: {
             page: 1,
             pageSize:30,
             apiKey:"f9c61147-737e-4b8d-8210-0fc7b2c19751"
         }
     }).then(response => {
+        console.log(response.data);
         response.data.data.result.map((item, index) => {
-            if(index === 0)
-                for(const key in item){
-                    console.log(key);
-                    $(".m-table.type01 thead tr").append(`<th>${key}</th>`)
-                }
-
-            $(".m-table.type01 tbody").append(`<tr></tr>`)
-
-            for(const key in item){
-                if(item[key] === "")
-                    $(".m-table.type01 tbody tr").eq(index).append(`<td>-</td>`)
-                else
-                    $(".m-table.type01 tbody tr").eq(index).append(`<td>${item[key]}</td>`)
-            }
-        });
-    });
-
-    axios.get("http://localhost:90/api/nac/nodes", {
-        params: {
-            page: 1,
-            pageSize:30,
-            view:"node",
-            nid:"All",
-            apiKey:"f9c61147-737e-4b8d-8210-0fc7b2c19751"
-        }
-    }).then(response => {
-        response.data.data.result.map(item => {
             if(index === 0)
                 for(const key in item){
                     $(".m-table.type01 thead tr").append(`<th>${key}</th>`)

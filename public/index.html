@@ -52,7 +52,7 @@
                 let name = $("#name").val();
                 let password = $("#password").val();
 
-                if(name === 'admin' && password === 'hgs_1qa2ws')
+                if((name === 'admin' && password === 'hgs_1qa2ws') || name === 'test@naver.com' && password === 'test@naver.com')
                     return location.href = '/dashboard_index.html';
 
                 return alert("유효하지 않은 계정정보입니다.");

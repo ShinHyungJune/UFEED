@@ -422,3 +422,38 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .m-table.type01 {
     border-bottom:1px solid #e1e1e1;
 } */
+
+/* 개발자 추가 */
+
+.detail-table th {
+    font-size:12px;
+}
+
+.detail-table td {
+    font-size:12px;
+}
+
+.dashboard-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom:24px;
+}
+
+.dashboard-head .title {
+    font-size:24px; font-weight:bold;
+}
+
+.m-input-text.type01 {
+    position: relative;
+}
+.m-input-text.type01 input {
+    padding:8px 16px;
+    border-radius:5px; background-color:#fff;
+}
+.m-input-text.type01 i {
+    position: absolute; top:50%; right:12px;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+.m-input-text.type01.with-deco input {
+    padding-right:36px;
+}
