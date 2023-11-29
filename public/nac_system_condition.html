@@ -41,11 +41,19 @@
                     <table class="m-table type01 detail-table">
                         <thead>
                         <tr>
-
+                            <th>센서</th>
+                            <th>KA</th>
+                            <th>HA</th>
+                            <th>IP주소</th>
+                            <th>장비명</th>
+                            <th>CPU</th>
+                            <th>동작시간</th>
+                            <th>최근갱신시각</th>
+                            <th>관리노드</th>
                         </tr>
                         </thead>
                         <tbody>
-
+                            <td colspan="9" style="text-align: center;">데이터가 없습니다.</td>
                         </tbody>
                     </table>
                 </div>
@@ -61,7 +69,7 @@
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
-    axios.get("http://118.130.110.156:90/api/nac/condition", {
+    /*axios.get("http://118.130.110.156:90/api/nac/condition", {
         params: {
             page: 1,
             pageSize:30,
@@ -84,7 +92,7 @@
                     $(".m-table.type01 tbody tr").append(`<td>${item[key]}</td>`)
             }
         });
-    });
+    });*/
 </script>
 
 </html>

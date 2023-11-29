@@ -460,3 +460,173 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .m-input-text.type01.with-deco input {
     padding-right:36px;
 }
+
+.area-ips {
+    border:1px solid #ccc;
+}
+.area-ips > .top {
+    padding:8px 16px;
+    background-color:#eee;
+}
+.area-ips > .top .title {
+    color:navy;
+}
+.area-ips > .fragments {
+    display:flex;
+    padding:20px;
+    background-color:#fff;
+}
+.area-ips .fragment-left {}
+.area-ips .fragment-left .boxes {
+    display: flex; flex-wrap:wrap;
+    margin:-4px;
+}
+.area-ips .fragment-left .box-wrap {
+    padding:4px;
+}
+.area-ips .fragment-left .box {
+    width:40px; height:40px;
+    position: relative;
+    background-color:#ccc; border:3px solid transparent;
+}
+.area-ips .fragment-left .box .title {
+    padding:0px;
+    text-align:center;
+}
+.area-ips .fragment-left .box .title .text {
+    position: relative; top:-1px;
+    font-size:10px;
+    color:#fff;
+}
+.area-ips .marks {
+    display: flex; justify-content: space-between;
+    width:100%;
+    position: absolute; bottom:0; left:0;
+}
+.area-ips .mark-wrap {
+    width:33.33%;
+    padding:1px;
+}
+.area-ips .mark-wrap:nth-child(1).active .mark {
+    background-color:navy;
+}
+.area-ips .mark-wrap:nth-child(2).active .mark {
+    background-color:royalblue;
+}
+.area-ips .mark-wrap:nth-child(3).active .mark {
+    background-color:green;
+}
+.area-ips .mark {
+    width:100%; height:6px;
+    background-color:transparent;
+}
+.area-ips .fragment-left .box.using {
+    background-color:skyblue;
+}
+.area-ips .fragment-left .box.using .title .text {
+    color:#333;
+}
+.area-ips .fragment-left .box.network {
+    background-color:royalblue;
+}
+.area-ips .fragment-left .box.dhcp {
+    border-color:lightgreen;
+}
+.area-ips .fragment-left .box.block .title {
+    background-color:red;
+}
+.area-ips .fragment-left .box.block .title .text {
+    color:#fff;
+}
+.area-ips .fragment-left .box.network {}
+.area-ips .fragment-right {
+    flex: 0 0 auto;
+    width:200px;
+    border:1px solid #ccc;
+}
+.area-ips .fragment-right .box-legend {}
+.area-ips .fragment-right .box-legend .top {
+    padding:8px 16px;
+    background-color:#eee;
+    font-size:14px; font-weight:bold;
+}
+.area-ips .fragment-right .box-legend .guides {
+    padding:10px;
+}
+.area-ips .fragment-right .box-legend .box-guide {
+    display: flex; align-items: center;
+    margin-top:8px;
+}
+.area-ips .fragment-right .box-legend .box-guide:first-child {
+    margin-top:0;
+}
+.area-ips .fragment-right .box-legend .box-guide .box {
+    flex:0 0 auto;
+    width:25px; height:25px;
+    margin-right:4px;
+    position: relative;
+    background-color:#eee;
+    border:3px solid transparent;
+}
+.area-ips .fragment-right .box-legend .box-guide .title {
+    font-size:12px;
+}
+.area-ips .fragment-right .box-legend .box-guide.using .box {
+    background-color:skyblue;
+}
+.area-ips .fragment-right .box-legend .box-guide.network .box {
+    background-color:royalblue;
+}
+.area-ips .fragment-right .box-legend .box-guide.dhcp .box {
+    border-color:lightgreen;
+}
+.area-ips .fragment-right .box-legend .box-guide.block .box:after {
+    content:"";
+    width:calc(100% - 4px); height:8px;
+    position: absolute; top:2px; left:50%; transform:translateX(-50%);
+    background-color:red;
+}
+
+.area-ips .fragment-right .box-information {}
+.area-ips .fragment-right .box-information .top {
+    padding:8px 16px;
+    background-color:#eee;
+    font-size:14px; font-weight:bold;
+}
+.area-ips .fragment-right .box-information .bodies {
+    padding:10px;
+}
+.area-ips .fragment-right .box-information .body {
+    margin-top:8px;
+    font-size:12px;
+}
+.area-ips .fragment-right .box-information .body:first-child {
+    margin-top:0;
+}
+
+.area-license .box-top {
+    width:800px;
+    padding:40px; margin-bottom:20px;
+    background-color:#fff;
+    border:1px solid #ccc;
+}
+.area-license .box-top img {
+    display: block;
+    width: 150px;
+    margin:0 auto; margin-bottom:24px;
+}
+.area-license .box-top .links {
+    display: flex; justify-content: center;
+}
+.area-license .box-top .link {
+    display: flex; align-items: center;
+    margin:0 16px;
+}
+.area-license .box-top .link i {
+    color:navy;
+}
+.area-license .box-top .link a {
+    margin-left:8px;
+    font-size:14px;
+    color:navy;
+}
