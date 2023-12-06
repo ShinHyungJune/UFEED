@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="detail-table-container">
+
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            IPS 설정
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-item row-group">
+                                    <label for="check_1" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_1">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            IPS 사용
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form-list col-group">
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            시그니처 규칙
+                                        </p>
+                                        <label for="check_2_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_2_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                사용
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            행위 규칙
+                                        </p>
+                                        <label for="check_2_2" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_2_2">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                사용
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            공격 탐지 정보 전송
+                                        </p>
+                                        <label for="check_2_3" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_2_3">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                사용
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        사용량 제한 대역폭
+                                    </p>
+                                    <input type="text" class="form-input">
+                                    <p class="sub-txt">
+                                        사용량 제한은 IP 주소를 기준으로 최대 1024개까지 적용됩니다.
+                                    </p>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        DDoS 차단 설정
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                공격 차단 시간
+                                            </p>
+                                            <div class="form-input-wrap">
+                                                <input type="number" class="form-input">
+                                                <span class="sticker">초</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                WAN 포트
+                                            </p>
+                                            <div class="form-scroll-wrap">
+                                                <div class="form-scroll-item col-group">
+                                                    <label for="check_3_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_3_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            [NONE] eth0 (10.0.0.254/24, 사용)
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="form-scroll-item col-group">
+                                                    <label for="check_3_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_3_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            [NONE] eth0 (10.0.0.254/24, 사용)
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="form-scroll-item col-group">
+                                                    <label for="check_3_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_3_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            [NONE] eth0 (10.0.0.254/24, 사용)
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="form-scroll-item col-group">
+                                                    <label for="check_3_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_3_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            [NONE] eth0 (10.0.0.254/24, 사용)
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="form-scroll-item col-group">
+                                                    <label for="check_3_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_3_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            [NONE] eth0 (10.0.0.254/24, 사용)
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                TCP SYN Flood 차단
+                                            </p>
+                                            <div class="form-input-wrap">
+                                                <input type="number" class="form-input" placeholder="응답 MSS">
+                                                <span class="sticker">bytes</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <div class="item-title col-group">
+                                                Segment Protection
+                                                <label for="check_4" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_4">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        사용
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-input-wrap">
+                                                <input type="number" class="form-input" placeholder="최대 SYN 패킷 개수">
+                                                <span class="sticker">pkts</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <div class="item-title col-group">
+                                                HTTP GET Flood
+                                                <label for="check_5" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_5">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        사용
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-input-wrap">
+                                                <input type="number" class="form-input" placeholder="HTTP 포트">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

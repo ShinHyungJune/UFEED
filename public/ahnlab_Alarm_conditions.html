@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="detail-table-container">
+
+                    <div class="dashboard-form-wrap wide">
+                        <div class="dashboard-form-title">
+                            경보 조건
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form">
+                                <div class="detail-table-wrap">
+                                    <table class="detail-table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    조건
+                                                </th>
+                                                <th>
+                                                    상세 설정
+                                                </th>
+                                                <th>
+                                                    이벤트 레벨
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div class="form-item-title">
+                                                        시스템 리소스
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="check_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            CPU 경보기준 초과
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="form-item col-group">
+                                                        <div class="item-user col-group">
+                                                            사용량 : <input type="number" class="form-input w120"> %
+                                                        </div>
+                                                        <div class="item-user col-group">
+                                                            지속시간 :  <input type="number" class="form-input w120"> 초
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="Warning">Warning</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="check_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            메모리 경보기준 초과
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="form-item col-group">
+                                                        <div class="item-user col-group">
+                                                            사용량 : <input type="number" class="form-input w120"> %
+                                                        </div>
+                                                        <div class="item-user col-group">
+                                                            지속시간 :  <input type="number" class="form-input w120"> 초
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="Warning">Warning</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="check_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            디스크 경보기준 초과
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="form-item col-group">
+                                                        <div class="item-user col-group">
+                                                            사용량 : <input type="number" class="form-input w120"> %
+                                                        </div>
+                                                        <div class="item-user col-group">
+                                                            지속시간 :  <input type="number" class="form-input w120"> 초
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="Warning">Warning</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="check_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            네트워크 포트 연결 상태 변경
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="form-scroll-wrap">
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="Warning">Warning</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="check_1" class="check-label">
+                                                        <input type="checkbox" class="check-input" id="check_1">
+                                                        <div class="check-item col-group">
+                                                            <i class="xi-check"></i>
+                                                            네트워크 포트 IP 변경
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="form-scroll-wrap">
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-scroll-item col-group">
+                                                            <label for="check_3_1" class="check-label">
+                                                                <input type="checkbox" class="check-input" id="check_3_1">
+                                                                <div class="check-item col-group">
+                                                                    <i class="xi-check"></i>
+                                                                    [NONE] eth0 (10.0.0.254/24, 사용)
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="Warning">Warning</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                저장
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

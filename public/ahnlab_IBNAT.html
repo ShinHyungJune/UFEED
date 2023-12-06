@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="detail-table-container">
+                    <div class="detail-table-edit-btn-wrap col-group">
+                        <button class="detail-table-edit-btn">
+                            <i class="xi-plus blue"></i>
+                        </button>
+                        <button class="detail-table-edit-btn">
+                            <i class="xi-pen"></i>
+                        </button>
+                        <button class="detail-table-edit-btn">
+                            <i class="xi-close red"></i>
+                        </button>
+                    </div>
+                    <div class="detail-table-search-wrap col-group">
+                        <form action="">
+                            <input type="text" class="detail-table-search-input" placeholder="출발지, 목적지, 서비스, 설명(은)는 검색값으로 바로검색 (OR 구분자: ;)">
+                        </form>
+                        <button type="submit" class="detail-table-btn">
+                            검색
+                        </button>
+                    </div>
+
+                    <div class="detail-table-wrap">
+                        <table class="detail-table">
+                            <thead>
+                                <th>
+                                    <label for="check_all" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_all">
+                                        <div class="check-item">
+                                            <i class="xi-check"></i>
+                                        </div>
+                                    </label>
+                                </th>
+                                <th>
+                                    사용여부
+                                </th>
+                                <th>
+                                    No.
+                                </th>
+                                <th>
+                                    NAT 아이디
+                                </th>
+                                <th>
+                                    유형
+                                </th>
+                                <th>
+                                    <i class="xi-arrows-h blue"></i>
+                                </th>
+                                <th>
+                                    변환전 출발지
+                                </th>
+                                <th>
+                                    송신 인터페이스
+                                </th>
+                                <th>
+                                    변환 후 출발지
+                                </th>
+                                <th>
+                                    변환 전 목적지
+                                </th>
+                                <th>
+                                    수신인터페이스
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <tr>
+                                        <td colspan="100">
+                                            <p class="null-txt">
+                                                보여줄 정보가 없습니다.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">0</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">3</span>
+                                    </td>
+                                    <td>
+                                        Dynamic NAT
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="blue">NMS_Svr</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth8</span>
+                                    </td>
+                                    <td>
+                                        <span class="blue">192.168.155.180</span>
+                                    </td>
+                                    <td>
+                                        변환 안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">eth4</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="detail-table-container">
+
+                    <div class="dashboard-form-wrap wide">
+                        <div class="dashboard-form-title">
+                            백업
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-item row-group">
+                                    <label for="check_1" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_1">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            로컬 백업 사용
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        백업 파일 비밀번호
+                                    </p>
+                                    <input type="password" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        백업 일정
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item-user row-group">
+                                        <select name="" id="" class="form-select"></select>
+                                        <select name="" id="" class="form-select"></select>
+                                        <select name="" id="" class="form-select"></select>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        보관 일수
+                                    </p>
+                                    <div class="form-input-wrap">
+                                        <input type="password" class="form-input">
+                                        <span class="sticker">일</span>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        <label for="check_2" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_2">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                원격 백업 사용 (Max 20)
+                                            </div>
+                                        </label>
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="detail-table-wrap">
+                                        <table class="detail-table">
+                                            <thead>
+                                                <th>
+                                                    IP 주소
+                                                </th>
+                                                <th>
+                                                    포트
+                                                </th>
+                                                <th>
+                                                    전송방법
+                                                </th>
+                                                <th>
+                                                    아이디
+                                                </th>
+                                                <th>
+                                                    백업 경로
+                                                </th>
+                                                <th>
+                                                    백업 일정
+                                                </th>
+                                                <th>
+                                                    최근 백업 시간
+                                                </th>
+                                                <th>
+                                                    설명
+                                                </th>
+                                                <th>
+                                                    백업실행
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="9">
+                                                        <p class="null-txt">
+                                                            보여줄 정보가 없습니다.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        백업 내용 (Max 20)
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="detail-table-wrap">
+                                        <table class="detail-table">
+                                            <thead>
+                                                <th>
+                                                    백업 시간
+                                                </th>
+                                                <th>
+                                                    백업 위치
+                                                </th>
+                                                <th>
+                                                    백업 방식
+                                                </th>
+                                                <th>
+                                                    파일 이름
+                                                </th>
+                                                <th>
+                                                    IP 주소
+                                                </th>
+                                                <th>
+                                                    전송방법
+                                                </th>
+                                                <th>
+                                                    포트
+                                                </th>
+                                                <th>
+                                                    아이디
+                                                </th>
+                                                <th>
+                                                    백업 경로
+                                                </th>
+                                                <th>
+                                                    다운로드
+                                                </th>
+                                                <th>
+                                                    복원
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="11">
+                                                        <p class="null-txt">
+                                                            보여줄 정보가 없습니다.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="form-download-btn-wrap col-group">
+                                        <a href="" class="form-download-btn" download="">
+                                            현재 설정 다운로드
+                                        </a>
+                                        <a href="" class="form-download-btn" download="">
+                                            분석 요청서 다운로드
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                저장
+                            </button>
+                            <button class="dashboard-form-btn black">
+                                취소
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

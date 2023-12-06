@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="detail-table-container">
+
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            정책 관리자 권한 추가
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        이름
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        쓰기권한
+                                    </p>
+                                    <div class="form-scroll-wrap">
+                                        <div class="form-scroll-item col-group">
+                                            <label for="check_1_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_1_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Monitor Center
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-scroll-item col-group">
+                                            <label for="check_1_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_1_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Object
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-scroll-item col-group">
+                                            <label for="check_1_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_1_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Policy
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-scroll-item col-group">
+                                            <label for="check_1_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_1_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Security Profiles
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-scroll-item col-group">
+                                            <label for="check_1_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_1_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    VPN
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <textarea class="form-input form-textarea" placeholder="설명을 입력하십시오."></textarea>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                저장
+                            </button>
+                            <button class="dashboard-form-btn black">
+                                복사하기
+                            </button>
+                            <label for="check_footer" class="check-label">
+                                <input type="checkbox" class="check-input" id="check_footer">
+                                <div class="check-item col-group">
+                                    <i class="xi-check"></i>
+                                    입력값 유지
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

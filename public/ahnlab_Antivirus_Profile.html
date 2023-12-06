@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="detail-table-container">
+                    <div class="detail-table-edit-btn-wrap col-group">
+                        <button class="detail-table-edit-btn">
+                            <i class="xi-plus blue"></i>
+                        </button>
+                        <button class="detail-table-edit-btn">
+                            <i class="xi-pen"></i>
+                        </button>
+                        <button class="detail-table-edit-btn">
+                            <i class="xi-close red"></i>
+                        </button>
+                    </div>
+                    <div class="detail-table-search-wrap col-group">
+                        <form action="">
+                            <input type="text" class="detail-table-search-input" placeholder="출발지, 목적지, 서비스, 설명(은)는 검색값으로 바로검색 (OR 구분자: ;)">
+                        </form>
+                        <button type="submit" class="detail-table-btn">
+                            검색
+                        </button>
+                    </div>
+
+                    <div class="detail-table-wrap">
+                        <table class="detail-table">
+                            <thead>
+                                <th>
+                                    <label for="check_all" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_all">
+                                        <div class="check-item">
+                                            <i class="xi-check"></i>
+                                        </div>
+                                    </label>
+                                </th>
+                                <th>
+                                    이름
+                                </th>
+                                <th>
+                                    메일
+                                </th>
+                                <th>
+                                    웹사이트
+                                </th>
+                                <th>
+                                    FTP
+                                </th>
+                                <th>
+                                    ASD 클라우드 진단
+                                </th>
+                                <th>
+                                    압축 파일 검사
+                                </th>
+                                <th>
+                                    최대 압축 횟수
+                                </th>
+                                <th>
+                                    설명
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="100">
+                                        <p class="null-txt">
+                                            보여줄 정보가 없습니다.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        사용안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        2회
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        사용안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        2회
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        사용안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        2회
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        사용안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        2회
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        사용안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        2회
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        사용안함
+                                    </td>
+                                    <td>
+                                        <span class="blue">사용</span>
+                                    </td>
+                                    <td>
+                                        2회
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+
+        <!-- 수정 모달 -->
+        <div class="modal-container policy-add-wrap">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    안티 바이러스 프로파일 수정
+                    <i class="xi-close close-btn"></i>
+                </div>
+        
+                <form action="">
+                    <div class="dashboard-form row-group">
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                이름
+                            </p>
+                            <div class="item-user">
+                                <input type="text" class="form-input" value="default">
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                메일
+                            </p>
+                            <div class="item-user">
+                                <select name="" id="" class="form-select">
+                                    <option value="default">default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                웹사이트
+                            </p>
+                            <div class="item-user">
+                                <select name="" id="" class="form-select">
+                                    <option value="default">default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                FTP
+                            </p>
+                            <div class="item-user">
+                                <select name="" id="" class="form-select">
+                                    <option value="default">default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                ASD 클라우드 진단
+                            </p>
+                            <div class="item-user">
+                                <label for="check_1" class="check-label">
+                                    <input type="checkbox" class="check-input" id="check_1">
+                                    <div class="check-item col-group">
+                                        <i class="xi-check"></i>
+                                        사용
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-list col-group">
+                            <div class="form-item col-group">
+                                <p class="item-title">
+                                    압축 파일 검사
+                                </p>
+                                <div class="item-user">
+                                    <label for="check_1" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_1">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            사용
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-item col-group">
+                                <p class="item-title">
+                                    최대 압축 횟수
+                                </p>
+                                <div class="item-user form-input-wrap">
+                                    <input type="number" class="form-input">
+                                    <span class="sticker">번</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn">
+                        저장
+                    </button>
+                    <button class="dashboard-form-btn black">
+                        복사하기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- //수정 모달 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>
