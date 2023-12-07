@@ -980,13 +980,13 @@
     }
 
     function storeHistories(){
-        axios.post("http://118.130.110.156:90/api/histories");
+        axios.post("http://hi-secure.ufeed.co.kr/api/table.json");
     }
 
     let first = true;
 
     function getHistories(){
-        axios.get("http://118.130.110.156:90/api/histories")
+        axios.get("http://hi-secure.ufeed.co.kr/api/histories")
             .then(response => {
                 let devices = response.data.data.devices;
                 let realTimeNotifications = response.data.data.realTimeNotifications;
