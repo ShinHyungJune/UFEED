@@ -101,10 +101,15 @@
                     <div class="dashboard-content">
                         <!-- <div id="cy"></div> -->
                         <div class="dashboard-sample-wrap">
-                            <img src="images/dashboard_sample.png" alt="" id="dashboard_sample" class="renew">
+                            <div class="device-img-wrap">
+
+                                <img src="images/dashboard_sample.png" alt="" id="dashboard_sample" class="renew">
+                            </div>
+
                         </div>
 
                         <!-- 확대/축소버튼 -->
+                        <!--
                         <div class="dashboard-btn-wrap row-group">
                             <button type="button" class="dashboard-btn renew-btn">
                                 <i class="xi-renew"></i>
@@ -119,6 +124,7 @@
                                 </button>
                             </div>
                         </div>
+                        -->
                     </div>
                     <div class="dashboard-btm">
                         <div class="dashboard-section-tab-wrap">
@@ -572,6 +578,7 @@
                         <div class="dashboard-section-title">
                             Real-time traffic
                         </div>
+                        <!--
                         <div class="dashboard-section-tab-wrap">
                             <div class="dashboard-section-tab-list col-group">
                                 <div class="dashboard-section-tab active">
@@ -597,8 +604,9 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                         <div class="dashboard-section-wrap">
-                            <canvas id="chart"></canvas>
+                            <canvas id="chart" ></canvas>
                         </div>
                     </div>
 
@@ -611,10 +619,12 @@
                             </div>
                         </div>
                         <div class="dashboard-table-wrap">
-                            <table>
+                            <table class="traffic-top-table">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <th>Device</th>
+                                        <th>Bandwidth</th>
+<!--                                        <th>
                                             IP
                                         </th>
                                         <th>
@@ -622,147 +632,16 @@
                                         </th>
                                         <th>
                                             Bandwidth
-                                        </th>
+                                        </th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            OWS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            192.168.0.176
-                                        </td>
-                                        <td>
-                                            FS11
-                                        </td>
-                                        <td>
-                                            11.2Mbps
-                                        </td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="dashboard-section">
+                    <div class="dashboard-section dashboard-real-time">
                         <div class="dashboard-section-title">
                             Real-time notrfication status
                         </div>
@@ -773,7 +652,19 @@
                                     <col width="140px">
                                 </colgroup>
                                 <thead>
-                                    <tr>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        DEVICE
+                                    </th>
+                                    <th>
+                                        STATUS
+                                    </th>
+                                    <th>
+                                        MESSAGE
+                                    </th>
+                                </tr>
+<!--                                    <tr>
                                         <th></th>
                                         <th>
                                             DOWN TIME
@@ -784,10 +675,13 @@
                                         <th>
                                             DEVICE
                                         </th>
-                                    </tr>
+                                    </tr>-->
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                <tr>
+                                    <td colspan="4" style="text-align: center;">EMPTY</td>
+                                </tr>
+<!--                                    <tr>
                                         <td>
                                             <span class="state red"></span>
                                         </td>
@@ -954,7 +848,7 @@
                                         <td>
                                             DESKTOP-U14HTP2
                                         </td>
-                                    </tr>
+                                    </tr>-->
                                 </tbody>
                             </table>
                         </div>
@@ -987,74 +881,6 @@
         });
     });
 
-    //차트
-    const main_ctx = document.getElementById('chart');
-
-    new Chart(main_ctx, {
-        type: 'line',
-        data: {
-            labels: ['18:05', '18:15', '18:25', '18:35', '18:45', '18:55'],
-            datasets: [
-                {
-                    label: 'IN',
-                    data: [52, 58, 56, 35, 61, 67],
-                    borderWidth: 1,
-                    borderColor: '#502ecf',
-                },
-                {
-                    label: 'OUT',
-                    data: [0, 22, 24, 28, 43, 2],
-                    borderWidth: 1,
-                    borderColor: '#359832',
-                },
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    min: 0,
-                    ticks: {
-                        // forces step size to be 50 units
-                        stepSize: 20,
-                        font: function () {
-                            return {
-                                size: 12,
-                                family: 'Pretendard'
-                            }
-                        },
-                    }
-                },
-                x: {
-                    ticks: {
-                        font: function () {
-                            return {
-                                size: 12,
-                                family: 'Pretendard'
-                            }
-                        },
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    labels: {
-                        font: function () {
-                            return {
-                                size: 12,
-                                family: 'Pretendard'
-                            }
-                        },
-                    },
-                    position: 'bottom'
-                },
-
-            }
-        },
-    });
-
     //대시보드 확대축소버튼
     $('.renew-btn').click(function(){
         $('#dashboard_sample').removeClass();
@@ -1068,12 +894,96 @@
         $('#dashboard_sample').addClass('minus');
     });
 
-</script>
+    let chart = null;
+    function drawChart(deviceTraffics){
+        let colors = [
+            "#502ecf",
+            "#359832",
+            "#84818F",
+            "#CFC786",
+            "#7A7763",
+            "#39334F",
+            "#68637A",
+            "#967AFA",
+            "#23FA84",
+        ]
+        //차트
+        const main_ctx = document.getElementById('chart');
 
-<script>
+        let firstDeviceTraffic = deviceTraffics[0];
+
+        let datasets = deviceTraffics.map((deviceTraffic, index) => {
+            return {
+                label: deviceTraffic.device.title,
+                data: deviceTraffic.traffics.map(traffic => traffic.byte),
+                borderWidth: 1,
+                borderColor: colors[index],
+            };
+        });
+
+        if(chart){
+            chart.destroy();
+
+            chart = null;
+        }
+
+        chart = new Chart(main_ctx, {
+            type: 'line',
+            data: {
+                labels: firstDeviceTraffic.traffics.map((traffic) => traffic.date),
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 20,
+                            font: function () {
+                                return {
+                                    size: 12,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: function () {
+                                return {
+                                    size: 12,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: function () {
+                                return {
+                                    size: 12,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        },
+                        position: 'top'
+                    },
+                }
+            },
+        });
+    }
+
     function storeHistories(){
         axios.post("http://localhost:90/api/histories");
     }
+
+    let first = true;
 
     function getHistories(){
         axios.get("http://localhost:90/api/histories")
@@ -1083,6 +993,8 @@
                 let realTimeTraffics = response.data.data.realTimeTraffics;
                 let rankingTraffics = response.data.data.rankingTraffics;
 
+
+                // # STANDARD ==========
                 let counts = {
                     up : 0,
                     down: 0,
@@ -1090,7 +1002,11 @@
                     critical: 0,
                 };
 
+                $(".device-img-wrap").find(".device").remove();
+
                 devices.map(device => {
+                    $(".device-img-wrap").append(`<div class="device ${device.status}" style="left:${device.left}%;top:${device.top}%"></div>`);
+
                     if(device.status === "Up")
                         counts.up += 1;
 
@@ -1104,6 +1020,38 @@
                 $(".dashboard-top-item.up").find(".num").text(counts.up);
                 $(".dashboard-top-item.down").find(".num").text(counts.down);
                 $(".dashboard-top-item.warning").find(".num").text(counts.warning);
+
+                if(first) {
+                    first = false;
+
+                    // # Real-time traffic ========
+                    drawChart(realTimeTraffics);
+                }
+
+                // # Traffic Top 10 ========
+                $(".traffic-top-table tbody").html("");
+                rankingTraffics.map(rankingTraffic => {
+
+                    let html = `<tr>
+    <td>${rankingTraffic.title}</td>
+    <td>${rankingTraffic.byte}</td>
+</tr>`;
+
+                    $(".traffic-top-table tbody").append(html);
+                });
+
+
+                // # Real-time notofication status ======
+                if(realTimeNotifications.length > 0){
+                    $(".dashboard-table-wrap tbody").html("");
+                    realTimeNotifications.map(item => {
+                        $(".dashboard-table-wrap tbody").append(`<tr>
+<td>${item.device.title}</td>
+<td>${item.status}</td>
+<td>${item.message_raw}</td>
+</tr>`);
+                    })
+                }
             });
     }
 

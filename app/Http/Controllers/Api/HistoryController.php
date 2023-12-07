@@ -21,25 +21,25 @@ class HistoryController extends ApiController
         $realTimeTraffics = [];
         $rankingTraffics = [];
 
-        foreach($devices as $device){
-            $latestHistory = $device->histories()->orderBy("logged_at", "desc")->first();
+        $pivotDate = $devices->first()->histories()->orderBy("logged_at", "desc")->first()->logged_at;
 
-            if($latestHistory) {
-                $realTimeTraffics[] = [
-                    "device" => $device,
-                    "traffics" => [
-                        $this->getByte($device, Carbon::make($latestHistory->logged_at)->subMinutes(6)),
-                        $this->getByte($device, Carbon::make($latestHistory->logged_at)->subMinutes(5)),
-                        $this->getByte($device, Carbon::make($latestHistory->logged_at)->subMinutes(4)),
-                        $this->getByte($device, Carbon::make($latestHistory->logged_at)->subMinutes(3)),
-                        $this->getByte($device, Carbon::make($latestHistory->logged_at)->subMinutes(2)),
-                        $this->getByte($device, Carbon::make($latestHistory->logged_at)->subMinutes(1)),
-                    ]
-                ];
-            }
+        $trafficDevices = Device::whereNotIn("title", ["NMS", "L3 Switch"])->get();
+
+        foreach($trafficDevices as $device){
+            $realTimeTraffics[] = [
+                "device" => $device,
+                "traffics" => [
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(15)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(12)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(9)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(6)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(3)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(0)),
+                ]
+            ];
         }
 
-        $realTimeNotifications = History::latest()->whereIn("status", [DeviceStatus::WARNING, DeviceStatus::DOWN])->take(30)->get();
+        $realTimeNotifications = History::latest()->with("device")->whereIn("status", [DeviceStatus::WARNING, DeviceStatus::DOWN])->take(30)->get();
 
         $today = Carbon::today();
 
@@ -53,8 +53,8 @@ class HistoryController extends ApiController
 
         foreach($histories as $history){
             $rankingTraffics[] = [
-                "title" => $history["title"],
-                "byte" => $history["total_byte"],
+                "title" => $history->title,
+                "byte" => $history->total_byte,
             ];
         }
 
@@ -69,14 +69,13 @@ class HistoryController extends ApiController
     public function getByte($device, $datetime)
     {
         $history = $device->histories()
-            ->orderBy("logged_at", "asc")
-            ->where("logged_at", ">=", Carbon::make($datetime))
-            ->where("logged_at", "<=", Carbon::make($datetime)->addMinutes(1))
+            ->whereBetween('logged_at', [ Carbon::make($datetime)->subHours(3), Carbon::make($datetime)])
+            ->orderBy('byte', 'desc')
             ->first();
 
         return [
             "byte" => $history ? $history->byte : 0,
-            "date" => $history ? Carbon::make($history->logged_at)->format("h:i:s") : "",
+            "date" => Carbon::make($datetime)->format("H:i:s"),
         ];
     }
 

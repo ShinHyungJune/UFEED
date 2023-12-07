@@ -39,7 +39,7 @@ class InitSeeder extends Seeder
     public function run()
     {
         DB::statement("SET foreign_key_checks=0");
-        Device::truncate();
+        // Device::truncate();
         DB::statement("SET foreign_key_checks=1");
 
         $this->createDevices();
@@ -49,36 +49,59 @@ class InitSeeder extends Seeder
     {
         $items = [
             [
-                "title" => "FW1"
+                "title" => "FW1",
+                "left" => "45.8",
+                "top" => "29.5",
             ],
             [
-                "title" => "FW#2"
+                "title" => "FW#2",
+                "left" => "39.4",
+                "top" => "34.5",
             ],
             [
-                "title" => "FW#3"
+                "title" => "FW#3",
+                "left" => "33.78",
+                "top" => "42.5",
             ],
             [
-                "title" => "FW#4"
+                "title" => "FW#4",
+                "left" => "39.3",
+                "top" => "53.2",
             ],
             [
-                "title" => "FW#5"
+                "title" => "FW#5",
+                "left" => "64.5",
+                "top" => "52.6",
             ],
             [
-                "title" => "FW#6"
+                "title" => "FW#6",
+                "left" => "69",
+                "top" => "39.6",
             ],
             [
-                "title" => "L3 Switch"
+                "title" => "L3 Switch",
+                "left" => "49.4",
+                "top" => "41.6",
             ],
             [
-                "title" => "NMS"
+                "title" => "NMS",
+                "left" => "68.3",
+                "top" => "13.6",
             ],
             [
-                "title" => "TMS"
+                "title" => "TMS",
+                "left" => "60.3",
+                "top" => "12",
             ]
         ];
 
         foreach($items as $item){
-            Device::create($item);
+            $device = Device::where("title", $item["title"])->first();
+
+            $device->update([
+                "left" => $item["left"],
+                "top" => $item["top"]
+            ]);
         }
     }
 
