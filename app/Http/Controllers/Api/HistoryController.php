@@ -39,7 +39,7 @@ class HistoryController extends ApiController
             ];
         }
 
-        $realTimeNotifications = History::latest()->with("device")->whereIn("status", [DeviceStatus::WARNING, DeviceStatus::DOWN])->take(30)->get();
+        $realTimeNotifications = History::latest()->with("device")->take(30)->get();
 
         $today = Carbon::today();
 
