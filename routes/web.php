@@ -2,7 +2,9 @@
 
 use App\Enums\KakaoTemplate;
 use App\Models\Kakao;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -17,24 +19,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    $client = new Client([
-        "verify" => false
-    ]);
 
-    $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/faces/stat/nodeSensorStat.xhtml?mode=ipmgmt", [
-        "page" => 1,
-            "pageSize" =>30,
-            "apiKey" => "f9c61147-737e-4b8d-8210-0fc7b2c19751"
-    ]);
+    $today = Carbon::today();
 
-    dd($response->body());
-    $body = $response->json();
+    $histories = DB::table('histories')
+        ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
+        ->join('devices', 'histories.device_id', '=', 'devices.id')
+        ->whereDate('histories.created_at', $today)
+        ->groupBy('histories.device_id', 'devices.title')
+        ->orderByDesc('total_byte')
+        ->get();
 
-    return $this->respondSuccessfully($body);
 });
 
+Route::get("/histories", function (){
+    \App\Models\History::where("created_at", "<=", \Carbon\Carbon::now()->subWeek())->delete();
 
-Route::post("/users", [\App\Http\Controllers\UserController::class, "store"]);
+    $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+        "page" => 1,
+        "username" => "prtgadmin",
+        "password" => "prtgadmin",
+        "content" => "",
+        "columns" => "device,sensor, objid, lastvalue, name,datetime,message,status",
+        "filter_type" => "snmpbyte",
+    ]);
+
+    $body = $response->json();
+
+    $items = $body[""];
+
+    dd($items);
+});
 
 Route::get('/', [\App\Http\Controllers\PageController::class, "index"])->name("home");
 Route::get('/sample', [\App\Http\Controllers\PageController::class, "sample"]);

@@ -2,8 +2,7 @@
 <html lang="ko">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
 
 <title></title>
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -49,7 +48,25 @@
         });
     }
 
-    getTable();
+    function storeHistories(){
+        axios.post("http://localhost:90/api/histories");
+    }
+
+    function getHistories(){
+        axios.get("http://localhost:90/api/histories")
+            .then(response => {
+                console.log(response.data.data.realTimeTraffics);
+            });
+    }
+
+    storeHistories();
+    getHistories();
+
+    setInterval(() => {
+        storeHistories();
+        getHistories();
+    }, 10000);
+
 
 </script>
 </html>
