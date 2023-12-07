@@ -98,7 +98,10 @@ class InitSeeder extends Seeder
         foreach($items as $item){
             $device = Device::where("title", $item["title"])->first();
 
-            $device->update([
+            $device->updateOrCreate([
+               "title" => $device->title,
+            ],[
+                "title" => $device->title,
                 "left" => $item["left"],
                 "top" => $item["top"]
             ]);
