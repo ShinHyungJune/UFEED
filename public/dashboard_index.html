@@ -1043,12 +1043,12 @@
 
                 // # Real-time notofication status ======
                 if(realTimeNotifications.length > 0){
-                    $(".dashboard-table-wrap tbody").html("");
+                    $(".dashboard-real-time tbody").html("");
                     realTimeNotifications.map(item => {
-                        $(".dashboard-table-wrap tbody").append(`<tr>
+                        $(".dashboard-real-time tbody").append(`<tr>
 <td>${item.device.title}</td>
 <td>${item.status}</td>
-<td>${item.message_raw}</td>
+<td>${item.message}</td>
 </tr>`);
                     })
                 }
