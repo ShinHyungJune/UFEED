@@ -97,9 +97,9 @@ class InitSeeder extends Seeder
 
         foreach($items as $item){
             Device::updateOrCreate([
-               "title" => $device->title,
+               "title" => $item["title"],
             ],[
-                "title" => $device->title,
+                "title" => $item["title"],
                 "left" => $item["left"],
                 "top" => $item["top"]
             ]);
