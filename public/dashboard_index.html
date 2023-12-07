@@ -31,7 +31,7 @@
                                 STANDARD
                             </div>
                             <div class="dashboard-section-wrap col-group">
-                                <div class="dashboard-top-item green row-group">
+                                <div class="dashboard-top-item green up row-group">
                                     <div class="num">
                                         0
                                     </div>
@@ -39,25 +39,25 @@
                                         Devies UP
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item row-group">
+                                <div class="dashboard-top-item down row-group">
                                     <div class="num">
-                                        5
+                                        0
                                     </div>
                                     <div class="txt">
                                         Devies Down
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item red row-group">
+                                <div class="dashboard-top-item red critical row-group">
                                     <div class="num">
-                                        36
+                                        0
                                     </div>
                                     <div class="txt">
                                         Critical
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item yellow row-group">
+                                <div class="dashboard-top-item yellow warning row-group">
                                     <div class="num">
-                                        192
+                                        0
                                     </div>
                                     <div class="txt">
                                         Warning
@@ -1067,6 +1067,52 @@
         $('#dashboard_sample').addClass('minus');
     });
 
+</script>
+
+<script>
+    function storeHistories(){
+        axios.post("http://localhost:90/api/histories");
+    }
+
+    function getHistories(){
+        axios.get("http://localhost:90/api/histories")
+            .then(response => {
+                let devices = response.data.data.devices;
+                let realTimeNotifications = response.data.data.realTimeNotifications;
+                let realTimeTraffics = response.data.data.realTimeTraffics;
+                let rankingTraffics = response.data.data.rankingTraffics;
+
+                let counts = {
+                    up : 0,
+                    down: 0,
+                    warning: 0,
+                    critical: 0,
+                };
+
+                devices.map(device => {
+                    if(device.status === "Up")
+                        counts.up += 1;
+
+                    if(device.status === "Down")
+                        counts.down += 1;
+
+                    if(device.status === "Warning")
+                        counts.warning += 1;
+                });
+
+                $(".dashboard-top-item.up").find(".num").text(counts.up);
+                $(".dashboard-top-item.down").find(".num").text(counts.down);
+                $(".dashboard-top-item.warning").find(".num").text(counts.warning);
+            });
+    }
+
+    storeHistories();
+    getHistories();
+
+    setInterval(() => {
+        storeHistories();
+        getHistories();
+    }, 10000);
 </script>
 
 <!-- 마인드맵 -->
