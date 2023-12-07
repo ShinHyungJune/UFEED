@@ -1033,7 +1033,7 @@
                 rankingTraffics.map(rankingTraffic => {
 
                     let html = `<tr>
-<td></td>
+
     <td>${rankingTraffic.title}</td>
     <td>${rankingTraffic.byte}</td>
 </tr>`;
@@ -1047,6 +1047,7 @@
                     $(".dashboard-real-time tbody").html("");
                     realTimeNotifications.map(item => {
                         $(".dashboard-real-time tbody").append(`<tr>
+<td></td>
 <td>${item.device.title}</td>
 <td>${item.status}</td>
 <td>${item.message}</td>
