@@ -980,13 +980,13 @@
     }
 
     function storeHistories(){
-        axios.post("http://localhost:90/api/histories");
+        axios.post("http://118.130.110.156:90/api/histories");
     }
 
     let first = true;
 
     function getHistories(){
-        axios.get("http://localhost:90/api/histories")
+        axios.get("http://118.130.110.156:90/api/histories")
             .then(response => {
                 let devices = response.data.data.devices;
                 let realTimeNotifications = response.data.data.realTimeNotifications;
