@@ -274,6 +274,8 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
     position: relative;
 
 }
+.dashboard-sample-wrap .device-img-wrap.plus { transform: scale(1.5); transform-origin:0 0; }
+.dashboard-sample-wrap .device-img-wrap.minus { transform: scale(.5); transform-origin:0 0; }
 .dashboard-sample-wrap .device {
     content:"";
     width:15px; height:15px;
@@ -297,8 +299,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
     }
 }
 #dashboard_sample { display: block; width: auto; height: 100%; object-fit: contain; object-position: center; }
-#dashboard_sample.plus { transform: scale(1.5); }
-#dashboard_sample.minus { transform: scale(.5); }
+
 
 .dashboard-btn-wrap { width: 56px; position: absolute; left: -1px; bottom: -1px; gap: 8px; z-index: 9; }
 .dashboard-btn-list { width: 100%; border: 1px solid #e4e4e4; border-top-right-radius: 14px; overflow: hidden; position: relative }
