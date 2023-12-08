@@ -83,7 +83,7 @@ class HistoryController extends ApiController
     {
         \App\Models\History::where("created_at", "<=", \Carbon\Carbon::now()->subWeek())->delete();
 
-        $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+        $response = Http::withoutVerifying()->get("http://127.0.0.1/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "prtgadmin",
