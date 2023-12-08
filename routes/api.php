@@ -27,6 +27,7 @@ Route::get("/nac/log", [\App\Http\Controllers\Api\NacController::class, "log"]);
 Route::get("/nac/condition", [\App\Http\Controllers\Api\NacController::class, "condition"]);
 Route::get("/histories", [\App\Http\Controllers\Api\HistoryController::class, "index"]);
 Route::post("/histories", [\App\Http\Controllers\Api\HistoryController::class, "store"]);
+Route::patch("/devices", [\App\Http\Controllers\Api\HistoryController::class, "update"]);
 
 
 Route::middleware('auth')->group(function () {

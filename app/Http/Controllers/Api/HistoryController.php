@@ -123,4 +123,14 @@ class HistoryController extends ApiController
 
         return $this->respondSuccessfully();
     }
+
+    public function update(Request $request)
+    {
+        $device = Device::where("title", $request->title)->first();
+
+        if($device)
+            $device->update(["status" => $request->status]);
+
+        return $this->respondSuccessfully();
+    }
 }

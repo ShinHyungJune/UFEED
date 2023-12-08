@@ -1055,13 +1055,31 @@
             });
     }
 
+    function checkStatus(){
+        axios.get("http://10.0.1.254")
+            .then(response => {
+                axios.patch("/api/devices", {
+                    title : "FW1",
+                    status: "Up"
+                })
+            }).catch(error => {
+            axios.patch("/api/devices", {
+                title : "FW1",
+                status: "Down"
+            })
+        });
+    }
+
+    // checkStatus();
     storeHistories();
     getHistories();
 
     setInterval(() => {
         storeHistories();
         getHistories();
+        // checkStatus();
     }, 10000);
+
 </script>
 
 <!-- 마인드맵 -->
