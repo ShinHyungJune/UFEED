@@ -213,7 +213,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 
 .dashboard-side { width: 440px; gap: 8px; }
 .dashboard-section { width: 100%; border-radius: 14px; border: 1px solid #e4e4e4; background: #fff; overflow: hidden; }
-.dashboard-section-title { width: 100%; padding: 8px; text-align: center; font-size: 16px; background: #e4e4e4; }
+.dashboard-section-title { width: 100%; padding: 8px; text-align: center; font-size: 16px; background: #e4e4e4; font-weight: 600; }
 
 .dashboard-section-tab-wrap { overflow: auto; background: #f4f4f4; }
 .dashboard-section-tab-list { height: 24px; align-items: center; }
@@ -276,7 +276,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 
 }
 .dashboard-sample-wrap .device-img-wrap.plus { transform: scale(1.5); transform-origin:0 0; }
-.dashboard-sample-wrap .device-img-wrap.minus { transform: scale(.5); transform-origin:0 0; }
+.dashboard-sample-wrap .device-img-wrap.minus { transform: scale(1); transform-origin:0 0; }
 .dashboard-sample-wrap .device {
     content:"";
     width:15px; height:15px;
