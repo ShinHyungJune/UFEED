@@ -103,7 +103,7 @@
                         <div class="dashboard-sample-wrap">
                             <div class="device-img-wrap">
 
-                                <img src="images/dashboard_sample.png" alt="" id="dashboard_sample" class="renew">
+                                <img src="images/dashboard_sample.png" alt="" id="dashboard_sample">
                             </div>
 
                         </div>
@@ -881,14 +881,17 @@
 
     //대시보드 확대축소버튼
     $('.renew-btn').click(function(){
-        $('.device-img-wrap').removeClass("plus, minus");
+        $('.device-img-wrap').removeClass('plus');
+        $('.device-img-wrap').removeClass('minus');
     });
     $('.plus-btn').click(function(){
-        $('.device-img-wrap').removeClass("plus, minus");
+        $('.device-img-wrap').removeClass('plus');
+        $('.device-img-wrap').removeClass('minus');
         $('.device-img-wrap').addClass('plus');
     });
     $('.minus-btn').click(function(){
-        $('.device-img-wrap').removeClass("plus, minus");
+        $('.device-img-wrap').removeClass('plus');
+        $('.device-img-wrap').removeClass('minus');
         $('.device-img-wrap').addClass('minus');
     });
 

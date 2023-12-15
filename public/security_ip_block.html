@@ -24,33 +24,44 @@
 
         <!-- 대시보드 -->
         <div class="dashboard">
-            <div class="dashboard-container">
-                <div class="detail-table-container">
+            <div class="dashboard-container gray">
 
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Quick Function
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Security Control
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            IP Block
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
                     <div class="dashboard-form-wrap">
                         <div class="dashboard-form-title">
                             IP Block
-                        </div>
-
-                        <div class="modal-title">
-                            Add Black List IP
+                            <strong class="subtitle">Add Black List IP</strong>
                         </div>
                 
                         <form action="">
                             <div class="dashboard-form row-group">
-                                <div class="form-list col-group">
-                                    <div class="form-item row-group">
-                                        <p class="item-title">
-                                            Black IP
-                                        </p>
-                                        <input type="text" class="form-input">
-                                    </div>
-                                    <div class="form-item row-group">
-                                        <p class="item-title">
-                                            Name
-                                        </p>
-                                        <input type="text" class="form-input">
-                                    </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Black IP
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Name
+                                    </p>
+                                    <input type="text" class="form-input">
                                 </div>
                             </div>
                         </form>
