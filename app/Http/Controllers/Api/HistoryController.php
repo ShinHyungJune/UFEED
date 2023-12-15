@@ -21,7 +21,15 @@ class HistoryController extends ApiController
         $realTimeTraffics = [];
         $rankingTraffics = [];
 
-        $pivotDate = $devices->first()->histories()->orderBy("logged_at", "desc")->first()->logged_at;
+        $firstHistory = $devices->first()
+            ->histories()
+            ->orderBy("logged_at", "desc")
+            ->first();
+
+        $pivotDate = Carbon::now();
+
+        if($firstHistory)
+            $pivotDate = $firstHistory->logged_at;
 
         $trafficDevices = Device::whereNotIn("title", ["NMS", "L3 Switch"])->get();
 
