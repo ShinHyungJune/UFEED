@@ -102,32 +102,33 @@ class HistoryController extends ApiController
 
         $body = $response->json();
 
-        $items = $body[""];
+        if($body){
+            $items = $body[""];
 
-        foreach($items as $item){
-            $device = \App\Models\Device::where("title", $item["device_raw"])->first();
+            foreach($items as $item){
+                $device = \App\Models\Device::where("title", $item["device_raw"])->first();
 
-            if($device) {
-                $history = \App\Models\History::create([
-                    "device_id" => $device->id,
-                    "message" => $item["message_raw"],
-                    "status" => $item["status"],
-                    "byte" => $item["lastvalue_raw"],
-                    "sensor" => $item["sensor_raw"],
-                    "logged_at" => Carbon::make($items[0]["datetime"]),
-                ]);
+                if($device) {
+                    $history = \App\Models\History::create([
+                        "device_id" => $device->id,
+                        "message" => $item["message_raw"],
+                        "status" => $item["status"],
+                        "byte" => $item["lastvalue_raw"],
+                        "sensor" => $item["sensor_raw"],
+                        "logged_at" => Carbon::make($items[0]["datetime"]),
+                    ]);
+                }
+            }
+
+            $devices = \App\Models\Device::get();
+
+            foreach($devices as $device){
+                $latestHistory = $device->histories()->latest()->whereIn("status", \App\Enums\DeviceStatus::getOptions())->first();
+
+                if($latestHistory)
+                    $device->update(["status" => $latestHistory->status]);
             }
         }
-
-        $devices = \App\Models\Device::get();
-
-        foreach($devices as $device){
-            $latestHistory = $device->histories()->latest()->whereIn("status", \App\Enums\DeviceStatus::getOptions())->first();
-
-            if($latestHistory)
-                $device->update(["status" => $latestHistory->status]);
-        }
-
 
         return $this->respondSuccessfully();
     }
