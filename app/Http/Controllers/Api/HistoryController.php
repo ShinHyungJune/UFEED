@@ -94,7 +94,7 @@ class HistoryController extends ApiController
         $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
-            "password" => "prtgadmin",
+            "password" => "hgs_1qa@WS",
             "content" => "",
             "columns" => "device,sensor, objid, lastvalue, name,datetime,message,status",
             "filter_type" => "snmptraffic",
@@ -113,7 +113,7 @@ class HistoryController extends ApiController
                         "device_id" => $device->id,
                         "message" => $item["message_raw"],
                         "status" => $item["status"],
-                        "byte" => $item["lastvalue_raw"],
+                        "byte" => floor((float) $item["lastvalue_raw"]),
                         "sensor" => $item["sensor_raw"],
                         "logged_at" => Carbon::make($items[0]["datetime"]),
                     ]);
