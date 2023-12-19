@@ -25,18 +25,29 @@
         <div class="dashboard">
             <div class="dashboard-container">
                 <div class="dashboard-menu-wrap col-group">
-                    <a href="HiSecure_account_add.html" class="dashboard-menu-item">
-                        Account Add
-                    </a>
-                    <a href="HiSecure_account_del.html" class="dashboard-menu-item">
-                        Account Delete
-                    </a>
-                    <a href="HiSecure_account_modify.html" class="dashboard-menu-item active">
-                        Account Modify
-                    </a>
-                    <a href="HiSecure_account_setting.html" class="dashboard-menu-item">
-                        Account Global Setting
-                    </a>
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Admin Account
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Hi-Secure Account Modify
+                        </div>
+                    </div>
+                    <div class="dashboard-menu-group col-group">
+                        <a href="HiSecure_account_add.html" class="dashboard-menu-item">
+                            Account Add
+                        </a>
+                        <a href="HiSecure_account_del.html" class="dashboard-menu-item">
+                            Account Delete
+                        </a>
+                        <a href="HiSecure_account_modify.html" class="dashboard-menu-item active">
+                            Account Modify
+                        </a>
+                        <a href="HiSecure_account_setting.html" class="dashboard-menu-item">
+                            Account Global Setting
+                        </a>
+                    </div>
                 </div>
 
                 <div class="dashboard-form-container">
@@ -49,6 +60,13 @@
                             <div class="modal-table-container">
                                 <div class="modal-table-wrap dashboard-table-wrap">
                                     <table>
+                                        <colgroup>
+                                            <col width="calc( (100% - 40px) / 4);">
+                                            <col width="calc( (100% - 40px) / 4);">
+                                            <col width="calc( (100% - 40px) / 4);">
+                                            <col width="calc( (100% - 40px) / 4);">
+                                            <col width="40px">
+                                        </colgroup>
                                         <thead>
                                             <tr>
                                                 <th>

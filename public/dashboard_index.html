@@ -71,7 +71,7 @@
                                 CBS PROTECTION
                             </div>
                             <div class="dashboard-section-wrap col-group">
-                                <div class="dashboard-top-item yellow row-group">
+                                <div class="dashboard-top-item red row-group">
                                     <div class="num">
                                         5
                                     </div>
@@ -79,7 +79,7 @@
                                         Anti-Virus
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item yellow row-group">
+                                <div class="dashboard-top-item red row-group">
                                     <div class="num">
                                         5
                                     </div>
@@ -87,7 +87,7 @@
                                         Anti-Malwa
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item yellow row-group">
+                                <div class="dashboard-top-item red row-group">
                                     <div class="num">
                                         5
                                     </div>
@@ -99,7 +99,40 @@
                         </div>
                     </div>
                     <div class="dashboard-content">
+
+                        <div class="dashboard-state-wrap col-group">
+                            <div class="dashboard-state-item col-group green">
+                                <i class="xi-check-circle icon"></i>
+                                73
+                            </div>
+                            <div class="dashboard-state-item col-group yellow">
+                                <i class="xi-help icon"></i>
+                                5
+                            </div>
+                            <div class="dashboard-state-item col-group red">
+                                <i class="xi-warning icon"></i>
+                                1
+                            </div>
+                        </div>
+                        <div class="legend-wrap">
+                            <div class="legend-list row-group">
+                                <div class="legend-item col-group">
+                                    <div class="color-box green"></div>
+                                    Up
+                                </div>
+                                <div class="legend-item col-group">
+                                    <div class="color-box yellow"></div>
+                                    Warning
+                                </div>
+                                <div class="legend-item col-group">
+                                    <div class="color-box red"></div>
+                                    Down
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- <div id="cy"></div> -->
+
                         <div class="dashboard-sample-wrap">
                             <div class="device-img-wrap">
 
@@ -128,22 +161,7 @@
                         <div class="dashboard-section-tab-wrap">
                             <div class="dashboard-section-tab-list col-group">
                                 <div class="dashboard-section-tab active">
-                                    FW#1
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#2
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#3
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#4
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#5
-                                </div>
-                                <div class="dashboard-section-tab">
-                                    FW#6
+                                    Security Monitoring
                                 </div>
                             </div>
                         </div>
@@ -609,12 +627,8 @@
                     </div>
 
                     <div class="dashboard-section">
-                        <div class="dashboard-top-tab-wrap">
-                            <div class="dashboard-top-tab-list col-group">
-                                <div class="dashboard-top-tab active">
-                                    Traffic Top 10
-                                </div>
-                            </div>
+                        <div class="dashboard-section-title">
+                            Traffic Top 10
                         </div>
                         <div class="dashboard-table-wrap">
                             <table class="traffic-top-table">
@@ -974,8 +988,10 @@
                                     family: 'Pretendard'
                                 }
                             },
+                            boxWidth: 12,
                         },
-                        position: 'top'
+                        position: 'top',
+                        fullWidth: false,
                     },
                 }
             },
