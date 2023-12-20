@@ -2301,7 +2301,7 @@
                 $(".modal-devices-warning tbody").html("");
 
                 devices.map(device => {
-                    $(".device-img-wrap").append(`<div class="device ${device.status} device-${device.title}" style="left:${device.left}%;top:${device.top}%"></div>`);
+                    $(".device-img-wrap").append(`<div class="device ${device.status} device-${device.title} ${device.title.includes('OT') ? 'device-OT' : ''}" style="left:${device.left}%;top:${device.top}%"></div>`);
 
                     if(device.status === "Up") {
                         counts.up += 1;
