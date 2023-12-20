@@ -72,27 +72,29 @@
                             </div>
                             <div class="dashboard-section-wrap col-group">
                                 <div class="dashboard-top-item red row-group">
-                                    <div class="num">
-                                        5
+                                    <div class="num num-ddos">
+                                        0
                                     </div>
                                     <div class="txt">
-                                        Anti-Virus
+<!--                                        // Anti-Virus-->
+                                        Anti-Ddos
                                     </div>
                                 </div>
                                 <div class="dashboard-top-item red row-group">
-                                    <div class="num">
-                                        5
+                                    <div class="num num-malware">
+                                        0
                                     </div>
                                     <div class="txt">
                                         Anti-Malwa
                                     </div>
                                 </div>
                                 <div class="dashboard-top-item red row-group">
-                                    <div class="num">
-                                        5
+                                    <div class="num num-ips">
+                                        0
                                     </div>
                                     <div class="txt">
-                                        Anti-Ransomware
+<!--                                        Anti-Ransomware-->
+                                        Ips
                                     </div>
                                 </div>
                             </div>
@@ -2403,7 +2405,13 @@
                 $(".dashboard-table-traffic tbody").html("");
                 traffics.map(traffic => {
                     $(".dashboard-table-traffic tbody").append(`<tr><td>${traffic.key}</td><td>${traffic.avg} KB</td><tr/>`);
-                })
+                });
+
+                let counts = response.data.data;
+
+                $(".num-ddos").text(counts.count_ddos);
+                $(".num-ips").text(counts.count_ips);
+                $(".num-malware").text(counts.count_malware);
             })
     }
 
