@@ -9,6 +9,7 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <body>
     <div id="wrap">
@@ -51,7 +52,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="dashboard-form-container">
                     <div class="dashboard-form-wrap">
                         <div class="dashboard-form-title">
@@ -66,9 +67,9 @@
                                     </p>
                                     <div class="item-user col-group">
                                         <input type="text" class="form-input">
-                                        <button class="form-user-btn">
+<!--                                        <button class="form-user-btn">
                                             Duplicate Check
-                                        </button>
+                                        </button>-->
                                     </div>
                                 </div>
                                 <div class="form-item row-group">
@@ -120,5 +121,17 @@
 <script src="/js/jquery.js"></script>
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+    let domain = "http://localhost:90";
 
+    let form = {
+        ids: $("#ids").val(),
+        password: $("#password").val(),
+        password_confirmation: $("#password_confirmation").val(),
+        authority: $("#authority").val(),
+        email: $("#email").val(),
+    };
+
+    axios.post(domain + "/api/")
+</script>
 </html>
