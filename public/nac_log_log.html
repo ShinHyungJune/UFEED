@@ -25,6 +25,23 @@
         <!-- 대시보드 -->
         <div class="dashboard">
             <div class="dashboard-container">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            NAC
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Log
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Log
+                        </div>
+                    </div>
+                </div>
+
 <!--                <div class="dashboard-head">
                     <div class="fragment"></div>
 
@@ -43,7 +60,7 @@
                             <thead>
                             <tr>
 <!--                                <th>_index</th>-->
-                                <th>LOG_PARENTID</th>
+                                <!-- <th>LOG_PARENTID</th> -->
                                 <th>LOG_TIME</th>
                                 <th>TYPE</th>
                                 <th>MAC</th>
@@ -88,7 +105,7 @@
             $(".m-table.type01 tbody").append(`<tr></tr>`);
 
       /*      $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['_index'] || '-'}</td>`)*/
-            $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_PARENTID']}</td>`)
+            // $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_PARENTID']}</td>`)
             $(".m-table.type01 tbody tr").eq(index).append(`<td>${(new Date(item['LOG_TIME'])).toLocaleString()}</td>`)
             $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['_type']}</td>`)
             $(".m-table.type01 tbody tr").eq(index).append(`<td>${item['LOG_MAC']}</td>`)
