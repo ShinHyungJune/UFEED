@@ -81,7 +81,7 @@ class HistoryController extends ApiController
             ->orderBy('byte', 'desc')
             ->first();*/
         $history = $device->histories()
-            ->whereBetween('logged_at', $datetime)
+            ->where('logged_at', $datetime)
             ->orderBy('byte', 'desc')
             ->first();
 
