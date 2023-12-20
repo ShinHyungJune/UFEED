@@ -1088,10 +1088,11 @@
             chart = null;
         }
 
+        console.log(datasets);
         chart = new Chart(main_ctx, {
             type: 'line',
             data: {
-                labels: firstDeviceTraffic.traffics.map((traffic) => traffic.date),
+                labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
                 datasets: datasets
             },
             options: {
@@ -1140,6 +1141,35 @@
                 }
             },
         });
+    }
+
+    function clearTime(timeString){
+        // 주어진 시간 문자열을 Date 객체로 변환
+        var timeArray = timeString.split(':');
+        var dateObject = new Date();
+        dateObject.setHours(parseInt(timeArray[0], 10));
+        dateObject.setMinutes(parseInt(timeArray[1], 10));
+        dateObject.setSeconds(parseInt(timeArray[2], 10));
+
+        // 분을 5분 단위로 반올림
+        var minutes = dateObject.getMinutes();
+        var roundedMinutes = Math.ceil(minutes / 5) * 5;
+
+        // 60분이 되면 시간을 1 늘리고 분은 0으로 설정
+        if (roundedMinutes === 60) {
+            dateObject.setHours(dateObject.getHours() + 1);
+            roundedMinutes = 0;
+        }
+
+        dateObject.setMinutes(roundedMinutes);
+        dateObject.setSeconds(0);
+
+        // 시, 분, 초를 문자열로 변환하여 리턴
+        var formattedTime = dateObject.getHours().toString().padStart(2, '0') + ':' +
+            dateObject.getMinutes().toString().padStart(2, '0') + ':' +
+            dateObject.getSeconds().toString().padStart(2, '0');
+
+        return formattedTime;
     }
 
     function storeHistories(){
