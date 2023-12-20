@@ -841,7 +841,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 }
 
 /* 대시보드 메인 - 방화벽 팝업 */
-.firewall-btn { position: absolute; width: 80px; height: 80px; }
+.firewall-btn { position: absolute; width: 80px; height: 80px; z-index:1;}
 .firewall-btn-01 { left: 44.1%; top: 32%; }
 .firewall-btn-02 { left: 37.7%; top: 36.6%; }
 .firewall-btn-03 { left: 32.1%; top: 44.6%;; }
