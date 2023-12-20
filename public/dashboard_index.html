@@ -139,6 +139,13 @@
                             <div class="device-img-wrap">
 
                                 <img src="images/dashboard_sample.png" alt="" id="dashboard_sample">
+
+                                <button type="button" class="firewall-btn firewall-btn-01"></button>
+                                <button type="button" class="firewall-btn firewall-btn-02"></button>
+                                <button type="button" class="firewall-btn firewall-btn-03"></button>
+                                <button type="button" class="firewall-btn firewall-btn-04"></button>
+                                <button type="button" class="firewall-btn firewall-btn-05"></button>
+                                <button type="button" class="firewall-btn firewall-btn-06"></button>
                             </div>
 
                         </div>
@@ -1014,6 +1021,1473 @@
                 </div>
             </div>
         </div>
+
+        <!-- 방화벽 클릭시 나타나는 팝업 -->
+
+    <!-- 방화벽-1 -->
+    <div class="modal-container firewall" id="firewall01" style="display: none;">
+        <div class="modal-wrap">
+            <div class="modal-title">
+                Firewall No.1
+                <i class="xi-close close-btn"></i>
+            </div>
+
+            <div class="firewall-wrap">
+                <div class="firewall-title">
+                    Remote Zone
+                </div>
+                <div class="firewall-structure-wrap">
+                    <div class="structure-group group1 col-group">
+                        <div class="structure-item firewall__01"></div>
+                        <div class="structure-item firewall__02"></div>
+                        <div class="structure-item firewall__03"></div>
+                    </div>
+                </div>
+                <div class="firewall-state-wrap col-group">
+                    <div class="firewall-state-group flex2 row-group">
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-state-item down">
+                                <p class="item-default">
+                                    Down
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item warning">
+                                <p class="item-default">
+                                    Warning
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item up">
+                                <p class="item-default">
+                                    Up
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item unusual">
+                                <p class="item-default">
+                                    Unusual
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart01"></canvas>
+                            </div>
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart02"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firewall-state-group flex1 col-group">
+                        <div class="firewall-amount-wrap">
+                            <div class="firewall-amount-list">
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Firewall
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Switch
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Satellite
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-devices-status-wrap">
+                            <p class="firewall-devices-status-title">
+                                Devices Status
+                            </p>
+                            <div class="firewall-devices-status-list">
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방화벽-2 -->
+    <div class="modal-container firewall" id="firewall02" style="display: none;">
+        <div class="modal-wrap">
+            <div class="modal-title">
+                Firewall No.2
+                <i class="xi-close close-btn"></i>
+            </div>
+
+            <div class="firewall-wrap">
+                <div class="firewall-title">
+                    Crew Zone
+                </div>
+                <div class="firewall-structure-wrap">
+                    <div class="structure-group group1 col-group">
+                        <div class="structure-item firewall__01"></div>
+                        <div class="structure-item firewall__02"></div>
+                        <div class="structure-group just-group col-group none-bg">
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__04"></div>
+                                <div class="structure-item firewall__04"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__04"></div>
+                                <div class="structure-item firewall__04"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__04"></div>
+                                <div class="structure-item firewall__04"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__04"></div>
+                                <div class="structure-item firewall__04"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firewall-state-wrap col-group">
+                    <div class="firewall-state-group flex2 row-group">
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-state-item down">
+                                <p class="item-default">
+                                    Down
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item warning">
+                                <p class="item-default">
+                                    Warning
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item up">
+                                <p class="item-default">
+                                    Up
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item unusual">
+                                <p class="item-default">
+                                    Unusual
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart01"></canvas>
+                            </div>
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart02"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firewall-state-group flex1 col-group">
+                        <div class="firewall-amount-wrap">
+                            <div class="firewall-amount-list">
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Firewall
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Switch
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">5</p>
+                                    <p class="title">
+                                        PC
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">3</p>
+                                    <p class="title">
+                                        Notebook
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-devices-status-wrap">
+                            <p class="firewall-devices-status-title">
+                                Devices Status
+                            </p>
+                            <div class="firewall-devices-status-list">
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방화벽-3 -->
+    <div class="modal-container firewall" id="firewall03" style="display: none;">
+        <div class="modal-wrap">
+            <div class="modal-title">
+                Firewall No.3
+                <i class="xi-close close-btn"></i>
+            </div>
+
+            <div class="firewall-wrap">
+                <div class="firewall-title">
+                    Crew Zone
+                </div>
+                <div class="firewall-structure-wrap">
+                    <div class="structure-group group1 col-group">
+                        <div class="structure-item firewall__01"></div>
+                        <div class="structure-item firewall__02"></div>
+                        <div class="structure-group col-group">
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firewall-state-wrap col-group">
+                    <div class="firewall-state-group flex2 row-group">
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-state-item down">
+                                <p class="item-default">
+                                    Down
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item warning">
+                                <p class="item-default">
+                                    Warning
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item up">
+                                <p class="item-default">
+                                    Up
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item unusual">
+                                <p class="item-default">
+                                    Unusual
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart01"></canvas>
+                            </div>
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart02"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firewall-state-group flex1 col-group">
+                        <div class="firewall-amount-wrap">
+                            <div class="firewall-amount-list">
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Firewall
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Switch
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        VDR
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">7</p>
+                                    <p class="title">
+                                        OT
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-devices-status-wrap">
+                            <p class="firewall-devices-status-title">
+                                Devices Status
+                            </p>
+                            <div class="firewall-devices-status-list">
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방화벽-4 -->
+    <div class="modal-container firewall" id="firewall04" style="display: none;">
+        <div class="modal-wrap">
+            <div class="modal-title">
+                Firewall No.4
+                <i class="xi-close close-btn"></i>
+            </div>
+
+            <div class="firewall-wrap">
+                <div class="firewall-title">
+                    Maintenance Zone
+                </div>
+                <div class="firewall-structure-wrap">
+                    <div class="structure-group group1 col-group">
+                        <div class="structure-item firewall__01"></div>
+                        <div class="structure-item firewall__02"></div>
+                        <div class="structure-group col-group">
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                            <div class="structure-item firewall__05"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firewall-state-wrap col-group">
+                    <div class="firewall-state-group flex2 row-group">
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-state-item down">
+                                <p class="item-default">
+                                    Down
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item warning">
+                                <p class="item-default">
+                                    Warning
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item up">
+                                <p class="item-default">
+                                    Up
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item unusual">
+                                <p class="item-default">
+                                    Unusual
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart01"></canvas>
+                            </div>
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart02"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firewall-state-group flex1 col-group">
+                        <div class="firewall-amount-wrap">
+                            <div class="firewall-amount-list">
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Firewall
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Switch
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">2</p>
+                                    <p class="title">
+                                        VDR RMS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        ISS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">2</p>
+                                    <p class="title">
+                                        ICMS RMS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        M/E RMS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        OT
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-devices-status-wrap">
+                            <p class="firewall-devices-status-title">
+                                Devices Status
+                            </p>
+                            <div class="firewall-devices-status-list">
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방화벽-5 -->
+    <div class="modal-container firewall" id="firewall05" style="display: none;">
+        <div class="modal-wrap">
+            <div class="modal-title">
+                Firewall No.5
+                <i class="xi-close close-btn"></i>
+            </div>
+
+            <div class="firewall-wrap">
+                <div class="firewall-title">
+                    Control System Zone
+                </div>
+                <div class="firewall-structure-wrap">
+                    <div class="structure-group group1 col-group">
+                        <div class="structure-item firewall__01"></div>
+                        <div class="structure-group row-group just-group group-border-wrap flex-start">
+                            <span class="group-border"></span>
+                            <div class="structure-group col-group just-group flex-start">
+                                <div class="structure-group col-group">
+                                    <div class="structure-item firewall__02"></div>
+                                    <div class="structure-item firewall__05"></div>
+                                    <div class="structure-item firewall__05"></div>
+                                    <div class="structure-item firewall__05"></div>
+                                    <div class="structure-item firewall__05"></div>
+                                    <div class="structure-item firewall__05"></div>
+                                    <span class="inside-border position-right"></span>
+                                </div>
+                                <div class="structure-group row-group just-group group-border-wrap">
+                                    <span class="group-border half"></span>
+                                    <div class="structure-group col-group flex-end">
+                                        <span class="inside-border position-left"></span>
+                                        <div class="structure-item firewall__05">
+                                            <span class="diagonal-border position-left"></span>
+                                        </div>
+                                        <div class="structure-group row-group">
+                                            <div class="structure-group row-group">
+                                                <div class="structure-item firewall__06"></div>
+                                                <div class="structure-item firewall__07">
+                                                    <span class="diagonal-border position-right"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="structure-group col-group">
+                                        <div class="structure-item firewall__06"></div>
+                                        <div class="structure-item firewall__07"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="structure-group col-group">
+                                <div class="structure-item firewall__02"></div>
+                                <div class="structure-item firewall__05"></div>
+                                <div class="structure-item firewall__05"></div>
+                                <div class="structure-item firewall__05"></div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="firewall-state-wrap col-group">
+                    <div class="firewall-state-group flex2 row-group">
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-state-item down">
+                                <p class="item-default">
+                                    Down
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item warning">
+                                <p class="item-default">
+                                    Warning
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item up">
+                                <p class="item-default">
+                                    Up
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item unusual">
+                                <p class="item-default">
+                                    Unusual
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart01"></canvas>
+                            </div>
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart02"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firewall-state-group flex1 col-group">
+                        <div class="firewall-amount-wrap">
+                            <div class="firewall-amount-list">
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Firewall
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Switch
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">2</p>
+                                    <p class="title">
+                                        VDR RMS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        ISS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">2</p>
+                                    <p class="title">
+                                        ICMS RMS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        M/E RMS
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        OT
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-devices-status-wrap">
+                            <p class="firewall-devices-status-title">
+                                Devices Status
+                            </p>
+                            <div class="firewall-devices-status-list">
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방화벽-6 -->
+    <div class="modal-container firewall" id="firewall06" style="display: none;">
+        <div class="modal-wrap">
+            <div class="modal-title">
+                Firewall No.6
+                <i class="xi-close close-btn"></i>
+            </div>
+
+            <div class="firewall-wrap">
+                <div class="firewall-title">
+                    Control System Zone
+                </div>
+                <div class="firewall-structure-wrap">
+                    <div class="structure-group group1 col-group">
+                        <div class="structure-item firewall__01"></div>
+                        <div class="structure-item firewall__02"></div>
+                        <div class="structure-group just-group col-group none-bg flex-start">
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__08"></div>
+                                <div class="structure-item firewall__08"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__08"></div>
+                                <div class="structure-item firewall__08"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__08"></div>
+                                <div class="structure-item firewall__08"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__08"></div>
+                                <div class="structure-item firewall__08"></div>
+                            </div>
+                        </div>
+                        <div class="structure-group just-group col-group none-bg">
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__04"></div>
+                                <div class="structure-item firewall__04"></div>
+                            </div>
+                            <div class="structure-group row-group none-bg">
+                                <div class="structure-item firewall__04"></div>
+                                <div class="structure-item firewall__04"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firewall-state-wrap col-group">
+                    <div class="firewall-state-group flex2 row-group">
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-state-item down">
+                                <p class="item-default">
+                                    Down
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item warning">
+                                <p class="item-default">
+                                    Warning
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item up">
+                                <p class="item-default">
+                                    Up
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                            <div class="firewall-state-item unusual">
+                                <p class="item-default">
+                                    Unusual
+                                </p>
+                                <div class="item-user">
+                                    <i class="xi-check"></i>
+                                    <p class="num">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-state-group col-group">
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart01"></canvas>
+                            </div>
+                            <div class="firewall-chart-wrap">
+                                <canvas id="firewall_chart02"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firewall-state-group flex1 col-group">
+                        <div class="firewall-amount-wrap">
+                            <div class="firewall-amount-list">
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Firewall
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">1</p>
+                                    <p class="title">
+                                        Switch
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">4</p>
+                                    <p class="title">
+                                        Wifi
+                                    </p>
+                                </div>
+                                <div class="firewall-amount-item col-group">
+                                    <p class="num">7</p>
+                                    <p class="title">
+                                        LAPTOP
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="firewall-devices-status-wrap">
+                            <p class="firewall-devices-status-title">
+                                Devices Status
+                            </p>
+                            <div class="firewall-devices-status-list">
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Warning</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Up</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="firewall-devices-status-item">
+                                    <div class="state state-bar"></div>
+                                    <div class="txt-wrap row-group">
+                                        <div class="title-group col-group">
+                                            <div class="type">Down</div>
+                                            <p class="title">
+                                                <strong>214.120.150.415</strong>
+                                            </p>
+                                        </div>
+                                        <p class="date">
+                                            2023-12-20 17:53:10
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //방화벽 클릭시 나타나는 팝업 -->
     </div>
 </body>
 
@@ -1040,19 +2514,26 @@
     });
 
     //대시보드 확대축소버튼
-    $('.renew-btn').click(function(){
-        $('.device-img-wrap').removeClass('plus');
-        $('.device-img-wrap').removeClass('minus');
+    const scalingBox = $('.device-img-wrap');
+    let currentScale = 1.0;
+
+    $('.renew-btn').on('click', function () {
+        currentScale = 1.0;
+        scalingBox.css('transform', 'scale(' + currentScale + ')');
     });
-    $('.plus-btn').click(function(){
-        $('.device-img-wrap').removeClass('plus');
-        $('.device-img-wrap').removeClass('minus');
-        $('.device-img-wrap').addClass('plus');
+
+    $('.plus-btn').on('click', function () {
+        if (currentScale < 1.9) {
+            currentScale += 0.3;
+            scalingBox.css('transform', 'scale(' + currentScale + ')');
+        }
     });
-    $('.minus-btn').click(function(){
-        $('.device-img-wrap').removeClass('plus');
-        $('.device-img-wrap').removeClass('minus');
-        $('.device-img-wrap').addClass('minus');
+
+    $('.minus-btn').on('click', function () {
+        if (currentScale > 1.0) {
+            currentScale -= 0.3;
+            scalingBox.css('transform', 'scale(' + currentScale + ')');
+        }
     });
 
     let chart = null;
@@ -1310,6 +2791,137 @@
         // getHistories();
         // checkStatus();
     }, 10000);
+
+    //방화벽 클릭시 
+    $('.firewall-btn-01').click(function(){
+        $('#firewall01').fadeIn();
+    });
+    $('.firewall-btn-02').click(function(){
+        $('#firewall02').fadeIn();
+    });
+    $('.firewall-btn-03').click(function(){
+        $('#firewall03').fadeIn();
+    });
+    $('.firewall-btn-04').click(function(){
+        $('#firewall04').fadeIn();
+    });
+    $('.firewall-btn-05').click(function(){
+        $('#firewall05').fadeIn();
+    });
+    $('.firewall-btn-06').click(function(){
+        $('#firewall06').fadeIn();
+    });
+
+    //방화벽 차트 01
+    const firewallChart01 = document.getElementById('firewall_chart01');
+
+    new Chart(firewallChart01, {
+        type: "doughnut",
+        data: {
+            labels: ["Down", "Warning", "UP", "Unusual"],
+            datasets: [{
+                // label: "My First Dataset",
+                data: [50, 20, 20, 10],
+                backgroundColor: [
+                    "#707070",
+                    "#ff4620",
+                    "#359832",
+                    "#ef9900",
+                ],
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: function () {
+                            return {
+                                size: 12,
+                                family: 'Pretendard'
+                            }
+                        },
+                        boxWidth: 12,
+                    },
+                    position: 'top',
+                    fullWidth: false,
+                },
+            }
+        }
+    });
+
+    //방화벽 차트 02
+    const firewallChart02 = document.getElementById('firewall_chart02');
+
+    new Chart(firewallChart02, {
+        type: "bar",
+        data: {
+            labels: ['09/23', '10/23', '11/23', '12/23'],
+            datasets: [
+                {
+                    label: 'Down',
+                    data: [5, 2, 7, 2, 4],
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    backgroundColor: '#707070',
+                },
+                {
+                    label: 'Warning',
+                    data: [4, 3, 3, 3, 4],
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    backgroundColor: '#ff4620',
+                },
+                {
+                    label: 'Unusual',
+                    data: [5, 5, 3, 4, 5],
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    backgroundColor: '#ef9900',
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio:false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 20,
+                    ticks: {
+                        stepSize: 4,
+                        font: {
+                            size: 12,
+                            family: 'Pretendard'
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 12,
+                            family: 'Pretendard'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: function () {
+                            return {
+                                size: 12,
+                                family: 'Pretendard'
+                            }
+                        },
+                        boxWidth: 12,
+                    },
+                    position: 'top',
+                    fullWidth: false,
+                },
+            }
+        }
+    });
 
 </script>
 
