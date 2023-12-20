@@ -20,15 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get("/test", function(){
 
-    $today = Carbon::today();
+    $firewall = new \App\Models\Firewall();
 
-    $histories = DB::table('histories')
-        ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
-        ->join('devices', 'histories.device_id', '=', 'devices.id')
-        ->whereDate('histories.created_at', $today)
-        ->groupBy('histories.device_id', 'devices.title')
-        ->orderByDesc('total_byte')
-        ->get();
+    dd($firewall->getCnc());
 
 });
 

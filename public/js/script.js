@@ -15,6 +15,26 @@ $(document).ready(function(){
             };
 
         $(".header-menu-btn .text").text(user.ids);
+
+        function setTimer(){
+            var now = new Date();
+
+            var year = now.getUTCFullYear();
+            var month = ('0' + (now.getUTCMonth() + 1)).slice(-2);
+            var day = ('0' + now.getUTCDate()).slice(-2);
+            var hours = ('0' + now.getUTCHours()).slice(-2);
+            var minutes = ('0' + now.getUTCMinutes()).slice(-2);
+
+            var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes;
+
+            $(".utc-txt").text(formattedDate);
+
+        }
+
+        setTimer();
+        setInterval(function (){
+            setTimer();
+        }, 1000);
     });
 
     $('#footer').load('components/footer.html');

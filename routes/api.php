@@ -33,6 +33,7 @@ Route::post("/users/login", [\App\Http\Controllers\Api\UserController::class, "l
 Route::delete("/users", [\App\Http\Controllers\Api\UserController::class, "destroy"]);
 Route::resource("/users", \App\Http\Controllers\Api\UserController::class);
 
+Route::get("/firewalls/dashboard", [\App\Http\Controllers\Api\FirewallController::class, "dashboard"]);
 
 Route::middleware('auth')->group(function () {
 
