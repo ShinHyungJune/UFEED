@@ -283,14 +283,14 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-sample-wrap .device-img-wrap.minus { transform: scale(1); transform-origin:0 0; }
 .dashboard-sample-wrap .device {
     content:"";
-    width:52px; height:52px;
+    width:32px; height:32px;
     position: absolute;
     left:10%; top:10%;
     animation:flash .6s infinite;
     background-color:#359832; border-radius:100%;
 }
 .dashboard-sample-wrap .device.device-L3 {
-    width:65px; height:65px;
+    width:40px; height:40px;
 }
 .dashboard-sample-wrap .device.Warning {
     background-color:#f6b401;
