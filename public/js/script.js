@@ -7,12 +7,34 @@ $(document).ready(function(){
     $('#footer').load('components/footer.html');
 
     //대시보드 메뉴
-    $('#gnb').load('components/dashboard_gnb.html');
+    $('#gnb').load('components/dashboard_gnb.html', function (){
+        // 메뉴 제어
+        let pathname = location.pathname;
+
+        let gnbs = $(".gnb a");
+
+        gnbs.each((index, gnb) => {
+            console.log(pathname, $(gnb).attr("href"));
+            if(pathname.includes($(gnb).attr("href"))) {
+                $(gnb).addClass("active");
+                $(gnb).parents(".gnb-menu").addClass("active");
+                $(gnb).parents(".gnb-wrap").addClass("active");
+                $(gnb).parents(".sub-gnb-menu").addClass("active");
+            }
+        })
+    });
+
+
+
+    // 팝업창 제어
+    $(".m-script-pop").click(function (){
+        let target = $(this).attr("data-target");
+
+        $(target).toggle();
+    });
+
+
 })
 
 
-$(".m-script-pop").click(function (){
-    let target = $(this).attr("data-target");
 
-    $(target).toggle();
-})
