@@ -32,7 +32,7 @@
                                 STANDARD
                             </div>
                             <div class="dashboard-section-wrap col-group">
-                                <div class="dashboard-top-item green up row-group">
+                                <div class="dashboard-top-item green up row-group m-script-pop" data-target=".modal-devices-up">
                                     <div class="num">
                                         0
                                     </div>
@@ -40,7 +40,7 @@
                                         Devices UP
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item down row-group">
+                                <div class="dashboard-top-item down row-group m-script-pop" data-target=".modal-devices-down">
                                     <div class="num">
                                         0
                                     </div>
@@ -48,7 +48,7 @@
                                         Devices Down
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item red critical row-group">
+                                <div class="dashboard-top-item red critical row-group m-script-pop" data-target=".modal-devices-critical">
                                     <div class="num">
                                         0
                                     </div>
@@ -56,7 +56,7 @@
                                         Critical
                                     </div>
                                 </div>
-                                <div class="dashboard-top-item yellow warning row-group">
+                                <div class="dashboard-top-item yellow warning row-group m-script-pop" data-target=".modal-devices-warning">
                                     <div class="num">
                                         0
                                     </div>
@@ -100,6 +100,7 @@
                     </div>
                     <div class="dashboard-content">
 
+                        <!--
                         <div class="dashboard-state-wrap col-group">
                             <div class="dashboard-state-item col-group green">
                                 <i class="xi-check-circle icon"></i>
@@ -114,6 +115,7 @@
                                 1
                             </div>
                         </div>
+                        -->
                         <div class="legend-wrap">
                             <div class="legend-list row-group">
                                 <div class="legend-item col-group">
@@ -868,8 +870,150 @@
                 </div>
             </div>
         </div>
-        <!-- 대시보드 -->
 
+        <!-- Devices UP-->
+        <div class="modal-container modal-devices-up" style="display:none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-up"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap dashboard-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-up">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Devices DOWN-->
+        <div class="modal-container modal-devices-down" style="display:none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-down"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap dashboard-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-down">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Devices CRITICAL-->
+        <div class="modal-container modal-devices-critical" style="display:none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-critical"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap dashboard-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-critical">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Devices WARNING-->
+        <div class="modal-container modal-devices-warning" style="display:none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-warning"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap dashboard-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-warning">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -1023,16 +1167,27 @@
                 $(".device-img-wrap").find(".device").remove();
 
                 devices.map(device => {
-                    $(".device-img-wrap").append(`<div class="device ${device.status}" style="left:${device.left}%;top:${device.top}%"></div>`);
+                    $(".device-img-wrap").append(`<div class="device ${device.status} device-${device.title}" style="left:${device.left}%;top:${device.top}%"></div>`);
 
-                    if(device.status === "Up")
+                    if(device.status === "Up") {
                         counts.up += 1;
+                        $(".modal-devices-up tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
 
-                    if(device.status === "Down")
+                    if(device.status === "Down") {
                         counts.down += 1;
+                        $(".modal-devices-down tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
 
-                    if(device.status === "Warning")
+                    if(device.status === "Critical") {
                         counts.warning += 1;
+                        $(".modal-devices-critical tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
+
+                    if(device.status === "Warning") {
+                        counts.warning += 1;
+                        $(".modal-devices-warning tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
                 });
 
                 $(".dashboard-top-item.up").find(".num").text(counts.up);
@@ -1121,8 +1276,8 @@
     // test();
 
     setInterval(() => {
-        storeHistories();
-        getHistories();
+        // storeHistories();
+        // getHistories();
         // checkStatus();
     }, 10000);
 

@@ -9,3 +9,10 @@ $(document).ready(function(){
     //대시보드 메뉴
     $('#gnb').load('components/dashboard_gnb.html');
 })
+
+
+$(".m-script-pop").click(function (){
+    let target = $(this).attr("data-target");
+
+    $(target).toggle();
+})
