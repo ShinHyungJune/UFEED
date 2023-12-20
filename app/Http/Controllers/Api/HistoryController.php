@@ -76,12 +76,8 @@ class HistoryController extends ApiController
 
     public function getByte($device, $datetime)
     {
-        /*$history = $device->histories()
-            ->whereBetween('logged_at', [ Carbon::make($datetime)->subHours(3), Carbon::make($datetime)])
-            ->orderBy('byte', 'desc')
-            ->first();*/
         $history = $device->histories()
-            ->where('logged_at', $datetime)
+            ->whereBetween('logged_at', [ Carbon::make($datetime)->subHours(3), Carbon::make($datetime)])
             ->orderBy('byte', 'desc')
             ->first();
 
