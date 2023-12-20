@@ -37,11 +37,11 @@ class HistoryController extends ApiController
             $realTimeTraffics[] = [
                 "device" => $device,
                 "traffics" => [
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(25)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(20)),
                     $this->getByte($device, Carbon::make($pivotDate)->subHours(15)),
-                    $this->getByte($device, Carbon::make($pivotDate)->subHours(12)),
-                    $this->getByte($device, Carbon::make($pivotDate)->subHours(9)),
-                    $this->getByte($device, Carbon::make($pivotDate)->subHours(6)),
-                    $this->getByte($device, Carbon::make($pivotDate)->subHours(3)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(10)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subHours(5)),
                     $this->getByte($device, Carbon::make($pivotDate)->subHours(0)),
                 ]
             ];
@@ -76,8 +76,12 @@ class HistoryController extends ApiController
 
     public function getByte($device, $datetime)
     {
-        $history = $device->histories()
+        /*$history = $device->histories()
             ->whereBetween('logged_at', [ Carbon::make($datetime)->subHours(3), Carbon::make($datetime)])
+            ->orderBy('byte', 'desc')
+            ->first();*/
+        $history = $device->histories()
+            ->whereBetween('logged_at', $datetime)
             ->orderBy('byte', 'desc')
             ->first();
 
