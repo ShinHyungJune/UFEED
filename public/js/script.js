@@ -3,7 +3,20 @@
 
 $(document).ready(function(){
     //헤더 푸터 컴포넌트
-    $('#header').load('components/header.html');
+    $('#header').load('components/header.html', function (){
+        let user = localStorage.getItem("user");
+
+        if(user)
+            user = JSON.parse(user);
+
+        if(!user)
+            user = {
+                ids: "Admin"
+            };
+
+        $(".header-menu-btn .text").text(user.ids);
+    });
+
     $('#footer').load('components/footer.html');
 
     //대시보드 메뉴
@@ -14,7 +27,6 @@ $(document).ready(function(){
         let gnbs = $(".gnb a");
 
         gnbs.each((index, gnb) => {
-            console.log(pathname, $(gnb).attr("href"));
             if(pathname.includes($(gnb).attr("href"))) {
                 $(gnb).addClass("active");
                 $(gnb).parents(".gnb-menu").addClass("active");

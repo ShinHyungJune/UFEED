@@ -9,6 +9,8 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
 <body>
     <div id="wrap">
@@ -49,7 +51,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="dashboard-form-container">
                     <div class="dashboard-form-wrap">
                         <div class="dashboard-form-title">
@@ -59,13 +61,16 @@
                         <div class="modal-table-container">
                             <div class="modal-table-wrap dashboard-table-wrap">
                                 <table>
+                                    <colgroup>
+                                        <col style="width:30%">
+                                        <col>
+                                        <col>
+                                        <col style="width:10%;">
+                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th>
                                                 ID
-                                            </th>
-                                            <th>
-                                                User Name
                                             </th>
                                             <th>
                                                 Authority
@@ -77,94 +82,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                admin
-                                            </td>
-                                            <td>
-                                                홍길동
-                                            </td>
-                                            <td>
-                                                Level 1
-                                            </td>
-                                            <td>
-                                                111@hd.com
-                                            </td>
-                                            <td>
-                                                <label for="check_1" class="check-label">
-                                                    <input type="checkbox" class="check-input" id="check_1">
-                                                    <div class="check-item">
-                                                        <i class="xi-check"></i>
-                                                    </div>
-                                                </label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                admin
-                                            </td>
-                                            <td>
-                                                홍길동
-                                            </td>
-                                            <td>
-                                                Level 1
-                                            </td>
-                                            <td>
-                                                111@hd.com
-                                            </td>
-                                            <td>
-                                                <label for="check_2" class="check-label">
-                                                    <input type="checkbox" class="check-input" id="check_2">
-                                                    <div class="check-item">
-                                                        <i class="xi-check"></i>
-                                                    </div>
-                                                </label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                admin
-                                            </td>
-                                            <td>
-                                                홍길동
-                                            </td>
-                                            <td>
-                                                Level 1
-                                            </td>
-                                            <td>
-                                                111@hd.com
-                                            </td>
-                                            <td>
-                                                <label for="check_3" class="check-label">
-                                                    <input type="checkbox" class="check-input" id="check_3">
-                                                    <div class="check-item">
-                                                        <i class="xi-check"></i>
-                                                    </div>
-                                                </label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                admin
-                                            </td>
-                                            <td>
-                                                홍길동
-                                            </td>
-                                            <td>
-                                                Level 1
-                                            </td>
-                                            <td>
-                                                111@hd.com
-                                            </td>
-                                            <td>
-                                                <label for="check_4" class="check-label">
-                                                    <input type="checkbox" class="check-input" id="check_4">
-                                                    <div class="check-item">
-                                                        <i class="xi-check"></i>
-                                                    </div>
-                                                </label>
-                                            </td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -203,7 +121,7 @@
                 </div>
 
                 <div class="dashboard-form-btn-wrap col-group">
-                    <button class="dashboard-form-btn submit-btn">
+                    <button class="dashboard-form-btn submit-btn" onclick="remove()">
                         Delete
                     </button>
                     <button class="dashboard-form-btn cancel-btn">
@@ -222,13 +140,66 @@
 <script>
 
     //모달
-    $('.modal-container .close-btn').click(function () {
+    $('.modal-container .close-btn, .cancel-btn').click(function () {
         $(this).closest('.modal-container').fadeOut();
     });
 
     $('.del_btn').click(function () {
         $('.modal-alert').fadeIn();
     });
+
+
+    // let domain = "http://localhost:90";
+    let domain = "http://hi-secure.ufeed.co.kr";
+
+    function remove(){
+        let form = {
+            ids: []
+        };
+
+        let checkboxes = $(".check-input:checked");
+
+        checkboxes.each((index, item) => {
+            form.ids.push($(item).attr("value"));
+        });
+
+        axios.delete(domain + "/api/users", {
+            params: form
+        }).then(response => {
+                getItems();
+                alert("Processed Successfully");
+                $('.modal-container').fadeOut();
+            }).catch(error => {
+
+        })
+    }
+
+    function getItems(){
+        $(".modal-table-wrap tbody").html("");
+
+        axios.get(domain + "/api/users")
+            .then(response => {
+                response.data.data.map(item => {
+                    $(".modal-table-wrap tbody").append(`<tr>
+<td>${item.ids}</td>
+<td>${item.authority}</td>
+<td>${item.email}</td>
+<td>
+<label for="${item.id}" class="check-label">
+   <input type="checkbox" class="check-input" id="${item.id}" value="${item.id}">
+       <div class="check-item">
+           <i class="xi-check"></i>
+       </div>
+   </label>
+</td>
+</tr>`)
+                })
+            }).catch(error => {
+
+        })
+    }
+
+    getItems();
 
 </script>
 </html>

@@ -17,17 +17,10 @@ class UserResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "img" => $this->img ? $this->img : "",
             "name" => $this->name,
-            "contact" => $this->contact,
-            "order_name" => $this->order_name,
-            "order_contact" => $this->order_contact,
-            "agree_ad" => $this->agree_ad,
-            "point" => $this->point,
-
-            "owner" => $this->owner,
-            "bank" => $this->bank,
-            "account" => $this->account,
+            "email" => $this->email,
+            "authority" => $this->authority,
+            "ids" => $this->ids,
 
             "created_at" => Carbon::make($this->created_at)->format("Y-m-d H:i"),
             "updated_at" => Carbon::make($this->updated_at)->format("Y-m-d H:i")

@@ -18,26 +18,7 @@ class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia;
 
-    use SoftDeletes;
-
-    protected $fillable = [
-        'contact',
-        "point",
-        'name',
-        'password',
-        "verified_at",
-        "social_id",
-        "social_platform",
-        "accepted",
-        "agree_ad",
-        "order_name",
-        "order_contact",
-        "reason_leave_out",
-
-        "account",
-        "bank",
-        "owner"
-    ];
+    protected $guarded = ["id"];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -77,26 +58,6 @@ class User extends Authenticatable implements HasMedia
         }
 
         return null;
-    }
-
-    public function diets()
-    {
-        return $this->hasMany(Diet::class);
-    }
-
-    public function cart()
-    {
-        return $this->hasOne(Cart::class);
-    }
-
-    public function deliveries()
-    {
-        return $this->hasMany(Delivery::class);
-    }
-
-    public function coupons()
-    {
-        return $this->belongsToMany(Coupon::class)->withPivot(["used", "expired_at"]);
     }
 
     public function expiredCoupons()

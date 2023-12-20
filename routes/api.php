@@ -29,6 +29,10 @@ Route::get("/histories", [\App\Http\Controllers\Api\HistoryController::class, "i
 Route::post("/histories", [\App\Http\Controllers\Api\HistoryController::class, "store"]);
 Route::patch("/devices", [\App\Http\Controllers\Api\HistoryController::class, "update"]);
 
+Route::post("/users/login", [\App\Http\Controllers\Api\UserController::class, "login"]);
+Route::delete("/users", [\App\Http\Controllers\Api\UserController::class, "destroy"]);
+Route::resource("/users", \App\Http\Controllers\Api\UserController::class);
+
 
 Route::middleware('auth')->group(function () {
 
