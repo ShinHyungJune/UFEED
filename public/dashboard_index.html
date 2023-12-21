@@ -2426,13 +2426,13 @@
 
 
     // checkStatus();
-    storeHistories();
     getHistories();
     getDashboard();
+    storeHistories();
 
     setInterval(() => {
-        storeHistories();
         getHistories();
+        storeHistories();
         // checkStatus();
     }, 10000);
 
