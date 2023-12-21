@@ -2425,7 +2425,6 @@
 
 
 
-    // checkStatus();
     getHistories();
     getDashboard();
     storeHistories();
@@ -2433,7 +2432,7 @@
     setInterval(() => {
         getHistories();
         storeHistories();
-        // checkStatus();
+        getDashboard();
     }, 10000);
 
     //방화벽 클릭시
