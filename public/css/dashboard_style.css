@@ -853,7 +853,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .firewall-btn-06 { left: 67.41%; top: 42%; }
 
 .firewall .modal-wrap { max-width: 1280px; }
-.firewall-wrap { position: relative; padding: 24px; }
+.firewall-wrap { position: relative; padding: 24px; max-height: 80vh; overflow: auto; }
 .firewall-title { font-size: 24px; font-weight: bold; padding-bottom: 16px; border-bottom: 1px dashed #e4e4e4; margin-bottom: 16px;}
 .firewall-structure-wrap { background: #e4e4e4; padding: 24px 40px; border-radius: 14px; margin-bottom: 16px; }
 /* .firewall-structure-wrap > * { height: 320px; } */
