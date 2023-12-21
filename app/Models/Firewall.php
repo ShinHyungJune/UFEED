@@ -36,7 +36,7 @@ class Firewall extends Model
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
 
-        return json_decode($response->getBody(), true)["objects"];
+        return json_decode($response->getBody(), true)["objects"][0]["count"];
     }
 
     public function getCountIps()
