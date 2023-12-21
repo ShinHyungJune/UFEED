@@ -17,6 +17,7 @@ class FirewallController extends ApiController
             "count_ddos" => $firewall->getCountDdos(),
             "count_ips" => $firewall->getCountIps(),
             "traffics" => $firewall->getTopTraffices(),
+            "cncs" => $firewall->getCnc(),
         ];
 
         return $this->respondSuccessfully($result);

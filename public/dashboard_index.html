@@ -383,7 +383,7 @@
                                         Count
                                     </div>-->
                                 </div>
-                                <div class="dashboard-table-wrap">
+                                <div class="dashboard-table-wrap dashboard-table-cnc">
                                     <table>
                                         <colgroup>
                                             <col width="auto">
@@ -391,14 +391,13 @@
                                         </colgroup>
                                         <thead>
                                         <tr>
+                                            <th>Sip</th>
                                             <th>Dip</th>
                                             <th>Count</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td colspan="2" style="text-align:center;">There is no data.</td>
-                                            <tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -2412,6 +2411,15 @@
                 $(".num-ddos").text(counts.count_ddos);
                 $(".num-ips").text(counts.count_ips);
                 $(".num-malware").text(counts.count_malware);
+
+                $(".dashboard-table-cnc tbody").html("");
+
+                let cncs = response.data.data.cncs;
+
+                console.log(response.data.data);
+                cncs.map(cnc => {
+                    $(".dashboard-table-cnc tbody").append(`<tr><td>${cnc.sip}</td><td>${cnc.dip}</td><td>${cnc.count}</td><tr/>`);
+                })
             })
     }
 
