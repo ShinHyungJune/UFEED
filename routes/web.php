@@ -22,7 +22,7 @@ Route::get("/test", function(){
 
     $firewall = new \App\Models\Firewall();
 
-    dd($firewall->getCnc());
+    dd($firewall->getIps());
 
 });
 

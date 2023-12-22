@@ -227,7 +227,7 @@
                                         Count
                                     </div>-->
                                 </div>
-                                <div class="dashboard-table-wrap">
+                                <div class="dashboard-table-wrap ashboard-table-ips">
                                     <table>
                                         <colgroup>
                                             <col width="auto">
@@ -236,7 +236,7 @@
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    Attack Name
+                                                    Sip
                                                 </th>
                                                 <th>
                                                     Count
@@ -244,46 +244,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    C&C Communication detection
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Radio wave detection
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Ransomware detection
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Potential threat
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    E-mail threats
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -2416,10 +2377,17 @@
 
                 let cncs = response.data.data.cncs;
 
-                console.log(response.data.data);
                 cncs.map(cnc => {
                     $(".dashboard-table-cnc tbody").append(`<tr><td>${cnc.sip}</td><td>${cnc.dip}</td><td>${cnc.count}</td><tr/>`);
-                })
+                });
+
+                let ipses = response.data.data.ipses;
+
+                console.log(ipses);
+
+                ipses.map(ips => {
+                    $(".dashboard-table-ips tbody").append(`<tr><td>${ips.sip}</td><td>${ips.count}</td><tr/>`);
+                });
             })
     }
 

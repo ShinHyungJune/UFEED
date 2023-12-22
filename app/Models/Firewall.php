@@ -95,20 +95,18 @@ class Firewall extends Model
 
     public function getIps()
     {
-        $start = Carbon::now()->subMinutes(1)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $attackName = "email";
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria={$attackName}&query=module:tgIps");
+        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgIps");
 
-        return json_decode($response->getBody(), true);
+        return json_decode($response->getBody(), true)["objects"][0]["results"][0];
     }
 
-    public function getAvs()
+    public function getAntiMalware($device = "FW_1")
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $device = "FW_1";
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=filename,sip&query=devicename:{$device} and module:malwareblock");
 
