@@ -227,7 +227,7 @@
                                         Count
                                     </div>-->
                                 </div>
-                                <div class="dashboard-table-wrap ashboard-table-ips">
+                                <div class="dashboard-table-wrap dashboard-table-ips">
                                     <table>
                                         <colgroup>
                                             <col width="auto">
@@ -2386,7 +2386,7 @@
                 console.log(ipses);
 
                 ipses.map(ips => {
-                    $(".dashboard-table-ips tbody").append(`<tr><td>${ips.sip}</td><td>${ips.count}</td><tr/>`);
+                    $(".dashboard-table-ips tbody").append(`<tr><td>${ips.key}</td><td>${ips.count}</td><tr/>`);
                 });
             })
     }
