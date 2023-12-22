@@ -169,12 +169,8 @@
                         </div>
                     </div>
                     <div class="dashboard-btm">
-                        <div class="dashboard-section-tab-wrap">
-                            <div class="dashboard-section-tab-list col-group">
-                                <div class="dashboard-section-tab active">
-                                    Security Monitoring
-                                </div>
-                            </div>
+                        <div class="dashboard-section-title">
+                            Security Monitoring
                         </div>
 
                         <div class="dashboard-section-wrap col-group">
@@ -196,11 +192,11 @@
                                 <div class="dashboard-table-wrap dashboard-table-traffic">
                                     <table>
                                         <colgroup>
-                                            <col width="auto">
-                                            <col width="80px">
+                                            <col width="12px">
                                         </colgroup>
                                         <thead>
                                             <tr>
+                                                <th></th>
                                                 <th>
                                                     IP
                                                 </th>
@@ -230,11 +226,11 @@
                                 <div class="dashboard-table-wrap dashboard-table-ips">
                                     <table>
                                         <colgroup>
-                                            <col width="auto">
-                                            <col width="80px">
+                                            <col width="12px">
                                         </colgroup>
                                         <thead>
                                             <tr>
+                                                <th></th>
                                                 <th>
                                                     Sip
                                                 </th>
@@ -407,17 +403,20 @@
                         <div class="dashboard-section-title">
                             Traffic Top 10
                         </div>
-                        <div class="dashboard-table-wrap">
+                        <div class="dashboard-table-wrap traffic-top-table-wrap">
                             <table class="traffic-top-table">
+                                <colgroup>
+                                    <col width="12px">
+                                </colgroup>
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>Device</th>
                                         <th>Bandwidth</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -429,8 +428,7 @@
                         <div class="dashboard-table-wrap">
                             <table>
                                 <colgroup>
-                                    <col width="40px">
-                                    <col width="140px">
+                                    <col width="12px">
                                 </colgroup>
                                 <thead>
                                 <tr>
@@ -2303,6 +2301,7 @@
 
                     let html = `<tr>
 
+    <td><div class="state state-bar"></div></td>
     <td>${rankingTraffic.title}</td>
     <td>${rankingTraffic.byte}</td>
 </tr>`;
@@ -2316,7 +2315,7 @@
                     $(".dashboard-real-time tbody").html("");
                     realTimeNotifications.map(item => {
                         $(".dashboard-real-time tbody").append(`<tr>
-<td></td>
+<td><div class="state state-bar ${item.status}"></div></td>
 <td>${item.device.title}</td>
 <td>${item.status}</td>
 <td>${item.message}</td>
@@ -2364,7 +2363,13 @@
 
                 $(".dashboard-table-traffic tbody").html("");
                 traffics.map(traffic => {
-                    $(".dashboard-table-traffic tbody").append(`<tr><td>${traffic.key}</td><td>${traffic.avg} KB</td><tr/>`);
+                    $(".dashboard-table-traffic tbody").append(`
+                        <tr>
+                            <td><div class="state state-bar"></div></td>
+                            <td>${traffic.key}</td>
+                            <td>${traffic.avg} KB</td>
+                        <tr/>
+                    `);
                 });
 
                 let counts = response.data.data;
@@ -2386,7 +2391,13 @@
                 console.log(ipses);
 
                 ipses.map(ips => {
-                    $(".dashboard-table-ips tbody").append(`<tr><td>${ips.key}</td><td>${ips.count}</td><tr/>`);
+                    $(".dashboard-table-ips tbody").append(`
+                        <tr>
+                            <td><div class="state state-bar"></div></td>
+                            <td>${ips.key}</td>
+                            <td>${ips.count}</td>
+                        <tr/>
+                    `);
                 });
             })
     }
