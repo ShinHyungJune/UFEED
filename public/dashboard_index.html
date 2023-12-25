@@ -2306,7 +2306,7 @@
 
     <td><div class="state state-bar"></div></td>
     <td>${rankingTraffic.title}</td>
-    <td>${rankingTraffic.byte}</td>
+    <td>${parseInt(rankingTraffic.byte) / 1024} KB</td>
 </tr>`;
 
                     $(".traffic-top-table tbody").append(html);
