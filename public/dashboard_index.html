@@ -2405,10 +2405,13 @@
     storeHistories();
 
     setInterval(() => {
-        getHistories();
         storeHistories();
-        getDashboard();
     }, 10000);
+
+    setInterval(() => {
+        getHistories();
+        getDashboard();
+    }, 600000);
 
     //방화벽 클릭시
     $('.firewall-btn-01').click(function(){
