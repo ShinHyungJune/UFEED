@@ -1307,7 +1307,7 @@
 </script>
 <script>
     function getAllows(){
-        axios.get("/api/nac/allows")
+        axios.get(window.domain + "/api/nac/allows")
             .then(response => {
                 closeLoading();
                 let result = response.data.data;
@@ -1335,7 +1335,7 @@
 
                     openLoading();
 
-                    axios.post("/api/nac/blocks", {
+                    axios.post(window.domain + "/api/nac/blocks", {
                         ip: ip
                     }).then(response => {
                         getAllows();
@@ -1347,7 +1347,7 @@
     }
 
     function getBlocks(){
-        axios.get("/api/nac/blocks")
+        axios.get(window.domain + "/api/nac/blocks")
             .then(response => {
                 closeLoading();
                 let result = response.data.data;
@@ -1375,7 +1375,7 @@
 
                     openLoading();
 
-                    axios.post("/api/nac/allows", {
+                    axios.post(window.domain + "/api/nac/allows", {
                         ip: ip
                     }).then(response => {
                         getAllows();

@@ -416,7 +416,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+
                                 </tbody>
                             </table>
                         </div>
@@ -2073,8 +2073,6 @@
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
-    // let domain = "http://localhost:90";
-    let domain = "http://hi-secure.ufeed.co.kr";
 
     // 탭
     const tabs = document.querySelectorAll('.dashboard-section-tab');
@@ -2232,13 +2230,13 @@
     }
 
     function storeHistories(){
-        axios.post(domain + "/api/histories");
+        axios.post(window.domain + "/api/histories");
     }
 
     let first = true;
 
     function getHistories(){
-        axios.get(domain + "/api/histories")
+        axios.get(window.domain + "/api/histories")
             .then(response => {
                 let devices = response.data.data.devices;
                 let realTimeNotifications = response.data.data.realTimeNotifications;
@@ -2357,7 +2355,7 @@
 
     function getDashboard(){
 
-        axios.get(domain + "/api/firewalls/dashboard")
+        axios.get(window.domain + "/api/firewalls/dashboard")
             .then(response => {
                 let traffics = response.data.data.traffics;
 
@@ -2387,8 +2385,6 @@
                 });
 
                 let ipses = response.data.data.ipses;
-
-                console.log(ipses);
 
                 ipses.map(ips => {
                     $(".dashboard-table-ips tbody").append(`

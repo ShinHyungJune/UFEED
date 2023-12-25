@@ -1,5 +1,5 @@
-// window.domain = "118.130.110.156";
-// window.domain = "121.189.254.119";
+// window.domain = "http://localhost:90";
+let domain = "http://hi-secure.ufeed.co.kr";
 function openLoading(){
     $("html").append('<span class="loader"></span>')
 }

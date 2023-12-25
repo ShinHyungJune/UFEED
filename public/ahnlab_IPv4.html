@@ -9,6 +9,7 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <body>
     <div id="wrap">
@@ -47,23 +48,24 @@
 
                 <div class="detail-table-container">
                     <div class="detail-table-edit-btn-wrap col-group">
-                        <a href="ahnlab_IPv4_create.html" class="detail-table-edit-btn">
-                            <i class="xi-plus blue"></i>
+                        <!--
+                        <a href="ahnlab_IPv4_create.html" class="blue">
+                            Add <i class="xi-plus blue"></i>
                         </a>
                         <button class="detail-table-edit-btn">
                             <i class="xi-pen"></i>
-                        </button>
-                        <button class="detail-table-edit-btn">
+                        </button>-->
+<!--                        <button class="detail-table-edit-btn">
                             <i class="xi-close red"></i>
-                        </button>
+                        </button>-->
                     </div>
                     <div class="detail-table-search-wrap col-group">
-                        <form action="">
+<!--                        <form action="">
                             <input type="text" class="detail-table-search-input">
                         </form>
                         <button type="submit" class="detail-table-btn">
                             Search
-                        </button>
+                        </button>-->
                     </div>
 
                     <div class="detail-table-wrap">
@@ -72,306 +74,49 @@
                                 <col width="36px">
                             </colgroup>
                             <thead>
-                                <th>
+<!--                                <th>
                                     <label for="check_all" class="check-label">
                                         <input type="checkbox" class="check-input" id="check_all">
                                         <div class="check-item">
                                             <i class="xi-check"></i>
                                         </div>
                                     </label>
+                                </th>-->
+                                <th>
+                                    NAME
                                 </th>
                                 <th>
-                                    Use/Unuse
+                                    TYPE
                                 </th>
                                 <th>
-                                    No.
+                                    IP
                                 </th>
                                 <th>
-                                    Policy
+                                    PREFIX_NET
                                 </th>
                                 <th>
-                                    Two-way policy
+                                    INTERFACE
                                 </th>
                                 <th>
-                                    VLAN ID
+                                    DESCRIPTION
                                 </th>
                                 <th>
-                                    Source IP
+                                    REFERENCE_COUNT
                                 </th>
                                 <th>
-                                    Destination IP
+                                    ZONE
                                 </th>
                                 <th>
-                                    Service
+                                    VID
                                 </th>
                                 <th>
-                                    Allow/Deny
+                                    APPLY_FLAG
                                 </th>
                                 <th>
-                                    Schedule
+
                                 </th>
                             </thead>
-                            <tbody>
-<!--                                <tr>
-                                    <td colspan="100">
-                                        <p class="null-txt">
-                                            none
-                                        </p>
-                                    </td>
-                                </tr>-->
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        Use
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        ALL
-                                    </td>
-                                    <td>
-                                        <span class="red">Deny</span>
-                                    </td>
-                                    <td>
-                                        always
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
@@ -386,6 +131,43 @@
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
-    // axios.get("http://")
+    function getIps(){
+        axios.get(window.domain + "/api/ips")
+            .then(response => {
+                let items = response.data.data;
+
+                items.map(item => {
+                    $(".detail-table-wrap tbody").append(`<tr>
+<td>${item.name}</td>
+<td>${item.type}</td>
+<td>${item.ip4_address}</td>
+<td>${item.ip4_prefix_net}</td>
+<td>${item.interface}</td>
+<td>${item.description}</td>
+<td>${item.reference_count}</td>
+<td>${item.zone}</td>
+<td>${item.vid}</td>
+<td>${item.apply_flag}</td>
+<td><button class="m-btn type01 red" data-value="${item.name}">REMOVE</button></td>
+</tr>`)
+                });
+
+                $(".detail-table-wrap tbody .m-btn").unbind("click").bind("click", function (){
+                    let name = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.delete(window.domain + "/api/ips", {
+                        params: {
+                            name: name
+                        }
+                    }).then(response => {
+                        getIps();
+                    });
+                });
+            });
+    }
+
+    // getIps();
 </script>
 </html>
