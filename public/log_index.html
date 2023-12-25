@@ -121,7 +121,7 @@
     function getHistories(){
         axios.get(window.domain + "/api/histories", {
             params: {
-                take: 300
+                take: 200
             }
         }).then(response => {
                 let realTimeNotifications = response.data.data.realTimeNotifications;
