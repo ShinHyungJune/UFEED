@@ -23,7 +23,7 @@ Route::get("/test", function(){
 
     $firewall = new \App\Models\Firewall();
 
-    dd($firewall->getCountMalware());
+    dd($firewall->getCnc());
 
 });
 
