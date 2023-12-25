@@ -119,7 +119,6 @@ class Firewall extends Model
         // $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgCnc and devicename={$device}}");
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,dip&query=module:tgCnc");
 
-        dd(json_decode($response->getBody(), true));
         $items = json_decode($response->getBody(), true)["objects"][0]["results"][0];
 
         foreach ($items as &$item) {
