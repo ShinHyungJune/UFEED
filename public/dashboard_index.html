@@ -2360,7 +2360,7 @@
 
     function getDashboard(){
 
-        axios.get(window.domain + "/api/firewalls/dashboard")
+        axios.get( "/api/firewalls/dashboard")
             .then(response => {
                 let traffics = response.data.data.traffics;
 

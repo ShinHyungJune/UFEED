@@ -1,5 +1,5 @@
 // window.domain = "http://localhost:90";
-window.domain = "http://hi-secure.ufeed.co.kr";
+window.domain = "http://hi-secure.ufeed.co.kr:90";
 function openLoading(){
     $("html").append('<span class="loader"></span>')
 }
