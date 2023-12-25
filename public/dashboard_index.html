@@ -2093,6 +2093,7 @@
     //대시보드 확대축소버튼
     const scalingBox = $('.device-img-wrap');
     let currentScale = 1.5;
+    let minScale = 1.5;
 
     $('.renew-btn').on('click', function () {
         currentScale = 1.0;
@@ -2100,7 +2101,6 @@
     });
 
     $('.plus-btn').on('click', function () {
-        console.log(currentScale);
         if (currentScale < 1.9) {
             currentScale += 0.3;
             scalingBox.css('transform', 'scale(' + currentScale + ')');
@@ -2110,6 +2110,10 @@
     $('.minus-btn').on('click', function () {
         if (currentScale > 1.0) {
             currentScale -= 0.3;
+
+            if(currentScale < minScale)
+                currentScale = minScale;
+
             scalingBox.css('transform', 'scale(' + currentScale + ')');
         }
     });
