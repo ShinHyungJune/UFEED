@@ -113,11 +113,11 @@ class Firewall extends Model
 
     public function getCnc()
     {
-        $start = Carbon::now()->subHours(6)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         // $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgCnc and devicename={$device}}");
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate=2023-12-08T00:00:00&endDate=2023-12-21T23:59:59&criteria=sip,dip&query=module:tgCnc");
+        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,dip&query=module:tgCnc");
 
         $items = json_decode($response->getBody(), true)["objects"][0]["results"][0];
 

@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get("/test", function(){
 
 
-    $firewallApi = new \App\Models\FirewallApi();
+    $firewall = new \App\Models\Firewall();
 
-    dd($firewallApi->ips());
+    dd($firewall->getCountMalware());
 
 });
 
