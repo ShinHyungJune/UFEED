@@ -134,7 +134,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 <script>
     function getNats(){
-        axios.get(window.domain + "/api/nats")
+        axios.get("/api/nats")
             .then(response => {
                 let items = response.data.data;
 
