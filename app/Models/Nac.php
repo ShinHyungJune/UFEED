@@ -27,7 +27,7 @@ class Nac extends Model
             "verify" => false
         ]);
 
-        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=20&ipEqual=false&macEqual=false&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = $this->client->request('get', "http://10.0.1.109/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=20&ipEqual=false&macEqual=false&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
 
         return json_decode($response->getBody()->getContents());
     }
