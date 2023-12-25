@@ -16,6 +16,8 @@ class HistoryController extends ApiController
 {
     public function index(Request $request)
     {
+        $request["take"] = $request->take ?? 30;
+
         $devices = Device::get();
 
         $realTimeTraffics = [];
@@ -47,7 +49,7 @@ class HistoryController extends ApiController
             ];
         }
 
-        $realTimeNotifications = History::latest()->with("device")->take(30)->get();
+        $realTimeNotifications = History::latest()->with("device")->take($request->take)->get();
 
         $today = Carbon::today();
 
