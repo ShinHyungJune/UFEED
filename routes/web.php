@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\KakaoTemplate;
+use App\Models\FirewallApi;
 use App\Models\Kakao;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
@@ -21,10 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get("/test", function(){
 
 
-    $firewall = new \App\Models\Firewall();
+    $firewallApi = new FirewallApi();
 
-    dd($firewall->getCnc());
+    $items = $firewallApi->natsIndex();
 
+    dd($items);
 });
 
 Route::get("/histories", function (){

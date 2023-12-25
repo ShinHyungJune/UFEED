@@ -9,6 +9,7 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <body>
     <div id="wrap">
@@ -46,7 +47,7 @@
                 </div>
 
                 <div class="detail-table-container">
-                    <div class="detail-table-edit-btn-wrap col-group">
+<!--                    <div class="detail-table-edit-btn-wrap col-group">
                         <button class="detail-table-edit-btn">
                             <i class="xi-plus blue"></i>
                         </button>
@@ -64,7 +65,7 @@
                         <button type="submit" class="detail-table-btn">
                             Search
                         </button>
-                    </div>
+                    </div>-->
 
                     <div class="detail-table-wrap">
                         <table class="report-table">
@@ -72,358 +73,52 @@
                                 <col width="36px">
                             </colgroup>
                             <thead>
+                            <tr>
+                                <!--                                <th>
+                                                                <label for="check_all" class="check-label">
+                                                                    <input type="checkbox" class="check-input" id="check_all">
+                                                                    <div class="check-item">
+                                                                        <i class="xi-check"></i>
+                                                                    </div>
+                                                                </label>
+                                                            </th>-->
                                 <th>
-                                    <label for="check_all" class="check-label">
-                                        <input type="checkbox" class="check-input" id="check_all">
-                                        <div class="check-item">
-                                            <i class="xi-check"></i>
-                                        </div>
-                                    </label>
+                                    Priority
                                 </th>
                                 <th>
-                                    Use/Unuse
+                                    After Dip
                                 </th>
                                 <th>
-                                    No.
+                                    After Dip Object
                                 </th>
                                 <th>
-                                    NAT ID
+                                    After Service Object
                                 </th>
                                 <th>
-                                    NAT Type
+                                    After Sip
                                 </th>
                                 <th>
-                                    <i class="xi-arrows-h blue"></i>
+                                    After Sip Object
+                                </th>
+
+                                <th>
+                                    Before Dip
                                 </th>
                                 <th>
-                                    Origin before Conversion
+                                    Before Dip Object
                                 </th>
                                 <th>
-                                    Sending Interface
+                                    Before Sip
                                 </th>
                                 <th>
-                                    Departure after Conversion
+                                    Before Sip Object
                                 </th>
                                 <th>
-                                    Destination before conversion
+
                                 </th>
-                                <th>
-                                    Receiving Interface
-                                </th>
+                            </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-<!--                                    <tr>
-                                        <td colspan="100">
-                                            <p class="null-txt">
-                                                null
-                                            </p>
-                                        </td>
-                                    </tr>-->
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="check_1" class="check-label">
-                                            <input type="checkbox" class="check-input" id="check_1">
-                                            <div class="check-item">
-                                                <i class="xi-check"></i>
-                                            </div>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <span class="blue">Use</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">0</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">3</span>
-                                    </td>
-                                    <td>
-                                        Dynamic NAT
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <span class="blue">NMS_Svr</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth8</span>
-                                    </td>
-                                    <td>
-                                        <span class="blue">192.168.155.180</span>
-                                    </td>
-                                    <td>
-                                        No Conversion
-                                    </td>
-                                    <td>
-                                        <span class="blue">eth4</span>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
@@ -437,5 +132,46 @@
 <script src="/js/jquery.js"></script>
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+    function getNats(){
+        axios.get(window.domain + "/api/nats")
+            .then(response => {
+                let items = response.data.data;
 
+                $(".detail-table-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".detail-table-wrap tbody").append(`<tr>
+<td>${item.priority}</td>
+<td>${item.after_destination_ip4_address}</td>
+<td>${item.after_destination_ip4_object}</td>
+<td>${item.after_sevice_object}</td>
+<td>${item.after_source_ip4_address}</td>
+<td>${item.after_source_ip4_object}</td>
+<td>${item.before_destination_ip4_address}</td>
+<td>${item.before_destination_ip4_object}</td>
+<td>${item.before_source_ip4_address}</td>
+<td>${item.before_source_ip4_object}</td>
+<td><button class="m-btn type01 red" data-value="${item.priority}">REMOVE</button></td>
+</tr>`)
+                });
+
+                $(".detail-table-wrap tbody .m-btn").unbind("click").bind("click", function (){
+                    let index = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.delete(window.domain + "/api/nats", {
+                        params: {
+                            index: index
+                        }
+                    }).then(response => {
+                        getNats();
+                    });
+                });
+            });
+    }
+
+    getNats();
+</script>
 </html>
