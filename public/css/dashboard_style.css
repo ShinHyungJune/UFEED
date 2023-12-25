@@ -306,10 +306,10 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
     display: inline-block;
     height:306px; width:auto; margin:0 auto;
     position: relative;
-    transform: scale(1.3);
+    transform: scale(1.5);
 
 }
-.dashboard-sample-wrap .device-img-wrap.plus { transform: scale(1.5); transform-origin:0 0; }
+.dashboard-sample-wrap .device-img-wrap.plus { transform: scale(2); transform-origin:0 0; }
 .dashboard-sample-wrap .device-img-wrap.minus { transform: scale(1); transform-origin:0 0; }
 .dashboard-sample-wrap .device {
     content:"";
@@ -321,6 +321,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 }
 .dashboard-sample-wrap .device.device-OT {
     width:21px; height:21px;
+    z-index: 2;
 }
 .dashboard-sample-wrap .device.device-L3 {
     width:40px; height:40px;
