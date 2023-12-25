@@ -55,6 +55,7 @@ $(document).ready(function(){
 
         let gnbs = $(".gnb a");
 
+
         gnbs.each((index, gnb) => {
             if(!$(gnb).attr("href").includes("prepare") && pathname.includes($(gnb).attr("href"))) {
                 $(gnb).addClass("active");

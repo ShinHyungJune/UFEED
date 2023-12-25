@@ -20,7 +20,7 @@ class History extends Model
 
     public static function record()
     {
-        \App\Models\History::where("created_at", "<=", \Carbon\Carbon::now()->subDays(2))->delete();
+        \App\Models\History::where("created_at", "<=", \Carbon\Carbon::now()->subYears(1))->delete();
 
         $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
             "page" => 1,
