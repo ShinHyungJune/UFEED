@@ -20,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get("/test", function(){
 
-    $firewall = new \App\Models\Firewall();
 
-    dd($firewall->getIps());
+    $firewallApi = new \App\Models\FirewallApi();
+
+    dd($firewallApi->ips());
 
 });
 

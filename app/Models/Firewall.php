@@ -13,8 +13,6 @@ class Firewall extends Model
 
     protected $client;
 
-
-
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -98,7 +96,7 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgIps");
+        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,attackname&query=module:tgIps");
 
         return json_decode($response->getBody(), true)["objects"][0]["results"][0];
     }

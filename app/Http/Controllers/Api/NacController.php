@@ -3,12 +3,54 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Nac;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class NacController extends ApiController
 {
+    protected $nac;
+
+    public function __construct()
+    {
+        $this->nac = new Nac();
+    }
+
+    public function allows(Request $request)
+    {
+        $body = $this->nac->allows();
+
+        return $this->respondSuccessfully($body);
+    }
+
+    public function blocks(Request $request)
+    {
+        $body = $this->nac->blocks();
+
+        return $this->respondSuccessfully($body);
+    }
+
+    public function storeBlock(Request $request)
+    {
+        $request->validate(["ip" => "required|string|max:500"]);
+
+        $this->nac->storeBlock($request->ip);
+
+        return $this->respondSuccessfully();
+    }
+
+
+
+    public function storeAllow(Request $request)
+    {
+        $request->validate(["ip" => "required|string|max:500"]);
+
+        $this->nac->storeAllow($request->ip);
+
+        return $this->respondSuccessfully();
+    }
+
     public function nodes(Request $request)
     {
         $client = new Client([

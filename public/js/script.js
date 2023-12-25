@@ -1,7 +1,16 @@
 // window.domain = "118.130.110.156";
 // window.domain = "121.189.254.119";
+function openLoading(){
+    $("html").append('<span class="loader"></span>')
+}
+
+function closeLoading(){
+    $(".loader").remove();
+}
 
 $(document).ready(function(){
+
+
     //헤더 푸터 컴포넌트
     $('#header').load('components/header.html', function (){
         let user = localStorage.getItem("user");
