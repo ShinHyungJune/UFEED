@@ -1,3 +1,4 @@
+
 // window.domain = "http://localhost:90";
 window.domain = "http://hi-secure.ufeed.co.kr";
 function openLoading(){
