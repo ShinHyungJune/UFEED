@@ -147,7 +147,7 @@
             apiKey:"ff65c85b-2eaf-4da0-abfa-40c1875ae98f"
         }
     }).then(response => {
-        response.data.data.result.map(item => {
+        response.data.data.result.map((item,index) => {
             if(index === 0)
                 for(const key in item){
                     $(".m-table.type01 thead tr").append(`<th>${key}</th>`)
