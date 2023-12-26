@@ -12,6 +12,7 @@ class Nac extends Model
     use HasFactory;
 
     protected $client;
+    protected $domain = "https://nac.iscope.kr:8443/mc2/rest";
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -19,6 +20,7 @@ class Nac extends Model
         $this->client = new Client([
             "verify" => false
         ]);
+
     }
 
     public function blocks()
@@ -27,14 +29,14 @@ class Nac extends Model
             "verify" => false
         ]);
 
-        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=20&ipEqual=false&macEqual=false&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=20&ipEqual=false&macEqual=false&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         return json_decode($response->getBody()->getContents());
     }
 
     public function storeBlock($ip)
     {
-        $response = $this->client->request('put', "https://nac.iscope.kr:8443/mc2/rest/ip/policies?&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751",[
+        $response = $this->client->request('put', "https://nac.iscope.kr:8443/mc2/rest/ip/policies?&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f",[
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -54,7 +56,7 @@ class Nac extends Model
 
     public function storeAllow($ip)
     {
-        $response = $this->client->request('put', "https://nac.iscope.kr:8443/mc2/rest/ip/policies?&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751",[
+        $response = $this->client->request('put', "https://nac.iscope.kr:8443/mc2/rest/ip/policies?&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f",[
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -74,7 +76,7 @@ class Nac extends Model
 
     public function allows()
     {
-        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=65500&ipEqual=false&macEqual=false&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=65500&ipEqual=false&macEqual=false&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         return json_decode($response->getBody()->getContents());
     }
