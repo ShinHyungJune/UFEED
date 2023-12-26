@@ -22,7 +22,7 @@ class FirewallApi extends Model
         parent::__construct($attributes);
 
         if(config("app.env") == "production")
-            $this->domain = "10.0.1.254:50015";
+            $this->domain = "https://10.0.1.254:50015";
 
         $this->client = new Client([
             "verify" => false,
