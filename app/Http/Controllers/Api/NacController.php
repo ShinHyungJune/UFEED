@@ -57,7 +57,7 @@ class NacController extends ApiController
             "verify" => false
         ]);
 
-        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         $body = $response->json();
 
@@ -70,7 +70,7 @@ class NacController extends ApiController
             "verify" => false
         ]);
 
-        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&ipEqual=false&ip=192.168.0.31&macEqual=false&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&ipEqual=false&ip=192.168.0.31&macEqual=false&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         $body = $response->json();
 
@@ -83,7 +83,7 @@ class NacController extends ApiController
             "verify" => false
         ]);
 
-        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/aps?page=1&pageSize=30&dupDetect=false&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/aps?page=1&pageSize=30&dupDetect=false&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         $body = $response->json();
 
@@ -96,7 +96,7 @@ class NacController extends ApiController
             "verify" => false
         ]);
 
-        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/logs?page=1&pageSize=30&logschema=auditlog&periodType=custom&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/logs?page=1&pageSize=30&logschema=auditlog&periodType=custom&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         $body = $response->json();
 
@@ -109,7 +109,7 @@ class NacController extends ApiController
             "verify" => false
         ]);
 
-        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/systems/e2c16ea8-a292-103c-8001-0cc47a736510/cpu&apiKey=f9c61147-737e-4b8d-8210-0fc7b2c19751");
+        $response = Http::withoutVerifying()->get("https://nac.iscope.kr:8443/mc2/rest/systems/e2c16ea8-a292-103c-8001-0cc47a736510/cpu&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
 
         $body = $response->json();
 
