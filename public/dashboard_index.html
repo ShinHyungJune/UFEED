@@ -2550,7 +2550,7 @@
 
                 if(firstSwiper && items.length === 0) {
                     $(".m-swiper.type01").hide();
-                    $(".m-swiper.type01 .swiper-wrapper").html();
+
                     firstSwiper = false;
                 }
 
@@ -2584,6 +2584,7 @@
                     });
 
                     $(".m-swiper.type01 .btn-close").unbind("click").bind("click", function(){
+                        $(".m-swiper.type01 .swiper-wrapper").html();
                         $(".m-swiper").hide();
                     });
 
