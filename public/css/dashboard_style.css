@@ -989,3 +989,55 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
         transform: rotate(360deg);
     }
 }
+
+.m-swiper.type01 {
+    width:360px;
+    position:fixed; bottom:20px; right:20px;
+    background-color:#fff; border:1px solid #ccc;
+    box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-size:17px; color:black;
+}
+.m-swiper.type01 .swiper-slide .m-swiper-title {
+    display: flex; align-items: center; justify-content: space-between;
+    padding:8px 12px;
+    background-color:#54565C; color:#fff;
+}
+.m-swiper.type01 .btns {
+    display: flex; align-items: center; justify-content: space-between;
+    width:100%; padding:0 20px;
+    position: absolute; top:calc(50% + 14px); transform:translateY(-50%);
+
+    z-index:1;
+}
+.swiper-pagination-bullet-active {
+    background:black;
+}
+.m-swiper.type01 .swiper-btn {
+    cursor:pointer;
+}
+.m-swiper.type01 .swiper-btn i {
+    font-size:20px; cursor:pointer;
+}
+.m-swiper.type01 .btn-close i {
+    color:#fff;
+}
+.m-swiper.type01  .swiper-slide .m-swiper-bodies {
+    padding:20px 55px; padding-bottom:40px;
+}
+.m-swiper.type01 .swiper-slide .swiper-body {
+    display: flex;
+    margin-top:8px;
+}
+.m-swiper.type01 .swiper-slide .swiper-body:first-of-type {
+    margin-top:0;
+}
+.m-swiper.type01 .swiper-slide .swiper-body-head {
+    flex:0 0 auto;
+    width:56px; margin-right:4px;
+    font-weight:bold; font-size:14px;
+}
+.m-swiper.type01  .swiper-slide .swiper-body-content {
+    font-size:14px;
+}

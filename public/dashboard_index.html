@@ -8,8 +8,10 @@
 <title></title>
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" href="css/swiper.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/swiper.min.js"></script>
 
 <body>
     <div id="wrap">
@@ -2019,6 +2021,28 @@
     </div>
 
     <!-- //방화벽 클릭시 나타나는 팝업 -->
+
+    </div>
+
+    <!-- 알람 -->
+    <div class="m-swiper type01">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="btns">
+                <div class="swiper-btn swiper-btn-prev">
+                    <i class="xi-angle-left"></i>
+                </div>
+                <div class="swiper-btn swiper-btn-next">
+                    <i class="xi-angle-right"></i>
+                </div>
+
+            </div>
+        </div>
     </div>
 </body>
 
@@ -2345,6 +2369,7 @@
 
                 let ipses = response.data.data.ipses;
 
+                $(".dashboard-table-ips tbody").html("");
                 ipses.map(ips => {
                     $(".dashboard-table-ips tbody").append(`
                         <tr>
@@ -2357,6 +2382,7 @@
 
                 let malwares = response.data.data.malwares;
 
+                $(".dashboard-table-malwares tbody").html("");
                 malwares.map(malware => {
                     $(".dashboard-table-malwares tbody").append(`
                         <tr>
@@ -2514,87 +2540,75 @@
         }
     });
 
+    let firstSwiper = true;
+    let swiper = null;
+
+    function getAlarms(){
+        axios.get("/api/alarms")
+            .then(response => {
+                let items = response.data.data;
+
+                if(firstSwiper && items.length === 0) {
+                    $(".m-swiper.type01").hide();
+                    firstSwiper = false;
+                }
+
+                if(items.length > 0) {
+                    if (swiper)
+                        swiper.destroy();
+
+                    $(".m-swiper.type01").show();
+
+                    items.map(item => {
+                        $(".m-swiper.type01 .swiper-wrapper").append(`
+                    <div class="swiper-slide">
+                        <div class="m-swiper-title">${item.device} <button class="btn-close"><i class="xi-close"></i></button></div>
+                        <div class="m-swiper-bodies">
+
+                                  <div class="swiper-body">
+                            <div class="swiper-body-head">Name :</div>
+                            <div class="swiper-body-content">${item.name}</div>
+                        </div>
+                        <div class="swiper-body">
+                            <div class="swiper-body-head">IP :</div>
+                            <div class="swiper-body-content">${item.host}</div>
+                        </div>
+                        <div class="swiper-body">
+                            <div class="swiper-body-head">Status :</div>
+                            <div class="swiper-body-content">${item.status}</div>
+                        </div>
+                        </div>
+                    </div>
+                    `)
+                    });
+
+                    $(".m-swiper.type01 .btn-close").unbind("click").bind("click", function(){
+                        $(".m-swiper").hide();
+                    });
+
+                    swiper = new Swiper('.m-swiper.type01 .swiper-container', {
+                        slidesPerView: 1,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true, // Allow clicking on pagination bullets
+                        },
+                        navigation: {
+                            nextEl: '.swiper-btn-next',
+                            prevEl: '.swiper-btn-prev',
+                        },
+                    });
+                }
+
+            });
+    }
+
+    setInterval(function (){
+        getAlarms();
+    }, 5000);
+
+    getAlarms();
 </script>
 
-<!-- 마인드맵 -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.27.0/cytoscape.min.js"
-    integrity="sha512-ZNCw/dHSJygOg60ih5fI0f2RKqa8EeVm2ivm3PcrD6SEv2WzK8VJoe5IxS4QzvLcaSIQeaxgZMRCW01QlVJTZA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    var cy = cytoscape({
 
-        container: document.getElementById('cy'), // container to render in
-
-        wheelSensitivity: 0.4,
-        elements: [ // list of graph elements to start with
-            {
-                "data": { "id": 'a', "label": 'a' }
-            },
-            {
-                "data": { "id": 'b', "label": 'b' }
-            },
-            {
-                "data": { "id": 'c', "label": 'c' }
-            },
-            {
-                "data": { "id": 'd', "label": 'd' }
-            },
-            {
-                "data": { "id": 'e', "label": 'e' }
-            },
-            {
-                "data": { "id": 'f', "label": 'f' }
-            },
-            {
-                "data": { "id": 'ab', "source": 'a', "target": 'b' }
-            },
-            {
-                "data": { "id": 'ac', "source": 'a', "target": 'c' }
-            },
-            {
-                "data": { "id": 'ad', "source": 'a', "target": 'd' }
-            },
-            {
-                "data": { "id": 'ae', "source": 'a', "target": 'e' }
-            },
-            {
-                "data": { "id": 'af', "source": 'a', "target": 'f' }
-            }
-        ],
-
-        style: [ // the stylesheet for the graph
-            {
-                selector: 'node',
-                style: {
-                    'height': 20,
-                    'width': 20,
-                    'background-color': '#30c9bc',
-                    'label': 'data(label)'
-                }
-            },
-
-            {
-                selector: 'edge',
-                style: {
-                    'width': 2,
-                    'line-color': '#a8eae5',
-                    'target-arrow-color': '#a8eae5',
-                    'target-arrow-shape': 'triangle'
-                }
-            }
-        ],
-
-        layout: {
-            name: 'concentric',
-            concentric: function (node) {
-                return node.degree();
-            },
-            levelWidth: function (nodes) {
-                return 2;
-            }
-        },
-
-    });
-</script> -->
 
 </html>

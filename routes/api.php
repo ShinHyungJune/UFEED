@@ -48,7 +48,8 @@ Route::delete("/users", [\App\Http\Controllers\Api\UserController::class, "destr
 Route::resource("/users", \App\Http\Controllers\Api\UserController::class);
 
 Route::get("/firewalls/dashboard", [\App\Http\Controllers\Api\FirewallController::class, "dashboard"]);
-
+Route::get("/alarms/store", [\App\Http\Controllers\Api\AlarmController::class, "store"]);
+Route::get("/alarms", [\App\Http\Controllers\Api\AlarmController::class, "index"]);
 Route::middleware('auth')->group(function () {
 
 });
