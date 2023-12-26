@@ -2234,9 +2234,9 @@
         return formattedTime;
     }
 
-    function storeHistories(){
+    /* function storeHistories(){
         axios.post(window.domain + "/api/histories");
-    }
+    } */
 
     let first = true;
 
@@ -2407,10 +2407,10 @@
 
     getHistories();
     getDashboard();
-    storeHistories();
+    // storeHistories();
 
     setInterval(() => {
-        storeHistories();
+        // storeHistories();
     }, 10000);
 
     setInterval(() => {

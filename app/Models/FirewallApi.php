@@ -15,9 +15,14 @@ class FirewallApi extends Model
 
     protected $token;
 
+    protected $domain = "https://118.130.110.156:50015";
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+
+        if(config("app.env") == "production")
+            $this->domain = "10.0.1.254:50015";
 
         $this->client = new Client([
             "verify" => false,
@@ -28,7 +33,7 @@ class FirewallApi extends Model
         ]);
 
         // get token
-        $response = $this->client->request("post","https://118.130.110.156:50015/token", [
+        $response = $this->client->request("post",$this->domain."/token", [
             "json" => [
                 "id" => "admin",
                 "password"=> "qwe123!@#"
@@ -43,7 +48,7 @@ class FirewallApi extends Model
 
     public function login()
     {
-        $response = $this->client->request("post","https://118.130.110.156:50015/login", [
+        $response = $this->client->request("post",$this->domain."/login", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -54,7 +59,7 @@ class FirewallApi extends Model
 
     public function logout()
     {
-        $response = $this->client->request("post","https://118.130.110.156:50015/logout", [
+        $response = $this->client->request("post",$this->domain."/logout", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -65,7 +70,7 @@ class FirewallApi extends Model
 
     public function ipsIndex()
     {
-        $response = $this->client->request("get","https://118.130.110.156:50015/object/ip_address/ipv4_address", [
+        $response = $this->client->request("get",$this->domain."/object/ip_address/ipv4_address", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -84,7 +89,7 @@ class FirewallApi extends Model
 
     public function ipsStore($data)
     {
-        $response = $this->client->request("post","https://118.130.110.156:50015/object/ip_address/ipv4_address", [
+        $response = $this->client->request("post",$this->domain."/object/ip_address/ipv4_address", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -111,7 +116,7 @@ class FirewallApi extends Model
 
     public function ipsDestroy($data)
     {
-        $response = $this->client->request("delete","https://118.130.110.156:50015/object/ip_address/ipv4_address", [
+        $response = $this->client->request("delete",$this->domain."/object/ip_address/ipv4_address", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -133,7 +138,7 @@ class FirewallApi extends Model
 
     public function natsIndex()
     {
-        $response = $this->client->request("get","https://118.130.110.156:50015/policy/nat/policy_based", [
+        $response = $this->client->request("get",$this->domain."/policy/nat/policy_based", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -152,7 +157,7 @@ class FirewallApi extends Model
 
     public function natsStore($data)
     {
-        $response = $this->client->request("post","https://118.130.110.156:50015/policy/nat/policy_based", [
+        $response = $this->client->request("post",$this->domain."/policy/nat/policy_based", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -191,7 +196,7 @@ class FirewallApi extends Model
 
     public function natsDestroy($data)
     {
-        $response = $this->client->request("delete","https://118.130.110.156:50015/policy/nat/policy_based", [
+        $response = $this->client->request("delete",$this->domain."/policy/nat/policy_based", [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',

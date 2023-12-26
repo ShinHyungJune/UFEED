@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get("/test", function(){
 
+    dd(request()->ip());
 
     $firewallApi = new FirewallApi();
 
