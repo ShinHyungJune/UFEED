@@ -2544,7 +2544,7 @@
     let swiper = null;
 
     function getAlarms(){
-        axios.get("/api/alarms")
+        axios.get(window.domain + "/api/alarms")
             .then(response => {
                 let items = response.data.data;
 
