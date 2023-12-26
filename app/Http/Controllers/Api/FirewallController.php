@@ -20,6 +20,7 @@ class FirewallController extends ApiController
             "traffics" => $firewall->getTopTraffices(),
             "cncs" => $firewall->getCnc(),
             "ipses" => $firewall->getIps(),
+            "malwares" => $firewall->getAntiMalware()
         ];
 
         return $this->respondSuccessfully($result);

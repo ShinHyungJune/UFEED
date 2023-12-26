@@ -258,7 +258,7 @@
                                         Count
                                     </div>-->
                                 </div>
-                                <div class="dashboard-table-wrap">
+                                <div class="dashboard-table-wrap dashboard-table-malwares">
                                     <table>
                                         <colgroup>
                                             <col width="auto">
@@ -270,59 +270,12 @@
                                                 Name
                                             </th>
                                             <th>
-                                                Count
+                                                Address
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    Number of risks
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Web
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Network traffic
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Cloud sync
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    E-Mail
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Local or Network Drive
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -2291,12 +2244,13 @@
                 $(".dashboard-top-item.down").find(".num").text(counts.down);
                 $(".dashboard-top-item.warning").find(".num").text(counts.warning);
 
-                if(first) {
+                drawChart(realTimeTraffics);
+                /*if(first) {
                     first = false;
 
                     // # Real-time traffic ========
                     drawChart(realTimeTraffics);
-                }
+                }*/
 
                 // # Traffic Top 10 ========
                 $(".traffic-top-table tbody").html("");
@@ -2360,7 +2314,7 @@
 
     function getDashboard(){
 
-        axios.get(window.domain + "/api/firewalls/dashboard")
+        axios.get("/api/firewalls/dashboard")
             .then(response => {
                 let traffics = response.data.data.traffics;
 
@@ -2397,6 +2351,17 @@
                             <td><div class="state state-bar"></div></td>
                             <td>${ips.key}</td>
                             <td>${ips.count}</td>
+                        <tr/>
+                    `);
+                });
+
+                let malwares = response.data.data.malwares;
+
+                malwares.map(malware => {
+                    $(".dashboard-table-malwares tbody").append(`
+                        <tr>
+                            <td>${malware.data.virusname}</td>
+                            <td>${malware.address}</td>
                         <tr/>
                     `);
                 });

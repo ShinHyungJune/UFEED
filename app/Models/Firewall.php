@@ -101,14 +101,14 @@ class Firewall extends Model
         return json_decode($response->getBody(), true)["objects"][0]["results"][0];
     }
 
-    public function getAntiMalware($device = "FW_1")
+    public function getAntiMalware()
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=filename,sip&query=devicename:{$device} and module:malwareblock");
+        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module%3AmalwareBlock&limit=0&reverse=true");
 
-        return json_decode($response->getBody(), true);
+        return json_decode($response->getBody(), true)["objects"][0]["results"];
     }
 
     public function getCnc()
