@@ -2116,7 +2116,7 @@
         let datasets = deviceTraffics.map((deviceTraffic, index) => {
             return {
                 label: deviceTraffic.device.title,
-                data: deviceTraffic.traffics.map(traffic => parseInt(traffic.byte)),
+                data: deviceTraffic.traffics.map(traffic => floor(parseInt(traffic.byte) / 1024)),
                 borderWidth: 1,
                 borderColor: colors[index],
             };
