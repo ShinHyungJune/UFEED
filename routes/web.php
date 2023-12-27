@@ -21,11 +21,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get("/test", function(){
 
-    dd(request()->ip());
+    $nac = new \App\Models\Nac();
 
-    $firewallApi = new FirewallApi();
-
-    $items = $firewallApi->natsIndex();
+    $items = $nac->blocks();
 
     dd($items);
 });
