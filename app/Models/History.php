@@ -60,7 +60,7 @@ class History extends Model
                 if($latestHistory) {
                     $status = $latestHistory->status;
                     if($status == DeviceStatus::PAUSED || $status == "Paused")
-                        $latestHistory->status = DeviceStatus::DOWN;
+                        $latestHistory->status = "Down";
 
                     $device->update(["status" => $latestHistory->status]);
                 }
