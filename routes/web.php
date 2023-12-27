@@ -23,7 +23,7 @@ Route::get("/test", function(){
 
     $nac = new \App\Models\Nac();
 
-    $items = $nac->blocks();
+    $items = $nac->allows();
 
     dd($items);
 });
