@@ -12,7 +12,7 @@ class Nac extends Model
     use HasFactory;
 
     protected $client;
-    protected $domain = "https://nac.iscope.kr:8443/mc2/rest";
+    protected $domain = "https://10.0.1.109:9554/mc2/rest";
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -29,14 +29,14 @@ class Nac extends Model
             "verify" => false
         ]);
 
-        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=20&ipEqual=false&macEqual=false&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
+        $response = $this->client->request('get', "https://10.0.1.109:9554/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=20&ipEqual=false&macEqual=false&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3");
 
         return json_decode($response->getBody()->getContents());
     }
 
     public function storeBlock($ip)
     {
-        $response = $this->client->request('put', "https://nac.iscope.kr:8443/mc2/rest/ip/policies?&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f",[
+        $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/ip/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -56,7 +56,7 @@ class Nac extends Model
 
     public function storeAllow($ip)
     {
-        $response = $this->client->request('put', "https://nac.iscope.kr:8443/mc2/rest/ip/policies?&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f",[
+        $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/ip/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json;charset=UTF-8',
@@ -76,7 +76,7 @@ class Nac extends Model
 
     public function allows()
     {
-        $response = $this->client->request('get', "https://nac.iscope.kr:8443/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=65500&ipEqual=false&macEqual=false&apiKey=ff65c85b-2eaf-4da0-abfa-40c1875ae98f");
+        $response = $this->client->request('get', "https://10.0.1.109:9554/mc2/rest/nodes?page=1&pageSize=30&view=node&nid=All&roleid=65500&ipEqual=false&macEqual=false&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3");
 
         return json_decode($response->getBody()->getContents());
     }
