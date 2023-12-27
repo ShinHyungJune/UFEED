@@ -1267,12 +1267,12 @@
 
                 items.map(item => {
                     $(".allowed-devices-wrap tbody").append(`<tr>
-<td>${item.Hostname}</td>
-<td>${item.IP}</td>
-<td>${item.DEVICENAME}</td>
-<td>${item.MAC}</td>
-<td><span class="state ${item.STATUS == 0 ? 'green' : 'red'}"></span></td>
-<td><button class="m-btn type01" data-value="${item.IP}">BLOCK</button></td>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_DEVID}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">BLOCK</button></td>
 </tr>`)
                 });
 
@@ -1308,12 +1308,12 @@
 
                 items.map(item => {
                     $(".blocked-devices-wrap tbody").append(`<tr>
-<td>${item.Hostname}</td>
-<td>${item.IP}</td>
-<td>${item.DEVICENAME}</td>
-<td>${item.MAC}</td>
-<td><span class="state ${item.STATUS == 0 ? 'green' : 'red'}"></span></td>
-<td><button class="m-btn type01" data-value="${item.IP}">ALLOW</button></td>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_DEVID}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
 </tr>`)
                 });
 
