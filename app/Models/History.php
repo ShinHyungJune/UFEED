@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\DeviceStatus;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -56,8 +57,12 @@ class History extends Model
             foreach($devices as $device){
                 $latestHistory = $device->histories()->latest()->whereIn("status", \App\Enums\DeviceStatus::getOptions())->first();
 
-                if($latestHistory)
+                if($latestHistory) {
+                    if($latestHistory->status == DeviceStatus::PAUSED)
+                        $latestHistory->status = DeviceStatus::DOWN;
+
                     $device->update(["status" => $latestHistory->status]);
+                }
             }
         }
     }

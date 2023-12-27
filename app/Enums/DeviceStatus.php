@@ -15,9 +15,10 @@ final class DeviceStatus
     const UP = "UP";
     const WARNING = "WARNING";
     const CRITICAL = "CRITICAL";
+    const PAUSED = "PAUSED";
 
     public static function getOptions()
     {
-        return [self::DOWN, self::UP, self::WARNING, self::CRITICAL];
+        return [self::DOWN, self::UP, self::WARNING, self::CRITICAL, self::PAUSED];
     }
 }
