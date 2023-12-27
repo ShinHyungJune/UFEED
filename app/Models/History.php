@@ -58,7 +58,8 @@ class History extends Model
                 $latestHistory = $device->histories()->latest()->whereIn("status", \App\Enums\DeviceStatus::getOptions())->first();
 
                 if($latestHistory) {
-                    if($latestHistory->status == DeviceStatus::PAUSED)
+                    $status = $latestHistory->status;
+                    if($status == DeviceStatus::PAUSED || $status == "Paused")
                         $latestHistory->status = DeviceStatus::DOWN;
 
                     $device->update(["status" => $latestHistory->status]);
