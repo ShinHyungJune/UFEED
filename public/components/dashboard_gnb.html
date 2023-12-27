@@ -1281,7 +1281,7 @@
 
                     openLoading();
 
-                    axios.post(window.domain + "/api/nac/blocks", {
+                    axios.post( "/api/nac/blocks", {
                         ip: ip
                     }).then(response => {
                         getAllows();
@@ -1321,7 +1321,7 @@
 
                     openLoading();
 
-                    axios.post(window.domain + "/api/nac/allows", {
+                    axios.post( "/api/nac/allows", {
                         ip: ip
                     }).then(response => {
                         getAllows();
