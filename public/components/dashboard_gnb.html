@@ -1253,7 +1253,7 @@
 </script>
 <script>
     function getAllows(){
-        axios.get(window.domain + "/api/nac/allows")
+        axios.get("/api/nac/allows")
             .then(response => {
                 closeLoading();
                 let result = response.data.data;
@@ -1293,7 +1293,7 @@
     }
 
     function getBlocks(){
-        axios.get(window.domain + "/api/nac/blocks")
+        axios.get("/api/nac/blocks")
             .then(response => {
                 closeLoading();
                 let result = response.data.data;
