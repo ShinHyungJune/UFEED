@@ -2116,7 +2116,7 @@
         let datasets = deviceTraffics.map((deviceTraffic, index) => {
             return {
                 label: deviceTraffic.device.title,
-                data: deviceTraffic.traffics.map(traffic => traffic.byte),
+                data: deviceTraffic.traffics.map(traffic => traffic.byte / 1024),
                 borderWidth: 1,
                 borderColor: colors[index],
             };
@@ -2577,6 +2577,11 @@
                         <div class="swiper-body">
                             <div class="swiper-body-head">Status :</div>
                             <div class="swiper-body-content">${item.status}</div>
+                        </div>
+
+                        <div class="swiper-body">
+                            <div class="swiper-body-head">Value :</div>
+                            <div class="swiper-body-content">${item.lastvalue}</div>
                         </div>
                         </div>
                     </div>
