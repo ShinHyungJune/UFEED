@@ -59,7 +59,7 @@ class HistoryController extends ApiController
             ->whereDate('histories.created_at', $today)
             ->groupBy('histories.device_id', 'devices.title')
             ->orderByDesc('total_byte')
-            ->get();*/
+            ->get();
 
         foreach($histories as $history){
             $rankingTraffics[] = [
@@ -67,6 +67,10 @@ class HistoryController extends ApiController
                 "byte" => $history->total_byte,
             ];
         }
+        */
+        $rankingTraffics[] = [
+
+        ];
 
         return $this->respondSuccessfully([
             "devices" => $devices,
