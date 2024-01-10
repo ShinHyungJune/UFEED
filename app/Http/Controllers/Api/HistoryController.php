@@ -53,7 +53,7 @@ class HistoryController extends ApiController
 
         $today = Carbon::today();
 
-        $histories = DB::table('histories')
+        /*$histories = DB::table('histories')
             ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
             ->join('devices', 'histories.device_id', '=', 'devices.id')
             ->whereDate('histories.created_at', $today)
@@ -66,13 +66,13 @@ class HistoryController extends ApiController
                 "title" => $history->title,
                 "byte" => $history->total_byte,
             ];
-        }
+        }*/
 
         return $this->respondSuccessfully([
             "devices" => $devices,
             "realTimeNotifications" => $realTimeNotifications,
             "realTimeTraffics" => $realTimeTraffics,
-            "rankingTraffics" => $rankingTraffics,
+            // "rankingTraffics" => $rankingTraffics,
         ]);
     }
 
