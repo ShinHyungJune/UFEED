@@ -28,7 +28,6 @@ class HistoryController extends ApiController
             ->orderBy("logged_at", "desc")
             ->first();
 
-        /*
         $pivotDate = Carbon::now();
 
         if($firstHistory)
@@ -50,6 +49,7 @@ class HistoryController extends ApiController
             ];
         }
 
+        /*
         $realTimeNotifications = History::latest()->with("device")->take($request->take)->get();
 
         $today = Carbon::today();
