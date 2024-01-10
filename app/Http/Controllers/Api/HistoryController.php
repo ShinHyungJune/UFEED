@@ -39,12 +39,12 @@ class HistoryController extends ApiController
             $realTimeTraffics[] = [
                 "device" => $device,
                 "traffics" => [
-                    /*$this->getByte($device, Carbon::make($pivotDate)->subMinutes(25)),
+                    $this->getByte($device, Carbon::make($pivotDate)->subMinutes(25)),
                     $this->getByte($device, Carbon::make($pivotDate)->subMinutes(20)),
                     $this->getByte($device, Carbon::make($pivotDate)->subMinutes(15)),
                     $this->getByte($device, Carbon::make($pivotDate)->subMinutes(10)),
                     $this->getByte($device, Carbon::make($pivotDate)->subMinutes(5)),
-                    $this->getByte($device, Carbon::make($pivotDate)->subMinutes(0)),*/
+                    $this->getByte($device, Carbon::make($pivotDate)->subMinutes(0)),
                 ]
             ];
         }
