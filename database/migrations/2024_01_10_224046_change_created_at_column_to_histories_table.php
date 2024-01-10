@@ -14,7 +14,7 @@ class ChangeCreatedAtColumnToHistoriesTable extends Migration
     public function up()
     {
         Schema::table('histories', function (Blueprint $table) {
-            $table->timestamp("created_at")->index()->change();
+            $table->index('created_at');
         });
     }
 
