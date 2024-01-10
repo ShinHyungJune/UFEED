@@ -78,7 +78,7 @@ class HistoryController extends ApiController
             ];
         }
 
-        usort($rankingTraffics, function($a, $b) {return strcmp($a["byte"], $b["byte"]);});
+        usort($rankingTraffics, function($a, $b) {return $b["byte"] - $a["byte"];});
 
         return $this->respondSuccessfully([
             "devices" => $devices,
