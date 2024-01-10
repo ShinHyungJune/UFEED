@@ -54,9 +54,9 @@ class HistoryController extends ApiController
         $today = Carbon::today();
 
         $histories = DB::table('histories')
-            ->select('histories.device_id', 'devices.title', DB::raw('MAX(CASE WHEN DATE(histories.created_at) = ? THEN histories.byte END) as total_byte', [$today]))
-            ->join('devices', 'histories.device_id', '=', 'devices.id')
             ->whereDate('histories.created_at', $today)
+            ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
+            ->join('devices', 'histories.device_id', '=', 'devices.id')
             ->groupBy('histories.device_id', 'devices.title')
             ->orderByDesc('total_byte')
             ->get();
