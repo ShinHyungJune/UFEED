@@ -14,6 +14,7 @@ class AddIndexToHistoriesTable extends Migration
     public function up()
     {
         Schema::table('histories', function (Blueprint $table) {
+            $table->index('created_at');
             $table->index("device_id");
             $table->index(["device_id", "created_at"]);
         });
