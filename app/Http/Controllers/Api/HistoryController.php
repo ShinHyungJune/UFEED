@@ -23,7 +23,7 @@ class HistoryController extends ApiController
         $realTimeTraffics = [];
         $rankingTraffics = [];
 
-        $firstHistory = $devices->first()
+        /*$firstHistory = $devices->first()
             ->histories()
             ->orderBy("logged_at", "desc")
             ->first();
@@ -53,7 +53,7 @@ class HistoryController extends ApiController
 
         $today = Carbon::today();
 
-        /*$histories = DB::table('histories')
+        $histories = DB::table('histories')
             ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
             ->join('devices', 'histories.device_id', '=', 'devices.id')
             ->whereDate('histories.created_at', $today)
@@ -66,17 +66,13 @@ class HistoryController extends ApiController
                 "title" => $history->title,
                 "byte" => $history->total_byte,
             ];
-        }
-        */
-        $rankingTraffics[] = [
-
-        ];
+        }*/
 
         return $this->respondSuccessfully([
-            "devices" => $devices,
-            "realTimeNotifications" => $realTimeNotifications,
-            "realTimeTraffics" => $realTimeTraffics,
-            "rankingTraffics" => $rankingTraffics,
+            // "devices" => $devices,
+            // "realTimeNotifications" => $realTimeNotifications,
+            // "realTimeTraffics" => $realTimeTraffics,
+            // "rankingTraffics" => $rankingTraffics,
         ]);
     }
 
