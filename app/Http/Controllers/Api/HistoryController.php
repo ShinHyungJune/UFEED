@@ -53,26 +53,32 @@ class HistoryController extends ApiController
 
         $today = Carbon::today();
 
-        $histories = DB::table('histories')
-            ->whereDate('histories.created_at', $today)
+        /*$histories = DB::table('histories')
             ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
             ->join('devices', 'histories.device_id', '=', 'devices.id')
+            ->whereDate('histories.created_at', $today)
             ->groupBy('histories.device_id', 'devices.title')
             ->orderByDesc('total_byte')
-            ->get();
+            ->get();*/
 
-        foreach($histories as $history){
+        $devices = Device::get();
+
+        foreach($devices as $device){
+            $device->byte = $device->histories()->whereDate("created_at", Carbon::today())->sum("byte");
+
             $rankingTraffics[] = [
-                "title" => $history->title,
-                "byte" => $history->total_byte,
+                "title" => $device->title,
+                "byte" => $device->byte,
             ];
         }
+
+        usort($rankingTraffics, function($a, $b) {return strcmp($a["byte"], $b["byte"]);});
 
         return $this->respondSuccessfully([
             "devices" => $devices,
             "realTimeNotifications" => $realTimeNotifications,
             "realTimeTraffics" => $realTimeTraffics,
-            // "rankingTraffics" => $rankingTraffics,
+            "rankingTraffics" => $rankingTraffics,
         ]);
     }
 
