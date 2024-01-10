@@ -69,8 +69,6 @@ class HistoryController extends ApiController
                 ->where('created_at', '<', Carbon::tomorrow())
                 ->sum("byte");
 
-            $index++;
-
             $rankingTraffics[] = [
                 "title" => $device->title,
                 "byte" => $device->byte,
