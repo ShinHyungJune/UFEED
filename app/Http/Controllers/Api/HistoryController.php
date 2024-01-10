@@ -63,12 +63,11 @@ class HistoryController extends ApiController
 
         $devices = Device::get();
 
-        $index = 1;
-
         foreach($devices as $device){
-            // $device->byte = $device->histories()->whereDate("created_at", Carbon::today())->sum("byte");
-
-            $device->byte = $index;
+            $device->byte = $device->histories()
+                ->where('created_at', '>=', Carbon::today())
+                ->where('created_at', '<', Carbon::tomorrow())
+                ->sum("byte");
 
             $index++;
 
