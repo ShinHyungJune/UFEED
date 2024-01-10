@@ -65,8 +65,8 @@ class HistoryController extends ApiController
 
         foreach($devices as $device){
             $device->byte = $device->histories()
-                ->where('created_at', '>=', Carbon::today())
-                ->where('created_at', '<', Carbon::tomorrow())
+                ->where('created_at', '>=', Carbon::now()->subHour())
+                ->where('created_at', '<', Carbon::now())
                 ->sum("byte");
 
             $rankingTraffics[] = [
