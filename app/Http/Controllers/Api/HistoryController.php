@@ -53,13 +53,13 @@ class HistoryController extends ApiController
 
         $today = Carbon::today();
 
-        $histories = DB::table('histories')
+        /*$histories = DB::table('histories')
             ->select('histories.device_id', 'devices.title', DB::raw('MAX(histories.byte) as total_byte'))
             ->join('devices', 'histories.device_id', '=', 'devices.id')
             ->whereDate('histories.created_at', $today)
             ->groupBy('histories.device_id', 'devices.title')
             ->orderByDesc('total_byte')
-            ->get();
+            ->get();*/
 
         foreach($histories as $history){
             $rankingTraffics[] = [
