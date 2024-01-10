@@ -49,7 +49,6 @@ class HistoryController extends ApiController
             ];
         }
 
-        /*
         $realTimeNotifications = History::latest()->with("device")->take($request->take)->get();
 
         $today = Carbon::today();
@@ -67,13 +66,13 @@ class HistoryController extends ApiController
                 "title" => $history->title,
                 "byte" => $history->total_byte,
             ];
-        }*/
+        }
 
         return $this->respondSuccessfully([
-            // "devices" => $devices,
-            // "realTimeNotifications" => $realTimeNotifications,
-            // "realTimeTraffics" => $realTimeTraffics,
-            // "rankingTraffics" => $rankingTraffics,
+            "devices" => $devices,
+            "realTimeNotifications" => $realTimeNotifications,
+            "realTimeTraffics" => $realTimeTraffics,
+            "rankingTraffics" => $rankingTraffics,
         ]);
     }
 
