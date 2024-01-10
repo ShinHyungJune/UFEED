@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeHistoriesColumnToHistoriesTable extends Migration
+class ChangeCreatedAtColumnToHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class ChangeHistoriesColumnToHistoriesTable extends Migration
     public function up()
     {
         Schema::table('histories', function (Blueprint $table) {
-            $table->dateTime("logged_at")->nullable()->index()->change();
-            $table->index(["device_id", "logged_at"]);
+            $table->timestamp("created_at")->index()->change();
         });
     }
 
