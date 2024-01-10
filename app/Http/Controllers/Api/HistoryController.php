@@ -23,11 +23,12 @@ class HistoryController extends ApiController
         $realTimeTraffics = [];
         $rankingTraffics = [];
 
-        /*$firstHistory = $devices->first()
+        $firstHistory = $devices->first()
             ->histories()
             ->orderBy("logged_at", "desc")
             ->first();
 
+        /*
         $pivotDate = Carbon::now();
 
         if($firstHistory)
