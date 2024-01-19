@@ -62,7 +62,7 @@ class NacController extends ApiController
         $body = $response->json();
 
         return $this->respondSuccessfully($body);
-    }
+    }g
 
     public function ips(Request $request)
     {

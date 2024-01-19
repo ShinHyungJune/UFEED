@@ -34,8 +34,9 @@ $(document).ready(function(){
             var day = ('0' + now.getUTCDate()).slice(-2);
             var hours = ('0' + now.getUTCHours()).slice(-2);
             var minutes = ('0' + now.getUTCMinutes()).slice(-2);
+            var seconds = ('0' + now.getUTCSeconds()).slice(-2);
 
-            var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes;
+            var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes + ":" + seconds;
 
             $(".utc-txt").text(formattedDate);
 
