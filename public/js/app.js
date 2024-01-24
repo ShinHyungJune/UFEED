@@ -7233,7 +7233,7 @@ var render = function render() {
   }, [_vm._v("\n            마이페이지\n        ")]), _vm._v(" "), _c("div", {
     staticClass: "m-dashboard type01"
   }, [_c("sidebar"), _vm._v(" "), _c("div", {
-    staticClass: "m-dashboard-container"
+    staticClass: "m-subpage"
   }, [_c("h3", {
     staticClass: "title"
   }, [_vm._v("내 정보 수정")]), _vm._v(" "), _c("form", {
@@ -7599,7 +7599,7 @@ var render = function render() {
   }, [_vm._v("\n            마이페이지\n        ")]), _vm._v(" "), _c("div", {
     staticClass: "m-dashboard type01"
   }, [_c("sidebar"), _vm._v(" "), _c("div", {
-    staticClass: "m-dashboard-container"
+    staticClass: "m-subpage"
   }, [_c("h3", {
     staticClass: "title"
   }, [_vm._v("내 정보 수정")]), _vm._v(" "), _c("form", {

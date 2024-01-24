@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" href="css/swiper.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/swiper.min.js"></script>
+
+<body>
+    <div id="wrap">
+
+        <div class="header dashboard_index">
+            <!-- 상단 헤더 -->
+            <header id="header"></header>
+            <!-- //상단 헤더 -->
+
+            <!-- 좌측 메뉴 -->
+            <div id="gnb"></div>
+            <div id="dashboard_gnb"></div>
+             <!-- //좌측 메뉴 -->
+        </div>
+
+        <!-- 대시보드 -->
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <a href="dashboard_index.html" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </a>
+                    <h2 class="dashboard-detail-title">
+                        CONTROL SYSTEM ZONE
+                    </h2>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="dashboard-content-wrap">
+                        <div class="device-wrap" style="width: 1050px; height: 883px; margin: 24px; background-image: url(../images/sub_dashboard_bg.png);">
+                            <div class="device-item up" style="top: 0; left: 0;">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_network.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: 0; left: calc( 155px + 24px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_firewall.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 155px + 32px ); left: calc( 155px + 24px );">
+                                <div class="state state-num">8</div>
+                                <img src="images/dashboard_icon_controlsystem_icms_a1.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 155px + 32px ); left: calc( 310px + 48px );">
+                                <div class="state state-num">8</div>
+                                <img src="images/dashboard_icon_controlsystem_icms_b1.png" alt="">
+                            </div>
+                            <div class="device-item warning" style="top: calc( 155px + 32px ); left: calc( 465px + 72px );">
+                                <div class="state state-num">3</div>
+                                <img src="images/dashboard_icon_controlsystem_iss.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 310px + 60px ); left: calc( 155px + 24px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 310px + 60px ); left: calc( 310px + 48px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 310px + 60px ); left: calc( 465px + 72px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item warning" style="top: calc( 310px + 60px ); left: calc( 620px + 96px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 310px + 60px ); left: calc( 775px + 120px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 465px + 84px ); left: calc( 155px + 24px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 465px + 84px ); left: calc( 310px + 48px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                            <div class="device-item up" style="top: calc( 620px + 108px ); left: calc( 155px + 24px );">
+                                <div class="state"></div>
+                                <img src="images/dashboard_icon_server.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 확대/축소버튼 -->
+                    <div class="dashboard-btn-wrap col-group">
+                        <button type="button" class="dashboard-btn renew-btn">
+                            <i class="xi-renew"></i>
+                        </button>
+
+                        <div class="dashboard-btn-list col-group">
+                            <button type="button" class="dashboard-btn plus-btn">
+                                <i class="xi-plus-circle-o"></i>
+                            </button>
+                            <button type="button" class="dashboard-btn minus-btn">
+                                <i class="xi-minus-circle-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 알람 -->
+    <div class="m-swiper type01">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="btns">
+                <div class="swiper-btn swiper-btn-prev">
+                    <i class="xi-angle-left"></i>
+                </div>
+                <div class="swiper-btn swiper-btn-next">
+                    <i class="xi-angle-right"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+    //대시보드 확대축소버튼
+    const scalingBox = $('.device-wrap');
+    let currentScale = 1.0;
+    let minScale = 1.0;
+
+    $('.renew-btn').on('click', function () {
+        currentScale = minScale;
+        scalingBox.css('transform', 'scale(' + currentScale + ')');
+    });
+
+    $('.plus-btn').on('click', function () {
+        if (currentScale < 1.9) {
+            currentScale += 0.3;
+            scalingBox.css('transform', 'scale(' + currentScale + ')');
+        }
+    });
+
+    $('.minus-btn').on('click', function () {
+        if (currentScale > 1.0) {
+            currentScale -= 0.3;
+
+            if(currentScale < minScale)
+                currentScale = minScale;
+
+            scalingBox.css('transform', 'scale(' + currentScale + ')');
+        }
+    });
+
+</script>
+
+
+
+</html>

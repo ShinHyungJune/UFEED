@@ -24,7 +24,7 @@
 
         <!-- 대시보드 -->
         <div class="dashboard">
-            <div class="dashboard-container">
+            <div class="subpage">
 
                 <div class="dashboard-menu-wrap col-group">
                     <div class="dashboard-menu-nav col-group">
@@ -46,28 +46,28 @@
                     </div>
                 </div>
 
-                <div class="detail-table-container">
-<!--                    <div class="detail-table-edit-btn-wrap col-group">
-                        <button class="detail-table-edit-btn">
+                <div class="subpage-table-container">
+<!--                    <div class="subpage-table-edit-btn-wrap col-group">
+                        <button class="subpage-table-edit-btn">
                             <i class="xi-plus blue"></i>
                         </button>
-                        <button class="detail-table-edit-btn">
+                        <button class="subpage-table-edit-btn">
                             <i class="xi-pen"></i>
                         </button>
-                        <button class="detail-table-edit-btn">
+                        <button class="subpage-table-edit-btn">
                             <i class="xi-close red"></i>
                         </button>
                     </div>
-                    <div class="detail-table-search-wrap col-group">
+                    <div class="subpage-table-search-wrap col-group">
                         <form action="">
-                            <input type="text" class="detail-table-search-input">
+                            <input type="text" class="subpage-table-search-input">
                         </form>
-                        <button type="submit" class="detail-table-btn">
+                        <button type="submit" class="subpage-table-btn">
                             Search
                         </button>
                     </div>-->
 
-                    <div class="detail-table-wrap">
+                    <div class="subpage-table-wrap">
                         <table class="report-table">
                             <colgroup>
                                 <col width="36px">
@@ -138,10 +138,10 @@
             .then(response => {
                 let items = response.data.data;
 
-                $(".detail-table-wrap tbody").html("");
+                $(".subpage-table-wrap tbody").html("");
 
                 items.map(item => {
-                    $(".detail-table-wrap tbody").append(`<tr>
+                    $(".subpage-table-wrap tbody").append(`<tr>
 <td>${item.priority}</td>
 <td>${item.after_destination_ip4_address}</td>
 <td>${item.after_destination_ip4_object}</td>
@@ -156,7 +156,7 @@
 </tr>`)
                 });
 
-                $(".detail-table-wrap tbody .m-btn").unbind("click").bind("click", function (){
+                $(".subpage-table-wrap tbody .m-btn").unbind("click").bind("click", function (){
                     let index = $(this).attr("data-value");
 
                     openLoading();
