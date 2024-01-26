@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Admin Account
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Hi-Secure Account Global Setting
+                        </div>
+                    </div>
+                    <div class="dashboard-menu-group col-group">
+                        <a href="HiSecure_account_add.html" class="dashboard-menu-item">
+                            Account Add
+                        </a>
+                        <a href="HiSecure_account_del.html" class="dashboard-menu-item">
+                            Account Delete
+                        </a>
+                        <a href="HiSecure_account_modify.html" class="dashboard-menu-item">
+                            Account Modify
+                        </a>
+                        <a href="HiSecure_account_setting.html" class="dashboard-menu-item active">
+                            Account Global Setting
+                        </a>
+                    </div>
+                </div>
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            Hi-Secure Account Global Setting
+                        </div>
+
+                        <div class="setting-txt-wrap">
+                            <div class="setting-txt">
+                                If there is no input value when logging in, the session is terminated.
+                            </div>
+                            <div class="setting-txt col-group">
+                                Time setting
+                                <input type="number" class="setting-input" value="5">
+                                Minute
+                            </div>
+                            <div class="setting-txt red">
+                                If there is no input during that time, you will be automatically logged out.
+                            </div>
+                        </div>
+                        
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn hardware_del_btn">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

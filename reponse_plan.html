@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage">
+                <div class="subpage-table-container">
+                    <div class="subpage-table-wrap">
+                        <div class="detail-txt-wrap row-group">
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    1. 장애가 발생한 장비에 대한 격리
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    물리적 : Port 차단  네트워크 라인 제거 <br>
+                                    논리적 : NAC에서 해당 장비 네트워크 통신 차단
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    2. 사이버 이벤트 발생 및 이벤트로 인한 이상증상이 감지 되었음을 알리는 경보 및 알림기에 대한 설명
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    방화벽에서 IPS나 DDoS에 대한 Critical 이벤트 발생시 알람 기능 제공 화면 표시및 설정 화면 표시?
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    3. 사이버 사고와 관련하여 예상되는 주요 결과에 대한 기술
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    몇가지 큰 사이버 사고를 나열하고 각각에 대한 현상 및 조치사항을 기술 <br>
+                                    예) 좀비 PC 감지
+                                    <div class="sub">
+                                        - CBS 및 네트워크에 연결 된 장비중에 이상 트래픽을 발생시켜 해당 네트워크 대역 및 전체(선박) 네트워크에 영향을 줘 각 Zone 및 외부 통신이 안되는 상황이 발생 <br>
+                                        -> 해당 증상이 발견되면 NMS를 통해 이상 트래픽을 발생시키는 장비를 찾아 물리적으로 차단 및 격리 시킨다. <br>
+                                        -> 격리된 장비는 기존에 설치된 HDD를 제거하고 여분의 HDD를 설치한 후 운용시스템을 설치 후 백업 데이터가 있으면 데이터를 restore 시키고, 보안검사(백신검사 등)를 실시한 후 이상이 없을 시 네트워크에 붙인 후 원격 유지보수 업체를 통해 장비 검증 및 데이터 복구를 시도
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    4. 셧다운, 물리적 격리, 로컬제어에 의존하지 않는 대응 계획 순위를 지정해야 함
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    사이버 사고 및 장애시 대응 계획들의 순위를 지정<br>
+                                    현상에 대해 대응 계획 순위를 지정<br>
+                                    예) DDoS 공격시
+                                    <div class="sub">
+                                        1 순위 외부 인터넷 라인 차단<br>
+                                        2 순위 DDoS 장비에서 공격 IP 차단<br>
+                                        3 순위 각 장비들에 대한 데이터 백업 / 운영시스템 상태 점검<br>
+                                        4 방화벽 및 DDoS 장비에서 공격에 대한 대비 후 외부 인터넷 라인 연결<br>
+                                        5 DDoS 공격이 차단되고 모든 선박 시스템이 정상적으로 운영되는지 확인
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-txt-item row-group">
+                                <div class="detail-txt-item-title">
+                                    5. 접근이 가능한 전자 장치가 완전히 손실된 경우 사고 대응 계획은 하드 카피로 보관되어야 합니다
+                                </div>
+                                <div class="detail-txt-item-txt">
+                                    전자장치가 무엇을 뜻하는지?<br>
+                                    하드카피를 해야 하는건지?<br>
+                                    하드카피(이미지백업) 솔루션이 있는지?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>
