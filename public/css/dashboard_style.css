@@ -425,7 +425,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 }
 
 .device-wrap { position: relative; background-repeat: no-repeat; background-size: 100% 100%; }
-.device-wrap .bg-video { position: absolute; top: 0; left: 0; bottom: 0; right: 0; object-fit: cover; opacity: 0.5; }
+.device-wrap .bg-video { position: absolute; top: 0; left: 0; bottom: 0; right: 0; object-fit: cover; }
 .device-item { position: absolute; width: 170px; height: 170px; z-index: 2; background: #fff; border-radius: 12px; border: 1px solid #e4e4e4; }
 .device-item img { opacity: 0.5; transition: .2s; position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center; left: 0; top: 0; }
 
@@ -498,6 +498,45 @@ a.device-item:hover img { opacity: 1; }
 .modal-title .close-btn { font-size: 16px; position: absolute; top: 8px; right: 8px; cursor: pointer; color: #fff; }
 .modal-wrap .dashboard-form { padding: 16px; }
 .modal-wrap .dashboard-form-btn-wrap { margin-top: 16px; padding-bottom: 24px; }
+
+/* Hi-Secure Account */
+.account-menu-wrap { gap: 8px; background: #f5f5f5; justify-content: center; gap: 40px; padding: 40px 0; }
+.account-menu-item { font-size: 20px; font-weight: 500; color: #a4a4a4; transition: .3s; position: relative; }
+.account-menu-item:hover { color: #01ae42; }
+.account-menu-item.active { color: #01ae42; font-weight: bold; }
+.account-menu-item.active::after { content: ''; display: block; position: absolute; width: 100%; height: 4px; bottom: -40px; left: 50%; transform: translateX(-50%); background: #01ae42;; }
+
+.account-wrap { height: calc( 100% - 112px ); background: #f5f5f5; margin-top: 12px; overflow: auto; padding: 80px; }
+.account-wrap .form-wrap { max-width: 568px; margin: 0 auto; }
+.account-wrap .form-title { font-size: 32px; font-weight: 600; margin-bottom: 32px; justify-content: space-between; }
+.account-form { gap: 32px; }
+.account-form .form-item { gap: 12px; width: 100%; }
+.account-form .form-item .item-title { font-size: 14px; color: #404040; font-weight: 600; padding-left: 8px; }
+.account-form .form-item .sub-txt { font-size: 13px; color: #7f7f7f; line-height: 1.25; padding-left: 8px; }
+.account-form .form-input, .account-form .form-select { width: 100%; height: 48px; border-radius: 24px; font-size: 16px; padding: 0 24px; background: #fff; }
+.account-form .form-user-btn-wrap { gap: 8px; }
+.account-form .form-user-btn-wrap .form-input { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.account-form .form-user-btn { width: fit-content; height: 48px; background: #292d33; font-size: 16px; font-weight: 600; padding: 0 16px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; color: #01ae42; background: #fff; border: 2px solid #01ae42; white-space: nowrap; transition: .3s; }
+.account-form .form-user-btn:hover { background: #f5f5f5; }
+.account-wrap .form-btn-wrap { margin-top: 24px; justify-content: center; gap: 16px; align-items: center; }
+.account-wrap .form-btn { width: 100%; height: 56px; border-radius: 28px; background: #01ae42; font-size: 20px; font-weight: 600; color: #fff; text-align: center; line-height: 56px; transition: .3s; }
+.account-wrap .form-btn:hover { background: #359832; }
+.account-wrap .del_btn { background: #a4a4a4; width: 120px; height: 40px; border-radius: 8px; text-align: center; color: #fff; font-size: 16px; font-weight: 600; transition: .3s; }
+.account-wrap .del_btn:hover { background: #7f7f7f; }
+
+.account-table-wrap table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 8px; }
+.account-table-wrap table th { height: 48px; background: #e6f3e6; text-align: center; font-size: 16px; color: #7f7f7f; border-radius: 8px; }
+.account-table-wrap table td { text-align: center; background: #fff; padding: 15px 0; font-size: 16px; }
+
+.modify-group { gap: 56px; }
+.modify-group> * { width: 100%; padding: 0; }
+.setting-txt-wrap { margin-bottom: 48px; }
+.setting-txt { font-size: 16px; line-height: 1.5; color: #7f7f7f; text-align: center; justify-content: center; gap: 8px; align-items: center; }
+.setting-txt.red { color: #ff4620; }
+.setting-input { width: 64px; height: 20px; border: 1px solid #292d33; background: #fff; text-align: center; font-size: 16px; }
+.dashboard-form-group { gap: 56px; margin-bottom: 48px; }
+.dashboard-form-group .dashboard-form { width: 100%; padding: 0; }
+
 
 .dashboard-form-container { background: #f5f5f5; overflow: auto; height: auto; border-radius: 14px; padding: 40px 24px; position: relative; }
 .dashboard-form-wrap { max-width: 640px; margin: 0 auto; padding: 48px 48px 56px; background: #fff; border-radius: 12px; box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.08); border: solid 2px #e4e4e4; }
@@ -642,17 +681,6 @@ a.device-item:hover img { opacity: 1; }
 .log-date-input::placeholder { opacity: 0.6; }
 
 .txt-img { max-width: 70%; }
-
-/* 상세 페이지 - account 관리 */
-.dashboard-modify-wrap { max-width: 1200px; }
-.dashboard-modify-wrap .modify-group { gap: 56px; }
-.dashboard-modify-wrap .modify-group> * { width: 100%; padding: 0; }
-.setting-txt-wrap { margin-bottom: 48px; }
-.setting-txt { font-size: 16px; line-height: 1.5; color: #7f7f7f; text-align: center; justify-content: center; gap: 8px; align-items: center; }
-.setting-txt.red { color: #ff4620; }
-.setting-input { width: 64px; height: 20px; border: 1px solid #292d33; background: #fff; text-align: center; font-size: 16px; }
-.dashboard-form-group { gap: 56px; margin-bottom: 48px; }
-.dashboard-form-group .dashboard-form { width: 100%; padding: 0; }
 
 /* 상세 페이지 - report 테이블 */
 .report-title-wrap { margin-bottom: 24px; align-items: baseline; gap: 12px; }

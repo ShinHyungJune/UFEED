@@ -26,50 +26,38 @@
         <div class="dashboard">
             <div class="subpage gray">
 
-                <div class="dashboard-menu-wrap col-group">
-                    <div class="dashboard-menu-nav col-group">
-                        <div class="dashboard-menu-nav-item">
-                            Admin Account
-                        </div>
-                        <i class="icon xi-angle-right"></i>
-                        <div class="dashboard-menu-nav-item active">
-                            Hi-Secure Account Add
-                        </div>
-                    </div>
-
-                    <div class="dashboard-menu-group col-group">
-                        <a href="HiSecure_account_add.html" class="dashboard-menu-item active">
-                            Account Add
-                        </a>
-                        <a href="HiSecure_account_del.html" class="dashboard-menu-item">
-                            Account Delete
-                        </a>
-                        <a href="HiSecure_account_modify.html" class="dashboard-menu-item">
-                            Account Modify
-                        </a>
-                        <a href="HiSecure_account_setting.html" class="dashboard-menu-item">
-                            Account Global Setting
-                        </a>
-                    </div>
+                <div class="account-menu-wrap col-group">
+                    <a href="HiSecure_account_add.html" class="account-menu-item active">
+                        Hi-Secure Account Add
+                    </a>
+                    <a href="HiSecure_account_del.html" class="account-menu-item">
+                        Hi-Secure Account Delete
+                    </a>
+                    <a href="HiSecure_account_modify.html" class="account-menu-item">
+                        Hi-Secure Account Modify
+                    </a>
+                    <a href="HiSecure_account_setting.html" class="account-menu-item">
+                        Hi-Secure Account Global Setting
+                    </a>
                 </div>
 
-                <div class="dashboard-form-container">
-                    <div class="dashboard-form-wrap">
-                        <div class="dashboard-form-title">
+                <div class="account-wrap">
+                    <div class="form-wrap">
+                        <div class="form-title">
                             Hi-Secure Account Add
                         </div>
 
                         <form action="">
-                            <div class="dashboard-form row-group">
+                            <div class="account-form row-group">
                                 <div class="form-item row-group">
                                     <p class="item-title">
                                         ID
                                     </p>
-                                    <div class="item-user col-group">
+                                    <div class="item-user form-user-btn-wrap col-group">
                                         <input type="text" class="form-input" id="ids">
-<!--                                        <button class="form-user-btn">
+                                       <button class="form-user-btn">
                                             Duplicate Check
-                                        </button>-->
+                                        </button>
                                         <p class="error sub-txt" style="color:red;" id="error-ids"></p>
                                     </div>
                                 </div>
@@ -113,8 +101,8 @@
                             </div>
                         </form>
 
-                        <div class="dashboard-form-btn-wrap col-group">
-                            <button class="dashboard-form-btn" onclick="store()">
+                        <div class="form-btn-wrap col-group">
+                            <button class="form-btn" onclick="store()">
                                 Add
                             </button>
                         </div>

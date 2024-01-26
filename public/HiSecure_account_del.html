@@ -26,73 +26,56 @@
         <!-- 대시보드 -->
         <div class="dashboard">
             <div class="subpage gray">
-                <div class="dashboard-menu-wrap col-group">
-                    <div class="dashboard-menu-nav col-group">
-                        <div class="dashboard-menu-nav-item">
-                            Admin Account
-                        </div>
-                        <i class="icon xi-angle-right"></i>
-                        <div class="dashboard-menu-nav-item active">
-                            Hi-Secure Account Delete
-                        </div>
-                    </div>
-                    <div class="dashboard-menu-group col-group">
-                        <a href="HiSecure_account_add.html" class="dashboard-menu-item">
-                            Account Add
-                        </a>
-                        <a href="HiSecure_account_del.html" class="dashboard-menu-item active">
-                            Account Delete
-                        </a>
-                        <a href="HiSecure_account_modify.html" class="dashboard-menu-item">
-                            Account Modify
-                        </a>
-                        <a href="HiSecure_account_setting.html" class="dashboard-menu-item">
-                            Account Global Setting
-                        </a>
-                    </div>
+                <div class="account-menu-wrap col-group">
+                    <a href="HiSecure_account_add.html" class="account-menu-item">
+                        Account Add
+                    </a>
+                    <a href="HiSecure_account_del.html" class="account-menu-item active">
+                        Account Delete
+                    </a>
+                    <a href="HiSecure_account_modify.html" class="account-menu-item">
+                        Account Modify
+                    </a>
+                    <a href="HiSecure_account_setting.html" class="account-menu-item">
+                        Account Global Setting
+                    </a>
                 </div>
 
-                <div class="dashboard-form-container">
-                    <div class="dashboard-form-wrap">
-                        <div class="dashboard-form-title">
-                            Hi-Secure Account Delete
-                        </div>
+                <div class="account-wrap">
+                    <div class="form-title col-group">
+                        Hi-Secure Account Delete
 
-                        <div class="modal-table-container">
-                            <div class="modal-table-wrap dashboard-table-wrap">
-                                <table>
-                                    <colgroup>
-                                        <col style="width:30%">
-                                        <col>
-                                        <col>
-                                        <col style="width:10%;">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                ID
-                                            </th>
-                                            <th>
-                                                Authority
-                                            </th>
-                                            <th>
-                                                E-Mail
-                                            </th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                        <button class="del_btn">
+                            Delete
+                        </button>
+                    </div>
 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="account-table-wrap">
+                        <table>
+                            <colgroup>
+                                <col style="width:30%">
+                                <col>
+                                <col>
+                                <col style="width:10%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Authority
+                                    </th>
+                                    <th>
+                                        E-Mail
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                        <div class="dashboard-form-btn-wrap col-group">
-                            <button class="dashboard-form-btn del_btn">
-                                Delete
-                            </button>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -120,11 +103,11 @@
                     </p>
                 </div>
 
-                <div class="dashboard-form-btn-wrap col-group">
-                    <button class="dashboard-form-btn submit-btn" onclick="remove()">
+                <div class="form-btn-wrap col-group">
+                    <button class="form-btn submit-btn" onclick="remove()">
                         Delete
                     </button>
-                    <button class="dashboard-form-btn cancel-btn">
+                    <button class="form-btn cancel-btn">
                         Cancel
                     </button>
                 </div>
