@@ -34,8 +34,9 @@ $(document).ready(function(){
             var day = ('0' + now.getUTCDate()).slice(-2);
             var hours = ('0' + now.getUTCHours()).slice(-2);
             var minutes = ('0' + now.getUTCMinutes()).slice(-2);
+            var seconds = ('0' + now.getUTCSeconds()).slice(-2);
 
-            var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes;
+            var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes + ":" + seconds;
 
             $(".utc-txt").text(formattedDate);
 
@@ -45,28 +46,16 @@ $(document).ready(function(){
         setInterval(function (){
             setTimer();
         }, 1000);
-
-        $('.header-menu-btn').click(function(){
-            $('.header-menu-btn').removeClass('active');
-            $(this).addClass('active');
-            
-            var dataGnb = $(this).attr('data-gnb');
-    
-            $('.gnb-container').removeClass('active');
-            $('.gnb-container#'+dataGnb).addClass('active');
-        });
     });
 
     $('#footer').load('components/footer.html');
 
     //대시보드 메뉴
-    $('#dashboard_gnb').load('components/dashboard_detail_gnb.html', function (){});
-
-    $('#gnb').load('components/gnb.html', function (){
+    $('#gnb').load('components/dashboard_gnb.html', function (){
         // 메뉴 제어
         let pathname = location.pathname;
 
-        let gnbs = $(".gnb-container a");
+        let gnbs = $(".gnb a");
 
 
         gnbs.each((index, gnb) => {
@@ -75,10 +64,11 @@ $(document).ready(function(){
                 $(gnb).parents(".gnb-menu").addClass("active");
                 $(gnb).parents(".gnb-wrap").addClass("active");
                 $(gnb).parents(".sub-gnb-menu").addClass("active");
-                $(gnb).closest(".gnb-container").addClass("active");
             }
         })
     });
+
+
 
     // 팝업창 제어
     $(".m-script-pop").click(function (){
@@ -86,6 +76,8 @@ $(document).ready(function(){
 
         $(target).toggle();
     });
+
+
 })
 
 
