@@ -22,6 +22,7 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
+        return view('index');
         return response()->file(public_path("/index.html"));
     }
 
