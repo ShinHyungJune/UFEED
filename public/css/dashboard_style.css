@@ -226,10 +226,6 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; }
 .sub-gnb-menu.active > .sub-gnb-menu-title .icon { transform: translateY(-50%) rotate(180deg); }
 
-/* 좌측 메뉴 페이지별 */
-.dashboard_index .header-menu-btn_DB .icon { background-image: url(../images/Dash_on.png); }
-.dashboard_index .header-menu-btn_DB .txt { color: #01ae42; }
-
 /* 좌측 메뉴 - 대시보드 */
 #dashboard_gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
 .dashboard-gnb-container { gap: 24px; }
