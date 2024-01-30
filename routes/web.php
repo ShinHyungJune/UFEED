@@ -46,81 +46,89 @@ Route::get("/histories", function (){
     dd($items);
 });
 
-Route::get('/', [\App\Http\Controllers\PageController::class, "index"])->name("home");
-Route::get('/sample', [\App\Http\Controllers\PageController::class, "sample"]);
-Route::get('/home', [\App\Http\Controllers\PageController::class, "index"]);
+//Route::get('/', [\App\Http\Controllers\PageController::class, "index"])->name("home");
+//Route::get('/sample', [\App\Http\Controllers\PageController::class, "sample"]);
+//Route::get('/home', [\App\Http\Controllers\PageController::class, "index"]);
 
 
-Route::prefix('dash-board')->group(function () {
-    Route::get('/', [\App\Http\Controllers\DashBoardController::class, 'index'])->name('dash-board.index');
-    Route::get('/show', [\App\Http\Controllers\DashBoardController::class, 'show'])->name('dash-board.show');
-});
-
-Route::prefix('main-menu')->group(function () {
-    Route::prefix('firewall')->group(function () {
-        Route::prefix('policy')->group(function () {
-            Route::get('/', [\App\Http\Controllers\FirewallController::class, 'policy'])->name('firewall.policy');
-        });
-        Route::prefix('nat')->group(function () {
-            Route::get('/', [\App\Http\Controllers\FirewallController::class, 'nat'])->name('firewall.nat');
-        });
+Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return redirect()->route('dash-board.index');
     });
-    Route::prefix('nac')->group(function () {
-        Route::prefix('management')->group(function () {
-            Route::get('/node', [\App\Http\Controllers\NACController::class, 'node'])->name('nac.node');
-            Route::get('/ip-address', [\App\Http\Controllers\NACController::class, 'ipAddress'])->name('nac.ip-address');
-            Route::get('/wlan', [\App\Http\Controllers\NACController::class, 'wlan'])->name('nac.wlan');
+
+    Route::prefix('dash-board')->group(function () {
+        Route::get('/', [\App\Http\Controllers\DashBoardController::class, 'index'])->name('dash-board.index');
+        Route::get('/show', [\App\Http\Controllers\DashBoardController::class, 'show'])->name('dash-board.show');
+    });
+
+    Route::prefix('main-menu')->group(function () {
+        Route::prefix('firewall')->group(function () {
+            Route::prefix('policy')->group(function () {
+                Route::get('/', [\App\Http\Controllers\FirewallController::class, 'policy'])->name('firewall.policy');
+            });
+            Route::prefix('nat')->group(function () {
+                Route::get('/', [\App\Http\Controllers\FirewallController::class, 'nat'])->name('firewall.nat');
+            });
+        });
+        Route::prefix('nac')->group(function () {
+            Route::prefix('management')->group(function () {
+                Route::get('/node', [\App\Http\Controllers\NACController::class, 'node'])->name('nac.node');
+                Route::get('/ip-address', [\App\Http\Controllers\NACController::class, 'ipAddress'])->name('nac.ip-address');
+                Route::get('/wlan', [\App\Http\Controllers\NACController::class, 'wlan'])->name('nac.wlan');
+            });
+            Route::prefix('log')->group(function () {
+                Route::get('/', [\App\Http\Controllers\NACController::class, 'log'])->name('nac.log');
+            });
+            Route::prefix('system')->group(function () {
+                Route::get('/license', [\App\Http\Controllers\NACController::class, 'license'])->name('nac.license');
+            });
+        });
+        Route::prefix('nms')->group(function () {
+            Route::prefix('devices')->group(function () {
+                Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('nms.devices');
+                Route::get('/favorite-devices', [\App\Http\Controllers\NMSController::class, 'favoriteDevices'])->name('nms.favorite-devices');
+                Route::get('/dependencies', [\App\Http\Controllers\NMSController::class, 'dependencies'])->name('nms.dependencies');
+            });
+            Route::prefix('reports')->group(function () {
+                Route::get('/', [\App\Http\Controllers\NMSController::class, 'reports'])->name('nms.reports');
+                Route::get('/add-report', [\App\Http\Controllers\NMSController::class, 'addReport'])->name('nms.add-report');
+            });
+            Route::prefix('logs')->group(function () {
+                Route::get('/', [\App\Http\Controllers\NMSController::class, 'logs'])->name('nms.logs');
+            });
         });
         Route::prefix('log')->group(function () {
-            Route::get('/', [\App\Http\Controllers\NACController::class, 'log'])->name('nac.log');
-        });
-        Route::prefix('system')->group(function () {
-            Route::get('/license', [\App\Http\Controllers\NACController::class, 'license'])->name('nac.license');
+            Route::get('/', [\App\Http\Controllers\LogController::class, 'index'])->name('log.index');
         });
     });
-    Route::prefix('nms')->group(function () {
-        Route::prefix('devices')->group(function () {
-            Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('nms.devices');
-            Route::get('/favorite-devices', [\App\Http\Controllers\NMSController::class, 'favoriteDevices'])->name('nms.favorite-devices');
-            Route::get('/dependencies', [\App\Http\Controllers\NMSController::class, 'dependencies'])->name('nms.dependencies');
+
+    Route::prefix('quick-function')->group(function () {
+
+    });
+
+    Route::prefix('information')->group(function () {
+        Route::prefix('identify')->group(function () {
+            Route::get('/hardware', [\App\Http\Controllers\InformationController::class, 'hardware'])->name('information.hardware');
+            Route::get('/software', [\App\Http\Controllers\InformationController::class, 'software'])->name('information.software');
         });
-        Route::prefix('reports')->group(function () {
-            Route::get('/', [\App\Http\Controllers\NMSController::class, 'reports'])->name('nms.reports');
-            Route::get('/add-report', [\App\Http\Controllers\NMSController::class, 'addReport'])->name('nms.add-report');
-        });
-        Route::prefix('logs')->group(function () {
-            Route::get('/', [\App\Http\Controllers\NMSController::class, 'logs'])->name('nms.logs');
+        Route::prefix('protect')->group(function () {
+            Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');
+            Route::get('/security-zone', [\App\Http\Controllers\InformationController::class, 'securityZone'])->name('information.security-zone');
+            Route::get('/access-control', [\App\Http\Controllers\InformationController::class, 'accessControl'])->name('information.access-control');
+            Route::get('/wireless', [\App\Http\Controllers\InformationController::class, 'wireless'])->name('information.wireless');
+            Route::get('/mobile-portable', [\App\Http\Controllers\InformationController::class, 'mobilePortable'])->name('information.mobile-portable');
         });
     });
-    Route::prefix('log')->group(function () {
-        Route::get('/', [\App\Http\Controllers\LogController::class, 'index'])->name('log.index');
+
+    Route::prefix('hi-secure')->group(function () {
+        Route::get('add', [\App\Http\Controllers\HiSecureController::class, 'add'])->name('hi-secure.add');
+        Route::get('delete', [\App\Http\Controllers\HiSecureController::class, 'delete'])->name('hi-secure.delete');
+        Route::get('modify', [\App\Http\Controllers\HiSecureController::class, 'modify'])->name('hi-secure.modify');
+        Route::get('global-setting', [\App\Http\Controllers\HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
     });
 });
 
-Route::prefix('quick-function')->group(function () {
-
-});
-
-Route::prefix('information')->group(function () {
-    Route::prefix('identify')->group(function () {
-        Route::get('/hardware', [\App\Http\Controllers\InformationController::class, 'hardware'])->name('information.hardware');
-        Route::get('/software', [\App\Http\Controllers\InformationController::class, 'software'])->name('information.software');
-    });
-    Route::prefix('protect')->group(function () {
-        Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');
-        Route::get('/security-zone', [\App\Http\Controllers\InformationController::class, 'securityZone'])->name('information.security-zone');
-        Route::get('/access-control', [\App\Http\Controllers\InformationController::class, 'accessControl'])->name('information.access-control');
-        Route::get('/wireless', [\App\Http\Controllers\InformationController::class, 'wireless'])->name('information.wireless');
-        Route::get('/mobile-portable', [\App\Http\Controllers\InformationController::class, 'mobilePortable'])->name('information.mobile-portable');
-    });
-});
-
-Route::prefix('hi-secure')->group(function () {
-    Route::get('add', [\App\Http\Controllers\HiSecureController::class, 'add'])->name('hi-secure.add');
-    Route::get('delete', [\App\Http\Controllers\HiSecureController::class, 'delete'])->name('hi-secure.delete');
-    Route::get('modify', [\App\Http\Controllers\HiSecureController::class, 'modify'])->name('hi-secure.modify');
-    Route::get('global-setting', [\App\Http\Controllers\HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
-});
+require __DIR__.'/auth.php';
 
 
 Route::post("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "store"]);
@@ -134,13 +142,13 @@ Route::middleware("auth")->group(function(){
 });
 
 Route::middleware("guest")->group(function(){
-    Route::get("/login", [\App\Http\Controllers\UserController::class, "loginForm"])->name("login");
-    Route::get("/register", [\App\Http\Controllers\UserController::class, "create"]);
-    Route::get("/openLoginPop/{social}", [\App\Http\Controllers\UserController::class, "openSocialLoginPop"]);
-    Route::get("/login/{social}", [\App\Http\Controllers\UserController::class, "socialLogin"]);
-    Route::post("/login", [\App\Http\Controllers\UserController::class, "login"]);
-    Route::post("/register", [\App\Http\Controllers\UserController::class, "register"]);
-    Route::resource("/users", \App\Http\Controllers\UserController::class);
+//    Route::get("/login", [\App\Http\Controllers\UserController::class, "loginForm"])->name("login");
+//    Route::get("/register", [\App\Http\Controllers\UserController::class, "create"]);
+//    Route::get("/openLoginPop/{social}", [\App\Http\Controllers\UserController::class, "openSocialLoginPop"]);
+//    Route::get("/login/{social}", [\App\Http\Controllers\UserController::class, "socialLogin"]);
+//    Route::post("/login", [\App\Http\Controllers\UserController::class, "login"]);
+//    Route::post("/register", [\App\Http\Controllers\UserController::class, "register"]);
+//    Route::resource("/users", \App\Http\Controllers\UserController::class);
     Route::get("/passwordResets/{token}/edit", [\App\Http\Controllers\PasswordResetController::class, "edit"]);
     Route::resource("/passwordResets", \App\Http\Controllers\PasswordResetController::class);
 });
