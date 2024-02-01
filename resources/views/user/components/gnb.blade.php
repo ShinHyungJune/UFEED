@@ -1081,12 +1081,12 @@
 
 <script>
     // 팝업창 제어
-    /*$(".m-script-pop").bind("click").unbind("click", function (){
+    $(".m-script-pop").bind("click").unbind("click", function (){
         alert("1");
         let target = $(this).attr("data-target");
 
         $(target).toggle();
-    });*/
+    });
 
     /*const main_ctx = document.getElementById('chart');
 
