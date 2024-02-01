@@ -249,6 +249,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-standard-item.warning * { color: #ef9900; }
 
 /* 좌측 메뉴 - 대시보드 - Standard */
+.real-time-traffic-title-wrap { padding-bottom: 5px; border-bottom: 2px solid #000; }
 .real-time-traffic-title-wrap .title { font-size: 12px; color: #7f7f7f; font-weight: 500; margin-bottom: 4px; }
 .real-time-traffic-title-wrap .mbps { font-size: 21px; font-weight: bold; margin-bottom: 5px; }
 .real-time-traffic-title-wrap .top1-wrap { display: flex; justify-content: space-between; align-items: center; }
@@ -256,7 +257,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .real-time-traffic-title-wrap .top1-wrap .type { padding: 4px 10px; border-radius: 10px; background: #512ecf; font-size: 12px; font-weight: 500; color: #fff; }
 .real-time-traffic-title-wrap .top1-wrap .ip { font-size: 12px; color: #7f7f7f; }
 .real-time-traffic-title-wrap .top1-wrap .txt { font-size: 12px; font-weight: bold; }
-.real-time-traffic-wrap { height: 170px; }
+.real-time-traffic-wrap { height: 140px; }
 
 /* 좌측 메뉴 - 대시보드 - Traffic Top 10 */
 .traffic-top-wrap { height: 192px; overflow: auto; }
