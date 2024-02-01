@@ -2103,7 +2103,7 @@
                 $(".dashboard-standard-item.up").find(".num").text(counts.up);
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
-                $(".dashboard-standard-item.unusual").find(".num").text(counts.unusual);
+                $(".dashboard-standard-item.critical").find(".num").text(counts.unusual);
 
                 drawChart(realTimeTraffics);
 
