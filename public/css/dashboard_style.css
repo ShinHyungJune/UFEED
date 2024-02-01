@@ -242,13 +242,14 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-standard-item .txt { font-size: 14px; font-weight: bold; }
 .dashboard-standard-item.up { background: #E5F3E6; }
 .dashboard-standard-item.up * { color: #359832; }
-.dashboard-standard-item.critical { background: #E4E4E4; }
-.dashboard-standard-item.critical * { color: #292d33; }
+
 .dashboard-standard-item.down { background: #FFE8E4; }
 .dashboard-standard-item.down * { color: #ff4620; }
-.dashboard-standard-item.warning { background: #FDF3E0; }
-.dashboard-standard-item.warning * { color: #ef9900; }
+.dashboard-standard-item.critical { background: #FDF3E0; }
+.dashboard-standard-item.critical * { color: #ef9900; }
 
+.dashboard-standard-item.warning  { background: #E4E4E4; }
+.dashboard-standard-item.warning * { color: #292d33; }
 /* 좌측 메뉴 - 대시보드 - Standard */
 .real-time-traffic-title-wrap { padding-bottom: 5px; border-bottom: 2px solid #000; }
 .real-time-traffic-title-wrap .title { font-size: 12px; color: #7f7f7f; font-weight: 500; margin-bottom: 4px; }
