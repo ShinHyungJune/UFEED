@@ -12,7 +12,7 @@ function closeLoading(){
 $(document).ready(function(){
 
 
-    //헤더 푸터 컴포넌트
+    /*//헤더 푸터 컴포넌트
     $('#header').load('components/header.html', function (){
         let user = localStorage.getItem("user");
 
@@ -49,9 +49,9 @@ $(document).ready(function(){
         $('.header-menu-btn').click(function(){
             $('.header-menu-btn').removeClass('active');
             $(this).addClass('active');
-            
+
             var dataGnb = $(this).attr('data-gnb');
-    
+
             $('.gnb-container').removeClass('active');
             $('.gnb-container#'+dataGnb).addClass('active');
         });
@@ -78,7 +78,7 @@ $(document).ready(function(){
                 $(gnb).closest(".gnb-container").addClass("active");
             }
         })
-    });
+    });*/
 
     // 팝업창 제어
     $(".m-script-pop").click(function (){
@@ -90,3 +90,98 @@ $(document).ready(function(){
 
 
 
+let chart = null;
+
+function drawChart(deviceTraffics) {
+    let colors = [
+        "#502ecf",
+        "#359832",
+        "#84818F",
+        "#CFC786",
+        "#7A7763",
+        "#39334F",
+        "#68637A",
+        "#967AFA",
+        "#23FA84",
+    ]
+
+    //차트
+    const main_ctx = document.getElementById('chart');
+
+    let firstDeviceTraffic = deviceTraffics[0];
+
+    let datasets = deviceTraffics.map((deviceTraffic, index) => {
+        return {
+            label: deviceTraffic.device.title,
+            data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
+            borderWidth: 1,
+            borderColor: colors[index],
+            tension: 0.4 //곡선그래프
+        };
+    });
+
+    if (chart) {
+        chart.destroy();
+
+        chart = null;
+    }
+
+    chart = new Chart(main_ctx, {
+        type: 'line',
+        data: {
+            labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    ticks: {
+                        // forces step size to be 50 units
+                        stepSize: 20,
+                        font: function () {
+                            return {
+                                size: 10,
+                                family: 'Pretendard'
+                            }
+                        },
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: function () {
+                            return {
+                                size: 10,
+                                family: 'Pretendard'
+                            }
+                        },
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: function () {
+                            return {
+                                size: 10,
+                                family: 'Pretendard'
+                            }
+                        },
+                        boxWidth: 6,
+                        boxHeight: 6,
+                    },
+                    position: 'top',
+                    fullWidth: false,
+                },
+            }
+        },
+        elements: {
+            point: {
+                radius: 0, //선형 그래프 포인트 삭제
+            },
+        },
+    });
+}

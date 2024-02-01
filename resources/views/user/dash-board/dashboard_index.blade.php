@@ -2104,13 +2104,14 @@
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
 
-                // drawChart(realTimeTraffics);
-                // if(first) {
-                //     first = false;
-                //
-                //     // # Real-time traffic ========
-                //     drawChart(realTimeTraffics);
-                // }
+                drawChart(realTimeTraffics);
+
+                if(first) {
+                    first = false;
+
+                    // # Real-time traffic ========
+                    drawChart(realTimeTraffics);
+                }
 
                 // # Traffic Top 10 ========
                 $(".traffic-top-wrap").html("");
@@ -2170,36 +2171,6 @@
 
                 }
             });
-    }
-
-    function checkStatus() {
-        axios.get("http://10.0.1.254")
-            .then(response => {
-                axios.patch("/api/devices", {
-                    title: "FW1",
-                    status: "Up"
-                })
-            }).catch(error => {
-            axios.patch("/api/devices", {
-                title: "FW1",
-                status: "Down"
-            })
-        });
-    }
-
-    function test() {
-        axios.get("http://118.130.110.156:8080/api/table.json", {
-            params: {
-                "page": 1,
-                "username": "prtgadmin",
-                "password": "hgs_1qa@WS",
-                "content": "",
-                "columns": "device,sensor, objid, lastvalue, name,datetime,message,status",
-                "filter_type": "snmptraffic",
-            }
-        }).then(response => {
-
-        })
     }
 
     function getDashboard() {
@@ -2262,14 +2233,104 @@
             })
     }
 
+    let chart = null;
+
+    function drawChart(deviceTraffics) {
+        let colors = [
+            "#502ecf",
+            "#359832",
+            "#84818F",
+            "#CFC786",
+            "#7A7763",
+            "#39334F",
+            "#68637A",
+            "#967AFA",
+            "#23FA84",
+        ]
+
+        //차트
+        const main_ctx = document.getElementById('chart');
+
+        let firstDeviceTraffic = deviceTraffics[0];
+
+        let datasets = deviceTraffics.map((deviceTraffic, index) => {
+            return {
+                label: deviceTraffic.device.title,
+                data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
+                borderWidth: 1,
+                borderColor: colors[index],
+                tension: 0.4 //곡선그래프
+            };
+        });
+
+        if (chart) {
+            chart.destroy();
+
+            chart = null;
+        }
+
+        chart = new Chart(main_ctx, {
+            type: 'line',
+            data: {
+                labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 20,
+                            font: function () {
+                                return {
+                                    size: 10,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: function () {
+                                return {
+                                    size: 10,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: function () {
+                                return {
+                                    size: 10,
+                                    family: 'Pretendard'
+                                }
+                            },
+                            boxWidth: 6,
+                            boxHeight: 6,
+                        },
+                        position: 'top',
+                        fullWidth: false,
+                    },
+                }
+            },
+            elements: {
+                point: {
+                    radius: 0, //선형 그래프 포인트 삭제
+                },
+            },
+        });
+    }
 
     getHistories();
     getDashboard();
-    // storeHistories();
-
-    setInterval(() => {
-        // storeHistories();
-    }, 10000);
 
     setInterval(() => {
         getHistories();
@@ -2346,10 +2407,10 @@
     }
 
     setInterval(function () {
-        getAlarms();
+        // getAlarms();
     }, 5000);
 
-    getAlarms();
+    // getAlarms();
 </script>
 </body>
 </html>

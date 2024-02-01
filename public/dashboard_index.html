@@ -2029,7 +2029,7 @@
         }
     });
 
-    
+
 
     function clearTime(timeString) {
         // 주어진 시간 문자열을 Date 객체로 변환
@@ -2117,13 +2117,12 @@
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
 
-                drawChart(realTimeTraffics);
-                /*if(first) {
+                if(first) {
                     first = false;
 
                     // # Real-time traffic ========
-                    drawChart(realTimeTraffics);
-                }*/
+                    drawTraffics(realTimeTraffics);
+                }
 
                 // # Traffic Top 10 ========
                 $(".traffic-top-table tbody").html("");
@@ -2153,6 +2152,93 @@
                     })
                 }
             });
+    }
+
+    let trafficChart = null;
+    function drawTraffics(deviceTraffics){
+        let colors = [
+            "#502ecf",
+            "#359832",
+            "#84818F",
+            "#CFC786",
+            "#7A7763",
+            "#39334F",
+            "#68637A",
+            "#967AFA",
+            "#23FA84",
+        ]
+        //차트
+        const main_ctx = document.getElementById('chart');
+
+        let firstDeviceTraffic = deviceTraffics[0];
+
+        let datasets = deviceTraffics.map((deviceTraffic, index) => {
+            return {
+                label: deviceTraffic.device.title,
+                data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
+                borderWidth: 1,
+                borderColor: colors[index],
+            };
+        });
+
+        if(trafficChart){
+            trafficChart.destroy();
+
+            trafficChart = null;
+        }
+
+        trafficChart = new Chart(main_ctx, {
+            type: 'line',
+            data: {
+                labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 20,
+                            font: function () {
+                                return {
+                                    size: 12,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: function () {
+                                return {
+                                    size: 12,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: function () {
+                                return {
+                                    size: 12,
+                                    family: 'Pretendard'
+                                }
+                            },
+                            boxWidth: 12,
+                        },
+                        position: 'top',
+                        fullWidth: false,
+                    },
+                }
+            },
+        });
     }
 
     function checkStatus() {
