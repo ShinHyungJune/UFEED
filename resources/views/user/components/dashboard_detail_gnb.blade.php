@@ -15,7 +15,7 @@
             <div class="dashboard-standard-wrap col-group">
                 <div class="dashboard-standard-item up row-group m-script-pop" data-target=".modal-devices-up">
                     <div class="num">
-                        20
+                        1
                     </div>
                     <div class="txt">
                         UP
@@ -23,7 +23,7 @@
                 </div>
                 <div class="dashboard-standard-item down row-group m-script-pop" data-target=".modal-devices-down">
                     <div class="num">
-                        50
+                        12
                     </div>
                     <div class="txt">
                         Down
@@ -32,7 +32,7 @@
                 <div class="dashboard-standard-item critical row-group m-script-pop"
                      data-target=".modal-devices-critical">
                     <div class="num">
-                        20
+                        0
                     </div>
                     <div class="txt">
                         Warning
@@ -41,7 +41,7 @@
                 <div class="dashboard-standard-item warning row-group m-script-pop"
                      data-target=".modal-devices-warning">
                     <div class="num">
-                        10
+                        0
                     </div>
                     <div class="txt">
                         Unusual
