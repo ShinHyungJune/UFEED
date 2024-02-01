@@ -2174,6 +2174,10 @@
         let firstDeviceTraffic = deviceTraffics[0];
 
         let datasets = deviceTraffics.map((deviceTraffic, index) => {
+            deviceTraffic.traffics.map(traffic => {
+                console.log(traffic.byte);
+            });
+
             return {
                 label: deviceTraffic.device.title,
                 data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
