@@ -2146,11 +2146,11 @@
 
                     realTimeNotifications.map(item => {
 
-                        if(item.status == "Unusual") {
+                        /*if(item.status == "Unusual") {
 
                             item.status = "Warning";
 
-                        }
+                        }*/
 
                         $(".real-time-status-list").append(`<div class="real-time-status-item ${item.status}">
                                                                 <div class="title-wrap">
