@@ -559,7 +559,7 @@
         axios.post(window.domain + "/api/histories");
     } */
 
-    let first = true;
+    var first = true;
 
     function getHistories() {
         axios.get(window.domain + "/api/histories")
@@ -760,9 +760,9 @@
         //차트
         const main_ctx = document.getElementById('chart');
 
-        let firstDeviceTraffic = deviceTraffics[0];
+        var firstDeviceTraffic = deviceTraffics[0];
 
-        let datasets = deviceTraffics.map((deviceTraffic, index) => {
+        var datasets = deviceTraffics.map((deviceTraffic, index) => {
 
 
             return {
