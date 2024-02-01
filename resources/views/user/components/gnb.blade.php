@@ -39,7 +39,7 @@
                         0
                     </div>
                     <div class="txt">
-                        Critical
+                        Unusual
                     </div>
                 </div>
                 <div class="dashboard-standard-item warning row-group m-script-pop"
@@ -48,7 +48,7 @@
                         0
                     </div>
                     <div class="txt">
-                        Unusual
+                        Warning
                     </div>
                 </div>
             </div>
