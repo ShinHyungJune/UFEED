@@ -2272,7 +2272,8 @@
         chart = new Chart(main_ctx, {
             type: 'line',
             data: {
-                labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+                // labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+                labels: firstDeviceTraffic.traffics.map((traffic) => traffic.date),
                 datasets: datasets
             },
             options: {
