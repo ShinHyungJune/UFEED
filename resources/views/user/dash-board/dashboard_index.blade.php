@@ -2255,9 +2255,7 @@
         let firstDeviceTraffic = deviceTraffics[0];
 
         let datasets = deviceTraffics.map((deviceTraffic, index) => {
-            deviceTraffic.traffics.map(traffic => {
-                console.log(traffic.byte);
-            });
+
 
             return {
                 label: deviceTraffic.device.title,
