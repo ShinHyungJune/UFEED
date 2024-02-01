@@ -23,7 +23,7 @@
                 </div>
                 <div class="dashboard-standard-item down row-group m-script-pop" data-target=".modal-devices-down">
                     <div class="num">
-                        12
+                        0
                     </div>
                     <div class="txt">
                         Down
@@ -41,7 +41,7 @@
                 <div class="dashboard-standard-item warning row-group m-script-pop"
                      data-target=".modal-devices-warning">
                     <div class="num">
-                        0
+                        29
                     </div>
                     <div class="txt">
                         Unusual
