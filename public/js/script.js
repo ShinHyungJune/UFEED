@@ -115,7 +115,7 @@ function drawChart(deviceTraffics) {
         return {
             label: deviceTraffic.device.title,
             data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
-            borderWidth: 1,
+            borderWidth: 2,
             borderColor: colors[index],
             tension: 0.4 //곡선그래프
         };
@@ -135,14 +135,13 @@ function drawChart(deviceTraffics) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true,
                     min: 0,
                     ticks: {
-                        // forces step size to be 50 units
-                        stepSize: 20,
+                        stepSize: 20, //y축 단위
                         font: function () {
                             return {
                                 size: 10,
@@ -167,7 +166,7 @@ function drawChart(deviceTraffics) {
                     labels: {
                         font: function () {
                             return {
-                                size: 10,
+                                size: 9,
                                 family: 'Pretendard'
                             }
                         },
@@ -177,12 +176,13 @@ function drawChart(deviceTraffics) {
                     position: 'top',
                     fullWidth: false,
                 },
-            }
-        },
-        elements: {
-            point: {
-                radius: 0, //선형 그래프 포인트 삭제
+            },
+            elements: {
+                point: {
+                    radius: 0, //선형 그래프 포인트 삭제
+                },
             },
         },
+
     });
 }

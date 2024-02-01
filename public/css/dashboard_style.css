@@ -382,7 +382,11 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 
 .dashboard-gnb-wrap.active .dashboard-gnb-title .down-btn { background: #502ecf; }
 .dashboard-gnb-wrap.active .dashboard-gnb-title .down-btn i { transform: rotate(180deg); }
-.dashboard-gnb-wrap.active .real-time-status-list { height: auto; background: #f2f2f2; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); border-radius: 6px; }
+.dashboard-gnb-wrap.active .real-time-status-list {
+    max-height:calc(100vh - 200px);
+    height: auto; background: #f2f2f2; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); border-radius: 6px;
+    overflow-y:auto;
+}
 
 /* 대시보드 중앙 - Device Wrap */
 .dashboard-content { height: calc( 100% - 148px - 12px ); background-color: #f5f5f5; border-radius: 14px; border: 1px solid #e4e4e4; position: relative; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); overflow: hidden; }
