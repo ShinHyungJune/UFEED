@@ -56,10 +56,10 @@
 
         <div class="dashboard-gnb-wrap">
             <div class="real-time-traffic-title-wrap">
-                <p class="title">
+                <p class="dashboard-gnb-title">
                     Traffic
                 </p>
-                <p class="mbps">
+<!--                <p class="mbps">
                     45.6Mbps
                 </p>
                 <div class="top1-wrap">
@@ -68,7 +68,7 @@
                         <p class="ip">192.168.0.176</p>
                     </div>
                     <p class="txt">TOP 1</p>
-                </div>
+                </div>-->
             </div>
             <div class="real-time-traffic-wrap">
                 <canvas id="chart"></canvas>

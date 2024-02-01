@@ -108,6 +108,7 @@ function drawChart(deviceTraffics) {
     //차트
     const main_ctx = document.getElementById('chart');
 
+    console.log(deviceTraffics);
     let firstDeviceTraffic = deviceTraffics[0];
 
     let datasets = deviceTraffics.map((deviceTraffic, index) => {
