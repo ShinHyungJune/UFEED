@@ -525,11 +525,6 @@
 </script>
 <script>
 
-    //Real-Time Notification Status 열고닫기
-    $('.down-btn').click(function () {
-        $(this).closest('.dashboard-gnb-wrap').toggleClass('active');
-    });
-
     // 탭
     const tabs = document.querySelectorAll('.dashboard-section-tab');
 
