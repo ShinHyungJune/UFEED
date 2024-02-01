@@ -1991,8 +1991,8 @@
 
     //대시보드 확대축소버튼
     const scalingBox = $('.device-wrap');
-    let currentScale = 1.0;
-    let minScale = 1.0;
+    var currentScale = 1.0;
+    var minScale = 1.0;
 
     $('.renew-btn').on('click', function () {
         currentScale = minScale;
@@ -2051,18 +2051,18 @@
         axios.post(window.domain + "/api/histories");
     } */
 
-    let first = true;
+    var first = true;
 
     function getHistories() {
         axios.get(window.domain + "/api/histories")
             .then(response => {
-                let devices = response.data.data.devices;
-                let realTimeNotifications = response.data.data.realTimeNotifications;
-                let realTimeTraffics = response.data.data.realTimeTraffics;
-                let rankingTraffics = response.data.data.rankingTraffics;
+                var devices = response.data.data.devices;
+                var realTimeNotifications = response.data.data.realTimeNotifications;
+                var realTimeTraffics = response.data.data.realTimeTraffics;
+                var rankingTraffics = response.data.data.rankingTraffics;
 
                 // # STANDARD ==========
-                let counts = {
+                var counts = {
                     up: 0,
                     down: 0,
                     warning: 0,
@@ -2116,10 +2116,10 @@
 
                 // # Traffic Top 10 ========
                 $(".traffic-top-wrap").html("");
-                let topNum = 0;
+                var topNum = 0;
                 rankingTraffics.map(rankingTraffic => {
                     topNum++;
-                    let html = `<div class="traffic-top-item">
+                    var html = `<div class="traffic-top-item">
                         <div class="num">${topNum}</div>
                         <div class="txt-wrap">
                             <div class="txt-group">
@@ -2178,7 +2178,7 @@
 
         axios.get(window.domain + "/api/firewalls/dashboard")
             .then(response => {
-                let traffics = response.data.data.traffics;
+                var traffics = response.data.data.traffics;
 
                 $(".dashboard-table-traffic tbody").html("");
                 traffics.map(traffic => {
@@ -2191,9 +2191,9 @@
                     `);
                 });
 
-                let counts = response.data.data;
+                var counts = response.data.data;
 
-                let countsWrapArr = document.querySelectorAll('.protection-item'); // 24-02-01 추가
+                var countsWrapArr = document.querySelectorAll('.protection-item'); // 24-02-01 추가
 
                 countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
                 countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
@@ -2201,13 +2201,13 @@
 
                 $(".dashboard-table-cnc tbody").html("");
 
-                let cncs = response.data.data.cncs;
+                var cncs = response.data.data.cncs;
 
                 cncs.map(cnc => {
                     $(".dashboard-table-cnc tbody").append(`<tr><td>${cnc.sip}</td><td>${cnc.dip}</td><td>${cnc.count}</td><tr/>`);
                 });
 
-                let ipses = response.data.data.ipses;
+                var ipses = response.data.data.ipses;
 
                 $(".dashboard-table-ips tbody").html("");
                 ipses.map(ips => {
@@ -2220,7 +2220,7 @@
                     `);
                 });
 
-                let malwares = response.data.data.malwares;
+                var malwares = response.data.data.malwares;
 
                 $(".dashboard-table-malwares tbody").html("");
                 malwares.map(malware => {
@@ -2234,10 +2234,10 @@
             })
     }
 
-    let chart = null;
+    var chart = null;
 
     function drawChart(deviceTraffics) {
-        let colors = [
+        var colors = [
             "#502ecf",
             "#359832",
             "#84818F",
@@ -2252,9 +2252,9 @@
         //차트
         const main_ctx = document.getElementById('chart');
 
-        let firstDeviceTraffic = deviceTraffics[0];
+        var firstDeviceTraffic = deviceTraffics[0];
 
-        let datasets = deviceTraffics.map((deviceTraffic, index) => {
+        var datasets = deviceTraffics.map((deviceTraffic, index) => {
 
 
             return {
@@ -2341,13 +2341,13 @@
         getDashboard();
     }, 10000);
 
-    let firstSwiper = true;
-    let swiper = null;
+    var firstSwiper = true;
+    var swiper = null;
 
     function getAlarms() {
         axios.get(window.domain + "/api/alarms")
             .then(response => {
-                let items = response.data.data;
+                var items = response.data.data;
 
                 if (firstSwiper && items.length === 0) {
                     $(".m-swiper.type01").hide();
