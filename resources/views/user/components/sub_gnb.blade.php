@@ -453,11 +453,11 @@
     }
 
     // 팝업창 제어
-    $(".m-script-pop").click(function (){
+    $/*(".m-script-pop").click(function (){
         let target = $(this).attr("data-target");
 
         $(target).toggle();
-    });
+    });*/
 </script>
 <script>
     // 중메뉴 타이틀(gnb-menu-title)누르면 중메뉴(gnb-menu) 열림(active 추가)

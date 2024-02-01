@@ -1967,13 +1967,13 @@
     </div>
 </div>
 <style>
-    .modal-container {
+/*    .modal-container {
         opacity:0;
         position:absolute; z-index:-1; left:-10000px;
     }
     .modal-container.active {
         position: static; opacity:1; left:0;
-    }
+    }*/
 </style>
 <script>
 
