@@ -525,50 +525,6 @@
 </script>
 <script>
 
-    // 탭
-    const tabs = document.querySelectorAll('.dashboard-section-tab');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            const parent = this.parentElement;
-            const tabContents = parent.querySelectorAll('.dashboard-section-tab');
-
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            this.classList.add('active');
-        });
-    });
-
-    //대시보드 확대축소버튼
-    const scalingBox = $('.device-wrap');
-    let currentScale = 1.0;
-    let minScale = 1.0;
-
-    $('.renew-btn').on('click', function () {
-        currentScale = minScale;
-        scalingBox.css('transform', 'scale(' + currentScale + ')');
-    });
-
-    $('.plus-btn').on('click', function () {
-        if (currentScale < 1.9) {
-            currentScale += 0.3;
-            scalingBox.css('transform', 'scale(' + currentScale + ')');
-        }
-    });
-
-    $('.minus-btn').on('click', function () {
-        if (currentScale > 1.0) {
-            currentScale -= 0.3;
-
-            if (currentScale < minScale)
-                currentScale = minScale;
-
-            scalingBox.css('transform', 'scale(' + currentScale + ')');
-        }
-    });
-
 
     function clearTime(timeString) {
         // 주어진 시간 문자열을 Date 객체로 변환
