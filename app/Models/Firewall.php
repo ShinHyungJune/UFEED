@@ -59,7 +59,7 @@ class Firewall extends Model
 
     public function getTraffics($device = "FW_1")
     {
-        $start = Carbon::now()->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&attribute=rxbyte&query=devicename:{$device} and type:firewall&groupBySort=SUM");
 
