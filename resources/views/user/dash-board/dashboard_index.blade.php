@@ -2130,7 +2130,7 @@
 <!--                                </p>-->
                             </div>
                             <p class="byte">
-                                ${((parseInt(rankingTraffic.byte) * 8) / 1000000).toFixed().toLocaleString()} Mbps
+                                ${parseInt(((parseInt(rankingTraffic.byte) * 8) / 1000000).toFixed(1)).toLocaleString()} Mbps
                             </p>
                         </div>
                     </div>`;
