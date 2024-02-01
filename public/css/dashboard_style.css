@@ -283,6 +283,18 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-gnb-tab.active { font-weight: bold; color: #042e88; }
 .dashboard-gnb-tab.active::after { content: ''; display: block; position: absolute; width: 100%; height: 2px; background: #042e88; bottom: -9px; left: 0; }
 
+tbody .state {
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-radius: 100%;
+    display: inline-block;
+    background-color: #359832;
+}
+tbody .state.red {
+    background-color:red !important;
+}
+
 .polar-area-chart {
     width: 240px; height: 240px; margin-top:60px;
     position: relative;
