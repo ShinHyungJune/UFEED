@@ -14,11 +14,11 @@ final class DeviceStatus
     const DOWN = "DOWN";
     const UP = "UP";
     const WARNING = "WARNING";
-    const CRITICAL = "CRITICAL";
+    const UNUSUAL = "UNUSUAL";
     const PAUSED = "PAUSED";
 
     public static function getOptions()
     {
-        return [self::DOWN, self::UP, self::WARNING, self::CRITICAL, self::PAUSED];
+        return [self::DOWN, self::UP, self::WARNING, self::UNUSUAL, self::PAUSED];
     }
 }
