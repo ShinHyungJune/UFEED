@@ -48,7 +48,7 @@
                         0
                     </div>
                     <div class="txt">
-                        Warning
+                        Unusual
                     </div>
                 </div>
             </div>
