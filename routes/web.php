@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get("/test", function(){
 
-    $nac = new \App\Models\Nac();
+    $history = new \App\Models\History();
 
-    $items = $nac->blocks();
+    dd(\App\Models\History::record());
 });
 
 Route::get("/histories", function (){
