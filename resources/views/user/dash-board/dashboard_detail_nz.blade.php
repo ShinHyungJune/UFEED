@@ -161,10 +161,18 @@
         detailGroup.empty(); // 기존의 내용을 지움
 
         for (var i = 1; i <= num; i++) {
-            var detailItem = $('<div class="device-detail-item device-item up">' +
-                '<div class="state"></div>' +
-                '<img src="/images/dashboard_icon_server.png" alt="">' +
-                '</div>');
+            if (i === 0){
+                var detailItem = $('<div class="device-detail-item device-item up">' +
+                    '<div class="state"></div>' +
+                    '<img src="/images/dashboard_icon_server.png" alt="">' +
+                    '</div>');
+
+            }else{
+                var detailItem = $('<div class="device-detail-item device-item down">' +
+                    '<div class="state"></div>' +
+                    '<img src="/images/dashboard_icon_server.png" alt="">' +
+                    '</div>');
+            }
 
             // 생성된 detailItem을 detailGroup에 추가
             detailGroup.append(detailItem);
