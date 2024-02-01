@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 class HiSecureController extends Controller
 {
+    public function index()
+    {
+        return view('user.hi-secure.HiSecure_account');
+    }
+
     public function add()
     {
         return view('user.hi-secure.HiSecure_account_add');

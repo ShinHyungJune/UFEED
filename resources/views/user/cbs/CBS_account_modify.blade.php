@@ -25,7 +25,7 @@
                     <i class="xi-arrow-left"></i>
                 </button>
                 <h2 class="dashboard-detail-title">
-                    Hi-Secure Account Add
+                    Hi-Secure Account Modify
                 </h2>
             </div>
 
@@ -48,15 +48,6 @@
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
-                                            User Name
-                                        </p>
-                                        <div class="item-user col-group">
-                                            <input type="text" class="form-input">
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="form-item row-group">
-                                        <p class="item-title">
                                             Password
                                         </p>
                                         <input type="password" class="form-input" id="password">
@@ -74,21 +65,6 @@
                                         <p class="error sub-txt" style="color:red;"
                                            id="error-password_confirmation"></p>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div>
-                            <form action="">
-                                <div class="account-form row-group">
-                                    <div class="form-item row-group">
-                                        <p class="item-title">
-                                            Group
-                                        </p>
-                                        <select class="form-select" id="group">
-                                            <option value="1">1</option>
-                                        </select>
-                                        <p class="error sub-txt" style="color:red;" id="error-group"></p>
-                                    </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             Authority
@@ -97,12 +73,54 @@
                                             <option value="1">1</option>
                                         </select>
                                         <p class="error sub-txt" style="color:red;" id="error-authority"></p>
+
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             E-Mail
                                         </p>
                                         <input type="email" class="form-input" id="email">
+
+                                        <p class="error sub-txt" style="color:red;" id="error-email"></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="">
+                                <div class="account-form row-group">
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            User Name
+                                        </p>
+                                        <input type="password" class="form-input" id="username">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Zone
+                                        </p>
+                                        <select class="form-select" id="authority">
+                                            <option value="1">1</option>
+                                        </select>
+                                        <p class="error sub-txt" style="color:red;" id="error-authority"></p>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Asset Name
+                                        </p>
+                                        <input type="text" class="form-input" id="assetname">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Period of use
+                                        </p>
+                                        <input type="text" class="form-input" id="periodofuse">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Organization
+                                        </p>
+                                        <input type="text" class="form-input" id="organization">
                                     </div>
                                 </div>
                             </form>
@@ -111,7 +129,7 @@
 
                     <div class="form-btn-wrap col-group">
                         <button class="form-btn" onclick="update()">
-                            Add
+                            Modify
                         </button>
                     </div>
                 </div>
@@ -120,5 +138,72 @@
     </div>
 
 </div>
+<script>
+
+    $('#periodofuse').datepicker();
+
+    // let domain = "http://localhost:90";
+    let domain = "http://hi-secure.ufeed.co.kr";
+
+    function update() {
+        let form = {
+            password: $("#password").val(),
+            password_confirmation: $("#password_confirmation").val(),
+            authority: 1,
+            email: $("#email").val(),
+        };
+
+        let id = $(".check-input:checked").attr("value");
+
+        if (!id)
+            return alert("Please select an account.");
+
+        axios.patch(domain + "/api/users/" + id, form)
+            .then(response => {
+                getItems();
+                alert("Processed Successfully");
+                $('.modal-container').fadeOut();
+                clear();
+            }).catch(error => {
+            if (error.response.data.errors)
+                Object.entries(error.response.data.errors).map(error => {
+                    $(`#error-${error[0]}`).text(error[1]);
+                })
+        })
+    }
+
+    function clear() {
+        $("#password").val('');
+        $("#password_confirmation").val('');
+        $("#email").val('');
+    }
+
+    function getItems() {
+        $(".modal-table-wrap tbody").html("");
+
+        axios.get(domain + "/api/users")
+            .then(response => {
+                response.data.data.map(item => {
+                    $(".modal-table-wrap tbody").append(`<tr>
+<td>${item.ids}</td>
+<td>${item.authority}</td>
+<td>${item.email}</td>
+<td>
+<label for="${item.id}" class="check-label">
+   <input type="radio" class="check-input" id="${item.id}" value="${item.id}">
+       <div class="check-item">
+           <i class="xi-check"></i>
+       </div>
+   </label>
+</td>
+</tr>`)
+                })
+            }).catch(error => {
+
+        })
+    }
+
+    getItems();
+</script>
 </body>
 </html>

@@ -55,9 +55,21 @@
         </div>
 
         <div class="dashboard-gnb-wrap">
-            <p class="dashboard-gnb-title">
-                Real-Time traffic
-            </p>
+            <div class="real-time-traffic-title-wrap">
+                <p class="title">
+                    Traffic
+                </p>
+                <p class="mbps">
+                    45.6Mbps
+                </p>
+                <div class="top1-wrap">
+                    <div class="txt-group">
+                        <div class="type">FW1</div>
+                        <p class="ip">192.168.0.176</p>
+                    </div>
+                    <p class="txt">TOP 1</p>
+                </div>
+            </div>
             <div class="real-time-traffic-wrap">
                 <canvas id="chart"></canvas>
             </div>
@@ -1149,7 +1161,7 @@
                             boxWidth: 6,
                             boxHeight: 6,
                         },
-                        position: 'bottom',
+                        position: 'top',
                         fullWidth: false,
                     },
                 }
@@ -1246,14 +1258,14 @@
                     labels: {
                         font: function () {
                             return {
-                                size: 10,
+                                size: 9,
                                 family: 'Pretendard'
                             }
                         },
                         boxWidth: 6,
                         boxHeight: 6,
                     },
-                    position: 'bottom',
+                    position: 'top',
                     fullWidth: false,
                 },
             },

@@ -41,10 +41,10 @@
                                 0
                             </div>
                             <div class="txt">
-                                Anti-Malwa
+                                Anti-Malware
                             </div>
                         </div>
-                        <div class="protection-item warning">
+                        <div class="protection-item">
                             <div class="num">
                                 0
                             </div>
@@ -62,13 +62,13 @@
                                 <i class="xi-arrow-down"></i>
                             </button>
                         </div>
-                        <button class="security-btn">
+                        <a href="{{ route('security-monitoring') }}" class="security-btn">
                             <div class="txt-group">
                                 <i class="xi-desktop"></i>
                                 <p class="txt">Security Monitoring</p>
                             </div>
                             <i class="xi-arrow-right icon"></i>
-                        </button>
+                        </a>
                     </div>
                     <div class="real-time-status-wrap">
                         <div class="real-time-status-list">
@@ -252,23 +252,23 @@
                 </div>
 
                 <div class="dashboard-content-wrap">
-                    <div class="device-wrap" style="width: 970px; height: 770px; margin: 40px auto;">
+                    <div class="device-wrap"
+                         style="width: 970px; height: 770px; margin: 40px auto;">
                         <video class="bg-video" autoplay muted loop>
                             <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
                         </video>
-                        <a href="{{ route('dash-board.show') }}" class="device-item down" style="top: 200px; left: 0;">
+                        <a href="{{ route('navigation') }}" class="device-item down" style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_nz.png" alt="">
                         </a>
-                        <a href="{{ route('dash-board.show') }}" class="device-item up" style="top: 400px; left: 0;">
+                        <a href="{{ route('communication') }}" class="device-item up" style="top: 400px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_cz.png" alt="">
                         </a>
-                        <a href="{{ route('dash-board.show') }}" class="device-item up"
-                           style="top: 200px; left: 400px;">
+                        <div class="device-item up" style="top: 200px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_rz.png" alt="">
-                        </a>
+                        </div>
                         <div class="device-item up" style="top: 0; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_satellite.png" alt="">
@@ -289,16 +289,15 @@
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_nms.png" alt="">
                         </div>
-                        <a href="{{ route('dash-board.show') }}" class="device-item up" style="top: 0; left: 800px;">
+                        <a href="{{ route('crew-lan') }}" class="device-item up" style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_clz.png" alt="">
                         </a>
-                        <a href="{{ route('dash-board.show') }}" class="device-item up"
-                           style="top: 200px; left: 800px;">
+                        <a href="{{ route('power') }}" class="device-item up" style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_pz.png" alt="">
                         </a>
-                        <a href="{{ route('dash-board.show') }}" class="device-item up"
+                        <a href="{{ route('control-instrumentation') }}" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_ciz.png" alt="">
@@ -1948,7 +1947,7 @@
 </div>
 
 <!-- 알람 -->
-<div class="m-swiper type01">
+<div class="m-swiper type01" style="display: none;">
     <div class="swiper-container">
         <div class="swiper-wrapper">
 
@@ -2105,26 +2104,46 @@
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
 
-                drawChart(realTimeTraffics);
-                /*if(first) {
-                    first = false;
-
-                    // # Real-time traffic ========
-                    drawChart(realTimeTraffics);
-                }*/
+                // drawChart(realTimeTraffics);
+                // if(first) {
+                //     first = false;
+                //
+                //     // # Real-time traffic ========
+                //     drawChart(realTimeTraffics);
+                // }
 
                 // # Traffic Top 10 ========
-                $(".traffic-top-table tbody").html("");
+                // $(".traffic-top-table tbody").html("");
+                $(".traffic-top-wrap").html("");
+                let topNum = 0;
                 rankingTraffics.map(rankingTraffic => {
 
-                    let html = `<tr>
+//                     let html = `<tr>
+//
+//     <td><div class="state state-bar"></div></td>
+//     <td>${rankingTraffic.title}</td>
+//     <td>${Math.floor(parseInt(rankingTraffic.byte) / 1024)} KB</td>
+// </tr>`;
+                    topNum++;
+                    let html = `<div class="traffic-top-item">
+                        <div class="num">${topNum}</div>
+                        <div class="txt-wrap">
+                            <div class="txt-group">
+                                <p class="name">
+                                    ${rankingTraffic.title}
+                                </p>
+                                <p class="ip">
+                                    192.168.0.176
+                                </p>
+                            </div>
+                            <p class="byte">
+                                ${Math.floor(parseInt(rankingTraffic.byte) / 1024)} KB
+                            </p>
+                        </div>
+                    </div>`;
 
-    <td><div class="state state-bar"></div></td>
-    <td>${rankingTraffic.title}</td>
-    <td>${Math.floor(parseInt(rankingTraffic.byte) / 1024)} KB</td>
-</tr>`;
-
-                    $(".traffic-top-table tbody").append(html);
+                    // $(".traffic-top-table tbody").append(html);
+                    $(".traffic-top-wrap").append(html);
                 });
 
 

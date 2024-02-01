@@ -50,22 +50,22 @@
                             Zone
                         </th>
                         <th>
-                            장비명
+                            Asset Name
                         </th>
                         <th>
-                            계정
+                            ID
                         </th>
                         <th>
-                            계정 사용자
+                            User
                         </th>
                         <th>
-                            권한
+                            Authority
                         </th>
                         <th>
-                            사용기간
+                            Period of Use
                         </th>
                         <th>
-                            사용여부
+                            Active/Inactive
                         </th>
                         </thead>
                         <tbody>
@@ -78,17 +78,17 @@
                                 FS11
                             </td>
                             <td>admin</td>
-                            <td>홍길동</td>
+                            <td>Aaron</td>
                             <td>admin</td>
-                            <td>1년마다 갱신</td>
+                            <td>1 Year</td>
                             <td><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         <tr>
                             <td>1</td>
                             <td>admin</td>
-                            <td>홍길동</td>
+                            <td>Brandon</td>
                             <td>admin</td>
-                            <td>1년마다 갱신</td>
+                            <td>1 Year</td>
                             <td><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         </tbody>

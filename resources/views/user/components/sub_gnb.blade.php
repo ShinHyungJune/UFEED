@@ -397,9 +397,9 @@
     </div>
 </div>
 <script>
-    window.domain = "http://localhost:8000";
+    // window.domain = "http://localhost:8000";
     // window.domain = "http://localhost:90";
-    // window.domain = "http://hi-secure.ufeed.co.kr";
+    window.domain = "http://hi-secure.ufeed.co.kr";
 </script>
 <script>
     let pathname = window.location.pathname;
@@ -429,8 +429,9 @@
         var day = ('0' + now.getUTCDate()).slice(-2);
         var hours = ('0' + now.getUTCHours()).slice(-2);
         var minutes = ('0' + now.getUTCMinutes()).slice(-2);
+        var seconds = ('0' + now.getUTCSeconds()).slice(-2);
 
-        var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes;
+        var formattedDate = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes + ":" + seconds;
 
         $(".utc-txt").text(formattedDate);
 
@@ -440,6 +441,23 @@
     setInterval(function () {
         setTimer();
     }, 1000);
+</script>
+<script>
+
+    function openLoading(){
+        $("html").append('<span class="loader"></span>')
+    }
+
+    function closeLoading(){
+        $(".loader").remove();
+    }
+
+    // 팝업창 제어
+    $(".m-script-pop").click(function (){
+        let target = $(this).attr("data-target");
+
+        $(target).toggle();
+    });
 </script>
 <script>
     // 중메뉴 타이틀(gnb-menu-title)누르면 중메뉴(gnb-menu) 열림(active 추가)
@@ -522,87 +540,87 @@
         $('.blocked-devices-wrap').fadeIn();
     });
 
-//     function getAllows() {
-//         axios.get("/api/nac/allows")
-//             .then(response => {
-//                 closeLoading();
-//                 let result = response.data.data;
-//
-//                 let count = result.total;
-//                 let items = result.result;
-//
-//                 $(".allowed-devices .badge").text(count);
-//
-//                 $(".allowed-devices-wrap tbody").html("");
-//
-//                 items.map(item => {
-//                     $(".allowed-devices-wrap tbody").append(`<tr>
-// <td>${item.NL_SIFNAME}</td>
-// <td>${item.NL_IPSTR}</td>
-// <td>${item.NL_PLATFORM}</td>
-// <td>${item.NL_MAC}</td>
-// <td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
-// <td><button class="m-btn type01" data-value="${item.NL_IPSTR}">BLOCK</button></td>
-// </tr>`)
-//                 });
-//
-//                 $(".allowed-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
-//                     let ip = $(this).attr("data-value");
-//
-//                     openLoading();
-//
-//                     axios.post("/api/nac/blocks", {
-//                         ip: ip
-//                     }).then(response => {
-//                         getAllows();
-//                         getBlocks();
-//                     });
-//                 });
-//
-//             })
-//     }
-//
-//     function getBlocks() {
-//         axios.get("/api/nac/blocks")
-//             .then(response => {
-//                 closeLoading();
-//                 let result = response.data.data;
-//
-//                 let count = result.total;
-//                 let items = result.result;
-//
-//                 console.log(items);
-//                 $(".blocked-devices .badge").text(count);
-//
-//                 $(".blocked-devices-wrap tbody").html("");
-//
-//                 items.map(item => {
-//                     $(".blocked-devices-wrap tbody").append(`<tr>
-// <td>${item.NL_SIFNAME}</td>
-// <td>${item.NL_IPSTR}</td>
-// <td>${item.NL_PLATFORM}</td>
-// <td>${item.NL_MAC}</td>
-// <td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
-// <td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
-// </tr>`)
-//                 });
-//
-//                 $(".blocked-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
-//                     let ip = $(this).attr("data-value");
-//
-//                     openLoading();
-//
-//                     axios.post("/api/nac/allows", {
-//                         ip: ip
-//                     }).then(response => {
-//                         getAllows();
-//                         getBlocks();
-//                     });
-//                 });
-//             })
-//     }
-//
-//     getBlocks();
-//
-//     getAllows();
+    function getAllows() {
+        axios.get("/api/nac/allows")
+            .then(response => {
+                closeLoading();
+                let result = response.data.data;
+
+                let count = result.total;
+                let items = result.result;
+
+                $(".allowed-devices .badge").text(count);
+
+                $(".allowed-devices-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".allowed-devices-wrap tbody").append(`<tr>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_PLATFORM}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">BLOCK</button></td>
+</tr>`)
+                });
+
+                $(".allowed-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
+                    let ip = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.post("/api/nac/blocks", {
+                        ip: ip
+                    }).then(response => {
+                        getAllows();
+                        getBlocks();
+                    });
+                });
+
+            })
+    }
+
+    function getBlocks() {
+        axios.get("/api/nac/blocks")
+            .then(response => {
+                closeLoading();
+                let result = response.data.data;
+
+                let count = result.total;
+                let items = result.result;
+
+                console.log(items);
+                $(".blocked-devices .badge").text(count);
+
+                $(".blocked-devices-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".blocked-devices-wrap tbody").append(`<tr>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_PLATFORM}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
+</tr>`)
+                });
+
+                $(".blocked-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
+                    let ip = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.post("/api/nac/allows", {
+                        ip: ip
+                    }).then(response => {
+                        getAllows();
+                        getBlocks();
+                    });
+                });
+            })
+    }
+
+    getBlocks();
+
+    getAllows();
 </script>

@@ -58,7 +58,12 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('dash-board')->group(function () {
         Route::get('/', [\App\Http\Controllers\DashBoardController::class, 'index'])->name('dash-board.index');
-        Route::get('/show', [\App\Http\Controllers\DashBoardController::class, 'show'])->name('dash-board.show');
+        Route::get('/security-monitoring', [\App\Http\Controllers\DashBoardController::class, 'securityMonitoring'])->name('security-monitoring');
+        Route::get('/navigation', [\App\Http\Controllers\DashBoardController::class, 'navigationZone'])->name('navigation');
+        Route::get('/communication', [\App\Http\Controllers\DashBoardController::class, 'communicationZone'])->name('communication');
+        Route::get('/crew-lan', [\App\Http\Controllers\DashBoardController::class, 'crewLanZone'])->name('crew-lan');
+        Route::get('/power', [\App\Http\Controllers\DashBoardController::class, 'powerZone'])->name('power');
+        Route::get('/control-instrumentation', [\App\Http\Controllers\DashBoardController::class, 'controlInstrumentationZone'])->name('control-instrumentation');
     });
 
     Route::prefix('main-menu')->group(function () {
@@ -121,10 +126,17 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('hi-secure')->group(function () {
+        Route::get('/', [\App\Http\Controllers\HiSecureController::class, 'index'])->name('hi-secure.index');
         Route::get('add', [\App\Http\Controllers\HiSecureController::class, 'add'])->name('hi-secure.add');
         Route::get('delete', [\App\Http\Controllers\HiSecureController::class, 'delete'])->name('hi-secure.delete');
         Route::get('modify', [\App\Http\Controllers\HiSecureController::class, 'modify'])->name('hi-secure.modify');
         Route::get('global-setting', [\App\Http\Controllers\HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
+    });
+
+    Route::prefix('cbs')->group(function () {
+        Route::get('add', [\App\Http\Controllers\CBSController::class, 'add'])->name('cbs.add');
+        Route::get('delete', [\App\Http\Controllers\CBSController::class, 'delete'])->name('cbs.delete');
+        Route::get('modify', [\App\Http\Controllers\CBSController::class, 'modify'])->name('cbs.modify');
     });
 });
 

@@ -42,7 +42,7 @@
 	</div>
 
 	<div class="header-btm-wrap row-group">
-		<a href="{{ route('hi-secure.add') }}" class="header-btm-btn">
+		<a href="{{ route('hi-secure.index') }}" class="header-btm-btn">
 			<i class="xi-profile icon"></i>
 		</a>
 		<form action="{{ route('logout') }}" method="post">

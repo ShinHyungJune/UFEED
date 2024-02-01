@@ -27,7 +27,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Control & Instrumentation Zone
+                    Power Zone
                 </h2>
             </div>
 
@@ -41,23 +41,25 @@
                             </div>
                             <div class="device-item up">
                                 <div class="state"></div>
-                                <img src="/images/dashboard_icon_firewall_clz.png" alt="">
+                                <img src="/images/dashboard_icon_firewall_pz.png" alt="">
                             </div>
                         </div>
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up" data-title="Control System ICMS (A1)">
-                                <div class="state state-num">8</div>
-                                <img src="/images/dashboard_icon_controlsystem_icms_a1.png" alt="">
+                            <div class="device-item device-btn up" data-title="Shaft Generator System">
+                                <div class="state state-num">6</div>
+                                <img src="/images/dashboard_icon_system.png" alt="">
+                                <p class="device-item-title">
+                                    Shaft Generator System
+                                </p>
                             </div>
-                            <div class="device-item device-btn up" data-title="Control System ICMS (B1)">
-                                <div class="state state-num">8</div>
-                                <img src="/images/dashboard_icon_controlsystem_icms_b1.png" alt="">
-                            </div>
-                            <div class="device-item device-btn warning" data-title="Control System ISS">
+                            <div class="device-item device-btn up" data-title="Refeer Container Monitoring System">
                                 <div class="state state-num">3</div>
-                                <img src="/images/dashboard_icon_controlsystem_iss.png" alt="">
+                                <img src="/images/dashboard_icon_system.png" alt="">
+                                <p class="device-item-title">
+                                    Refeer Container Monitoring System
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -113,7 +115,7 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                Control & Instrumentation Zone
+                Power Zone
             </p>
             <i class="xi-angle-right"></i>
             <p class="now"></p>
@@ -127,6 +129,7 @@
         </div>
     </div>
 </div>
+
 <script>
 
     function showDeviceDetail(num) {
