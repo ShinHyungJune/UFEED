@@ -334,7 +334,7 @@
     </div>
 
     <!-- Devices UP-->
-    <div class="modal-container modal-devices-up" style="display:none;">
+    <div class="modal-container modal-devices-up">
         <div class="modal-wrap">
             <div class="modal-title">
                 Devices
@@ -370,7 +370,7 @@
     </div>
 
     <!-- Devices DOWN-->
-    <div class="modal-container modal-devices-down" style="display:none;">
+    <div class="modal-container modal-devices-down">
         <div class="modal-wrap">
             <div class="modal-title">
                 Devices
@@ -406,7 +406,7 @@
     </div>
 
     <!-- Devices CRITICAL-->
-    <div class="modal-container modal-devices-critical" style="display:none;">
+    <div class="modal-container modal-devices-critical">
         <div class="modal-wrap">
             <div class="modal-title">
                 Devices
@@ -442,7 +442,7 @@
     </div>
 
     <!-- Devices WARNING-->
-    <div class="modal-container modal-devices-warning" style="display:none;">
+    <div class="modal-container modal-devices-warning">
         <div class="modal-wrap">
             <div class="modal-title">
                 Devices
@@ -1966,6 +1966,15 @@
         </div>
     </div>
 </div>
+<style>
+    .modal-container {
+        opacity:0;
+        position:absolute; z-index:-1; left:-10000px;
+    }
+    .modal-container.active {
+        position: static; opacity:1; left:0;
+    }
+</style>
 <script>
 
     //Real-Time Notification Status 열고닫기
