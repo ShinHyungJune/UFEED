@@ -402,8 +402,8 @@
     window.domain = "http://hi-secure.ufeed.co.kr";
 </script>
 <script>
-    let pathname = window.location.pathname;
-    let firstUrl = pathname.split('/')[1];
+    var pathname = window.location.pathname;
+    var firstUrl = pathname.split('/')[1];
 
     document.querySelectorAll('.header-menu-btn').forEach(function (item) {
         if (firstUrl === item.id) {
@@ -454,7 +454,7 @@
 
     // 팝업창 제어
     $/*(".m-script-pop").click(function (){
-        let target = $(this).attr("data-target");
+        var target = $(this).attr("data-target");
 
         $(target).toggle();
     });*/
@@ -564,13 +564,13 @@
     function getHistories() {
         axios.get(window.domain + "/api/histories")
             .then(response => {
-                let devices = response.data.data.devices;
-                let realTimeNotifications = response.data.data.realTimeNotifications;
-                let realTimeTraffics = response.data.data.realTimeTraffics;
-                let rankingTraffics = response.data.data.rankingTraffics;
+                var devices = response.data.data.devices;
+                var realTimeNotifications = response.data.data.realTimeNotifications;
+                var realTimeTraffics = response.data.data.realTimeTraffics;
+                var rankingTraffics = response.data.data.rankingTraffics;
 
                 // # STANDARD ==========
-                let counts = {
+                var counts = {
                     up: 0,
                     down: 0,
                     warning: 0,
@@ -624,10 +624,10 @@
 
                 // # Traffic Top 10 ========
                 $(".traffic-top-wrap").html("");
-                let topNum = 0;
+                var topNum = 0;
                 rankingTraffics.map(rankingTraffic => {
                     topNum++;
-                    let html = `<div class="traffic-top-item">
+                    var html = `<div class="traffic-top-item">
                         <div class="num">${topNum}</div>
                         <div class="txt-wrap">
                             <div class="txt-group">
@@ -686,7 +686,7 @@
 
         axios.get(window.domain + "/api/firewalls/dashboard")
             .then(response => {
-                let traffics = response.data.data.traffics;
+                var traffics = response.data.data.traffics;
 
                 $(".dashboard-table-traffic tbody").html("");
                 traffics.map(traffic => {
@@ -699,9 +699,9 @@
                     `);
                 });
 
-                let counts = response.data.data;
+                var counts = response.data.data;
 
-                let countsWrapArr = document.querySelectorAll('.protection-item'); // 24-02-01 추가
+                var countsWrapArr = document.querySelectorAll('.protection-item'); // 24-02-01 추가
 
                 countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
                 countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
@@ -709,13 +709,13 @@
 
                 $(".dashboard-table-cnc tbody").html("");
 
-                let cncs = response.data.data.cncs;
+                var cncs = response.data.data.cncs;
 
                 cncs.map(cnc => {
                     $(".dashboard-table-cnc tbody").append(`<tr><td>${cnc.sip}</td><td>${cnc.dip}</td><td>${cnc.count}</td><tr/>`);
                 });
 
-                let ipses = response.data.data.ipses;
+                var ipses = response.data.data.ipses;
 
                 $(".dashboard-table-ips tbody").html("");
                 ipses.map(ips => {
@@ -728,7 +728,7 @@
                     `);
                 });
 
-                let malwares = response.data.data.malwares;
+                var malwares = response.data.data.malwares;
 
                 $(".dashboard-table-malwares tbody").html("");
                 malwares.map(malware => {
@@ -742,10 +742,10 @@
             })
     }
 
-    let chart = null;
+    var chart = null;
 
     function drawChart(deviceTraffics) {
-        let colors = [
+        var colors = [
             "#502ecf",
             "#359832",
             "#84818F",
@@ -849,13 +849,13 @@
         getDashboard();
     }, 10000);
 
-    let firstSwiper = true;
-    let swiper = null;
+    var firstSwiper = true;
+    var swiper = null;
 
     function getAlarms() {
         axios.get(window.domain + "/api/alarms")
             .then(response => {
-                let items = response.data.data;
+                var items = response.data.data;
 
                 if (firstSwiper && items.length === 0) {
                     $(".m-swiper.type01").hide();
@@ -946,10 +946,10 @@
         axios.get("/api/nac/allows")
             .then(response => {
                 closeLoading();
-                let result = response.data.data;
+                var result = response.data.data;
 
-                let count = result.total;
-                let items = result.result;
+                var count = result.total;
+                var items = result.result;
 
                 $(".allowed-devices .badge").text(count);
 
@@ -967,7 +967,7 @@
                 });
 
                 $(".allowed-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
-                    let ip = $(this).attr("data-value");
+                    var ip = $(this).attr("data-value");
 
                     openLoading();
 
@@ -986,10 +986,10 @@
         axios.get("/api/nac/blocks")
             .then(response => {
                 closeLoading();
-                let result = response.data.data;
+                var result = response.data.data;
 
-                let count = result.total;
-                let items = result.result;
+                var count = result.total;
+                var items = result.result;
 
                 console.log(items);
                 $(".blocked-devices .badge").text(count);
@@ -1008,7 +1008,7 @@
                 });
 
                 $(".blocked-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
-                    let ip = $(this).attr("data-value");
+                    var ip = $(this).attr("data-value");
 
                     openLoading();
 
