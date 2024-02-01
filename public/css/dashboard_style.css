@@ -177,7 +177,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .header-menu-btn_MM:hover .icon, .header-menu-btn_MM.active .icon { background-image: url(../images/MAINMENU_on.png); }
 .header-menu-btn_QF:hover .icon, .header-menu-btn_QF.active .icon { background-image: url(../images/Quick_on.png); }
 .header-menu-btn_ISS:hover .icon, .header-menu-btn_ISS.active .icon { background-image: url(../images/Information_on.png); }
-.header-menu-btn:hover .txt, .header-menu-btn.active .txt { color: #01ae42; } 
+.header-menu-btn:hover .txt, .header-menu-btn.active .txt { color: #01ae42; }
 
 .dimming-btn { position: relative; padding-left: 16px; }
 .dimming-btn ::after { content: ''; display: block; position: absolute; width: 1px; height: 12px; background: #a4a4a4; left: -8px; top: 50%; transform: translateY(-50%); }
@@ -377,6 +377,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .real-time-status-item.Down .state { background: #292d33; }
 .real-time-status-item.Critical .state { background: #ff4620; }
 .real-time-status-item.Warning .state { background: #ef9900; }
+.real-time-status-item.Unusual .state { background: #ef9900; }
 .real-time-status-item .txt { width: calc( 100% - 185px ); font-size: 16px; font-weight: 300; color: #6b6b6b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .dashboard-gnb-wrap.active .dashboard-gnb-title .down-btn { background: #502ecf; }
