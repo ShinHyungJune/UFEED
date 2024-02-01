@@ -34,7 +34,8 @@ class HistoryController extends ApiController
 
         $nearestMinute =  $minute - ($minute % 5);
 
-        $pivotDate->setMinute($nearestMinute);
+        return $this->respondForbidden($nearestMinute);
+        $pivotDate = $pivotDate->setMinute($nearestMinute);
 
 /*        if($firstHistory)
             $pivotDate = $firstHistory->logged_at;*/
@@ -102,7 +103,7 @@ class HistoryController extends ApiController
 
         return [
             "byte" => $history ? $history->byte : 0,
-            "date" => Carbon::make($datetime)->format("H:i:s"),
+            "date" => Carbon::make($datetime)->format("H:i"),
         ];
     }
 
