@@ -2113,17 +2113,9 @@
                 // }
 
                 // # Traffic Top 10 ========
-                // $(".traffic-top-table tbody").html("");
                 $(".traffic-top-wrap").html("");
                 let topNum = 0;
                 rankingTraffics.map(rankingTraffic => {
-
-//                     let html = `<tr>
-//
-//     <td><div class="state state-bar"></div></td>
-//     <td>${rankingTraffic.title}</td>
-//     <td>${Math.floor(parseInt(rankingTraffic.byte) / 1024)} KB</td>
-// </tr>`;
                     topNum++;
                     let html = `<div class="traffic-top-item">
                         <div class="num">${topNum}</div>
@@ -2132,17 +2124,16 @@
                                 <p class="name">
                                     ${rankingTraffic.title}
                                 </p>
-                                <p class="ip">
-                                    192.168.0.176
-                                </p>
+<!--                                <p class="ip">-->
+<!--                                    192.168.0.176-->
+<!--                                </p>-->
                             </div>
                             <p class="byte">
-                                ${Math.floor(parseInt(rankingTraffic.byte) / 1024)} KB
+                                ${((parseInt(rankingTraffic.byte) * 8) / 1000000).toFixed(1)} Mbps
                             </p>
                         </div>
                     </div>`;
 
-                    // $(".traffic-top-table tbody").append(html);
                     $(".traffic-top-wrap").append(html);
                 });
 
