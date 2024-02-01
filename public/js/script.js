@@ -82,10 +82,9 @@ $(document).ready(function(){
 
     // 팝업창 제어
     $(".m-script-pop").unbind("click").bind("click", function (){
-        alert(1);
         let target = $(this).attr("data-target");
 
-        $(target).toggle("active");
+        $(target).toggle();
     });
 })
 
