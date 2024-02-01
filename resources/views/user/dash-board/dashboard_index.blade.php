@@ -2077,7 +2077,7 @@
                 $(".modal-devices-warning tbody").html("");
 
                 devices.map(device => {
-                    $(".device-wrap").append(`<div class="device ${device.status} device-${device.title} ${device.title.includes('OT') ? 'device-OT' : ''}" style="left:${device.left}%;top:${device.top}%"></div>`);
+                    // $(".device-wrap").append(`<div class="device ${device.status} device-${device.title} ${device.title.includes('OT') ? 'device-OT' : ''}" style="left:${device.left}%;top:${device.top}%"></div>`);
 
                     if (device.status === "Up") {
                         counts.up += 1;
@@ -2140,15 +2140,34 @@
 
                 // # Real-time notofication status ======
                 if (realTimeNotifications.length > 0) {
-                    $(".dashboard-real-time tbody").html("");
+
+                    $(".real-time-status-list").html("");
+
                     realTimeNotifications.map(item => {
-                        $(".dashboard-real-time tbody").append(`<tr>
-<td><div class="state state-bar ${item.status}"></div></td>
-<td>${item.device.title}</td>
-<td>${item.status}</td>
-<td>${item.message}</td>
-</tr>`);
-                    })
+
+                        if(item.status == "Unusual") {
+
+                            item.status = "Warning";
+
+                        }
+
+                        $(".real-time-status-list").append(`<div class="real-time-status-item ${item.status}">
+                                                                <div class="title-wrap">
+                                                                    <div class="state">
+                                                                        ${item.status}
+                                                                    </div>
+                                                                    <p class="title">
+                                                                        ${item.device.title}
+                                                                    </p>
+                                                                </div>
+                                                                <p class="txt">
+                                                                    ${item.message}
+                                                                </p>
+                                                            </div>`
+                        );
+
+                    });
+
                 }
             });
     }
