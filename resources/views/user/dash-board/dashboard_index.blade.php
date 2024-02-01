@@ -24,7 +24,7 @@
             <div class="dashboard-top col-group">
                 <div class="dashboard-gnb-wrap">
                     <p class="dashboard-gnb-title">
-                        CBS PROTECTION
+                        CBS Protection
                     </p>
 
                     <div class="protection-wrap col-group">
@@ -33,7 +33,7 @@
                                 0
                             </div>
                             <div class="txt">
-                                Anti-Ddos
+                                Anti-DDoS
                             </div>
                         </div>
                         <div class="protection-item">
@@ -49,7 +49,7 @@
                                 0
                             </div>
                             <div class="txt">
-                                Anti-Ips
+                                Anti-IPS
                             </div>
                         </div>
                     </div>
