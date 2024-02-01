@@ -46,33 +46,33 @@
                         <th>IP</th>
                         <th>MAC</th>
                         <th>On/Off</th>
-                        <th>사용여부</th>
+                        <th>Active/Inactive</th>
                         </thead>
                         <tbody>
                         <tr>
                             <td>1</td>
                             <td rowspan="3">AP#1</td>
-                            <td>노트북#1</td>
+                            <td>Notebook#1</td>
                             <td>192.168.0.100</td>
                             <td>aa:bb:cc:dd:ee:f1</td>
                             <td>On</td>
-                            <td>직원#1</td>
+                            <td>Employee#1</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>노트북#2</td>
+                            <td>Notebook#2</td>
                             <td>192.168.0.100</td>
                             <td>aa:bb:cc:dd:ee:f2</td>
                             <td>On</td>
-                            <td>직원#2</td>
+                            <td>Employee#2</td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>노트북#3</td>
+                            <td>Notebook#3</td>
                             <td>192.168.0.100</td>
                             <td>aa:bb:cc:dd:ee:f3</td>
                             <td>On</td>
-                            <td>직원#3</td>
+                            <td>Employee#3</td>
                         </tr>
                         </tbody>
                     </table>
