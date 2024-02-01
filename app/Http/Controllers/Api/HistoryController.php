@@ -95,8 +95,8 @@ class HistoryController extends ApiController
     {
         $history = $device->histories()
             // ->whereBetween('logged_at', [ Carbon::make($datetime)->subHours(3), Carbon::make($datetime)])
-            ->where('logged_at', ">=", $datetime->setSecond(0))
-            ->where('logged_at', "<=", $datetime->setSecond(59))
+            ->where('logged_at', ">=", Carbon::make($datetime)->setSecond(0)->setMillisecond(0))
+            ->where('logged_at', "<", Carbon::make($datetime)->addMinute()->setSecond(0)->setMillisecond(0))
             ->orderBy('byte', 'desc')
             ->first();
 
