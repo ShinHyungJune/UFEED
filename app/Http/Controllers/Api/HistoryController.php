@@ -30,8 +30,11 @@ class HistoryController extends ApiController
 
         $pivotDate = Carbon::now();
 
-        if($firstHistory)
-            $pivotDate = $firstHistory->logged_at;
+        $minute = Carbon::now()->minute;
+
+        $nearestMinute =  $minute - ($minute % 5);
+
+        $pivotDate = $pivotDate->setMinute($nearestMinute);
 
         $trafficDevices = Device::whereNotIn("title", ["NMS", "L3 Switch", "TMS", "OT#1", "OT#2", "OT#3"])->get();
 
