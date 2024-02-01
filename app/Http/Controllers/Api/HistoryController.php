@@ -34,7 +34,6 @@ class HistoryController extends ApiController
 
         $nearestMinute =  $minute - ($minute % 5);
 
-        return $this->respondForbidden($nearestMinute);
         $pivotDate = $pivotDate->setMinute($nearestMinute);
 
 /*        if($firstHistory)
