@@ -33,7 +33,7 @@
                                 0
                             </div>
                             <div class="txt">
-                                Anti-Virus
+                                Anti-Ddos
                             </div>
                         </div>
                         <div class="protection-item">
@@ -49,7 +49,7 @@
                                 0
                             </div>
                             <div class="txt">
-                                Anti-Ransomware
+                                Anti-Ips
                             </div>
                         </div>
                     </div>
@@ -2211,9 +2211,11 @@
 
                 let counts = response.data.data;
 
-                $(".num-ddos").text(counts.count_ddos);
-                $(".num-ips").text(counts.count_ips);
-                $(".num-malware").text(counts.count_malware);
+                let countsWrapArr = document.querySelectorAll('.protection-item'); // 24-02-01 추가
+
+                countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
+                countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
+                countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
 
                 $(".dashboard-table-cnc tbody").html("");
 
