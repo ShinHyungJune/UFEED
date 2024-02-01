@@ -99,7 +99,7 @@ class HistoryController extends ApiController
 
         return [
             "byte" => $history ? $history->byte : 0,
-            "date" => Carbon::make($datetime)->format("H:i:s"),
+            "date" => Carbon::make($datetime)->format("H:i"),
         ];
     }
 
