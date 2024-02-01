@@ -161,7 +161,7 @@
         detailGroup.empty(); // 기존의 내용을 지움
 
         for (var i = 1; i <= num; i++) {
-            if (i === 0){
+            if (i === 1){
                 var detailItem = $('<div class="device-detail-item device-item up">' +
                     '<div class="state"></div>' +
                     '<img src="/images/dashboard_icon_server.png" alt="">' +
