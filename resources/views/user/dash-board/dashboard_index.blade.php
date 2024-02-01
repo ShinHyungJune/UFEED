@@ -2066,7 +2066,7 @@
                     up: 0,
                     down: 0,
                     warning: 0,
-                    critical: 0,
+                    unusual: 0,
                 };
 
                 $(".device-wrap").find(".device").remove();
@@ -2089,8 +2089,8 @@
                         $(".modal-devices-down tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
 
-                    if (device.status === "Critical") {
-                        counts.warning += 1;
+                    if (device.status === "Unusual") {
+                        counts.unusual += 1;
                         $(".modal-devices-critical tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
 
@@ -2103,6 +2103,7 @@
                 $(".dashboard-standard-item.up").find(".num").text(counts.up);
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
+                $(".dashboard-standard-item.unusual").find(".num").text(counts.unusual);
 
                 drawChart(realTimeTraffics);
 

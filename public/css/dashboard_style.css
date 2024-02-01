@@ -284,7 +284,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dashboard-gnb-tab.active::after { content: ''; display: block; position: absolute; width: 100%; height: 2px; background: #042e88; bottom: -9px; left: 0; }
 
 .polar-area-chart {
-    width: 240px; height: 240px; margin-top:40px;
+    width: 240px; height: 240px; margin-top:60px;
     position: relative;
     background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; display: none;
 }
