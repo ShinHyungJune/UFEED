@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="subpage-table-container">
-                <div class="subpage-table-wrap">
+                <div class="subpage-table-wrap account-table-wrap">
                     <table class="subpage-table">
                         <thead>
                         <th>

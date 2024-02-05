@@ -35,8 +35,8 @@
             </div>
 
             <div class="subpage-table-container">
-                <div class="subpage-table-wrap">
-                    <table class="report-table">
+                <div class="subpage-table-wrap account-table-wrap">
+                    <table class="subpage-table">
                         <thead>
                         <th>NO.</th>
                         <th>Category</th>

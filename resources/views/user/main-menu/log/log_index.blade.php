@@ -60,8 +60,8 @@
                                         </div>
                                     </div>-->
 
-                <div class="subpage-table-wrap">
-                    <table class="log-table">
+                <div class="subpage-table-wrap account-table-wrap">
+                    <table class="">
                         <colgroup>
                             <col width="24px">
                         </colgroup>

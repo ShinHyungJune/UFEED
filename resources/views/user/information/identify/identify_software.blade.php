@@ -19,42 +19,30 @@
     <!-- 대시보드 -->
     <div class="dashboard">
         <div class="subpage">
-            <div class="dashboard-menu-wrap col-group">
-                <div class="dashboard-menu-nav col-group">
-                    <div class="dashboard-menu-nav-item">
-                        Cyber Resilience of ship
-                    </div>
-                    <i class="icon xi-angle-right"></i>
-                    <div class="dashboard-menu-nav-item">
-                        Identify
-                    </div>
-                    <i class="icon xi-angle-right"></i>
-                    <div class="dashboard-menu-nav-item active">
-                        Software
-                    </div>
-                </div>
-                <div class="subpage-table-btn-wrap col-group">
+
+            <div class="subpage-table-container">
+                <!-- <div class="subpage-table-btn-wrap col-group">
                     <a href="identify_hardware_add.html" class="subpage-table-btn">
                         Add
                     </a>
                     <a href="identify_hardware_del.html" class="subpage-table-btn">
-                        Del
+                        Delete
                     </a>
-                    <button class="subpage-table-btn">
-                        Edit
-                    </button>
                     <button class="subpage-table-btn">
                         Save
                     </button>
                     <button class="subpage-table-btn">
                         Export
                     </button>
-                </div>
-            </div>
-
-            <div class="subpage-table-container">
+                </div> -->
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table">
+                        <colgroup>
+                            <col width="150px">
+                            <col width="150px">
+                            <col width="95px">
+                            <col width="95px">
+                        </colgroup>
                         <thead>
                         <tr>
                             <th colspan="4">System Information</th>
@@ -403,4 +391,9 @@
 
 </div>
 </body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
 </html>

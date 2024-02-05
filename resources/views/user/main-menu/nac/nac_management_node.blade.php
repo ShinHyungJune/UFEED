@@ -48,8 +48,8 @@
                                 </div>
                             </div>-->
             <div class="subpage-table-container">
-                <div class="subpage-table-wrap">
-                    <table class="m-table type01 report-table">
+                <div class="subpage-table-wrap account-table-wrap">
+                    <table class="m-table type01">
                         <thead>
                         <tr>
                             <!--

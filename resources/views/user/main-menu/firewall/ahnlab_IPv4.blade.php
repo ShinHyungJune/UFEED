@@ -20,26 +20,6 @@
     <div class="dashboard">
         <div class="subpage">
 
-            <div class="dashboard-menu-wrap col-group">
-                <div class="dashboard-menu-nav col-group">
-                    <div class="dashboard-menu-nav-item">
-                        Firewall
-                    </div>
-                    <i class="icon xi-angle-right"></i>
-                    <div class="dashboard-menu-nav-item">
-                        Policy
-                    </div>
-                    <i class="icon xi-angle-right"></i>
-                    <div class="dashboard-menu-nav-item">
-                        Policy
-                    </div>
-                    <i class="icon xi-angle-right"></i>
-                    <div class="dashboard-menu-nav-item active">
-                        IPv4 Policy
-                    </div>
-                </div>
-            </div>
-
             <div class="subpage-table-container">
                 <div class="subpage-table-edit-btn-wrap col-group">
                     <!--
@@ -62,11 +42,11 @@
                                             </button>-->
                 </div>
 
-                <div class="subpage-table-wrap">
-                    <table class="report-table">
-                        <colgroup>
+                <div class="subpage-table-wrap account-table-wrap">
+                    <table class="">
+                        <!-- <colgroup>
                             <col width="36px">
-                        </colgroup>
+                        </colgroup> -->
                         <thead>
                         <tr>
                             <!--                                <th>
@@ -112,7 +92,8 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>

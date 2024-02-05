@@ -61,11 +61,11 @@
                                         </button>
                                     </div>-->
 
-                <div class="subpage-table-wrap">
-                    <table class="report-table">
-                        <colgroup>
-                            <col width="36px">
-                        </colgroup>
+                <div class="subpage-table-wrap account-table-wrap">
+                    <table class="">
+{{--                        <colgroup>--}}
+{{--                            <col width="36px">--}}
+{{--                        </colgroup>--}}
                         <thead>
                         <tr>
                             <!--                                <th>
