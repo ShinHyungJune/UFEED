@@ -23,8 +23,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/', [HiSecureController::class, 'store'])->name('hi-secure.store');
         Route::get('/create', [HiSecureController::class, 'create'])->name('hi-secure.create');
         Route::patch('/{user}', [HiSecureController::class, 'update'])->name('hi-secure.update');
+        Route::patch('/{user}/switch', [HiSecureController::class, 'switch'])->name('hi-secure.switch');
         Route::delete('/', [HiSecureController::class, 'delete'])->name('hi-secure.delete');
         Route::get('/{user}/edit', [HiSecureController::class, 'edit'])->name('hi-secure.edit');
+        Route::get('/global-setting', [HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
     });
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
