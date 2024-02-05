@@ -610,7 +610,7 @@ a.device-item:hover .device-item-title, .device-btn:hover .device-item-title { o
 .account-table-title-wrap { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
 .account-table-title { font-size: 32px; font-weight: 600; }
 .account-table-wrap table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0 5px; }
-.account-table-wrap table th { height: 48px; background: #f1f1f1; text-align: left; font-size: 16px; padding: 0 15px; position: sticky; top: 0; z-index: 1; }
+.account-table-wrap table th { height: 48px; background: #f1f1f1; text-align: left; font-size: 16px; padding: 0 15px; position: sticky; top: 0; z-index: 1; white-space: nowrap; }
 .account-table-wrap table th:first-child { border-top-left-radius: 16px; border-bottom-left-radius: 16px; }
 .account-table-wrap table th:last-child { border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
 .account-table-wrap table .check-label .check-item i { width: 16px; height: 16px; border-radius: 2px; font-size: 12px; line-height: 14px; }
@@ -749,6 +749,8 @@ a.device-item:hover .device-item-title, .device-btn:hover .device-item-title { o
 .subpage-table-btn { min-width: 120px; padding: 0 24px; height: 40px; text-align: center; border-radius: 8px; background: #a4a4a4; font-size: 16px; font-weight: 600; line-height: 40px; color: #fff; transition: .2s; }
 .subpage-table-btn:hover { background: #7f7f7f; }
 .subpage-table-btn.active { background: #502ecf; border: 1px solid #502ecf; color: #fff; }
+.subpage-table-title-wrap { display: flex; margin-bottom: 20px; align-items: flex-end; justify-content: space-between; padding-top: 8px; }
+.subpage-table-title { font-size: 26px; font-weight: bold; color: #292d33; padding-left: 16px; }
 .subpage-table-wrap { height: 100%; width: 100%; position: relative; overflow: auto;}
 .subpage-table-btn-wrap ~ .subpage-table-wrap { height: calc( 100% - 62px ); }
 .subpage-table-wrap table { table-layout: auto; border-collapse: separate; border-spacing: 0 5px; transform: translateY(-5px); }
@@ -848,6 +850,10 @@ a.device-item:hover .device-item-title, .device-btn:hover .device-item-title { o
 /* 상세 페이지 - identify - hardware 테이블 */
 .identify-hardware-table thead th:nth-last-child(-n+6),
 .identify-hardware-table tbody td:nth-last-child(-n+6) { text-align: center; }
+
+/* 상세 페이지 - ipv4 policy 테이블 */
+.ipv4-policy-table th:nth-child(2) { text-align: center; }
+.ipv4-policy-table td:nth-child(2) { text-align: center; }
 
 /* pdf텍스트 */
 .detail-txt-wrap { gap: 48px; padding: 24px; }
