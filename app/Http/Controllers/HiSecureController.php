@@ -86,19 +86,18 @@ class HiSecureController extends Controller
         return redirect()->route('hi-secure.edit', $user->id);
     }
 
+    public function switch(Request $request)
+    {
+        dd($request);
+    }
+
     public function delete(Request $request)
     {
         User::destroy($request->input('id'));
         return redirect()->route('hi-secure.index');
     }
-//
-//    public function modify()
-//    {
-//        return view('user.hi-secure.HiSecure_account_modify');
-//    }
-//
-//    public function globalSetting()
-//    {
-//        return view('user.hi-secure.HiSecure_account_setting');
-//    }
+    public function globalSetting()
+    {
+        return view('user.hi-secure.HiSecure_account_setting');
+    }
 }

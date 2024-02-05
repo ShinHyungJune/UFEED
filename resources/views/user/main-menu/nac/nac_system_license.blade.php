@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="area-license">
+            <div class="subpage-table-container">
                 <!-- <div class="box-top">
                     <img src="./images/genians.png" alt="" class="logo">
 
@@ -58,7 +58,7 @@
                     </div>
                 </div> -->
 
-                <div class="subpage-table-wrap">
+                <div class="subpage-table-wrap account-table-wrap">
                     <table class="subpage-table" style="max-width:800px;">
                         <colgroup>
                             <col style="width:20%;">

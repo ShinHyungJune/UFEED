@@ -6,13 +6,13 @@
 
     <!-- 상단 헤더 -->
     <header id="header">
-        @include('user.components.header')
+                @include('user.components.header')
     </header>
     <!-- //상단 헤더 -->
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-        @include('user.components.gnb')
+                @include('user.components.gnb')
     </div>
     <!-- //좌측 메뉴 -->
 
@@ -48,9 +48,9 @@
                         <button href="" class="account-top-btn" id="modify">
                             Modify
                         </button>
-                        <button class="account-top-btn">
+                        <a href="{{ route('hi-secure.global-setting') }}" class="account-top-btn">
                             Global Setting
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@
                             </label>
                         </th>
                         <th>
-                            Object
+                            ID
                         </th>
                         <th>
                             User Name
@@ -114,7 +114,23 @@
                                     {{ $user->authority->name }}
                                 </td>
                                 <td>
-                                    Active
+                                    <form action="" method="post" id="switchForm">
+                                        @csrf
+                                        @method('PATCH')
+                                        <label for="switch_{{ $user->id }}" class="switch-wrap">
+                                            <input type="checkbox" class="switch-input" id="switch_{{ $user->id }}"
+                                                   checked>
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -192,6 +208,17 @@
             location.href = response.url;
         }).catch(error => {
             alert(error.message);
+        });
+    })
+</script>
+<script>
+    document.querySelectorAll('.switch-input').forEach(function (switchInput) {
+        switchInput.addEventListener('click', function () {
+            let checked = this.checked;
+            fetch(`{{ url('hi-secure') }}/${this.id}/switch`, {
+                method: "POST",
+                body: checked
+            })
         });
     })
 </script>

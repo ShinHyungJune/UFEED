@@ -42,9 +42,9 @@
                                         </p>
                                         <div class="item-user form-user-btn-wrap col-group">
                                             <input type="text" class="form-input" name="ids">
-                                            <button class="form-user-btn" type="button">
-                                                Duplicate Check
-                                            </button>
+{{--                                            <button class="form-user-btn" type="button">--}}
+{{--                                                Duplicate Check--}}
+{{--                                            </button>--}}
                                         </div>
                                     </div>
                                     <div class="form-item row-group">
@@ -53,7 +53,6 @@
                                         </p>
                                         <div class="item-user col-group">
                                             <input type="text" class="form-input" name="name">
-{{--                                            </button>--}}
                                         </div>
                                     </div>
                                     <div class="form-item row-group">
@@ -62,7 +61,7 @@
                                         </p>
                                         <input type="password" class="form-input" id="password" name="password">
                                         <p class="sub-txt">
-                                            Password must be at least 6 characters long, <br>
+                                            Password must be at least 8 characters long, <br>
                                             must contain letters in mixed case and must contain numbers.
                                         </p>
                                         <p class="error sub-txt" style="color:red;" id="error-password"></p>
