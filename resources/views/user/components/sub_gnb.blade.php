@@ -322,8 +322,15 @@
         </div>
 
         <div class="modal-table-container">
-            <div class="modal-table-wrap dashboard-table-wrap">
+            <div class="modal-table-wrap account-table-wrap">
                 <table>
+                    <colgroup>
+                        <col width="78px">
+                        <col width="90px">
+                        <col width="170px">
+                        <col width="200px">
+                        <col width="80px">
+                    </colgroup>
                     <thead>
                     <th>
                         host
@@ -342,7 +349,8 @@
                     </th>
                     <th></th>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -364,8 +372,15 @@
         </div>
 
         <div class="modal-table-container">
-            <div class="modal-table-wrap dashboard-table-wrap">
+            <div class="modal-table-wrap account-table-wrap">
                 <table>
+                    <colgroup>
+                        <col width="78px">
+                        <col width="90px">
+                        <col width="170px">
+                        <col width="200px">
+                        <col width="80px">
+                    </colgroup>
                     <thead>
                     <th>
                         host

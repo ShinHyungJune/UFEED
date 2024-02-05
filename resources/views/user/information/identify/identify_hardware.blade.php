@@ -42,13 +42,13 @@
                             <col width="95px">
                             <col width="95px">
                             <col width="240px">
-                            <col width="196px">
-                            <col width="138px">
-                            <col width="50px">
-                            <col width="50px">
-                            <col width="50px">
-                            <col width="50px">
-                            <col width="50px">
+                            <col width="170px">
+                            <col width="130px">
+                            <col width="55px">
+                            <col width="55px">
+                            <col width="55px">
+                            <col width="55px">
+                            <col width="55px">
                         </colgroup>
                         <thead>
                         <tr>

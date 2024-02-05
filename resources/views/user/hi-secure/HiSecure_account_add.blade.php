@@ -6,13 +6,13 @@
 
     <!-- 상단 헤더 -->
     <header id="header">
-{{--        @include('user.components.header')--}}
+        @include('user.components.header')
     </header>
     <!-- //상단 헤더 -->
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-{{--        @include('user.components.gnb')--}}
+        @include('user.components.gnb')
     </div>
     <!-- //좌측 메뉴 -->
 
