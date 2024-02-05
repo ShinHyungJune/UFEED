@@ -22,47 +22,45 @@
         <!-- //좌측 메뉴 -->
 
         <!-- 대시보드 -->
-        <div class="dashboard">
-            <div class="subpage gray">
-                <div class="account-menu-wrap col-group">
-                    <a href="HiSecure_account_add.html" class="account-menu-item">
-                        Account Add
-                    </a>
-                    <a href="HiSecure_account_del.html" class="account-menu-item">
-                        Account Delete
-                    </a>
-                    <a href="HiSecure_account_modify.html" class="account-menu-item">
-                        Account Modify
-                    </a>
-                    <a href="HiSecure_account_setting.html" class="account-menu-item active">
-                        Account Global Setting
-                    </a>
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <button onclick="history.back();" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </button>
+                    <h2 class="dashboard-detail-title">
+                        Hi-Secure Account Global Setting
+                    </h2>
                 </div>
-                <div class="account-wrap">
-                    <div class="form-wrap">
-                        <div class="form-title">
-                            Hi-Secure Account Global Setting
-                        </div>
-
-                        <div class="setting-txt-wrap">
-                            <div class="setting-txt">
-                                If there is no input value when logging in, the session is terminated.
+                
+                <div class="dashboard-content">
+                    <div class="account-wrap">
+                        <div class="form-wrap">
+                            <div class="form-title">
+                               
                             </div>
-                            <div class="setting-txt col-group">
-                                Time setting
-                                <input type="number" class="setting-input" value="5">
-                                Minute
+    
+                            <div class="setting-txt-wrap">
+                                <div class="setting-txt">
+                                    If there is no input value when logging in, the session is terminated.
+                                </div>
+                                <div class="setting-txt col-group">
+                                    Time setting
+                                    <input type="number" class="setting-input" value="5">
+                                    Minute
+                                </div>
+                                <div class="setting-txt red">
+                                    If there is no input during that time, you will be automatically logged out.
+                                </div>
                             </div>
-                            <div class="setting-txt red">
-                                If there is no input during that time, you will be automatically logged out.
+                            
+    
+                            <div class="form-btn-wrap col-group">
+                                <button class="form-btn hardware_del_btn">
+                                    Save
+                                </button>
                             </div>
-                        </div>
-                        
-
-                        <div class="form-btn-wrap col-group">
-                            <button class="form-btn hardware_del_btn">
-                                Save
-                            </button>
                         </div>
                     </div>
                 </div>
