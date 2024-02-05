@@ -35,15 +35,19 @@
                         Users
                     </h3>
                     <div class="account-top-btn-wrap">
-                        <a href="{{ route('hi-secure.add') }}" class="account-top-btn">
+                        <a href="{{ route('hi-secure.create') }}" class="account-top-btn">
                             Add
                         </a>
-                        <button class="account-top-btn">
-                            Delete
-                        </button>
-                        <a href="{{ route('hi-secure.modify') }}" class="account-top-btn">
+                        <form action="" id="delete">
+                            @csrf
+                            @method('DELETE')
+                            <button class="account-top-btn" type="button">
+                                Delete
+                            </button>
+                        </form>
+                        <button href="" class="account-top-btn" id="modify">
                             Modify
-                        </a>
+                        </button>
                         <button class="account-top-btn">
                             Global Setting
                         </button>
@@ -84,566 +88,36 @@
                         </th>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="check_1" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_1">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
-                            </td>
-                            <td>
-                                PRTG System Administator
-                            </td>
-                            <td>
-                                PRTG (Administator)
-                            </td>
-                            <td>
-                                abcd1234@gmail.com
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                PRTG Administator
-                            </td>
-                            <td>
-                                Active
-                            </td>
-                        </tr>
+                        @foreach($users as $user)
+                            <tr>
+                                <td>
+                                    <label for="{{ $user->id }}" class="check-label">
+                                        <input type="checkbox" class="check-input" id="{{ $user->id }}">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                        </div>
+                                    </label>
+                                </td>
+                                <td>
+                                    {{ $user->ids }}
+                                </td>
+                                <td>
+                                    {{ $user->name }}
+                                </td>
+                                <td>
+                                    {{ $user->email }}
+                                </td>
+                                <td>
+                                    {{ $user->group->name }}
+                                </td>
+                                <td>
+                                    {{ $user->authority->name }}
+                                </td>
+                                <td>
+                                    Active
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -653,32 +127,73 @@
     <!-- 대시보드 -->
 
 </div>
+{{--<script>--}}
+{{--    // let domain = "http://localhost:90";--}}
+{{--    let domain = "http://hi-secure.ufeed.co.kr";--}}
+
+{{--    function store() {--}}
+{{--        let form = {--}}
+{{--            ids: $("#ids").val(),--}}
+{{--            password: $("#password").val(),--}}
+{{--            password_confirmation: $("#password_confirmation").val(),--}}
+{{--            authority: 1,--}}
+{{--            email: $("#email").val(),--}}
+{{--        };--}}
+
+{{--        $(".error").text("");--}}
+
+{{--        axios.post(domain + "/api/users", form)--}}
+{{--            .then(response => {--}}
+{{--                alert("Processed Successfully");--}}
+{{--            }).catch(error => {--}}
+{{--            if (error.response.data.errors)--}}
+{{--                Object.entries(error.response.data.errors).map(error => {--}}
+{{--                    $(`#error-${error[0]}`).text(error[1]);--}}
+{{--                })--}}
+{{--        })--}}
+{{--    }--}}
+
+{{--</script>--}}
 <script>
-    // let domain = "http://localhost:90";
-    let domain = "http://hi-secure.ufeed.co.kr";
+    document.getElementById('modify').addEventListener('click', function () {
+        let checkedCheckbox = document.querySelector('.check-input:checked');
+        if (checkedCheckbox) {
+            window.location.href = `{{ url('hi-secure') }}/${checkedCheckbox.id}/edit`;
+        }
+    });
+</script>
+<script>
+    let deleteForm = document.getElementById('delete');
+    deleteForm.addEventListener('click', function () {
+        let checkedCheckbox = document.querySelectorAll('.check-input:checked');
+        let deleteId = Array.from(checkedCheckbox).map(checkbox => checkbox.id);
 
-    function store() {
-        let form = {
-            ids: $("#ids").val(),
-            password: $("#password").val(),
-            password_confirmation: $("#password_confirmation").val(),
-            authority: 1,
-            email: $("#email").val(),
-        };
-
-        $(".error").text("");
-
-        axios.post(domain + "/api/users", form)
-            .then(response => {
-                alert("Processed Successfully");
-            }).catch(error => {
-            if (error.response.data.errors)
-                Object.entries(error.response.data.errors).map(error => {
-                    $(`#error-${error[0]}`).text(error[1]);
-                })
+        deleteId.forEach(id => {
+            let deleteInput = document.createElement('input');
+            deleteInput.setAttribute('type', 'hidden');
+            deleteInput.setAttribute('name', 'id[]');
+            deleteInput.value = id;
+            deleteForm.appendChild(deleteInput);
         })
-    }
 
+        let formData = new FormData(deleteForm);
+        fetch("{{ route('hi-secure.delete') }}", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            if (response.ok) {
+                return response;
+            }
+            return response.json().then(data => {
+                throw new Error(data.message);
+            });
+        }).then((response) => {
+            alert('Hi-Secure Account deleted')
+            location.href = response.url;
+        }).catch(error => {
+            alert(error.message);
+        });
+    })
 </script>
 </body>
 </html>

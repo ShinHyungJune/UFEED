@@ -17,7 +17,7 @@
                             <i class="xi-user"></i>
                         </div>
 {{--                        <input type="text" name="" id="name" placeholder="Username">--}}
-                        <input type="text" name="email" id="id" placeholder="ID">
+                        <input type="text" name="ids" id="id" placeholder="ID">
                     </div>
                     <div class="input_wrap">
                         <div class="label_wrap">

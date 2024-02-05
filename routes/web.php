@@ -125,13 +125,13 @@ Route::middleware('auth')->group(function () {
         });
     });
 
-    Route::prefix('hi-secure')->group(function () {
-        Route::get('/', [\App\Http\Controllers\HiSecureController::class, 'index'])->name('hi-secure.index');
-        Route::get('add', [\App\Http\Controllers\HiSecureController::class, 'add'])->name('hi-secure.add');
-        Route::get('delete', [\App\Http\Controllers\HiSecureController::class, 'delete'])->name('hi-secure.delete');
-        Route::get('modify', [\App\Http\Controllers\HiSecureController::class, 'modify'])->name('hi-secure.modify');
-        Route::get('global-setting', [\App\Http\Controllers\HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
-    });
+//    Route::prefix('hi-secure')->group(function () {
+//        Route::get('/', [\App\Http\Controllers\HiSecureController::class, 'index'])->name('hi-secure.index');
+//        Route::get('add', [\App\Http\Controllers\HiSecureController::class, 'add'])->name('hi-secure.add');
+//        Route::get('delete', [\App\Http\Controllers\HiSecureController::class, 'delete'])->name('hi-secure.delete');
+//        Route::get('modify', [\App\Http\Controllers\HiSecureController::class, 'modify'])->name('hi-secure.modify');
+//        Route::get('global-setting', [\App\Http\Controllers\HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
+//    });
 
     Route::prefix('cbs')->group(function () {
         Route::get('add', [\App\Http\Controllers\CBSController::class, 'add'])->name('cbs.add');
