@@ -248,12 +248,14 @@
                     <div class="dashboard-gnb-tab active" data-tab="tab_01">
                         IPS
                     </div>
+
                     <div class="dashboard-gnb-tab" data-tab="tab_02">
-                        Anti-Virus
-                    </div>
-                    <div class="dashboard-gnb-tab" data-tab="tab_03">
                         C&C Detection
                     </div>
+
+                    <!--                    <div class="dashboard-gnb-tab" data-tab="tab_03">
+                        Anti-Virus
+                    </div>-->
                 </div>
                 <button class="more-btn">
                     <i class="xi-ellipsis-v"></i>
@@ -726,7 +728,7 @@
                 </div>
             </div>
 
-            <div class="polar-area-chart" id="tab_03">
+<!--            <div class="polar-area-chart" id="tab_03">
                 <div class="polar-area-chart-item polar-area-chart-item-01">
                     <div class="img-box">
                         <img src="/images/polar_item_01.png" alt="" class="img">
@@ -737,7 +739,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -745,7 +747,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -753,7 +755,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -768,7 +770,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -776,7 +778,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -784,7 +786,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -799,7 +801,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -807,7 +809,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -815,7 +817,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -830,7 +832,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -838,7 +840,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -846,7 +848,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -861,7 +863,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -869,7 +871,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -877,7 +879,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -892,7 +894,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -900,7 +902,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -908,7 +910,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -923,7 +925,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -931,7 +933,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -939,7 +941,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -954,7 +956,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -962,7 +964,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -970,7 +972,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -985,7 +987,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -993,7 +995,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -1001,7 +1003,7 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
@@ -1016,7 +1018,7 @@
                                 Sip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -1024,7 +1026,7 @@
                                 Dip
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                         <div class="detail-group">
@@ -1032,12 +1034,12 @@
                                 Count
                             </p>
                             <p class="txt">
-                                --00.--00.
+                                &#45;&#45;00.&#45;&#45;00.
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!-- <div class="polar-area-chart">
                 <div class="polar-area-chart-item polar-area-chart-item-01">
@@ -1081,107 +1083,71 @@
 
 <script>
 
-    /*const main_ctx = document.getElementById('chart');
+    axios.get(window.domain + "/api/firewalls/dashboard")
+        .then(response => {
+            // IPS / C&C 좌측 하단 차트 그리기
+            $(".polar-area-chart").html("");
 
-    new Chart(main_ctx, {
-        type: 'line',
-        data: {
-            labels: ['18:05', '18:15', '18:25', '18:35', '18:45', '18:55'],
-            datasets: [
-                {
-                    label: 'FW1',
-                    data: [52, 58, 56, 35, 61, 67],
-                    borderWidth: 2,
-                    borderColor: '#502ecf',
-                    tension: 0.4 //곡선그래프
-                },
-                {
-                    label: 'FW2',
-                    data: [0, 22, 24, 28, 43, 2],
-                    borderWidth: 2,
-                    borderColor: '#359832',
-                    tension: 0.4 //곡선그래프
-                },
-                {
-                    label: 'FW3',
-                    data: [2, 30, 40, 25, 24, 5],
-                    borderWidth: 2,
-                    borderColor: '#ef9900',
-                    tension: 0.4 //곡선그래프
-                },
-                {
-                    label: 'FW4',
-                    data: [9, 10, 45, 25, 48, 22],
-                    borderWidth: 2,
-                    borderColor: '#4ec8ee',
-                    tension: 0.4 //곡선그래프
-                },
-                {
-                    label: 'FW5',
-                    data: [60, 24, 48, 43, 28, 3],
-                    borderWidth: 2,
-                    borderColor: '#983298',
-                    tension: 0.4 //곡선그래프
-                },
-                {
-                    label: 'FW6',
-                    data: [0, 59, 42, 43, 43, 2],
-                    borderWidth: 1,
-                    borderColor: '#ff4620',
-                    tension: 0.4 //곡선그래프
-                },
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    min: 0,
-                    ticks: {
-                        stepSize: 20, //y축 단위
-                        font: function () {
-                            return {
-                                size: 10,
-                                family: 'Pretendard'
-                            }
-                        },
-                    }
-                },
-                x: {
-                    ticks: {
-                        font: function () {
-                            return {
-                                size: 10,
-                                family: 'Pretendard'
-                            }
-                        },
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    labels: {
-                        font: function () {
-                            return {
-                                size: 9,
-                                family: 'Pretendard'
-                            }
-                        },
-                        boxWidth: 6,
-                        boxHeight: 6,
-                    },
-                    position: 'top',
-                    fullWidth: false,
-                },
-            },
-            elements: {
-                point: {
-                    radius: 0, //선형 그래프 포인트 삭제
-                },
-            },
-        },
-    });*/
+            var cncs = response.data.data.cncs;
+
+            console.log(cncs);
+            cncs.sort((a,b) => b.count - a.count);
+
+            cncs.map((item, index) => {
+                $(".polar-area-chart#tab_01").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
+        <div class="img-box"></div>
+        <div class="hover-box"></div>
+</div>`);
+
+                $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
+                $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
+                            <p class="title">
+                                Sip
+                            </p>
+                            <p class="txt">
+                                ${item.sip}
+                            </p>
+                        </div>
+                        <div class="detail-group">
+                            <p class="title">
+                                Count
+                            </p>
+                            <p class="txt">
+                                ${item.count}
+                            </p>
+                        </div>`);
+            });
+
+            var ipses = response.data.data.ipses;
+
+            ipses.sort((a,b) => b.count - a.count);
+
+            $(".dashboard-table-ips tbody").html("");
+            ipses.map((item, index) => {
+                $(".polar-area-chart#tab_02").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
+        <div class="img-box"></div>
+        <div class="hover-box"></div>
+</div>`);
+
+                $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
+                $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
+                            <p class="title">
+                                Sip
+                            </p>
+                            <p class="txt">
+                                ${item.sip}
+                            </p>
+                        </div>
+                        <div class="detail-group">
+                            <p class="title">
+                                Count
+                            </p>
+                            <p class="txt">
+                                ${item.count}
+                            </p>
+                        </div>`);
+            });
+        })
+
 </script>
 

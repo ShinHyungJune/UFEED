@@ -2059,7 +2059,7 @@
                 var devices = response.data.data.devices;
                 var realTimeNotifications = response.data.data.realTimeNotifications;
                 var realTimeTraffics = response.data.data.realTimeTraffics;
-                var rankingTraffics = response.data.data.rankingTraffics;
+                var rankingTraffics = response.data.data.rankingTraffics.slice(0, 10);
 
                 // # STANDARD ==========
                 var counts = {
@@ -2199,7 +2199,7 @@
                 countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
                 countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
 
-                $(".dashboard-table-cnc tbody").html("");
+                /*$(".dashboard-table-cnc tbody").html("");
 
                 var cncs = response.data.data.cncs;
 
@@ -2230,7 +2230,7 @@
                             <td>${malware.address}</td>
                         <tr/>
                     `);
-                });
+                });*/
             })
     }
 

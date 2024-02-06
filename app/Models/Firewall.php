@@ -113,6 +113,7 @@ class Firewall extends Model
 
     public function getCnc()
     {
+        // $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
         $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
