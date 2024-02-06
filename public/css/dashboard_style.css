@@ -610,12 +610,12 @@ a.device-item:hover .device-item-title, .device-btn:hover .device-item-title { o
 .account-table-title-wrap { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
 .account-table-title { font-size: 32px; font-weight: 600; }
 .account-table-wrap table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0 5px; }
-.account-table-wrap table th { height: 48px; background: #f1f1f1; text-align: left; font-size: 16px; padding: 0 15px; position: sticky; top: 0; z-index: 1; white-space: nowrap; }
+.account-table-wrap table th { height: 64px; background: #f1f1f1; text-align: left; font-size: 16px; padding: 0 15px; position: sticky; top: 0; z-index: 1; white-space: nowrap; }
 .account-table-wrap table th:first-child { border-top-left-radius: 16px; border-bottom-left-radius: 16px; }
 .account-table-wrap table th:last-child { border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
 .account-table-wrap table .check-label .check-item i { width: 16px; height: 16px; border-radius: 2px; font-size: 12px; line-height: 14px; }
 .account-table-wrap table .check-input:checked + .check-item i { background: #ff4620; border: 1px solid #ff4620; }
-.account-table-wrap table td { background: #fff; padding: 15px; font-size: 16px; line-height: 1.25; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; cursor: pointer; }
+.account-table-wrap table td { background: #fff; padding: 11px 15px; font-size: 16px; line-height: 1.25; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; cursor: pointer; }
 .account-table-wrap table td:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-left: 1px solid #e4e4e4; }
 .account-table-wrap table td:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-right: 1px solid #e4e4e4; }
 .account-table-wrap table tr:hover td { background: #FEF1EE; }
