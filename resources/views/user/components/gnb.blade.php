@@ -1082,15 +1082,14 @@
 @include('user.components.sub_gnb')
 
 <script>
+    $(".polar-area-chart").html("");
 
     axios.get(window.domain + "/api/firewalls/dashboard")
         .then(response => {
             // IPS / C&C 좌측 하단 차트 그리기
-            $(".polar-area-chart").html("");
 
             var cncs = response.data.data.cncs;
 
-            console.log(cncs);
             cncs.sort((a,b) => b.count - a.count);
 
             cncs.map((item, index) => {
