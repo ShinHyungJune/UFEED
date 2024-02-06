@@ -255,7 +255,6 @@
             Information for the Ship System
         </div>
         <div class="gnb-menu-list row-group">
-
             <div class="gnb-menu">
                 <div class="gnb-menu-title col-group">
                     Identify
@@ -305,6 +304,67 @@
                     <a href="{{ route('information.mobile-portable') }}" class="sub-gnb-menu">
                         <div class="sub-gnb-menu-title col-group">
                             Mobile and Portable
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Detect
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Response
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Incident response plan
+                        </div>
+                    </a>
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Manual operation
+                        </div>
+                    </a>
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Network Isolation
+                        </div>
+                    </a>
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Minimal risk condition
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Recover
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Recovery Plan
+                        </div>
+                    </a>
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Backup and restore capability
+                        </div>
+                    </a>
+                    <a href="/images/SAMPLECisco-9300-cg.pdf" target="_blank" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Shutdown, Reset, rell-bak, restart
                         </div>
                     </a>
                 </div>

@@ -30,6 +30,10 @@
                     <a href="#" class="btn-login" id="submit">Sign In</a>
 
                     <p class="error-txt">
+                        Legal and privacy information. <br>
+                        Unauthorized users prohibited.
+                    </p>
+                    <!-- <p class="error-txt">
                         You entered your ID (login-only ID) or password incorrectly. <br>
                         Please check the information you entered again.
                     </p>
@@ -38,7 +42,7 @@
                         (1/5) If you enter incorrect information more than 4 times, <br>
                         your account will be locked for a certain period of time. <br>
                         If you have forgotten, please contact the administrator.
-                    </p>
+                    </p> -->
                 </div>
             </form>
         </div>
