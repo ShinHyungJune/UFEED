@@ -135,16 +135,16 @@
                                     All
                                 </div>
                             </a>
-                            <a href="{{ route('nms.favorite-devices') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    Favorite Devices
-                                </div>
-                            </a>
-                            <a href="{{ route('nms.dependencies') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    Dependencies
-                                </div>
-                            </a>
+{{--                            <a href="{{ route('nms.favorite-devices') }}" class="sub-gnb-menu">--}}
+{{--                                <div class="sub-gnb-menu-title col-group">--}}
+{{--                                    Favorite Devices--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
+{{--                            <a href="{{ route('nms.dependencies') }}" class="sub-gnb-menu">--}}
+{{--                                <div class="sub-gnb-menu-title col-group">--}}
+{{--                                    Dependencies--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
                         </div>
                     </div>
 
@@ -160,11 +160,11 @@
                                     All
                                 </div>
                             </a>
-                            <a href="{{ route('nms.add-report') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    Add Report
-                                </div>
-                            </a>
+{{--                            <a href="{{ route('nms.add-report') }}" class="sub-gnb-menu">--}}
+{{--                                <div class="sub-gnb-menu-title col-group">--}}
+{{--                                    Add Report--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
                         </div>
                     </div>
 

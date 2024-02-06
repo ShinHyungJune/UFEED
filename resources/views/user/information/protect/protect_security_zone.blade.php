@@ -20,7 +20,7 @@
     <div class="dashboard">
         <div class="subpage">
             <div class="subpage-table-container">
-                <img src="/images/security_zone.jpg" alt=""
+                <img src="/images/security_zone.png" alt=""
                      style="height: 100%; object-fit: contain; object-position: center;">
             </div>
         </div>
