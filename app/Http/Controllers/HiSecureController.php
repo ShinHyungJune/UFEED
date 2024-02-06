@@ -67,7 +67,7 @@ class HiSecureController extends Controller
 //            'period_of_use' => ['required', 'date'],
         ]);
 
-        if ($request->input('password')) {
+        if ($request->filled('password')) {
             $validate['password'] = Hash::make($request->password);
         } else {
             unset($validate['password']);

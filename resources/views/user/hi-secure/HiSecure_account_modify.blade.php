@@ -21,7 +21,7 @@
         <div class="dashboard-wrap row-group">
 
             <div class="dashboard-detail-title-wrap col-group">
-                <button onclick="history.back();" class="prev-btn">
+                <button onclick="location.href = `{{ route('hi-secure.index') }}`" class="prev-btn">
                     <i class="xi-arrow-left"></i>
                 </button>
                 <h2 class="dashboard-detail-title">
