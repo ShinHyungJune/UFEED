@@ -33,6 +33,7 @@
                 <div class="account-wrap">
                     <form action="" method="post" id="form">
                         @csrf
+                        @method('PATCH')
                         <div class="modify-group col-group">
                             <div>
                                 <div class="account-form row-group">
@@ -41,7 +42,7 @@
                                             ID
                                         </p>
                                         <div class="item-user form-user-btn-wrap col-group">
-                                            <input type="text" class="form-input" name="ids" value="{{ $user->ids }}">
+                                            <input type="text" class="form-input" name="ids" value="{{ $user->ids }}" disabled>
 {{--                                            <button class="form-user-btn" type="button">--}}
 {{--                                                Duplicate Check--}}
 {{--                                            </button>--}}
@@ -104,7 +105,7 @@
                                         <p class="item-title">
                                             E-Mail
                                         </p>
-                                        <input type="email" class="form-input" id="email" name="email" value="{{ $user->email }}">
+                                        <input type="email" class="form-input" id="email" name="email" value="{{ $user->email }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +113,6 @@
                     </form>
 
                     <div class="form-btn-wrap col-group">
-                        {{--                        <button class="form-btn" onclick="update()">--}}
                         <button class="form-btn" id="submit">
                             Modify
                         </button>
@@ -123,30 +123,30 @@
     </div>
 </div>
 <script>
-    $('#group').val('{{ $user->group_id ?: 1 }}');
-    $('#authority').val('{{ $user->authority_id  ?: 1 }}');
+    $('#group').val('{{ $user->group_id }}');
+    $('#authority').val('{{ $user->authority_id }}');
 </script>
-{{--<script>--}}
-{{--    document.getElementById('submit').addEventListener('click', function () {--}}
-{{--        let form = document.getElementById('form');--}}
-{{--        let formData = new FormData(form);--}}
-{{--        fetch("{{ route('hi-secure.store') }}", {--}}
-{{--            method: "POST",--}}
-{{--            body: formData--}}
-{{--        }).then(response => {--}}
-{{--            if (response.ok) {--}}
-{{--                return response;--}}
-{{--            }--}}
-{{--            return response.json().then(data => {--}}
-{{--                throw new Error(data.message);--}}
-{{--            });--}}
-{{--        }).then((response) => {--}}
-{{--            alert('Hi-Secure Account registered')--}}
-{{--            location.href = response.url;--}}
-{{--        }).catch(error => {--}}
-{{--            alert(error.message);--}}
-{{--        });--}}
-{{--    });--}}
-{{--</script>--}}
+<script>
+    document.getElementById('submit').addEventListener('click', function () {
+        let form = document.getElementById('form');
+        let formData = new FormData(form);
+        fetch("{{ route('hi-secure.update', $user->id) }}", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            if (response.ok) {
+                return response;
+            }
+            return response.json().then(data => {
+                throw new Error(data.message);
+            });
+        }).then((response) => {
+            alert('Hi-Secure Account modified')
+            location.href = response.url;
+        }).catch(error => {
+            alert(error.message);
+        });
+    });
+</script>
 </body>
 </html>
