@@ -93,7 +93,8 @@ class Firewall extends Model
 
     public function getIps()
     {
-        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        // $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subDays(30)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,attackname&query=module:tgIps");
@@ -113,7 +114,8 @@ class Firewall extends Model
 
     public function getCnc()
     {
-        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        // $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subDays(30)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         // $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgCnc and devicename={$device}}");
