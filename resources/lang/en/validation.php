@@ -154,7 +154,7 @@ return [
     */
 
     'attributes' => [
-
+        'ids' => 'id'
     ],
 
 ];
