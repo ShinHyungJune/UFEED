@@ -1083,7 +1083,6 @@
 
 <script>
 
-    /*
     axios.get(window.domain + "/api/firewalls/dashboard")
         .then(response => {
             // IPS / C&C 좌측 하단 차트 그리기
@@ -1149,7 +1148,6 @@
                         </div>`);
             });
         })
-    */
 
 </script>
 
