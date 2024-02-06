@@ -31,7 +31,7 @@
                     </div>
                     <i class="icon xi-angle-right"></i>
                     <div class="dashboard-menu-nav-item active">
-                        Wireleess
+                        Wireless
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="subpage-table-wrap account-table-wrap">
                     <div class="subpage-table-title-wrap">
                         <h3 class="subpage-table-title">
-                            Wireleess
+                            Wireless
                         </h3>
                     </div>
                     <table class="subpage-table disable">
@@ -51,33 +51,33 @@
                         <th>IP</th>
                         <th>MAC</th>
                         <th style="text-align: center;">On/Off</th>
-                        <th>사용여부</th>
+                        <th>Active/Inactive<</th>
                         </thead>
                         <tbody>
                         <tr>
                             <td style="text-align: center;">1</td>
                             <td rowspan="3">AP#1</td>
-                            <td>노트북#1</td>
+                            <td>Laptop#1</td>
                             <td>192.168.0.100</td>
                             <td>aa:bb:cc:dd:ee:f1</td>
                             <td style="text-align: center;">On</td>
-                            <td>직원#1</td>
+                            <td>Staff#1</td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">2</td>
-                            <td>노트북#2</td>
+                            <td>Laptop#2</td>
                             <td>192.168.0.100</td>
                             <td>aa:bb:cc:dd:ee:f2</td>
                             <td style="text-align: center;">On</td>
-                            <td>직원#2</td>
+                            <td>Staff#2</td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">3</td>
-                            <td>노트북#3</td>
+                            <td>Laptop#3</td>
                             <td>192.168.0.100</td>
                             <td>aa:bb:cc:dd:ee:f3</td>
                             <td style="text-align: center;">On</td>
-                            <td>직원#3</td>
+                            <td>Staff#3</td>
                         </tr>
                         </tbody>
                     </table>
