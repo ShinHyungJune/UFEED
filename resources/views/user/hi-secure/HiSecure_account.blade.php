@@ -6,13 +6,13 @@
 
     <!-- 상단 헤더 -->
     <header id="header">
-                @include('user.components.header')
+        @include('user.components.header')
     </header>
     <!-- //상단 헤더 -->
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-                @include('user.components.gnb')
+        @include('user.components.gnb')
     </div>
     <!-- //좌측 메뉴 -->
 
@@ -118,8 +118,7 @@
                                         @csrf
                                         @method('PATCH')
                                         <label for="switch_{{ $user->id }}" class="switch-wrap">
-                                            <input type="checkbox" class="switch-input" id="switch_{{ $user->id }}"
-                                                   checked>
+                                            <input type="checkbox" class="switch-input" id="switch_{{ $user->id }}" @if($user->is_active) checked @endif>
                                             <div class="switch-icon">
                                                 <p class="paused-txt">
                                                     Paused
@@ -214,10 +213,19 @@
 <script>
     document.querySelectorAll('.switch-input').forEach(function (switchInput) {
         switchInput.addEventListener('click', function () {
-            let checked = this.checked;
-            fetch(`{{ url('hi-secure') }}/${this.id}/switch`, {
+            let id = this.id.replace('switch_', '');
+            let switchForm = document.getElementById('switchForm');
+
+            let switchInput = document.createElement('input');
+            switchInput.setAttribute('type', 'hidden');
+            switchInput.setAttribute('name', 'switch');
+            switchInput.value = this.checked;
+            switchForm.appendChild(switchInput);
+
+            let formData = new FormData(switchForm);
+            fetch(`{{ url('hi-secure') }}/${id}/switch`, {
                 method: "POST",
-                body: checked
+                body: formData
             })
         });
     })

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use function Symfony\Component\String\b;
-
 class DashBoardController extends Controller
 {
     public function index()

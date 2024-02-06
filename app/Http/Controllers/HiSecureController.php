@@ -17,7 +17,7 @@ class HiSecureController extends Controller
 {
     public function index()
     {
-        $users = User::with('group')->get();
+        $users = User::with('group')->where('id', '>', 1)->get();
         return view('user.hi-secure.HiSecure_account')->with('users', $users);
     }
 
@@ -30,7 +30,7 @@ class HiSecureController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
+        $validate = $request->validate([
             'ids' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()->symbols()],
@@ -40,15 +40,9 @@ class HiSecureController extends Controller
 //            'period_of_use' => ['required', 'date'],
         ]);
 
-        $user = User::create([
-            'ids' => $request->ids,
-            'name' => $request->name,
-            'password' => Hash::make($request->password),
-            'group_id' => $request->group_id,
-            'authority_id' => $request->authority_id,
-            'email' => $request->email,
-//            'period_of_use' => Carbon::createFromFormat('m/d/Y', $request->period_of_use)->toDateString(),
-        ]);
+        $validate['password'] = Hash::make($request->password);
+
+        $user = User::create($validate);
 
         event(new Registered($user));
 
@@ -64,31 +58,29 @@ class HiSecureController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $request->validate([
-            'ids' => ['required', 'string', 'max:255', 'unique:' . User::class],
+        $validate = $request->validate([
+//            'ids' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'name' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()->symbols()],
+            'password' => ['nullable', 'confirmed', Rules\Password::defaults()->symbols()],
             'group_id' => ['required', 'integer'],
             'authority_id' => ['required', 'integer'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
 //            'period_of_use' => ['required', 'date'],
         ]);
 
-        $user->update([
-            'ids' => $request->ids,
-            'name' => $request->name,
-            'password' => Hash::make($request->password),
-            'group_id' => $request->group_id,
-            'authority_id' => $request->authority_id,
-            'email' => $request->email,
-//            'period_of_use' => Carbon::createFromFormat('m/d/Y', $request->period_of_use)->toDateString(),
-        ]);
-        return redirect()->route('hi-secure.edit', $user->id);
+        if ($request->input('password')) {
+            $validate['password'] = Hash::make($request->password);
+        }
+
+        $user->update($validate);
+
+        return redirect()->route('hi-secure.index');
     }
 
-    public function switch(Request $request)
+    public function switch(Request $request, User $user)
     {
-        dd($request);
+        $user->is_active = $request->input('switch') == "true" ? 1 : 0;
+        $user->push();
     }
 
     public function delete(Request $request)
