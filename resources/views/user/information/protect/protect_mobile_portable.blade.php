@@ -36,9 +36,14 @@
 
             <div class="subpage-table-container">
                 <div class="subpage-table-wrap account-table-wrap">
-                    <table class="subpage-table">
+                    <div class="subpage-table-title-wrap">
+                        <h3 class="subpage-table-title">
+                            Mobile and Portable
+                        </h3>
+                    </div>
+                    <table class="subpage-table disable">
                         <thead>
-                        <th>NO.</th>
+                        <th style="text-align: center;">NO.</th>
                         <th>Category</th>
                         <th>Model</th>
                         <th>User</th>
@@ -51,7 +56,7 @@
                         <tr>
                             <td colspan="100">
                                 <p class="null-txt">
-                                    none
+                                    No Data
                                 </p>
                             </td>
                         </tr>

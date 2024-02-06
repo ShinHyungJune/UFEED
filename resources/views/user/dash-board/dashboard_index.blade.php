@@ -260,14 +260,23 @@
                         <a href="{{ route('navigation') }}" class="device-item down" style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_nz.png" alt="">
+                            <p class="device-item-zone">
+                                FW#2
+                            </p>
                         </a>
                         <a href="{{ route('communication') }}" class="device-item up" style="top: 400px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_cz.png" alt="">
+                            <p class="device-item-zone">
+                                FW#3
+                            </p>
                         </a>
                         <div class="device-item up" style="top: 200px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_rz.png" alt="">
+                            <p class="device-item-zone">
+                                FW#1
+                            </p>
                         </div>
                         <div class="device-item up" style="top: 0; left: 400px;">
                             <div class="state"></div>
@@ -287,20 +296,29 @@
                         </div>
                         <div class="device-item up" style="top: 600px; left: 400px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_nms.png" alt="">
+                            <img src="/images/dashboard_icon_hisecure.png" alt="">
                         </div>
                         <a href="{{ route('crew-lan') }}" class="device-item up" style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_clz.png" alt="">
+                            <p class="device-item-zone">
+                                FW#4
+                            </p>
                         </a>
                         <a href="{{ route('power') }}" class="device-item up" style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_pz.png" alt="">
+                            <p class="device-item-zone">
+                                FW#5
+                            </p>
                         </a>
                         <a href="{{ route('control-instrumentation') }}" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_ciz.png" alt="">
+                            <p class="device-item-zone">
+                                FW#6
+                            </p>
                         </a>
                         <div class="device-item up" style="top: 600px; left: 600px;">
                             <div class="state"></div>
@@ -342,7 +360,7 @@
             </div>
 
             <div class="modal-table-container">
-                <div class="modal-table-wrap dashboard-table-wrap">
+                <div class="modal-table-wrap account-table-wrap">
                     <table>
                         <thead>
                         <tr>
@@ -378,7 +396,7 @@
             </div>
 
             <div class="modal-table-container">
-                <div class="modal-table-wrap dashboard-table-wrap">
+                <div class="modal-table-wrap account-table-wrap">
                     <table>
                         <thead>
                         <tr>
@@ -414,7 +432,7 @@
             </div>
 
             <div class="modal-table-container">
-                <div class="modal-table-wrap dashboard-table-wrap">
+                <div class="modal-table-wrap account-table-wrap">
                     <table>
                         <thead>
                         <tr>
@@ -450,7 +468,7 @@
             </div>
 
             <div class="modal-table-container">
-                <div class="modal-table-wrap dashboard-table-wrap">
+                <div class="modal-table-wrap account-table-wrap">
                     <table>
                         <thead>
                         <tr>

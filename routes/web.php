@@ -123,6 +123,17 @@ Route::middleware('auth')->group(function () {
             Route::get('/wireless', [\App\Http\Controllers\InformationController::class, 'wireless'])->name('information.wireless');
             Route::get('/mobile-portable', [\App\Http\Controllers\InformationController::class, 'mobilePortable'])->name('information.mobile-portable');
         });
+        Route::prefix('response')->group(function () {
+            Route::get('/incident', [\App\Http\Controllers\InformationController::class, 'incident'])->name('information.incident');
+            Route::get('/manual', [\App\Http\Controllers\InformationController::class, 'manual'])->name('information.manual');
+            Route::get('/network', [\App\Http\Controllers\InformationController::class, 'network'])->name('information.network');
+            Route::get('/minimal', [\App\Http\Controllers\InformationController::class, 'minimal'])->name('information.minimal');
+        });
+        Route::prefix('recover')->group(function () {
+            Route::get('/recovery', [\App\Http\Controllers\InformationController::class, 'recovery'])->name('information.recovery');
+            Route::get('/backup', [\App\Http\Controllers\InformationController::class, 'backup'])->name('information.backup');
+            Route::get('/shutdown', [\App\Http\Controllers\InformationController::class, 'shutdown'])->name('information.shutdown');
+        });
     });
 
 //    Route::prefix('hi-secure')->group(function () {

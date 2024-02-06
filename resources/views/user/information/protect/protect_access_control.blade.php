@@ -41,9 +41,14 @@
             </div>
             <div class="subpage-table-container">
                 <div class="subpage-table-wrap account-table-wrap">
-                    <table class="subpage-table">
+                    <div class="subpage-table-title-wrap">
+                        <h3 class="subpage-table-title">
+                            Access Control
+                        </h3>
+                    </div>
+                    <table class="subpage-table disable">
                         <thead>
-                        <th>
+                        <th style="text-align: center;">
                             No.
                         </th>
                         <th>
@@ -64,32 +69,30 @@
                         <th>
                             Period of Use
                         </th>
-                        <th>
+                        <th style="text-align: center;">
                             Active/Inactive
                         </th>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>1</td>
+                            <td style="text-align: center;">1</td>
                             <td rowspan="8">
-                                Control System Zone
-                            </td>
+                                Control System Zone</td>
                             <td rowspan="4">
-                                FS11
-                            </td>
+                                FS11</td>
                             <td>admin</td>
                             <td>Aaron</td>
                             <td>admin</td>
                             <td>1 Year</td>
-                            <td><i class="xi-radiobox-blank"></i></td>
+                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         <tr>
-                            <td>1</td>
+                            <td style="text-align: center;">1</td>
                             <td>admin</td>
                             <td>Brandon</td>
                             <td>admin</td>
                             <td>1 Year</td>
-                            <td><i class="xi-radiobox-blank"></i></td>
+                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         </tbody>
                     </table>
