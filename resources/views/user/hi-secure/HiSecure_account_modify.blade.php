@@ -41,7 +41,8 @@
                                         <p class="item-title">
                                             ID
                                         </p>
-                                        <div class="item-user form-user-btn-wrap col-group">
+{{--                                        <div class="item-user form-user-btn-wrap col-group">--}}
+                                        <div class="item-user col-group">
                                             <input type="text" class="form-input" name="ids" value="{{ $user->ids }}" disabled>
 {{--                                            <button class="form-user-btn" type="button">--}}
 {{--                                                Duplicate Check--}}

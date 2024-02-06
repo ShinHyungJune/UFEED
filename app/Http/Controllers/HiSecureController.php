@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Authority;
 use App\Models\Group;
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -70,6 +69,8 @@ class HiSecureController extends Controller
 
         if ($request->input('password')) {
             $validate['password'] = Hash::make($request->password);
+        } else {
+            unset($validate['password']);
         }
 
         $user->update($validate);
