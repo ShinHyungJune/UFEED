@@ -42,7 +42,7 @@
                             </div>
                             <div class="setting-txt col-group">
                                 Time setting
-                                <input type="number" class="setting-input" value="5">
+                                <input type="number" class="setting-input" value="{{ config('session.lifetime') }}">
                                 Minute
                             </div>
                             <div class="setting-txt red">
@@ -51,11 +51,11 @@
                         </div>
 
 
-                        <div class="form-btn-wrap col-group">
-                            <button class="form-btn hardware_del_btn">
-                                Save
-                            </button>
-                        </div>
+{{--                        <div class="form-btn-wrap col-group">--}}
+{{--                            <button class="form-btn hardware_del_btn">--}}
+{{--                                Save--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
