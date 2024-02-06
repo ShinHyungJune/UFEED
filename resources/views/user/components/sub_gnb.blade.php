@@ -1077,7 +1077,7 @@
 <td>${item.NL_IPSTR}</td>
 <td>${item.NL_PLATFORM}</td>
 <td>${item.NL_MAC}</td>
-<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><span class="state red"></span></td>
 <td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
 </tr>`)
                 });
