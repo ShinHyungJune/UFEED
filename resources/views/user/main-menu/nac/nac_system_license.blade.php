@@ -106,7 +106,7 @@
                         </tr>
                         <tr>
                             <th>Customer Name</th>
-                            <td>㈜아이스콥</td>
+                            <td>HYUNDAI MARINE SOLUTION</td>
                         </tr>
                         <tr>
                             <th>Server ID</th>
