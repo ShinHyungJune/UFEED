@@ -1,0 +1,439 @@
+$(document).ready(function(){
+    $(".m-script-pop").unbind("click").bind("click", function (){
+        var target = $(this).attr("data-target");
+
+        $(target).toggle();
+    });
+
+    var first = true;
+
+    function getHistories() {
+        axios.get("/api/histories")
+            .then(response => {
+                var devices = response.data.data.devices;
+                var realTimeNotifications = response.data.data.realTimeNotifications;
+                var realTimeTraffics = response.data.data.realTimeTraffics;
+                var rankingTraffics = response.data.data.rankingTraffics.slice(0, 10);
+
+                // # STANDARD ==========
+                var counts = {
+                    up: 0,
+                    down: 0,
+                    warning: 0,
+                    unusual: 0,
+                };
+
+                $(".device-wrap").find(".device").remove();
+
+                $(".modal-devices-up tbody").html("");
+                $(".modal-devices-down tbody").html("");
+                $(".modal-devices-critical tbody").html("");
+                $(".modal-devices-warning tbody").html("");
+
+                devices.map(device => {
+                    $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
+
+                    if(!$(`[data-id="${device.title}"]`).hasClass(device.totalStatus.toLowerCase()))
+                        $(`[data-id="${device.title}"]`).addClass(device.totalStatus.toLowerCase());
+
+                    // $(".device-wrap").append(`<div class="device ${device.status} device-${device.title} ${device.title.includes('OT') ? 'device-OT' : ''}" style="left:${device.left}%;top:${device.top}%"></div>`);
+
+                    if (device.status === "Up") {
+                        counts.up += 1;
+                        $(".modal-devices-up tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
+
+                    if (device.status === "Down") {
+                        counts.down += 1;
+                        $(".modal-devices-down tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
+
+                    if (device.status === "Unusual") {
+                        counts.unusual += 1;
+                        $(".modal-devices-critical tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
+
+                    if (device.status === "Warning") {
+                        counts.warning += 1;
+                        $(".modal-devices-warning tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                    }
+                });
+
+                $(".dashboard-standard-item.up").find(".num").text(counts.up);
+                $(".dashboard-standard-item.down").find(".num").text(counts.down);
+                $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
+                $(".dashboard-standard-item.critical").find(".num").text(counts.unusual);
+
+                drawChart(realTimeTraffics);
+
+                if(first) {
+                    first = false;
+
+                    // # Real-time traffic ========
+                    drawChart(realTimeTraffics);
+                }
+
+                // # Traffic Top 10 ========
+                $(".traffic-top-wrap").html("");
+                var topNum = 0;
+                rankingTraffics.map(rankingTraffic => {
+                    topNum++;
+                    var html = `<div class="traffic-top-item">
+                        <div class="num">${topNum}</div>
+                        <div class="txt-wrap">
+                            <div class="txt-group">
+                                <p class="name">
+                                    ${rankingTraffic.title}
+                                </p>
+<!--                                <p class="ip">-->
+<!--                                    192.168.0.176-->
+<!--                                </p>-->
+                            </div>
+                            <p class="byte">
+                                ${parseInt(((parseInt(rankingTraffic.byte) * 8) / 1000000).toFixed(1)).toLocaleString()} Mbps
+                            </p>
+                        </div>
+                    </div>`;
+
+                    $(".traffic-top-wrap").append(html);
+                });
+
+
+                // # Real-time notofication status ======
+                if (realTimeNotifications.length > 0) {
+
+                    $(".real-time-status-list").html("");
+
+                    realTimeNotifications.map(item => {
+
+                        /*if(item.status == "Unusual") {
+
+                            item.status = "Warning";
+
+                        }*/
+
+                        $(".real-time-status-list").append(`<div class="real-time-status-item ${item.status}">
+                                                                <div class="title-wrap">
+                                                                    <div class="state">
+                                                                        ${item.status}
+                                                                    </div>
+                                                                    <p class="title">
+                                                                        ${item.device.title}
+                                                                    </p>
+                                                                </div>
+                                                                <p class="txt">
+                                                                    ${item.message}
+                                                                </p>
+                                                            </div>`
+                        );
+
+                    });
+
+                }
+            });
+    }
+
+    function getDashboard() {
+        // 좌측 하단 원형차트 그리기
+
+        axios.get(window.domain + "/api/firewalls/dashboard")
+            .then(response => {
+                var traffics = response.data.data.traffics;
+
+                $(".dashboard-table-traffic tbody").html("");
+                traffics.map(traffic => {
+                    $(".dashboard-table-traffic tbody").append(`
+                        <tr>
+                            <td><div class="state state-bar"></div></td>
+                            <td>${traffic.key}</td>
+                            <td>${traffic.avg} KB</td>
+                        <tr/>
+                    `);
+                });
+
+                var counts = response.data.data;
+
+                var countsWrapArr = document.querySelectorAll('.protection-item');
+
+                if(countsWrapArr.length > 0){
+                    countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
+                    countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
+                    countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
+                }
+
+
+                // IPS / C&C 좌측 하단 차트 그리기
+                $(".polar-area-chart").html("");
+
+                var cncs = response.data.data.cncs;
+
+                cncs.sort((a,b) => b.count - a.count);
+
+                cncs.map((item, index) => {
+                    $(".polar-area-chart#tab_01").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
+        <div class="img-box"></div>
+        <div class="hover-box"></div>
+</div>`);
+
+                    $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
+                    $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
+                            <p class="title">
+                                Sip
+                            </p>
+                            <p class="txt">
+                                ${item.sip}
+                            </p>
+                        </div>
+                        <div class="detail-group">
+                            <p class="title">
+                                Count
+                            </p>
+                            <p class="txt">
+                                ${item.count}
+                            </p>
+                        </div>`);
+                });
+
+                var ipses = response.data.data.ipses;
+
+                ipses.sort((a,b) => b.count - a.count);
+
+                $(".dashboard-table-ips tbody").html("");
+                ipses.map((item, index) => {
+                    $(".polar-area-chart#tab_02").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
+        <div class="img-box"></div>
+        <div class="hover-box"></div>
+</div>`);
+
+                    $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
+                    $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
+                            <p class="title">
+                                Sip
+                            </p>
+                            <p class="txt">
+                                ${item.sip}
+                            </p>
+                        </div>
+                        <div class="detail-group">
+                            <p class="title">
+                                Count
+                            </p>
+                            <p class="txt">
+                                ${item.count}
+                            </p>
+                        </div>`);
+                });
+            })
+    }
+
+    var chart = null;
+
+    function drawChart(deviceTraffics) {
+        var colors = [
+            "#502ecf",
+            "#359832",
+            "#84818F",
+            "#CFC786",
+            "#7A7763",
+            "#39334F",
+            "#68637A",
+            "#967AFA",
+            "#23FA84",
+        ]
+
+        //차트
+        const main_ctx = document.getElementById('chart');
+
+        var firstDeviceTraffic = deviceTraffics[0];
+
+        var datasets = deviceTraffics.map((deviceTraffic, index) => {
+
+
+            return {
+                label: deviceTraffic.device.title,
+                data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
+                borderWidth: 1,
+                borderColor: colors[index],
+                tension: 0.4 //곡선그래프
+            };
+        });
+
+        if (chart) {
+            chart.destroy();
+
+            chart = null;
+        }
+
+        chart = new Chart(main_ctx, {
+            type: 'line',
+            data: {
+                // labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+                labels: firstDeviceTraffic.traffics.map((traffic) => traffic.date),
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        ticks: {
+                            // forces step size to be 50 units
+                            stepSize: 20,
+                            font: function () {
+                                return {
+                                    size: 10,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: function () {
+                                return {
+                                    size: 10,
+                                    family: 'Pretendard'
+                                }
+                            },
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: function () {
+                                return {
+                                    size: 10,
+                                    family: 'Pretendard'
+                                }
+                            },
+                            boxWidth: 6,
+                            boxHeight: 6,
+                        },
+                        position: 'top',
+                        fullWidth: false,
+                    },
+                }
+            },
+            elements: {
+                point: {
+                    radius: 0, //선형 그래프 포인트 삭제
+                },
+            },
+        });
+    }
+
+    getHistories();
+    getDashboard();
+
+    setInterval(() => {
+        getHistories();
+        getDashboard();
+    }, 10000);
+
+
+    //모달 닫기//
+    $('.modal-container .close-btn').click(function () {
+        $(this).closest('.modal-container').fadeOut();
+    });
+
+    //모달 열기//
+    //Allowed Devices
+    $('.allowed-devices').click(function () {
+        $('.allowed-devices-wrap').fadeIn();
+    });
+
+    //Blocked Devices
+    $('.blocked-devices').click(function () {
+        $('.blocked-devices-wrap').fadeIn();
+    });
+
+    function getAllows() {
+        axios.get("/api/nac/allows")
+            .then(response => {
+                closeLoading();
+                var result = response.data.data;
+
+                var count = result.total;
+                var items = result.result;
+
+                $(".allowed-devices .badge").text(count);
+
+                $(".allowed-devices-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".allowed-devices-wrap tbody").append(`<tr>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_PLATFORM}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">BLOCK</button></td>
+</tr>`)
+                });
+
+                $(".allowed-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
+                    var ip = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.post("/api/nac/blocks", {
+                        ip: ip
+                    }).then(response => {
+                        getAllows();
+                        getBlocks();
+                    });
+                });
+
+            })
+    }
+
+    function getBlocks() {
+        axios.get("/api/nac/blocks")
+            .then(response => {
+                closeLoading();
+                var result = response.data.data;
+
+                var count = result.total;
+                var items = result.result;
+
+                console.log(items);
+                $(".blocked-devices .badge").text(count);
+
+                $(".blocked-devices-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".blocked-devices-wrap tbody").append(`<tr>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_PLATFORM}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state red"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
+</tr>`)
+                });
+
+                $(".blocked-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
+                    var ip = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.post("/api/nac/allows", {
+                        ip: ip
+                    }).then(response => {
+                        getAllows();
+                        getBlocks();
+                    });
+                });
+            })
+    }
+
+    // 실서버에서만 동작하게
+    if(!location.href.includes("localhost")){
+        getBlocks();
+        getAllows();
+    }
+
+});

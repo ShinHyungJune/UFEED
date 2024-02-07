@@ -252,36 +252,40 @@
                 </div>
 
                 <div class="dashboard-content-wrap">
-                    <div class="device-wrap"
-                         style="width: 970px; height: 770px; margin: 40px auto;">
+                    <div class="device-wrap" style="width: 970px; height: 770px; margin: 40px auto;">
                         <video class="bg-video" autoplay muted loop>
                             <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
                         </video>
-                        <a href="{{ route('navigation') }}" class="device-item down" style="top: 200px; left: 0;">
+
+                        <a href="{{ route('navigation') }}" data-id="FW#2" class="device-item up" style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_nz.png" alt="">
                             <p class="device-item-zone">
                                 FW#2
                             </p>
                         </a>
-                        <a href="{{ route('communication') }}" class="device-item up" style="top: 400px; left: 0;">
+
+                        <a href="{{ route('communication') }}" data-id="FW#3" class="device-item up" style="top: 400px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_cz.png" alt="">
                             <p class="device-item-zone">
                                 FW#3
                             </p>
                         </a>
-                        <div class="device-item up" style="top: 200px; left: 400px;">
+
+                        <div class="device-item up" data-id="FW1" style="top: 200px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_rz.png" alt="">
                             <p class="device-item-zone">
                                 FW#1
                             </p>
                         </div>
+
                         <div class="device-item up" style="top: 0; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_satellite.png" alt="">
                         </div>
+
                         <div class="device-item up" style="top: 400px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_network.png" alt="">
@@ -290,7 +294,7 @@
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_pc.png" alt="">
                         </div>
-                        <div class="device-item up" style="top: 600px; left: 200px">
+                        <div class="device-item up" data-id="TMS" style="top: 600px; left: 200px">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_tms.png" alt="">
                         </div>
@@ -298,21 +302,21 @@
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_hisecure.png" alt="">
                         </div>
-                        <a href="{{ route('crew-lan') }}" class="device-item up" style="top: 0; left: 800px;">
+                        <a href="{{ route('crew-lan') }}" data-id="FW#4" class="device-item up" style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_clz.png" alt="">
                             <p class="device-item-zone">
                                 FW#4
                             </p>
                         </a>
-                        <a href="{{ route('power') }}" class="device-item up" style="top: 200px; left: 800px;">
+                        <a href="{{ route('power') }}" data-id="FW#5" class="device-item up" style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_pz.png" alt="">
                             <p class="device-item-zone">
                                 FW#5
                             </p>
                         </a>
-                        <a href="{{ route('control-instrumentation') }}" class="device-item up"
+                        <a href="{{ route('control-instrumentation') }}" data-id="FW#6" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_ciz.png" alt="">
@@ -1989,83 +1993,8 @@
     $('.down-btn').click(function () {
         $(this).closest('.dashboard-gnb-wrap').toggleClass('active');
     });
-    /* 제거대기
-    var firstSwiper = true;
-    var swiper = null;
 
 
-    function getAlarms() {
-        axios.get(window.domain + "/api/alarms")
-            .then(response => {
-                var items = response.data.data;
-
-                if (firstSwiper && items.length === 0) {
-                    $(".m-swiper.type01").hide();
-
-                    firstSwiper = false;
-                }
-
-                if (items.length > 0) {
-                    if (swiper)
-                        swiper.destroy();
-
-                    $(".m-swiper.type01").show();
-
-                    items.map(item => {
-                        $(".m-swiper.type01 .swiper-wrapper").append(`
-                    <div class="swiper-slide">
-                        <div class="m-swiper-title">${item.device} <button class="btn-close"><i class="xi-close"></i></button></div>
-                        <div class="m-swiper-bodies">
-
-                                  <div class="swiper-body">
-                            <div class="swiper-body-head">Name :</div>
-                            <div class="swiper-body-content">${item.name}</div>
-                        </div>
-                        <div class="swiper-body">
-                            <div class="swiper-body-head">IP :</div>
-                            <div class="swiper-body-content">${item.host}</div>
-                        </div>
-                        <div class="swiper-body">
-                            <div class="swiper-body-head">Status :</div>
-                            <div class="swiper-body-content">${item.status}</div>
-                        </div>
-
-                        <div class="swiper-body">
-                            <div class="swiper-body-head">Value :</div>
-                            <div class="swiper-body-content">${item.value}</div>
-                        </div>
-                        </div>
-                    </div>
-                    `)
-                    });
-
-                    $(".m-swiper.type01 .btn-close").unbind("click").bind("click", function () {
-                        $(".m-swiper.type01 .swiper-wrapper").html("");
-                        $(".m-swiper").hide();
-                    });
-
-                    swiper = new Swiper('.m-swiper.type01 .swiper-container', {
-                        slidesPerView: 1,
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true, // Allow clicking on pagination bullets
-                        },
-                        navigation: {
-                            nextEl: '.swiper-btn-next',
-                            prevEl: '.swiper-btn-prev',
-                        },
-                    });
-                }
-
-            });
-    }
-
-    setInterval(function () {
-        // getAlarms();
-    }, 5000);
-
-    getAlarms();
-     */
 </script>
 </body>
 </html>

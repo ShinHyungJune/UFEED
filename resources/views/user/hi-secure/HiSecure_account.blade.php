@@ -108,10 +108,10 @@
                                     {{ $user->email }}
                                 </td>
                                 <td>
-                                    {{ $user->group->name }}
+                                    {{ $user->group ? $user->group->name : "" }}
                                 </td>
                                 <td>
-                                    {{ $user->authority->name }}
+                                    {{ $user->authority }}
                                 </td>
                                 <td>
                                     <form action="" method="post" id="switchForm">

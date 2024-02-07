@@ -47,35 +47,35 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up" data-title="Automatic Identification System">
+                            <div class="device-item device-btn up m-script-pop" data-target="#pop1" data-title="Automatic Identification System">
                                 <div class="state state-num">6</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Automatic Identification System
                                 </p>
                             </div>
-                            <div class="device-item device-btn up" data-title="Voyage Data Recorder">
+                            <div class="device-item device-btn up m-script-pop" data-target="#pop2" data-title="Voyage Data Recorder">
                                 <div class="state state-num">7</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Voyage Data Recorder
                                 </p>
                             </div>
-                            <div class="device-item device-btn up" data-title="Navigation Assistance System">
+                            <div class="device-item device-btn up m-script-pop" data-target="#pop3" data-title="Navigation Assistance System">
                                 <div class="state"></div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Navigation Assistance System
                                 </p>
                             </div>
-                            <div class="device-item device-btn up" data-title="Echo Sounder">
+                            <div class="device-item device-btn up m-script-pop" data-target="#pop4" data-title="Echo Sounder">
                                 <div class="state state-num">9</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Echo Sounder
                                 </p>
                             </div>
-                            <div class="device-item device-btn up" data-title="Doppler Speed Log">
+                            <div class="device-item device-btn up m-script-pop" data-target="#pop5" data-title="Doppler Speed Log">
                                 <div class="state state-num">7</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
@@ -107,29 +107,55 @@
     </div>
 </div>
 
-<!-- 알람 -->
-<div class="m-swiper type01" style="display: none;">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-
+<!-- 디바이스 상세 팝업 -->
+<div class="device-detail" style="display: none;" id="pop1">
+    <div class="device-detail-wrap">
+        <button class="close-btn">
+            <i class="xi-close"></i>
+        </button>
+        <div class="device-detail-title-wrap">
+            <p class="before">
+                Navigation Zone
+            </p>
+            <i class="xi-angle-right"></i>
+            <p class="now"></p>
         </div>
 
-        <div class="swiper-pagination"></div>
-
-        <div class="btns">
-            <div class="swiper-btn swiper-btn-prev">
-                <i class="xi-angle-left"></i>
-            </div>
-            <div class="swiper-btn swiper-btn-next">
-                <i class="xi-angle-right"></i>
+        <div class="device-detail-group">
+            <div class="device-detail-item device-item up" data-id="OT#1">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 디바이스 상세 팝업 -->
-<div class="device-detail" style="display: none;">
+<div class="device-detail" style="display: none;" id="pop2">
     <div class="device-detail-wrap">
         <button class="close-btn">
             <i class="xi-close"></i>
@@ -147,46 +173,122 @@
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
         </div>
     </div>
 </div>
+
+<div class="device-detail" style="display: none;" id="pop3">
+    <div class="device-detail-wrap">
+        <button class="close-btn">
+            <i class="xi-close"></i>
+        </button>
+        <div class="device-detail-title-wrap">
+            <p class="before">
+                Navigation Zone
+            </p>
+            <i class="xi-angle-right"></i>
+            <p class="now"></p>
+        </div>
+
+        <div class="device-detail-group">
+
+        </div>
+    </div>
+</div>
+
+<div class="device-detail" style="display: none;" id="pop4">
+    <div class="device-detail-wrap">
+        <button class="close-btn">
+            <i class="xi-close"></i>
+        </button>
+        <div class="device-detail-title-wrap">
+            <p class="before">
+                Navigation Zone
+            </p>
+            <i class="xi-angle-right"></i>
+            <p class="now"></p>
+        </div>
+
+        <div class="device-detail-group">
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+
+            <div class="device-detail-item device-item up">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-
-    function showDeviceDetail(num) {
-        // device-detail을 나타나게 함
-        $('.device-detail').fadeIn();
-
-        // device-detail-item을 동적으로 생성하여 추가
-        var detailGroup = $('.device-detail-group');
-        detailGroup.empty(); // 기존의 내용을 지움
-
-        for (var i = 1; i <= num; i++) {
-            if (i === 1){
-                var detailItem = $('<div class="device-detail-item device-item up">' +
-                    '<div class="state"></div>' +
-                    '<img src="/images/dashboard_icon_server.png" alt="">' +
-                    '</div>');
-
-            }else{
-                var detailItem = $('<div class="device-detail-item device-item down">' +
-                    '<div class="state"></div>' +
-                    '<img src="/images/dashboard_icon_server.png" alt="">' +
-                    '</div>');
-            }
-
-            // 생성된 detailItem을 detailGroup에 추가
-            detailGroup.append(detailItem);
-        }
-    }
-
-    $('.device-btn').click(function () {
-
-        var data_title = $(this).attr('data-title');
-        $('.device-detail').find('.now').text(data_title);
-
-        var stateNum = parseInt($(this).find('.state-num').text());
-        showDeviceDetail(stateNum);
-    });
 
     $('.device-detail .close-btn').click(function () {
         $('.device-detail').fadeOut();
