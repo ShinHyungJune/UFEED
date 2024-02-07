@@ -12,7 +12,7 @@
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-{{--        @include('user.components.gnb')--}}
+        @include('user.components.gnb')
     </div>
     <!-- //좌측 메뉴 -->
 
