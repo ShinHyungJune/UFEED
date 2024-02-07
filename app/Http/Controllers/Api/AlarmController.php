@@ -21,12 +21,11 @@ class AlarmController extends ApiController
     }
     public function store(Request $request)
     {
-        return $this->respondForbidden(json_decode($request->data)->device);
-        $data = json_decode($request->data)["data"];
+        $data = json_decode($request->data);
 
-        $device = Device::where("title", $data["device"])->first();
+        $device = Device::where("title", $data->device)->first();
 
-        $originStatus = $data["status"];
+        $originStatus = $data->status;
 
         $status = null;
 
