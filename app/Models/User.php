@@ -49,6 +49,11 @@ class User extends Authenticatable
 //        'password' => 'hashed',
     ];
 
+    public function incrementPasswordCount(): void
+    {
+        $this->increment('password_count');
+    }
+
     public function group(): BelongsTo
     {
         return $this->belongsTo(Group::class);

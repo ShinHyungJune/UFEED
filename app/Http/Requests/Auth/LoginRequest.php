@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -45,9 +46,25 @@ class LoginRequest extends FormRequest
         if (! Auth::attempt($this->only('ids', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
-            throw ValidationException::withMessages([
-                'ids' => trans('auth.failed'),
-            ]);
+            $user = User::whereIds($this->ids)->first();
+            if ($user != null) {
+                $user->incrementPasswordCount();
+                if ($user->password_count >= 5) {
+                    $user->is_active = false;
+                    $user->push();
+                    throw ValidationException::withMessages([
+                        'ids' => trans('Please contact the administrator.'),
+                    ]);
+                } else {
+                    throw ValidationException::withMessages([
+                        'ids' => trans($user->password_count.'/5 Wrong password. Try again or click Forgot password to reset it.'),
+                    ]);
+                }
+            } else {
+                throw ValidationException::withMessages([
+                    'ids' => trans('auth.failed'),
+                ]);
+            }
         }
 
         if (!Auth::user()->is_active) {
@@ -56,6 +73,10 @@ class LoginRequest extends FormRequest
                 'ids' => trans('The account is deactivated, so please contact the administrator.'),
             ]);
         }
+
+        $user = Auth::user();
+        $user->password_count = 0;
+        $user->push();
 
         RateLimiter::clear($this->throttleKey());
     }

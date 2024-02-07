@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('ids')->unique();
             $table->string('name');
             $table->string('password');
+            $table->integer('password_count')->default(0);
             $table->foreignIdFor(Group::class);
             $table->foreignIdFor(Authority::class);
             $table->string('email')->unique();
