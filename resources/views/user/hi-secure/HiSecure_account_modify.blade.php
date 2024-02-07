@@ -12,7 +12,7 @@
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-        @include('user.components.gnb')
+{{--        @include('user.components.gnb')--}}
     </div>
     <!-- //좌측 메뉴 -->
 
@@ -56,6 +56,7 @@
                                         <div class="item-user col-group">
                                             <input type="text" class="form-input" name="name" value="{{ $user->name }}">
                                         </div>
+                                        <p class="error-txt validation-txt" id="validation-name" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -66,15 +67,13 @@
                                             Password must be at least 8 characters long, <br>
                                             must contain letters in mixed case and must contain numbers.
                                         </p>
-                                        <p class="error sub-txt" style="color:red;" id="error-password"></p>
+                                        <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             Confirm Password
                                         </p>
                                         <input type="password" class="form-input" id="password_confirmation" name="password_confirmation">
-                                        <p class="error sub-txt" style="color:red;"
-                                           id="error-password_confirmation"></p>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +88,6 @@
                                                 <option value="{{ $group->id }}">{{ $group->name }}</option>
                                             @endforeach
                                         </select>
-                                        <p class="error sub-txt" style="color:red;" id="error-group"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -100,7 +98,6 @@
                                                 <option value="{{ $authority->id }}">{{ $authority->name }}</option>
                                             @endforeach
                                         </select>
-                                        <p class="error sub-txt" style="color:red;" id="error-authority"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -123,6 +120,7 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/utility.js') }}"></script>
 <script>
     $('#group').val('{{ $user->group_id }}');
     $('#authority').val('{{ $user->authority_id }}');
@@ -131,22 +129,23 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetch("{{ route('hi-secure.update', $user->id) }}", {
-            method: "POST",
-            body: formData
-        }).then(response => {
-            if (response.ok) {
-                return response;
-            }
-            return response.json().then(data => {
-                throw new Error(data.message);
-            });
-        }).then((response) => {
-            alert('Hi-Secure Account modified')
-            location.href = response.url;
-        }).catch(error => {
-            alert(error.message);
-        });
+        fetchUtility("{{ route('hi-secure.update', $user->id) }}", formData);
+        {{--fetch("{{ route('hi-secure.update', $user->id) }}", {--}}
+        {{--    method: "POST",--}}
+        {{--    body: formData--}}
+        {{--}).then(response => {--}}
+        {{--    if (response.ok) {--}}
+        {{--        return response;--}}
+        {{--    }--}}
+        {{--    return response.json().then(data => {--}}
+        {{--        throw new Error(data.message);--}}
+        {{--    });--}}
+        {{--}).then((response) => {--}}
+        {{--    alert('Hi-Secure Account modified')--}}
+        {{--    location.href = response.url;--}}
+        {{--}).catch(error => {--}}
+        {{--    alert(error.message);--}}
+        {{--});--}}
     });
 </script>
 </body>

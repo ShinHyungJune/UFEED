@@ -12,7 +12,7 @@
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-        @include('user.components.gnb')
+{{--        @include('user.components.gnb')--}}
     </div>
     <!-- //좌측 메뉴 -->
 
@@ -47,6 +47,7 @@
 {{--                                                Duplicate Check--}}
 {{--                                            </button>--}}
                                         </div>
+                                        <p class="error-txt validation-txt" id="validation-ids" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -55,6 +56,7 @@
                                         <div class="item-user col-group">
                                             <input type="text" class="form-input" name="name">
                                         </div>
+                                        <p class="error-txt validation-txt" id="validation-name" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -65,15 +67,13 @@
                                             Password must be at least 8 characters long, <br>
                                             must contain letters in mixed case and must contain numbers.
                                         </p>
-                                        <p class="error sub-txt" style="color:red;" id="error-password"></p>
+                                        <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             Confirm Password
                                         </p>
                                         <input type="password" class="form-input" id="password_confirmation" name="password_confirmation">
-                                        <p class="error sub-txt" style="color:red;"
-                                           id="error-password_confirmation"></p>
                                     </div>
                                 </div>
                             </div>
@@ -106,6 +106,7 @@
                                             E-Mail
                                         </p>
                                         <input type="email" class="form-input" id="email" name="email">
+                                        <p class="error-txt validation-txt" id="validation-email" style="display: none"></p>
                                     </div>
 {{--                                    <div class="form-item row-group">--}}
 {{--                                        <p class="item-title">--}}
@@ -132,26 +133,12 @@
 {{--<script>--}}
 {{--    $('#period_of_use').datepicker();--}}
 {{--</script>--}}
+<script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetch("{{ route('hi-secure.store') }}", {
-            method: "POST",
-            body: formData
-        }).then(response => {
-            if (response.ok) {
-                return response;
-            }
-            return response.json().then(data => {
-                throw new Error(data.message);
-            });
-        }).then((response) => {
-            alert('Hi-Secure Account registered')
-            location.href = response.url;
-        }).catch(error => {
-            alert(error.message);
-        });
+        fetchUtility("{{ route('hi-secure.store') }}", formData, "Account creation has been completed.");
     });
 </script>
 </body>

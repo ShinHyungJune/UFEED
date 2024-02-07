@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HiSecurePatchRequest;
+use App\Http\Requests\HiSecureRequest;
 use App\Models\Authority;
 use App\Models\Group;
 use App\Models\User;
@@ -28,21 +30,13 @@ class HiSecureController extends Controller
         return view('user.hi-secure.HiSecure_account_add')->with('groups', $groups)->with('authorities', $authorities);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(HiSecureRequest $request): RedirectResponse
     {
-        $validate = $request->validate([
-            'ids' => ['required', 'string', 'max:255', 'unique:' . User::class],
-            'name' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()->symbols()],
-            'group_id' => ['required', 'integer'],
-            'authority_id' => ['required', 'integer'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-//            'period_of_use' => ['required', 'date'],
-        ]);
+        $validated = $request->validated();
 
-        $validate['password'] = Hash::make($request->password);
+        $validated['password'] = Hash::make($validated['password']);
 
-        $user = User::create($validate);
+        $user = User::create($validated);
 
         event(new Registered($user));
 
@@ -56,25 +50,17 @@ class HiSecureController extends Controller
         return view('user.hi-secure.HiSecure_account_modify')->with('user', $user)->with('groups', $groups)->with('authorities', $authorities);
     }
 
-    public function update(Request $request, User $user)
+    public function update(HiSecurePatchRequest $request, User $user)
     {
-        $validate = $request->validate([
-//            'ids' => ['required', 'string', 'max:255', 'unique:' . User::class],
-            'name' => ['required', 'string', 'max:255'],
-            'password' => ['nullable', 'confirmed', Rules\Password::defaults()->symbols()],
-            'group_id' => ['required', 'integer'],
-            'authority_id' => ['required', 'integer'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-//            'period_of_use' => ['required', 'date'],
-        ]);
+        $validated = $request->validated();
 
         if ($request->filled('password')) {
-            $validate['password'] = Hash::make($request->password);
+            $validated['password'] = Hash::make($validated['password']);
         } else {
-            unset($validate['password']);
+            unset($validated['password']);
         }
 
-        $user->update($validate);
+        $user->update($validated);
 
         return redirect()->route('hi-secure.index');
     }

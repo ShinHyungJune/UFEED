@@ -12,7 +12,7 @@
 
     <!-- 좌측 메뉴 -->
     <div id="gnb">
-        @include('user.components.gnb')
+{{--        @include('user.components.gnb')--}}
     </div>
     <!-- //좌측 메뉴 -->
 
@@ -169,6 +169,7 @@
 {{--    }--}}
 
 {{--</script>--}}
+<script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('modify').addEventListener('click', function () {
         let checkedCheckbox = document.querySelector('.check-input:checked');
@@ -192,22 +193,7 @@
         })
 
         let formData = new FormData(deleteForm);
-        fetch("{{ route('hi-secure.delete') }}", {
-            method: "POST",
-            body: formData
-        }).then(response => {
-            if (response.ok) {
-                return response;
-            }
-            return response.json().then(data => {
-                throw new Error(data.message);
-            });
-        }).then((response) => {
-            alert('Hi-Secure Account deleted')
-            location.href = response.url;
-        }).catch(error => {
-            alert(error.message);
-        });
+        fetchUtility("{{ route('hi-secure.delete') }}", formData)
     })
 </script>
 <script>

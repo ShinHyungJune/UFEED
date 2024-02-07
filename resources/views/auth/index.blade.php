@@ -27,6 +27,9 @@
                         <input type="password" name="password" id="pwd" placeholder="PASSWORD">
                     </div>
 
+                    <p class="error-txt validation-txt" id="validation-ids" style="display: none"></p>
+                    <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
+
                     <a href="#" class="btn-login" id="submit">Sign In</a>
 
                     <p class="error-txt">
@@ -94,26 +97,13 @@
 {{--        return alert("유효하지 않은 계정정보입니다."); */--}}
 {{--    });--}}
 {{--</script>--}}
+<script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('submit').addEventListener('click', function (e) {
         e.preventDefault();
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetch("{{ route('login') }}", {
-            method: "POST",
-            body: formData
-        }).then(response => {
-            if (response.ok) {
-                return response;
-            }
-            return response.json().then(data => {
-                throw new Error(data.message);
-            });
-        }).then(response => {
-            location.href = response.url;
-        }).catch(error => {
-            alert(error.message);
-        });
+        fetchUtility("{{ route('login') }}", formData);
     });
 </script>
 </body>
