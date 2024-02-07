@@ -183,8 +183,11 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dimming-btn ::after { content: ''; display: block; position: absolute; width: 1px; height: 12px; background: #a4a4a4; left: -8px; top: 50%; transform: translateY(-50%); }
 
 .header-btm-wrap { gap: 20px; align-items: center; }
+.header-btm-btn { width: 100%; text-align: center; }
 .header-btm-btn i { font-size: 30px; color: #aaa; transition: .3s; }
 .header-btm-btn:hover i { color: #292d33; }
+.header-btm-btn .account-type { font-size: 10px; font-weight: 600; color: #aaa; }
+.header-btm-btn .account-id  {font-size: 11px; font-weight: 300; color: #aaa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 4px; }
 
 /* 좌측 메뉴 공통 */
 #gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
@@ -592,6 +595,8 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .account-form .form-item { gap: 12px; width: 100%; }
 .account-form .form-item .item-title { font-size: 14px; color: #404040; font-weight: 600; padding-left: 8px; }
 .account-form .form-item .sub-txt { font-size: 13px; color: #7f7f7f; line-height: 1.25; padding-left: 8px; }
+.account-form .form-item .error-txt { font-size: 12px; color: #ff4620; line-height: 1.25; padding-left: 8px; display: none; }
+.account-form .form-item .error-txt i { font-size: 12px; color: #ff4620; }
 .account-form .form-input, .account-form .form-select { width: 100%; height: 48px; border-radius: 24px; font-size: 16px; padding: 0 24px; background-color: #fff; }
 .account-form .form-date { padding-left: 48px; background-image: url(../images/icon_date.png); background-repeat: no-repeat; background-size: 16px; background-position: left 20px center; }
 .account-form .form-user-btn-wrap { gap: 8px; }
@@ -617,7 +622,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .account-table-wrap table th:last-child { border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
 .account-table-wrap table .check-label .check-item i { width: 16px; height: 16px; border-radius: 2px; font-size: 12px; line-height: 14px; }
 .account-table-wrap table .check-input:checked + .check-item i { background: #ff4620; border: 1px solid #ff4620; }
-.account-table-wrap table td { background: #fff; padding: 11px 15px; font-size: 16px; line-height: 1.25; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; cursor: pointer; }
+.account-table-wrap table td { background: #fff; padding: 11px 15px; font-size: 16px; line-height: 1.25; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; cursor: pointer; word-break: break-all; }
 .account-table-wrap table td:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-left: 1px solid #e4e4e4; }
 .account-table-wrap table td:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-right: 1px solid #e4e4e4; }
 .account-table-wrap table tr:hover td { background: #FEF1EE; }

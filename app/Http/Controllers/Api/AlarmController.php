@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Enums\DeviceStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AlarmResource;
 use App\Models\Alarm;
+use App\Models\Device;
 use Illuminate\Http\Request;
 
 class AlarmController extends ApiController
@@ -19,8 +21,26 @@ class AlarmController extends ApiController
     }
     public function store(Request $request)
     {
+        $data = json_decode($request->data);
+
+        $device = Device::where("title", $data->device)->first();
+
+        $originStatus = $data->status;
+
+        $status = null;
+
+        if (strpos($originStatus, "Down") !== false || strpos($originStatus, "DOWN") !== false)
+            $status = DeviceStatus::DOWN;
+
+        if (strpos($originStatus, "Up") !== false || strpos($originStatus, "UP") !== false)
+            $status = DeviceStatus::UP;
+
+        if($status)
+            $device->update(["status" => $status]);
+
         Alarm::create([
-            "data" => json_encode($request->all())
+            "device_id" => $device ? $device->id : null,
+            "data" => json_encode($data),
         ]);
 
         return $this->respondSuccessfully();

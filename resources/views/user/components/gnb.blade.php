@@ -1082,71 +1082,79 @@
 @include('user.components.sub_gnb')
 
 <script>
-    $(".polar-area-chart").html("");
 
-    axios.get(window.domain + "/api/firewalls/dashboard")
-        .then(response => {
-            // IPS / C&C 좌측 하단 차트 그리기
+    // 탭
+    const tabs = document.querySelectorAll('.dashboard-section-tab');
 
-            var cncs = response.data.data.cncs;
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const parent = this.parentElement;
+            const tabContents = parent.querySelectorAll('.dashboard-section-tab');
 
-            cncs.sort((a,b) => b.count - a.count);
-
-            cncs.map((item, index) => {
-                $(".polar-area-chart#tab_01").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
-        <div class="img-box"></div>
-        <div class="hover-box"></div>
-</div>`);
-
-                $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
-                $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                ${item.sip}
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                ${item.count}
-                            </p>
-                        </div>`);
+            tabContents.forEach(content => {
+                content.classList.remove('active');
             });
 
-            var ipses = response.data.data.ipses;
+            this.classList.add('active');
+        });
+    });
 
-            ipses.sort((a,b) => b.count - a.count);
+    //대시보드 확대축소버튼
+    const scalingBox = $('.device-wrap');
+    var currentScale = 1.0;
+    var minScale = 1.0;
 
-            $(".dashboard-table-ips tbody").html("");
-            ipses.map((item, index) => {
-                $(".polar-area-chart#tab_02").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
-        <div class="img-box"></div>
-        <div class="hover-box"></div>
-</div>`);
+    $('.renew-btn').on('click', function () {
+        currentScale = minScale;
+        scalingBox.css('transform', 'scale(' + currentScale + ')');
+    });
 
-                $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
-                $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                ${item.sip}
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                ${item.count}
-                            </p>
-                        </div>`);
-            });
-        })
+    $('.plus-btn').on('click', function () {
+        if (currentScale < 1.9) {
+            currentScale += 0.3;
+            scalingBox.css('transform', 'scale(' + currentScale + ')');
+        }
+    });
 
+    $('.minus-btn').on('click', function () {
+        if (currentScale > 1.0) {
+            currentScale -= 0.3;
+
+            if (currentScale < minScale)
+                currentScale = minScale;
+
+            scalingBox.css('transform', 'scale(' + currentScale + ')');
+        }
+    });
+
+
+    function clearTime(timeString) {
+        // 주어진 시간 문자열을 Date 객체로 변환
+        var timeArray = timeString.split(':');
+        var dateObject = new Date();
+        dateObject.setHours(parseInt(timeArray[0], 10));
+        dateObject.setMinutes(parseInt(timeArray[1], 10));
+        dateObject.setSeconds(parseInt(timeArray[2], 10));
+
+        // 분을 5분 단위로 반올림
+        var minutes = dateObject.getMinutes();
+        var roundedMinutes = Math.ceil(minutes / 5) * 5;
+
+        // 60분이 되면 시간을 1 늘리고 분은 0으로 설정
+        if (roundedMinutes === 60) {
+            dateObject.setHours(dateObject.getHours() + 1);
+            roundedMinutes = 0;
+        }
+
+        dateObject.setMinutes(roundedMinutes);
+        dateObject.setSeconds(0);
+
+        // 시, 분, 초를 문자열로 변환하여 리턴
+        var formattedTime = dateObject.getHours().toString().padStart(2, '0') + ':' +
+            dateObject.getMinutes().toString().padStart(2, '0') + ':' +
+            dateObject.getSeconds().toString().padStart(2, '0');
+
+        return formattedTime;
+    }
 </script>
 

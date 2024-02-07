@@ -21,7 +21,7 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script src="{{ asset('js/jquery.js') }}" defer></script>
-    <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="{{ asset('js/common.js') }}" defer></script>
     <script src="{{ asset('js/swiper.min.js') }}" defer></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.3.1/smooth-scrollbar.js" defer></script>
