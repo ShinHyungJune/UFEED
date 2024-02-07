@@ -40,7 +40,7 @@ class AlarmController extends ApiController
 
         Alarm::create([
             "device_id" => $device ? $device->id : null,
-            "data" => $data,
+            "data" => json_encode($data),
         ]);
 
         return $this->respondSuccessfully();
