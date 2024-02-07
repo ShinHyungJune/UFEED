@@ -373,7 +373,14 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        @foreach($devices as $device)
+                            @if(strtoupper($device->status) == "UP")
+                            <tr>
+                                <td>{{$device->title}}</td>
+                                <td>{{$device->status}}</td>
+                            </tr>
+                            @endif
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -409,7 +416,14 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        @foreach($devices as $device)
+                            @if(strtoupper($device->status) == "DOWN")
+                                <tr>
+                                    <td>{{$device->title}}</td>
+                                    <td>{{$device->status}}</td>
+                                </tr>
+                            @endif
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -445,7 +459,14 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        @foreach($devices as $device)
+                            @if(strtoupper($device->status) == "UNUSUAL")
+                                <tr>
+                                    <td>{{$device->title}}</td>
+                                    <td>{{$device->status}}</td>
+                                </tr>
+                            @endif
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -481,7 +502,14 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        @foreach($devices as $device)
+                            @if(strtoupper($device->status) == "WARNING")
+                                <tr>
+                                    <td>{{$device->title}}</td>
+                                    <td>{{$device->status}}</td>
+                                </tr>
+                            @endif
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -2089,6 +2117,7 @@
 
                 $(".device-wrap").find(".device").remove();
 
+                /* 제거대기
                 $(".modal-devices-up tbody").html("");
                 $(".modal-devices-down tbody").html("");
                 $(".modal-devices-critical tbody").html("");
@@ -2122,6 +2151,7 @@
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
                 $(".dashboard-standard-item.critical").find(".num").text(counts.unusual);
+                 */
 
                 drawChart(realTimeTraffics);
 
@@ -2216,39 +2246,6 @@
                 countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
                 countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
                 countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
-
-                /*$(".dashboard-table-cnc tbody").html("");
-
-                var cncs = response.data.data.cncs;
-
-                cncs.map(cnc => {
-                    $(".dashboard-table-cnc tbody").append(`<tr><td>${cnc.sip}</td><td>${cnc.dip}</td><td>${cnc.count}</td><tr/>`);
-                });
-
-                var ipses = response.data.data.ipses;
-
-                $(".dashboard-table-ips tbody").html("");
-                ipses.map(ips => {
-                    $(".dashboard-table-ips tbody").append(`
-                        <tr>
-                            <td><div class="state state-bar"></div></td>
-                            <td>${ips.key}</td>
-                            <td>${ips.count}</td>
-                        <tr/>
-                    `);
-                });
-
-                var malwares = response.data.data.malwares;
-
-                $(".dashboard-table-malwares tbody").html("");
-                malwares.map(malware => {
-                    $(".dashboard-table-malwares tbody").append(`
-                        <tr>
-                            <td>${malware.data.virusname}</td>
-                            <td>${malware.address}</td>
-                        <tr/>
-                    `);
-                });*/
             })
     }
 

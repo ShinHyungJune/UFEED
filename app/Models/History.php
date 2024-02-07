@@ -52,6 +52,7 @@ class History extends Model
                 }
             }
 
+            /*
             $devices = \App\Models\Device::get();
 
             foreach($devices as $device){
@@ -65,6 +66,7 @@ class History extends Model
                     $device->update(["status" => $latestHistory->status]);
                 }
             }
+            */
         }
     }
 }

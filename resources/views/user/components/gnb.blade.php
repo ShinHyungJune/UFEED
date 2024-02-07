@@ -19,7 +19,7 @@
             <div class="dashboard-standard-wrap col-group">
                 <div class="dashboard-standard-item up row-group m-script-pop" data-target=".modal-devices-up">
                     <div class="num">
-                        0
+                        {{$count_device_status["UP"]}}
                     </div>
                     <div class="txt">
                         Devices UP
@@ -27,16 +27,15 @@
                 </div>
                 <div class="dashboard-standard-item down row-group m-script-pop" data-target=".modal-devices-down">
                     <div class="num">
-                        0
+                        {{$count_device_status["DOWN"]}}
                     </div>
                     <div class="txt">
                         Devices Down
                     </div>
                 </div>
-                <div class="dashboard-standard-item critical row-group m-script-pop"
-                    data-target=".modal-devices-critical">
+                <div class="dashboard-standard-item critical row-group m-script-pop" data-target=".modal-devices-critical">
                     <div class="num">
-                        0
+                        {{$count_device_status["UNUSUAL"]}}
                     </div>
                     <div class="txt">
                         Unusual
@@ -45,7 +44,7 @@
                 <div class="dashboard-standard-item warning row-group m-script-pop"
                     data-target=".modal-devices-warning">
                     <div class="num">
-                        0
+                        {{$count_device_status["WARNING"]}}
                     </div>
                     <div class="txt">
                         Warning
