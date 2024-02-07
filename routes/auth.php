@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/', [HiSecureController::class, 'delete'])->name('hi-secure.delete');
         Route::get('/{user}/edit', [HiSecureController::class, 'edit'])->name('hi-secure.edit');
         Route::get('/global-setting', [HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
+        Route::patch('/global-setting/update', [HiSecureController::class, 'globalSettingUpdate'])->name('hi-secure.global-setting-update');
     });
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
