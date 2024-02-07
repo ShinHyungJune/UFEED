@@ -1985,6 +1985,10 @@
     </div>
 </div>
 <script>
+    //Real-Time Notification Status 열고닫기
+    $('.down-btn').click(function () {
+        $(this).closest('.dashboard-gnb-wrap').toggleClass('active');
+    });
     /* 제거대기
     var firstSwiper = true;
     var swiper = null;
