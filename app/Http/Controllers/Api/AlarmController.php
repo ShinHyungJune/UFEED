@@ -21,8 +21,7 @@ class AlarmController extends ApiController
     }
     public function store(Request $request)
     {
-        return $this->respondSuccessfully(json_decode($request->data));
-        $data = json_decode(json_decode($request->data), true);
+        $data = json_decode($request->data);
 
         $device = Device::where("title", $data["device"])->first();
 
