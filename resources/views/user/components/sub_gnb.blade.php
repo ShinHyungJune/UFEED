@@ -637,7 +637,7 @@
     var first = true;
 
     function getHistories() {
-        axios.get(window.domain + "/api/histories")
+        axios.get("/api/histories")
             .then(response => {
                 var devices = response.data.data.devices;
                 var realTimeNotifications = response.data.data.realTimeNotifications;
@@ -759,7 +759,7 @@
 
     function getDashboard() {
 
-        axios.get(window.domain + "/api/firewalls/dashboard")
+        axios.get("/api/firewalls/dashboard")
             .then(response => {
                 var traffics = response.data.data.traffics;
 
@@ -928,7 +928,7 @@
     var swiper = null;
 
     function getAlarms() {
-        axios.get(window.domain + "/api/alarms")
+        axios.get("/api/alarms")
             .then(response => {
                 var items = response.data.data;
 
