@@ -654,7 +654,6 @@
 
                 $(".device-wrap").find(".device").remove();
 
-                /* 제거대기
                 $(".modal-devices-up tbody").html("");
                 $(".modal-devices-down tbody").html("");
                 $(".modal-devices-critical tbody").html("");
@@ -688,7 +687,6 @@
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
                 $(".dashboard-standard-item.critical").find(".num").text(counts.unusual);
-                */
 
                 drawChart(realTimeTraffics);
 
