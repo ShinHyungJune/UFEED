@@ -52,6 +52,9 @@ class LoginRequest extends FormRequest
 
         if (!Auth::user()->is_active) {
             Auth::logout();
+            throw ValidationException::withMessages([
+                'ids' => trans('The account is deactivated, so please contact the administrator.'),
+            ]);
         }
 
         RateLimiter::clear($this->throttleKey());

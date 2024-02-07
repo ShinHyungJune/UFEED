@@ -1,4 +1,4 @@
-function fetchUtility(url, formData, message = null) {
+function fetchUtility(url, formData, message = null, icon = null) {
     fetch(url, {
         method: "POST",
         body: formData
@@ -18,7 +18,7 @@ function fetchUtility(url, formData, message = null) {
             for (let key in data) {
                 if (element.id === "validation-" + key) {
                     element.style.display = '';
-                    element.innerText = data[key][0];
+                    element.innerHTML = `${icon == null ? '' : icon} ${data[key][0]}`;
                 }
             }
         })

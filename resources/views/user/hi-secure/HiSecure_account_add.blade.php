@@ -88,7 +88,6 @@
                                                 <option value="{{ $group->id }}">{{ $group->name }}</option>
                                             @endforeach
                                         </select>
-                                        <p class="error sub-txt" style="color:red;" id="error-group"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -99,7 +98,6 @@
                                                 <option value="{{ $authority->id }}">{{ $authority->name }}</option>
                                             @endforeach
                                         </select>
-                                        <p class="error sub-txt" style="color:red;" id="error-authority"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -138,7 +136,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('hi-secure.store') }}", formData, "Account creation has been completed.");
+        fetchUtility("{{ route('hi-secure.store') }}", formData, "Account creation has been completed.", `<i class="xi-error"></i>`);
     });
 </script>
 </body>

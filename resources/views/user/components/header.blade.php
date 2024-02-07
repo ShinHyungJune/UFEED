@@ -43,7 +43,13 @@
 
 	<div class="header-btm-wrap row-group">
 		<a href="{{ route('hi-secure.index') }}" class="header-btm-btn">
+            <p class="account-type">
+                {{ Auth::user()->group->name }}
+            </p>
 			<i class="xi-profile icon"></i>
+            <p class="account-type account-id">
+                {{ Auth::user()->ids }}
+            </p>
 		</a>
 		<form action="{{ route('logout') }}" method="post">
 			@csrf

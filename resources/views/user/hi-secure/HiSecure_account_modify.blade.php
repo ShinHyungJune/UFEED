@@ -129,23 +129,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('hi-secure.update', $user->id) }}", formData);
-        {{--fetch("{{ route('hi-secure.update', $user->id) }}", {--}}
-        {{--    method: "POST",--}}
-        {{--    body: formData--}}
-        {{--}).then(response => {--}}
-        {{--    if (response.ok) {--}}
-        {{--        return response;--}}
-        {{--    }--}}
-        {{--    return response.json().then(data => {--}}
-        {{--        throw new Error(data.message);--}}
-        {{--    });--}}
-        {{--}).then((response) => {--}}
-        {{--    alert('Hi-Secure Account modified')--}}
-        {{--    location.href = response.url;--}}
-        {{--}).catch(error => {--}}
-        {{--    alert(error.message);--}}
-        {{--});--}}
+        fetchUtility("{{ route('hi-secure.update', $user->id) }}", formData, null, `<i class="xi-error"></i>`);
     });
 </script>
 </body>
