@@ -8,6 +8,8 @@ function fetchUtility(url, formData, message = null, icon = null) {
                 alert(message);
             }
             location.href = response.url;
+        } else if (response.status === 419) {
+            location.reload();
         } else return response.json();
     }).then(data => {
         let validationTxt = document.querySelectorAll('.validation-txt');
