@@ -759,7 +759,7 @@
 
     function getDashboard() {
 
-        axios.get("/api/firewalls/dashboard")
+        axios.get(window.domain + "/api/firewalls/dashboard")
             .then(response => {
                 var traffics = response.data.data.traffics;
 

@@ -1292,7 +1292,7 @@
     function getDashboard() {
         // 좌측 하단 원형차트 그리기
 
-        axios.get("/api/firewalls/dashboard")
+        axios.get(window.domain + "/api/firewalls/dashboard")
             .then(response => {
                 var traffics = response.data.data.traffics;
 
