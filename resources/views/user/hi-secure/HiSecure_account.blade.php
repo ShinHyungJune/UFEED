@@ -111,7 +111,7 @@
                                     {{ $user->group ? $user->group->name : "" }}
                                 </td>
                                 <td>
-                                    {{ $user->authority }}
+                                    {{ $user->authority ? $user->authority->name : "" }}
                                 </td>
                                 <td>
                                     <form action="" method="post" id="switchForm">
