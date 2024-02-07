@@ -52,6 +52,10 @@
                                                     Duplicate Check
                                                 </button>
                                             </div>
+                                            <p class="error-txt validation-txt" id="validation-ids">
+                                                <i class="xi-error"></i>
+                                                ID must be less than 10 characters and must not use special characters.
+                                            </p>
                                         </div>
                                         <div class="form-item row-group">
                                             <p class="item-title">
@@ -71,14 +75,16 @@
                                                 Password must be at least 8 characters long, <br>
                                                 must contain letters in mixed case and must contain numbers.
                                             </p>
-                                            <p class="error sub-txt" style="color:red;" id="error-password"></p>
                                         </div>
                                         <div class="form-item row-group">
                                             <p class="item-title">
                                                 Confirm Password
                                             </p>
                                             <input type="password" class="form-input" id="password_confirmation">
-                                            <p class="error sub-txt" style="color:red;" id="error-password_confirmation"></p>
+                                            <p class="error-txt validation-txt" id="validation-ids">
+                                                <i class="xi-error"></i>
+                                                Those passwords didn’t match. Try again.
+                                            </p>
                                         </div>
                                     </div>
                                 </form>
@@ -93,7 +99,6 @@
                                             <select class="form-select" id="group">
                                                 <option value="1">1</option>
                                             </select>
-                                            <p class="error sub-txt" style="color:red;" id="error-group"></p>
                                         </div>
                                         <div class="form-item row-group">
                                             <p class="item-title">
@@ -102,7 +107,6 @@
                                             <select class="form-select" id="authority">
                                                 <option value="1">1</option>
                                             </select>
-                                            <p class="error sub-txt" style="color:red;" id="error-authority"></p>
                                         </div>
                                         <div class="form-item row-group">
                                             <p class="item-title">
