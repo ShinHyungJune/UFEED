@@ -128,6 +128,24 @@
         </div>
     </div>
 </div>
+<!-- alert 팝업 -->
+<div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap">
+
+        <div class="modal-alert-title-wrap">
+            <i class="xi-check-circle icon"></i>
+            <p class="modal-alert-title">
+                Account creation has been completed.
+            </p>
+        </div>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
 {{--<script>--}}
 {{--    $('#period_of_use').datepicker();--}}
 {{--</script>--}}
@@ -136,7 +154,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('hi-secure.store') }}", formData, "Account creation has been completed.", `<i class="xi-error"></i>`);
+        fetchUtility("{{ route('hi-secure.store') }}", formData, true, `<i class="xi-error"></i>`);
     });
 </script>
 </body>

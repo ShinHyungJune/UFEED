@@ -21,9 +21,9 @@
         <div class="dashboard-wrap row-group">
 
             <div class="dashboard-detail-title-wrap col-group">
-{{--                <button onclick="{{ route('hi-secure.index') }}" class="prev-btn">--}}
-{{--                    <i class="xi-arrow-left"></i>--}}
-{{--                </button>--}}
+                {{--                <button onclick="{{ route('hi-secure.index') }}" class="prev-btn">--}}
+                {{--                    <i class="xi-arrow-left"></i>--}}
+                {{--                </button>--}}
                 <h2 class="dashboard-detail-title">
                     Hi-Secure Account
                 </h2>
@@ -41,7 +41,7 @@
                         <form action="" id="delete">
                             @csrf
                             @method('DELETE')
-                            <button class="account-top-btn" type="button">
+                            <button class="account-top-btn" type="button" onclick="showModal()">
                                 Delete
                             </button>
                         </form>
@@ -118,7 +118,8 @@
                                         @csrf
                                         @method('PATCH')
                                         <label for="switch_{{ $user->id }}" class="switch-wrap">
-                                            <input type="checkbox" class="switch-input" id="switch_{{ $user->id }}" @if($user->is_active) checked @endif>
+                                            <input type="checkbox" class="switch-input" id="switch_{{ $user->id }}"
+                                                   @if($user->is_active) checked @endif>
                                             <div class="switch-icon">
                                                 <p class="paused-txt">
                                                     Paused
@@ -141,6 +142,34 @@
     </div>
     <!-- 대시보드 -->
 
+</div>
+<!-- alert 팝업 -->
+<div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap warning">
+
+        <div class="modal-alert-txt-wrap">
+            <div class="modal-alert-title-wrap row-group">
+                <i class="xi-warning icon"></i>
+                <p class="modal-alert-title">
+                    Warning
+                </p>
+            </div>
+
+            <p class="modal-alert-txt">
+                If deleted, the data cannot be recovered. <br>
+                Are you sure you want to delete?
+            </p>
+        </div>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn submit-btn" onclick="hiSecureDelete()">
+                Delete
+            </button>
+            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                Cancel
+            </button>
+        </div>
+    </div>
 </div>
 {{--<script>--}}
 {{--    // let domain = "http://localhost:90";--}}
@@ -179,8 +208,9 @@
     });
 </script>
 <script>
-    let deleteForm = document.getElementById('delete');
-    deleteForm.addEventListener('click', function () {
+    function hiSecureDelete() {
+        let deleteForm = document.getElementById('delete');
+        // deleteForm.addEventListener('click', function () {
         let checkedCheckbox = document.querySelectorAll('.check-input:checked');
         let deleteId = Array.from(checkedCheckbox).map(checkbox => checkbox.id);
 
@@ -194,7 +224,8 @@
 
         let formData = new FormData(deleteForm);
         fetchUtility("{{ route('hi-secure.delete') }}", formData)
-    })
+        // })
+    }
 </script>
 <script>
     document.querySelectorAll('.switch-input').forEach(function (switchInput) {

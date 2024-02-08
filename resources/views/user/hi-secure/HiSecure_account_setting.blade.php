@@ -69,27 +69,30 @@
     <!-- 대시보드 -->
 
 </div>
+<!-- alert 팝업 -->
+<div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap">
+
+        <div class="modal-alert-title-wrap">
+            <i class="xi-check-circle icon"></i>
+            <p class="modal-alert-title">
+                Hi-Secure Account Global Setting applied.
+            </p>
+        </div>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetch("{{ route('hi-secure.global-setting-update') }}", {
-            method: "POST",
-            body: formData
-        }).then(response => {
-            if (response.ok) {
-                return response;
-            }
-            return response.json().then(data => {
-                throw new Error(data.message);
-            });
-        }).then((response) => {
-            alert('Hi-Secure Account Global Setting applied')
-            location.href = response.url;
-        }).catch(error => {
-            alert(error.message);
-        });
-
+        fetchUtility("{{ route('hi-secure.global-setting-update') }}", formData, true);
     });
 </script>
 </body>

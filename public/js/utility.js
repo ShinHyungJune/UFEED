@@ -1,13 +1,12 @@
-function fetchUtility(url, formData, message = null, icon = null) {
+function fetchUtility(url, formData, modal = false, icon = null) {
     fetch(url, {
         method: "POST",
         body: formData
     }).then(response => {
         if (response.ok) {
-            if (message != null) {
-                alert(message);
-            }
-            location.href = response.url;
+            if (modal) {
+                showModal();
+            } else location.href = response.url;
         } else if (response.status === 419) {
             location.reload();
         } else return response.json();
@@ -25,4 +24,12 @@ function fetchUtility(url, formData, message = null, icon = null) {
             }
         })
     })
+}
+
+function showModal() {
+    document.querySelector('.modal-alert').style.display = '';
+}
+
+function hideModal() {
+    document.querySelector('.modal-alert').style.display = 'none';
 }
