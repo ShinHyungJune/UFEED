@@ -80,10 +80,36 @@
                                     Email
                                 </th>
                                 <th>
-                                    Group
+                                    <div class="select-group">
+                                        <p class="select-default">
+                                            Group
+                                            <i class="xi-caret-down-min"></i>
+                                        </p>
+                                        <div class="select-list">
+                                            <a href="" class="select-option">
+                                                option1
+                                            </a>
+                                            <a href="" class="select-option">
+                                                option2
+                                            </a>
+                                        </div>
+                                    </div>
                                 </th>
                                 <th>
-                                    Authority
+                                    <div class="select-group">
+                                        <p class="select-default">
+                                            Authority
+                                            <i class="xi-caret-down-min"></i>
+                                        </p>
+                                        <div class="select-list">
+                                            <a href="" class="select-option">
+                                                option1
+                                            </a>
+                                            <a href="" class="select-option">
+                                                option2
+                                            </a>
+                                        </div>
+                                    </div>
                                 </th>
                                 <th>
                                     Active/Paused
@@ -909,6 +935,10 @@
                 })
         })
     }
+
+    $('.select-default').click(function(){
+        $(this).next('.select-list').show();
+    });
 
 </script>
 </html>
