@@ -1314,3 +1314,23 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .m-swiper.type01  .swiper-slide .swiper-body-content {
     font-size:14px;
 }
+
+
+/* directory */
+.directory-container { background: #f5f5f5; border-radius: 12px; height: 100%; padding: 16px; overflow: auto; }
+.directory-group { padding-left: 24px; }
+.directory-title { position: relative; padding: 8px 0; padding-left: 50px; align-items: center; cursor: pointer; font-size: 16px; font-weight: 600; color: #aaa; width: fit-content; background-image: url(../images/icon_directory_off.png); background-repeat: no-repeat; background-size: 38px 26px; background-position: left top 3px; }
+.directory-item.active > .directory-title { color: #202020; background-image: url(../images/icon_directory_on.png); }
+.directory-title .border { position: absolute; width: 38px; left: 0; top: 0; }
+.directory-item.active > .directory-title .border::after { content: ''; display: block; position: absolute; display: block; width: 1px; height: 100%; background: #e4e4e4; right: 1px; top: 14px; }
+
+.directory-sub-group { display: none; position: relative; z-index: 0; }
+/* .directory-sub-group:after { content: ''; position: absolute; display: block; width: 1px; height: 100%; background: #e4e4e4; left: 36px; top: -20px; z-index: -1; } */
+.directory-item.active > .directory-sub-group { display: block; }
+
+.directory-detail-group { padding-left: 60px; flex-flow: wrap; gap: 12px; margin-top: 8px; margin-bottom: 16px; display: none; }
+.directory-item.active > .directory-detail-group { display: flex; }
+.directory-detail-item { width: 160px; background: #fff; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);  padding: 10px 20px;  border-radius: 4px; position: relative; }
+.directory-detail-item-title { font-size: 14px; font-weight: bold; margin-bottom: 4px; }
+.directory-detail-item-txt { font-size: 14px; font-weight: 300; color: #aaaaaa; }
+.directory-detail-item .state { position: absolute; left: 0; top: 9px; width: 4px; height: 34px; background: #359832; }
