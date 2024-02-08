@@ -673,7 +673,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .dashboard-form .add-btn { width: 20px; height: 20px; border-radius: 50%; background: #f5f5f5; }
 .dashboard-form .add-btn i { text-align: center; line-height: 20px; font-size: 16px; color: #524eee; }
 .dashboard-form-btn-wrap { margin-top: 40px; justify-content: center; gap: 16px; align-items: center; }
-.dashboard-form-btn { width: 180px; height: 56px; border-radius: 28px; background: #502ecf; font-size: 20px; font-weight: 600; color: #fff; text-align: center; line-height: 56px; }
+.dashboard-form-btn { width: 140px; height: 48px; border-radius: 24px; background: #502ecf; font-size: 16px; font-weight: 600; color: #fff; text-align: center; line-height: 48px; }
 .dashboard-form-btn.cancel-btn { background: #7f7f7f; }
 .dashboard-form-btn.black { background: #292d33; }
 
@@ -736,11 +736,11 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .form-title-btn { min-width: 88px; padding: 0 8px; height: 24px; line-height: 24px; border-radius: 2px; background: #292d33; color: #fff; font-size: 14px; }
 
 /* 모달 - 알림창 */
-.modal-alert-wrap { text-align: center; }
+.modal-alert-wrap { text-align: center; max-width: 420px; padding-top: 16px; }
 .modal-alert-txt-wrap { padding: 24px 0; }
 .modal-alert-title-wrap { margin-bottom: 24px; }
-.modal-alert-title-wrap .icon { font-size: 40px; line-height: 1.5; }
-.modal-alert-title { font-size: 20px; font-weight: 600; }
+.modal-alert-title-wrap .icon { font-size: 40px; line-height: 1.5; color: #359832; }
+.modal-alert-title { font-size: 16px; font-weight: 600; }
 .modal-alert-txt { font-size: 14px; line-height: 1.5; }
 .modal-alert-wrap.warning .modal-alert-title-wrap .icon { color: #ff4620; }
 .modal-alert-wrap.warning .modal-alert-title { color: #ff4620; }

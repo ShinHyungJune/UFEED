@@ -907,6 +907,35 @@
     </div>
 </body>
 
+ <!-- alert 팝업 -->
+ <div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap warning">
+
+        <div class="modal-alert-txt-wrap">
+            <div class="modal-alert-title-wrap row-group">
+                <i class="xi-warning icon"></i>
+                <p class="modal-alert-title">
+                    Warning
+                </p>
+            </div>
+
+            <p class="modal-alert-txt">
+                If deleted, the data cannot be recovered. <br>
+                Are you sure you want to delete?
+            </p>
+        </div>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn submit-btn" onclick="remove()">
+                Delete
+            </button>
+            <button class="dashboard-form-btn cancel-btn">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
 <script src="/js/jquery.js"></script>
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
