@@ -218,16 +218,17 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .sub-gnb-menu { padding-left: 10px; padding-top: 5px; }
 .sub-gnb-menu-list { display: none; }
 .sub-gnb-menu-list .sub-gnb-menu:not(:last-child) { margin-bottom: 5px; }
-.sub-gnb-menu-title { padding-left: 16px; padding-right: 48px; padding-top: 4px; padding-bottom: 4px; min-height: 32px; line-height: 1.5; align-items: center; font-size: 16px; position: relative; cursor: pointer; color: #292d33; z-index: 0; background: #f5f5f5; border-radius: 8px; font-weight: bold; margin-bottom: 5px; }
+.sub-gnb-menu-title { padding-left: 16px; padding-right: 48px; padding-top: 4px; padding-bottom: 4px; min-height: 32px; line-height: 1.5; align-items: center; font-size: 16px; position: relative; cursor: pointer; color: #292d33; z-index: 0;border-radius: 8px; font-weight: bold; margin-bottom: 5px; }
 .sub-gnb-menu-title::after { content: ''; display: block; position: absolute; bottom: -5px; right: 0; height: 1px; width: 243px; background: #aaa; z-index: -1; }
-.sub-gnb-menu-title:hover { background: #e9e9e9;}
+.sub-gnb-menu-title:hover { background: #f5f5f5;}
 .sub-gnb-menu-title .icon { font-size: 14px; display: block; width: 16px; height: 16px; text-align: center; line-height: 16px; border-radius: 50%; background: #aaa; color: #fff; }
 .sub-gnb-menu-title .toggle-icon { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); }
 .sub-gnb-menu-title .badge { position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
 
 .gnb-menu.active > .sub-gnb-menu-list { display: block; }
 .sub-gnb-menu.active > .sub-gnb-menu-list { display: block; }
-.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; }
+.sub-gnb-menu.active > .sub-gnb-menu-title { background: #e9e9e9; }
+a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; }
 .sub-gnb-menu.active > .sub-gnb-menu-title .icon { transform: translateY(-50%) rotate(180deg); }
 
 /* 좌측 메뉴 - 대시보드 */
@@ -1334,3 +1335,11 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .directory-detail-item-title { font-size: 14px; font-weight: bold; margin-bottom: 4px; }
 .directory-detail-item-txt { font-size: 14px; font-weight: 300; color: #aaaaaa; }
 .directory-detail-item .state { position: absolute; left: 0; top: 9px; width: 4px; height: 34px; background: #359832; }
+
+/* table 내 select-group */
+.select-group { cursor: pointer; position: relative; height: 100%; }
+.select-default { display: flex; align-items: center; gap: 16px; height: 100%; align-items: center; }
+.select-default i { color: #aaa; }
+.select-list { position: absolute; background: #fff; padding: 8px 0; width: 100%; top: 48px; left: -15px; border: 1px solid #e4e4e4; border-radius: 8px; display: none; }
+.select-option { font-weight: 500; cursor: pointer; padding: 10px 15px; }
+.select-option:hover { background: #f5f5f5; }
