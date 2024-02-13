@@ -91,12 +91,12 @@ Route::middleware('auth')->group(function () {
         Route::prefix('nms')->group(function () {
             Route::prefix('devices')->group(function () {
                 Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('nms.devices');
-                Route::get('/favorite-devices', [\App\Http\Controllers\NMSController::class, 'favoriteDevices'])->name('nms.favorite-devices');
-                Route::get('/dependencies', [\App\Http\Controllers\NMSController::class, 'dependencies'])->name('nms.dependencies');
+//                Route::get('/favorite-devices', [\App\Http\Controllers\NMSController::class, 'favoriteDevices'])->name('nms.favorite-devices');
+//                Route::get('/dependencies', [\App\Http\Controllers\NMSController::class, 'dependencies'])->name('nms.dependencies');
             });
             Route::prefix('reports')->group(function () {
                 Route::get('/', [\App\Http\Controllers\NMSController::class, 'reports'])->name('nms.reports');
-                Route::get('/add-report', [\App\Http\Controllers\NMSController::class, 'addReport'])->name('nms.add-report');
+//                Route::get('/add-report', [\App\Http\Controllers\NMSController::class, 'addReport'])->name('nms.add-report');
             });
             Route::prefix('logs')->group(function () {
                 Route::get('/', [\App\Http\Controllers\NMSController::class, 'logs'])->name('nms.logs');
