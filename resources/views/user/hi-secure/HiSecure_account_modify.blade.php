@@ -103,7 +103,8 @@
                                         <p class="item-title">
                                             E-Mail
                                         </p>
-                                        <input type="email" class="form-input" id="email" name="email" value="{{ $user->email }}" disabled>
+                                        <input type="email" class="form-input" id="email" name="email" value="{{ $user->email }}">
+                                        <p class="error-txt validation-txt" id="validation-email" style="display: none"></p>
                                     </div>
                                 </div>
                             </div>

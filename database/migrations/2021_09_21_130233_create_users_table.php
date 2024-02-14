@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('password_count')->default(0);
             $table->foreignIdFor(Group::class);
             $table->foreignIdFor(Authority::class);
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_active')->default(1);
 //            $table->date('period_of_use');

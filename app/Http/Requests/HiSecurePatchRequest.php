@@ -16,7 +16,7 @@ class HiSecurePatchRequest extends FormRequest
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()->symbols()],
             'group_id' => ['required', 'integer'],
             'authority_id' => ['required', 'integer'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'email' => ['required', 'string', 'email', 'max:255'],
 //            'period_of_use' => ['required', 'date'],
         ];
     }
