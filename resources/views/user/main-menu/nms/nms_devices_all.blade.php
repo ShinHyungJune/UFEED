@@ -66,10 +66,11 @@
                                                     Security
                                                 </div>
                                                 <ul class="directory-group directory-sub-group">
+                                                    @foreach($devicesFW as $device)
                                                     <li class="directory-item active">
                                                         <div class="directory-title">
                                                             <div class="border"></div>
-                                                            FW#1
+                                                            {{ $device->title }}
                                                         </div>
                                                         <ul class="directory-group directory-detail-group">
                                                             <li class="directory-detail-item">
@@ -78,7 +79,7 @@
                                                                     Ping
                                                                 </p>
                                                                 <p class="directory-detail-item-txt">
-                                                                    0 mses
+                                                                    {{ $device->ping_value }} mses
                                                                 </p>
                                                             </li>
                                                             <li class="directory-detail-item">
@@ -87,7 +88,7 @@
                                                                     CPU Load
                                                                 </p>
                                                                 <p class="directory-detail-item-txt">
-                                                                    1%
+                                                                    {{ $device->cpu_load_value }}%
                                                                 </p>
                                                             </li>
                                                             <li class="directory-detail-item">
@@ -101,181 +102,7 @@
                                                             </li>
                                                         </ul>
                                                     </li>
-                                                    <li class="directory-item active">
-                                                        <div class="directory-title">
-                                                            <div class="border"></div>
-                                                            FW#2
-                                                        </div>
-                                                        <ul class="directory-group directory-detail-group">
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Ping
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    0 mses
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    CPU Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    1%
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Memory Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    30%
-                                                                </p>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="directory-item active">
-                                                        <div class="directory-title">
-                                                            <div class="border"></div>
-                                                            FW#3
-                                                        </div>
-                                                        <ul class="directory-group directory-detail-group">
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Ping
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    0 mses
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    CPU Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    1%
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Memory Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    30%
-                                                                </p>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="directory-item active">
-                                                        <div class="directory-title">
-                                                            <div class="border"></div>
-                                                            FW#4
-                                                        </div>
-                                                        <ul class="directory-group directory-detail-group">
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Ping
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    0 mses
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    CPU Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    1%
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Memory Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    30%
-                                                                </p>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="directory-item active">
-                                                        <div class="directory-title">
-                                                            <div class="border"></div>
-                                                            FW#5
-                                                        </div>
-                                                        <ul class="directory-group directory-detail-group">
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Ping
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    0 mses
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    CPU Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    1%
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Memory Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    30%
-                                                                </p>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="directory-item active">
-                                                        <div class="directory-title">
-                                                            <div class="border"></div>
-                                                            FW#6
-                                                        </div>
-                                                        <ul class="directory-group directory-detail-group">
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Ping
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    0 mses
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    CPU Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    1%
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Memory Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    30%
-                                                                </p>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                                    @endforeach
                                                 </ul>
                                             </li>
                                             <li class="directory-item active">
@@ -296,7 +123,7 @@
                                                                     Ping
                                                                 </p>
                                                                 <p class="directory-detail-item-txt">
-                                                                    0 mses
+                                                                    {{ $devicesL3->ping_value }} mses
                                                                 </p>
                                                             </li>
                                                             <li class="directory-detail-item">
@@ -305,7 +132,7 @@
                                                                     CPU Load
                                                                 </p>
                                                                 <p class="directory-detail-item-txt">
-                                                                    1%
+                                                                    {{ $devicesL3->cpu_load_value }}%
                                                                 </p>
                                                             </li>
                                                             <li class="directory-detail-item">
