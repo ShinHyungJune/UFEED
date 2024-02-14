@@ -300,9 +300,9 @@ tbody .state.red {
 }
 
 .polar-area-chart {
-    width: 240px; height: 240px; margin-top:60px;
-    position: relative;
-    background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; display: none;
+    width: 240px; height: 240px; margin-top:60px; display: none;
+    /* position: relative;
+    background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; */
 }
 .polar-area-chart.active { display: block; }
 .polar-area-chart-item { height: 100%; width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
@@ -545,7 +545,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 /* 대시보드 - Security Monitoring */
 .secutiry-monitoring-wrap { padding: 40px; }
 .secutiry-monitoring-top-wrap { padding-bottom: 24px; border-bottom: 3px solid #e4e4e4; margin-bottom: 24px; display: flex; gap: 24px; }
-.secutiry-monitoring-top-item { width: 100%; background: #fff; border-radius: 8px; }
+.secutiry-monitoring-top-item { width: calc( ( 100% - 24px * 2 ) / 3 ); background: #fff; border-radius: 8px; }
 .secutiry-monitoring-title-wrap { display: flex; padding: 0 20px; padding-top: 16px; gap: 24px; }
 .secutiry-monitoring-title { font-size: 16px; font-weight: bold; }
 .secutiry-monitoring-subtitle { font-size: 16px; color: #aaa; position: relative; }
@@ -558,11 +558,11 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 
 .secutiry-monitoring-mid-wrap { display: flex; flex-flow: wrap; gap: 24px; }
 .secutiry-monitoring-mid-item { width: calc( ( 100% - 24px ) / 2 );  background: #fff; border-radius: 8px; display: flex; }
-.secutiry-monitoring-mid-chart-wrap { width: 280px; }
+.secutiry-monitoring-mid-chart-wrap { width: 360px; }
 .secutiry-monitoring-mid-chart { height: calc( 100% - 48px ); display: flex; justify-content: center; align-items: center; }
-.secutiry-monitoring-mid-chart .polar-area-chart { display: block; width: 200px; height: 200px; }
+.secutiry-monitoring-mid-chart .polar-area-chart { display: block; width: 340px; height: 340px; margin-top: 0; }
 
-.secutiry-monitoring-result-list { width: calc( 100% - 280px ); padding: 16px 0; padding-right: 24px; }
+.secutiry-monitoring-result-list { width: calc( 100% - 360px ); padding: 16px 0; padding-right: 24px; }
 .secutiry-monitoring-result-item { display: flex; width: 100%; background: #f7f7f7; border-radius: 16px; padding: 3px; padding-right: 24px; gap: 10px; }
 .secutiry-monitoring-result-item:not(:last-child) { margin-bottom: 5px; }
 .secutiry-monitoring-result-item .num { width: 24px; height: 24px; background: #e4e4e4e4; border-radius: 50%; text-align: center; line-height: 24px; font-size: 14px; font-weight: bold; }
@@ -1335,6 +1335,9 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .directory-detail-item-title { font-size: 14px; font-weight: bold; margin-bottom: 4px; }
 .directory-detail-item-txt { font-size: 14px; font-weight: 300; color: #aaaaaa; }
 .directory-detail-item .state { position: absolute; left: 0; top: 9px; width: 4px; height: 34px; background: #359832; }
+.directory-detail-item.up .state { background: #359832; }
+.directory-detail-item.down .state { background: #ff4620; }
+.directory-detail-item.warning .state { background: #ef9900; }
 
 /* table 내 select-group */
 .select-group { cursor: pointer; position: relative; height: 100%; }
