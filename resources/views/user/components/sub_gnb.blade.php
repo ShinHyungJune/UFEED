@@ -586,15 +586,4 @@
             });
         });
     });
-
-    //polar-area-chart tab
-    $('.dashboard-gnb-tab').click(function () {
-        $('.dashboard-gnb-tab').removeClass('active');
-        $(this).addClass('active');
-
-        var data_tab = $(this).attr('data-tab');
-
-        $('.polar-area-chart').hide();
-        $('.polar-area-chart#' + data_tab).fadeIn(300);
-    });
 </script>

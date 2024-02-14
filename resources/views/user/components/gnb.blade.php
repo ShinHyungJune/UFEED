@@ -242,20 +242,19 @@
             </div>
             </p>
         </div>
+
         <div class="dashboard-gnb-wrap">
             <div class="dashboard-gnb-tab-wrap">
                 <div class="dashboard-gnb-tab-list">
                     <div class="dashboard-gnb-tab active" data-tab="tab_01">
                         IPS
                     </div>
-
                     <div class="dashboard-gnb-tab" data-tab="tab_02">
+                        Anti-Virus
+                    </div>
+                    <div class="dashboard-gnb-tab" data-tab="tab_03">
                         C&C Detection
                     </div>
-
-                    <!--                    <div class="dashboard-gnb-tab" data-tab="tab_03">
-                        Anti-Virus
-                    </div>-->
                 </div>
                 <button class="more-btn">
                     <i class="xi-ellipsis-v"></i>
@@ -263,816 +262,14 @@
             </div>
 
             <div class="polar-area-chart active" id="tab_01">
-                <div class="polar-area-chart-item polar-area-chart-item-01">
-                    <div class="img-box">
-                        <img src="/images/polar_item_01.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-02">
-                    <div class="img-box">
-                        <img src="/images/polar_item_02.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-03">
-                    <div class="img-box">
-                        <img src="/images/polar_item_03.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-04">
-                    <div class="img-box">
-                        <img src="/images/polar_item_04.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-05">
-                    <div class="img-box">
-                        <img src="/images/polar_item_05.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-06">
-                    <div class="img-box">
-                        <img src="/images/polar_item_06.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-07">
-                    <div class="img-box">
-                        <img src="/images/polar_item_07.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-08">
-                    <div class="img-box">
-                        <img src="/images/polar_item_08.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-09">
-                    <div class="img-box">
-                        <img src="/images/polar_item_09.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-10">
-                    <div class="img-box">
-                        <img src="/images/polar_item_10.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <canvas id="polar_area_chart_01"></canvas>
             </div>
-
             <div class="polar-area-chart" id="tab_02">
-                <div class="polar-area-chart-item polar-area-chart-item-01">
-                    <div class="img-box">
-                        <img src="/images/polar_item_01.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-02">
-                    <div class="img-box">
-                        <img src="/images/polar_item_02.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-03">
-                    <div class="img-box">
-                        <img src="/images/polar_item_03.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-04">
-                    <div class="img-box">
-                        <img src="/images/polar_item_04.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-05">
-                    <div class="img-box">
-                        <img src="/images/polar_item_05.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-06">
-                    <div class="img-box">
-                        <img src="/images/polar_item_06.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-07">
-                    <div class="img-box">
-                        <img src="/images/polar_item_07.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-08">
-                    <div class="img-box">
-                        <img src="/images/polar_item_08.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-09">
-                    <div class="img-box">
-                        <img src="/images/polar_item_09.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-10">
-                    <div class="img-box">
-                        <img src="/images/polar_item_10.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Name
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Address
-                            </p>
-                            <p class="txt">
-                                --00.--00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <canvas id="polar_area_chart_02"></canvas>
             </div>
-
-<!--            <div class="polar-area-chart" id="tab_03">
-                <div class="polar-area-chart-item polar-area-chart-item-01">
-                    <div class="img-box">
-                        <img src="/images/polar_item_01.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-02">
-                    <div class="img-box">
-                        <img src="/images/polar_item_02.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-03">
-                    <div class="img-box">
-                        <img src="/images/polar_item_03.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-04">
-                    <div class="img-box">
-                        <img src="/images/polar_item_04.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-05">
-                    <div class="img-box">
-                        <img src="/images/polar_item_05.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-06">
-                    <div class="img-box">
-                        <img src="/images/polar_item_06.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-07">
-                    <div class="img-box">
-                        <img src="/images/polar_item_07.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-08">
-                    <div class="img-box">
-                        <img src="/images/polar_item_08.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-09">
-                    <div class="img-box">
-                        <img src="/images/polar_item_09.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-10">
-                    <div class="img-box">
-                        <img src="/images/polar_item_10.png" alt="" class="img">
-                    </div>
-                    <div class="hover-box">
-                        <div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Dip
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                &#45;&#45;00.&#45;&#45;00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
-            <!-- <div class="polar-area-chart">
-                <div class="polar-area-chart-item polar-area-chart-item-01">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-02">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-03">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-04">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-05">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-06">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-07">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-08">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-09">
-                    <div class="img"></div>
-                </div>
-                <div class="polar-area-chart-item polar-area-chart-item-10">
-                    <div class="img"></div>
-                </div>
-            </div> -->
+            <div class="polar-area-chart" id="tab_03">
+                <canvas id="polar_area_chart_03"></canvas>
+            </div>
 
         </div>
 
@@ -1157,4 +354,98 @@
         return formattedTime;
     }
 </script>
+<script>
+    //polar-area-chart tab
+    $('.dashboard-gnb-tab').click(function () {
+        $('.dashboard-gnb-tab').removeClass('active');
+        $(this).addClass('active');
 
+        var data_tab = $(this).attr('data-tab');
+
+        $('.polar-area-chart').hide();
+        $('.polar-area-chart#' + data_tab).fadeIn(300);
+    });
+
+    //polar-area-chart
+    const polarChart = document.getElementById('polar_area_chart_01');
+
+    function truncateAndAppend(strings, maxLength = 10) {
+        const truncatedStrings = [];
+        const originalTitles = []; // 원래의 타이틀을 유지할 배열
+        for (let string of strings) {
+            if (string.length > maxLength) {
+                truncatedStrings.push(string.slice(0, maxLength) + "...");
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+            } else {
+                truncatedStrings.push(string);
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+            }
+        }
+        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
+    }
+
+    const labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
+
+    const { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+
+    new Chart(polarChart, {
+        type: 'polarArea',
+        data: {
+            labels: truncatedStrings,
+            datasets: [
+                {
+                    label: ['Count'],
+                    data: [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122],
+                    backgroundColor: [
+                        '#E5211A',
+                        '#FF8800',
+                        '#FF9900',
+                        '#FFA900',
+                        '#FFB729',
+                        '#FEC34F',
+                        '#F9CC74',
+                        '#FFD787',
+                        '#FFE4AE',
+                        '#FFF3DC',
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 6
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    pointLabels: {
+                        display: true,
+                        centerPointLabels: true,
+                        font: {
+                            size: 8,
+                            family: 'Pretendard'
+                        }
+                    },
+                    ticks: {
+                        display: false,
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function (tooltipItem) {
+                            const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
+                            return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
+                        },
+                        afterLabel: function (tooltipItem) {
+                            return 'Sip :' + '00.00-00.00'; // 툴팁의 라벨 뒤에 추가 문구를 반환합니다.
+                        },
+                    }
+                }
+            }
+        },
+    });
+</script>

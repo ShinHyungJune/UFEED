@@ -1045,24 +1045,27 @@
 
     function truncateAndAppend(strings, maxLength = 10) {
         const truncatedStrings = [];
+        const originalTitles = []; // 원래의 타이틀을 유지할 배열
         for (let string of strings) {
             if (string.length > maxLength) {
                 truncatedStrings.push(string.slice(0, maxLength) + "...");
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
             } else {
                 truncatedStrings.push(string);
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
             }
         }
-        return truncatedStrings;
+        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
     }
 
-    const labels = ['quic', '51.com.access', 'apache http server..', 'acme mini_httpd ar..', 'emule', 'quic', '51.com.access', 'apache http server..', 'acme mini_httpd ar..', 'emule'];
+    const labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
 
-    const truncatedLabels = truncateAndAppend(labels);
+    const { truncatedStrings, originalTitles } = truncateAndAppend(labels);
 
     new Chart(polarChart, {
         type: 'polarArea',
         data: {
-            labels: truncatedLabels,
+            labels: truncatedStrings,
             datasets: [
                 {
                     label: ['Count'],
@@ -1105,12 +1108,17 @@
                 legend: {
                     display: false,
                 },
+                tooltip: {
+                    callbacks: {
+                        title: function (tooltipItem) {
+                            const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
+                            return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
+                        },
+                    }
+                }
             }
         },
     });
 
 </script>
-
-
-
 </html>
