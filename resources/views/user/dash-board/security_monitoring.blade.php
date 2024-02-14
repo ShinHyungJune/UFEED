@@ -2,2427 +2,883 @@
 <html lang="ko">
 @include('user.components.head')
 <body>
-<div id="wrap">
+    <div id="wrap">
 
-    <div class="header dashboard_index">
-        <!-- 상단 헤더 -->
-        <header id="header">
-            @include('user.components.header')
-        </header>
-        <!-- //상단 헤더 -->
+        <div class="header dashboard_index">
+            <!-- 상단 헤더 -->
+            <header id="header">
+                @include('user.components.header')
+            </header>
+            <!-- //상단 헤더 -->
 
-        <!-- 좌측 메뉴 -->
-        <div id="gnb">
-            @include('user.components.gnb')
-        </div>
-        <!-- //좌측 메뉴 -->
-    </div>
-
-    <!-- 대시보드 -->
-    <div class="dashboard dashboard-detail">
-        <div class="dashboard-wrap row-group">
-
-            <div class="dashboard-detail-title-wrap col-group">
-                <a href="{{ route('dash-board.index') }}" class="prev-btn">
-                    <i class="xi-arrow-left"></i>
-                </a>
-                <h2 class="dashboard-detail-title">
-                    Security Monitoring
-                </h2>
+            <!-- 좌측 메뉴 -->
+            <div id="gnb">
+                @include('user.components.gnb')
             </div>
+            <!-- //좌측 메뉴 -->
+        </div>
 
-            <div class="secutiry-monitoring-wrap dashboard-content">
-                <div class="secutiry-monitoring-top-wrap">
-                    <div class="secutiry-monitoring-top-item">
-                        <div class="secutiry-monitoring-title-wrap">
-                            <p class="secutiry-monitoring-title">
-                                Detection Count
-                            </p>
-                            <p class="secutiry-monitoring-subtitle">
-                                Last 24 hrs
-                            </p>
-                        </div>
+        <!-- 대시보드 -->
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
 
-                        <div class="secutiry-monitoring-top-chart">
-                            <canvas id="detection_count_chart"></canvas>
-                            <p class="num">
-                                1,528
-                            </p>
-                        </div>
-                    </div>
-                    <div class="secutiry-monitoring-top-item">
-                        <div class="secutiry-monitoring-title-wrap">
-                            <p class="secutiry-monitoring-title">
-                                CPU
-                            </p>
-                            <p class="secutiry-monitoring-subtitle">
-                                Last 1 mins
-                            </p>
-                        </div>
-
-                        <div class="secutiry-monitoring-top-chart">
-                            <canvas id="cpu_chart"></canvas>
-                            <p class="num">
-                                8%
-                            </p>
-                        </div>
-                    </div>
-                    <div class="secutiry-monitoring-top-item">
-                        <div class="secutiry-monitoring-title-wrap">
-                            <p class="secutiry-monitoring-title">
-                                EPS (Event Per Second)
-                            </p>
-                            <p class="secutiry-monitoring-subtitle">
-                                Last 1 mins
-                            </p>
-                        </div>
-
-                        <div class="secutiry-monitoring-top-chart">
-                            <canvas id="eps_chart"></canvas>
-                            <p class="num">
-                                36
-                            </p>
-                        </div>
-                    </div>
+                <div class="dashboard-detail-title-wrap col-group">
+                    <a href="{{ route('dash-board.index') }}" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </a>
+                    <h2 class="dashboard-detail-title">
+                        Security Monitoring
+                    </h2>
                 </div>
 
-                <div class="secutiry-monitoring-mid-wrap">
-
-                    <div class="secutiry-monitoring-mid-item">
-                        <div class="secutiry-monitoring-mid-chart-wrap">
+                <div class="secutiry-monitoring-wrap dashboard-content">
+                    <div class="secutiry-monitoring-top-wrap">
+                        <div class="secutiry-monitoring-top-item">
                             <div class="secutiry-monitoring-title-wrap">
                                 <p class="secutiry-monitoring-title">
-                                    Top Attack
+                                    Detection Count
                                 </p>
                                 <p class="secutiry-monitoring-subtitle">
-                                    Last 10 mins
+                                    Last 24 hrs
                                 </p>
                             </div>
-                            <div class="secutiry-monitoring-mid-chart">
-                                <div class="polar-area-chart">
-                                    <div class="polar-area-chart-item polar-area-chart-item-01">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_01.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-02">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_02.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-03">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_03.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-04">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_04.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-05">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_05.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-06">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_06.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-07">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_07.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-08">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_08.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-09">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_09.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-10">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_10.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="secutiry-monitoring-result-list">
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">1</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        quic
-                                    </p>
-                                    <p class="data">
-                                        17.0
-                                    </p>
-                                    <p class="percent">
-                                        10.56%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">2</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        51.com.access
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">3</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">4</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        acme mini_httpd ar..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">5</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        emule
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">6</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">7</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">8</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        carbonite
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">9</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">10</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
+                            <div class="secutiry-monitoring-top-chart">
+                                <canvas id="detection_count_chart"></canvas>
+                                <p class="num">
+                                    1,528
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="secutiry-monitoring-mid-item">
-                        <div class="secutiry-monitoring-mid-chart-wrap">
+                        <div class="secutiry-monitoring-top-item">
                             <div class="secutiry-monitoring-title-wrap">
                                 <p class="secutiry-monitoring-title">
-                                    Top Victim
+                                    CPU
                                 </p>
                                 <p class="secutiry-monitoring-subtitle">
-                                    Last 10 mins
+                                    Last 1 mins
                                 </p>
                             </div>
-                            <div class="secutiry-monitoring-mid-chart">
-                                <div class="polar-area-chart">
-                                    <div class="polar-area-chart-item polar-area-chart-item-01">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_01.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-02">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_02.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-03">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_03.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-04">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_04.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-05">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_05.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-06">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_06.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-07">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_07.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-08">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_08.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-09">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_09.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-10">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_10.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="secutiry-monitoring-result-list">
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">1</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        quic
-                                    </p>
-                                    <p class="data">
-                                        17.0
-                                    </p>
-                                    <p class="percent">
-                                        10.56%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">2</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        51.com.access
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">3</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">4</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        acme mini_httpd ar..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">5</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        emule
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">6</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">7</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">8</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        carbonite
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">9</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">10</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
+                            <div class="secutiry-monitoring-top-chart">
+                                <canvas id="cpu_chart"></canvas>
+                                <p class="num">
+                                    8%
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="secutiry-monitoring-mid-item">
-                        <div class="secutiry-monitoring-mid-chart-wrap">
+                        <div class="secutiry-monitoring-top-item">
                             <div class="secutiry-monitoring-title-wrap">
                                 <p class="secutiry-monitoring-title">
-                                    Top Attack
+                                    EPS (Event Per Second)
                                 </p>
                                 <p class="secutiry-monitoring-subtitle">
-                                    Last 10 mins
+                                    Last 1 mins
                                 </p>
                             </div>
-                            <div class="secutiry-monitoring-mid-chart">
-                                <div class="polar-area-chart">
-                                    <div class="polar-area-chart-item polar-area-chart-item-01">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_01.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-02">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_02.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-03">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_03.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-04">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_04.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-05">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_05.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-06">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_06.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-07">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_07.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-08">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_08.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-09">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_09.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-10">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_10.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="secutiry-monitoring-result-list">
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">1</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        quic
-                                    </p>
-                                    <p class="data">
-                                        17.0
-                                    </p>
-                                    <p class="percent">
-                                        10.56%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">2</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        51.com.access
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">3</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">4</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        acme mini_httpd ar..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">5</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        emule
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">6</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">7</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">8</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        carbonite
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">9</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">10</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
+                            <div class="secutiry-monitoring-top-chart">
+                                <canvas id="eps_chart"></canvas>
+                                <p class="num">
+                                    36
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="secutiry-monitoring-mid-item">
-                        <div class="secutiry-monitoring-mid-chart-wrap">
-                            <div class="secutiry-monitoring-title-wrap">
-                                <p class="secutiry-monitoring-title">
-                                    Top Traffic by Source IP
-                                </p>
-                            </div>
-                            <div class="secutiry-monitoring-mid-chart">
-                                <div class="polar-area-chart">
-                                    <div class="polar-area-chart-item polar-area-chart-item-01">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_01.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-02">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_02.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-03">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_03.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-04">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_04.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-05">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_05.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-06">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_06.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-07">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_07.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-08">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_08.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-09">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_09.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-10">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_10.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="secutiry-monitoring-result-list">
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">1</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        quic
-                                    </p>
-                                    <p class="data">
-                                        17.0
-                                    </p>
-                                    <p class="percent">
-                                        10.56%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">2</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        51.com.access
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">3</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">4</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        acme mini_httpd ar..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">5</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        emule
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">6</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">7</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">8</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        carbonite
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">9</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">10</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="secutiry-monitoring-mid-item">
-                        <div class="secutiry-monitoring-mid-chart-wrap">
-                            <div class="secutiry-monitoring-title-wrap">
-                                <p class="secutiry-monitoring-title">
-                                    Top Traffic by Destination IP
-                                </p>
-                            </div>
-                            <div class="secutiry-monitoring-mid-chart">
-                                <div class="polar-area-chart">
-                                    <div class="polar-area-chart-item polar-area-chart-item-01">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_01.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-02">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_02.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-03">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_03.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-04">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_04.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-05">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_05.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-06">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_06.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-07">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_07.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-08">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_08.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-09">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_09.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="polar-area-chart-item polar-area-chart-item-10">
-                                        <div class="img-box">
-                                            <img src="/images/polar_item_10.png" alt="" class="img">
-                                        </div>
-                                        <div class="hover-box">
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Sip
-                                                </p>
-                                                <p class="txt">
-                                                    quic
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Count
-                                                </p>
-                                                <p class="txt">
-                                                    17.0
-                                                </p>
-                                            </div>
-                                            <div class="detail-group">
-                                                <p class="title">
-                                                    Percent
-                                                </p>
-                                                <p class="txt">
-                                                    10.56%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="secutiry-monitoring-mid-wrap">
 
-                        <div class="secutiry-monitoring-result-list">
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">1</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        quic
+                        <div class="secutiry-monitoring-mid-item">
+                            <div class="secutiry-monitoring-mid-chart-wrap">
+                                <div class="secutiry-monitoring-title-wrap">
+                                    <p class="secutiry-monitoring-title">
+                                        Top Attack
                                     </p>
-                                    <p class="data">
-                                        17.0
-                                    </p>
-                                    <p class="percent">
-                                        10.56%
+                                    <p class="secutiry-monitoring-subtitle">
+                                        Last 10 mins
                                     </p>
                                 </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">2</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        51.com.access
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+                                <div class="secutiry-monitoring-mid-chart">
+                                    <div class="polar-area-chart">
+                                        <canvas id="polar_area_chart_01"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">3</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+
+                            <div class="secutiry-monitoring-result-list">
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">1</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            quic
+                                        </p>
+                                        <p class="data">
+                                            17.0
+                                        </p>
+                                        <p class="percent">
+                                            10.56%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">2</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            51.com.access
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">3</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">4</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            acme mini_httpd ar..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">5</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            emule
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">6</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">7</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">8</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            carbonite
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">9</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">10</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">4</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        acme mini_httpd ar..
+                        </div>
+                        <div class="secutiry-monitoring-mid-item">
+                            <div class="secutiry-monitoring-mid-chart-wrap">
+                                <div class="secutiry-monitoring-title-wrap">
+                                    <p class="secutiry-monitoring-title">
+                                        Top Victim
                                     </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
+                                    <p class="secutiry-monitoring-subtitle">
+                                        Last 10 mins
                                     </p>
                                 </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">5</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        emule
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+                                <div class="secutiry-monitoring-mid-chart">
+                                    <div class="polar-area-chart">
+                                        <canvas id="polar_area_chart_02"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">6</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+
+                            <div class="secutiry-monitoring-result-list">
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">1</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            quic
+                                        </p>
+                                        <p class="data">
+                                            17.0
+                                        </p>
+                                        <p class="percent">
+                                            10.56%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">2</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            51.com.access
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">3</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">4</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            acme mini_httpd ar..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">5</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            emule
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">6</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">7</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">8</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            carbonite
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">9</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">10</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">7</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
+                        </div>
+                        <div class="secutiry-monitoring-mid-item">
+                            <div class="secutiry-monitoring-mid-chart-wrap">
+                                <div class="secutiry-monitoring-title-wrap">
+                                    <p class="secutiry-monitoring-title">
+                                        Top Attack
                                     </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
+                                    <p class="secutiry-monitoring-subtitle">
+                                        Last 10 mins
                                     </p>
                                 </div>
-                            </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">8</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        carbonite
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+                                <div class="secutiry-monitoring-mid-chart">
+                                    <div class="polar-area-chart">
+                                        <canvas id="polar_area_chart_03"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">9</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
-                                    </p>
-                                    <p class="data">
-                                        16.0
-                                    </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+
+                            <div class="secutiry-monitoring-result-list">
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">1</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            quic
+                                        </p>
+                                        <p class="data">
+                                            17.0
+                                        </p>
+                                        <p class="percent">
+                                            10.56%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">2</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            51.com.access
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">3</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">4</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            acme mini_httpd ar..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">5</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            emule
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">6</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">7</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">8</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            carbonite
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">9</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">10</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="secutiry-monitoring-result-item">
-                                <div class="num">10</div>
-                                <div class="txt-group">
-                                    <p class="title">
-                                        apache http server..
+                        </div>
+                        <div class="secutiry-monitoring-mid-item">
+                            <div class="secutiry-monitoring-mid-chart-wrap">
+                                <div class="secutiry-monitoring-title-wrap">
+                                    <p class="secutiry-monitoring-title">
+                                        Top Traffic by Source IP
                                     </p>
-                                    <p class="data">
-                                        16.0
+                                </div>
+                                <div class="secutiry-monitoring-mid-chart">
+                                    <div class="polar-area-chart">
+                                        <canvas id="polar_area_chart_04"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="secutiry-monitoring-result-list">
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">1</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            quic
+                                        </p>
+                                        <p class="data">
+                                            17.0
+                                        </p>
+                                        <p class="percent">
+                                            10.56%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">2</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            51.com.access
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">3</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">4</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            acme mini_httpd ar..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">5</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            emule
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">6</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">7</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">8</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            carbonite
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">9</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">10</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="secutiry-monitoring-mid-item">
+                            <div class="secutiry-monitoring-mid-chart-wrap">
+                                <div class="secutiry-monitoring-title-wrap">
+                                    <p class="secutiry-monitoring-title">
+                                        Top Traffic by Destination IP
                                     </p>
-                                    <p class="percent">
-                                        9.94%
-                                    </p>
+                                </div>
+                                <div class="secutiry-monitoring-mid-chart">
+                                    <div class="polar-area-chart">
+                                        <canvas id="polar_area_chart_05"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="secutiry-monitoring-result-list">
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">1</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            quic
+                                        </p>
+                                        <p class="data">
+                                            17.0
+                                        </p>
+                                        <p class="percent">
+                                            10.56%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">2</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            51.com.access
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">3</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">4</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            acme mini_httpd ar..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">5</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            emule
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">6</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">7</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">8</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            carbonite
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">9</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="secutiry-monitoring-result-item">
+                                    <div class="num">10</div>
+                                    <div class="txt-group">
+                                        <p class="title">
+                                            apache http server..
+                                        </p>
+                                        <p class="data">
+                                            16.0
+                                        </p>
+                                        <p class="percent">
+                                            9.94%
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2431,28 +887,28 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- 알람 -->
-<div class="m-swiper type01" style="display: none;">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
+    <!-- 알람 -->
+    <div class="m-swiper type01" style="display: none;">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
 
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="btns">
-            <div class="swiper-btn swiper-btn-prev">
-                <i class="xi-angle-left"></i>
-            </div>
-            <div class="swiper-btn swiper-btn-next">
-                <i class="xi-angle-right"></i>
             </div>
 
+            <div class="swiper-pagination"></div>
+
+            <div class="btns">
+                <div class="swiper-btn swiper-btn-prev">
+                    <i class="xi-angle-left"></i>
+                </div>
+                <div class="swiper-btn swiper-btn-next">
+                    <i class="xi-angle-right"></i>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
+</body>
 <script>
 
     //detection_count_chart
@@ -2584,6 +1040,77 @@
         },
     });
 
+    //polar-area-chart
+    const polarChart = document.getElementById('polar_area_chart_01');
+
+    function truncateAndAppend(strings, maxLength = 10) {
+        const truncatedStrings = [];
+        for (let string of strings) {
+            if (string.length > maxLength) {
+                truncatedStrings.push(string.slice(0, maxLength) + "...");
+            } else {
+                truncatedStrings.push(string);
+            }
+        }
+        return truncatedStrings;
+    }
+
+    const labels = ['quic', '51.com.access', 'apache http server..', 'acme mini_httpd ar..', 'emule', 'quic', '51.com.access', 'apache http server..', 'acme mini_httpd ar..', 'emule'];
+
+    const truncatedLabels = truncateAndAppend(labels);
+
+    new Chart(polarChart, {
+        type: 'polarArea',
+        data: {
+            labels: truncatedLabels,
+            datasets: [
+                {
+                    label: ['Count'],
+                    data: [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122],
+                    backgroundColor: [
+                        '#E5211A',
+                        '#FF8800',
+                        '#FF9900',
+                        '#FFA900',
+                        '#FFB729',
+                        '#FEC34F',
+                        '#F9CC74',
+                        '#FFD787',
+                        '#FFE4AE',
+                        '#FFF3DC',
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 6
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    pointLabels: {
+                        display: true,
+                        centerPointLabels: true,
+                        font: {
+                            size: 10,
+                            family: 'Pretendard'
+                        }
+                    },
+                    ticks: {
+                        display: false,
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+            }
+        },
+    });
+
 </script>
-</body>
+
+
+
 </html>
