@@ -38,7 +38,7 @@ class Device extends Model
             $status = $childDevice->status;
         }
 
-        if($this->title == "FW1" || $this->title == "FW#2" || $this->title == "FW#3" || $this->title == "FW#4" || $this->title == "FW#5" || $this->title == "FW#6")
+        if($this->title == "FW#2" || $this->title == "FW#3" || $this->title == "FW#4" || $this->title == "FW#5" || $this->title == "FW#6")
             return "down";
 
         return $status;
