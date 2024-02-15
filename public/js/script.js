@@ -62,7 +62,8 @@ $(document).ready(function(){
     //대시보드 메뉴
     $('#dashboard_gnb').load('components/dashboard_detail_gnb.html', function (){});
 
-    $('#gnb').load('components/gnb.html', function (){
+    */
+    $('#gnb').load('./components/gnb.html', function (){
         // 메뉴 제어
         let pathname = location.pathname;
 
@@ -78,8 +79,7 @@ $(document).ready(function(){
                 $(gnb).closest(".gnb-container").addClass("active");
             }
         })
-    });*/
-
+    });
     // 팝업창 제어
     $(".m-script-pop").unbind("click").bind("click", function (){
         let target = $(this).attr("data-target");

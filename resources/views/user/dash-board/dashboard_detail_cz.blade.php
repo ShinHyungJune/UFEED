@@ -158,27 +158,27 @@
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
@@ -199,42 +199,42 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
@@ -255,27 +255,27 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
@@ -296,32 +296,32 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
@@ -343,27 +343,27 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
@@ -386,32 +386,32 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
 
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item down">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
             </div>
