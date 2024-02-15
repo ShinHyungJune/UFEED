@@ -18,7 +18,7 @@ $(document).ready(function(){
                 var realTimeTraffics = response.data.data.realTimeTraffics;
                 var rankingTraffics = response.data.data.rankingTraffics.slice(0, 10);
 
-                // # STANDARD ==========
+                // # START : STANDARD ==========
                 var counts = {
                     up: 0,
                     down: 0,
@@ -67,6 +67,8 @@ $(document).ready(function(){
                 $(".dashboard-standard-item.down").find(".num").text(counts.down);
                 $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
                 $(".dashboard-standard-item.critical").find(".num").text(counts.unusual);
+                // # END : STANDARD ==========
+
 
                 drawChart(realTimeTraffics);
 
