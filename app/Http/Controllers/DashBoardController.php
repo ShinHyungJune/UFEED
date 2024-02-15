@@ -51,11 +51,7 @@ class DashBoardController extends Controller
         if($device) {
 
             $tms["cpu_load_value"] = $device["cpu_load_value"];
-        }*/
-        $response = Http::get("http://hi-secure.ufeed.co.kr/api/secureMonitoring")->body();
-
-        dd($response);
-
+        }
         return view('user.dash-board.security_monitoring', [
             "topAttacks" => $topAttacks,
             "topVictims" => $topVictims,
@@ -64,6 +60,11 @@ class DashBoardController extends Controller
             "topDestinations" => $topDestinations,
             "tms" => $tms,
         ]);
+        */
+
+        $response = Http::get("http://hi-secure.ufeed.co.kr/api/firewalls/secureMonitoring")->body();
+
+        return view('user.dash-board.security_monitoring', json_decode($response, true)["data"]);
     }
 
     public function recordPercentage($items)
