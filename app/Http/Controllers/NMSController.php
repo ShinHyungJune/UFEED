@@ -7,9 +7,16 @@ use Illuminate\Support\Facades\Http;
 
 class NMSController extends Controller
 {
+    protected $domain;
+
+    public function __construct()
+    {
+        $this->domain = config("app.env") === "local" ? "http://118.130.110.156:8080" : "http://localhost:8080";
+    }
+
     public function devices()
     {
-        $responsePing = Http::withoutVerifying()->get("http://localhost:8080/api/table.json", [
+        $responsePing = Http::withoutVerifying()->get("{$this->domain}/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "hgs_1qa@WS",
@@ -17,7 +24,9 @@ class NMSController extends Controller
             "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
             "filter_name" => "Ping",
         ]);
+
         foreach ($responsePing->object()->{''} as $item) {
+
             if ($item->value_raw !== '') {
                 Device::updateOrCreate(
                     ['title' => $item->device_raw],
@@ -26,7 +35,7 @@ class NMSController extends Controller
             }
         }
 
-        $responseCPU = Http::withoutVerifying()->get("http://localhost:8080/api/table.json", [
+        $responseCPU = Http::withoutVerifying()->get("{$this->domain}/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "hgs_1qa@WS",

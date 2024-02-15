@@ -193,7 +193,7 @@
                                                                         {{ $device->ping_value }} mses
                                                                     </p>
                                                                 </li>
-                                                                <li class="directory-detail-item">
+<!--                                                                <li class="directory-detail-item">
                                                                     <div class="state"></div>
                                                                     <p class="directory-detail-item-title">
                                                                         CPU Load
@@ -201,7 +201,7 @@
                                                                     <p class="directory-detail-item-txt">
                                                                         {{ $device->cpu_load_value }}%
                                                                     </p>
-                                                                </li>
+                                                                </li>-->
 <!--                                                                <li class="directory-detail-item">
                                                                     <div class="state"></div>
                                                                     <p class="directory-detail-item-title">
