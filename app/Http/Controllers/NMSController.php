@@ -9,7 +9,7 @@ class NMSController extends Controller
 {
     public function devices()
     {
-        $responsePing = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+        $responsePing = Http::withoutVerifying()->get("http://localhost:8080/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "hgs_1qa@WS",
@@ -26,7 +26,7 @@ class NMSController extends Controller
             }
         }
 
-        $responseCPU = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+        $responseCPU = Http::withoutVerifying()->get("http://localhost:8080/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "hgs_1qa@WS",
