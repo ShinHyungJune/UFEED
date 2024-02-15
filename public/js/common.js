@@ -1,3 +1,6 @@
+var ipsChart = null;
+var cncChart = null;
+
 $(document).ready(function(){
     $(".m-script-pop").unbind("click").bind("click", function (){
         var target = $(this).attr("data-target");
@@ -33,6 +36,7 @@ $(document).ready(function(){
                 devices.map(device => {
                     $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
 
+                    console.log(device);
                     if(!$(`[data-id="${device.title}"]`).hasClass(device.totalStatus.toLowerCase()))
                         $(`[data-id="${device.title}"]`).addClass(device.totalStatus.toLowerCase());
 
@@ -69,11 +73,13 @@ $(document).ready(function(){
                 if(first) {
                     first = false;
 
-                    // # Real-time traffic ========
+                    // # START : Real-time traffic ========
                     drawChart(realTimeTraffics);
+                    // # END : Real-time traffic ========
                 }
 
-                // # Traffic Top 10 ========
+                // # START : Traffic Top 10 ========
+                console.log(rankingTraffics);
                 $(".traffic-top-wrap").html("");
                 var topNum = 0;
                 rankingTraffics.map(rankingTraffic => {
@@ -97,9 +103,9 @@ $(document).ready(function(){
 
                     $(".traffic-top-wrap").append(html);
                 });
+                // # END : Traffic Top 10 ========
 
-
-                // # Real-time notofication status ======
+                // # START : Real-time notofication status ======
                 if (realTimeNotifications.length > 0) {
 
                     $(".real-time-status-list").html("");
@@ -130,17 +136,19 @@ $(document).ready(function(){
                     });
 
                 }
+                // # END : Real-time notofication status ======
             });
     }
 
     function getDashboard() {
-        // 좌측 하단 원형차트 그리기
-
         axios.get(window.domain + "/api/firewalls/dashboard")
             .then(response => {
+                // # START : Traffic 차트
                 var traffics = response.data.data.traffics;
 
+
                 $(".dashboard-table-traffic tbody").html("");
+
                 traffics.map(traffic => {
                     $(".dashboard-table-traffic tbody").append(`
                         <tr>
@@ -150,7 +158,10 @@ $(document).ready(function(){
                         <tr/>
                     `);
                 });
+                // # END : Traffic 차트
 
+
+                // # START : 대시보드 상단 CBS Protection 차트
                 var counts = response.data.data;
 
                 var countsWrapArr = document.querySelectorAll('.protection-item');
@@ -160,8 +171,10 @@ $(document).ready(function(){
                     countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
                     countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
                 }
+                // # END : 대시보드 상단 CBS Protection 차트
 
-                // START : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
+
+                // # START : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
                 //polar-area-chart tab
                 $('.dashboard-gnb-tab').click(function () {
                     $('.dashboard-gnb-tab').removeClass('active');
@@ -181,9 +194,16 @@ $(document).ready(function(){
 
                 ipses.sort((a,b) => b.count - a.count);
 
-                drawPolarChart("polar_area_chart_01", ipses.map(ips => ips.count), ipses.map(ips => ips.key));
-                drawPolarChart("polar_area_chart_02", cncs.map(cnc => cnc.count), ipses.map(cnc => cnc.key));
-                // END : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
+                if(ipsChart)
+                    ipsChart.destroy();
+
+                ipsChart = drawPolarChart("polar_area_chart_01", ipses.map(ips => ips.count), ipses.map(ips => ips.key));
+
+                if(cncChart)
+                    cncChart.destroy();
+
+                cncChart = drawPolarChart("polar_area_chart_02", cncs.map(cnc => cnc.count), ipses.map(cnc => cnc.key));
+                // # END : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
 
             })
     }
