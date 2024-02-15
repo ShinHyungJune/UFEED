@@ -250,11 +250,12 @@
                         IPS
                     </div>
                     <div class="dashboard-gnb-tab" data-tab="tab_02">
-                        Anti-Virus
-                    </div>
-                    <div class="dashboard-gnb-tab" data-tab="tab_03">
                         C&C Detection
                     </div>
+<!--                    <div class="dashboard-gnb-tab" data-tab="tab_03">
+                        Anti-Virus
+                    </div>-->
+
                 </div>
                 <button class="more-btn">
                     <i class="xi-ellipsis-v"></i>
@@ -267,9 +268,9 @@
             <div class="polar-area-chart" id="tab_02">
                 <canvas id="polar_area_chart_02"></canvas>
             </div>
-            <div class="polar-area-chart" id="tab_03">
+<!--            <div class="polar-area-chart" id="tab_03">
                 <canvas id="polar_area_chart_03"></canvas>
-            </div>
+            </div>-->
 
         </div>
 
@@ -353,99 +354,4 @@
 
         return formattedTime;
     }
-</script>
-<script>
-    //polar-area-chart tab
-    $('.dashboard-gnb-tab').click(function () {
-        $('.dashboard-gnb-tab').removeClass('active');
-        $(this).addClass('active');
-
-        var data_tab = $(this).attr('data-tab');
-
-        $('.polar-area-chart').hide();
-        $('.polar-area-chart#' + data_tab).fadeIn(300);
-    });
-
-    //polar-area-chart
-    var polarChart = document.getElementById('polar_area_chart_01');
-
-    function truncateAndAppend(strings, maxLength = 10) {
-        var truncatedStrings = [];
-        var originalTitles = []; // 원래의 타이틀을 유지할 배열
-        for (let string of strings) {
-            if (string.length > maxLength) {
-                truncatedStrings.push(string.slice(0, maxLength) + "...");
-                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
-            } else {
-                truncatedStrings.push(string);
-                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
-            }
-        }
-        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
-    }
-
-    var labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
-
-    var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
-
-    new Chart(polarChart, {
-        type: 'polarArea',
-        data: {
-            labels: truncatedStrings,
-            datasets: [
-                {
-                    label: ['Count'],
-                    data: [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122],
-                    backgroundColor: [
-                        '#E5211A',
-                        '#FF8800',
-                        '#FF9900',
-                        '#FFA900',
-                        '#FFB729',
-                        '#FEC34F',
-                        '#F9CC74',
-                        '#FFD787',
-                        '#FFE4AE',
-                        '#FFF3DC',
-                    ],
-                    borderWidth: 0,
-                    hoverOffset: 6
-                },
-            ]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                r: {
-                    pointLabels: {
-                        display: true,
-                        centerPointLabels: true,
-                        font: {
-                            size: 8,
-                            family: 'Pretendard'
-                        }
-                    },
-                    ticks: {
-                        display: false,
-                    }
-                },
-            },
-            plugins: {
-                legend: {
-                    display: false,
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function (tooltipItem) {
-                            const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
-                            return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
-                        },
-                        afterLabel: function (tooltipItem) {
-                            return 'Sip :' + '00.00-00.00'; // 툴팁의 라벨 뒤에 추가 문구를 반환합니다.
-                        },
-                    }
-                }
-            }
-        },
-    });
 </script>

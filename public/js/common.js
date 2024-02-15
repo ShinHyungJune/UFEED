@@ -161,68 +161,30 @@ $(document).ready(function(){
                     countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
                 }
 
+                // START : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
+                //polar-area-chart tab
+                $('.dashboard-gnb-tab').click(function () {
+                    $('.dashboard-gnb-tab').removeClass('active');
+                    $(this).addClass('active');
 
-                // IPS / C&C 좌측 하단 차트 그리기
-                $(".polar-area-chart").html("");
+                    var data_tab = $(this).attr('data-tab');
+
+                    $('.polar-area-chart').hide();
+                    $('.polar-area-chart#' + data_tab).fadeIn(300);
+                });
 
                 var cncs = response.data.data.cncs;
 
                 cncs.sort((a,b) => b.count - a.count);
 
-                cncs.map((item, index) => {
-                    $(".polar-area-chart#tab_01").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
-        <div class="img-box"></div>
-        <div class="hover-box"></div>
-</div>`);
-
-                    $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
-                    $(`.polar-area-chart#tab_01 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                ${item.sip}
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                ${item.count}
-                            </p>
-                        </div>`);
-                });
-
                 var ipses = response.data.data.ipses;
 
                 ipses.sort((a,b) => b.count - a.count);
 
-                $(".dashboard-table-ips tbody").html("");
-                ipses.map((item, index) => {
-                    $(".polar-area-chart#tab_02").append(`<div class="polar-area-chart-item polar-area-chart-item-0${index + 1}">
-        <div class="img-box"></div>
-        <div class="hover-box"></div>
-</div>`);
+                drawPolarChart("polar_area_chart_01", ipses.map(ips => ips.count), ipses.map(ips => ips.key));
+                drawPolarChart("polar_area_chart_02", cncs.map(cnc => cnc.count), ipses.map(cnc => cnc.key));
+                // END : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
 
-                    $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .img-box`).append(`<img src="/images/polar_item_0${index + 1}.png" />`);
-                    $(`.polar-area-chart#tab_02 .polar-area-chart-item-0${index + 1} .hover-box`).append(`<div class="detail-group">
-                            <p class="title">
-                                Sip
-                            </p>
-                            <p class="txt">
-                                ${item.sip}
-                            </p>
-                        </div>
-                        <div class="detail-group">
-                            <p class="title">
-                                Count
-                            </p>
-                            <p class="txt">
-                                ${item.count}
-                            </p>
-                        </div>`);
-                });
             })
     }
 
@@ -264,65 +226,67 @@ $(document).ready(function(){
             chart = null;
         }
 
-        chart = new Chart(main_ctx, {
-            type: 'line',
-            data: {
-                // labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
-                labels: firstDeviceTraffic.traffics.map((traffic) => traffic.date),
-                datasets: datasets
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        min: 0,
-                        ticks: {
-                            // forces step size to be 50 units
-                            stepSize: 20,
-                            font: function () {
-                                return {
-                                    size: 10,
-                                    family: 'Pretendard'
-                                }
-                            },
+        if(firstDeviceTraffic){
+            chart = new Chart(main_ctx, {
+                type: 'line',
+                data: {
+                    // labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
+                    labels: firstDeviceTraffic.traffics.map((traffic) => traffic.date),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            min: 0,
+                            ticks: {
+                                // forces step size to be 50 units
+                                stepSize: 20,
+                                font: function () {
+                                    return {
+                                        size: 10,
+                                        family: 'Pretendard'
+                                    }
+                                },
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: function () {
+                                    return {
+                                        size: 10,
+                                        family: 'Pretendard'
+                                    }
+                                },
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            font: function () {
-                                return {
-                                    size: 10,
-                                    family: 'Pretendard'
-                                }
+                    plugins: {
+                        legend: {
+                            labels: {
+                                font: function () {
+                                    return {
+                                        size: 10,
+                                        family: 'Pretendard'
+                                    }
+                                },
+                                boxWidth: 6,
+                                boxHeight: 6,
                             },
-                        }
+                            position: 'top',
+                            fullWidth: false,
+                        },
                     }
                 },
-                plugins: {
-                    legend: {
-                        labels: {
-                            font: function () {
-                                return {
-                                    size: 10,
-                                    family: 'Pretendard'
-                                }
-                            },
-                            boxWidth: 6,
-                            boxHeight: 6,
-                        },
-                        position: 'top',
-                        fullWidth: false,
+                elements: {
+                    point: {
+                        radius: 0, //선형 그래프 포인트 삭제
                     },
-                }
-            },
-            elements: {
-                point: {
-                    radius: 0, //선형 그래프 포인트 삭제
                 },
-            },
-        });
+            });
+        }
     }
 
     getHistories();
@@ -436,4 +400,91 @@ $(document).ready(function(){
         getAllows();
     }
 
+    // 글자 자르기
+    function truncateAndAppend(strings, maxLength = 10) {
+        var truncatedStrings = [];
+        var originalTitles = []; // 원래의 타이틀을 유지할 배열
+        for (let string of strings) {
+            if (string.length > maxLength) {
+                truncatedStrings.push(string.slice(0, maxLength) + "...");
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+            } else {
+                truncatedStrings.push(string);
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+            }
+        }
+        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
+    }
+
+    // Polar 차트 그리기
+    function drawPolarChart(id, data, labels){
+        // data = [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122];
+        // labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
+
+        //polar-area-chart
+        var polarChart = document.getElementById(id);
+
+        var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+
+        return new Chart(polarChart, {
+            type: 'polarArea',
+            data: {
+                labels: truncatedStrings,
+                datasets: [
+                    {
+                        label: ['Count'],
+                        data: data,
+                        backgroundColor: [
+                            '#E5211A',
+                            '#FF8800',
+                            '#FF9900',
+                            '#FFA900',
+                            '#FFB729',
+                            '#FEC34F',
+                            '#F9CC74',
+                            '#FFD787',
+                            '#FFE4AE',
+                            '#FFF3DC',
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    },
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        pointLabels: {
+                            display: true,
+                            centerPointLabels: true,
+                            font: {
+                                size: 8,
+                                family: 'Pretendard'
+                            }
+                        },
+                        ticks: {
+                            display: false,
+                        }
+                    },
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem) {
+                                const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
+                                return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
+                            },
+                            afterLabel: function (tooltipItem) {
+                                // return 'Sip :' + '00.00-00.00'; // 툴팁의 라벨 뒤에 추가 문구를 반환합니다.
+                            },
+                        }
+                    }
+                }
+            },
+        });
+    }
 });
