@@ -29,7 +29,7 @@ class Firewall extends Model
 
     public function getCountMalware()
     {
-        $start = Carbon::now()->subHours(28)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
@@ -39,7 +39,7 @@ class Firewall extends Model
 
     public function getCountIps()
     {
-        $start = Carbon::now()->subHours(28)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps");
@@ -49,7 +49,7 @@ class Firewall extends Model
 
     public function getCountDdos()
     {
-        $start = Carbon::now()->subHours(28)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
@@ -59,7 +59,7 @@ class Firewall extends Model
 
     public function getTraffics($device = "FW_1")
     {
-        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&attribute=rxbyte&query=devicename:{$device} and type:firewall&groupBySort=SUM");
 
@@ -93,7 +93,7 @@ class Firewall extends Model
 
     public function getIps()
     {
-        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,attackname&query=module:tgIps");
@@ -103,7 +103,7 @@ class Firewall extends Model
 
     public function getAntiMalware()
     {
-        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module%3AmalwareBlock&limit=0&reverse=true");
@@ -114,7 +114,7 @@ class Firewall extends Model
     public function getCnc()
     {
         // $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
-        $start = Carbon::now()->subHours(30)->format('Y-m-d\TH:i:s');
+        $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
         // $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgCnc and devicename={$device}}");
