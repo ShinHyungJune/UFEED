@@ -66,11 +66,11 @@
                                                     Security
                                                 </div>
                                                 <ul class="directory-group directory-sub-group">
-                                                    @foreach($devicesFW as $device)
+                                                    {{--FW1--}}
                                                     <li class="directory-item active">
                                                         <div class="directory-title">
                                                             <div class="border"></div>
-                                                            {{ $device->title }}
+                                                            FW#1
                                                         </div>
                                                         <ul class="directory-group directory-detail-group">
                                                             <li class="directory-detail-item">
@@ -79,7 +79,7 @@
                                                                     Ping
                                                                 </p>
                                                                 <p class="directory-detail-item-txt">
-                                                                    {{ $device->ping_value }} mses
+                                                                    {{ $devicesFW1->ping_value }} mses
                                                                 </p>
                                                             </li>
                                                             <li class="directory-detail-item">
@@ -88,7 +88,7 @@
                                                                     CPU Load
                                                                 </p>
                                                                 <p class="directory-detail-item-txt">
-                                                                    {{ $device->cpu_load_value }}%
+                                                                    {{ $devicesFW1->cpu_load_value }}%
                                                                 </p>
                                                             </li>
                                                             <li class="directory-detail-item">
@@ -102,6 +102,43 @@
                                                             </li>
                                                         </ul>
                                                     </li>
+                                                    {{--FW#--}}
+                                                    @foreach($devicesFW as $device)
+                                                        <li class="directory-item active">
+                                                            <div class="directory-title">
+                                                                <div class="border"></div>
+                                                                {{ $device->title }}
+                                                            </div>
+                                                            <ul class="directory-group directory-detail-group">
+                                                                <li class="directory-detail-item">
+                                                                    <div class="state"></div>
+                                                                    <p class="directory-detail-item-title">
+                                                                        Ping
+                                                                    </p>
+                                                                    <p class="directory-detail-item-txt">
+                                                                        {{ $device->ping_value }} mses
+                                                                    </p>
+                                                                </li>
+                                                                <li class="directory-detail-item">
+                                                                    <div class="state"></div>
+                                                                    <p class="directory-detail-item-title">
+                                                                        CPU Load
+                                                                    </p>
+                                                                    <p class="directory-detail-item-txt">
+                                                                        {{ $device->cpu_load_value }}%
+                                                                    </p>
+                                                                </li>
+                                                                <li class="directory-detail-item">
+                                                                    <div class="state"></div>
+                                                                    <p class="directory-detail-item-title">
+                                                                        Memory Load
+                                                                    </p>
+                                                                    <p class="directory-detail-item-txt">
+                                                                        30%
+                                                                    </p>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
                                                     @endforeach
                                                 </ul>
                                             </li>

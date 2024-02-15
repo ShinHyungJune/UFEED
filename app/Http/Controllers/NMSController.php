@@ -19,9 +19,6 @@ class NMSController extends Controller
         ]);
         foreach ($responsePing->object()->{''} as $item) {
             if ($item->value_raw !== '') {
-                if ($item->device_raw === 'FW1') {
-                    $item->device_raw = 'FW#1';
-                }
                 Device::updateOrCreate(
                     ['title' => $item->device_raw],
                     ['title' => $item->device_raw, 'ping_value' => $item->value_raw]
@@ -39,20 +36,17 @@ class NMSController extends Controller
         ]);
         foreach ($responseCPU->object()->{''} as $item) {
             if ($item->value_raw !== '') {
-                if ($item->device_raw === 'FW1') {
-                    $item->device_raw = 'FW#1';
-                }
                 Device::updateOrCreate(
                     ['title' => $item->device_raw],
                     ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw]
                 );
             }
         }
-
-        $devicesFW = Device::where('title', 'like', 'FW%')->orderBy('title')->get();
+        $devicesFW1 = Device::whereTitle('FW1')->first();
+        $devicesFW = Device::where('title', 'like', 'FW#%')->orderBy('title')->get();
         $devicesL3 = Device::whereTitle('L3 Switch')->first();
 
-        return view('user.main-menu.nms.nms_devices_all')->with('devicesFW', $devicesFW)->with('devicesL3', $devicesL3);
+        return view('user.main-menu.nms.nms_devices_all')->with('devicesFW1', $devicesFW1)->with('devicesFW', $devicesFW)->with('devicesL3', $devicesL3);
     }
 
     public function favoriteDevices()
