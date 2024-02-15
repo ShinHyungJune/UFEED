@@ -211,4 +211,10 @@ class Firewall extends Model
         $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=dip&attribute=rxbyte,txbyte&query=type:firewall&groupBysort=sum");
         return json_decode($response->getBody(), true)["objects"][0];
     }
+
+    public function getDashboardTms()
+    {
+        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=DAY&criteria=devicename&query=AND NOT device:TMS");
+        return json_decode($response->getBody(), true)["objects"][0];
+    }
 }

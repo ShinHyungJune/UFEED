@@ -47,7 +47,6 @@ $(document).ready(function(){
                 devices.map(device => {
                     $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
 
-                    console.log(device);
                     if(!$(`[data-id="${device.title}"]`).hasClass(device.totalStatus.toLowerCase()))
                         $(`[data-id="${device.title}"]`).addClass(device.totalStatus.toLowerCase());
 
@@ -92,7 +91,6 @@ $(document).ready(function(){
                 }
 
                 // # START : Traffic Top 10 ========
-                console.log(rankingTraffics);
                 $(".traffic-top-wrap").html("");
                 var topNum = 0;
                 rankingTraffics.map(rankingTraffic => {
@@ -396,7 +394,6 @@ $(document).ready(function(){
                 var count = result.total;
                 var items = result.result;
 
-                console.log(items);
                 $(".blocked-devices .badge").text(count);
 
                 $(".blocked-devices-wrap tbody").html("");
@@ -432,92 +429,92 @@ $(document).ready(function(){
         getBlocks();
         getAllows();
     }
+});
 
-    // 글자 자르기
-    function truncateAndAppend(strings, maxLength = 10) {
-        var truncatedStrings = [];
-        var originalTitles = []; // 원래의 타이틀을 유지할 배열
-        for (let string of strings) {
-            if (string.length > maxLength) {
-                truncatedStrings.push(string.slice(0, maxLength) + "...");
-                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
-            } else {
-                truncatedStrings.push(string);
-                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
-            }
+// 글자 자르기
+function truncateAndAppend(strings, maxLength = 10) {
+    var truncatedStrings = [];
+    var originalTitles = []; // 원래의 타이틀을 유지할 배열
+    for (let string of strings) {
+        if (string.length > maxLength) {
+            truncatedStrings.push(string.slice(0, maxLength) + "...");
+            originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+        } else {
+            truncatedStrings.push(string);
+            originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
         }
-        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
     }
+    return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
+}
 
-    // Polar 차트 그리기
-    function drawPolarChart(id, data, labels){
-        // data = [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122];
-        // labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
+// Polar 차트 그리기
+function drawPolarChart(id, data, labels){
+    // data = [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122];
+    // labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
 
-        //polar-area-chart
-        var polarChart = document.getElementById(id);
+    //polar-area-chart
+    var polarChart = document.getElementById(id);
 
-        var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+    var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
 
-        return new Chart(polarChart, {
-            type: 'polarArea',
-            data: {
-                labels: truncatedStrings,
-                datasets: [
-                    {
-                        label: ['Count'],
-                        data: data,
-                        backgroundColor: [
-                            '#E5211A',
-                            '#FF8800',
-                            '#FF9900',
-                            '#FFA900',
-                            '#FFB729',
-                            '#FEC34F',
-                            '#F9CC74',
-                            '#FFD787',
-                            '#FFE4AE',
-                            '#FFF3DC',
-                        ],
-                        borderWidth: 0,
-                        hoverOffset: 6
-                    },
-                ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    r: {
-                        pointLabels: {
-                            display: true,
-                            centerPointLabels: true,
-                            font: {
-                                size: 8,
-                                family: 'Pretendard'
-                            }
-                        },
-                        ticks: {
-                            display: false,
-                        }
-                    },
+    return new Chart(polarChart, {
+        type: 'polarArea',
+        data: {
+            labels: truncatedStrings,
+            datasets: [
+                {
+                    label: ['Count'],
+                    data: data,
+                    backgroundColor: [
+                        '#E5211A',
+                        '#FF8800',
+                        '#FF9900',
+                        '#FFA900',
+                        '#FFB729',
+                        '#FEC34F',
+                        '#F9CC74',
+                        '#FFD787',
+                        '#FFE4AE',
+                        '#FFF3DC',
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 6
                 },
-                plugins: {
-                    legend: {
-                        display: false,
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function (tooltipItem) {
-                                const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
-                                return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
-                            },
-                            afterLabel: function (tooltipItem) {
-                                // return 'Sip :' + '00.00-00.00'; // 툴팁의 라벨 뒤에 추가 문구를 반환합니다.
-                            },
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    pointLabels: {
+                        display: true,
+                        centerPointLabels: true,
+                        font: {
+                            size: 8,
+                            family: 'Pretendard'
                         }
+                    },
+                    ticks: {
+                        display: false,
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function (tooltipItem) {
+                            const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
+                            return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
+                        },
+                        afterLabel: function (tooltipItem) {
+                            // return 'Sip :' + '00.00-00.00'; // 툴팁의 라벨 뒤에 추가 문구를 반환합니다.
+                        },
                     }
                 }
-            },
-        });
-    }
-});
+            }
+        },
+    });
+}

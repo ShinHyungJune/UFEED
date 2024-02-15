@@ -45,9 +45,7 @@
 
                             <div class="secutiry-monitoring-top-chart">
                                 <canvas id="detection_count_chart"></canvas>
-                                <p class="num">
-                                    1,528
-                                </p>
+                                <p class="num">{{$tms["count"]}}</p>
                             </div>
                         </div>
                         <div class="secutiry-monitoring-top-item">
@@ -62,19 +60,17 @@
 
                             <div class="secutiry-monitoring-top-chart">
                                 <canvas id="cpu_chart"></canvas>
-                                <p class="num">
-                                    8%
-                                </p>
+                                <p class="num">{{$tms["cpu_load_value"]}}</p>
                             </div>
                         </div>
-                        <div class="secutiry-monitoring-top-item">
+<!--                        <div class="secutiry-monitoring-top-item">
                             <div class="secutiry-monitoring-title-wrap">
                                 <p class="secutiry-monitoring-title">
                                     EPS (Event Per Second)
                                 </p>
-{{--                                <p class="secutiry-monitoring-subtitle">--}}
-{{--                                    Last 1 mins--}}
-{{--                                </p>--}}
+                                <p class="secutiry-monitoring-subtitle">
+                                    Last 1 mins
+                                </p>
                             </div>
 
                             <div class="secutiry-monitoring-top-chart">
@@ -83,7 +79,7 @@
                                     36
                                 </p>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div class="secutiry-monitoring-mid-wrap">
@@ -106,146 +102,22 @@
                             </div>
 
                             <div class="secutiry-monitoring-result-list">
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">1</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            quic
-                                        </p>
-                                        <p class="data">
-                                            17.0
-                                        </p>
-                                        <p class="percent">
-                                            10.56%
-                                        </p>
+                                @foreach($topAttacks as $key => $item)
+                                    <div class="secutiry-monitoring-result-item">
+                                        <div class="num">{{$key + 1}}</div>
+                                        <div class="txt-group">
+                                            <p class="title">
+                                                {{$item["key"]}}
+                                            </p>
+                                            <p class="data">
+                                                {{$item["count"]}}
+                                            </p>
+                                            <p class="percent">
+                                                {{$item["percentage"]}}%
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">2</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            51.com.access
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">3</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">4</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            acme mini_httpd ar..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">5</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            emule
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">6</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">7</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">8</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            carbonite
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">9</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">10</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="secutiry-monitoring-mid-item">
@@ -266,146 +138,22 @@
                             </div>
 
                             <div class="secutiry-monitoring-result-list">
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">1</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            quic
-                                        </p>
-                                        <p class="data">
-                                            17.0
-                                        </p>
-                                        <p class="percent">
-                                            10.56%
-                                        </p>
+                                @foreach($topVictims as $key => $item)
+                                    <div class="secutiry-monitoring-result-item">
+                                        <div class="num">{{$key + 1}}</div>
+                                        <div class="txt-group">
+                                            <p class="title">
+                                                {{$item["key"]}}
+                                            </p>
+                                            <p class="data">
+                                                {{$item["count"]}}
+                                            </p>
+                                            <p class="percent">
+                                                {{$item["percentage"]}}%
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">2</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            51.com.access
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">3</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">4</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            acme mini_httpd ar..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">5</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            emule
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">6</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">7</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">8</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            carbonite
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">9</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">10</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="secutiry-monitoring-mid-item">
@@ -426,146 +174,22 @@
                             </div>
 
                             <div class="secutiry-monitoring-result-list">
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">1</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            quic
-                                        </p>
-                                        <p class="data">
-                                            17.0
-                                        </p>
-                                        <p class="percent">
-                                            10.56%
-                                        </p>
+                                @foreach($topAttackers as $key => $item)
+                                    <div class="secutiry-monitoring-result-item">
+                                        <div class="num">{{$key + 1}}</div>
+                                        <div class="txt-group">
+                                            <p class="title">
+                                                {{$item["key"]}}
+                                            </p>
+                                            <p class="data">
+                                                {{$item["count"]}}
+                                            </p>
+                                            <p class="percent">
+                                                {{$item["percentage"]}}%
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">2</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            51.com.access
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">3</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">4</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            acme mini_httpd ar..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">5</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            emule
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">6</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">7</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">8</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            carbonite
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">9</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">10</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="secutiry-monitoring-mid-item">
@@ -583,146 +207,22 @@
                             </div>
 
                             <div class="secutiry-monitoring-result-list">
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">1</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            quic
-                                        </p>
-                                        <p class="data">
-                                            17.0
-                                        </p>
-                                        <p class="percent">
-                                            10.56%
-                                        </p>
+                                @foreach($topSources as $key => $item)
+                                    <div class="secutiry-monitoring-result-item">
+                                        <div class="num">{{$key + 1}}</div>
+                                        <div class="txt-group">
+                                            <p class="title">
+                                                {{$item["key"]}}
+                                            </p>
+                                            <p class="data">
+                                                {{$item["count"]}}
+                                            </p>
+                                            <p class="percent">
+                                                {{$item["percentage"]}}%
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">2</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            51.com.access
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">3</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">4</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            acme mini_httpd ar..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">5</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            emule
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">6</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">7</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">8</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            carbonite
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">9</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">10</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="secutiry-monitoring-mid-item">
@@ -740,146 +240,22 @@
                             </div>
 
                             <div class="secutiry-monitoring-result-list">
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">1</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            quic
-                                        </p>
-                                        <p class="data">
-                                            17.0
-                                        </p>
-                                        <p class="percent">
-                                            10.56%
-                                        </p>
+                                @foreach($topDestinations as $key => $item)
+                                    <div class="secutiry-monitoring-result-item">
+                                        <div class="num">{{$key + 1}}</div>
+                                        <div class="txt-group">
+                                            <p class="title">
+                                                {{$item["key"]}}
+                                            </p>
+                                            <p class="data">
+                                                {{$item["count"]}}
+                                            </p>
+                                            <p class="percent">
+                                                {{$item["percentage"]}}%
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">2</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            51.com.access
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">3</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">4</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            acme mini_httpd ar..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">5</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            emule
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">6</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">7</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">8</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            carbonite
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">9</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="secutiry-monitoring-result-item">
-                                    <div class="num">10</div>
-                                    <div class="txt-group">
-                                        <p class="title">
-                                            apache http server..
-                                        </p>
-                                        <p class="data">
-                                            16.0
-                                        </p>
-                                        <p class="percent">
-                                            9.94%
-                                        </p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -887,28 +263,12 @@
             </div>
         </div>
     </div>
-
-    <!-- 알람 -->
-    <div class="m-swiper type01" style="display: none;">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-            </div>
-
-            <div class="swiper-pagination"></div>
-
-            <div class="btns">
-                <div class="swiper-btn swiper-btn-prev">
-                    <i class="xi-angle-left"></i>
-                </div>
-                <div class="swiper-btn swiper-btn-next">
-                    <i class="xi-angle-right"></i>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
+<style>
+    .secutiry-monitoring-top-item {
+        width: calc( ( 100% - 24px * 2 ) / 2 );
+    }
+</style>
 <script>
 
     //detection_count_chart
@@ -1040,70 +400,25 @@
         },
     });
 
-    //polar-area-chart
-    var polarChart = document.getElementById('polar_area_chart_attack');
+    // Top Attack Chart
+    var topAttacks = {!! json_encode($topAttacks) !!};
+    drawPolarChart("polar_area_chart_attack", topAttacks.map(item => item.count), topAttacks.map(item => item.key));
 
-    var labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
+    // Top Victim Chart
+    var topVictims = {!! json_encode($topVictims) !!};
+    drawPolarChart("polar_area_chart_victim", topVictims.map(item => item.count), topVictims.map(item => item.key));
 
-    var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+    // Top Attack Chart
+    var topAttackers = {!! json_encode($topAttackers) !!};
+    drawPolarChart("polar_area_chart_attacker", topAttackers.map(item => item.count), topAttackers.map(item => item.key));
 
-    new Chart(polarChart, {
-        type: 'polarArea',
-        data: {
-            labels: truncatedStrings,
-            datasets: [
-                {
-                    label: ['Count'],
-                    data: [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122],
-                    backgroundColor: [
-                        '#E5211A',
-                        '#FF8800',
-                        '#FF9900',
-                        '#FFA900',
-                        '#FFB729',
-                        '#FEC34F',
-                        '#F9CC74',
-                        '#FFD787',
-                        '#FFE4AE',
-                        '#FFF3DC',
-                    ],
-                    borderWidth: 0,
-                    hoverOffset: 6
-                },
-            ]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                r: {
-                    pointLabels: {
-                        display: true,
-                        centerPointLabels: true,
-                        font: {
-                            size: 10,
-                            family: 'Pretendard'
-                        }
-                    },
-                    ticks: {
-                        display: false,
-                    }
-                },
-            },
-            plugins: {
-                legend: {
-                    display: false,
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function (tooltipItem) {
-                            const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
-                            return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
-                        },
-                    }
-                }
-            }
-        },
-    });
+    // Top Attack Chart
+    var topSources = {!! json_encode($topSources) !!};
+    drawPolarChart("polar_area_chart_source", topSources.map(item => item.count), topSources.map(item => item.key));
+
+    // Top Attack Chart
+    var topDestinations = {!! json_encode($topDestinations) !!};
+    drawPolarChart("polar_area_chart_destination", topDestinations.map(item => item.count), topDestinations.map(item => item.key));
 
 </script>
 </html>

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\DeviceStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Http;
 
 class Device extends Model
 {
@@ -38,5 +39,26 @@ class Device extends Model
         }
 
         return $status;
+    }
+
+    public static function record()
+    {
+        $responseCPU = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+            "page" => 1,
+            "username" => "prtgadmin",
+            "password" => "hgs_1qa@WS",
+            "content" => "",
+            "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
+            "filter_name" => "CPU Load",
+        ]);
+
+        foreach ($responseCPU->object()->{''} as $item) {
+            if ($item->value_raw !== '') {
+                Device::updateOrCreate(
+                    ['title' => $item->device_raw],
+                    ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw]
+                );
+            }
+        }
     }
 }
