@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Device;
 use App\Models\Firewall;
+use Illuminate\Support\Facades\Http;
 
 class DashBoardController extends Controller
 {
@@ -14,7 +15,7 @@ class DashBoardController extends Controller
 
     public function securityMonitoring()
     {
-        $firewall = new Firewall();
+        /*$firewall = new Firewall();
 
         $topAttacks = $firewall->getDashBoardTopAttack()["results"][0];
         $topAttacks = $this->recordPercentage($topAttacks);
@@ -50,7 +51,10 @@ class DashBoardController extends Controller
         if($device) {
 
             $tms["cpu_load_value"] = $device["cpu_load_value"];
-        }
+        }*/
+        $response = Http::get("http://hi-secure.ufeed.co.kr/api/secureMonitoring")->body();
+
+        dd($response);
 
         return view('user.dash-board.security_monitoring', [
             "topAttacks" => $topAttacks,
