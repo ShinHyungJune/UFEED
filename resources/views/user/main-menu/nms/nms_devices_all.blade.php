@@ -140,6 +140,80 @@
                                                             </ul>
                                                         </li>
                                                     @endforeach
+                                                    {{--TMS--}}
+                                                    <li class="directory-item active">
+                                                        <div class="directory-title">
+                                                            <div class="border"></div>
+                                                            {{ $devicesTMS->title }}
+                                                        </div>
+                                                        <ul class="directory-group directory-detail-group">
+                                                            <li class="directory-detail-item">
+                                                                <div class="state"></div>
+                                                                <p class="directory-detail-item-title">
+                                                                    Ping
+                                                                </p>
+                                                                <p class="directory-detail-item-txt">
+                                                                    {{ $devicesTMS->ping_value }} mses
+                                                                </p>
+                                                            </li>
+                                                            <li class="directory-detail-item">
+                                                                <div class="state"></div>
+                                                                <p class="directory-detail-item-title">
+                                                                    CPU Load
+                                                                </p>
+                                                                <p class="directory-detail-item-txt">
+                                                                    {{ $devicesTMS->cpu_load_value }}%
+                                                                </p>
+                                                            </li>
+                                                            <li class="directory-detail-item">
+                                                                <div class="state"></div>
+                                                                <p class="directory-detail-item-title">
+                                                                    Memory Load
+                                                                </p>
+                                                                <p class="directory-detail-item-txt">
+                                                                    30%
+                                                                </p>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    {{--NAC--}}
+                                                    @foreach($devicesNAC as $device)
+                                                        <li class="directory-item active">
+                                                            <div class="directory-title">
+                                                                <div class="border"></div>
+                                                                {{ $device->title }}
+                                                            </div>
+                                                            <ul class="directory-group directory-detail-group">
+                                                                <li class="directory-detail-item">
+                                                                    <div class="state"></div>
+                                                                    <p class="directory-detail-item-title">
+                                                                        Ping
+                                                                    </p>
+                                                                    <p class="directory-detail-item-txt">
+                                                                        {{ $device->ping_value }} mses
+                                                                    </p>
+                                                                </li>
+                                                                <li class="directory-detail-item">
+                                                                    <div class="state"></div>
+                                                                    <p class="directory-detail-item-title">
+                                                                        CPU Load
+                                                                    </p>
+                                                                    <p class="directory-detail-item-txt">
+                                                                        {{ $device->cpu_load_value }}%
+                                                                    </p>
+                                                                </li>
+                                                                <li class="directory-detail-item">
+                                                                    <div class="state"></div>
+                                                                    <p class="directory-detail-item-title">
+                                                                        Memory Load
+                                                                    </p>
+                                                                    <p class="directory-detail-item-txt">
+                                                                        30%
+                                                                    </p>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </li>
                                             <li class="directory-item active">

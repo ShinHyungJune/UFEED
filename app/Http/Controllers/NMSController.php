@@ -44,9 +44,12 @@ class NMSController extends Controller
         }
         $devicesFW1 = Device::whereTitle('FW1')->first();
         $devicesFW = Device::where('title', 'like', 'FW#%')->orderBy('title')->get();
+        $devicesTMS = Device::whereTitle('TMS')->first();
+        $devicesNAC = Device::where('title', 'like', 'NAC%')->orderByDesc('title')->get();
         $devicesL3 = Device::whereTitle('L3 Switch')->first();
 
-        return view('user.main-menu.nms.nms_devices_all')->with('devicesFW1', $devicesFW1)->with('devicesFW', $devicesFW)->with('devicesL3', $devicesL3);
+        return view('user.main-menu.nms.nms_devices_all')->with('devicesFW1', $devicesFW1)->with('devicesFW', $devicesFW)
+            ->with('devicesTMS', $devicesTMS)->with('devicesNAC', $devicesNAC)->with('devicesL3', $devicesL3);
     }
 
     public function favoriteDevices()
