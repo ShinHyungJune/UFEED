@@ -70,6 +70,9 @@ class HistoryController extends ApiController
         $devices = Device::get();
 
         foreach($devices as $device){
+            if($device->title == "FW#2" || $device->title == "FW#3" || $device->title == "FW#4" || $device->title == "FW#5" || $device->title == "FW#6")
+                $device->status = "Down";
+
             $device->byte = $device->histories()
                 ->where('created_at', '>=', Carbon::now()->subHours(24))
                 ->where('created_at', '<', Carbon::now())
