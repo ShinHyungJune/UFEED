@@ -16,7 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.js"></script>
-    <script src="/js/script.js"></script>
     <script src="/js/common.js"></script>
 
 {{--    <script src="/js/script.js"></script>--}}

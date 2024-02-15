@@ -1,6 +1,17 @@
 var ipsChart = null;
 var cncChart = null;
 
+window.domain = "http://localhost:90";
+// window.domain = "http://hi-secure.ufeed.co.kr";
+function openLoading(){
+    $("html").append('<span class="loader"></span>')
+}
+
+function closeLoading(){
+    $(".loader").remove();
+}
+
+
 $(document).ready(function(){
     $(".m-script-pop").unbind("click").bind("click", function (){
         var target = $(this).attr("data-target");
@@ -210,7 +221,7 @@ $(document).ready(function(){
             })
     }
 
-    var chart = null;
+    var realTimeTrafficChart = null;
 
     function drawChart(deviceTraffics) {
         var colors = [
@@ -226,7 +237,7 @@ $(document).ready(function(){
         ]
 
         //차트
-        const main_ctx = document.getElementById('chart');
+        const main_ctx = document.getElementById('realTimeTrafficChart');
 
         var firstDeviceTraffic = deviceTraffics[0];
 
@@ -242,14 +253,14 @@ $(document).ready(function(){
             };
         });
 
-        if (chart) {
-            chart.destroy();
+        if (realTimeTrafficChart) {
+            realTimeTrafficChart.destroy();
 
-            chart = null;
+            realTimeTrafficChart = null;
         }
 
         if(firstDeviceTraffic){
-            chart = new Chart(main_ctx, {
+            realTimeTrafficChart = new Chart(main_ctx, {
                 type: 'line',
                 data: {
                     // labels: firstDeviceTraffic.traffics.map((traffic) => clearTime(traffic.date)),
@@ -258,14 +269,13 @@ $(document).ready(function(){
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: true,
+                    maintainAspectRatio: false,
                     scales: {
                         y: {
                             beginAtZero: true,
                             min: 0,
                             ticks: {
-                                // forces step size to be 50 units
-                                stepSize: 20,
+                                stepSize: 20, //y축 단위
                                 font: function () {
                                     return {
                                         size: 10,
@@ -290,7 +300,7 @@ $(document).ready(function(){
                             labels: {
                                 font: function () {
                                     return {
-                                        size: 10,
+                                        size: 9,
                                         family: 'Pretendard'
                                     }
                                 },
@@ -300,14 +310,15 @@ $(document).ready(function(){
                             position: 'top',
                             fullWidth: false,
                         },
-                    }
-                },
-                elements: {
-                    point: {
-                        radius: 0, //선형 그래프 포인트 삭제
+                    },
+                    elements: {
+                        point: {
+                            radius: 0, //선형 그래프 포인트 삭제
+                        },
                     },
                 },
             });
+
         }
     }
 

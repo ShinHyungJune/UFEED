@@ -71,7 +71,7 @@
                 </div>-->
             </div>
             <div class="real-time-traffic-wrap">
-                <canvas id="chart"></canvas>
+                <canvas id="realTimeTrafficChart"></canvas>
             </div>
         </div>
 

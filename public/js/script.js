@@ -1,18 +1,7 @@
-
-window.domain = "http://localhost:90";
-// window.domain = "http://hi-secure.ufeed.co.kr";
-function openLoading(){
-    $("html").append('<span class="loader"></span>')
-}
-
-function closeLoading(){
-    $(".loader").remove();
-}
-
 $(document).ready(function(){
 
 
-    /*//헤더 푸터 컴포넌트
+    //헤더 푸터 컴포넌트
     $('#header').load('components/header.html', function (){
         let user = localStorage.getItem("user");
 
@@ -62,8 +51,7 @@ $(document).ready(function(){
     //대시보드 메뉴
     $('#dashboard_gnb').load('components/dashboard_detail_gnb.html', function (){});
 
-    */
-    $('#gnb').load('./components/gnb.html', function (){
+    $('#gnb').load('components/gnb.html', function (){
         // 메뉴 제어
         let pathname = location.pathname;
 
@@ -80,12 +68,8 @@ $(document).ready(function(){
             }
         })
     });
-    // 팝업창 제어
-    $(".m-script-pop").unbind("click").bind("click", function (){
-        let target = $(this).attr("data-target");
 
-        $(target).toggle();
-    });
+
 })
 
 
