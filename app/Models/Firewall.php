@@ -28,7 +28,7 @@ class Firewall extends Model
             ],
         ]);
 
-        $this->domain = config("app.env") === "production" ? "http://localhost:40007" : "https://118.130.110.156:40007";
+        $this->domain = config("app.env") === "production" ? "http://10.0.1.254:40007" : "https://118.130.110.156:40007";
     }
 
     public function getCountMalware()
