@@ -367,11 +367,11 @@
     });
 
     //polar-area-chart
-    const polarChart = document.getElementById('polar_area_chart_01');
+    var polarChart = document.getElementById('polar_area_chart_01');
 
     function truncateAndAppend(strings, maxLength = 10) {
-        const truncatedStrings = [];
-        const originalTitles = []; // 원래의 타이틀을 유지할 배열
+        var truncatedStrings = [];
+        var originalTitles = []; // 원래의 타이틀을 유지할 배열
         for (let string of strings) {
             if (string.length > maxLength) {
                 truncatedStrings.push(string.slice(0, maxLength) + "...");
@@ -384,9 +384,9 @@
         return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
     }
 
-    const labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
+    var labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
 
-    const { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+    var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
 
     new Chart(polarChart, {
         type: 'polarArea',
