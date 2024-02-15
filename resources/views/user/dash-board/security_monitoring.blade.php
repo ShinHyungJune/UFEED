@@ -38,9 +38,9 @@
                                 <p class="secutiry-monitoring-title">
                                     Detection Count
                                 </p>
-                                <p class="secutiry-monitoring-subtitle">
-                                    Last 24 hrs
-                                </p>
+{{--                                <p class="secutiry-monitoring-subtitle">--}}
+{{--                                    Last 24 hrs--}}
+{{--                                </p>--}}
                             </div>
 
                             <div class="secutiry-monitoring-top-chart">
@@ -55,9 +55,9 @@
                                 <p class="secutiry-monitoring-title">
                                     CPU
                                 </p>
-                                <p class="secutiry-monitoring-subtitle">
-                                    Last 1 mins
-                                </p>
+{{--                                <p class="secutiry-monitoring-subtitle">--}}
+{{--                                    Last 1 mins--}}
+{{--                                </p>--}}
                             </div>
 
                             <div class="secutiry-monitoring-top-chart">
@@ -72,9 +72,9 @@
                                 <p class="secutiry-monitoring-title">
                                     EPS (Event Per Second)
                                 </p>
-                                <p class="secutiry-monitoring-subtitle">
-                                    Last 1 mins
-                                </p>
+{{--                                <p class="secutiry-monitoring-subtitle">--}}
+{{--                                    Last 1 mins--}}
+{{--                                </p>--}}
                             </div>
 
                             <div class="secutiry-monitoring-top-chart">
@@ -94,13 +94,13 @@
                                     <p class="secutiry-monitoring-title">
                                         Top Attack
                                     </p>
-                                    <p class="secutiry-monitoring-subtitle">
-                                        Last 10 mins
-                                    </p>
+{{--                                    <p class="secutiry-monitoring-subtitle">--}}
+{{--                                        Last 10 mins--}}
+{{--                                    </p>--}}
                                 </div>
                                 <div class="secutiry-monitoring-mid-chart">
                                     <div class="polar-area-chart">
-                                        <canvas id="polar_area_chart_01"></canvas>
+                                        <canvas id="polar_area_chart_attack"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -254,13 +254,13 @@
                                     <p class="secutiry-monitoring-title">
                                         Top Victim
                                     </p>
-                                    <p class="secutiry-monitoring-subtitle">
-                                        Last 10 mins
-                                    </p>
+{{--                                    <p class="secutiry-monitoring-subtitle">--}}
+{{--                                        Last 10 mins--}}
+{{--                                    </p>--}}
                                 </div>
                                 <div class="secutiry-monitoring-mid-chart">
                                     <div class="polar-area-chart">
-                                        <canvas id="polar_area_chart_02"></canvas>
+                                        <canvas id="polar_area_chart_victim"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -412,15 +412,15 @@
                             <div class="secutiry-monitoring-mid-chart-wrap">
                                 <div class="secutiry-monitoring-title-wrap">
                                     <p class="secutiry-monitoring-title">
-                                        Top Attack
+                                        Top Attacker
                                     </p>
-                                    <p class="secutiry-monitoring-subtitle">
-                                        Last 10 mins
-                                    </p>
+{{--                                    <p class="secutiry-monitoring-subtitle">--}}
+{{--                                        Last 10 mins--}}
+{{--                                    </p>--}}
                                 </div>
                                 <div class="secutiry-monitoring-mid-chart">
                                     <div class="polar-area-chart">
-                                        <canvas id="polar_area_chart_03"></canvas>
+                                        <canvas id="polar_area_chart_attacker"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -577,7 +577,7 @@
                                 </div>
                                 <div class="secutiry-monitoring-mid-chart">
                                     <div class="polar-area-chart">
-                                        <canvas id="polar_area_chart_04"></canvas>
+                                        <canvas id="polar_area_chart_source"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -734,7 +734,7 @@
                                 </div>
                                 <div class="secutiry-monitoring-mid-chart">
                                     <div class="polar-area-chart">
-                                        <canvas id="polar_area_chart_05"></canvas>
+                                        <canvas id="polar_area_chart_destination"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1041,26 +1041,11 @@
     });
 
     //polar-area-chart
-    const polarChart = document.getElementById('polar_area_chart_01');
+    var polarChart = document.getElementById('polar_area_chart_attack');
 
-    function truncateAndAppend(strings, maxLength = 10) {
-        const truncatedStrings = [];
-        const originalTitles = []; // 원래의 타이틀을 유지할 배열
-        for (let string of strings) {
-            if (string.length > maxLength) {
-                truncatedStrings.push(string.slice(0, maxLength) + "...");
-                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
-            } else {
-                truncatedStrings.push(string);
-                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
-            }
-        }
-        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
-    }
+    var labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
 
-    const labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
-
-    const { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+    var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
 
     new Chart(polarChart, {
         type: 'polarArea',

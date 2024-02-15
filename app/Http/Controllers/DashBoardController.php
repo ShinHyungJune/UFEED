@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Firewall;
+
 class DashBoardController extends Controller
 {
     public function index()
@@ -11,6 +13,14 @@ class DashBoardController extends Controller
 
     public function securityMonitoring()
     {
+        $firewall = new Firewall();
+        $topAttack = $firewall->getDashBoardTopAttack();
+        $topVictim = $firewall->getDashBoardTopVictim();
+        $topAttacker = $firewall->getDashBoardTopAttacker();
+        $topSource = $firewall->getDashBoardTopSource();
+        $topDestination = $firewall->getDashBoardTopDestination();
+
+//        dd($topAttack['count'], $topAttack["results"][0], $topVictim['count'], $topVictim["results"][0], $topAttacker['count'], $topAttacker["results"][0], $topSource['count'], $topSource["results"][0], $topDestination['count'], $topDestination["results"][0]);
         return view('user.dash-board.security_monitoring');
     }
 
