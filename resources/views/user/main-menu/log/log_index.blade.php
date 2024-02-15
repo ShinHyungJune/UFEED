@@ -20,71 +20,25 @@
     <div class="dashboard">
         <div class="subpage">
             <div class="subpage-table-container">
-                <div class="dashboard-menu-wrap col-group">
-                    <div class="dashboard-menu-nav col-group">
-                        <div class="dashboard-menu-nav-item">
-                            Main Menu
-                        </div>
-                        <i class="icon xi-angle-right"></i>
-                        <div class="dashboard-menu-nav-item active">
-                            Log
-                        </div>
-                    </div>
-                    <!--                        <div class="dashboard-menu-group col-group">
-                                                <div class="dashboard-menu-item">
-                                                    Overview
-                                                </div>
-                                                <div class="dashboard-menu-item">
-                                                    Daily
-                                                </div>
-                                                <div class="dashboard-menu-item">
-                                                    Weekly
-                                                </div>
-                                                <div class="dashboard-menu-item">
-                                                    Monthly
-                                                </div>
-                                                <div class="dashboard-menu-item">
-                                                    Historic Data
-                                                </div>
-                                            </div>-->
-                </div>
-
-                <!--                    <div class="log-date-input-wrap col-group">
-                                        <div class="log-date-input-group">
-                                            <input type="text" class="log-date-input datepicker-start" placeholder="Start">
-                                            <i class="xi-calendar icon"></i>
-                                        </div>
-                                        <div class="log-date-input-group">
-                                            <input type="text" class="log-date-input datepicker-end" placeholder="End">
-                                            <i class="xi-calendar icon"></i>
-                                        </div>
-                                    </div>-->
-
                 <div class="subpage-table-wrap account-table-wrap">
-                    <table class="">
+                    <table class="log-table">
                         <colgroup>
                             <col width="24px">
                         </colgroup>
                         <thead>
                         <th></th>
                         <th>
-                            Date Time
-                        </th>
-                        <th>
                             Device
                         </th>
                         <th>
                             Message
                         </th>
-                        <!--                                <th>
-                                                            Object
-                                                        </th>-->
                         <th>
                             Status
                         </th>
-                        <!--                                <th>
-                                                            message
-                                                        </th>-->
+                        <th>
+                            Sensor
+                        </th>
                         </thead>
                         <tbody>
 
@@ -121,11 +75,11 @@
 
                 realTimeNotifications.map(item => {
                     $(".log-table tbody").append(`<tr>
-<td><div class="state state-bar ${item.status}"></div></td>
-<td>${item.logged_at}</td>
+<td></td>
 <td>${item.device.title}</td>
-<td>${item.device.status}</td>
 <td>${item.message}</td>
+<td>${item.status}</td>
+<td>${item.sensor}</td>
 </tr>`);
                 })
             }
