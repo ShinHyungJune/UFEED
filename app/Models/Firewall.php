@@ -13,6 +13,8 @@ class Firewall extends Model
 
     protected $client;
 
+    protected $domain;
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -25,6 +27,8 @@ class Firewall extends Model
                 "apikey" => "9cca64cc626fe90094b6432172e50351"
             ],
         ]);
+
+        $this->domain = config("app.env") === "production" ? "http://localhost:40007" : "https://118.130.110.156:40007";
     }
 
     public function getCountMalware()
@@ -32,7 +36,7 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
 
         return json_decode($response->getBody(), true)["objects"][0]["count"];
     }
@@ -42,7 +46,7 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps");
 
         return json_decode($response->getBody(), true)["objects"][0]["count"];
     }
@@ -52,7 +56,7 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
 
         return json_decode($response->getBody(), true)["objects"][0]["count"];
     }
@@ -61,7 +65,7 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&attribute=rxbyte&query=devicename:{$device} and type:firewall&groupBySort=SUM");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&attribute=rxbyte&query=devicename:{$device} and type:firewall&groupBySort=SUM");
 
 
         $items = json_decode($response->getBody(), true)["objects"][0]["results"][0];
@@ -96,7 +100,7 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,attackname&query=module:tgIps");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,attackname&query=module:tgIps");
 
         return json_decode($response->getBody(), true)["objects"][0]["results"][0];
     }
@@ -106,7 +110,7 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module%3AmalwareBlock&limit=0&reverse=true");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module%3AmalwareBlock&limit=0&reverse=true");
 
         return json_decode($response->getBody(), true)["objects"][0]["results"];
     }
@@ -117,8 +121,8 @@ class Firewall extends Model
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
 
-        // $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgCnc and devicename={$device}}");
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,dip&query=module:tgCnc");
+        // $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgCnc and devicename={$device}}");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip,dip&query=module:tgCnc");
 
         $items = json_decode($response->getBody(), true)["objects"][0]["results"][0];
 
@@ -176,7 +180,7 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=attackname&query=module:tgIps");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=attackname&query=module:tgIps");
         return json_decode($response->getBody(), true)["objects"][0];
     }
 
@@ -184,7 +188,7 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=dip&query=module:tgIps");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=dip&query=module:tgIps");
         return json_decode($response->getBody(), true)["objects"][0];
     }
 
@@ -192,7 +196,7 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgIps");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&query=module:tgIps");
         return json_decode($response->getBody(), true)["objects"][0];
     }
 
@@ -200,7 +204,7 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&attribute=rxbyte,txbyte&query=type:firewall&groupBysort=sum");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=sip&attribute=rxbyte,txbyte&query=type:firewall&groupBysort=sum");
         return json_decode($response->getBody(), true)["objects"][0];
     }
 
@@ -208,13 +212,13 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=dip&attribute=rxbyte,txbyte&query=type:firewall&groupBysort=sum");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=CUSTOM&startDate={$start}&endDate={$end}&criteria=dip&attribute=rxbyte,txbyte&query=type:firewall&groupBysort=sum");
         return json_decode($response->getBody(), true)["objects"][0];
     }
 
     public function getDashboardTms()
     {
-        $response = $this->client->request("get", "https://118.130.110.156:40007/restapi/tm/v1/log/aggregate/top?searchType=DAY&criteria=devicename&query=AND NOT device:TMS");
+        $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/aggregate/top?searchType=DAY&criteria=devicename&query=AND NOT device:TMS");
         return json_decode($response->getBody(), true)["objects"][0];
     }
 }
