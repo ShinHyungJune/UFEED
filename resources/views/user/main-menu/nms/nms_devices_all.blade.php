@@ -91,7 +91,7 @@
                                                                     {{ $devicesFW1->cpu_load_value }}%
                                                                 </p>
                                                             </li>
-                                                            <li class="directory-detail-item">
+<!--                                                            <li class="directory-detail-item">
                                                                 <div class="state"></div>
                                                                 <p class="directory-detail-item-title">
                                                                     Memory Load
@@ -99,7 +99,7 @@
                                                                 <p class="directory-detail-item-txt">
                                                                     30%
                                                                 </p>
-                                                            </li>
+                                                            </li>-->
                                                         </ul>
                                                     </li>
                                                     {{--FW#--}}
@@ -128,7 +128,7 @@
                                                                         {{ $device->cpu_load_value }}%
                                                                     </p>
                                                                 </li>
-                                                                <li class="directory-detail-item">
+<!--                                                                <li class="directory-detail-item">
                                                                     <div class="state"></div>
                                                                     <p class="directory-detail-item-title">
                                                                         Memory Load
@@ -136,7 +136,7 @@
                                                                     <p class="directory-detail-item-txt">
                                                                         30%
                                                                     </p>
-                                                                </li>
+                                                                </li>-->
                                                             </ul>
                                                         </li>
                                                     @endforeach
@@ -165,7 +165,7 @@
                                                                     {{ $devicesTMS->cpu_load_value }}%
                                                                 </p>
                                                             </li>
-                                                            <li class="directory-detail-item">
+<!--                                                            <li class="directory-detail-item">
                                                                 <div class="state"></div>
                                                                 <p class="directory-detail-item-title">
                                                                     Memory Load
@@ -173,7 +173,7 @@
                                                                 <p class="directory-detail-item-txt">
                                                                     30%
                                                                 </p>
-                                                            </li>
+                                                            </li>-->
                                                         </ul>
                                                     </li>
                                                     {{--NAC--}}
@@ -202,7 +202,7 @@
                                                                         {{ $device->cpu_load_value }}%
                                                                     </p>
                                                                 </li>
-                                                                <li class="directory-detail-item">
+<!--                                                                <li class="directory-detail-item">
                                                                     <div class="state"></div>
                                                                     <p class="directory-detail-item-title">
                                                                         Memory Load
@@ -210,7 +210,7 @@
                                                                     <p class="directory-detail-item-txt">
                                                                         30%
                                                                     </p>
-                                                                </li>
+                                                                </li>-->
                                                             </ul>
                                                         </li>
                                                     @endforeach
@@ -246,7 +246,7 @@
                                                                     {{ $devicesL3->cpu_load_value }}%
                                                                 </p>
                                                             </li>
-                                                            <li class="directory-detail-item">
+<!--                                                            <li class="directory-detail-item">
                                                                 <div class="state"></div>
                                                                 <p class="directory-detail-item-title">
                                                                     Memory Load
@@ -254,7 +254,7 @@
                                                                 <p class="directory-detail-item-txt">
                                                                     30%
                                                                 </p>
-                                                            </li>
+                                                            </li>-->
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -289,7 +289,7 @@
                                                                     1%
                                                                 </p>
                                                             </li>
-                                                            <li class="directory-detail-item">
+<!--                                                            <li class="directory-detail-item">
                                                                 <div class="state"></div>
                                                                 <p class="directory-detail-item-title">
                                                                     Memory Load
@@ -297,7 +297,7 @@
                                                                 <p class="directory-detail-item-txt">
                                                                     30%
                                                                 </p>
-                                                            </li>
+                                                            </li>-->
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -336,7 +336,7 @@
                                                     1%
                                                 </p>
                                             </li>
-                                            <li class="directory-detail-item">
+<!--                                            <li class="directory-detail-item">
                                                 <div class="state"></div>
                                                 <p class="directory-detail-item-title">
                                                     Memory Load
@@ -344,7 +344,7 @@
                                                 <p class="directory-detail-item-txt">
                                                     30%
                                                 </p>
-                                            </li>
+                                            </li>-->
                                         </ul>
                                     </li>
                                 </ul>
