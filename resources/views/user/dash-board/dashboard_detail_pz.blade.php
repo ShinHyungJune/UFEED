@@ -47,14 +47,14 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up" data-title="Shaft Generator System">
+                            <div class="device-item device-btn down" data-title="Shaft Generator System">
                                 <div class="state state-num">6</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Shaft Generator System
                                 </p>
                             </div>
-                            <div class="device-item device-btn up" data-title="Refeer Container Monitoring System">
+                            <div class="device-item device-btn down" data-title="Refeer Container Monitoring System">
                                 <div class="state state-num">3</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">

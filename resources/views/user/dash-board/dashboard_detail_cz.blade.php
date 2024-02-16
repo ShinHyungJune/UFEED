@@ -47,35 +47,35 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop1" data-title="MF/HF/DSC Radio">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop1" data-title="MF/HF/DSC Radio">
                                 <div class="state state-num">6</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     MF/HF/DSC Radio
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop2" data-title="NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop2" data-title="NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)">
                                 <div class="state state-num">8</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop3" data-title="DGPS Navigator">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop3" data-title="DGPS Navigator">
                                 <div class="state state-num">5</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     DGPS Navigator
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop4" data-title="Auto Telephone System">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop4" data-title="Auto Telephone System">
                                 <div class="state state-num">6</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Auto Telephone System
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop5" data-title="Ship's Network System">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop5" data-title="Ship's Network System">
                                 <div class="state state-num">5</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
@@ -85,7 +85,7 @@
                         </div>
                         <div class="device-item-group device-item-sub-group" style="top: 400px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop6" data-title="VSAT (incl. Smart Ship Solution System)">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop6" data-title="VSAT (incl. Smart Ship Solution System)">
                                 <div class="state state-num">6</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">

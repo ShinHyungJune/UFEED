@@ -47,15 +47,15 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up" data-title="Desktop">
+                            <div class="device-item device-btn down" data-title="Desktop">
                                 <div class="state state-num">8</div>
                                 <img src="/images/dashboard_icon_desktop.png" alt="">
                             </div>
-                            <div class="device-item device-btn up" data-title="Notebook">
+                            <div class="device-item device-btn down" data-title="Notebook">
                                 <div class="state state-num">7</div>
                                 <img src="/images/dashboard_icon_notebook.png" alt="">
                             </div>
-                            <div class="device-item device-btn up" data-title="Cellphone">
+                            <div class="device-item device-btn down" data-title="Cellphone">
                                 <div class="state state-num">12</div>
                                 <img src="/images/dashboard_icon_cellphone.png" alt="">
                                 <p class="device-item-title">
