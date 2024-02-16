@@ -348,6 +348,12 @@
                                         </ul>
                                     </li>
                                 </ul>
+                            </li>
+                            <li class="directory-item active">
+                                <div class="directory-title">
+                                    <div class="border"></div>
+                                    Communication Zone
+                                </div>
                                 <ul class="directory-group directory-sub-group">
                                     <li class="directory-item active">
                                         <div class="directory-title">
@@ -373,18 +379,24 @@
                                                     1%
                                                 </p>
                                             </li>
-<!--                                            <li class="directory-detail-item">
-                                                <div class="state"></div>
-                                                <p class="directory-detail-item-title">
-                                                    Memory Load
-                                                </p>
-                                                <p class="directory-detail-item-txt">
-                                                    30%
-                                                </p>
-                                            </li>-->
+                                            <!--                                            <li class="directory-detail-item">
+                                                                                            <div class="state"></div>
+                                                                                            <p class="directory-detail-item-title">
+                                                                                                Memory Load
+                                                                                            </p>
+                                                                                            <p class="directory-detail-item-txt">
+                                                                                                30%
+                                                                                            </p>
+                                                                                        </li>-->
                                         </ul>
                                     </li>
                                 </ul>
+                            </li>
+                            <li class="directory-item active">
+                                <div class="directory-title">
+                                    <div class="border"></div>
+                                    Control & Instrumentation Zone
+                                </div>
                                 <ul class="directory-group directory-sub-group">
                                     <li class="directory-item active">
                                         <div class="directory-title">
@@ -410,15 +422,15 @@
                                                     1%
                                                 </p>
                                             </li>
-<!--                                            <li class="directory-detail-item">
-                                                <div class="state"></div>
-                                                <p class="directory-detail-item-title">
-                                                    Memory Load
-                                                </p>
-                                                <p class="directory-detail-item-txt">
-                                                    30%
-                                                </p>
-                                            </li>-->
+                                            <!--                                            <li class="directory-detail-item">
+                                                                                            <div class="state"></div>
+                                                                                            <p class="directory-detail-item-title">
+                                                                                                Memory Load
+                                                                                            </p>
+                                                                                            <p class="directory-detail-item-txt">
+                                                                                                30%
+                                                                                            </p>
+                                                                                        </li>-->
                                         </ul>
                                     </li>
                                 </ul>
