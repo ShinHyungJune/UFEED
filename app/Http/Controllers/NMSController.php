@@ -43,6 +43,7 @@ class NMSController extends Controller
             "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
             "filter_name" => "CPU Load",
         ]);
+
         foreach ($responseCPU->object()->{''} as $item) {
             if ($item->value_raw !== '') {
                 Device::updateOrCreate(
