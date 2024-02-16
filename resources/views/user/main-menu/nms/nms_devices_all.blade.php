@@ -348,6 +348,80 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                <ul class="directory-group directory-sub-group">
+                                    <li class="directory-item active">
+                                        <div class="directory-title">
+                                            <div class="border"></div>
+                                            Ship's Network System
+                                        </div>
+                                        <ul class="directory-group directory-detail-group">
+                                            <li class="directory-detail-item">
+                                                <div class="state"></div>
+                                                <p class="directory-detail-item-title">
+                                                    Ping
+                                                </p>
+                                                <p class="directory-detail-item-txt">
+                                                    0 mses
+                                                </p>
+                                            </li>
+                                            <li class="directory-detail-item">
+                                                <div class="state"></div>
+                                                <p class="directory-detail-item-title">
+                                                    CPU Load
+                                                </p>
+                                                <p class="directory-detail-item-txt">
+                                                    1%
+                                                </p>
+                                            </li>
+<!--                                            <li class="directory-detail-item">
+                                                <div class="state"></div>
+                                                <p class="directory-detail-item-title">
+                                                    Memory Load
+                                                </p>
+                                                <p class="directory-detail-item-txt">
+                                                    30%
+                                                </p>
+                                            </li>-->
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="directory-group directory-sub-group">
+                                    <li class="directory-item active">
+                                        <div class="directory-title">
+                                            <div class="border"></div>
+                                            M/E Control System
+                                        </div>
+                                        <ul class="directory-group directory-detail-group">
+                                            <li class="directory-detail-item">
+                                                <div class="state"></div>
+                                                <p class="directory-detail-item-title">
+                                                    Ping
+                                                </p>
+                                                <p class="directory-detail-item-txt">
+                                                    0 mses
+                                                </p>
+                                            </li>
+                                            <li class="directory-detail-item">
+                                                <div class="state"></div>
+                                                <p class="directory-detail-item-title">
+                                                    CPU Load
+                                                </p>
+                                                <p class="directory-detail-item-txt">
+                                                    1%
+                                                </p>
+                                            </li>
+<!--                                            <li class="directory-detail-item">
+                                                <div class="state"></div>
+                                                <p class="directory-detail-item-title">
+                                                    Memory Load
+                                                </p>
+                                                <p class="directory-detail-item-txt">
+                                                    30%
+                                                </p>
+                                            </li>-->
+                                        </ul>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
