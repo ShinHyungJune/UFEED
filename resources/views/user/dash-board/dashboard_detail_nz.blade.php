@@ -47,35 +47,35 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop1" data-title="Automatic Identification System">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop1" data-title="Automatic Identification System">
                                 <div class="state state-num">6</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Automatic Identification System
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop2" data-title="Voyage Data Recorder">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop2" data-title="Voyage Data Recorder">
                                 <div class="state state-num">7</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Voyage Data Recorder
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop3" data-title="Navigation Assistance System">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop3" data-title="Navigation Assistance System">
                                 <div class="state"></div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Navigation Assistance System
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop4" data-title="Echo Sounder">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop4" data-title="Echo Sounder">
                                 <div class="state state-num">9</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Echo Sounder
                                 </p>
                             </div>
-                            <div class="device-item device-btn up m-script-pop" data-target="#pop5" data-title="Doppler Speed Log">
+                            <div class="device-item device-btn down m-script-pop" data-target="#pop5" data-title="Doppler Speed Log">
                                 <div class="state state-num">7</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
