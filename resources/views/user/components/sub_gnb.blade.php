@@ -22,169 +22,73 @@
                 </div>
 
                 <div class="sub-gnb-menu-list row-group">
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Policy
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                    <a href="https://118.130.110.156:40007" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                TMS
+                            </div>
                         </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('firewall.policy') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    IPv4 Policy
-                                </div>
-                            </a>
+                    </a>
+                    <a href="https://118.130.110.156:50005" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                FW#1
+                            </div>
                         </div>
-                    </div>
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            NAT
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                    </a>
+                    <a href="https://118.130.110.156:40002" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                FW#2
+                            </div>
                         </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('firewall.nat') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    NAT Policy
-                                </div>
-                            </a>
+                    </a>
+                    <a href="https://118.130.110.156:40003" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                FW#3
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                    <a href="https://118.130.110.156:40004" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                FW#4
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://118.130.110.156:40005" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                FW#5
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://118.130.110.156:40006" target="_blank">
+                        <div class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                FW#6
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <div class="gnb-menu">
-                <div class="gnb-menu-title col-group">
-                    NAC
-                    <i class="xi-angle-down-min icon toggle-icon"></i>
-                </div>
-
-                <div class="sub-gnb-menu-list row-group">
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Management
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
-                        </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('nac.node') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    Node
-                                </div>
-                            </a>
-                            <a href="{{ route('nac.ip-address') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    IP Address
-                                </div>
-                            </a>
-                            <a href="{{ route('nac.wlan') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    WLAN
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Log
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
-                        </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('nac.log') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    Log
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            System
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
-                        </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('nac.license') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    License
-                                </div>
-                            </a>
-                        </div>
+            <a href="http://118.130.110.156:9554" target="_blank">
+                <div class="gnb-menu">
+                    <div class="gnb-menu-title col-group">
+                        NAC
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="gnb-menu">
-                <div class="gnb-menu-title col-group">
-                    NMS
-                    <i class="xi-angle-down-min icon toggle-icon"></i>
+            <a href="http://118.130.110.156:8080/index.htm" target="_blank">
+                <div class="gnb-menu">
+                    <div class="gnb-menu-title col-group">
+                        NMS
+                    </div>
                 </div>
-
-                <div class="sub-gnb-menu-list row-group">
-
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Devices
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
-                        </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('nms.devices') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    All
-                                </div>
-                            </a>
-{{--                            <a href="{{ route('nms.favorite-devices') }}" class="sub-gnb-menu">--}}
-{{--                                <div class="sub-gnb-menu-title col-group">--}}
-{{--                                    Favorite Devices--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a href="{{ route('nms.dependencies') }}" class="sub-gnb-menu">--}}
-{{--                                <div class="sub-gnb-menu-title col-group">--}}
-{{--                                    Dependencies--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-                        </div>
-                    </div>
-
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Reports
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
-                        </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('nms.reports') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    All
-                                </div>
-                            </a>
-{{--                            <a href="{{ route('nms.add-report') }}" class="sub-gnb-menu">--}}
-{{--                                <div class="sub-gnb-menu-title col-group">--}}
-{{--                                    Add Report--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-                        </div>
-                    </div>
-
-                    <div class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Logs
-                            <i class="xi-angle-down-min icon toggle-icon"></i>
-                        </div>
-
-                        <div class="sub-gnb-menu-list row-group">
-                            <a href="{{ route('nms.logs') }}" class="sub-gnb-menu">
-                                <div class="sub-gnb-menu-title col-group">
-                                    All
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            </a>
 
             <div class="gnb-menu">
                 <a href="{{ route('log.index') }}" class="gnb-menu-title col-group">
@@ -519,11 +423,11 @@
 </script>
 <script>
 
-    function openLoading(){
+    function openLoading() {
         $("html").append('<span class="loader"></span>')
     }
 
-    function closeLoading(){
+    function closeLoading() {
         $(".loader").remove();
     }
 
