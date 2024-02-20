@@ -280,7 +280,7 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 .traffic-top-item .byte { font-size: 14px; line-height: 1.25; width: 72px; text-align: right; }
 
 /* 좌측 메뉴 - 대시보드 - 피자 차트 */
-.dashboard-gnb-tab-wrap { display: flex; justify-content: space-between; margin-bottom: 24px; }
+.dashboard-gnb-tab-wrap { display: flex; justify-content: space-between; }
 .dashboard-gnb-tab-wrap .more-btn { width: 20px; height: 20px; }
 .dashboard-gnb-tab-list { display: flex; width: calc( 100% - 20px ); gap: 20px; padding-bottom: 8px; border-bottom: 1px solid #e4e4e4; }
 .dashboard-gnb-tab { font-size: 14px; font-weight: 500; color: #7f7f7f; position: relative; cursor: pointer; }
@@ -300,7 +300,7 @@ tbody .state.red {
 }
 
 .polar-area-chart {
-    width: 260px; height: 260px; display: none;
+    width: 260px; height: 260px; display: none; position: relative;
     /* position: relative;
     background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; */
 }
@@ -326,6 +326,8 @@ tbody .state.red {
 .polar-area-chart-item .hover-box .detail-group .title { font-size: 12px; font-weight: 600; padding-right: 5px; position: relative; margin-right: 5px; line-height: 1.25; }
 .polar-area-chart-item .hover-box .detail-group .title::after { content: ':'; display: block; position: absolute; right: 0; top: 0; font-size: 12px; font-weight: 600; color: #292d33; }
 .polar-area-chart-item .hover-box .detail-group .txt { font-size: 12px; font-weight: 400; line-height: 1.25; }
+
+.polar-area-chart .time { position: absolute; top: 8px; left: 0; font-size: 10px; padding: 4px 8px; background: #f5f5f5; border-radius: 12px; }
 
 /* .polar-area-chart { width: 240px; height: 240px; position: relative; }
 .polar-area-chart-item { height: 120px; width: 80px; position: absolute; left: 50%; top: 50%; clip-path: polygon(50% 100%, 0 0, 100% 0); transform-origin: 50% 100%; transition: .3s; }
@@ -521,7 +523,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .legend-item .color-box.red { background: #ff4620; }
 
 /* 대시보드 - 상세 */
-.dashboard-detail-title-wrap { padding: 24px; border-radius: 8px; background: #f5f5f5; gap: 16px; }
+.dashboard-detail-title-wrap { padding: 24px; border-radius: 8px; background: #f5f5f5; gap: 16px; position: relative; }
 .dashboard-detail-title-wrap .prev-btn { width: 56px; height: 56px; border-radius: 8px; background: #fff; text-align: center; }
 .dashboard-detail-title-wrap .prev-btn i { font-size: 34px; line-height: 56px; color: #aaa; }
 .dashboard-detail-title { font-size: 32px; font-weight: bold; line-height: 1.75; }
@@ -543,6 +545,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 
 
 /* 대시보드 - Security Monitoring */
+.dashboard-detail-subtitle { font-size: 24px; font-weight: normal; color: #aaa; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); }
 .secutiry-monitoring-wrap { padding: 40px; }
 .secutiry-monitoring-top-wrap { padding-bottom: 24px; border-bottom: 3px solid #e4e4e4; margin-bottom: 24px; display: flex; gap: 24px; }
 .secutiry-monitoring-top-item { width: calc( ( 100% - 24px * 2 ) / 3 ); background: #fff; border-radius: 8px; }
