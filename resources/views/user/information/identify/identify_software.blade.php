@@ -19,22 +19,18 @@
     <!-- 대시보드 -->
     <div class="dashboard">
         <div class="subpage">
-
             <div class="subpage-table-container">
-                <!-- <div class="subpage-table-btn-wrap col-group">
-                    <a href="identify_hardware_add.html" class="subpage-table-btn">
+                <div class="subpage-table-btn-wrap col-group">
+                    <a href="" class="subpage-table-btn">
                         Add
                     </a>
-                    <a href="identify_hardware_del.html" class="subpage-table-btn">
+                    <button class="subpage-table-btn" type="button">
                         Delete
-                    </a>
-                    <button class="subpage-table-btn">
-                        Save
                     </button>
-                    <button class="subpage-table-btn">
-                        Export
+                    <button href="" class="subpage-table-btn" id="modify">
+                        Modify
                     </button>
-                </div> -->
+                </div>
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table">
                         <colgroup>

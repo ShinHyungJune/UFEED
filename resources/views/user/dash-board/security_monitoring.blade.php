@@ -29,6 +29,9 @@
                     <h2 class="dashboard-detail-title">
                         Security Monitoring
                     </h2>
+                    <p class="dashboard-detail-subtitle">
+                        Last 24 hrs
+                    </p>
                 </div>
 
                 <div class="secutiry-monitoring-wrap dashboard-content">

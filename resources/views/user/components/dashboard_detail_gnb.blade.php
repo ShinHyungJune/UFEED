@@ -12,6 +12,9 @@
     <div class="dashboard-gnb-container row-group">
 
         <div class="dashboard-gnb-wrap">
+            <p class="dashboard-gnb-title">
+                {{ $dashboardGnbTitle ?? 'dashboardGnbTitle' }}
+            </p>
             <div class="dashboard-standard-wrap col-group">
                 <div class="dashboard-standard-item up row-group m-script-pop" data-target=".modal-devices-up">
                     <div class="num">

@@ -13,7 +13,7 @@
 
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
-            @include('user.components.dashboard_detail_gnb')
+            @include('user.components.dashboard_detail_gnb', ['dashboardGnbTitle' => 'Power Zone'])
         </div>
         <!-- //좌측 메뉴 -->
     </div>

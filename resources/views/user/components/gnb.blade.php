@@ -263,9 +263,15 @@
             </div>
 
             <div class="polar-area-chart active" id="tab_01">
+                <div class="time">
+                    Last 10 mins
+                </div>
                 <canvas id="polar_area_chart_01"></canvas>
             </div>
             <div class="polar-area-chart" id="tab_02">
+                <div class="time">
+                    Last 10 mins
+                </div>
                 <canvas id="polar_area_chart_02"></canvas>
             </div>
 <!--            <div class="polar-area-chart" id="tab_03">
