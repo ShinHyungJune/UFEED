@@ -289,10 +289,10 @@
             <div class="modal-table-wrap account-table-wrap">
                 <table>
                     <colgroup>
-                        <col width="78px">
+                        <col width="98px">
                         <col width="170px">
                         <col width="150px">
-                        <col width="150px">
+                        <col width="170px">
                         <col width="64px">
                     </colgroup>
                     <thead>
@@ -339,11 +339,11 @@
             <div class="modal-table-wrap account-table-wrap">
                 <table>
                     <colgroup>
-                        <col width="78px">
-                        <col width="90px">
+                        <col width="98px">
                         <col width="170px">
-                        <col width="200px">
-                        <col width="80px">
+                        <col width="150px">
+                        <col width="170px">
+                        <col width="64px">
                     </colgroup>
                     <thead>
                     <th>
