@@ -432,7 +432,7 @@
     }
 
     // 팝업창 제어
-    $/*(".m-script-pop").click(function (){
+    /*$(".m-script-pop").click(function (){
         var target = $(this).attr("data-target");
 
         $(target).toggle();
