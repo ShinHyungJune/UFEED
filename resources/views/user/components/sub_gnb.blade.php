@@ -166,12 +166,12 @@
                 </div>
 
                 <div class="sub-gnb-menu-list row-group">
-                    <a href="{{ route('information.hardware') }}" class="sub-gnb-menu">
+                    <a href="{{ route('hardware.index') }}" class="sub-gnb-menu">
                         <div class="sub-gnb-menu-title col-group">
                             Hardware
                         </div>
                     </a>
-                    <a href="{{ route('information.software') }}" class="sub-gnb-menu">
+                    <a href="{{ route('software.index') }}" class="sub-gnb-menu">
                         <div class="sub-gnb-menu-title col-group">
                             Software
                         </div>

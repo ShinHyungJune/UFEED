@@ -121,8 +121,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('information')->group(function () {
         Route::prefix('identify')->group(function () {
-            Route::get('/hardware', [\App\Http\Controllers\InformationController::class, 'hardware'])->name('information.hardware');
-            Route::get('/software', [\App\Http\Controllers\InformationController::class, 'software'])->name('information.software');
+            Route::resource('hardware', \App\Http\Controllers\HardwareController::class)->only(['index', 'store']);
+            Route::resource('software', \App\Http\Controllers\SoftwareController::class)->only(['index', 'store']);
         });
         Route::prefix('protect')->group(function () {
             Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');

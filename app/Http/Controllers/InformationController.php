@@ -4,16 +4,6 @@ namespace App\Http\Controllers;
 
 class InformationController extends Controller
 {
-    public function hardware()
-    {
-        return view('user.information.identify.identify_hardware');
-    }
-
-    public function software()
-    {
-        return view('user.information.identify.identify_software');
-    }
-
     public function safeGuard()
     {
         return view('user.information.protect.protect_safeguard');
