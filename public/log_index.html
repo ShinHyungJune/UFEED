@@ -9,7 +9,9 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- datepicker -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -38,7 +40,7 @@
                                 Log
                             </div>
                         </div>
-<!--                        <div class="dashboard-menu-group col-group">
+                        <!--                        <div class="dashboard-menu-group col-group">
                             <div class="dashboard-menu-item">
                                 Overview
                             </div>
@@ -57,7 +59,7 @@
                         </div>-->
                     </div>
 
-<!--                    <div class="log-date-input-wrap col-group">
+                    <!--                    <div class="log-date-input-wrap col-group">
                         <div class="log-date-input-group">
                             <input type="text" class="log-date-input datepicker-start" placeholder="Start">
                             <i class="xi-calendar icon"></i>
@@ -76,11 +78,14 @@
                         </div>
                         <table class="">
                             <colgroup>
-                                <col width="140px">
-                                <col width="calc( ( 100% - 304px ) / 2 )">
-                                <col width="140px">
+                                <col width="8%">
+                                <col width="10%">
+                                <col width="36%">
+                                <col width="10%">
+                                <col width="36%">
                             </colgroup>
                             <thead>
+                                <th></th>
                                 <th>
                                     Date Time
                                 </th>
@@ -90,17 +95,51 @@
                                 <th>
                                     Message
                                 </th>
-<!--                                <th>
+                                <!--                                <th>
                                     Object
                                 </th>-->
                                 <th>
                                     Status
                                 </th>
-<!--                                <th>
+                                <!--                                <th>
                                     message
                                 </th>-->
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="log-status Down">
+                                            Down
+                                        </div>
+                                    </td>
+                                    <td>TMS</td>
+                                    <td>OK</td>
+                                    <td>Up</td>
+                                    <td>(003) eth1 Traffic</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="log-status Up">
+                                            Up
+                                        </div>
+                                    </td>
+                                    <td>OT#1</td>
+                                    <td>1 day interval average of &lt; 0.01 Mbit/s (Traffic In) is unusually low for
+                                        this weekday</td>
+                                    <td>Unusual</td>
+                                    <td>(022) Ethernet-WFP 802.3 MAC Layer LightWeight Filter-0000 Traffic</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="log-status Unusual">
+                                            Unusual
+                                        </div>
+                                    </td>
+                                    <td>OT#1</td>
+                                    <td>1 day interval average of &lt; 0.01 Mbit/s (Traffic In) is unusually low for this weekday</td>
+                                    <td>Unusual</td>
+                                    <td>(017) Ethernet-WFP Native MAC Layer LightWeight Filter-0000 Traffic</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -117,36 +156,39 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
 
 <!-- datepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+    integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $('.datepicker-start').datepicker();
     $('.datepicker-end').datepicker();
 </script>
 <script>
-    function getHistories(){
+    function getHistories() {
         axios.get(window.domain + "/api/histories", {
             params: {
                 take: 200
             }
         }).then(response => {
-                let realTimeNotifications = response.data.data.realTimeNotifications;
+            let realTimeNotifications = response.data.data.realTimeNotifications;
 
-                // # Real-time notofication status ======
-                if(realTimeNotifications.length > 0){
-                    $(".log-table tbody").html("");
+            // # Real-time notofication status ======
+            if (realTimeNotifications.length > 0) {
+                $(".log-table tbody").html("");
 
-                    realTimeNotifications.map(item => {
-                        $(".log-table tbody").append(`<tr>
+                realTimeNotifications.map(item => {
+                    $(".log-table tbody").append(`<tr>
 <td><div class="state state-bar ${item.status}"></div></td>
 <td>${item.logged_at}</td>
 <td>${item.device.title}</td>
 <td>${item.device.status}</td>
 <td>${item.message}</td>
 </tr>`);
-                    })
-                }
-            });
+                })
+            }
+        });
     }
     getHistories();
 </script>
+
 </html>

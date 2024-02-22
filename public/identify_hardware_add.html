@@ -15,95 +15,127 @@
 
         <!-- 상단 헤더 -->
         <header id="header"></header>
-        <!-- //상단 헤더 -->
+        <!-- //상단 헤더 --> 
 
         <!-- 좌측 메뉴 -->
         <div id="gnb"></div>
         <!-- //좌측 메뉴 -->
 
         <!-- 대시보드 -->
-        <div class="dashboard">
-            <div class="subpage gray">
-                <div class="dashboard-menu-wrap col-group">
-                    <div class="dashboard-menu-nav col-group">
-                        <div class="dashboard-menu-nav-item">
-                            Cyber Resilience of ship
-                        </div>
-                        <i class="icon xi-angle-right"></i>
-                        <div class="dashboard-menu-nav-item">
-                            Identify
-                        </div>
-                        <i class="icon xi-angle-right"></i>
-                        <div class="dashboard-menu-nav-item active">
-                            Hardware
-                        </div>
-                    </div>
-                    <div class="subpage-table-btn-wrap col-group">
-                        <a href="identify_hardware_add.html" class="subpage-table-btn active">
-                            Add
-                        </a>
-                        <a href="identify_hardware_del.html" class="subpage-table-btn">
-                            Del
-                        </a>
-                        <button class="subpage-table-btn">
-                            Edit
-                        </button>
-                        <button class="subpage-table-btn">
-                            Save
-                        </button>
-                        <button class="subpage-table-btn">
-                            Export
-                        </button>
-                    </div>
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <button onclick="history.back();" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </button>
+                    <h2 class="dashboard-detail-title">
+                        Hardware Add
+                    </h2>
                 </div>
-             
-                <div class="dashboard-form-container">
-                    <div class="dashboard-form-wrap">
-                        <div class="dashboard-form-title">
-                            Hardware Inbentory
+                
+                <div class="dashboard-content">
+                    <div class="account-wrap">
+                        <div class="modify-group col-group">
+                            <div>
+                                <form action="">
+                                    <p class="form-title form-identify-title gray">
+                                        System Information
+                                    </p>
+                                    <div class="account-form row-group"> 
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                System Category
+                                            </p>
+                                            <div class="item-user">
+                                                <select class="form-select" id="group">
+                                                    <option value="1">1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                System Name
+                                            </p>
+                                            <div class="item-user">
+                                                <select class="form-select" id="group">
+                                                    <option value="1">1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="">
+                                    <p class="form-title form-identify-title purple">
+                                        Hardware components
+                                    </p>
+                                    <div class="account-form row-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Name
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Location
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Model
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item-group col-group">
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Q'ty
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Ver.
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    RJ45
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    USB
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Serial
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    IP Address
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
 
-                        <form action="">
-                            <div class="dashboard-form row-group">
-                                <div class="form-item row-group">
-                                    <p class="item-title">
-                                        Zone
-                                        <span class="red">*</span>
-                                    </p>
-                                    <input type="text" class="form-input">
-                                </div>
-                                <div class="form-item row-group">
-                                    <p class="item-title">
-                                        System Category
-                                    </p>
-                                    <input type="text" class="form-input">
-                                </div>
-                                <div class="form-item row-group">
-                                    <p class="item-title">
-                                        System CBS Name
-                                    </p>
-                                    <input type="text" class="form-input">
-                                </div>
-                                <div class="form-item row-group">
-                                    <p class="item-title">
-                                        Asset Name
-                                        <span class="red">*</span>
-                                    </p>
-                                    <input type="text" class="form-input">
-                                </div>
-                                <div class="form-item row-group">
-                                    <p class="item-title">
-                                        Zone
-                                    </p>
-                                    <input type="text" class="form-input">
-                                </div>
-
-                            </div>
-                        </form>
-
-                        <div class="dashboard-form-btn-wrap col-group">
-                            <button class="dashboard-form-btn">
-                                Run
+                        <div class="form-btn-wrap col-group">
+                            <button class="form-btn" onclick="update()">
+                                Add
                             </button>
                         </div>
                     </div>
