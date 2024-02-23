@@ -24,11 +24,151 @@
         <!-- 대시보드 -->
         <div class="dashboard">
             <div class="subpage">
-                <div class="subpage-table-container">
+                <!-- <div class="subpage-table-container">
                     <div class="subpage-table-wrap">
                         <iframe src="/images/SAMPLECisco-9300-cg.pdf" frameborder="0" style="width: 100%; height: 100%;"></iframe>
                     </div>
+                </div> -->
+                <div class="directory-side-container col-group">
+                    <div class="directory-container">
+                        <ul class="directory-group">
+                            <li class="directory-item active">
+                                <div class="directory-title">
+                                    <div class="border"></div>
+                                    Ship System
+                                </div>
+                                <ul class="directory-group directory-sub-group">
+                                    <li class="directory-item active">
+                                        <div class="directory-title">
+                                            <div class="border"></div>
+                                            Hi-Secure
+                                        </div>
+                                        <ul class="directory-group directory-sub-group">
+                                            <li class="directory-item active">
+                                                <div class="directory-title">
+                                                    <div class="border"></div>
+                                                    Network Infrastructure
+                                                </div>
+                                                <ul class="directory-group directory-sub-group">
+                                                    <li class="directory-item active">
+                                                        <div class="directory-title">
+                                                            <div class="border"></div>
+                                                            Security
+                                                        </div>
+                                                        <ul class="directory-group directory-sub-group">
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    FW#1
+                                                                </div>
+                                                                <ul class="directory-detail-group menual-group">
+                                                                    <li class="menual-item" data-pdf="Firewall_Guide">
+                                                                        <div class="menual-item-title-wrap">
+                                                                            <i class="icon xi-info"></i>
+                                                                            <p class="menual-item-title">
+                                                                                Firewall Guide
+                                                                            </p>
+                                                                            <i class="more-icon xi-angle-right"></i>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="menual-item" data-pdf="Firewall_Guide_2">
+                                                                        <div class="menual-item-title-wrap">
+                                                                            <i class="icon xi-info"></i>
+                                                                            <p class="menual-item-title">
+                                                                                Firewall Guide
+                                                                            </p>
+                                                                            <i class="more-icon xi-angle-right"></i>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    FW#2
+                                                                </div>
+                                                            </li>
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    FW#3
+                                                                </div>
+                                                            </li>
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    FW#4
+                                                                </div>
+                                                            </li>
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    FW#5
+                                                                </div>
+                                                            </li>
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    FW#6
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="directory-item active">
+                                                        <div class="directory-title">
+                                                            <div class="border"></div>
+                                                            Switch
+                                                        </div>
+                                                        <ul class="directory-group directory-sub-group">
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    L3 Switch
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="directory-item active">
+                                                        <div class="directory-title">
+                                                            <div class="border"></div>
+                                                            Server
+                                                        </div>
+                                                        <ul class="directory-group directory-sub-group">
+                                                            <li class="directory-item active">
+                                                                <div class="directory-title">
+                                                                    <div class="border"></div>
+                                                                    Hi-Secure
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="directory-item active">
+                                        <div class="directory-title">
+                                            <div class="border"></div>
+                                            Navigation Zone
+                                        </div>
+                                        <ul class="directory-group directory-sub-group">
+                                            <li class="directory-item active">
+                                                <div class="directory-title">
+                                                    <div class="border"></div>
+                                                    Automatic Identification System
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="directory-side-wrap">
+                        <iframe id="Firewall_Guide" src="/images/SAMPLECisco-9300-cg.pdf" frameborder="0" style="width: 100%; height: 100%;" class="directory-side-item"></iframe>
+                    </div>
                 </div>
+                
             </div>
         </div>
         <!-- 대시보드 -->
@@ -39,5 +179,33 @@
 <script src="/js/jquery.js"></script>
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
 
+    $(document).ready(function() {
+        calcBorderHeight();
+
+        $('.directory-title').click(function() {
+            $(this).parent('.directory-item').toggleClass('active');
+            calcBorderHeight();
+        });
+    });
+
+    function calcBorderHeight() {
+        $('.directory-group').each(function() {
+            var heightValue = $(this).outerHeight(true) - $(this).children('.directory-item').last().outerHeight(true);
+            $(this).siblings('.directory-title').find('.border').css('height', heightValue + 26 + 'px');
+        });
+    }
+
+    //클릭 시 iframe 보이기
+    $('.menual-item').click(function(){
+        $('.menual-item').removeClass('active');
+        $(this).addClass('active');
+
+        var pdf_id = $(this).attr('data-pdf');
+        $('.directory-side-item').removeClass('active');
+        $('.directory-side-item#'+pdf_id).addClass('active');
+    });
+
+</script>
 </html>
