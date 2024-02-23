@@ -302,8 +302,8 @@ $(document).ready(function(){
                                         family: 'Pretendard'
                                     }
                                 },
-                                boxWidth: 6,
-                                boxHeight: 6,
+                                boxWidth: 3,
+                                boxHeight: 3,
                             },
                             position: 'top',
                             fullWidth: false,

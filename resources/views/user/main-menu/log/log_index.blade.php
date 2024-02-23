@@ -23,11 +23,14 @@
                 <div class="subpage-table-wrap account-table-wrap">
                     <table class="log-table">
                         <colgroup>
-                            <col width="140px">
-                            <col width="calc( ( 100% - 304px ) / 2 )">
-                            <col width="140px">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="36%">
+                            <col width="10%">
+                            <col width="36%">
                         </colgroup>
                         <thead>
+                        <th></th>
                         <th>
                             Device
                         </th>
@@ -76,6 +79,7 @@
 
                 realTimeNotifications.map(item => {
                     $(".log-table tbody").append(`<tr>
+<td><div class="log-status ${item.status}">${item.status}</div></td>
 <td>${item.device.title}</td>
 <td>${item.message}</td>
 <td>${item.status}</td>

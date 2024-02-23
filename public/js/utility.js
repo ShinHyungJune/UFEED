@@ -32,4 +32,5 @@ function showModal() {
 
 function hideModal() {
     document.querySelector('.modal-alert').style.display = 'none';
+    location.reload();
 }

@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <a href="http://118.130.110.156:9554" target="_blank">
+            <a href="https://118.130.110.156:9554" target="_blank">
                 <div class="gnb-menu">
                     <div class="gnb-menu-title col-group">
                         NAC

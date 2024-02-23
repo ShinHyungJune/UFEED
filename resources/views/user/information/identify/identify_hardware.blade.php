@@ -21,7 +21,7 @@
         <div class="subpage">
             <div class="subpage-table-container">
                 <div class="subpage-table-btn-wrap col-group">
-                    <a href="" class="subpage-table-btn">
+                    <a href="{{ route('hardware.create') }}" class="subpage-table-btn">
                         Add
                     </a>
                     <button class="subpage-table-btn" type="button">
@@ -34,18 +34,18 @@
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table identify-hardware-table">
                         <colgroup>
-                            <col width="150px">
-                            <col width="150px">
-                            <col width="95px">
-                            <col width="95px">
-                            <col width="240px">
-                            <col width="170px">
-                            <col width="130px">
-                            <col width="55px">
-                            <col width="55px">
-                            <col width="55px">
-                            <col width="55px">
-                            <col width="55px">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="7%">
+                            <col width="7%">
+                            <col width="15%">
+                            <col width="12%">
+                            <col width="9%">
+                            <col width="4%">
+                            <col width="4%">
+                            <col width="4%">
+                            <col width="4%">
+                            <col width="4%">
                         </colgroup>
                         <thead>
                         <tr>
