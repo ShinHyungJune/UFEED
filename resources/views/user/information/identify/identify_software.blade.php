@@ -44,10 +44,10 @@
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table">
                         <colgroup>
-                            <col width="150px">
-                            <col width="150px">
-                            <col width="95px">
-                            <col width="95px">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="5%">
+                            <col width="6%">
                         </colgroup>
                         <thead>
                         <tr>

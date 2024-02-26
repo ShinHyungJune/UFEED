@@ -75,41 +75,41 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('main-menu')->group(function () {
-        Route::prefix('firewall')->group(function () {
-            Route::prefix('policy')->group(function () {
-                Route::get('/', [\App\Http\Controllers\FirewallController::class, 'policy'])->name('firewall.policy');
-            });
-            Route::prefix('nat')->group(function () {
-                Route::get('/', [\App\Http\Controllers\FirewallController::class, 'nat'])->name('firewall.nat');
-            });
-        });
-        Route::prefix('nac')->group(function () {
-            Route::prefix('management')->group(function () {
-                Route::get('/node', [\App\Http\Controllers\NACController::class, 'node'])->name('nac.node');
-                Route::get('/ip-address', [\App\Http\Controllers\NACController::class, 'ipAddress'])->name('nac.ip-address');
-                Route::get('/wlan', [\App\Http\Controllers\NACController::class, 'wlan'])->name('nac.wlan');
-            });
-            Route::prefix('log')->group(function () {
-                Route::get('/', [\App\Http\Controllers\NACController::class, 'log'])->name('nac.log');
-            });
-            Route::prefix('system')->group(function () {
-                Route::get('/license', [\App\Http\Controllers\NACController::class, 'license'])->name('nac.license');
-            });
-        });
-        Route::prefix('nms')->group(function () {
-            Route::prefix('devices')->group(function () {
-                Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('nms.devices');
+//        Route::prefix('firewall')->group(function () {
+//            Route::prefix('policy')->group(function () {
+//                Route::get('/', [\App\Http\Controllers\FirewallController::class, 'policy'])->name('firewall.policy');
+//            });
+//            Route::prefix('nat')->group(function () {
+//                Route::get('/', [\App\Http\Controllers\FirewallController::class, 'nat'])->name('firewall.nat');
+//            });
+//        });
+//        Route::prefix('nac')->group(function () {
+//            Route::prefix('management')->group(function () {
+//                Route::get('/node', [\App\Http\Controllers\NACController::class, 'node'])->name('nac.node');
+//                Route::get('/ip-address', [\App\Http\Controllers\NACController::class, 'ipAddress'])->name('nac.ip-address');
+//                Route::get('/wlan', [\App\Http\Controllers\NACController::class, 'wlan'])->name('nac.wlan');
+//            });
+//            Route::prefix('log')->group(function () {
+//                Route::get('/', [\App\Http\Controllers\NACController::class, 'log'])->name('nac.log');
+//            });
+//            Route::prefix('system')->group(function () {
+//                Route::get('/license', [\App\Http\Controllers\NACController::class, 'license'])->name('nac.license');
+//            });
+//        });
+//        Route::prefix('nms')->group(function () {
+//            Route::prefix('devices')->group(function () {
+//                Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('nms.devices');
 //                Route::get('/favorite-devices', [\App\Http\Controllers\NMSController::class, 'favoriteDevices'])->name('nms.favorite-devices');
 //                Route::get('/dependencies', [\App\Http\Controllers\NMSController::class, 'dependencies'])->name('nms.dependencies');
-            });
-            Route::prefix('reports')->group(function () {
-                Route::get('/', [\App\Http\Controllers\NMSController::class, 'reports'])->name('nms.reports');
+//            });
+//            Route::prefix('reports')->group(function () {
+//                Route::get('/', [\App\Http\Controllers\NMSController::class, 'reports'])->name('nms.reports');
 //                Route::get('/add-report', [\App\Http\Controllers\NMSController::class, 'addReport'])->name('nms.add-report');
-            });
-            Route::prefix('logs')->group(function () {
-                Route::get('/', [\App\Http\Controllers\NMSController::class, 'logs'])->name('nms.logs');
-            });
-        });
+//            });
+//            Route::prefix('logs')->group(function () {
+//                Route::get('/', [\App\Http\Controllers\NMSController::class, 'logs'])->name('nms.logs');
+//            });
+//        });
         Route::prefix('log')->group(function () {
             Route::get('/', [\App\Http\Controllers\LogController::class, 'index'])->name('log.index');
         });
@@ -134,6 +134,9 @@ Route::middleware('auth')->group(function () {
             Route::get('/access-control', [\App\Http\Controllers\InformationController::class, 'accessControl'])->name('information.access-control');
             Route::get('/wireless', [\App\Http\Controllers\InformationController::class, 'wireless'])->name('information.wireless');
             Route::get('/mobile-portable', [\App\Http\Controllers\InformationController::class, 'mobilePortable'])->name('information.mobile-portable');
+        });
+        Route::prefix('detect')->group(function () {
+            Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('information.detect');
         });
         Route::prefix('response')->group(function () {
             Route::get('/incident', [\App\Http\Controllers\InformationController::class, 'incident'])->name('information.incident');

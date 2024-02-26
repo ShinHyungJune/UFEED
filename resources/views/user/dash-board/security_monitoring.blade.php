@@ -30,7 +30,7 @@
                         Security Monitoring
                     </h2>
                     <p class="dashboard-detail-subtitle">
-                        Last 24 hrs
+                        Last 24 Hours
                     </p>
                 </div>
 

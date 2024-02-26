@@ -62,13 +62,13 @@
                                 <i class="xi-arrow-down"></i>
                             </button>
                         </div>
-                        <a href="{{ route('security-monitoring') }}" class="security-btn">
-                            <div class="txt-group">
-                                <i class="xi-desktop"></i>
-                                <p class="txt">Security Monitoring</p>
-                            </div>
-                            <i class="xi-arrow-right icon"></i>
-                        </a>
+{{--                        <a href="{{ route('security-monitoring') }}" class="security-btn">--}}
+{{--                            <div class="txt-group">--}}
+{{--                                <i class="xi-desktop"></i>--}}
+{{--                                <p class="txt">Security Monitoring</p>--}}
+{{--                            </div>--}}
+{{--                            <i class="xi-arrow-right icon"></i>--}}
+{{--                        </a>--}}
                     </div>
                     <div class="real-time-status-wrap">
                         <div class="real-time-status-list">

@@ -46,43 +46,155 @@
                     <table class="subpage-table disable">
                         <thead>
                         <th style="text-align: center;">NO.</th>
-                        <th>Asset name tag</th>
+                        <th>Asset Name Tag</th>
                         <th>OS</th>
                         <th>Port Used</th>
-                        <th>Unused default port</th>
+                        <th>Unused Default Port</th>
                         <th style="text-align: center;">Check</th>
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="text-align: center;">1</td>
-                            <td>CBS#1</td>
-                            <td>Windows 10</td>
-                            <td>80, 443, 3389</td>
-                            <td>21, 161, 514</td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Transponder Unit
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
                             <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;">2</td>
-                            <td>CBS#2</td>
-                            <td>Windows 10</td>
-                            <td>80, 443, 3389</td>
-                            <td>21, 161, 514</td>
+                            <td style="text-align: center;">
+                                2
+                            </td>
+                            <td>
+                                GMDSS CONSOLE
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
                             <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;">3</td>
-                            <td>CBS#3</td>
-                            <td>Windows 10</td>
-                            <td>80, 443, 3389</td>
-                            <td>21, 161, 514</td>
+                            <td style="text-align: center;">
+                                3
+                            </td>
+                            <td>
+                                VSAT ANTENNA
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
                             <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;">4</td>
-                            <td>CBS#4</td>
-                            <td>Windows 10</td>
-                            <td>80, 443, 3389</td>
-                            <td>21, 161, 514</td>
+                            <td style="text-align: center;">
+                                4
+                            </td>
+                            <td>
+                                PC#1
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
+                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                5
+                            </td>
+                            <td>
+                                Notebook#1
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
+                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                6
+                            </td>
+                            <td>
+                                SHAFT GENERATOR CONVERTER
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
+                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                7
+                            </td>
+                            <td>
+                                R.C.M.S COMPUTER
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
+                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                8
+                            </td>
+                            <td>
+                                EMS MOP PC
+                            </td>
+                            <td>
+                                Windows 10
+                            </td>
+                            <td>
+                                443, 3389
+                            </td>
+                            <td>
+                                21, 135, 445, 514
+                            </td>
                             <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
                         </tr>
                         </tbody>

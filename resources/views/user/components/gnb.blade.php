@@ -78,6 +78,10 @@
         <div class="dashboard-gnb-wrap">
             <p class="dashboard-gnb-title">
                 Traffic Top 10
+                <span class="time">
+                    Last 24 Hours
+                </span>
+            </p>
             <div class="traffic-top-wrap">
                 <div class="traffic-top-item">
                     <div class="num">1</div>
@@ -264,13 +268,13 @@
 
             <div class="polar-area-chart active" id="tab_01">
                 <div class="time">
-                    Last 10 mins
+                    Last 24 Hours
                 </div>
                 <canvas id="polar_area_chart_01"></canvas>
             </div>
             <div class="polar-area-chart" id="tab_02">
                 <div class="time">
-                    Last 10 mins
+                    Last 24 Hours
                 </div>
                 <canvas id="polar_area_chart_02"></canvas>
             </div>

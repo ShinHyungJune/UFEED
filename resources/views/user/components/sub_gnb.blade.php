@@ -190,34 +190,33 @@
                             SafeGuard
                         </div>
                     </a>
-                    <a href="{{ route('information.security-zone') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Security Zone
-                        </div>
-                    </a>
+{{--                    <a href="{{ route('information.security-zone') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title col-group">--}}
+{{--                            Security Zone--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
                     <a href="{{ route('information.access-control') }}" class="sub-gnb-menu">
                         <div class="sub-gnb-menu-title col-group">
                             Access Control
                         </div>
                     </a>
-                    <a href="{{ route('information.wireless') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Wireless
-                        </div>
-                    </a>
-                    <a href="{{ route('information.mobile-portable') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title col-group">
-                            Mobile and Portable
-                        </div>
-                    </a>
+{{--                    <a href="{{ route('information.wireless') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title col-group">--}}
+{{--                            Wireless--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('information.mobile-portable') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title col-group">--}}
+{{--                            Mobile and Portable--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
                 </div>
             </div>
 
             <div class="gnb-menu">
-                <div class="gnb-menu-title col-group">
+                <a href="{{ route('information.detect') }}" class="gnb-menu-title col-group">
                     Detect
-                    <i class="xi-angle-down-min icon toggle-icon"></i>
-                </div>
+                </a>
             </div>
 
             <div class="gnb-menu">

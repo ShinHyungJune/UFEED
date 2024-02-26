@@ -52,18 +52,16 @@ class NMSController extends Controller
                 );
             }
         }
-        $devicesFW1 = Device::whereTitle('FW1')->first();
         $devicesFW = Device::where('title', 'like', 'FW#%')->orderBy('title')->get();
         $devicesTMS = Device::whereTitle('TMS')->first();
         $devicesNAC = Device::where('title', 'like', 'NAC%')->orderByDesc('title')->get();
         $devicesL3 = Device::whereTitle('L3 Switch')->first();
 
-        $deviceOT1 = Device::whereTitle('OT#1')->first();
-        $deviceOT2 = Device::whereTitle('OT#2')->first();
-        $deviceOT3 = Device::whereTitle('OT#3')->first();
+        $deviceOT1 = Device::whereTitle('Transponder Unit')->first();
+        $deviceOT2 = Device::whereTitle('GMDSS CONSOLE')->first();
+        $deviceOT3 = Device::whereTitle('EMS MOP PC')->first();
 
         return view('user.main-menu.nms.nms_devices_all', [
-            "devicesFW1" => $devicesFW1,
             "devicesFW" => $devicesFW,
             "devicesTMS" => $devicesTMS,
             "devicesNAC" => $devicesNAC,

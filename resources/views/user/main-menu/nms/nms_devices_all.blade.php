@@ -66,43 +66,6 @@
                                                     Security
                                                 </div>
                                                 <ul class="directory-group directory-sub-group">
-                                                    {{--FW1--}}
-                                                    <li class="directory-item active">
-                                                        <div class="directory-title">
-                                                            <div class="border"></div>
-                                                            FW#1
-                                                        </div>
-                                                        <ul class="directory-group directory-detail-group">
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Ping
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    {{ $devicesFW1->ping_value }} mses
-                                                                </p>
-                                                            </li>
-                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    CPU Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    {{ $devicesFW1->cpu_load_value }}%
-                                                                </p>
-                                                            </li>
-<!--                                                            <li class="directory-detail-item">
-                                                                <div class="state"></div>
-                                                                <p class="directory-detail-item-title">
-                                                                    Memory Load
-                                                                </p>
-                                                                <p class="directory-detail-item-txt">
-                                                                    30%
-                                                                </p>
-                                                            </li>-->
-                                                        </ul>
-                                                    </li>
-                                                    {{--FW#--}}
                                                     @foreach($devicesFW as $device)
                                                         <li class="directory-item active">
                                                             <div class="directory-title">

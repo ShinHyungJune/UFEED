@@ -75,24 +75,203 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="text-align: center;">1</td>
-                            <td rowspan="8">
-                                Control System Zone</td>
-                            <td rowspan="4">
-                                FS11</td>
-                            <td>admin</td>
-                            <td>Aaron</td>
-                            <td>admin</td>
-                            <td>1 Year</td>
-                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Navigation Zone
+                            </td>
+                            <td>
+                                Transponder Unit
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Adam
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;">1</td>
-                            <td>admin</td>
-                            <td>Brandon</td>
-                            <td>admin</td>
-                            <td>1 Year</td>
-                            <td style="text-align: center;"><i class="xi-radiobox-blank"></i></td>
+                            <td style="text-align: center;">
+                                2
+                            </td>
+                            <td rowspan="2">
+                                Communication Zone
+                            </td>
+                            <td>
+                                GMDSS CONSOLE
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Jason
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                3
+                            </td>
+                            <td>
+                                VSAT ANTENNA
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                David
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                4
+                            </td>
+                            <td rowspan="2">
+                                Crew Lan Zone
+                            </td>
+                            <td>
+                                PC#1
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Fall
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                5
+                            </td>
+                            <td>
+                                Notebook#1
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Paul
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                6
+                            </td>
+                            <td rowspan="2">
+                                Power Zone
+                            </td>
+                            <td>
+                                SHAFT GENERATOR CONVERTER
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Smith
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                7
+                            </td>
+                            <td>
+                                R.C.M.S COMPUTER
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Alexth
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                8
+                            </td>
+                            <td>
+                                Control & Instrumentation
+                            </td>
+                            <td>
+                                EMS MOP PC
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                Cloudia
+                            </td>
+                            <td>
+                                Admin
+                            </td>
+                            <td>
+                                1 Year
+                            </td>
+                            <td style="text-align: center;">
+                                Active
+                            </td>
                         </tr>
                         </tbody>
                     </table>
