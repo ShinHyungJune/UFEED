@@ -234,7 +234,9 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 /* 좌측 메뉴 - 대시보드 */
 #dashboard_gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
 .dashboard-gnb-container { gap: 24px; }
-.dashboard-gnb-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; }
+.dashboard-gnb-wrap .time { position: absolute; top: 8px; right: 0; font-size: 10px; padding: 4px 8px; background: #f5f5f5; border-radius: 12px; font-weight: normal; width: fit-content; }
+.dashboard-gnb-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; position: relative; }
+.dashboard-gnb-title .time { top: 0; }
 
 /* 좌측 메뉴 - 대시보드 - Standard */
 .dashboard-standard-wrap { gap: 10px; flex-flow: wrap; }
@@ -327,7 +329,6 @@ tbody .state.red {
 .polar-area-chart-item .hover-box .detail-group .title::after { content: ':'; display: block; position: absolute; right: 0; top: 0; font-size: 12px; font-weight: 600; color: #292d33; }
 .polar-area-chart-item .hover-box .detail-group .txt { font-size: 12px; font-weight: 400; line-height: 1.25; }
 
-.polar-area-chart .time { position: absolute; top: 8px; left: 0; font-size: 10px; padding: 4px 8px; background: #f5f5f5; border-radius: 12px; }
 
 /* .polar-area-chart { width: 240px; height: 240px; position: relative; }
 .polar-area-chart-item { height: 120px; width: 80px; position: absolute; left: 50%; top: 50%; clip-path: polygon(50% 100%, 0 0, 100% 0); transform-origin: 50% 100%; transition: .3s; }
@@ -888,6 +889,10 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .identify-software-table colgroup col:nth-child(2) { min-width: 270px; }
 .identify-software-table colgroup col:nth-child(3) { min-width: 84px; }
 .identify-software-table colgroup col:nth-child(4) { min-width: 106px; }
+
+.edit-date { width: 100%; justify-content: flex-end; align-items: center; gap: 20px; }
+.edit-date .txt { font-size: 15px; font-weight: 500; color: #9f9b9b; position: relative; }
+.edit-date .txt:not(:last-child):after { content: ''; display: block; position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #9f9b9b; right: -10px; top: 50%; transform: translate(50%, -50%); }
 
 /* 상세 페이지 - ipv4 policy 테이블 */
 .ipv4-policy-table th:nth-child(2) { text-align: center; }
