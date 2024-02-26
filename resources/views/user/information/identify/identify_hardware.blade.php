@@ -20,6 +20,14 @@
     <div class="dashboard">
         <div class="subpage">
             <div class="subpage-table-container">
+                <div class="edit-date col-group">
+                    <p class="txt">
+                        2023-12-12 12:41:57
+                    </p>
+                    <p class="txt">
+                        Administrators
+                    </p>
+                </div>
                 <div class="subpage-table-btn-wrap col-group">
                     <a href="{{ route('hardware.create') }}" class="subpage-table-btn">
                         Add
@@ -37,9 +45,9 @@
                     <button class="subpage-table-btn">
                         Import
                     </button>
-                    <button class="subpage-table-btn">
+                    <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
                         Export
-                    </button>
+                    </a>
                 </div>
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table identify-hardware-table">

@@ -20,6 +20,14 @@
     <div class="dashboard">
         <div class="subpage">
             <div class="subpage-table-container">
+                <div class="edit-date col-group">
+                    <p class="txt">
+                        2023-12-12 12:41:57
+                    </p>
+                    <p class="txt">
+                        Administrators
+                    </p>
+                </div>
                 <div class="subpage-table-btn-wrap col-group">
                     <a href="{{ route('software.create') }}" class="subpage-table-btn">
                         Add

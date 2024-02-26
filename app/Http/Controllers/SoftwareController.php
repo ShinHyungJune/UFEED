@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SoftwareExport;
 use App\Http\Requests\SoftwareRequest;
 use App\Models\Category;
 use App\Models\Software;
 use App\Models\System;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SoftwareController extends Controller
 {
@@ -54,5 +56,10 @@ class SoftwareController extends Controller
     {
         $systems = System::whereCategoryId($request->input('category_id'))->get();
         return response($systems);
+    }
+
+    public function export()
+    {
+        return Excel::download(new SoftwareExport(), 'invoices.xlsx');
     }
 }

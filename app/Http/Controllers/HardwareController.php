@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\HardwareExport;
 use App\Http\Requests\HardwareRequest;
+use App\Imports\HardwareImport;
 use App\Models\Category;
 use App\Models\Hardware;
 use App\Models\System;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HardwareController extends Controller
 {
@@ -53,5 +56,15 @@ class HardwareController extends Controller
     {
         $systems = System::whereCategoryId($request->input('category_id'))->get();
         return response($systems);
+    }
+
+    public function import(Request $request)
+    {
+//        Excel::import(new HardwareImport(), $request->file)();
+    }
+
+    public function export()
+    {
+        return Excel::download(new HardwareExport(), 'invoices.xlsx');
     }
 }

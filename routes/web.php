@@ -124,9 +124,12 @@ Route::middleware('auth')->group(function () {
             Route::resource('hardware', \App\Http\Controllers\HardwareController::class)->except(['show', 'destroy']);
             Route::delete('/hardware/destroy', [\App\Http\Controllers\HardwareController::class, 'destroy'])->name('hardware.destroy');
             Route::get('/hardware/systems', [\App\Http\Controllers\HardwareController::class, 'systems'])->name('hardware.systems');
+            Route::get('/hardware/import', [\App\Http\Controllers\HardwareController::class, 'import'])->name('hardware.import');
+            Route::get('/hardware/export', [\App\Http\Controllers\HardwareController::class, 'export'])->name('hardware.export');
             Route::resource('software', \App\Http\Controllers\SoftwareController::class)->except(['show', 'destroy']);
             Route::delete('/software/destroy', [\App\Http\Controllers\SoftwareController::class, 'destroy'])->name('software.destroy');
             Route::get('/software/systems', [\App\Http\Controllers\SoftwareController::class, 'systems'])->name('software.systems');
+            Route::get('/software/export', [\App\Http\Controllers\SoftwareController::class, 'export'])->name('software.export');
         });
         Route::prefix('protect')->group(function () {
             Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');
