@@ -3,37 +3,56 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SoftwareRequest;
+use App\Models\Category;
 use App\Models\Software;
+use App\Models\System;
+use Illuminate\Http\Request;
 
 class SoftwareController extends Controller
 {
     public function index()
     {
-        Software::all();
-        return view('user.information.identify.identify_software');
+        $softwares = Software::with('system.category')->get()->groupBy('system.category.name');
+        return view('user.information.identify.identify_software')->with('softwares', $softwares);
+    }
+
+    public function create()
+    {
+        $categories = Category::get();
+        return view('user.information.identify.identify_software_add')->with('categories', $categories);
     }
 
     public function store(SoftwareRequest $request)
     {
-        return Software::create($request->validated());
+        Software::create($request->validated());
+        return redirect()->route('software.index');
     }
 
-    public function show(Software $software)
+    public function edit(Software $software)
     {
-        return $software;
+        $categories = Category::get();
+        $systems = System::whereCategoryId($software->system->category_id)->get();
+        return view('user.information.identify.identify_software_edit')->with('software', $software)
+            ->with('categories', $categories)->with('systems', $systems);
     }
 
     public function update(SoftwareRequest $request, Software $software)
     {
         $software->update($request->validated());
 
-        return $software;
+        return redirect()->route('software.index');
     }
 
-    public function destroy(Software $software)
+    public function destroy(Request $request)
     {
-        $software->delete();
+        Software::destroy($request->input('id'));
 
-        return response()->json();
+        return redirect()->route('software.index');
+    }
+
+    public function systems(Request $request)
+    {
+        $systems = System::whereCategoryId($request->input('category_id'))->get();
+        return response($systems);
     }
 }

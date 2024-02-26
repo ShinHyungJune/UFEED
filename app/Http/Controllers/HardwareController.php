@@ -12,8 +12,8 @@ class HardwareController extends Controller
 {
     public function index()
     {
-        $hardwares = Hardware::all();
-        return view('user.information.identify.identify_hardware');
+        $hardwares = Hardware::with('system.category')->get()->groupBy('system.category.name');
+        return view('user.information.identify.identify_hardware')->with('hardwares', $hardwares);
     }
 
     public function create()
@@ -24,13 +24,7 @@ class HardwareController extends Controller
 
     public function store(HardwareRequest $request)
     {
-        $validated = $request->validated();
-        foreach ($validated as $key => $value) {
-            if ($value === null) {
-                $validated[$key] = '-';
-            }
-        }
-        Hardware::create($validated);
+        Hardware::create($request->validated());
         return redirect()->route('hardware.index');
     }
 
@@ -49,11 +43,10 @@ class HardwareController extends Controller
         return redirect()->route('hardware.index');
     }
 
-    public function destroy(Hardware $hardware)
+    public function destroy(Request $request)
     {
-        $hardware->delete();
-
-        return response()->json();
+        Hardware::destroy($request->input('id'));
+        return redirect()->route('hardware.index');
     }
 
     public function systems(Request $request)

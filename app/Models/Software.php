@@ -10,6 +10,8 @@ class Software extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'softwares';
+
     protected $fillable = [
         'system_id',
         'name',

@@ -89,7 +89,7 @@ class SystemSeeder extends Seeder
                 'category' => 'Communication',
                 'name' => "Ship's Network System",
                 'supplier' => 'O.F.E',
-                'model' => '-',
+                'model' => null,
             ],
             [
                 'category' => 'Communication',
@@ -127,19 +127,19 @@ class SystemSeeder extends Seeder
                 'category' => 'Control & Instrumentation',
                 'name' => 'Valve Remote Control System',
                 'supplier' => 'HOPPE',
-                'model' => '-',
+                'model' => null,
             ],
             [
                 'category' => 'Control & Instrumentation',
                 'name' => 'Anti-Heeling System',
                 'supplier' => 'HOPPE',
-                'model' => '-',
+                'model' => null,
             ],
             [
                 'category' => 'Control & Instrumentation',
                 'name' => 'Shaft Power Meter',
                 'supplier' => 'VAF',
-                'model' => '-',
+                'model' => null,
             ],
 
             // Power
@@ -147,13 +147,13 @@ class SystemSeeder extends Seeder
                 'category' => 'Power',
                 'name' => 'Shaft Generator System',
                 'supplier' => 'ABB',
-                'model' => '-',
+                'model' => null,
             ],
             [
                 'category' => 'Power',
                 'name' => 'Refeer Container Monitoring System',
                 'supplier' => 'Emerson',
-                'model' => '-',
+                'model' => null,
             ],
         ];
 

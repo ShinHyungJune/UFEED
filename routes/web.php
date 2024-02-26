@@ -121,9 +121,12 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('information')->group(function () {
         Route::prefix('identify')->group(function () {
-            Route::resource('hardware', \App\Http\Controllers\HardwareController::class)->except('show');
+            Route::resource('hardware', \App\Http\Controllers\HardwareController::class)->except(['show', 'destroy']);
+            Route::delete('/hardware/destroy', [\App\Http\Controllers\HardwareController::class, 'destroy'])->name('hardware.destroy');
             Route::get('/hardware/systems', [\App\Http\Controllers\HardwareController::class, 'systems'])->name('hardware.systems');
-            Route::resource('software', \App\Http\Controllers\SoftwareController::class)->except('show');
+            Route::resource('software', \App\Http\Controllers\SoftwareController::class)->except(['show', 'destroy']);
+            Route::delete('/software/destroy', [\App\Http\Controllers\SoftwareController::class, 'destroy'])->name('software.destroy');
+            Route::get('/software/systems', [\App\Http\Controllers\SoftwareController::class, 'systems'])->name('software.systems');
         });
         Route::prefix('protect')->group(function () {
             Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');
