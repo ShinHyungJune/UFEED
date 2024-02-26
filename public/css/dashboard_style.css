@@ -883,6 +883,12 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .account-wrap .form-identify-title.gray { background: #d6d5d6; }
 .account-wrap .form-identify-title.purple { background: #e3ddf7; }
 
+/* 상세 페이지 - identify - software 테이블 */
+.identify-software-table colgroup col:nth-child(1) { min-width: 182px; }
+.identify-software-table colgroup col:nth-child(2) { min-width: 270px; }
+.identify-software-table colgroup col:nth-child(3) { min-width: 84px; }
+.identify-software-table colgroup col:nth-child(4) { min-width: 106px; }
+
 /* 상세 페이지 - ipv4 policy 테이블 */
 .ipv4-policy-table th:nth-child(2) { text-align: center; }
 .ipv4-policy-table td:nth-child(2) { text-align: center; }
