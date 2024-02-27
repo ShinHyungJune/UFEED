@@ -39,7 +39,7 @@ class HistoryController extends ApiController
 /*        if($firstHistory)
             $pivotDate = $firstHistory->logged_at;*/
 
-        $trafficDevices = Device::whereNotIn("title", ["NMS", "L3 Switch", "TMS", "OT#1", "OT#2", "OT#3", "NAC Sensor", "NAC Server"])->get();
+        $trafficDevices = Device::whereIn("title", ["FW#1", "FW#2", "FW#3", "FW#4", "FW#5", "FW#6"])->get();
 
         foreach($trafficDevices as $device){
             $realTimeTraffics[] = [

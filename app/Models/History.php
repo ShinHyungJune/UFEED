@@ -100,6 +100,8 @@ class History extends Model
 
         $messages = $history->getMessages();
 
+        $messages = collect($messages);
+
         foreach($messages as $message){
             $device = Device::where("title", $message["device_raw"])->first();
 
@@ -122,6 +124,17 @@ class History extends Model
                 "datetime" => $message["datetime"],
                 "datetime_raw" => $message["datetime_raw"],
             ]);
+        }
+
+        $devices = Device::get();
+
+        foreach($devices as $device){
+            $firstMessage = $device->messages()->orderBy("datetime", "desc")->first();
+
+            if($firstMessage)
+                $device->update([
+                    "status" => $firstMessage->status,
+                ]);
         }
     }
 }

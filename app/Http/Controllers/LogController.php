@@ -9,7 +9,7 @@ class LogController extends Controller
 {
     public function index()
     {
-        $items = Message::orderBy("datetime", "desc")->take(100)->get();
+        $items = Message::orderBy("datetime", "desc")->take(400)->get();
 
         return view('user.main-menu.log.log_index', [
             "items" => $items,

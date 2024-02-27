@@ -33,9 +33,12 @@ class NacController extends ApiController
 
     public function storeBlock(Request $request)
     {
-        $request->validate(["ip" => "required|string|max:500"]);
+        $request->validate([
+            "ip" => "required|string|max:500",
+            "mac" => "required|string|max:500",
+        ]);
 
-        $this->nac->storeBlock($request->ip);
+        $this->nac->storeBlock($request->ip, $request->mac);
 
         return $this->respondSuccessfully();
     }
@@ -44,9 +47,12 @@ class NacController extends ApiController
 
     public function storeAllow(Request $request)
     {
-        $request->validate(["ip" => "required|string|max:500"]);
+        $request->validate([
+            "ip" => "required|string|max:500",
+            "mac" => "required|string|max:500",
+        ]);
 
-        $this->nac->storeAllow($request->ip);
+        $this->nac->storeAllow($request->ip, $request->mac);
 
         return $this->respondSuccessfully();
     }

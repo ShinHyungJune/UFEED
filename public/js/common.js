@@ -362,17 +362,19 @@ $(document).ready(function(){
 <td>${item.NL_PLATFORM}</td>
 <td>${item.NL_MAC}</td>
 <td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
-<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">BLOCK</button></td>
+<td><button class="m-btn type01" data-ip="${item.NL_IPSTR}" data-mac="${item.NL_MAC}">BLOCK</button></td>
 </tr>`)
                 });
 
                 $(".allowed-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
-                    var ip = $(this).attr("data-value");
+                    var ip = $(this).attr("data-ip");
+                    var mac = $(this).attr("data-mac");
 
                     openLoading();
 
                     axios.post("/api/nac/blocks", {
-                        ip: ip
+                        ip: ip,
+                        mac: mac,
                     }).then(response => {
                         getAllows();
                         getBlocks();
@@ -396,23 +398,26 @@ $(document).ready(function(){
                 $(".blocked-devices-wrap tbody").html("");
 
                 items.map(item => {
+                    console.log(item);
                     $(".blocked-devices-wrap tbody").append(`<tr>
 <td>${item.NL_SIFNAME}</td>
 <td>${item.NL_IPSTR}</td>
 <td>${item.NL_PLATFORM}</td>
 <td>${item.NL_MAC}</td>
 <td><span class="state red"></span></td>
-<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
+<td><button class="m-btn type01" data-ip="${item.NL_IPSTR}" data-mac="${item.NL_MAC}">ALLOW</button></td>
 </tr>`)
                 });
 
                 $(".blocked-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
-                    var ip = $(this).attr("data-value");
+                    var ip = $(this).attr("data-ip");
+                    var mac = $(this).attr("data-mac");
 
                     openLoading();
 
                     axios.post("/api/nac/allows", {
-                        ip: ip
+                        ip: ip,
+                        mac: mac,
                     }).then(response => {
                         getAllows();
                         getBlocks();

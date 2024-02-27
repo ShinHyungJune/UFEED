@@ -83,7 +83,7 @@
                                     </p>
                                 </div>
                                 <p class="txt">
-                                    {{$message->message_raw}}
+                                    <span class="sub">{{$message->datetime}}</span> {{$message->message_raw}}
                                 </p>
                             </div>
                             @endforeach

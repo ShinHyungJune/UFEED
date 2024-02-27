@@ -33,7 +33,7 @@ class Nac extends Model
         return json_decode($response->getBody()->getContents());
     }
 
-    public function storeBlock($ip)
+    public function storeBlock($ip, $mac)
     {
         $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/ip/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
             'headers' => [
@@ -50,10 +50,25 @@ class Nac extends Model
             ],
         ]);
 
+        $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/mac/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
+            'headers' => [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json;charset=UTF-8',
+            ],
+            'json' => [
+                [
+                    "cmd" => "macdeny",
+                    "targetMAC" => $mac,
+                    "specifyIPs" => ["string"],
+                    // "extraLogInfo" => "string"
+                ]
+            ],
+        ]);
+
         return json_decode($response->getBody()->getContents());
     }
 
-    public function storeAllow($ip)
+    public function storeAllow($ip, $mac)
     {
         $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/ip/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
             'headers' => [
@@ -66,6 +81,21 @@ class Nac extends Model
                     "targetIP" => $ip,
                     "specifyMACs" => ["string"],
                     "extraLogInfo" => "string"
+                ]
+            ],
+        ]);
+
+        $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/mac/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
+            'headers' => [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json;charset=UTF-8',
+            ],
+            'json' => [
+                [
+                    "cmd" => "macallow",
+                    "targetMAC" => $mac,
+                    "specifyIPs" => ["string"],
+                    // "extraLogInfo" => "string"
                 ]
             ],
         ]);
