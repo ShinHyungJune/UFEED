@@ -26,7 +26,7 @@
                             <col width="12%"> <!-- TAG -->
                             <col width="10%"> <!-- DEVICE -->
                             <col width="14%"> <!-- TYPE -->
-                            <col width="9%"> <!-- OBJECT ID -->
+<!--                            <col width="9%"> &lt;!&ndash; OBJECT ID &ndash;&gt;-->
                             <col width="15%"> <!-- STATUS -->
 
                             <col width="25%"> <!-- MESSAGE -->
@@ -40,9 +40,9 @@
                         <th>
                             Type
                         </th>
-                        <th>
+<!--                        <th>
                             Object ID
-                        </th>
+                        </th>-->
                         <th>
                             Status
                         </th>
@@ -63,9 +63,9 @@
                             <td>
                                 <div class="log-status {{$item["status"]}}">{{$item["status"]}}</div>
                             </td>
-                            <td>{{$item["device"] ? $item["device"] : "None"}}</td>
+                            <td>{{$item["device_raw"] ? $item["device_raw"] : "None"}}</td>
                             <td>{{$item["type"]}}</td>
-                            <td>{{$item["objid"]}}</td>
+<!--                            <td>{{$item["objid"]}}</td>-->
                             <td>{{$item["status"]}}</td>
                             <td>{{$item["message_raw"]}}</td>
                             <td>{{$item["datetime"]}}</td>

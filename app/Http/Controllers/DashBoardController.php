@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Device;
 use App\Models\Firewall;
+use App\Models\Message;
 use Illuminate\Support\Facades\Http;
 
 class DashBoardController extends Controller
 {
     public function index()
     {
-        return view('user.dash-board.dashboard_index');
+        $messages = Message::orderBy("datetime", "desc")->whereIn("status", ["Up", "Down", "Unusual", "Warning"])->take(100)->get();
+
+        return view('user.dash-board.dashboard_index', [
+            "messages" => $messages
+        ]);
     }
 
     public function securityMonitoring()

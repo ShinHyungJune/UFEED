@@ -20,7 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    dd(\App\Models\History::getLogMessages());
+    $history = new \App\Models\History();
+
+    // dd($history->getMessages());
+
+    \App\Models\History::record();
 });
 
 Route::get("/histories", function (){

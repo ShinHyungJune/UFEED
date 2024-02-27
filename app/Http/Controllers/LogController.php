@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
+use App\Models\Message;
 
 class LogController extends Controller
 {
     public function index()
     {
-        $history = new History();
-
-        $items = $history->getLogMessages();
+        $items = Message::orderBy("datetime", "desc")->take(100)->get();
 
         return view('user.main-menu.log.log_index', [
             "items" => $items,

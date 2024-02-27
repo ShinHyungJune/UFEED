@@ -28,7 +28,7 @@ class History extends Model
         return $this->belongsTo(Device::class);
     }
 
-    public function getLogMessages()
+    public function getMessages()
     {
         $response = Http::withoutVerifying()->get($this->domain . "/api/table.json", [
             "page" => 1,
@@ -47,16 +47,28 @@ class History extends Model
 
         // ping, snmptraffic
 
+        $items = [];
+
         $body = $response->json();
 
-        return $body["messages"];
+        if($body && isset($body["messages"])){
+            $items = $body["messages"];
+
+            foreach($items as $item){
+
+            }
+        }
+
+        return $items;
     }
 
     public static function record()
     {
+        $history = new History();
+
         \App\Models\History::where("created_at", "<=", \Carbon\Carbon::now()->subYears(1))->delete();
 
-        $response = Http::withoutVerifying()->get("http:/localhost:8080/api/table.json", [
+        $response = Http::withoutVerifying()->get($history->domain."/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "hgs_1qa@WS",
@@ -84,22 +96,32 @@ class History extends Model
                     ]);
                 }
             }
+        }
 
-            /*
-            $devices = \App\Models\Device::get();
+        $messages = $history->getMessages();
 
-            foreach($devices as $device){
-                $latestHistory = $device->histories()->latest()->whereIn("status", \App\Enums\DeviceStatus::getOptions())->first();
+        foreach($messages as $message){
+            $device = Device::where("title", $message["device_raw"])->first();
 
-                if($latestHistory) {
-                    $status = $latestHistory->status;
-                    if($status == DeviceStatus::PAUSED || $status == "Paused")
-                        $latestHistory->status = "Down";
+            $message["datetime"] = Carbon::make($message["datetime"])->format("Y-m-d H:i");
 
-                    $device->update(["status" => $latestHistory->status]);
-                }
-            }
-            */
+            Message::create([
+                "device_id" => $device ? $device->id : null,
+                "device_raw" => $message["device_raw"],
+                "parent" => $message["parent"],
+                "parent_raw" => $message["parent_raw"],
+                "type" => $message["type"],
+                "type_raw" => $message["type_raw"],
+                "objid" => $message["objid"],
+                "name" => $message["name"],
+                "name_raw" => $message["name_raw"],
+                "status" => $message["status"],
+                "status_raw" => $message["status_raw"],
+                "message" => $message["message"],
+                "message_raw" => $message["message_raw"],
+                "datetime" => $message["datetime"],
+                "datetime_raw" => $message["datetime_raw"],
+            ]);
         }
     }
 }

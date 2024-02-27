@@ -72,168 +72,26 @@
                     </div>
                     <div class="real-time-status-wrap">
                         <div class="real-time-status-list">
-                            <div class="real-time-status-item Down">
+                            @foreach($messages as $message)
+                            <div class="real-time-status-item {{$message->status}}">
                                 <div class="title-wrap">
                                     <div class="state">
-                                        Down
+                                        {{$message->status}}
                                     </div>
                                     <p class="title">
-                                        L3 Switch
+                                        {{$message->device_raw}}
                                     </p>
                                 </div>
                                 <p class="txt">
-                                    1 day interval average of 0.03 Mbit/s (Traffic In) is unusually low for this...
+                                    {{$message->message_raw}}
                                 </p>
                             </div>
-                            <div class="real-time-status-item Up">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Up
-                                    </div>
-                                    <p class="title">
-                                        NMS
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    OK
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Critical">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Critical
-                                    </div>
-                                    <p class="title">
-                                        L3 Switch
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    1 day interval average of 0.03 Mbit/s (Traffic In) is unusually low for this...
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Warning">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Warning
-                                    </div>
-                                    <p class="title">
-                                        NMS
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    OK
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Down">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Down
-                                    </div>
-                                    <p class="title">
-                                        L3 Switch
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    1 day interval average of 0.03 Mbit/s (Traffic In) is unusually low for this...
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Up">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Up
-                                    </div>
-                                    <p class="title">
-                                        NMS
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    OK
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Critical">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Critical
-                                    </div>
-                                    <p class="title">
-                                        L3 Switch
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    1 day interval average of 0.03 Mbit/s (Traffic In) is unusually low for this...
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Warning">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Warning
-                                    </div>
-                                    <p class="title">
-                                        NMS
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    OK
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Down">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Down
-                                    </div>
-                                    <p class="title">
-                                        L3 Switch
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    1 day interval average of 0.03 Mbit/s (Traffic In) is unusually low for this...
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Up">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Up
-                                    </div>
-                                    <p class="title">
-                                        NMS
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    OK
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Critical">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Critical
-                                    </div>
-                                    <p class="title">
-                                        L3 Switch
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    1 day interval average of 0.03 Mbit/s (Traffic In) is unusually low for this...
-                                </p>
-                            </div>
-                            <div class="real-time-status-item Warning">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        Warning
-                                    </div>
-                                    <p class="title">
-                                        NMS
-                                    </p>
-                                </div>
-                                <p class="txt">
-                                    OK
-                                </p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dashboard-content">
-
                 <div class="legend-wrap">
                     <div class="legend-list col-group">
                         <div class="legend-item col-group">

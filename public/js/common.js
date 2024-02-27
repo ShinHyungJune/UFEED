@@ -119,18 +119,12 @@ $(document).ready(function(){
                 // # END : Traffic Top 10 ========
 
                 // # START : Real-time notofication status ======
+                /*
                 if (realTimeNotifications.length > 0) {
 
                     $(".real-time-status-list").html("");
 
                     realTimeNotifications.map(item => {
-
-                        /*if(item.status == "Unusual") {
-
-                            item.status = "Warning";
-
-                        }*/
-
                         $(".real-time-status-list").append(`<div class="real-time-status-item ${item.status}">
                                                                 <div class="title-wrap">
                                                                     <div class="state">
@@ -149,6 +143,7 @@ $(document).ready(function(){
                     });
 
                 }
+                */
                 // # END : Real-time notofication status ======
             });
     }

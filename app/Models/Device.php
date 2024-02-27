@@ -64,4 +64,9 @@ class Device extends Model
             }
         }
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

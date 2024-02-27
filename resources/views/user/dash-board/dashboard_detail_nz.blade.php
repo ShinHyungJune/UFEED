@@ -48,40 +48,13 @@
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
                             <div class="device-item device-btn down m-script-pop" data-target="#pop1" data-title="Automatic Identification System">
-                                <div class="state state-num">6</div>
+                                <div class="state state-num">1</div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Automatic Identification System
                                 </p>
                             </div>
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop2" data-title="Voyage Data Recorder">
-                                <div class="state state-num">7</div>
-                                <img src="/images/dashboard_icon_system.png" alt="">
-                                <p class="device-item-title">
-                                    Voyage Data Recorder
-                                </p>
-                            </div>
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop3" data-title="Navigation Assistance System">
-                                <div class="state"></div>
-                                <img src="/images/dashboard_icon_system.png" alt="">
-                                <p class="device-item-title">
-                                    Navigation Assistance System
-                                </p>
-                            </div>
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop4" data-title="Echo Sounder">
-                                <div class="state state-num">9</div>
-                                <img src="/images/dashboard_icon_system.png" alt="">
-                                <p class="device-item-title">
-                                    Echo Sounder
-                                </p>
-                            </div>
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop5" data-title="Doppler Speed Log">
-                                <div class="state state-num">7</div>
-                                <img src="/images/dashboard_icon_system.png" alt="">
-                                <p class="device-item-title">
-                                    Doppler Speed Log
-                                </p>
-                            </div>
+
                         </div>
                     </div>
 
@@ -122,167 +95,10 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up" data-id="OT#1">
+            <div class="device-detail-item device-item up" data-id="Transponder Unit">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="device-detail" style="display: none;" id="pop2">
-    <div class="device-detail-wrap">
-        <button class="close-btn">
-            <i class="xi-close"></i>
-        </button>
-        <div class="device-detail-title-wrap">
-            <p class="before">
-                Navigation Zone
-            </p>
-            <i class="xi-angle-right"></i>
-            <p class="now"></p>
-        </div>
-
-        <div class="device-detail-group">
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="device-detail" style="display: none;" id="pop3">
-    <div class="device-detail-wrap">
-        <button class="close-btn">
-            <i class="xi-close"></i>
-        </button>
-        <div class="device-detail-title-wrap">
-            <p class="before">
-                Navigation Zone
-            </p>
-            <i class="xi-angle-right"></i>
-            <p class="now"></p>
-        </div>
-
-        <div class="device-detail-group">
-
-        </div>
-    </div>
-</div>
-
-<div class="device-detail" style="display: none;" id="pop4">
-    <div class="device-detail-wrap">
-        <button class="close-btn">
-            <i class="xi-close"></i>
-        </button>
-        <div class="device-detail-title-wrap">
-            <p class="before">
-                Navigation Zone
-            </p>
-            <i class="xi-angle-right"></i>
-            <p class="now"></p>
-        </div>
-
-        <div class="device-detail-group">
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-            </div>
-
-            <div class="device-detail-item device-item down">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
+                <h3 class="title">Transponder Unit</h3>
             </div>
         </div>
     </div>
