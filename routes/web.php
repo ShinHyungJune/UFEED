@@ -119,6 +119,7 @@ Route::middleware('auth')->group(function () {
             Route::delete('/software/destroy', [\App\Http\Controllers\SoftwareController::class, 'destroy'])->name('software.destroy');
             Route::get('/software/systems', [\App\Http\Controllers\SoftwareController::class, 'systems'])->name('software.systems');
             Route::get('/software/export', [\App\Http\Controllers\SoftwareController::class, 'export'])->name('software.export');
+            Route::post('/software/import', [\App\Http\Controllers\SoftwareController::class, 'import'])->name('software.import');
         });
         Route::prefix('protect')->group(function () {
             Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');

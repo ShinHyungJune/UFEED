@@ -390,7 +390,7 @@
     });
 
     document.querySelectorAll('a.sub-gnb-menu, a.gnb-menu-title').forEach(function (item) {
-        if (pathname === item.pathname) {
+        if (pathname.startsWith(item.pathname)) {
             item.classList.add('active');
             item.closest('.gnb-menu').classList.add('active');
             item.closest('.gnb-container').classList.add('active');

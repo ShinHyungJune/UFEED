@@ -5,43 +5,35 @@
         <th>System Name</th>
         <th>Supplier</th>
         <th>Model</th>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Model</th>
-        <th>Q'ty</th>
-        <th>Ver.</th>
-        <th>RJ45</th>
-        <th>USB</th>
-        <th>Serial</th>
-        <th>IP Address</th>
+        <th>OS Name / Ver.</th>
+        <th>Firmware Ver.</th>
+        <th>Application S/W Ver.</th>
+        <th>Patch Level</th>
+        <th>Purpose</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($systems as $hardwares)
-        @if(count($hardwares->hardwares) > 0))
-            @foreach($hardwares->hardwares as $hardware)
+    @foreach($systems as $softwares)
+        @if(count($softwares->softwares) > 0))
+            @foreach($softwares->softwares as $software)
                 <tr>
-                    <td>{{ $hardwares->category->name }}</td>
-                    <td>{{ $hardwares->name }}</td>
-                    <td>{{ $hardwares->supplier }}</td>
-                    <td>{{ $hardwares->model }}</td>
-                    <td>{{ $hardware->name }}</td>
-                    <td>{{ $hardware->location }}</td>
-                    <td>{{ $hardware->model }}</td>
-                    <td>{{ $hardware->q_type }}</td>
-                    <td>{{ $hardware->version }}</td>
-                    <td>{{ $hardware->rj45 }}</td>
-                    <td>{{ $hardware->usb }}</td>
-                    <td>{{ $hardware->serial }}</td>
-                    <td>{{ $hardware->ip_address }}</td>
+                    <td>{{ $softwares->category->name }}</td>
+                    <td>{{ $softwares->name }}</td>
+                    <td>{{ $softwares->supplier }}</td>
+                    <td>{{ $softwares->model }}</td>
+                    <td>{{ $software->name }}</td>
+                    <td>{{ $software->firmware }}</td>
+                    <td>{{ $software->application }}</td>
+                    <td>{{ $software->patch_level }}</td>
+                    <td>{{ $software->purpose }}</td>
                 </tr>
             @endforeach
         @else
             <tr>
-                <td>{{ $hardwares->category->name }}</td>
-                <td>{{ $hardwares->name }}</td>
-                <td>{{ $hardwares->supplier }}</td>
-                <td>{{ $hardwares->model }}</td>
+                <td>{{ $softwares->category->name }}</td>
+                <td>{{ $softwares->name }}</td>
+                <td>{{ $softwares->supplier }}</td>
+                <td>{{ $softwares->model }}</td>
             </tr>
         @endif
     @endforeach

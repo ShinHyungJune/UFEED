@@ -42,20 +42,29 @@
                     <button class="subpage-table-btn" id="modify">
                         Modify
                     </button>
-                    <button class="subpage-table-btn">
-                        Import
-                    </button>
-                    <button class="subpage-table-btn">
+                    <form action="{{ route('software.import') }}" method="post" enctype="multipart/form-data" id="import">
+                        @csrf
+                        <input type='file' id='file_upload' accept=".xlsx, .xls, .csv" name="file">
+                        <label for="file_upload" class="subpage-table-btn">
+                            Import
+                        </label>
+                    </form>
+                    <a href="{{ route('software.export') }}" class="subpage-table-btn">
                         Export
+                    </a>
+                    <button class="subpage-table-btn" onclick="window.print()">
+                        Print
                     </button>
                 </div>
                 <div class="subpage-table-wrap">
-                    <table class="subpage-table identify-table">
+                    <table class="subpage-table identify-table identify-software-table">
                         <colgroup>
                             <col width="10%">
                             <col width="15%">
                             <col width="5%">
                             <col width="6%">
+                            <col width="3%">
+                            <col width="calc( 61%  / 5 )">
                         </colgroup>
                         <thead>
                         <tr>
@@ -176,6 +185,11 @@
         let formData = new FormData(deleteForm);
         fetchUtility("{{ route('software.destroy') }}", formData)
     }
+</script>
+<script>
+    document.getElementById('file_upload').addEventListener('change', function () {
+        document.getElementById('import').submit();
+    });
 </script>
 </body>
 </html>
