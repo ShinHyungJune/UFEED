@@ -47,8 +47,8 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop1" data-title="Automatic Identification System">
-                                <div class="state state-num">1</div>
+                            <div class="device-item device-btn m-script-pop" data-id="Transponder Unit" data-target="#pop1" data-title="Automatic Identification System">
+                                <div class="state state-num"></div>
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Automatic Identification System
@@ -98,18 +98,16 @@
             <div class="device-detail-item device-item up" data-id="Transponder Unit">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="title">Transponder Unit</h3>
+                <h3 class="device-detail-item-title">Transponder Unit</h3>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-
     $('.device-detail .close-btn').click(function () {
         $('.device-detail').fadeOut();
     });
-
 </script>
 </body>
 </html>

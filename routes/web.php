@@ -26,7 +26,7 @@ Route::get("/test", function(){
 
     \App\Models\History::record();*/
 
-    $client = new Client([
+  /*  $client = new Client([
         "verify" => false
     ]);
 
@@ -45,7 +45,7 @@ Route::get("/test", function(){
         ],
     ]);
 
-    return dd($response->getBody()->getContents());
+    return dd($response->getBody()->getContents());*/
 });
 
 Route::get("/histories", function (){

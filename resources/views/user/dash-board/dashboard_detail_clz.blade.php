@@ -48,23 +48,15 @@
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
                             <div class="device-item device-btn down" data-title="Desktop">
-                                <div class="state state-num">8</div>
+                                <div class="state state-num">1</div>
                                 <img src="/images/dashboard_icon_desktop.png" alt="">
                             </div>
                             <div class="device-item device-btn down" data-title="Notebook">
-                                <div class="state state-num">7</div>
+                                <div class="state state-num">1</div>
                                 <img src="/images/dashboard_icon_notebook.png" alt="">
-                            </div>
-                            <div class="device-item device-btn down" data-title="Cellphone">
-                                <div class="state state-num">12</div>
-                                <img src="/images/dashboard_icon_cellphone.png" alt="">
-                                <p class="device-item-title">
-                                    Cellphone
-                                </p>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- 확대/축소버튼 -->
@@ -83,27 +75,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- 알람 -->
-<div class="m-swiper type01" style="display: none;">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="btns">
-            <div class="swiper-btn swiper-btn-prev">
-                <i class="xi-angle-left"></i>
-            </div>
-            <div class="swiper-btn swiper-btn-next">
-                <i class="xi-angle-right"></i>
-            </div>
-
         </div>
     </div>
 </div>
@@ -130,6 +101,8 @@
         </div>
     </div>
 </div>
+
+
 <script>
 
     function showDeviceDetail(num) {
