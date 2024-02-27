@@ -56,7 +56,7 @@
 
         <div class="dashboard-gnb-wrap">
             <div class="real-time-traffic-title-wrap">
-                <p class="title">
+                <p class="dashboard-gnb-title">
                     Traffic
                 </p>
 <!--                <p class="mbps">

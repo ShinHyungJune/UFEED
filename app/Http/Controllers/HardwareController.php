@@ -60,11 +60,13 @@ class HardwareController extends Controller
 
     public function import(Request $request)
     {
-//        Excel::import(new HardwareImport(), $request->file)();
+        Hardware::truncate();
+        Excel::import(new HardwareImport(), $request->file('file'));
+        return redirect()->route('hardware.index');
     }
 
     public function export()
     {
-        return Excel::download(new HardwareExport(), 'invoices.xlsx');
+        return Excel::download(new HardwareExport(), 'hardware.xlsx');
     }
 }

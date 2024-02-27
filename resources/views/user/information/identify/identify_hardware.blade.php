@@ -42,9 +42,13 @@
                     <button class="subpage-table-btn" id="modify">
                         Modify
                     </button>
-                    <button class="subpage-table-btn">
-                        Import
-                    </button>
+                    <form action="{{ route('hardware.import') }}" method="post" enctype="multipart/form-data" id="import">
+                        @csrf
+                        <input type='file' id='file_upload' accept=".xlsx, .xls, .csv" name="file">
+                        <label for="file_upload" class="subpage-table-btn">
+                            Import
+                        </label>
+                    </form>
                     <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
                         Export
                     </a>
@@ -206,6 +210,11 @@
         let formData = new FormData(deleteForm);
         fetchUtility("{{ route('hardware.destroy') }}", formData)
     }
+</script>
+<script>
+    document.getElementById('file_upload').addEventListener('change', function () {
+        document.getElementById('import').submit();
+    });
 </script>
 </body>
 </html>
