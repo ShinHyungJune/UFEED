@@ -760,7 +760,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
     background-color:#fff;
 } */
 .subpage-table-btn-wrap { width: 100%; justify-content: flex-end; gap: 8px; }
-.subpage-table-btn { min-width: 96px; padding: 0 16px; height: 32px; text-align: center; border-radius: 5px; background: #a4a4a4; font-size: 16px; font-weight: 600; line-height: 32px; color: #fff; transition: .2s; }
+.subpage-table-btn { display: block; min-width: 96px; padding: 0 16px; height: 32px; text-align: center; border-radius: 5px; background: #a4a4a4; font-size: 16px; font-weight: 600; line-height: 32px; color: #fff; transition: .2s; }
 .subpage-table-btn:hover { background: #7f7f7f; }
 .subpage-table-btn.active { background: #502ecf; border: 1px solid #502ecf; color: #fff; }
 .subpage-table-title-wrap { display: flex; margin-bottom: 20px; align-items: flex-end; justify-content: space-between; padding-top: 8px; }
@@ -842,7 +842,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .log-table td strong { font-size: 16px; }
 
 /* 상세 페이지 - identify 테이블 */
-.identify-table { padding: 0 5px; width: 100%; min-width: 1420px; transform: translateY(-21px); table-layout: fixed !important; }
+.identify-table { padding: 0 5px; width: 100%; min-width: 1420px; transform: translateY(-21px); }
 .identify-table thead::after { content: ''; display: block; position: absolute; width: calc( 100% + 10px ); height: calc( 100% - 5px ); left: 50%; top: 0; transform: translateX(-50%); background: #fff; z-index: -1; }
 .identify-table thead th { padding: 22px 15px; padding-right: 0; transform: translateY(5px); }
 /* .identify-table thead tr:first-child th { font-size: 18px; text-align: center; }
@@ -873,7 +873,6 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .identify-hardware-table colgroup col:nth-child(5) { min-width: 45px; }
 .identify-hardware-table colgroup col:nth-child(6) { min-width: 252px; }
 .identify-hardware-table colgroup col:nth-child(7) { min-width: 205px; }
-.identify-hardware-table colgroup col:nth-child(7) { min-width: 205px; }
 .identify-hardware-table colgroup col:nth-child(8) { min-width: 84px; }
 .identify-hardware-table colgroup col:nth-last-child(-n+6) { min-width: 64px; }
 .identify-hardware-table colgroup col:last-child { min-width: 176px; }
@@ -889,10 +888,13 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .identify-software-table colgroup col:nth-child(2) { min-width: 270px; }
 .identify-software-table colgroup col:nth-child(3) { min-width: 84px; }
 .identify-software-table colgroup col:nth-child(4) { min-width: 106px; }
+.identify-software-table colgroup col:nth-child(5) { min-width: 45px; }
+.identify-software-table colgroup col:nth-child(6) { min-width: calc( ( 1734 - 687 ) / 5 ); }
 
 .edit-date { width: 100%; justify-content: flex-end; align-items: center; gap: 20px; }
 .edit-date .txt { font-size: 15px; font-weight: 500; color: #9f9b9b; position: relative; }
 .edit-date .txt:not(:last-child):after { content: ''; display: block; position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #9f9b9b; right: -10px; top: 50%; transform: translate(50%, -50%); }
+.edit-date ~ .subpage-table-wrap { height: calc( 100% - 77px ); }
 
 /* 상세 페이지 - ipv4 policy 테이블 */
 .ipv4-policy-table th:nth-child(2) { text-align: center; }
