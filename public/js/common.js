@@ -47,8 +47,10 @@ $(document).ready(function(){
                 devices.map(device => {
                     $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
 
-                    if(!$(`[data-id="${device.title}"]`).hasClass(device.totalStatus.toLowerCase()))
-                        $(`[data-id="${device.title}"]`).addClass(device.totalStatus.toLowerCase());
+                    let totalStatus = device.totalStatus ? device.totalStatus.toLowerCase() : "";
+
+                    if(!$(`[data-id="${device.title}"]`).hasClass(totalStatus))
+                        $(`[data-id="${device.title}"]`).addClass(totalStatus);
 
                     // $(".device-wrap").append(`<div class="device ${device.status} device-${device.title} ${device.title.includes('OT') ? 'device-OT' : ''}" style="left:${device.left}%;top:${device.top}%"></div>`);
 
