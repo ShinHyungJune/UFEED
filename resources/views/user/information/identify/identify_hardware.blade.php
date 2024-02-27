@@ -52,6 +52,9 @@
                     <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
                         Export
                     </a>
+                    <button class="subpage-table-btn" onclick="window.print()">
+                        Print
+                    </button>
                 </div>
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table identify-hardware-table">
