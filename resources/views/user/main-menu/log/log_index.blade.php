@@ -35,14 +35,21 @@
                             Device
                         </th>
                         <th>
-                            Message
+                            Type
+                        </th>
+                        <th>
+                            Object ID
                         </th>
                         <th>
                             Status
                         </th>
                         <th>
-                            Sensor
+                            Message
                         </th>
+
+<!--                        <th>
+                            Sensor
+                        </th>-->
                         </thead>
                         <tbody>
 
@@ -65,7 +72,7 @@
     $('.datepicker-end').datepicker();
 </script>
 <script>
-    function getHistories() {
+    /*function getHistories() {
         axios.get(window.domain + "/api/histories", {
             params: {
                 take: 200
@@ -90,7 +97,7 @@
         });
     }
 
-    getHistories();
+    getHistories();*/
 </script>
 </body>
 </html>
