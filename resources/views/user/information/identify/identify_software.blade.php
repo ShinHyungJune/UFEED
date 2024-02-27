@@ -57,12 +57,14 @@
                     </button>
                 </div>
                 <div class="subpage-table-wrap">
-                    <table class="subpage-table identify-table">
+                    <table class="subpage-table identify-table identify-software-table">
                         <colgroup>
                             <col width="10%">
                             <col width="15%">
                             <col width="5%">
                             <col width="6%">
+                            <col width="3%">
+                            <col width="calc( 61%  / 5 )">
                         </colgroup>
                         <thead>
                         <tr>
