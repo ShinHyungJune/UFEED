@@ -16,13 +16,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'ids' => 'admin',
-            'name' => 'admin',
-            'password' => Hash::make('hgs_1qa2ws'),
+            'ids' => 'manager',
+            'name' => 'manager',
+            'password' => Hash::make('hgs_1qa@WS'),
             'group_id' => 1,
             'authority_id' => 1,
-            'email' => 'admin@gmail.com',
-//            'period_of_use' => '2030-12-31',
+            'email' => 'manager@gmail.com',
         ]);
         User::create([
             'ids' => 'test@naver.com',
@@ -31,7 +30,6 @@ class UserSeeder extends Seeder
             'group_id' => 2,
             'authority_id' => 2,
             'email' => 'test@naver.com',
-//            'period_of_use' => '2030-12-31',
         ]);
     }
 }
