@@ -55,7 +55,7 @@
                     <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
                         Export
                     </a>
-                    <button class="subpage-table-btn" onclick="window.print()">
+                    <button class="subpage-table-btn" onclick="printPage()">
                         Print
                     </button>
                 </div>
@@ -221,6 +221,30 @@
     document.getElementById('file_upload').addEventListener('change', function () {
         document.getElementById('import').submit();
     });
+</script>
+<script>
+    var tableDiv;
+    var initBody;
+
+    function printPage()
+    {
+        tableDiv = document.querySelector('.subpage-table-wrap')
+
+        window.onbeforeprint = beforePrint;
+        window.onafterprint = afterPrint;
+        window.print();
+    }
+
+    function beforePrint()
+    {
+        initBody = document.body.innerHTML;
+        document.body.innerHTML = tableDiv.innerHTML;
+    }
+
+    function afterPrint()
+    {
+        document.body.innerHTML = initBody;
+    }
 </script>
 </body>
 </html>
