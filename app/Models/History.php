@@ -14,9 +14,42 @@ class History extends Model
 
     protected $guarded = ["id"];
 
+    protected $domain;
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        $this->domain = config("app.env") === "local" ? "http://118.130.110.156:8080" : "http://localhost:8080";
+    }
+
     public function device()
     {
         return $this->belongsTo(Device::class);
+    }
+
+    public function getLogMessages()
+    {
+        $response = Http::withoutVerifying()->get($this->domain . "/api/table.json", [
+            "page" => 1,
+            "username" => "prtgadmin",
+            "password" => "hgs_1qa@WS",
+            "content" => "messages",
+            // "content" => "logs",
+            // "content" => "messages",
+            // "content" => "sensors",
+            "columns" => "device,sensor, parent, type, objid, lastvalue, name,message,status, group,datetime, uptimetime,uptime,knowntime",
+            "filter_type" => "",
+            // "filter_type" => "SNMP Memory",
+            // "filter_type" => "ping",
+            // "filter_type" => "snmptraffic",
+        ]);
+
+        // ping, snmptraffic
+
+        $body = $response->json();
+
+        return $body["messages"];
     }
 
     public static function record()

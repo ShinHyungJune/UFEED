@@ -23,11 +23,14 @@
                 <div class="subpage-table-wrap account-table-wrap">
                     <table class="log-table">
                         <colgroup>
-                            <col width="8%">
-                            <col width="10%">
-                            <col width="36%">
-                            <col width="10%">
-                            <col width="36%">
+                            <col width="12%"> <!-- TAG -->
+                            <col width="10%"> <!-- DEVICE -->
+                            <col width="14%"> <!-- TYPE -->
+                            <col width="9%"> <!-- OBJECT ID -->
+                            <col width="15%"> <!-- STATUS -->
+
+                            <col width="25%"> <!-- MESSAGE -->
+                            <col width="25%"> <!-- DATE TIME -->
                         </colgroup>
                         <thead>
                         <th></th>
@@ -35,17 +38,39 @@
                             Device
                         </th>
                         <th>
-                            Message
+                            Type
+                        </th>
+                        <th>
+                            Object ID
                         </th>
                         <th>
                             Status
                         </th>
                         <th>
-                            Sensor
+                            Message
                         </th>
+                        <th>
+                            Date Time
+                        </th>
+
+<!--                        <th>
+                            Sensor
+                        </th>-->
                         </thead>
                         <tbody>
-
+                        @foreach($items as $item)
+                        <tr>
+                            <td>
+                                <div class="log-status {{$item["status"]}}">{{$item["status"]}}</div>
+                            </td>
+                            <td>{{$item["device"] ? $item["device"] : "None"}}</td>
+                            <td>{{$item["type"]}}</td>
+                            <td>{{$item["objid"]}}</td>
+                            <td>{{$item["status"]}}</td>
+                            <td>{{$item["message_raw"]}}</td>
+                            <td>{{$item["datetime"]}}</td>
+                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -65,7 +90,7 @@
     $('.datepicker-end').datepicker();
 </script>
 <script>
-    function getHistories() {
+    /*function getHistories() {
         axios.get(window.domain + "/api/histories", {
             params: {
                 take: 200
@@ -90,7 +115,7 @@
         });
     }
 
-    getHistories();
+    getHistories();*/
 </script>
 </body>
 </html>

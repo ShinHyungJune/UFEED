@@ -901,14 +901,27 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .ipv4-policy-table td:nth-child(2) { text-align: center; }
 
 /* 상세 페이지 - Log index - status */
-.log-status { position: relative; padding-left: 16px; font-size: 14px; font-weight: bold; }
-.log-status::after { content: ''; display: block; position: absolute; width: 6px; height: 28px; border-radius: 3px; left: 0; top: 50%; transform: translateY(-50%); }
+.log-status {
+    position: relative; padding-left: 16px; font-size: 14px; font-weight: bold;
+    color:#555;
+}
+.log-status::after {
+    content: ''; display: block; position: absolute; width: 6px; height: 28px; border-radius: 3px; left: 0; top: 50%; transform: translateY(-50%);
+    background-color:#555;
+}
 .log-status.Down { color: #ff4620; }
 .log-status.Down::after { background: #ff4620; }
+.log-status.Paused { color: #ff4620; }
+.log-status.Paused::after { background: #ff4620; }
 .log-status.Up { color: #01ae42; }
 .log-status.Up::after { background: #01ae42; }
+.log-status.Active { color: #01ae42; }
+.log-status.Active::after { background: #01ae42; }
 .log-status.Unusual { color: #ef9900; }
 .log-status.Unusual::after { background: #ef9900; }
+.log-status.Warning { color: #ef9900; }
+.log-status.Warning::after { background: #ef9900; }
+
 
 /* pdf텍스트 */
 .detail-txt-wrap { gap: 48px; padding: 24px; }

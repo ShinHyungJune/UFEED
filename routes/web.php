@@ -20,18 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-/*
-    $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
-        "page" => 1,
-        "username" => "prtgadmin",
-        "password" => "hgs_1qa@WS",
-        "content" => "",
-        "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
-        // "filter_name" => "Ping",
-        "filter_name" => "CPU Load",
-    ]);
-
-    dd($response->json());*/
+    dd(\App\Models\History::getLogMessages());
 });
 
 Route::get("/histories", function (){
