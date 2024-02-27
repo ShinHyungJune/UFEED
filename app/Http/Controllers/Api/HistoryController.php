@@ -93,7 +93,6 @@ class HistoryController extends ApiController
             "rankingTraffics" => $rankingTraffics,
         ]);
     }
-
     public function getByte($device, $datetime)
     {
         /*$history = $device->histories()

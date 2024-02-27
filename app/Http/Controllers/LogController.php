@@ -8,7 +8,9 @@ class LogController extends Controller
 {
     public function index()
     {
-        $items = History::getLogMessages();
+        $history = new History();
+
+        $items = $history->getLogMessages();
 
         return view('user.main-menu.log.log_index', [
             "items" => $items,

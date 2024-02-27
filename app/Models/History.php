@@ -14,14 +14,23 @@ class History extends Model
 
     protected $guarded = ["id"];
 
+    protected $domain;
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        $this->domain = config("app.env") === "local" ? "http://118.130.110.156:8080" : "http://localhost:8080";
+    }
+
     public function device()
     {
         return $this->belongsTo(Device::class);
     }
 
-    public static function getLogMessages()
+    public function getLogMessages()
     {
-        $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+        $response = Http::withoutVerifying()->get($this->domain . "/api/table.json", [
             "page" => 1,
             "username" => "prtgadmin",
             "password" => "hgs_1qa@WS",
