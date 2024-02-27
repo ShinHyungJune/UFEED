@@ -49,6 +49,7 @@ class HardwareController extends Controller
     public function destroy(Request $request)
     {
         Hardware::destroy($request->input('id'));
+
         return redirect()->route('hardware.index');
     }
 
@@ -58,15 +59,15 @@ class HardwareController extends Controller
         return response($systems);
     }
 
+    public function export()
+    {
+        return Excel::download(new HardwareExport(), 'hardware.xlsx');
+    }
+
     public function import(Request $request)
     {
         Hardware::truncate();
         Excel::import(new HardwareImport(), $request->file('file'));
         return redirect()->route('hardware.index');
-    }
-
-    public function export()
-    {
-        return Excel::download(new HardwareExport(), 'hardware.xlsx');
     }
 }

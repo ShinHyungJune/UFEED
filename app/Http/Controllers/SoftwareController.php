@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\SoftwareExport;
 use App\Http\Requests\SoftwareRequest;
+use App\Imports\SoftwareImport;
 use App\Models\Category;
 use App\Models\Software;
 use App\Models\System;
@@ -60,6 +61,13 @@ class SoftwareController extends Controller
 
     public function export()
     {
-        return Excel::download(new SoftwareExport(), 'invoices.xlsx');
+        return Excel::download(new SoftwareExport(), 'software.xlsx');
+    }
+
+    public function import(Request $request)
+    {
+        Software::truncate();
+        Excel::import(new SoftwareImport(), $request->file('file'));
+        return redirect()->route('software.index');
     }
 }
