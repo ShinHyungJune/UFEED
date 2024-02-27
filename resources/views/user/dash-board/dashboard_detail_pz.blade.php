@@ -13,7 +13,12 @@
 
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
-            @include('user.components.dashboard_detail_gnb', ['dashboardGnbTitle' => 'Power Zone'])
+            @include('user.components.dashboard_detail_gnb', [
+            'dashboardGnbTitle' => 'Power Zone',
+            'counts' => $counts,
+            'countsByDates' => $countsByDates,
+            'totalDevices' => $totalDevices,
+    ])
         </div>
         <!-- //좌측 메뉴 -->
     </div>
@@ -47,15 +52,23 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn down" data-title="Shaft Generator System">
-                                <div class="state state-num">6</div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-target="#pop1" data-title="Shaft Generator System">
+                                @if($totalDevices[0]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[0]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Shaft Generator System
                                 </p>
                             </div>
-                            <div class="device-item device-btn down" data-title="Refeer Container Monitoring System">
-                                <div class="state state-num">3</div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="Refeer Container Monitoring System">
+                                @if($totalDevices[1]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Refeer Container Monitoring System
@@ -86,29 +99,9 @@
     </div>
 </div>
 
-<!-- 알람 -->
-<div class="m-swiper type01" style="display: none;">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="btns">
-            <div class="swiper-btn swiper-btn-prev">
-                <i class="xi-angle-left"></i>
-            </div>
-            <div class="swiper-btn swiper-btn-next">
-                <i class="xi-angle-right"></i>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <!-- 디바이스 상세 팝업 -->
-<div class="device-detail" style="display: none;">
+<div class="device-detail" style="display: none;" id="pop1">
     <div class="device-detail-wrap">
         <button class="close-btn">
             <i class="xi-close"></i>
@@ -122,43 +115,39 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
+                <h3 class="device-detail-item-title">SHAFT GENERATOR CONVERTER</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="device-detail" style="display: none;" id="pop2">
+    <div class="device-detail-wrap">
+        <button class="close-btn">
+            <i class="xi-close"></i>
+        </button>
+        <div class="device-detail-title-wrap">
+            <p class="before">
+                Power Zone
+            </p>
+            <i class="xi-angle-right"></i>
+            <p class="now"></p>
+        </div>
+
+        <div class="device-detail-group">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+                <h3 class="device-detail-item-title">R.C.M.S COMPUTER</h3>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-
-    function showDeviceDetail(num) {
-        // device-detail을 나타나게 함
-        $('.device-detail').fadeIn();
-
-        // device-detail-item을 동적으로 생성하여 추가
-        var detailGroup = $('.device-detail-group');
-        detailGroup.empty(); // 기존의 내용을 지움
-
-        for (var i = 1; i <= num; i++) {
-            var detailItem = $('<div class="device-detail-item device-item down">' +
-                '<div class="state"></div>' +
-                '<img src="/images/dashboard_icon_server.png" alt="">' +
-                '</div>');
-
-            // 생성된 detailItem을 detailGroup에 추가
-            detailGroup.append(detailItem);
-        }
-    }
-
-    $('.device-btn').click(function () {
-
-        var data_title = $(this).attr('data-title');
-        $('.device-detail').find('.now').text(data_title);
-
-        var stateNum = parseInt($(this).find('.state-num').text());
-        showDeviceDetail(stateNum);
-    });
 
     $('.device-detail .close-btn').click(function () {
         $('.device-detail').fadeOut();

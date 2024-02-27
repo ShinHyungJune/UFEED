@@ -75,10 +75,10 @@ $(document).ready(function(){
                     }
                 });
 
-                $(".dashboard-standard-item.up").find(".num").text(counts.up);
-                $(".dashboard-standard-item.down").find(".num").text(counts.down);
-                $(".dashboard-standard-item.warning").find(".num").text(counts.warning);
-                $(".dashboard-standard-item.critical").find(".num").text(counts.unusual);
+                $(".dashboard-standard-item.up").not(".noscript").find(".num").text(counts.up);
+                $(".dashboard-standard-item.down").not(".noscript").find(".num").text(counts.down);
+                $(".dashboard-standard-item.warning").not(".noscript").find(".num").text(counts.warning);
+                $(".dashboard-standard-item.critical").not(".noscript").find(".num").text(counts.unusual);
                 // # END : STANDARD ==========
 
 

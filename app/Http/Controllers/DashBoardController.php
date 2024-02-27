@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Device;
 use App\Models\Firewall;
 use App\Models\Message;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
 class DashBoardController extends Controller
@@ -91,28 +92,193 @@ class DashBoardController extends Controller
         return $result;
     }
 
+    public function getDetailDashboardInfo($totalDevices)
+    {
+        $counts = [
+            "Up" => 0,
+            "Down" => 0,
+            "Warning" => 0,
+            "Unusual" => 0,
+        ];
+
+        $countsByDates = [
+            [
+                "date" => Carbon::now()->subDays(3)->format("Y-m-d H:i"),
+                "title" => Carbon::now()->subDays(3)->format("m/d"),
+                "Up" => 0,
+                "Down" => 0,
+                "Warning" => 0,
+                "Unusual" => 0,
+            ],
+            [
+                "date" => Carbon::now()->subDays(2)->format("Y-m-d H:i"),
+                "title" => Carbon::now()->subDays(2)->format("m/d"),
+                "Up" => 0,
+                "Down" => 0,
+                "Warning" => 0,
+                "Unusual" => 0,
+            ],
+            [
+                "date" => Carbon::now()->subDays(1)->format("Y-m-d H:i"),
+                "title" => Carbon::now()->subDays(1)->format("m/d"),
+                "Up" => 0,
+                "Down" => 0,
+                "Warning" => 0,
+                "Unusual" => 0,
+            ],
+            [
+                "date" => Carbon::now()->format("Y-m-d H:i"),
+                "title" => Carbon::now()->format("m/d"),
+                "Up" => 0,
+                "Down" => 0,
+                "Warning" => 0,
+                "Unusual" => 0,
+            ],
+        ];
+
+        foreach($totalDevices as $index => $device){
+            foreach($device["childDevices"] as $childDevice){
+                if($childDevice->status != "Up") {
+                    $device["count_wrong"] += 1;
+
+                    $device["status"] = "down";
+
+                    $totalDevices[$index] = $device;
+                }
+
+                if(isset($counts[$childDevice->status]))
+                    $counts[$childDevice->status] += 1;
+
+                foreach($countsByDates as $countsIndex => $countsByDate){
+                    $statusHistory = $childDevice->statusHistories()
+                        ->where("created_at", ">=", Carbon::make($countsByDate["date"])->startOfDay())
+                        ->where("created_at", "<=", Carbon::make($countsByDate["date"])->endOfDay())
+                        ->first();
+
+                    if($statusHistory && isset($countsByDates[$countsIndex][$statusHistory->status]))
+                        $countsByDates[$countsIndex][$statusHistory->status] +=1;
+                }
+            }
+        }
+
+        return [
+            "totalDevices" => $totalDevices,
+            "counts" => $counts,
+            "countsByDates" => $countsByDates
+        ];
+    }
+
     public function navigationZone()
     {
-        return view('user.dash-board.dashboard_detail_nz');
+        $totalDevices = [
+            [
+                "title" => "Automatic Identification System",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "Transponder Unit")->first()
+                ]
+            ]
+        ];
+
+        $data = $this->getDetailDashboardInfo($totalDevices);
+
+        return view('user.dash-board.dashboard_detail_nz', $data);
     }
 
     public function communicationZone()
     {
-        return view('user.dash-board.dashboard_detail_cz');
+        $totalDevices = [
+            [
+                "title" => "MF/HF/DSC Radio",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "GMDSS CONSOLE")->first()
+                ]
+            ],
+            [
+                "title" => "NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "VSAT ANTENNA")->first()
+                ]
+            ]
+        ];
+
+        $data = $this->getDetailDashboardInfo($totalDevices);
+
+        return view('user.dash-board.dashboard_detail_cz', $data);
     }
 
     public function crewLanZone()
     {
-        return view('user.dash-board.dashboard_detail_clz');
+        $totalDevices = [
+            [
+                "title" => "Desktop",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "PC#1")->first()
+                ]
+            ],
+            [
+                "title" => "Notebook",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "Notebook#1")->first()
+                ]
+            ]
+        ];
+
+        $data = $this->getDetailDashboardInfo($totalDevices);
+
+        return view('user.dash-board.dashboard_detail_clz', $data);
     }
 
     public function powerZone()
     {
-        return view('user.dash-board.dashboard_detail_pz');
+        $totalDevices = [
+            [
+                "title" => "Shaft Generator System",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "SHAFT GENERATOR CONVERTER")->first()
+                ]
+            ],
+            [
+                "title" => "Refeer Container Monitoring System",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "R.C.M.S COMPUTER")->first()
+                ]
+            ]
+        ];
+
+        $data = $this->getDetailDashboardInfo($totalDevices);
+
+        return view('user.dash-board.dashboard_detail_pz', $data);
     }
 
     public function controlInstrumentationZone()
     {
-        return view('user.dash-board.dashboard_detail_ciz');
+        $totalDevices = [
+            [
+                "title" => "M/E Control System",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "OWS31")->first()
+                ]
+            ],
+        ];
+
+        $data = $this->getDetailDashboardInfo($totalDevices);
+
+        return view('user.dash-board.dashboard_detail_ciz', $data);
     }
 }

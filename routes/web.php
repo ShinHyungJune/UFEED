@@ -20,11 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    /*$history = new \App\Models\History();
+    $history = new \App\Models\History();
+    \App\Models\StatusHistory::record();
 
     // dd($history->getMessages());
 
-    \App\Models\History::record();*/
+    // \App\Models\History::record();
 
   /*  $client = new Client([
         "verify" => false

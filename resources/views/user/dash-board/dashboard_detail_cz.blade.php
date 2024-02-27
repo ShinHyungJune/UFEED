@@ -13,7 +13,12 @@
 
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
-            @include('user.components.dashboard_detail_gnb', ['dashboardGnbTitle' => 'Communication Zone'])
+            @include('user.components.dashboard_detail_gnb', [
+            'dashboardGnbTitle' => 'Communication Zone',
+            'counts' => $counts,
+            'countsByDates' => $countsByDates,
+            'totalDevices' => $totalDevices,
+        ])
         </div>
         <!-- //좌측 메뉴 -->
     </div>
@@ -47,15 +52,23 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop1" data-title="MF/HF/DSC Radio">
-                                <div class="state state-num">6</div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-target="#pop1" data-title="MF/HF/DSC Radio">
+                                @if($totalDevices[0]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[0]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     MF/HF/DSC Radio
                                 </p>
                             </div>
-                            <div class="device-item device-btn down m-script-pop" data-target="#pop2" data-title="NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)">
-                                <div class="state state-num">8</div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)">
+                                @if($totalDevices[1]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)
@@ -86,27 +99,6 @@
     </div>
 </div>
 
-<!-- 알람 -->
-<div class="m-swiper type01" style="display: none;">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="btns">
-            <div class="swiper-btn swiper-btn-prev">
-                <i class="xi-angle-left"></i>
-            </div>
-            <div class="swiper-btn swiper-btn-next">
-                <i class="xi-angle-right"></i>
-            </div>
-
-        </div>
-    </div>
-</div>
-
 <!-- 디바이스 상세 팝업 -->
 <div class="device-detail" style="display: none;" id="pop1">
     <div class="device-detail-wrap">
@@ -122,7 +114,7 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up" data-id="GMDSS CONSOLE">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
 
@@ -146,7 +138,7 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item down">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
                 <h3 class="device-detail-item-title">VSAT ANTENNA</h3>

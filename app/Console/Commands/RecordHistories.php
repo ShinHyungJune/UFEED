@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Enums\State;
 use App\Models\History;
 use App\Models\PreProduct;
+use App\Models\StatusHistory;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
@@ -33,5 +34,7 @@ class RecordHistories extends Command
     public function handle()
     {
         History::record();
+
+        StatusHistory::record();
     }
 }

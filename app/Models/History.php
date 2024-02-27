@@ -51,13 +51,8 @@ class History extends Model
 
         $body = $response->json();
 
-        if($body && isset($body["messages"])){
+        if($body && isset($body["messages"]))
             $items = $body["messages"];
-
-            foreach($items as $item){
-
-            }
-        }
 
         return $items;
     }

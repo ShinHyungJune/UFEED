@@ -13,7 +13,12 @@
 
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
-            @include('user.components.dashboard_detail_gnb', ['dashboardGnbTitle' => 'Crew Lan Zone'])
+            @include('user.components.dashboard_detail_gnb', [
+            'dashboardGnbTitle' => 'Crew Lan Zone',
+            'counts' => $counts,
+            'countsByDates' => $countsByDates,
+            'totalDevices' => $totalDevices,
+    ])
         </div>
         <!-- //좌측 메뉴 -->
     </div>
@@ -47,12 +52,20 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn down" data-title="Desktop">
-                                <div class="state state-num">1</div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-title="Desktop" data-target="#pop1">
+                                @if($totalDevices[0]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[0]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_desktop.png" alt="">
                             </div>
-                            <div class="device-item device-btn down" data-title="Notebook">
-                                <div class="state state-num">1</div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-title="Notebook" data-target="#pop2">
+                                @if($totalDevices[1]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_notebook.png" alt="">
                             </div>
                         </div>
@@ -80,7 +93,7 @@
 </div>
 
 <!-- 디바이스 상세 팝업 -->
-<div class="device-detail" style="display: none;">
+<div class="device-detail" style="display: none;" id="pop1">
     <div class="device-detail-wrap">
         <button class="close-btn">
             <i class="xi-close"></i>
@@ -94,44 +107,38 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item down">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
+                <h3 class="device-detail-item-title">PC#1</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="device-detail" style="display: none;" id="pop2">
+    <div class="device-detail-wrap">
+        <button class="close-btn">
+            <i class="xi-close"></i>
+        </button>
+        <div class="device-detail-title-wrap">
+            <p class="before">
+                Crew Lan Zone
+            </p>
+            <i class="xi-angle-right"></i>
+            <p class="now"></p>
+        </div>
+
+        <div class="device-detail-group">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
+                <div class="state"></div>
+                <img src="/images/dashboard_icon_server.png" alt="">
+                <h3 class="device-detail-item-title">Notebook#1</h3>
             </div>
         </div>
     </div>
 </div>
 
-
 <script>
-
-    function showDeviceDetail(num) {
-        // device-detail을 나타나게 함
-        $('.device-detail').fadeIn();
-
-        // device-detail-item을 동적으로 생성하여 추가
-        var detailGroup = $('.device-detail-group');
-        detailGroup.empty(); // 기존의 내용을 지움
-
-        for (var i = 1; i <= num; i++) {
-            var detailItem = $('<div class="device-detail-item device-item down">' +
-                '<div class="state"></div>' +
-                '<img src="/images/dashboard_icon_server.png" alt="">' +
-                '</div>');
-
-            // 생성된 detailItem을 detailGroup에 추가
-            detailGroup.append(detailItem);
-        }
-    }
-
-    $('.device-btn').click(function () {
-
-        var data_title = $(this).attr('data-title');
-        $('.device-detail').find('.now').text(data_title);
-
-        var stateNum = parseInt($(this).find('.state-num').text());
-        showDeviceDetail(stateNum);
-    });
 
     $('.device-detail .close-btn').click(function () {
         $('.device-detail').fadeOut();

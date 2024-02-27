@@ -16,35 +16,33 @@
                 {{ $dashboardGnbTitle ?? 'dashboardGnbTitle' }}
             </p>
             <div class="dashboard-standard-wrap col-group">
-                <div class="dashboard-standard-item up row-group m-script-pop" data-target=".modal-devices-up">
+                <div class="dashboard-standard-item up row-group m-script-pop noscript">
                     <div class="num">
-                        1
+                        {{$counts['Up']}}
                     </div>
                     <div class="txt">
                         UP
                     </div>
                 </div>
-                <div class="dashboard-standard-item down row-group m-script-pop" data-target=".modal-devices-down">
+                <div class="dashboard-standard-item down row-group m-script-pop noscript">
                     <div class="num">
-                        0
+                        {{$counts['Down']}}
                     </div>
                     <div class="txt">
                         Down
                     </div>
                 </div>
-                <div class="dashboard-standard-item critical row-group m-script-pop"
-                     data-target=".modal-devices-critical">
+                <div class="dashboard-standard-item critical row-group m-script-pop noscript">
                     <div class="num">
-                        0
+                        {{$counts['Warning']}}
                     </div>
                     <div class="txt">
                         Warning
                     </div>
                 </div>
-                <div class="dashboard-standard-item warning row-group m-script-pop"
-                     data-target=".modal-devices-warning">
+                <div class="dashboard-standard-item warning row-group m-script-pop noscript">
                     <div class="num">
-                        29
+                        {{$counts['Unusual']}}
                     </div>
                     <div class="txt">
                         Unusual
@@ -70,123 +68,24 @@
                 Devices Status
             </p>
             <div class="devices-status-wrap">
-                <div class="devices-status-item Down">
-                    <div class="txt-group">
-                        <div class="state">
-                            Down
+                @foreach($totalDevices as $totalDevice)
+                    @foreach($totalDevice["childDevices"] as $childDevice)
+                        <div class="devices-status-item {{$childDevice["status"]}}">
+                            <div class="txt-group">
+                                <div class="state">
+                                    {{$childDevice["status"]}}
+                                </div>
+                                <p class="ip">
+                                    {{$childDevice["title"]}}
+                                </p>
+                            </div>
+<!--                            <p class="date">
+                                2023-12-20 17:53:10
+                            </p>-->
                         </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Warning">
-                    <div class="txt-group">
-                        <div class="state">
-                            Warning
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Up">
-                    <div class="txt-group">
-                        <div class="state">
-                            Up
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Down">
-                    <div class="txt-group">
-                        <div class="state">
-                            Down
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Warning">
-                    <div class="txt-group">
-                        <div class="state">
-                            Warning
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Up">
-                    <div class="txt-group">
-                        <div class="state">
-                            Up
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Down">
-                    <div class="txt-group">
-                        <div class="state">
-                            Down
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Warning">
-                    <div class="txt-group">
-                        <div class="state">
-                            Warning
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
-                <div class="devices-status-item Up">
-                    <div class="txt-group">
-                        <div class="state">
-                            Up
-                        </div>
-                        <p class="ip">
-                            214.120.150.415
-                        </p>
-                    </div>
-                    <p class="date">
-                        2023-12-20 17:53:10
-                    </p>
-                </div>
+                    @endforeach
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -197,27 +96,40 @@
 <script>
     const chart_bar = document.getElementById('chart_bar');
 
+    var labels = [];
+
+    var datasets = [
+        {
+            label: 'Down',
+            data: [],
+            backgroundColor: '#202020',
+        },
+        {
+            label: 'Warning',
+            data: [],
+            backgroundColor: '#ff4620',
+        },
+        {
+            label: 'Unusual',
+            data: [],
+            backgroundColor: '#ef9900',
+        },
+    ];
+
+    var countsByDates = {!! json_encode($countsByDates) !!};
+
+    countsByDates.map(countsByDate => {
+       labels.push(countsByDate["title"]);
+       datasets[0]["data"].push(countsByDate["Down"]);
+       datasets[1]["data"].push(countsByDate["Warning"]);
+       datasets[2]["data"].push(countsByDate["Unusual"]);
+    });
+
     new Chart(chart_bar, {
         type: 'bar',
         data: {
-            labels: ['08/23', '09/23', '10/23', '11/23', '12/23'],
-            datasets: [
-                {
-                    label: 'Down',
-                    data: [5, 2, 7, 1, 3],
-                    backgroundColor: '#202020',
-                },
-                {
-                    label: 'Warning',
-                    data: [4, 3, 1, 2, 4],
-                    backgroundColor: '#ff4620',
-                },
-                {
-                    label: 'Unusual',
-                    data: [5, 5, 2, 3, 5],
-                    backgroundColor: '#ef9900',
-                },
-            ]
+            labels: labels,
+            datasets: datasets,
         },
         options: {
             responsive: true,
@@ -257,12 +169,16 @@
 
     const chart_donut = document.getElementById('chart_donut');
 
+    var data = [];
+
+    var counts = {!! json_encode($counts) !!};
+
     new Chart(chart_donut, {
         type: 'doughnut',
         data: {
             labels: ["Down", "Warning", "UP", "Unusual"],
             datasets: [{
-                data: [5, 2, 2, 1],
+                data: [counts['Down'], counts['Warning'], counts['Up'], counts['Unusual']],
                 backgroundColor: [
                     "#202020",
                     "#ff4620",

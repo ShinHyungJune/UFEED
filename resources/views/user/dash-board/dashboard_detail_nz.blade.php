@@ -13,7 +13,7 @@
 
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
-            @include('user.components.dashboard_detail_gnb', ['dashboardGnbTitle' => 'Navigation Zone'])
+            @include('user.components.dashboard_detail_gnb_sample', ['dashboardGnbTitle' => 'Navigation Zone'])
         </div>
         <!-- //좌측 메뉴 -->
     </div>
@@ -47,8 +47,12 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn m-script-pop" data-id="Transponder Unit" data-target="#pop1" data-title="Automatic Identification System">
-                                <div class="state state-num"></div>
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-target="#pop1" data-title="Automatic Identification System">
+                                @if($totalDevices[0]["count_wrong"] > 0)
+                                    <div class="state state-num">{{$totalDevices[0]["count_wrong"]}}</div>
+                                @else
+                                    <div class="state"></div>
+                                @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
                                     Automatic Identification System
@@ -95,7 +99,7 @@
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item up" data-id="Transponder Unit">
+            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
                 <h3 class="device-detail-item-title">Transponder Unit</h3>

@@ -66,4 +66,9 @@ class Device extends Model
     {
         return $this->hasMany(Message::class);
     }
+
+    public function statusHistories()
+    {
+        return $this->hasMany(StatusHistory::class);
+    }
 }
