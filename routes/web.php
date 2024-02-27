@@ -20,11 +20,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    $history = new \App\Models\History();
+    /*$history = new \App\Models\History();
 
     // dd($history->getMessages());
 
-    \App\Models\History::record();
+    \App\Models\History::record();*/
+
+    $response = $this->client->request('put', "https://10.0.1.109:9554/mc2/rest/mac/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
+        'headers' => [
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json;charset=UTF-8',
+        ],
+        'json' => [
+            [
+                "cmd" => "macdeny",
+                "targetMAC" => "00:90:0B:CB:93:18",
+                "specifyIPs" => ["string"],
+                // "extraLogInfo" => "string"
+            ]
+        ],
+    ]);
+
+    return dd($response->getBody()->getContents());
 });
 
 Route::get("/histories", function (){
