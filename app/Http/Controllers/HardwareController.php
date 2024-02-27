@@ -7,8 +7,10 @@ use App\Http\Requests\HardwareRequest;
 use App\Imports\HardwareImport;
 use App\Models\Category;
 use App\Models\Hardware;
+use App\Models\IdentifyLog;
 use App\Models\System;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 class HardwareController extends Controller
@@ -16,7 +18,8 @@ class HardwareController extends Controller
     public function index()
     {
         $hardwares = Hardware::with('system.category')->get()->groupBy('system.category.name');
-        return view('user.information.identify.identify_hardware')->with('hardwares', $hardwares);
+        $identifyLog = IdentifyLog::whereType('hardware')->latest()->first();
+        return view('user.information.identify.identify_hardware')->with('hardwares', $hardwares)->with('identifyLog', $identifyLog);
     }
 
     public function create()
@@ -27,7 +30,8 @@ class HardwareController extends Controller
 
     public function store(HardwareRequest $request)
     {
-        Hardware::create($request->validated());
+        $hardware = Hardware::create($request->validated());
+        $this->createIdentifyLog($hardware->id);
         return redirect()->route('hardware.index');
     }
 
@@ -42,14 +46,17 @@ class HardwareController extends Controller
     public function update(HardwareRequest $request, Hardware $hardware)
     {
         $hardware->update($request->validated());
-
+        $this->createIdentifyLog($hardware->id);
         return redirect()->route('hardware.index');
     }
 
     public function destroy(Request $request)
     {
-        Hardware::destroy($request->input('id'));
-
+        $idArr = $request->input('id');
+        Hardware::destroy($idArr);
+        foreach ($idArr as $id) {
+            $this->createIdentifyLog($id);
+        }
         return redirect()->route('hardware.index');
     }
 
@@ -68,6 +75,19 @@ class HardwareController extends Controller
     {
         Hardware::truncate();
         Excel::import(new HardwareImport(), $request->file('file'));
+
+        IdentifyLog::whereType('hardware')->delete();
+        $this->createIdentifyLog(null);
+
         return redirect()->route('hardware.index');
+    }
+
+    private function createIdentifyLog($id)
+    {
+        IdentifyLog::create([
+            'hardware_id' => $id,
+            'created_by' => Auth::user()->ids,
+            'type' => 'hardware'
+        ]);
     }
 }

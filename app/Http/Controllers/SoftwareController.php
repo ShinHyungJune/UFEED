@@ -6,9 +6,11 @@ use App\Exports\SoftwareExport;
 use App\Http\Requests\SoftwareRequest;
 use App\Imports\SoftwareImport;
 use App\Models\Category;
+use App\Models\IdentifyLog;
 use App\Models\Software;
 use App\Models\System;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 class SoftwareController extends Controller
@@ -16,7 +18,8 @@ class SoftwareController extends Controller
     public function index()
     {
         $softwares = Software::with('system.category')->get()->groupBy('system.category.name');
-        return view('user.information.identify.identify_software')->with('softwares', $softwares);
+        $identifyLog = IdentifyLog::whereType('software')->latest()->first();
+        return view('user.information.identify.identify_software')->with('softwares', $softwares)->with('identifyLog', $identifyLog);
     }
 
     public function create()
@@ -27,7 +30,8 @@ class SoftwareController extends Controller
 
     public function store(SoftwareRequest $request)
     {
-        Software::create($request->validated());
+        $software = Software::create($request->validated());
+        $this->createIdentifyLog($software->id);
         return redirect()->route('software.index');
     }
 
@@ -42,14 +46,17 @@ class SoftwareController extends Controller
     public function update(SoftwareRequest $request, Software $software)
     {
         $software->update($request->validated());
-
+        $this->createIdentifyLog($software->id);
         return redirect()->route('software.index');
     }
 
     public function destroy(Request $request)
     {
-        Software::destroy($request->input('id'));
-
+        $idArr = $request->input('id');
+        Software::destroy($idArr);
+        foreach ($idArr as $id) {
+            $this->createIdentifyLog($id);
+        }
         return redirect()->route('software.index');
     }
 
@@ -68,6 +75,19 @@ class SoftwareController extends Controller
     {
         Software::truncate();
         Excel::import(new SoftwareImport(), $request->file('file'));
+
+        IdentifyLog::whereType('software')->delete();
+        $this->createIdentifyLog(null);
+
         return redirect()->route('software.index');
+    }
+
+    private function createIdentifyLog($id)
+    {
+        IdentifyLog::create([
+            'software_id' => $id,
+            'created_by' => Auth::user()->ids,
+            'type' => 'software'
+        ]);
     }
 }

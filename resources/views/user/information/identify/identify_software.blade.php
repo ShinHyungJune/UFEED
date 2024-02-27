@@ -21,12 +21,14 @@
         <div class="subpage">
             <div class="subpage-table-container">
                 <div class="edit-date col-group">
-                    <p class="txt">
-                        2023-12-12 12:41:57
-                    </p>
-                    <p class="txt">
-                        Administrators
-                    </p>
+                    @isset($identifyLog)
+                        <p class="txt">
+                            {{ $identifyLog->created_at }}
+                        </p>
+                        <p class="txt">
+                            {{ $identifyLog->created_by }}
+                        </p>
+                    @endisset
                 </div>
                 <div class="subpage-table-btn-wrap col-group">
                     <a href="{{ route('software.create') }}" class="subpage-table-btn">
@@ -42,7 +44,8 @@
                     <button class="subpage-table-btn" id="modify">
                         Modify
                     </button>
-                    <form action="{{ route('software.import') }}" method="post" enctype="multipart/form-data" id="import">
+                    <form action="{{ route('software.import') }}" method="post" enctype="multipart/form-data"
+                          id="import">
                         @csrf
                         <input type='file' id='file_upload' accept=".xlsx, .xls, .csv" name="file">
                         <label for="file_upload" class="subpage-table-btn">
@@ -52,7 +55,7 @@
                     <a href="{{ route('software.export') }}" class="subpage-table-btn">
                         Export
                     </a>
-                    <button class="subpage-table-btn" onclick="window.print()">
+                    <button class="subpage-table-btn" onclick="printPage()">
                         Print
                     </button>
                 </div>
@@ -190,6 +193,30 @@
     document.getElementById('file_upload').addEventListener('change', function () {
         document.getElementById('import').submit();
     });
+</script>
+<script>
+    var tableDiv;
+    var initBody;
+
+    function printPage()
+    {
+        tableDiv = document.querySelector('.subpage-table-wrap')
+
+        window.onbeforeprint = beforePrint;
+        window.onafterprint = afterPrint;
+        window.print();
+    }
+
+    function beforePrint()
+    {
+        initBody = document.body.innerHTML;
+        document.body.innerHTML = tableDiv.innerHTML;
+    }
+
+    function afterPrint()
+    {
+        document.body.innerHTML = initBody;
+    }
 </script>
 </body>
 </html>

@@ -49,12 +49,12 @@
                         <button class="subpage-table-btn">
                             Export
                         </button>
-                        <button class="subpage-table-btn">
+                        <button class="subpage-table-btn" onclick="printTest()">
                             Print
                         </button>
                     </div>
                     <div class="subpage-table-wrap">
-                        <table class="subpage-table identify-table identify-hardware-table">
+                        <table class="subpage-table identify-table identify-hardware-table" id="pdf_wrap">
                             <colgroup>
                                 <col width="10%">
                                 <col width="15%">
@@ -4666,6 +4666,10 @@
                 </div>
             </div>
         </div>
+
+        <div id="loading" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 9999999; background: #fff; display: none;">
+            <i class="xi-spin xi-spinner-1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #202020; font-size: 40px;"></i>
+        </div>
         <!-- 대시보드 -->
 
     </div>
@@ -4674,5 +4678,30 @@
 <script src="/js/jquery.js"></script>
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+<script>
+    var div;
+    var initBody;
+
+    function printTest()
+    {
+        div = document.querySelector('.subpage-table-wrap')
+
+        window.onbeforeprint = beforePrint;
+        window.onafterprint = afterPrint;
+        window.print();
+    }
+
+    function beforePrint()
+    {
+        initBody = document.body.innerHTML;
+        document.body.innerHTML = div.innerHTML;
+    }
+
+    function afterPrint()
+    {
+        document.body.innerHTML = initBody;
+    }
+</script>
 
 </html>
