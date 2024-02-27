@@ -40,10 +40,7 @@ class History extends Model
 
         $body = $response->json();
 
-        if($body)
-            return $body[""];
-
-        return [];
+        return $body["messages"];
     }
 
     public static function record()
