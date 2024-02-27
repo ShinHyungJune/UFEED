@@ -19,6 +19,33 @@ class History extends Model
         return $this->belongsTo(Device::class);
     }
 
+    public static function getLogMessages()
+    {
+        $response = Http::withoutVerifying()->get("http://118.130.110.156:8080/api/table.json", [
+            "page" => 1,
+            "username" => "prtgadmin",
+            "password" => "hgs_1qa@WS",
+            "content" => "messages",
+            // "content" => "logs",
+            // "content" => "messages",
+            // "content" => "sensors",
+            "columns" => "device,sensor, parent, type, objid, lastvalue, name,message,status, group,datetime, uptimetime,uptime,knowntime",
+            "filter_type" => "",
+            // "filter_type" => "SNMP Memory",
+            // "filter_type" => "ping",
+            // "filter_type" => "snmptraffic",
+        ]);
+
+        // ping, snmptraffic
+
+        $body = $response->json();
+
+        if($body)
+            return $body[""];
+
+        return [];
+    }
+
     public static function record()
     {
         \App\Models\History::where("created_at", "<=", \Carbon\Carbon::now()->subYears(1))->delete();
