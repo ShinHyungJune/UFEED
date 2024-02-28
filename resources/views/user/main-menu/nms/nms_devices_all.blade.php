@@ -409,13 +409,20 @@
 </div>
 </body>
 <script>
-    $('.directory-title').click(function () {
-        $(this).parent('.directory-item').toggleClass('active');
+    $(document).ready(function() {
+        calcBorderHeight();
 
-        $('.directory-group').each(function () {
+        $('.directory-title').click(function() {
+            $(this).parent('.directory-item').toggleClass('active');
+            calcBorderHeight();
+        });
+    });
+
+    function calcBorderHeight() {
+        $('.directory-group').each(function() {
             var heightValue = $(this).outerHeight(true) - $(this).children('.directory-item').last().outerHeight(true);
             $(this).siblings('.directory-title').find('.border').css('height', heightValue + 26 + 'px');
         });
-    });
+    };
 </script>
 </html>

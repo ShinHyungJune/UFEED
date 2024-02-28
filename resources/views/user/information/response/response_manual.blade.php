@@ -165,12 +165,12 @@
                                                                 NAC Server
                                                             </div>
                                                         </li>
-                                                        <li class="directory-item active">
-                                                            <div class="directory-title">
-                                                                <div class="border"></div>
-                                                                NAC Sensor
-                                                            </div>
-                                                        </li>
+{{--                                                        <li class="directory-item active">--}}
+{{--                                                            <div class="directory-title">--}}
+{{--                                                                <div class="border"></div>--}}
+{{--                                                                NAC Sensor--}}
+{{--                                                            </div>--}}
+{{--                                                        </li>--}}
                                                     </ul>
                                                 </li>
                                                 <li class="directory-item active">
