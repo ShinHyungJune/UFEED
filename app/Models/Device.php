@@ -11,8 +11,6 @@ class Device extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'ping_value', 'cpu_load_value', 'memory_load_value'];
-
     protected $guarded = ["id"];
 
     protected $appends = ["totalStatus"];
