@@ -82,7 +82,7 @@
                                 Navigation Zone
                             </td>
                             <td>
-                                Transponder Unit
+                                VR-7011
                             </td>
                             <td>
                                 Administrator
@@ -108,7 +108,7 @@
                                 Communication Zone
                             </td>
                             <td>
-                                GMDSS CONSOLE
+                                GMDSS
                             </td>
                             <td>
                                 Administrator
@@ -206,7 +206,7 @@
                                 Power Zone
                             </td>
                             <td>
-                                SHAFT GENERATOR CONVERTER
+                                Client PC
                             </td>
                             <td>
                                 Administrator

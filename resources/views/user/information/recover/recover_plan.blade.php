@@ -236,7 +236,7 @@
                                         <li class="directory-item active">
                                             <div class="directory-title">
                                                 <div class="border"></div>
-                                                Automatic Identification System
+                                                VDR
                                             </div>
                                             <ul class="directory-detail-group menual-group">
                                                 <li class="menual-item" data-pdf="Manual_Guide_9">

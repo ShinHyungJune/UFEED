@@ -57,8 +57,8 @@ class NMSController extends Controller
         $devicesNAC = Device::where('title', 'like', 'NAC%')->orderByDesc('title')->get();
         $devicesL3 = Device::whereTitle('L3 Switch')->first();
 
-        $deviceOT1 = Device::whereTitle('Transponder Unit')->first();
-        $deviceOT2 = Device::whereTitle('GMDSS CONSOLE')->first();
+        $deviceOT1 = Device::whereTitle('VR-7011')->first();
+        $deviceOT2 = Device::whereTitle('GMDSS')->first();
         $deviceOT3 = Device::whereTitle('EMS MOP PC')->first();
 
         return view('user.main-menu.nms.nms_devices_all', [

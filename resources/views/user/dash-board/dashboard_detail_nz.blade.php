@@ -47,7 +47,7 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-target="#pop1" data-title="Automatic Identification System">
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-target="#pop1" data-title="VDR">
                                 @if($totalDevices[0]["count_wrong"] > 0)
                                     <div class="state state-num">{{$totalDevices[0]["count_wrong"]}}</div>
                                 @else
@@ -55,7 +55,7 @@
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    Automatic Identification System
+                                    VDR
                                 </p>
                             </div>
 
@@ -102,7 +102,7 @@
             <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">Transponder Unit</h3>
+                <h3 class="device-detail-item-title">VR-7011</h3>
             </div>
         </div>
     </div>

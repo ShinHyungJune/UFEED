@@ -69,7 +69,7 @@ class SystemSeeder extends Seeder
             ],
             [
                 'category' => 'Communication',
-                'name' => 'NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)',
+                'name' => 'VSAT',
                 'supplier' => 'FURUNO',
                 'model' => 'FELCOM 18',
             ],

@@ -58,7 +58,7 @@
                                 1
                             </td>
                             <td>
-                                Transponder Unit
+                                VR-7011
                             </td>
                             <td>
                                 Windows 10
@@ -76,7 +76,7 @@
                                 2
                             </td>
                             <td>
-                                GMDSS CONSOLE
+                                GMDSS
                             </td>
                             <td>
                                 Windows 10
@@ -148,7 +148,7 @@
                                 6
                             </td>
                             <td>
-                                SHAFT GENERATOR CONVERTER
+                                Client PC
                             </td>
                             <td>
                                 Windows 10
