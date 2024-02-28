@@ -63,6 +63,7 @@
                                     MF/HF/DSC Radio
                                 </p>
                             </div>
+
                             <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)">
                                 @if($totalDevices[1]["count_wrong"] > 0)
                                     <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>

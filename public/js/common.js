@@ -39,10 +39,10 @@ $(document).ready(function(){
 
                 $(".device-wrap").find(".device").remove();
 
-                $(".modal-devices-up tbody").html("");
-                $(".modal-devices-down tbody").html("");
-                $(".modal-devices-critical tbody").html("");
-                $(".modal-devices-warning tbody").html("");
+                $(".modal-devices-up tbody").not(".noscript").html("");
+                $(".modal-devices-down tbody").not(".noscript").html("");
+                $(".modal-devices-critical tbody").not(".noscript").html("");
+                $(".modal-devices-warning tbody").not(".noscript").html("");
 
                 devices.map(device => {
                     $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
@@ -56,22 +56,22 @@ $(document).ready(function(){
 
                     if (device.status === "Up") {
                         counts.up += 1;
-                        $(".modal-devices-up tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                        $(".modal-devices-up").not(".noscript").find("tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
 
                     if (device.status === "Down") {
                         counts.down += 1;
-                        $(".modal-devices-down tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                        $(".modal-devices-down").not(".noscript").find("tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
 
                     if (device.status === "Unusual") {
                         counts.unusual += 1;
-                        $(".modal-devices-critical tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                        $(".modal-devices-unusual").not(".noscript").find("tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
 
                     if (device.status === "Warning") {
                         counts.warning += 1;
-                        $(".modal-devices-warning tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                        $(".modal-devices-warning").not(".noscript").find("tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
                 });
 
