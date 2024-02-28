@@ -82,7 +82,7 @@ class History extends Model
             $device = Device::where("title", $item->device_raw)->first();
 
             if($device && $item->status)
-                $device->update(["status" => $device->statua]);
+                $device->update(["status" => $item->status]);
         }
     }
 }

@@ -28,7 +28,6 @@ class StatusHistory extends Model
                 ->first();
 
             if($device->status){
-
                 $statusHistory
                     ? $statusHistory->update(["status" => $device->status])
                     :   StatusHistory::create([
