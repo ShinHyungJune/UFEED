@@ -17,7 +17,7 @@ class SoftwareController extends Controller
 {
     public function index()
     {
-        $softwares = Software::with('system.category')->get()->groupBy('system.category.name');
+        $softwares = Software::with('system.category')->orderBy('system_id')->get()->groupBy('system.name');
         $identifyLog = IdentifyLog::whereType('software')->latest()->first();
         return view('user.information.identify.identify_software')->with('softwares', $softwares)->with('identifyLog', $identifyLog);
     }
