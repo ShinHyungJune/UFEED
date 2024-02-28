@@ -4,10 +4,10 @@
 <body>
 <div id="wrap">
 
-    <main id="main" class="main">
+    <main id="main" class="main login">
         <div class="login_wrap">
             <div class="logo_wrap">
-                <img src="/images/logo_full.png" alt="">
+                <img src="/images/login_top.png" alt="">
             </div>
             <form action="" method="post" id="form">
                 @csrf

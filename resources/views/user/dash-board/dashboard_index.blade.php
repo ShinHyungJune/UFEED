@@ -25,6 +25,9 @@
                 <div class="dashboard-gnb-wrap">
                     <p class="dashboard-gnb-title">
                         CBS Protection
+                        <span class="time">
+                                Last 24 Hours
+                            </span>
                     </p>
 
                     <div class="protection-wrap col-group">
@@ -62,30 +65,30 @@
                                 <i class="xi-arrow-down"></i>
                             </button>
                         </div>
-{{--                        <a href="{{ route('security-monitoring') }}" class="security-btn">--}}
-{{--                            <div class="txt-group">--}}
-{{--                                <i class="xi-desktop"></i>--}}
-{{--                                <p class="txt">Security Monitoring</p>--}}
-{{--                            </div>--}}
-{{--                            <i class="xi-arrow-right icon"></i>--}}
-{{--                        </a>--}}
+                        {{--                        <a href="{{ route('security-monitoring') }}" class="security-btn">--}}
+                        {{--                            <div class="txt-group">--}}
+                        {{--                                <i class="xi-desktop"></i>--}}
+                        {{--                                <p class="txt">Security Monitoring</p>--}}
+                        {{--                            </div>--}}
+                        {{--                            <i class="xi-arrow-right icon"></i>--}}
+                        {{--                        </a>--}}
                     </div>
                     <div class="real-time-status-wrap">
                         <div class="real-time-status-list">
                             @foreach($messages as $message)
-                            <div class="real-time-status-item {{$message->status}}">
-                                <div class="title-wrap">
-                                    <div class="state">
-                                        {{$message->status}}
+                                <div class="real-time-status-item {{$message->status}}">
+                                    <div class="title-wrap">
+                                        <div class="state">
+                                            {{$message->status}}
+                                        </div>
+                                        <p class="title">
+                                            {{$message->device_raw}}
+                                        </p>
                                     </div>
-                                    <p class="title">
-                                        {{$message->device_raw}}
+                                    <p class="txt">
+                                        <span class="sub">{{$message->datetime}}</span> {{$message->message_raw}}
                                     </p>
                                 </div>
-                                <p class="txt">
-                                    <span class="sub">{{$message->datetime}}</span> {{$message->message_raw}}
-                                </p>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -98,10 +101,10 @@
                             <div class="color-box green"></div>
                             Up
                         </div>
-<!--                        <div class="legend-item col-group">
-                            <div class="color-box yellow"></div>
-                            Warning
-                        </div>-->
+                        <!--                        <div class="legend-item col-group">
+                                                    <div class="color-box yellow"></div>
+                                                    Warning
+                                                </div>-->
                         <div class="legend-item col-group">
                             <div class="color-box red"></div>
                             Down
@@ -115,7 +118,8 @@
                             <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
                         </video>
 
-                        <a href="{{ route('navigation') }}" data-id="FW#2" class="device-item up" style="top: 200px; left: 0;">
+                        <a href="{{ route('navigation') }}" data-id="FW#2" class="device-item up"
+                           style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_nz.png" alt="">
                             <p class="device-item-zone">
@@ -123,7 +127,8 @@
                             </p>
                         </a>
 
-                        <a href="{{ route('communication') }}" data-id="FW#3" class="device-item up" style="top: 400px; left: 0;">
+                        <a href="{{ route('communication') }}" data-id="FW#3" class="device-item up"
+                           style="top: 400px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_cz.png" alt="">
                             <p class="device-item-zone">
@@ -160,14 +165,16 @@
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_hisecure.png" alt="">
                         </div>
-                        <a href="{{ route('crew-lan') }}" data-id="FW#4" class="device-item up" style="top: 0; left: 800px;">
+                        <a href="{{ route('crew-lan') }}" data-id="FW#4" class="device-item up"
+                           style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_clz.png" alt="">
                             <p class="device-item-zone">
                                 FW#4
                             </p>
                         </a>
-                        <a href="{{ route('power') }}" data-id="FW#5" class="device-item up" style="top: 200px; left: 800px;">
+                        <a href="{{ route('power') }}" data-id="FW#5" class="device-item up"
+                           style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall_pz.png" alt="">
                             <p class="device-item-zone">

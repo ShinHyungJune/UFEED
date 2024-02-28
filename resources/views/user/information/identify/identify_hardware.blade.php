@@ -23,7 +23,7 @@
                 <div class="edit-date col-group">
                     @isset($identifyLog)
                         <p class="txt">
-                            {{ $identifyLog->created_at }}
+                            Last : {{ $identifyLog->created_at }}
                         </p>
                         <p class="txt">
                             {{ $identifyLog->created_by }}
