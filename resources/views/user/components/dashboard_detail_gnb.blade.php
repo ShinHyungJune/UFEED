@@ -16,7 +16,7 @@
                 {{ $dashboardGnbTitle ?? 'dashboardGnbTitle' }}
             </p>
             <div class="dashboard-standard-wrap col-group">
-                <div class="dashboard-standard-item up row-group m-script-pop noscript">
+                <div class="dashboard-standard-item up row-group m-script-pop noscript" data-target=".modal-devices-up">
                     <div class="num">
                         {{$counts['Up']}}
                     </div>
@@ -24,7 +24,7 @@
                         UP
                     </div>
                 </div>
-                <div class="dashboard-standard-item down row-group m-script-pop noscript">
+                <div class="dashboard-standard-item down row-group m-script-pop noscript" data-target=".modal-devices-down">
                     <div class="num">
                         {{$counts['Down']}}
                     </div>
@@ -32,7 +32,7 @@
                         Down
                     </div>
                 </div>
-                <div class="dashboard-standard-item critical row-group m-script-pop noscript">
+                <div class="dashboard-standard-item critical row-group m-script-pop noscript" data-target=".modal-devices-warning">
                     <div class="num">
                         {{$counts['Warning']}}
                     </div>
@@ -40,7 +40,7 @@
                         Warning
                     </div>
                 </div>
-                <div class="dashboard-standard-item warning row-group m-script-pop noscript">
+                <div class="dashboard-standard-item warning row-group m-script-pop noscript" data-target=".modal-devices-unusual">
                     <div class="num">
                         {{$counts['Unusual']}}
                     </div>
@@ -86,6 +86,182 @@
                     @endforeach
                 @endforeach
 
+            </div>
+        </div>
+
+        <div class="modal-container modal-devices-up noscript" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-up"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap account-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($totalDevices as $totalDevice)
+                                @foreach($totalDevice["childDevices"] as $childDevice)
+                                    @if($childDevice->status === "Up")
+                                        <tr>
+                                            <td>{{$childDevice->title}}</td>
+                                            <td>{{$childDevice->status}}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-up">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container modal-devices-down noscript" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-down"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap account-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($totalDevices as $totalDevice)
+                                @foreach($totalDevice["childDevices"] as $childDevice)
+                                    @if($childDevice->status === "Down")
+                                        <tr>
+                                            <td>{{$childDevice->title}}</td>
+                                            <td>{{$childDevice->status}}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-down">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container modal-devices-warning noscript" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-warning"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap account-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($totalDevices as $totalDevice)
+                                @foreach($totalDevice["childDevices"] as $childDevice)
+                                    @if($childDevice->status === "Warning")
+                                        <tr>
+                                            <td>{{$childDevice->title}}</td>
+                                            <td>{{$childDevice->status}}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-warning">
+                        CLOSE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container modal-devices-unusual noscript" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    Devices
+                    <i class="xi-close close-btn m-script-pop" data-target=".modal-devices-unusual"></i>
+                </div>
+
+                <div class="modal-table-container">
+                    <div class="modal-table-wrap account-table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Device
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($totalDevices as $totalDevice)
+                                @foreach($totalDevice["childDevices"] as $childDevice)
+                                    @if($childDevice->status === "Unusual")
+                                        <tr>
+                                            <td>{{$childDevice->title}}</td>
+                                            <td>{{$childDevice->status}}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn m-script-pop" data-target=".modal-devices-unusual">
+                        CLOSE
+                    </button>
+                </div>
             </div>
         </div>
     </div>
