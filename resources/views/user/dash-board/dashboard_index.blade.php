@@ -98,10 +98,10 @@
                             <div class="color-box green"></div>
                             Up
                         </div>
-                        <div class="legend-item col-group">
+<!--                        <div class="legend-item col-group">
                             <div class="color-box yellow"></div>
                             Warning
-                        </div>
+                        </div>-->
                         <div class="legend-item col-group">
                             <div class="color-box red"></div>
                             Down
