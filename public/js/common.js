@@ -39,10 +39,10 @@ $(document).ready(function(){
 
                 $(".device-wrap").find(".device").remove();
 
-                $(".modal-devices-up tbody").not(".noscript").html("");
-                $(".modal-devices-down tbody").not(".noscript").html("");
-                $(".modal-devices-critical tbody").not(".noscript").html("");
-                $(".modal-devices-warning tbody").not(".noscript").html("");
+                $(".modal-devices-up").not(".noscript").find("tbody").html("");
+                $(".modal-devices-down").not(".noscript").find("tbody").html("");
+                $(".modal-devices-critical").not(".noscript").find("tbody").html("");
+                $(".modal-devices-warning").not(".noscript").find("tbody").html("");
 
                 devices.map(device => {
                     $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
@@ -66,7 +66,7 @@ $(document).ready(function(){
 
                     if (device.status === "Unusual") {
                         counts.unusual += 1;
-                        $(".modal-devices-unusual").not(".noscript").find("tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
+                        $(".modal-devices-critical").not(".noscript").find("tbody").append(`<tr><td>${device.title}</td><td>${device.status}</td></tr>`);
                     }
 
                     if (device.status === "Warning") {
