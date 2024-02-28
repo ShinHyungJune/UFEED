@@ -4,9 +4,10 @@
 /* 로그인 */
 .login { background: url(../images/login_bg.png); background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; }
 .login::after { content: ''; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; bottom: 0; right: 0; background: #000; opacity: 0.04; z-index: -1; }
-.login_wrap { position: relative; background: #fff; width: 640px; border-radius: 24px; border: solid 1px #e4e4e4; box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.08); }
-.login_wrap .logo_wrap { margin-bottom: 24px; width: 100%; }
-.login_wrap .login_box { display: flex; flex-direction: column; gap: 24px; padding: 80px; }
+.login_wrap { position: relative; background: #fff; width: 640px; border-radius: 24px; border: solid 1px #e4e4e4; box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.08); overflow: hidden; }
+.login_wrap .logo_wrap { width: 100%; height: 280px; overflow: hidden; }
+.login_wrap .logo_wrap img { height: 100%; object-fit: cover; object-position: center; }
+.login_wrap .login_box { display: flex; flex-direction: column; gap: 24px; padding: 56px 80px; position: relative; }
 .login_wrap .login_box .input_wrap { width: 100%; height: 56px; display: flex; align-items: center; background-color: #f5f7fa; border-radius: 28px; padding: 0 20px; gap: 12px; }
 .login_wrap .login_box .input_wrap .label_wrap { display: flex; align-items: center; gap: 8px; }
 .login_wrap .login_box .input_wrap .label_wrap i { font-size: 20px; color: #202020; }
@@ -15,7 +16,8 @@
 .login_wrap .login_box .input_wrap input::placeholder { color: #a4a4a4; font-weight: 500; }
 .login_wrap .login_box a { display: flex; justify-content: center; align-items: center; border-radius: 32px; background-color: #01ae42; color: #fff; width: 100%; height: 64px; font-size: 24px; font-weight: 600; margin-top: 56px; transition: .3s; box-shadow: 0 3px 16px 0 rgba(1, 174, 66, 0.24); }
 .login_wrap .login_box a:hover { background-color: #109242; }
-.login_wrap .error-txt { text-align: center; font-size: 14px; color: #ff4620; font-weight: 600; line-height: 1.5; margin-top: 8px; }
+.login_wrap .error-txt-box { position: absolute; left: 50%; transform: translateX(-50%); top: 208px; width: calc( 100% - 160px ); }
+.login_wrap .error-txt { text-align: center; font-size: 14px; color: #ff4620; font-weight: 600; line-height: 1.5; }
 .login_wrap .validation-txt { margin-top: 0; font-size: 12px; font-weight: normal; }
 /* 메인 */
 .main_wrap { position: relative; display: flex; }

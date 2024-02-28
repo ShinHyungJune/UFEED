@@ -172,11 +172,11 @@ class DashBoardController extends Controller
     {
         $totalDevices = [
             [
-                "title" => "Automatic Identification System",
+                "title" => "VDR",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "Transponder Unit")->first()
+                    Device::where("title", "VR-7011")->first()
                 ]
             ]
         ];
@@ -194,15 +194,15 @@ class DashBoardController extends Controller
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "GMDSS CONSOLE")->first()
+                    Device::where("title", "GMDSS")->first()
                 ]
             ],
             [
-                "title" => "NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)",
+                "title" => "VSAT",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "VSAT ANTENNA")->first()
+                    Device::where("title", "Switch")->first()
                 ]
             ]
         ];
@@ -246,7 +246,7 @@ class DashBoardController extends Controller
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "SHAFT GENERATOR CONVERTER")->first()
+                    Device::where("title", "Client PC")->first()
                 ]
             ],
             [

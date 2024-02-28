@@ -64,7 +64,7 @@
                                 </p>
                             </div>
 
-                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)">
+                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="VSAT">
                                 @if($totalDevices[1]["count_wrong"] > 0)
                                     <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
                                 @else
@@ -72,7 +72,7 @@
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    NO.1 & 2 SATCOM-C (incl. SSAS & LRIT)
+                                    VSAT
                                 </p>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
 
-                <h3 class="device-detail-item-title">GMDSS CONSOLE</h3>
+                <h3 class="device-detail-item-title">GMDSS</h3>
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@
             <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">VSAT ANTENNA</h3>
+                <h3 class="device-detail-item-title">Switch</h3>
             </div>
         </div>
     </div>
