@@ -34,3 +34,8 @@ function hideModal() {
     document.querySelector('.modal-alert').style.display = 'none';
     location.reload();
 }
+
+function hideModalResponseUrl(url) {
+    document.querySelector('.modal-alert').style.display = 'none';
+    location.href = url;
+}
