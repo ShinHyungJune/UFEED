@@ -131,7 +131,7 @@
                                 3
                             </td>
                             <td>
-                                VSAT ANTENNA
+                                Switch
                             </td>
                             <td>
                                 Administrator

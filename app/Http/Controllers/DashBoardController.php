@@ -202,7 +202,7 @@ class DashBoardController extends Controller
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "VSAT ANTENNA")->first()
+                    Device::where("title", "Switch")->first()
                 ]
             ]
         ];

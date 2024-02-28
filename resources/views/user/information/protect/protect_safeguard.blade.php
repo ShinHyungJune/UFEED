@@ -94,7 +94,7 @@
                                 3
                             </td>
                             <td>
-                                VSAT ANTENNA
+                                Switch
                             </td>
                             <td>
                                 Windows 10

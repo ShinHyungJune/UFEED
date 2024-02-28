@@ -142,7 +142,7 @@
             <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">VSAT ANTENNA</h3>
+                <h3 class="device-detail-item-title">Switch</h3>
             </div>
         </div>
     </div>
