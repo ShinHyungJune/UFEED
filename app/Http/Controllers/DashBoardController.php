@@ -12,7 +12,7 @@ class DashBoardController extends Controller
 {
     public function index()
     {
-        $messages = Message::orderBy("datetime", "desc")->take(100)->get();
+        $messages = Message::orderBy("datetime", "desc")->whereIn("status", ["Up", "Down", "Unusual", "Warning"])->take(100)->get();
 
         return view('user.dash-board.dashboard_index', [
             "messages" => $messages
@@ -272,7 +272,7 @@ class DashBoardController extends Controller
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "OWS31")->first()
+                    Device::where("title", "EMS MOP PC")->first()
                 ]
             ],
         ];

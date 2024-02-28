@@ -25,7 +25,7 @@ $(document).ready(function(){
         axios.get("/api/histories")
             .then(response => {
                 var devices = response.data.data.devices;
-                var realTimeNotifications = response.data.data.realTimeNotifications;
+                // var realTimeNotifications = response.data.data.realTimeNotifications;
                 var realTimeTraffics = response.data.data.realTimeTraffics;
                 var rankingTraffics = response.data.data.rankingTraffics.slice(0, 10);
 

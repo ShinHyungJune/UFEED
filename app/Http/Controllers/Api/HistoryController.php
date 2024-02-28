@@ -55,7 +55,7 @@ class HistoryController extends ApiController
             ];
         }
 
-        $realTimeNotifications = History::latest()->with("device")->take($request->take)->get();
+        // $realTimeNotifications = History::latest()->with("device")->take($request->take)->get();
 
         $today = Carbon::today();
 
@@ -88,7 +88,7 @@ class HistoryController extends ApiController
 
         return $this->respondSuccessfully([
             "devices" => $devices,
-            "realTimeNotifications" => $realTimeNotifications,
+            // "realTimeNotifications" => $realTimeNotifications,
             "realTimeTraffics" => $realTimeTraffics,
             "rankingTraffics" => $rankingTraffics,
         ]);
