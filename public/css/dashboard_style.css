@@ -357,7 +357,7 @@ tbody .state.red {
 .devices-status-item { padding: 10px 0; }
 .devices-status-item:not(:last-child) { border-bottom: 1px solid #e4e4e4; }
 .devices-status-item .txt-group { display: flex; gap: 10px; align-items: center; margin-bottom: 4px; }
-.devices-status-item .state { width: 72px; height: 24px; border-radius: 6px; background: #292d33; color: #fff; text-align: center; line-height: 24px; font-size: 14px; font-weight: bold; }
+.devices-status-item .state {flex:0 0 auto; width: 72px; height: 24px; border-radius: 6px; background: #292d33; color: #fff; text-align: center; line-height: 24px; font-size: 14px; font-weight: bold; }
 .devices-status-item.Warning .state { background: #ff4620; }
 .devices-status-item.Up .state { background: #359832; }
 .devices-status-item.Unusual .state { background: #ef9900; }
