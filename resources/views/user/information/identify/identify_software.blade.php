@@ -83,12 +83,12 @@
                             <th>Purpose</th>
                         </tr>
                         </thead>
-                        @foreach($softwares as $key => $software)
+                        @foreach($softwares as $software)
                             <tbody>
                             @foreach($software as $index => $value)
                                 @if($index == 0)
                                     <tr>
-                                        <td rowspan="{{ count($software) }}">{{ $key }}</td>
+                                        <td rowspan="{{ count($software) }}">{{ $value->system->category->name }}</td>
                                         <td rowspan="{{ count($software) }}">{{ $value->system->name }}</td>
                                         <td rowspan="{{ count($software) }}">{{ $value->system->supplier }}</td>
                                         <td rowspan="{{ count($software) }}">{{ $value->system->model ?: '-' }}</td>

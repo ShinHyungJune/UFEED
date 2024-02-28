@@ -103,12 +103,12 @@
                             <th>IP Address</th>
                         </tr>
                         </thead>
-                        @foreach($hardwares as $key => $hardware)
+                        @foreach($hardwares as $hardware)
                             <tbody>
                             @foreach($hardware as $index => $value)
                                 @if($index == 0)
                                     <tr>
-                                        <td rowspan="{{ count($hardware) }}">{{ $key }}</td>
+                                        <td rowspan="{{ count($hardware) }}">{{ $value->system->category->name }}</td>
                                         <td rowspan="{{ count($hardware) }}">{{ $value->system->name }}</td>
                                         <td rowspan="{{ count($hardware) }}">{{ $value->system->supplier }}</td>
                                         <td rowspan="{{ count($hardware) }}">{{ $value->system->model ?: '-' }}</td>

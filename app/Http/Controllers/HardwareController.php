@@ -17,7 +17,7 @@ class HardwareController extends Controller
 {
     public function index()
     {
-        $hardwares = Hardware::with('system.category')->get()->groupBy('system.category.name');
+        $hardwares = Hardware::with('system.category')->orderBy('system_id')->get()->groupBy('system.name');
         $identifyLog = IdentifyLog::whereType('hardware')->latest()->first();
         return view('user.information.identify.identify_hardware')->with('hardwares', $hardwares)->with('identifyLog', $identifyLog);
     }
