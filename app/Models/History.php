@@ -28,35 +28,6 @@ class History extends Model
         return $this->belongsTo(Device::class);
     }
 
-    public function getMessages()
-    {
-        $response = Http::withoutVerifying()->get($this->domain . "/api/table.json", [
-            "page" => 1,
-            "username" => "prtgadmin",
-            "password" => "hgs_1qa@WS",
-            "content" => "messages",
-            // "content" => "logs",
-            // "content" => "messages",
-            // "content" => "sensors",
-            "columns" => "device,sensor, parent, type, objid, lastvalue, name,message,status, group,datetime, uptimetime,uptime,knowntime",
-            "filter_type" => "",
-            // "filter_type" => "SNMP Memory",
-            // "filter_type" => "ping",
-            // "filter_type" => "snmptraffic",
-        ]);
-
-        // ping, snmptraffic
-
-        $items = [];
-
-        $body = $response->json();
-
-        if($body && isset($body["messages"]))
-            $items = $body["messages"];
-
-        return $items;
-    }
-
     public static function record()
     {
         $history = new History();
@@ -92,44 +63,26 @@ class History extends Model
                 }
             }
         }
+    }
 
-        $messages = $history->getMessages();
+    public static function recordPing()
+    {
+        $history = new History();
 
-        $messages = collect($messages);
+        $responsePing = Http::withoutVerifying()->get("{$history->domain}/api/table.json", [
+            "page" => 1,
+            "username" => "prtgadmin",
+            "password" => "hgs_1qa@WS",
+            "content" => "",
+            "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
+            "filter_name" => "Ping",
+        ]);
 
-        foreach($messages as $message){
-            $device = Device::where("title", $message["device_raw"])->first();
+        foreach ($responsePing->object()->{''} as $item) {
+            $device = Device::where("title", $item->device_raw)->first();
 
-            $message["datetime"] = Carbon::make($message["datetime"])->format("Y-m-d H:i");
-
-            Message::create([
-                "device_id" => $device ? $device->id : null,
-                "device_raw" => $message["device_raw"],
-                "parent" => $message["parent"],
-                "parent_raw" => $message["parent_raw"],
-                "type" => $message["type"],
-                "type_raw" => $message["type_raw"],
-                "objid" => $message["objid"],
-                "name" => $message["name"],
-                "name_raw" => $message["name_raw"],
-                "status" => $message["status"],
-                "status_raw" => $message["status_raw"],
-                "message" => $message["message"],
-                "message_raw" => $message["message_raw"],
-                "datetime" => $message["datetime"],
-                "datetime_raw" => $message["datetime_raw"],
-            ]);
-        }
-
-        $devices = Device::get();
-
-        foreach($devices as $device){
-            $firstMessage = $device->messages()->orderBy("datetime", "desc")->first();
-
-            if($firstMessage)
-                $device->update([
-                    "status" => $firstMessage->status,
-                ]);
+            if($device && $item->status)
+                $device->update(["status" => $device->statua]);
         }
     }
 }

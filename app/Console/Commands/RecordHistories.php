@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Enums\State;
 use App\Models\History;
+use App\Models\Message;
 use App\Models\PreProduct;
 use App\Models\StatusHistory;
 use Carbon\Carbon;
@@ -34,6 +35,10 @@ class RecordHistories extends Command
     public function handle()
     {
         History::record();
+
+        History::recordPing();
+
+        Message::record();
 
         StatusHistory::record();
     }
