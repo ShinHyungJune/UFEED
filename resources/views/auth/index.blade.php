@@ -27,8 +27,10 @@
                         <input type="password" name="password" id="pwd" placeholder="PASSWORD">
                     </div>
 
-                    <p class="error-txt validation-txt" id="validation-ids" style="display: none"></p>
-                    <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
+                    <div class="error-txt-box">
+                        <p class="error-txt validation-txt" id="validation-ids" style="display: none"></p>
+                        <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
+                    </div>
 
                     <a href="#" class="btn-login" id="submit">Sign In</a>
 
