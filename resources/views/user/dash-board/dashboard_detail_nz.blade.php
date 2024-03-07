@@ -13,7 +13,7 @@
 
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
-            @include('user.components.dashboard_detail_gnb_sample', ['dashboardGnbTitle' => 'Navigation Zone'])
+            @include('user.components.dashboard_detail_gnb_sample')
         </div>
         <!-- //좌측 메뉴 -->
     </div>

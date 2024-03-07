@@ -14,7 +14,6 @@
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
             @include('user.components.dashboard_detail_gnb', [
-            'dashboardGnbTitle' => 'Control & Instrumentation Zone',
             'counts' => $counts,
             'countsByDates' => $countsByDates,
             'totalDevices' => $totalDevices,

@@ -13,7 +13,7 @@
 
         <div class="dashboard-gnb-wrap">
             <p class="dashboard-gnb-title">
-                Standard
+                Status
             </p>
 
             <div class="dashboard-standard-wrap col-group">

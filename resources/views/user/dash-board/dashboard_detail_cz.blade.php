@@ -14,11 +14,10 @@
         <!-- 좌측 메뉴 -->
         <div id="dashboard_gnb">
             @include('user.components.dashboard_detail_gnb', [
-            'dashboardGnbTitle' => 'Communication Zone',
             'counts' => $counts,
             'countsByDates' => $countsByDates,
             'totalDevices' => $totalDevices,
-        ])
+            ])
         </div>
         <!-- //좌측 메뉴 -->
     </div>

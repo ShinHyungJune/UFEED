@@ -13,7 +13,7 @@
 
         <div class="dashboard-gnb-wrap">
             <p class="dashboard-gnb-title">
-                {{ $dashboardGnbTitle ?? 'dashboardGnbTitle' }}
+                Status
             </p>
             <div class="dashboard-standard-wrap col-group">
                 <div class="dashboard-standard-item up row-group m-script-pop noscript" data-target=".modal-devices-up">
