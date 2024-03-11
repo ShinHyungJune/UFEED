@@ -74,6 +74,7 @@
                                             Confirm Password
                                         </p>
                                         <input type="password" class="form-input" id="password_confirmation" name="password_confirmation">
+                                        <p class="error-txt validation-txt" id="validation-password_confirmation" style="display: none"></p>
                                     </div>
                                 </div>
                             </div>
