@@ -154,7 +154,9 @@ return [
     */
 
     'attributes' => [
-        'ids' => 'id'
+        'ids' => 'id',
+        'system_id' => 'system',
+        'password_confirmation' => 'confirm password'
     ],
 
 ];
