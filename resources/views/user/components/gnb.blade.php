@@ -72,6 +72,9 @@
             </div>
             <div class="real-time-traffic-wrap">
                 <canvas id="realTimeTrafficChart"></canvas>
+                <p class="y-text">
+                    (Y: Mbps)
+                </p>
             </div>
         </div>
 

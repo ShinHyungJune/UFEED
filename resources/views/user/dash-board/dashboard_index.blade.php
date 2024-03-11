@@ -121,81 +121,123 @@
                         <a href="{{ route('navigation') }}" data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall_nz.png" alt="">
+                            <img src="images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#2
+                            </p>
+                            <p class="device-item-title main">
+                                Navigation Zone
                             </p>
                         </a>
 
                         <a href="{{ route('communication') }}" data-id="FW#3" class="device-item up"
                            style="top: 400px; left: 0;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall_cz.png" alt="">
+                            <img src="images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#3
+                            </p>
+                            <p class="device-item-title main">
+                                Communication <br>
+                                Zone
                             </p>
                         </a>
 
                         <div class="device-item up" data-id="FW1" style="top: 200px; left: 400px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall_rz.png" alt="">
+                            <img src="images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#1
+                            </p>
+                            <p class="device-item-title main">
+                                Remote Zone
                             </p>
                         </div>
 
                         <div class="device-item up" style="top: 0; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_satellite.png" alt="">
+                            <p class="device-item-title main">
+                                Satelite <br>
+                                Communication
+                            </p>
                         </div>
 
                         <div class="device-item up" style="top: 400px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_network.png" alt="">
+                            <p class="device-item-title main">
+                                L3 Switch
+                            </p>
                         </div>
                         <div class="device-item up" style="top: 600px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_pc.png" alt="">
+                            <p class="device-item-title main">
+                                Client PC
+                            </p>
                         </div>
                         <div class="device-item up" data-id="TMS" style="top: 600px; left: 200px">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_tms.png" alt="">
+                            <img src="images/dashboard_icon_server.png" alt="">
+                            <p class="device-item-title main">
+                                TMS
+                            </p>
                         </div>
                         <div class="device-item up" style="top: 600px; left: 400px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_hisecure.png" alt="">
+                            <img src="images/dashboard_icon_server.png" alt="">
+                            <p class="device-item-title main">
+                                Hi-Secure
+                            </p>
                         </div>
                         <a href="{{ route('crew-lan') }}" data-id="FW#4" class="device-item up"
                            style="top: 0; left: 800px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall_clz.png" alt="">
+                            <img src="images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#4
+                            </p>
+                            <p class="device-item-title main">
+                                Crew Lan Zone
                             </p>
                         </a>
                         <a href="{{ route('power') }}" data-id="FW#5" class="device-item up"
                            style="top: 200px; left: 800px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall_pz.png" alt="">
+                            <img src="images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#5
+                            </p>
+                            <p class="device-item-title main">
+                                Power Zone
                             </p>
                         </a>
                         <a href="{{ route('control-instrumentation') }}" data-id="FW#6" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall_ciz.png" alt="">
+                            <img src="images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#6
+                            </p>
+                            <p class="device-item-title main">
+                                Control & <br>
+                                Instrumentation Zone
                             </p>
                         </a>
                         <div class="device-item up" style="top: 600px; left: 600px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_nac_server.png" alt="">
+                            <img src="images/dashboard_icon_server.png" alt="">
+                            <p class="device-item-title main">
+                                NAC Server
+                            </p>
                         </div>
                         <div class="device-item up" style="top: 600px; left: 800px;">
                             <div class="state"></div>
-                            <img src="/images/dashboard_icon_nac_sensor.png" alt="">
+                            <img src="images/dashboard_icon_server.png" alt="">
+                            <p class="device-item-title main">
+                                NAC Sensor
+                            </p>
                         </div>
                     </div>
 
