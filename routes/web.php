@@ -20,8 +20,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    $history = new \App\Models\History();
-    \App\Models\StatusHistory::record();
+    $client = new Client([
+        "verify" => false,
+        'headers' => [
+            'Accept' => 'application/json',
+            "viewId" => "manager",
+            "apikey" => "9cca64cc626fe90094b6432172e50351"
+        ],
+    ]);
+    $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
+    $end = Carbon::now()->format('Y-m-d\TH:i:s');
+    $domain = 'http://10.0.1.251:58005';
+
+    $response = $client->request("get", "{$domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
+    dd($response->getBody());
+
+//    $history = new \App\Models\History();
+//    \App\Models\StatusHistory::record();
 
     // dd($history->getMessages());
 
