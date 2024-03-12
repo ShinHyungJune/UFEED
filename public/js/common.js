@@ -457,7 +457,7 @@ function drawPolarChart(id, data, labels){
     //polar-area-chart
     var polarChart = document.getElementById(id);
 
-    var { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+    var { truncatedStrings, originalTitles } = truncateAndAppend(labels.slice(0, data.length));
 
     return new Chart(polarChart, {
         type: 'polarArea',
