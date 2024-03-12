@@ -30,10 +30,13 @@ Route::get("/test", function(){
     ]);
     $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
     $end = Carbon::now()->format('Y-m-d\TH:i:s');
-    $domain = 'http://10.0.1.251:58005';
+    $domain = 'http://10.0.1.254:40007';
+    $domain2 = 'http://10.0.1.251:58005';
 
     $response = $client->request("get", "{$domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
-    dd($response->getBody());
+    $response2 = $client->request("get", "{$domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
+
+    dd($response->getBody(), $response2->getBody());
 
 //    $history = new \App\Models\History();
 //    \App\Models\StatusHistory::record();

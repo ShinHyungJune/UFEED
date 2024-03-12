@@ -35,6 +35,7 @@ class Firewall extends Model
     {
         $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
         $end = Carbon::now()->format('Y-m-d\TH:i:s');
+        dd($start, $end);
 
         $response = $this->client->request("get", "{$this->domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
 
