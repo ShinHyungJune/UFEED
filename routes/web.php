@@ -24,11 +24,12 @@ Route::get("/test", function(){
         "verify" => false,
         'headers' => [
             'Accept' => 'application/json',
-            "viewId" => "manager",
-            "apikey" => "9cca64cc626fe90094b6432172e50351"
+            "viewId" => "manager1",
+            "apikey" => "f4ef6356d46d6c08bf7687f3f705482c"
         ],
     ]);
-    $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
+//    $start = Carbon::now()->subHours(24)->format('Y-m-d\TH:i:s');
+    $start = Carbon::parse('2024-03-01T04:46:20')->format('Y-m-d\TH:i:s');
     $end = Carbon::now()->format('Y-m-d\TH:i:s');
     $domain = 'https://10.0.1.251:58005';
 
