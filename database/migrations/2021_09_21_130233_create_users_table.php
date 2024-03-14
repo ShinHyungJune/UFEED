@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_active')->default(1);
-//            $table->date('period_of_use');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

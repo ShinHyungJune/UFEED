@@ -107,12 +107,13 @@
                                         <input type="email" class="form-input" id="email" name="email">
                                         <p class="error-txt validation-txt" id="validation-email" style="display: none"></p>
                                     </div>
-{{--                                    <div class="form-item row-group">--}}
-{{--                                        <p class="item-title">--}}
-{{--                                            Period of use--}}
-{{--                                        </p>--}}
-{{--                                        <input type="text" class="form-input form-date" id="period_of_use" name="period_of_use">--}}
-{{--                                    </div>--}}
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Period of use
+                                        </p>
+                                        <input type="text" class="form-input form-date" id="period_of_use" name="period_of_use">
+                                        <p class="error-txt validation-txt" id="validation-period_of_use" style="display: none"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -147,9 +148,9 @@
         </div>
     </div>
 </div>
-{{--<script>--}}
-{{--    $('#period_of_use').datepicker();--}}
-{{--</script>--}}
+<script>
+    $('#period_of_use').datepicker();
+</script>
 <script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('submit').addEventListener('click', function () {

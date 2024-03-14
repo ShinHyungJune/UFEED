@@ -7,6 +7,7 @@ use App\Http\Requests\HiSecureRequest;
 use App\Models\Authority;
 use App\Models\Group;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -35,6 +36,7 @@ class HiSecureController extends Controller
         $validated = $request->validated();
 
         $validated['password'] = Hash::make($validated['password']);
+        $validated['period_of_use'] = Carbon::createFromFormat('m/d/Y', $validated['period_of_use'])->format('Y-m-d');
 
         $user = User::create($validated);
 
@@ -47,6 +49,7 @@ class HiSecureController extends Controller
     {
         $groups = Group::get();
         $authorities = Authority::get();
+        $user->period_of_use = Carbon::createFromFormat('Y-m-d', $user->period_of_use)->format('m/d/Y');
         return view('user.hi-secure.HiSecure_account_modify')->with('user', $user)->with('groups', $groups)->with('authorities', $authorities);
     }
 
@@ -59,6 +62,7 @@ class HiSecureController extends Controller
         } else {
             unset($validated['password']);
         }
+        $validated['period_of_use'] = Carbon::createFromFormat('m/d/Y', $validated['period_of_use'])->format('Y-m-d');
 
         $user->update($validated);
 

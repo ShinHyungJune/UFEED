@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'group_id' => 1,
             'authority_id' => 1,
             'email' => 'manager@gmail.com',
+            'period_of_use' => '2030-12-31',
         ]);
         User::create([
             'ids' => 'test@naver.com',
@@ -30,6 +31,7 @@ class UserSeeder extends Seeder
             'group_id' => 2,
             'authority_id' => 2,
             'email' => 'test@naver.com',
+            'period_of_use' => '2030-12-31',
         ]);
     }
 }

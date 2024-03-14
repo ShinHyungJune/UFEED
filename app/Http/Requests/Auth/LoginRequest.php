@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Auth;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -50,7 +51,7 @@ class LoginRequest extends FormRequest
             if ($user != null) {
                 $user->incrementPasswordCount();
                 if ($user->password_count >= 5) {
-                    $user->is_active = false;
+                    $user->period_of_use = Carbon::yesterday()->toDateString();
                     $user->push();
                     throw ValidationException::withMessages([
                         'ids' => trans('Please contact the administrator.'),
@@ -67,7 +68,7 @@ class LoginRequest extends FormRequest
             }
         }
 
-        if (!Auth::user()->is_active) {
+        if (Auth::user()->period_of_use < Carbon::now()->toDateString()) {
             Auth::logout();
             throw ValidationException::withMessages([
                 'ids' => trans('The account is deactivated, so please contact the administrator.'),

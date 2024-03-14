@@ -18,7 +18,7 @@ class HiSecureRequest extends FormRequest
             'group_id' => ['required', 'integer'],
             'authority_id' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:255'],
-//            'period_of_use' => ['required', 'date'],
+            'period_of_use' => ['required', 'date'],
         ];
     }
 

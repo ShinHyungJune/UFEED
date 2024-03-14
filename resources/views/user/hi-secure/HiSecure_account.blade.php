@@ -114,23 +114,7 @@
                                     {{ $user->authority ? $user->authority->name : "" }}
                                 </td>
                                 <td>
-                                    <form action="" method="post" id="switchForm">
-                                        @csrf
-                                        @method('PATCH')
-                                        <label for="switch_{{ $user->id }}" class="switch-wrap">
-                                            <input type="checkbox" class="switch-input" id="switch_{{ $user->id }}"
-                                                   @if($user->is_active) checked @endif>
-                                            <div class="switch-icon">
-                                                <p class="paused-txt">
-                                                    Paused
-                                                </p>
-                                                <p class="active-txt">
-                                                    Active
-                                                </p>
-                                                <div class="switch-core"></div>
-                                            </div>
-                                        </label>
-                                    </form>
+                                    {{ $user->period_of_use >= \Carbon\Carbon::now()->toDateString() ? 'Active' : 'Paused' }}
                                 </td>
                             </tr>
                         @endforeach

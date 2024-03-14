@@ -25,7 +25,7 @@ class User extends Authenticatable
         'group_id',
         'authority_id',
         'email',
-        'is_active',
+//        'is_active',
         'period_of_use',
     ];
 
