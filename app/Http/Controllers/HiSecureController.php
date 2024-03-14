@@ -63,6 +63,7 @@ class HiSecureController extends Controller
             unset($validated['password']);
         }
         $validated['period_of_use'] = Carbon::createFromFormat('m/d/Y', $validated['period_of_use'])->format('Y-m-d');
+        $user->password_count = 0;
 
         $user->update($validated);
 

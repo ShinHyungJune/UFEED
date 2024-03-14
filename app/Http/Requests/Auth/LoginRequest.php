@@ -52,7 +52,7 @@ class LoginRequest extends FormRequest
                 $user->incrementPasswordCount();
                 if ($user->password_count >= 5) {
                     $user->period_of_use = Carbon::yesterday()->toDateString();
-                    $user->push();
+                    $user->save();
                     throw ValidationException::withMessages([
                         'ids' => trans('Please contact the administrator.'),
                     ]);
@@ -77,7 +77,7 @@ class LoginRequest extends FormRequest
 
         $user = Auth::user();
         $user->password_count = 0;
-        $user->push();
+        $user->save();
 
         RateLimiter::clear($this->throttleKey());
     }
