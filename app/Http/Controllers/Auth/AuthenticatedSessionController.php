@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserLogController;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -12,6 +13,13 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
+    protected $userLogController;
+
+    public function __construct(UserLogController $userLogController)
+    {
+        $this->userLogController = $userLogController;
+    }
+
     /**
      * Display the login view.
      */
@@ -27,6 +35,8 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        $this->userLogController->log('login');
+
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
@@ -37,6 +47,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        $this->userLogController->log('logout');
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();

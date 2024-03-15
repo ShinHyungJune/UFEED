@@ -13,11 +13,17 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 class HiSecureController extends Controller
 {
+    protected $userLogController;
+
+    public function __construct(UserLogController $userLogController)
+    {
+        $this->userLogController = $userLogController;
+    }
+
     public function index()
     {
         $users = User::with('group')->where('id', '>', 1)->get();
@@ -39,6 +45,7 @@ class HiSecureController extends Controller
         $validated['period_of_use'] = Carbon::createFromFormat('m/d/Y', $validated['period_of_use'])->format('Y-m-d');
 
         $user = User::create($validated);
+        $this->userLogController->log("user_id:{$user->id}, user_ids:{$user->ids} created");
 
         event(new Registered($user));
 
@@ -66,19 +73,25 @@ class HiSecureController extends Controller
         $user->password_count = 0;
 
         $user->update($validated);
+        $this->userLogController->log("user_id:{$user->id}, user_ids:{$user->ids} updated");
 
         return redirect()->route('hi-secure.index');
     }
 
-    public function switch(Request $request, User $user)
-    {
-        $user->is_active = $request->input('switch') == "true" ? 1 : 0;
-        $user->push();
-    }
+//    public function switch(Request $request, User $user)
+//    {
+//        $user->is_active = $request->input('switch') == "true" ? 1 : 0;
+//        $user->push();
+//    }
 
     public function delete(Request $request)
     {
-        User::destroy($request->input('id'));
+        if (!empty($request->input('id'))) {
+            $count = count($request->input('id'));
+            $idArr = implode(', ', $request->input('id'));
+            $this->userLogController->log("{$count} user:[{$idArr}] deleted");
+            User::whereIn('id', $request->input('id'))->delete();
+        }
         return redirect()->route('hi-secure.index');
     }
     public function globalSetting()
