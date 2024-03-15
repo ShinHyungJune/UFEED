@@ -30,35 +30,50 @@
                         </p>
                     @endisset
                 </div>
-                <div class="subpage-table-btn-wrap col-group">
-                    <a href="{{ route('hardware.create') }}" class="subpage-table-btn">
-                        Add
-                    </a>
-                    <form action="" id="delete">
-                        @csrf
-                        @method('DELETE')
-                        <button class="subpage-table-btn" type="button" onclick="showModal()">
-                            Delete
+                @if(Auth::user()->authority_id === 1)
+                    <div class="subpage-table-btn-wrap col-group">
+                        <a href="{{ route('hardware.create') }}" class="subpage-table-btn">
+                            Add
+                        </a>
+                        <form action="" id="delete">
+                            @csrf
+                            @method('DELETE')
+                            <button class="subpage-table-btn" type="button" onclick="showModal()">
+                                Delete
+                            </button>
+                        </form>
+                        <button class="subpage-table-btn" id="modify">
+                            Modify
                         </button>
-                    </form>
-                    <button class="subpage-table-btn" id="modify">
-                        Modify
-                    </button>
-                    <form action="{{ route('hardware.import') }}" method="post" enctype="multipart/form-data"
-                          id="import">
-                        @csrf
-                        <input type='file' id='file_upload' accept=".xlsx, .xls, .csv" name="file">
-                        <label for="file_upload" class="subpage-table-btn">
-                            Import
-                        </label>
-                    </form>
-                    <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
-                        Export
-                    </a>
-                    <button class="subpage-table-btn" onclick="printPage()">
-                        Print
-                    </button>
-                </div>
+                        <form action="{{ route('hardware.import') }}" method="post" enctype="multipart/form-data"
+                              id="import">
+                            @csrf
+                            <input type='file' id='file_upload' accept=".xlsx, .xls, .csv" name="file">
+                            <label for="file_upload" class="subpage-table-btn">
+                                Import
+                            </label>
+                        </form>
+                        <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
+                            Export
+                        </a>
+                        <button class="subpage-table-btn" onclick="printPage()">
+                            Print
+                        </button>
+                    </div>
+                @else
+                    <div class="subpage-table-btn-wrap col-group">
+                        <button class="subpage-table-btn" onclick="showModal()">Add</button>
+                        <button class="subpage-table-btn" onclick="showModal()">Delete</button>
+                        <button class="subpage-table-btn" onclick="showModal()">Modify</button>
+                        <button class="subpage-table-btn" onclick="showModal()">Import</button>
+                        <a href="{{ route('hardware.export') }}" class="subpage-table-btn">
+                            Export
+                        </a>
+                        <button class="subpage-table-btn" onclick="printPage()">
+                            Print
+                        </button>
+                    </div>
+                @endif
                 <div class="subpage-table-wrap">
                     <table class="subpage-table identify-table identify-hardware-table">
                         <colgroup>
@@ -174,23 +189,36 @@
                 </p>
             </div>
 
-            <p class="modal-alert-txt">
-                If deleted, the data cannot be recovered. <br>
-                Are you sure you want to delete?
-            </p>
+            @if(Auth::user()->authority_id === 1)
+                <p class="modal-alert-txt">
+                    If deleted, the data cannot be recovered. <br>
+                    Are you sure you want to delete?
+                </p>
+            @else
+                <p class="modal-alert-txt">
+                    Please contact your administrator.
+                </p>
+            @endif
         </div>
 
-        <div class="dashboard-form-btn-wrap col-group">
-            <button class="dashboard-form-btn submit-btn" onclick="deleteUtility()">
-                Delete
-            </button>
-            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
-                Cancel
-            </button>
-        </div>
+        @if(Auth::user()->authority_id === 1)
+            <div class="dashboard-form-btn-wrap col-group">
+                <button class="dashboard-form-btn submit-btn" onclick="deleteUtility(`{{ route('hardware.destroy') }}`)">
+                    Delete
+                </button>
+                <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                    Cancel
+                </button>
+            </div>
+        @else
+            <div class="dashboard-form-btn-wrap col-group">
+                <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                    Close
+                </button>
+            </div>
+        @endif
     </div>
 </div>
-<script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('modify').addEventListener('click', function () {
         let checkedCheckbox = document.querySelector('.check-input:checked');
@@ -198,24 +226,6 @@
             window.location.href = `{{ route('hardware.edit', ':id') }}`.replace(':id', checkedCheckbox.id)
         }
     });
-</script>
-<script>
-    function deleteUtility() {
-        let deleteForm = document.getElementById('delete');
-        let checkedCheckbox = document.querySelectorAll('.check-input:checked');
-        let deleteId = Array.from(checkedCheckbox).map(checkbox => checkbox.id);
-
-        deleteId.forEach(id => {
-            let deleteInput = document.createElement('input');
-            deleteInput.setAttribute('type', 'hidden');
-            deleteInput.setAttribute('name', 'id[]');
-            deleteInput.value = id;
-            deleteForm.appendChild(deleteInput);
-        })
-
-        let formData = new FormData(deleteForm);
-        fetchUtility("{{ route('hardware.destroy') }}", formData)
-    }
 </script>
 <script>
     document.getElementById('file_upload').addEventListener('change', function () {

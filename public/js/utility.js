@@ -26,11 +26,32 @@ function fetchUtility(url, formData, modal = false, icon = null) {
     })
 }
 
+function deleteUtility(url) {
+    let deleteForm = document.getElementById('delete');
+    let checkedCheckbox = document.querySelectorAll('.check-input:checked');
+    let deleteId = Array.from(checkedCheckbox).map(checkbox => checkbox.id);
+
+    deleteId.forEach(id => {
+        let deleteInput = document.createElement('input');
+        deleteInput.setAttribute('type', 'hidden');
+        deleteInput.setAttribute('name', 'id[]');
+        deleteInput.value = id;
+        deleteForm.appendChild(deleteInput);
+    })
+
+    let formData = new FormData(deleteForm);
+    fetchUtility(url, formData)
+}
+
 function showModal() {
     document.querySelector('.modal-alert').style.display = '';
 }
 
 function hideModal() {
+    document.querySelector('.modal-alert').style.display = 'none';
+}
+
+function hideModalReload() {
     document.querySelector('.modal-alert').style.display = 'none';
     location.reload();
 }

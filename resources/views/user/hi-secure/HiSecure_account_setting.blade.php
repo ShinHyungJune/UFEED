@@ -81,7 +81,7 @@
         </div>
 
         <div class="dashboard-form-btn-wrap col-group">
-            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+            <button class="dashboard-form-btn cancel-btn" onclick="hideModalReload()">
                 Close
             </button>
         </div>

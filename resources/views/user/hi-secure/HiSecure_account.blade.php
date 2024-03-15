@@ -34,24 +34,33 @@
                     <h3 class="account-table-title">
                         Users
                     </h3>
-                    <div class="account-top-btn-wrap">
-                        <a href="{{ route('hi-secure.create') }}" class="account-top-btn">
-                            Add
-                        </a>
-                        <form action="" id="delete">
-                            @csrf
-                            @method('DELETE')
-                            <button class="account-top-btn" type="button" onclick="showModal()">
-                                Delete
+                    @if(Auth::user()->authority_id === 1)
+                        <div class="account-top-btn-wrap">
+                            <a href="{{ route('hi-secure.create') }}" class="account-top-btn">
+                                Add
+                            </a>
+                            <form action="" id="delete">
+                                @csrf
+                                @method('DELETE')
+                                <button class="account-top-btn" type="button" onclick="showModal()">
+                                    Delete
+                                </button>
+                            </form>
+                            <button href="" class="account-top-btn" id="modify">
+                                Modify
                             </button>
-                        </form>
-                        <button href="" class="account-top-btn" id="modify">
-                            Modify
-                        </button>
-                        <a href="{{ route('hi-secure.global-setting') }}" class="account-top-btn">
-                            Global Setting
-                        </a>
-                    </div>
+                            <a href="{{ route('hi-secure.global-setting') }}" class="account-top-btn">
+                                Global Setting
+                            </a>
+                        </div>
+                    @else
+                        <div class="account-top-btn-wrap">
+                            <button class="account-top-btn" onclick="showModal()">Add</button>
+                            <button class="account-top-btn" onclick="showModal()">Delete</button>
+                            <button class="account-top-btn" onclick="showModal()">Modify</button>
+                            <button class="account-top-btn" onclick="showModal()">Global Setting</button>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="account-table-wrap">
@@ -139,49 +148,36 @@
                 </p>
             </div>
 
-            <p class="modal-alert-txt">
-                If deleted, the data cannot be recovered. <br>
-                Are you sure you want to delete?
-            </p>
+            @if(Auth::user()->authority_id === 1)
+                <p class="modal-alert-txt">
+                    If deleted, the data cannot be recovered. <br>
+                    Are you sure you want to delete?
+                </p>
+            @else
+                <p class="modal-alert-txt">
+                    Please contact your administrator.
+                </p>
+            @endif
         </div>
 
-        <div class="dashboard-form-btn-wrap col-group">
-            <button class="dashboard-form-btn submit-btn" onclick="hiSecureDelete()">
-                Delete
-            </button>
-            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
-                Cancel
-            </button>
-        </div>
+        @if(Auth::user()->authority_id === 1)
+            <div class="dashboard-form-btn-wrap col-group">
+                <button class="dashboard-form-btn submit-btn" onclick="hiSecureDelete()">
+                    Delete
+                </button>
+                <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                    Cancel
+                </button>
+            </div>
+        @else
+            <div class="dashboard-form-btn-wrap col-group">
+                <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                    Close
+                </button>
+            </div>
+        @endif
     </div>
 </div>
-{{--<script>--}}
-{{--    // let domain = "http://localhost:90";--}}
-{{--    let domain = "http://hi-secure.ufeed.co.kr";--}}
-
-{{--    function store() {--}}
-{{--        let form = {--}}
-{{--            ids: $("#ids").val(),--}}
-{{--            password: $("#password").val(),--}}
-{{--            password_confirmation: $("#password_confirmation").val(),--}}
-{{--            authority: 1,--}}
-{{--            email: $("#email").val(),--}}
-{{--        };--}}
-
-{{--        $(".error").text("");--}}
-
-{{--        axios.post(domain + "/api/users", form)--}}
-{{--            .then(response => {--}}
-{{--                alert("Processed Successfully");--}}
-{{--            }).catch(error => {--}}
-{{--            if (error.response.data.errors)--}}
-{{--                Object.entries(error.response.data.errors).map(error => {--}}
-{{--                    $(`#error-${error[0]}`).text(error[1]);--}}
-{{--                })--}}
-{{--        })--}}
-{{--    }--}}
-
-{{--</script>--}}
 <script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('modify').addEventListener('click', function () {
