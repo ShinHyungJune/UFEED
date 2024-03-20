@@ -90,11 +90,13 @@
                 </div>
             </a>
 
-            <div class="gnb-menu">
-                <a href="{{ route('log.index') }}" class="gnb-menu-title col-group">
-                    Log
-                </a>
-            </div>
+            @if(Auth::user()->authority_id === 1)
+                <div class="gnb-menu">
+                    <a href="{{ route('log.index') }}" class="gnb-menu-title col-group">
+                        Log
+                    </a>
+                </div>
+            @endif
 
         </div>
     </div>
@@ -190,26 +192,26 @@
                             SafeGuard
                         </div>
                     </a>
-{{--                    <a href="{{ route('information.security-zone') }}" class="sub-gnb-menu">--}}
-{{--                        <div class="sub-gnb-menu-title col-group">--}}
-{{--                            Security Zone--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
+                    {{--                    <a href="{{ route('information.security-zone') }}" class="sub-gnb-menu">--}}
+                    {{--                        <div class="sub-gnb-menu-title col-group">--}}
+                    {{--                            Security Zone--}}
+                    {{--                        </div>--}}
+                    {{--                    </a>--}}
                     <a href="{{ route('information.access-control') }}" class="sub-gnb-menu">
                         <div class="sub-gnb-menu-title col-group">
                             Access Control
                         </div>
                     </a>
-{{--                    <a href="{{ route('information.wireless') }}" class="sub-gnb-menu">--}}
-{{--                        <div class="sub-gnb-menu-title col-group">--}}
-{{--                            Wireless--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                    <a href="{{ route('information.mobile-portable') }}" class="sub-gnb-menu">--}}
-{{--                        <div class="sub-gnb-menu-title col-group">--}}
-{{--                            Mobile and Portable--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
+                    {{--                    <a href="{{ route('information.wireless') }}" class="sub-gnb-menu">--}}
+                    {{--                        <div class="sub-gnb-menu-title col-group">--}}
+                    {{--                            Wireless--}}
+                    {{--                        </div>--}}
+                    {{--                    </a>--}}
+                    {{--                    <a href="{{ route('information.mobile-portable') }}" class="sub-gnb-menu">--}}
+                    {{--                        <div class="sub-gnb-menu-title col-group">--}}
+                    {{--                            Mobile and Portable--}}
+                    {{--                        </div>--}}
+                    {{--                    </a>--}}
                 </div>
             </div>
 

@@ -89,6 +89,9 @@ Route::get("/histories", function (){
 //Route::get('/sample', [\App\Http\Controllers\PageController::class, "sample"]);
 //Route::get('/home', [\App\Http\Controllers\PageController::class, "index"]);
 
+Route::get('hash-test/{password}', function ($password) {
+    echo \Illuminate\Support\Facades\Hash::make($password);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
