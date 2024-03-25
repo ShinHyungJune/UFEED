@@ -172,10 +172,10 @@ Route::middleware('auth')->group(function () {
         });
         Route::prefix('protect')->group(function () {
             Route::get('/safe-guard', [\App\Http\Controllers\InformationController::class, 'safeGuard'])->name('information.safe-guard');
-            Route::get('/security-zone', [\App\Http\Controllers\InformationController::class, 'securityZone'])->name('information.security-zone');
+//            Route::get('/security-zone', [\App\Http\Controllers\InformationController::class, 'securityZone'])->name('information.security-zone');
             Route::get('/access-control', [\App\Http\Controllers\InformationController::class, 'accessControl'])->name('information.access-control');
-            Route::get('/wireless', [\App\Http\Controllers\InformationController::class, 'wireless'])->name('information.wireless');
-            Route::get('/mobile-portable', [\App\Http\Controllers\InformationController::class, 'mobilePortable'])->name('information.mobile-portable');
+//            Route::get('/wireless', [\App\Http\Controllers\InformationController::class, 'wireless'])->name('information.wireless');
+//            Route::get('/mobile-portable', [\App\Http\Controllers\InformationController::class, 'mobilePortable'])->name('information.mobile-portable');
         });
         Route::prefix('detect')->group(function () {
             Route::get('/', [\App\Http\Controllers\NMSController::class, 'devices'])->name('information.detect');
@@ -192,14 +192,6 @@ Route::middleware('auth')->group(function () {
             Route::get('/shutdown', [\App\Http\Controllers\InformationController::class, 'shutdown'])->name('information.shutdown');
         });
     });
-
-//    Route::prefix('hi-secure')->group(function () {
-//        Route::get('/', [\App\Http\Controllers\HiSecureController::class, 'index'])->name('hi-secure.index');
-//        Route::get('add', [\App\Http\Controllers\HiSecureController::class, 'add'])->name('hi-secure.add');
-//        Route::get('delete', [\App\Http\Controllers\HiSecureController::class, 'delete'])->name('hi-secure.delete');
-//        Route::get('modify', [\App\Http\Controllers\HiSecureController::class, 'modify'])->name('hi-secure.modify');
-//        Route::get('global-setting', [\App\Http\Controllers\HiSecureController::class, 'globalSetting'])->name('hi-secure.global-setting');
-//    });
 
     Route::prefix('cbs')->group(function () {
         Route::get('add', [\App\Http\Controllers\CBSController::class, 'add'])->name('cbs.add');
