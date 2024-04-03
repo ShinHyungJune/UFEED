@@ -13,7 +13,7 @@
 
         <div class="dashboard-gnb-wrap">
             <p class="dashboard-gnb-title">
-                Standard
+                Status
             </p>
 
             <div class="dashboard-standard-wrap col-group">
@@ -33,15 +33,6 @@
                         Devices Down
                     </div>
                 </div>
-                <div class="dashboard-standard-item critical row-group m-script-pop"
-                    data-target=".modal-devices-critical">
-                    <div class="num">
-                        0
-                    </div>
-                    <div class="txt">
-                        Critical
-                    </div>
-                </div>
                 <div class="dashboard-standard-item warning row-group m-script-pop"
                     data-target=".modal-devices-warning">
                     <div class="num">
@@ -49,6 +40,15 @@
                     </div>
                     <div class="txt">
                         Warning
+                    </div>
+                </div>
+                <div class="dashboard-standard-item critical row-group m-script-pop"
+                    data-target=".modal-devices-critical">
+                    <div class="num">
+                        0
+                    </div>
+                    <div class="txt">
+                        Unusual
                     </div>
                 </div>
             </div>
@@ -262,9 +262,9 @@
                         C&C Detection
                     </div>
                 </div>
-                <button class="more-btn">
+                <!-- <button class="more-btn">
                     <i class="xi-ellipsis-v"></i>
-                </button>
+                </button> -->
             </div>
 
             <div class="polar-area-chart active" id="tab_01">

@@ -191,7 +191,7 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 
 /* 좌측 메뉴 공통 */
 #gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
-.dashboard-gnb { padding: 12px 24px; height: 100%; overflow: auto; }
+.dashboard-gnb { padding: 12px 0; padding-right: 15px; height: 100%; overflow: auto; }
 .dashboard-gnb::-webkit-scrollbar { display: none; }
 .header-utc-wrap { gap: 16px; width: 100%; padding: 6px 24px; border-radius: 15px; background: #f5f5f5; justify-content: center; margin-bottom: 32px; }
 .header-utc-wrap .utc { font-size: 14px; font-weight: bold; position: relative; }
@@ -233,31 +233,27 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 
 /* 좌측 메뉴 - 대시보드 */
 #dashboard_gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
-.dashboard-gnb-container { gap: 24px; }
-.dashboard-gnb-wrap .time { position: absolute; top: 8px; right: 0; font-size: 10px; padding: 4px 8px; background: #f5f5f5; border-radius: 12px; font-weight: normal; width: fit-content; }
-.dashboard-gnb-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; position: relative; }
-.dashboard-gnb-title .time { top: 0; }
+.dashboard-gnb-container { gap: 10px; }
+.dashboard-gnb-container .dashboard-gnb-wrap { padding: 10px; background: #f5f5f5; border-radius: 8px; }
+.dashboard-gnb-wrap .time { position: absolute; top: 8px; right: 0; font-size: 10px; font-weight: normal; }
+.dashboard-gnb-title { font-size: 16px; font-weight: bold; margin-bottom: 8px; position: relative; }
+.dashboard-gnb-title .time { top: 4px; }
 
 /* 좌측 메뉴 - 대시보드 - Standard */
 .dashboard-standard-wrap { gap: 10px; flex-flow: wrap; }
 .dashboard-standard-item {
-    width: calc( 50% - 5px ); padding: 16px 0; align-items: center; text-align: center; gap: 6px; justify-content: center;
+    width: calc( 50% - 5px ); padding: 16px; align-items: flex-start; gap: 4px; justify-content: center; flex-flow: column-reverse;
     cursor:pointer; border-radius: 8px;
 }
-.dashboard-standard-item .num { font-size: 32px; font-weight: 600; }
-.dashboard-standard-item .txt { font-size: 14px; font-weight: bold; }
-.dashboard-standard-item.up { background: #E5F3E6; }
-.dashboard-standard-item.up * { color: #359832; }
-
-.dashboard-standard-item.down { background: #FFE8E4; }
-.dashboard-standard-item.down * { color: #ff4620; }
-.dashboard-standard-item.critical { background: #FDF3E0; }
-.dashboard-standard-item.critical * { color: #ef9900; }
-
-.dashboard-standard-item.warning  { background: #E4E4E4; }
-.dashboard-standard-item.warning * { color: #292d33; }
+.dashboard-standard-item .num { font-size: 26px; font-weight: 600; color: #fff; }
+.dashboard-standard-item .txt { font-size: 14px; font-weight: normal; color: #fff; }
+.dashboard-standard-item.up { background: #359832; }
+.dashboard-standard-item.down { background: #ff4336; }
+.dashboard-standard-item.critical { background: #ffb536; }
+.dashboard-standard-item.warning  { background: #ffffff; }
+.dashboard-standard-item.warning * { color: #000; }
 /* 좌측 메뉴 - 대시보드 - Standard */
-.real-time-traffic-title-wrap { padding-bottom: 5px; border-bottom: 2px solid #000; }
+.real-time-traffic-title-wrap { margin-bottom: 5px; }
 .real-time-traffic-title-wrap .title { font-size: 12px; color: #7f7f7f; font-weight: 500; margin-bottom: 4px; }
 .real-time-traffic-title-wrap .mbps { font-size: 21px; font-weight: bold; margin-bottom: 5px; }
 .real-time-traffic-title-wrap .top1-wrap { display: flex; justify-content: space-between; align-items: center; }
@@ -265,14 +261,14 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 .real-time-traffic-title-wrap .top1-wrap .type { padding: 4px 10px; border-radius: 10px; background: #512ecf; font-size: 12px; font-weight: 500; color: #fff; }
 .real-time-traffic-title-wrap .top1-wrap .ip { font-size: 12px; color: #7f7f7f; }
 .real-time-traffic-title-wrap .top1-wrap .txt { font-size: 12px; font-weight: bold; }
-.real-time-traffic-wrap { height: 140px; }
-.real-time-traffic-wrap .y-text { font-size: 12px; color: #707070; }
+.real-time-traffic-wrap { height: 140px; padding: 0 5px; padding-bottom: 16px; background: #fff; border-radius: 8px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08); }
+.real-time-traffic-wrap .y-text { font-size: 10px; color: #707070; }
 
 /* 좌측 메뉴 - 대시보드 - Traffic Top 10 */
 .traffic-top-wrap { height: 192px; overflow: auto; }
 .traffic-top-wrap::-webkit-scrollbar { display: none; }
-.traffic-top-item { padding: 5px 0; display: flex; gap: 10px; }
-.traffic-top-item:not(:last-child) { border-bottom: 1px solid #e4e4e4; }
+.traffic-top-item { padding: 5px; display: flex; gap: 10px; background: #fff; border-radius: 8px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08); }
+.traffic-top-item:not(:last-child) { margin-bottom: 4px; }
 .traffic-top-item .num { width: 32px; height: 32px; border-radius: 4px; text-align: center; line-height: 32px; font-weight: 500; background: #E4E4E4; color: #292d33; }
 .traffic-top-item:nth-child(-n+3) .num { background: #FFE8E4; color: #ff4620; }
 .traffic-top-item:nth-child(n+4):nth-child(-n+6) .num { background: #FDF3E0; color: #ef9900; }
@@ -280,15 +276,15 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 .traffic-top-item .txt-group { width: calc( 100% - 72px ); }
 .traffic-top-item .name { font-size: 14px; font-weight: 600; line-height: 1.25; }
 .traffic-top-item .ip { font-size: 12px; color: #7f7f7f; line-height: 1.25; }
-.traffic-top-item .byte { font-size: 14px; line-height: 1.25; width: 72px; text-align: right; }
+.traffic-top-item .byte { font-size: 14px; line-height: 1.25; width: 72px; text-align: right; opacity: .6; }
 
 /* 좌측 메뉴 - 대시보드 - 피자 차트 */
 .dashboard-gnb-tab-wrap { display: flex; justify-content: space-between; }
 .dashboard-gnb-tab-wrap .more-btn { width: 20px; height: 20px; }
 .dashboard-gnb-tab-list { display: flex; width: calc( 100% - 20px ); gap: 20px; padding-bottom: 8px; border-bottom: 1px solid #e4e4e4; }
-.dashboard-gnb-tab { font-size: 14px; font-weight: 500; color: #7f7f7f; position: relative; cursor: pointer; }
-.dashboard-gnb-tab.active { font-weight: bold; color: #042e88; }
-.dashboard-gnb-tab.active::after { content: ''; display: block; position: absolute; width: 100%; height: 2px; background: #042e88; bottom: -9px; left: 0; }
+.dashboard-gnb-tab { font-size: 14px; font-weight: bold; color: #292d33; opacity: .4; position: relative; cursor: pointer; }
+.dashboard-gnb-tab.active { opacity: 1; }
+/* .dashboard-gnb-tab.active::after { content: ''; display: block; position: absolute; width: 100%; height: 2px; background: #042e88; bottom: -9px; left: 0; } */
 
 tbody .state {
     width: 10px;
@@ -303,11 +299,13 @@ tbody .state.red {
 }
 
 .polar-area-chart {
-    width: 260px; height: 260px; display: none; position: relative;
+    width: 272px; height: 256px; display: none; position: relative; background: #fff; border-radius: 8px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
     /* position: relative;
     background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; */
 }
 .polar-area-chart.active { display: block; }
+.polar-area-chart .time { right: 8px; }
+.polar-area-chart canvas { margin: 0 auto; }
 .polar-area-chart-item { height: 100%; width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .polar-area-chart-item .img-box { height: 100%; width: 100%; clip-path: circle(50% at 50% 50%); border-radius: 50%; overflow: hidden; z-index: 1; transition: .3s; }
 .polar-area-chart-item .img { width: 240px; height: 240px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); filter: brightness(0.9); transition: .2s; }
@@ -373,7 +371,7 @@ tbody .state.red {
 .dashboard-top { gap: 40px; width: 100%; padding: 24px; background: #f5f5f5; border-radius: 8px; }
 .dashboard-top .dashboard-gnb-wrap { width: 100%; }
 .dashboard-top .dashboard-gnb-title { margin-bottom: 20px; width: fit-content; }
-.dashboard-top .dashboard-gnb-wrap .time { background: #fff; top: -2px; right: -8px; transform: translateX(100%); }
+.dashboard-top .dashboard-gnb-wrap .time { padding: 5px 8px; border-radius: 12px; background: #fff; top: -2px; right: -8px; transform: translateX(100%); }
 
 /* 대시보드 상단 - CBS PROTECTION */
 .protection-wrap { gap: 20px; }
