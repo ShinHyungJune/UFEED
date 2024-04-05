@@ -249,9 +249,9 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 .dashboard-standard-item .txt { font-size: 14px; font-weight: normal; color: #fff; }
 .dashboard-standard-item.up { background: #359832; }
 .dashboard-standard-item.down { background: #ff4336; }
-.dashboard-standard-item.critical { background: #ffb536; }
-.dashboard-standard-item.warning  { background: #ffffff; }
-.dashboard-standard-item.warning * { color: #000; }
+.dashboard-standard-item.critical { background: #ffffff; }
+.dashboard-standard-item.critical * { color: #000; }
+.dashboard-standard-item.warning  { background: #ffb536; }
 /* 좌측 메뉴 - 대시보드 - Standard */
 .real-time-traffic-title-wrap { margin-bottom: 5px; }
 .real-time-traffic-title-wrap .title { font-size: 12px; color: #7f7f7f; font-weight: 500; margin-bottom: 4px; }
@@ -304,7 +304,7 @@ tbody .state.red {
     background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; */
 }
 .polar-area-chart.active { display: block; }
-.polar-area-chart .time { right: 8px; }
+.polar-area-chart .time { top: -20px; }
 .polar-area-chart canvas { margin: 0 auto; }
 .polar-area-chart-item { height: 100%; width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .polar-area-chart-item .img-box { height: 100%; width: 100%; clip-path: circle(50% at 50% 50%); border-radius: 50%; overflow: hidden; z-index: 1; transition: .3s; }
