@@ -32,7 +32,7 @@
                         Down
                     </div>
                 </div>
-                <div class="dashboard-standard-item critical row-group m-script-pop noscript" data-target=".modal-devices-warning">
+                <div class="dashboard-standard-item warning row-group m-script-pop noscript" data-target=".modal-devices-warning">
                     <div class="num">
                         {{$counts['Warning']}}
                     </div>
@@ -40,7 +40,7 @@
                         Warning
                     </div>
                 </div>
-                <div class="dashboard-standard-item warning row-group m-script-pop noscript" data-target=".modal-devices-unusual">
+                <div class="dashboard-standard-item critical row-group m-script-pop noscript" data-target=".modal-devices-unusual">
                     <div class="num">
                         {{$counts['Unusual']}}
                     </div>

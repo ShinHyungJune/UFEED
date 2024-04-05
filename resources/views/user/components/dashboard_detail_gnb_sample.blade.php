@@ -32,8 +32,8 @@
                         Down
                     </div>
                 </div>
-                <div class="dashboard-standard-item critical row-group m-script-pop"
-                     data-target=".modal-devices-critical">
+                <div class="dashboard-standard-item warning row-group m-script-pop"
+                     data-target=".modal-devices-warning">
                     <div class="num">
                         0
                     </div>
@@ -41,8 +41,8 @@
                         Warning
                     </div>
                 </div>
-                <div class="dashboard-standard-item warning row-group m-script-pop"
-                     data-target=".modal-devices-warning">
+                <div class="dashboard-standard-item critical row-group m-script-pop"
+                     data-target=".modal-devices-critical">
                     <div class="num">
                         29
                     </div>
