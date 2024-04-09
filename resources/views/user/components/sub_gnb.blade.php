@@ -377,11 +377,6 @@
     </div>
 </div>
 <script>
-    // window.domain = "http://localhost:8000";
-    // window.domain = "http://localhost:90";
-    window.domain = "http://hi-secure.ufeed.co.kr";
-</script>
-<script>
     var pathname = window.location.pathname;
     var firstUrl = pathname.split('/')[1];
 
