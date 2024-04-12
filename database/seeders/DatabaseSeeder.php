@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             GroupSeeder::class,
             AuthoritySeeder::class,
             UserSeeder::class,
-            SystemSeeder::class
+            SystemSeeder::class,
+            InitSeeder::class
         ]);
     }
 }
