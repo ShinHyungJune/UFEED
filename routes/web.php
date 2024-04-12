@@ -30,12 +30,12 @@ Route::get("/test", function(){
             "apikey" => "f4ef6356d46d6c08bf7687f3f705482c"
         ],
     ]);
-    $start = Carbon::now()->subHours(1)->format('Y-m-d\TH:i:s');
+    $start = Carbon::now()->subHours(2)->format('Y-m-d\TH:i:s');
     $end = Carbon::now()->format('Y-m-d\TH:i:s');
     $domain = 'https://10.0.1.251:58005';
 //    $domain = 'https://118.130.110.156:40007';
 
-    $response = $client->request("get", "{$domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:tgIps and group:DDoS");
+    $response = $client->request("get", "{$domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
 
     dd($start, $end, json_decode($response->getBody()));
 
