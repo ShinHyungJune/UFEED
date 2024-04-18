@@ -765,7 +765,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 
 /* 모달 - 알림창 */
 .modal-alert-wrap { text-align: center; max-width: 420px; padding-top: 16px; }
-.modal-alert-txt-wrap { padding: 24px 0; }
+.modal-alert-txt-wrap { padding-bottom: 24px; }
 .modal-alert-title-wrap { margin-bottom: 24px; }
 .modal-alert-title-wrap .icon { font-size: 40px; line-height: 1.5; color: #359832; }
 .modal-alert-title { font-size: 16px; font-weight: 600; }
@@ -1451,3 +1451,24 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .sort-item i { font-size: 20px; color: #aaa; transition: .2s; }
 .sort-item input { display: none; }
 .sort-item input:checked + i { transform: rotateX(180deg); }
+
+/* ahnlab interface control */
+.interface_control_wrap { padding: 24px 32px; border-radius: 16px; background: #fff; box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.08); }
+.interface_control_wrap .title_wrap { margin-bottom: 12px; align-items: flex-end; gap: 8px; }
+.interface_control_wrap .title_wrap .logo { width: 96px; }
+.interface_control_wrap .title_wrap .title { gap: 8px; font-size: 20px; font-weight: 600; }
+.interface_control_wrap .title_wrap .title .gray { color: #7f7f7f; }
+.interface_control_wrap .port_wrap { gap: 8px; }
+.interface_control_wrap .port_group { max-width: 186px; padding: 16px; border: 1px solid #e5e9f2; border-radius: 4px; flex-flow: wrap; gap: 8px; }
+.interface_control_wrap .port_item { position: relative; }
+.interface_control_wrap .port_item input { display: none; }
+.interface_control_wrap .port_num { position: absolute; font-size: 14px; font-weight: 600; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #7f7f7f; }
+.interface_control_wrap .port_icon { width: 32px; height: 25px; background-repeat: no-repeat; background-size: cover; }
+.interface_control_wrap .lan_port .port_icon { background-image: url(../images/icon_lanport_disable.png);}
+.interface_control_wrap .optical_port .port_icon { background-image: url(../images/icon_opticalport_disable.png);}
+.interface_control_wrap .port_0 { display: flex; flex-flow: column; justify-content: center; }
+.interface_control_wrap .port_0 .port_num { position: static; transform: none; text-align: center; margin-bottom: 10px; }
+
+.interface_control_wrap .port_group:not(.port_0) .port_item input:checked + .port_item_group .port_num { color: #fff; }
+.interface_control_wrap .lan_port .port_item input:checked + .port_item_group .port_icon { background-image: url(../images/icon_lanport_enable.png);}
+.interface_control_wrap .optical_port .port_item input:checked + .port_item_group .port_icon { background-image: url(../images/icon_opticalport_enable.png);}
