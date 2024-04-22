@@ -638,7 +638,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .account-wrap .del_btn { background: #a4a4a4; width: 120px; height: 40px; border-radius: 8px; text-align: center; color: #fff; font-size: 16px; font-weight: 600; transition: .3s; }
 .account-wrap .del_btn:hover { background: #7f7f7f; }
 
-.account-top-btn-wrap { display: flex; gap: 12px; align-items: center; }
+.account-top-btn-wrap { display: flex; gap: 12px; align-items: center; margin-left: auto; }
 .account-top-btn { min-width: 120px; height: 40px; padding: 0 24px; border-radius: 8px; text-align: center; line-height: 40px; background: #a4a4a4; color: #fff; font-size: 16px; font-weight: 600; transition: .2s; }
 .account-top-btn:hover { background: #7f7f7f; }
 
