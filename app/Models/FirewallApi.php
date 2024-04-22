@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Http;
 
 class FirewallApi extends Model
 {
@@ -15,76 +16,96 @@ class FirewallApi extends Model
 
     protected $token;
 
-    protected $domain = "https://118.130.110.156:50015";
+    protected $domain = "https://118.130.110.156:40012";
 
-    public function __construct(array $attributes = [])
+    public function __construct(array $attributes = [], $domain = null)
     {
         parent::__construct($attributes);
 
         if(config("app.env") == "production")
-            $this->domain = "https://10.0.1.254:50015";
+            $this->domain = $domain;
 
-        $this->client = new Client([
-            "verify" => false,
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json;charset=UTF-8',
-            ],
+        $this->client = Http::withOptions([
+            'verify' => false
         ]);
 
         // get token
-        $response = $this->client->request("post",$this->domain."/token", [
-            "json" => [
-                "id" => "admin",
-                "password"=> "qwe123!@#"
-            ]
-        ]);
+        $this->token = $this->client->post($this->domain . "/token", [
+            'id' => 'admin',
+            'password' => 'qwe123!@#'
+        ])->json()['token'];
 
-        // login
-        $this->token = json_decode($response->getBody()->getContents(), true)["token"];
+//        $this->client = new Client([
+//            "verify" => false,
+//            'headers' => [
+//                'Accept' => 'application/json',
+//                'Content-Type' => 'application/json;charset=UTF-8',
+//            ],
+//        ]);
+//
+//        // get token
+//        $response = $this->client->request("post",$this->domain."/token", [
+//            "json" => [
+//                "id" => "admin",
+//                "password"=> "qwe123!@#"
+//            ]
+//        ]);
+//
+//        // login
+//        $this->token = json_decode($response->getBody()->getContents(), true)["token"];
 
         $this->login();
     }
 
     public function login()
     {
-        $response = $this->client->request("post",$this->domain."/login", [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json;charset=UTF-8',
-                "Authorization" => $this->token,
-            ],
-        ]);
+        $this->client->withHeaders([
+            "Authorization" => $this->token,
+        ])->post($this->domain . "/login");
+//        $response = $this->client->request("post",$this->domain."/login", [
+//            'headers' => [
+//                'Accept' => 'application/json',
+//                'Content-Type' => 'application/json;charset=UTF-8',
+//                "Authorization" => $this->token,
+//            ],
+//        ]);
     }
 
     public function logout()
     {
-        $response = $this->client->request("post",$this->domain."/logout", [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json;charset=UTF-8',
-                "Authorization" => $this->token,
-            ],
-        ]);
+        $this->client->post($this->domain . "/logout");
+//        $response = $this->client->request("post",$this->domain."/logout", [
+//            'headers' => [
+//                'Accept' => 'application/json',
+//                'Content-Type' => 'application/json;charset=UTF-8',
+//                "Authorization" => $this->token,
+//            ],
+//        ]);
+    }
+
+    public function interfaceIndex()
+    {
+        $response = $this->client->get($this->domain . "");
     }
 
     public function ipsIndex()
     {
-        $response = $this->client->request("get",$this->domain."/object/ip_address/ipv4_address", [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json;charset=UTF-8',
-                "Authorization" => $this->token,
-            ],
-
-            "json" => [
-
-            ]
-        ]);
+//        $response = $this->client->request("get",$this->domain."/object/ip_address/ipv4_address", [
+//            'headers' => [
+//                'Accept' => 'application/json',
+//                'Content-Type' => 'application/json;charset=UTF-8',
+//                "Authorization" => $this->token,
+//            ],
+//
+//            "json" => [
+//
+//            ]
+//        ]);
+        $response = $this->client->get($this->domain . "/object/ip_address/ipv4_address");
 
         $this->logout();
 
-        return json_decode($response->getBody()->getContents(), true)["result"];
+        return $response->json()["result"];
     }
 
     public function ipsStore($data)
