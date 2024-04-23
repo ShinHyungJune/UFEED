@@ -83,9 +83,13 @@ class FirewallApi extends Model
 //        ]);
     }
 
-    public function interfaceIndex()
+    public function policyIndex()
     {
-        $response = $this->client->get($this->domain . "");
+        $response = $this->client->get($this->domain . "/policy/firewall/ipv4");
+
+        $this->logout();
+
+        return $response->json()["result"];
     }
 
     public function ipsIndex()
