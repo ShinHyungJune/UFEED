@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class FirewallController extends Controller
 {
-    private $urls = ['', '10.0.1.254:50015', '10.0.1.2:50015', '10.0.1.3:50015', '10.0.1.4:50015', '10.0.1.5:50015', '10.0.1.6:50015'];
+    private $urls = ['', 'https://10.0.1.254:50015', 'https://10.0.1.2:50015', 'https://10.0.1.3:50015', 'https://10.0.1.4:50015', 'https://10.0.1.5:50015', 'https://10.0.1.6:50015'];
 
     public function policy(Request $request)
     {
