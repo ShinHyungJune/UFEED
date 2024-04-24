@@ -163,7 +163,7 @@
         </div>
 
         <div class="dashboard-form-btn-wrap col-group">
-            <button class="dashboard-form-btn cancel-btn" onclick="hideModalResponseUrl(`{{ route('hardware.index') }}`)">
+            <button class="dashboard-form-btn cancel-btn" id="modal-button">
                 Close
             </button>
         </div>
@@ -196,7 +196,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('hardware.update', $hardware->id) }}", formData, true, `<i class="xi-error"></i>`);
+        fetchUtility("{{ route('hardware.update', $hardware->id) }}", formData, true);
     });
 </script>
 </body>

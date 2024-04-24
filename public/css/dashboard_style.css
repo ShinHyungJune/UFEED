@@ -671,6 +671,8 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .setting-txt { font-size: 20px; font-weight: 600; line-height: 1.5; color: #404040; justify-content: center; gap: 8px; align-items: center; }
 .setting-txt.red { color: #ff4620; }
 .setting-input { width: 80px; height: 48px; border-radius: 24px; background: #fff; text-align: center; font-size: 16px; }
+.setting-txt-wrap .error-txt { font-size: 12px; color: #ff4620; line-height: 1.25; padding-left: 8px; }
+.setting-txt-wrap .error-txt i { font-size: 12px; color: #ff4620; }
 .dashboard-form-group { gap: 56px; margin-bottom: 48px; }
 .dashboard-form-group .dashboard-form { width: 100%; padding: 0; }
 

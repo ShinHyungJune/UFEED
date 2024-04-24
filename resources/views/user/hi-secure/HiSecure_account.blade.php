@@ -207,25 +207,25 @@
         // })
     }
 </script>
-<script>
-    document.querySelectorAll('.switch-input').forEach(function (switchInput) {
-        switchInput.addEventListener('click', function () {
-            let id = this.id.replace('switch_', '');
-            let switchForm = document.getElementById('switchForm');
+{{--<script>--}}
+{{--    document.querySelectorAll('.switch-input').forEach(function (switchInput) {--}}
+{{--        switchInput.addEventListener('click', function () {--}}
+{{--            let id = this.id.replace('switch_', '');--}}
+{{--            let switchForm = document.getElementById('switchForm');--}}
 
-            let switchInput = document.createElement('input');
-            switchInput.setAttribute('type', 'hidden');
-            switchInput.setAttribute('name', 'switch');
-            switchInput.value = this.checked;
-            switchForm.appendChild(switchInput);
+{{--            let switchInput = document.createElement('input');--}}
+{{--            switchInput.setAttribute('type', 'hidden');--}}
+{{--            switchInput.setAttribute('name', 'switch');--}}
+{{--            switchInput.value = this.checked;--}}
+{{--            switchForm.appendChild(switchInput);--}}
 
-            let formData = new FormData(switchForm);
-            fetch(`{{ url('hi-secure') }}/${id}/switch`, {
-                method: "POST",
-                body: formData
-            })
-        });
-    })
-</script>
+{{--            let formData = new FormData(switchForm);--}}
+{{--            fetch(`{{ url('hi-secure') }}/${id}/switch`, {--}}
+{{--                method: "POST",--}}
+{{--                body: formData--}}
+{{--            })--}}
+{{--        });--}}
+{{--    })--}}
+{{--</script>--}}
 </body>
 </html>

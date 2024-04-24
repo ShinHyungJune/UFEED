@@ -140,88 +140,88 @@
                     </div>
                 </div>
             </div>
-            <div class="gnb-menu">
-                <div class="gnb-menu-title col-group">
-                    Policy Control
-                    <i class="xi-angle-down-min icon toggle-icon"></i>
-                </div>
-                <div class="sub-gnb-menu-list row-group">
-                    <a href="{{ route('firewall.policy', 'fw1') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#1 (Remote Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.policy', 'fw2') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#2 (Navigation Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.policy', 'fw3') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#3 (Communication Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.policy', 'fw4') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#4 (Crew LAN Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.policy', 'fw5') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#5 (Power Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.policy', 'fw6') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#6
-                            (Control &
-                            Instrumentation Zone)
-                        </div>
-                    </a>
-                </div>
-            </div>
+{{--            <div class="gnb-menu">--}}
+{{--                <div class="gnb-menu-title col-group">--}}
+{{--                    Policy Control--}}
+{{--                    <i class="xi-angle-down-min icon toggle-icon"></i>--}}
+{{--                </div>--}}
+{{--                <div class="sub-gnb-menu-list row-group">--}}
+{{--                    <a href="{{ route('firewall.policy', 'fw1') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#1 (Remote Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.policy', 'fw2') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#2 (Navigation Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.policy', 'fw3') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#3 (Communication Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.policy', 'fw4') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#4 (Crew LAN Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.policy', 'fw5') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#5 (Power Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.policy', 'fw6') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#6--}}
+{{--                            (Control &--}}
+{{--                            Instrumentation Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="gnb-menu">
-                <div class="gnb-menu-title col-group">
-                    Interface Control
-                    <i class="xi-angle-down-min icon toggle-icon"></i>
-                </div>
+{{--            <div class="gnb-menu">--}}
+{{--                <div class="gnb-menu-title col-group">--}}
+{{--                    Interface Control--}}
+{{--                    <i class="xi-angle-down-min icon toggle-icon"></i>--}}
+{{--                </div>--}}
 
-                <div class="sub-gnb-menu-list row-group">
-                    <a href="{{ route('firewall.interface', 'fw1') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#1 (Remote Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.interface', 'fw2') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#2 (Navigation Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.interface', 'fw3') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#3 (Communication Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.interface', 'fw4') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#4 (Crew LAN Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.interface', 'fw5') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#5 (Power Zone)
-                        </div>
-                    </a>
-                    <a href="{{ route('firewall.interface', 'fw6') }}" class="sub-gnb-menu">
-                        <div class="sub-gnb-menu-title">
-                            FW#6
-                            (Control &
-                            Instrumentation Zone)
-                        </div>
-                    </a>
-                </div>
-            </div>
+{{--                <div class="sub-gnb-menu-list row-group">--}}
+{{--                    <a href="{{ route('firewall.interface', 'fw1') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#1 (Remote Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.interface', 'fw2') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#2 (Navigation Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.interface', 'fw3') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#3 (Communication Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.interface', 'fw4') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#4 (Crew LAN Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.interface', 'fw5') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#5 (Power Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="{{ route('firewall.interface', 'fw6') }}" class="sub-gnb-menu">--}}
+{{--                        <div class="sub-gnb-menu-title">--}}
+{{--                            FW#6--}}
+{{--                            (Control &--}}
+{{--                            Instrumentation Zone)--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
         </div>
     </div>

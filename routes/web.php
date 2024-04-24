@@ -155,6 +155,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('quick-function')->group(function () {
         Route::prefix('policy')->group(function () {
             Route::get('/{fw}', [\App\Http\Controllers\FirewallController::class, 'policy'])->name('firewall.policy')->where('fw', 'fw[1-6]');
+            Route::middleware('admin')->group(function () {
+                Route::get('/{fw}/create', [\App\Http\Controllers\FirewallController::class, 'policyCreate'])->name('firewall.policy-create')->where('fw', 'fw[1-6]');
+                Route::post('/{fw}', [\App\Http\Controllers\FirewallController::class, 'policyStore'])->name('firewall.policy-store')->where('fw', 'fw[1-6]');
+            });
         });
         Route::prefix('interface')->group(function () {
             Route::get('/{fw}', [\App\Http\Controllers\FirewallController::class, 'interface'])->name('firewall.interface')->where('fw', 'fw[1-6]');

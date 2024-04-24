@@ -142,7 +142,7 @@
         </div>
 
         <div class="dashboard-form-btn-wrap col-group">
-            <button class="dashboard-form-btn cancel-btn" onclick="hideModalReload()">
+            <button class="dashboard-form-btn cancel-btn" id="modal-button">
                 Close
             </button>
         </div>
@@ -156,7 +156,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('hi-secure.store') }}", formData, true, `<i class="xi-error"></i>`);
+        fetchUtility("{{ route('hi-secure.store') }}", formData, true);
     });
 </script>
 </body>

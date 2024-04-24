@@ -1,14 +1,14 @@
-function fetchUtility(url, formData, modal = false, icon = null) {
+function fetchUtility(url, formData, modal = false) {
     fetch(url, {
         method: "POST",
         body: formData
     }).then(response => {
         if (response.ok) {
             if (modal) {
-                showModal();
-            } else location.href = response.url;
+                showModal(response.url);
+            } else window.location.href = response.url;
         } else if (response.status === 419) {
-            location.reload();
+            window.location.reload();
         } else return response.json();
     }).then(data => {
         let validationTxt = document.querySelectorAll('.validation-txt');
@@ -19,7 +19,7 @@ function fetchUtility(url, formData, modal = false, icon = null) {
             for (let key in data) {
                 if (element.id === "validation-" + key) {
                     element.style.display = '';
-                    element.innerHTML = `${icon == null ? '' : icon} ${data[key][0]}`;
+                    element.innerHTML = `<i class="xi-error"></i> ${data[key][0]}`;
                 }
             }
         })
@@ -43,20 +43,15 @@ function deleteUtility(url) {
     fetchUtility(url, formData)
 }
 
-function showModal() {
+function showModal(responseUrl = null) {
     document.querySelector('.modal-alert').style.display = '';
+    if (responseUrl) {
+        document.getElementById('modal-button').onclick = function () {
+            window.location.href = responseUrl;
+        };
+    }
 }
 
 function hideModal() {
     document.querySelector('.modal-alert').style.display = 'none';
-}
-
-function hideModalReload() {
-    document.querySelector('.modal-alert').style.display = 'none';
-    location.reload();
-}
-
-function hideModalResponseUrl(url) {
-    document.querySelector('.modal-alert').style.display = 'none';
-    location.href = url;
 }

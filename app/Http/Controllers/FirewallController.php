@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PolicyRequest;
 use App\Models\FirewallApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -12,11 +13,26 @@ class FirewallController extends Controller
 
     public function policy(Request $request)
     {
-        $firewallApi = new FirewallApi([], $this->getUrl($request));
-
+        $firewallApi = new FirewallApi([], $this->getUrl($request->path()));
         $items = $firewallApi->policyIndex();
 
         return view('user.quick-function.policy.policy_control')->with('items', $items);
+    }
+
+    public function policyCreate()
+    {
+        return view('user.quick-function.policy.policy_control_add');
+    }
+
+    public function policyStore(PolicyRequest $request)
+    {
+        $validated = $request->validated();
+        $validated['index'] = 0;
+
+        $firewallApi = new FirewallApi([], $this->getUrl($request->path()));
+        $firewallApi->policyStore($validated);
+
+        return redirect()->route('firewall.policy', explode('/', request()->path())[2]);
     }
 
     public function interface()
@@ -25,11 +41,11 @@ class FirewallController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param string $path
      * @return string
      */
-    private function getUrl(Request $request): string
+    private function getUrl(string $path): string
     {
-        return $this->urls[Str::after($request->path(), 'fw')];
+        return $this->urls[Str::after($path, 'fw')];
     }
 }

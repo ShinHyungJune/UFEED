@@ -156,7 +156,16 @@ return [
     'attributes' => [
         'ids' => 'id',
         'system_id' => 'system',
-        'password_confirmation' => 'confirm password'
+        'password_confirmation' => 'confirm password',
+
+        //global setting
+        'lifetime' => 'time',
+
+        //policy control
+        'source_ip_object' => 'source ip',
+        'destination_ip_object' => 'destination ip',
+        'service_object' => 'service',
+        'action' => 'action',
     ],
 
 ];

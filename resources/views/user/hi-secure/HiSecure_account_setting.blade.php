@@ -49,6 +49,7 @@
                                            value="{{ config('session.lifetime') }}">
                                     Minute
                                 </div>
+                                <p class="error-txt validation-txt" id="validation-lifetime" style="display: none"></p>
                                 <div class="setting-txt red">
                                     If there is no input during that time, you will be automatically logged out.
                                 </div>
@@ -81,7 +82,7 @@
         </div>
 
         <div class="dashboard-form-btn-wrap col-group">
-            <button class="dashboard-form-btn cancel-btn" onclick="hideModalReload()">
+            <button class="dashboard-form-btn cancel-btn" onclick="window.location.reload()">
                 Close
             </button>
         </div>

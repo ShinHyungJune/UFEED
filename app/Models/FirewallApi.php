@@ -92,6 +92,15 @@ class FirewallApi extends Model
         return $response->json()["result"];
     }
 
+    public function policyStore($data)
+    {
+        $response = $this->client->post($this->domain . "/policy/firewall/ipv4/simple", [$data]);
+
+        $this->logout();
+
+        return $response->json();
+    }
+
     public function ipsIndex()
     {
 //        $response = $this->client->request("get",$this->domain."/object/ip_address/ipv4_address", [

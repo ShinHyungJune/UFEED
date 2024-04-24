@@ -31,13 +31,13 @@ Route::get("/nac/wlan", [\App\Http\Controllers\Api\NacController::class, "wlan"]
 Route::get("/nac/log", [\App\Http\Controllers\Api\NacController::class, "log"]);
 Route::get("/nac/condition", [\App\Http\Controllers\Api\NacController::class, "condition"]);
 
-Route::get("/ips", [\App\Http\Controllers\Api\FirewallController::class, "ipsIndex"]);
-Route::delete("/ips", [\App\Http\Controllers\Api\FirewallController::class, "ipsDestroy"]);
-Route::post("/ips", [\App\Http\Controllers\Api\FirewallController::class, "ipsStore"]);
-
-Route::get("/nats", [\App\Http\Controllers\Api\FirewallController::class, "natsIndex"]);
-Route::delete("/nats", [\App\Http\Controllers\Api\FirewallController::class, "natsDestroy"]);
-Route::post("/nats", [\App\Http\Controllers\Api\FirewallController::class, "natsStore"]);
+//Route::get("/ips", [\App\Http\Controllers\Api\FirewallController::class, "ipsIndex"]);
+//Route::delete("/ips", [\App\Http\Controllers\Api\FirewallController::class, "ipsDestroy"]);
+//Route::post("/ips", [\App\Http\Controllers\Api\FirewallController::class, "ipsStore"]);
+//
+//Route::get("/nats", [\App\Http\Controllers\Api\FirewallController::class, "natsIndex"]);
+//Route::delete("/nats", [\App\Http\Controllers\Api\FirewallController::class, "natsDestroy"]);
+//Route::post("/nats", [\App\Http\Controllers\Api\FirewallController::class, "natsStore"]);
 
 Route::get("/histories", [\App\Http\Controllers\Api\HistoryController::class, "index"]);
 Route::post("/histories", [\App\Http\Controllers\Api\HistoryController::class, "store"]);

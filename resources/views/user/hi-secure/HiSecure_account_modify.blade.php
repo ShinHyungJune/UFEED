@@ -141,7 +141,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('hi-secure.update', $user->id) }}", formData, false, `<i class="xi-error"></i>`);
+        fetchUtility("{{ route('hi-secure.update', $user->id) }}", formData, false);
     });
 </script>
 </body>

@@ -18,6 +18,7 @@
 .login_wrap .login_box a:hover { background-color: #109242; }
 .login_wrap .error-txt-box { position: absolute; left: 50%; transform: translateX(-50%); top: 208px; width: calc( 100% - 160px ); }
 .login_wrap .error-txt { text-align: center; font-size: 14px; color: #ff4620; font-weight: 600; line-height: 1.5; }
+.login_wrap .error-txt i { font-size: 14px; color: #ff4620; }
 .login_wrap .validation-txt { margin-top: 0; font-size: 12px; font-weight: normal; }
 /* 메인 */
 .main_wrap { position: relative; display: flex; }
