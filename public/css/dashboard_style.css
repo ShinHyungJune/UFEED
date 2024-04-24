@@ -637,6 +637,9 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .account-wrap .form-btn:hover { background: #359832; }
 .account-wrap .del_btn { background: #a4a4a4; width: 120px; height: 40px; border-radius: 8px; text-align: center; color: #fff; font-size: 16px; font-weight: 600; transition: .3s; }
 .account-wrap .del_btn:hover { background: #7f7f7f; }
+.account-wrap .form-item .form-btn { height: 48px; border-radius: 24px; max-width: 276px; line-height: 44px; font-size: 16px; font-weight: 600; border: 2px solid #e4e4e4; background: #fff; color: #707070; }
+.account-wrap .form-item .form-btn:hover { background: #f5f5f5; }
+.account-wrap .form-item .form-btn.active { background: #01ae42; color: #fff; border: 2px solid #01ae42; }
 
 .account-top-btn-wrap { display: flex; gap: 12px; align-items: center; margin-left: auto; }
 .account-top-btn { min-width: 120px; height: 40px; padding: 0 24px; border-radius: 8px; text-align: center; line-height: 40px; background: #a4a4a4; color: #fff; font-size: 16px; font-weight: 600; transition: .2s; }
@@ -661,8 +664,8 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .modify-group { gap: 56px; justify-content: center; }
 .modify-group> * { width: calc( ( 100% - 56px ) / 2 ); padding: 0; position: relative; }
 .modify-group> *:not(:last-child)::after { content: ''; display: block; position: absolute; width: 1px; height: 100%; background: #aaa; top: 0; right: -28px; }
-.setting-txt-wrap { margin-bottom: 80px; display: flex; flex-flow: column; gap: 24px; }
-.setting-txt { font-size: 20px; font-weight: 600; line-height: 1.5; color: #404040; text-align: center; justify-content: center; gap: 8px; align-items: center; }
+.setting-txt-wrap { margin-bottom: 80px; display: flex; flex-flow: column; gap: 24px; text-align: center; }
+.setting-txt { font-size: 20px; font-weight: 600; line-height: 1.5; color: #404040; justify-content: center; gap: 8px; align-items: center; }
 .setting-txt.red { color: #ff4620; }
 .setting-input { width: 80px; height: 48px; border-radius: 24px; background: #fff; text-align: center; font-size: 16px; }
 .dashboard-form-group { gap: 56px; margin-bottom: 48px; }
