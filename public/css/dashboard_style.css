@@ -790,6 +790,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
     background-color:#fff;
 } */
 .subpage-table-btn-wrap { width: 100%; justify-content: flex-end; gap: 8px; }
+.subpage-table-btn-wrap.sticker { position: absolute; right: 16px; top: 16px; }
 .subpage-table-btn { display: block; min-width: 96px; padding: 0 16px; height: 32px; text-align: center; border-radius: 5px; background: #a4a4a4; font-size: 16px; font-weight: 600; line-height: 32px; color: #fff; transition: .2s; }
 .subpage-table-btn:hover { background: #7f7f7f; }
 .subpage-table-btn.active { background: #502ecf; border: 1px solid #502ecf; color: #fff; }
