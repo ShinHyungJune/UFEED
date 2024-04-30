@@ -1481,3 +1481,5 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .interface_control_wrap .port_group:not(.port_0) .port_item input:checked + .port_item_group .port_num { color: #fff; }
 .interface_control_wrap .lan_port .port_item input:checked + .port_item_group .port_icon { background-image: url(../images/icon_lanport_enable.png);}
 .interface_control_wrap .optical_port .port_item input:checked + .port_item_group .port_icon { background-image: url(../images/icon_opticalport_enable.png);}
+
+.interface_control_wrap ~ .subpage-table-wrap { height: calc( 100% - 188px ); }
