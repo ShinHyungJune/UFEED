@@ -7,6 +7,7 @@ use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Validation\ValidationException;
 
 class FirewallApi extends Model
 {
@@ -60,7 +61,7 @@ class FirewallApi extends Model
     public function login()
     {
         $this->client->withHeaders([
-            "Authorization" => $this->token,
+            'Authorization' => $this->token,
         ])->post($this->domain . "/login");
 //        $response = $this->client->request("post",$this->domain."/login", [
 //            'headers' => [
@@ -97,6 +98,85 @@ class FirewallApi extends Model
         $response = $this->client->post($this->domain . "/policy/firewall/ipv4/simple", [$data]);
 
         $this->logout();
+
+        if ($response->failed()) {
+            throw ValidationException::withMessages([
+                'firewall' => $response->json('message')
+            ]);
+        }
+
+        return $response->json();
+    }
+
+    public function policyShow($data)
+    {
+        $response = $this->client->withBody(json_encode($data), 'application/json')->get($this->domain . "/policy/firewall/ipv4/search");
+
+        $this->logout();
+
+        return $response->json()['result'][0];
+    }
+
+    public function policyUpdate($data)
+    {
+        $response = $this->client->put($this->domain . "/policy/firewall/ipv4", [$data]);
+
+        $this->logout();
+
+        if ($response->failed()) {
+            throw ValidationException::withMessages([
+                'firewall' => $response->json('message')
+            ]);
+        }
+
+        return $response->json();
+    }
+
+    public function policyDestroy($data)
+    {
+        $response = $this->client->withBody(json_encode($data), 'application/json')->delete($this->domain . "/policy/firewall/ipv4");
+
+        $this->logout();
+
+        if ($response->failed()) {
+            throw ValidationException::withMessages([
+                'firewall' => $response->json('message')
+            ]);
+        }
+
+        return $response->json();
+    }
+
+    public function interfaceIndex()
+    {
+        $response = $this->client->get($this->domain . "/network/interface/interface");
+
+        $this->logout();
+
+        return $response->json()['result'];
+    }
+
+    public function interfaceShow($data)
+    {
+        $response = $this->client->withBody(json_encode($data), 'application/json')->get($this->domain . "/network/interface/interface/enable");
+
+        $this->logout();
+
+        return $response->json('result.0');
+    }
+
+    public function interfaceUpdate($data)
+    {
+//        $response = $this->client->put($this->domain . "/network/interface/interface/enable", [$data]);
+        $response = $this->client->withBody(json_encode($data), 'application/json')->put($this->domain . "/network/interface/interface/enable");
+
+        $this->logout();
+
+        if ($response->failed()) {
+            throw ValidationException::withMessages([
+                'firewall' => $response->json('message')
+            ]);
+        }
 
         return $response->json();
     }

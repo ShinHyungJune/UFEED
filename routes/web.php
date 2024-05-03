@@ -20,52 +20,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    $client = new Client([
-        "verify" => false,
-        'headers' => [
-            'Accept' => 'application/json',
-//            "viewId" => "manager",
-//            "apikey" => "9cca64cc626fe90094b6432172e50351"
-            "viewId" => "manager1",
-            "apikey" => "f4ef6356d46d6c08bf7687f3f705482c"
-        ],
-    ]);
-    $start = Carbon::now()->subHours(2)->format('Y-m-d\TH:i:s');
-    $end = Carbon::now()->format('Y-m-d\TH:i:s');
-    $domain = 'https://10.0.1.251:58005';
-//    $domain = 'https://118.130.110.156:40007';
-
-    $response = $client->request("get", "{$domain}/restapi/tm/v1/log/search?searchType=CUSTOM&startDate={$start}&endDate={$end}&pageSize=1&pageNo=1&query=module:malwareBlock");
-
-    dd($start, $end, json_decode($response->getBody()));
-
-//    $history = new \App\Models\History();
-//    \App\Models\StatusHistory::record();
-
-    // dd($history->getMessages());
-
-    // \App\Models\History::record();
-
-  /*  $client = new Client([
-        "verify" => false
+    $client = null;
+    $token = null;
+    $domain = "https://localhost:9398/api";
+    $username = "coworker-design-01";
+    $password = 1234;
+    $base64Data = base64_encode($username . ':' . $password);
+    $client = Http::withoutVerifying();
+    // logonSessions
+    $logon = $client->withHeaders([
+        'Content-type' => 'application/json',
+        'Authorization' => "Basic ". $base64Data
+    ])->post($domain . "/sessionMngr/?v=latest", [
+        'Username' => $username,
+        'Password' => $password,
     ]);
 
-    $response = $client->request('put', "https://10.0.1.109:9554/mc2/rest/mac/policies?&apiKey=26f59d5e-ffac-4e5b-b5b1-6251f57b89b3",[
-        'headers' => [
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json;charset=UTF-8',
-        ],
-        'json' => [
-            [
-                "cmd" => "macdeny",
-                "targetMAC" => "00:90:0B:CB:93:18",
-                "specifyIPs" => ["string"],
-                // "extraLogInfo" => "string"
-            ]
-        ],
-    ]);
+    $token = $logon->header('X-RestSvcSessionId');
 
-    return dd($response->getBody()->getContents());*/
+    $getLogon = $client->withHeaders([
+        'X-RestSvcSessionId' => $token
+    ])->get($domain . "/logonSessions");
+    dd($logon->json(), $logon->json()['SessionId'], $logon->headers(), $token, $getLogon->json());
 });
 
 Route::get("/histories", function (){
@@ -158,10 +134,17 @@ Route::middleware('auth')->group(function () {
             Route::middleware('admin')->group(function () {
                 Route::get('/{fw}/create', [\App\Http\Controllers\FirewallController::class, 'policyCreate'])->name('firewall.policy-create')->where('fw', 'fw[1-6]');
                 Route::post('/{fw}', [\App\Http\Controllers\FirewallController::class, 'policyStore'])->name('firewall.policy-store')->where('fw', 'fw[1-6]');
+                Route::get('/{fw}/{policyId}/edit', [\App\Http\Controllers\FirewallController::class, 'policyEdit'])->name('firewall.policy-edit')->where('fw', 'fw[1-6]');
+                Route::patch('/{fw}/{policyId}', [\App\Http\Controllers\FirewallController::class, 'policyUpdate'])->name('firewall.policy-update')->where('fw', 'fw[1-6]');
+                Route::patch('/{fw}/{policyId}/enable', [\App\Http\Controllers\FirewallController::class, 'policyEnable'])->name('firewall.policy-enable')->where('fw', 'fw[1-6]');
+                Route::delete('/{fw}/{index}/{policyId}', [\App\Http\Controllers\FirewallController::class, 'policyDestroy'])->name('firewall.policy-destroy')->where('fw', 'fw[1-6]');
             });
         });
         Route::prefix('interface')->group(function () {
             Route::get('/{fw}', [\App\Http\Controllers\FirewallController::class, 'interface'])->name('firewall.interface')->where('fw', 'fw[1-6]');
+            Route::middleware('admin')->group(function () {
+                Route::patch('/{fw}/{interfaceName}/enable', [\App\Http\Controllers\FirewallController::class, 'interfaceEnable'])->name('firewall.interface-enable')->where('fw', 'fw[1-6]');
+            });
         });
     });
 

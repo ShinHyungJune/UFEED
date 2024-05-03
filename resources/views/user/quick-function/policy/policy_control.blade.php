@@ -21,31 +21,36 @@
         <div class="subpage">
 
             <div class="subpage-table-container">
-                <div class="subpage-table-btn-wrap col-group">
-                    <button class="subpage-table-btn">
-                        Add
-                    </button>
-                    <button class="subpage-table-btn">
-                        Delete
-                    </button>
-                    <button class="subpage-table-btn">
-                        Modify
-                    </button>
-                    <button class="subpage-table-btn">
-                        Enable/Disable
-                    </button>
-                </div>
+                @if(Auth::user()->authority_id === 1)
+                    <div class="subpage-table-btn-wrap col-group">
+                        <a href="{{ route('firewall.policy-create', request()->segment(3)) }}"
+                           class="subpage-table-btn">
+                            Add
+                        </a>
+                        <form action="" method="post" id="delete">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" class="subpage-table-btn" onclick="showModal()">
+                                Delete
+                            </button>
+                        </form>
+                        <button class="subpage-table-btn" id="modify">
+                            Modify
+                        </button>
+                        <form action="" method="post" id="enable">
+                            @csrf
+                            @method('PATCH')
+                            <button type="button" class="subpage-table-btn" onclick="showConfirmModal()">
+                                Enable/Disable
+                            </button>
+                        </form>
+                    </div>
+                @endif
                 <div class="subpage-table-wrap account-table-wrap">
                     <table>
                         <thead>
                         <tr>
                             <th>
-                                <label for="check_all" class="check-label">
-                                    <input type="checkbox" class="check-input" id="check_all">
-                                    <div class="check-item col-group">
-                                        <i class="xi-check"></i>
-                                    </div>
-                                </label>
                             </th>
                             <th>
                                 <label for="sort_Enable" class="sort-item">
@@ -131,7 +136,8 @@
                             <tr>
                                 <td>
                                     <label for="{{ $item['index'] }}" class="check-label">
-                                        <input type="checkbox" class="check-input" id="{{ $item['index'] }}">
+                                        <input type="radio" class="check-input" id="{{ $item['index'] }}" name="policy"
+                                               value="{{ $item['rule_id'] }}">
                                         <div class="check-item col-group">
                                             <i class="xi-check"></i>
                                         </div>
@@ -182,7 +188,101 @@
         </div>
     </div>
     <!-- 대시보드 -->
-
 </div>
+<!-- alert 팝업 -->
+<div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap warning">
+
+        <div class="modal-alert-txt-wrap">
+            <div class="modal-alert-title-wrap row-group">
+                <i class="xi-warning icon"></i>
+                <p class="modal-alert-title">
+                    Warning
+                </p>
+            </div>
+
+            <p class="modal-alert-txt">
+                If deleted, the data cannot be recovered. <br>
+                Are you sure you want to delete?
+            </p>
+        </div>
+        <p class="error-txt validation-txt" id="validation-firewall" style="display: none"></p>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn submit-btn" onclick="policyDelete()">
+                Delete
+            </button>
+            <button class="dashboard-form-btn cancel-btn" onclick="hideModal()">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+<!-- alert 팝업 -->
+<div class="modal-container modal-confirm" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap warning">
+
+        <div class="modal-alert-txt-wrap">
+            <div class="modal-alert-title-wrap row-group">
+                <i class="xi-warning icon"></i>
+                <p class="modal-alert-title">
+                    Warning
+                </p>
+            </div>
+
+            <p class="modal-alert-txt">
+                This feature may have serious impacts<br>
+                on your system.<br>
+                Please check again.<br>
+                Do you want to proceed?
+            </p>
+        </div>
+        <p class="error-txt validation-txt" id="validation-firewall" style="display: none"></p>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn submit-btn" onclick="policyEnable()">
+                Confirm
+            </button>
+            <button class="dashboard-form-btn cancel-btn" onclick="hideConfirmModal()">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('js/utility.js') }}"></script>
+<script>
+    document.getElementById('modify').addEventListener('click', function () {
+        let checkedCheckbox = document.querySelector('.check-input:checked');
+        if (checkedCheckbox) {
+            window.location.href = `{{ route('firewall.policy-edit', ['fw' => request()->segment(3), 'policyId' => ':policyId']) }}`.replace(':policyId', checkedCheckbox.value);
+        }
+    });
+</script>
+<script>
+    function policyDelete() {
+        let checkedCheckbox = document.querySelector('.check-input:checked');
+        if (checkedCheckbox) {
+            let url = "{{ route('firewall.policy-destroy', ['fw' => request()->segment(3), 'index' => ':index', 'policyId' => ':policyId']) }}"
+                .replace(':index', checkedCheckbox.id).replace(':policyId', checkedCheckbox.value);
+
+            let deleteForm = document.getElementById('delete');
+            let formData = new FormData(deleteForm);
+            fetchUtility(url, formData);
+        }
+    }
+</script>
+<script>
+    function policyEnable() {
+        let checkedCheckbox = document.querySelector('.check-input:checked');
+        if (checkedCheckbox) {
+            let url = "{{ route('firewall.policy-enable', ['fw' => request()->segment(3), 'policyId' => ':policyId']) }}"
+                .replace(':policyId', checkedCheckbox.value);
+
+            let enableForm = document.getElementById('enable');
+            let formData = new FormData(enableForm);
+            fetchUtility(url, formData);
+        }
+    }
+</script>
 </body>
 </html>

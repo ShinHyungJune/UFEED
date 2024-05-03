@@ -25,7 +25,7 @@
                     <i class="xi-arrow-left"></i>
                 </button>
                 <h2 class="dashboard-detail-title">
-                    Policy Control Add
+                    Policy Control Modify
                 </h2>
             </div>
 
@@ -33,6 +33,7 @@
                 <div class="account-wrap">
                     <form action="" method="post" id="form">
                         @csrf
+                        @method('PATCH')
                         <div class="modify-group col-group">
                             <div>
                                 <div class="account-form row-group">
@@ -41,25 +42,25 @@
                                             Source IP
                                         </p>
                                         <div class="item-user col-group">
-                                            <input type="text" class="form-input" name="source_ip_object">
+                                            <input type="text" class="form-input" name="source_ip_object_list" value="{{ $policy['source_ip_object_list'] }}">
                                         </div>
-                                        <p class="error-txt validation-txt" id="validation-source_ip_object" style="display: none"></p>
+                                        <p class="error-txt validation-txt" id="validation-source_ip_object_list" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             Destination IP
                                         </p>
                                         <div class="item-user col-group">
-                                            <input type="text" class="form-input" name="destination_ip_object">
+                                            <input type="text" class="form-input" name="destination_ip_object_list" value="{{ $policy['destination_ip_object_list'] }}">
                                         </div>
-                                        <p class="error-txt validation-txt" id="validation-destination_ip_object" style="display: none"></p>
+                                        <p class="error-txt validation-txt" id="validation-destination_ip_object_list" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             Service
                                         </p>
                                         <div class="item-user col-group">
-                                            <input type="text" class="form-input" name="service_object">
+                                            <input type="text" class="form-input" name="service_object" value="{{ $policy['service_object'] }}">
                                         </div>
                                         <p class="error-txt validation-txt" id="validation-service_object" style="display: none"></p>
                                     </div>
@@ -69,13 +70,13 @@
                                         </p>
                                         <div class="form-label-wrap col-group">
                                             <label for="check_1" class="form-label">
-                                                <input type="radio" id="check_1" name="action" value="2">
+                                                <input type="radio" class="form-radio" id="check_1" name="action" value="2">
                                                 <div class="form-label-btn">
                                                     Allow
                                                 </div>
                                             </label>
                                             <label for="check_2" class="form-label">
-                                                <input type="radio" id="check_2" name="action" value="1">
+                                                <input type="radio" class="form-radio" id="check_2" name="action" value="1">
                                                 <div class="form-label-btn">
                                                     Block
                                                 </div>
@@ -91,7 +92,7 @@
 
                     <div class="form-btn-wrap col-group">
                         <button class="form-btn" id="submit">
-                            Add
+                            Modify
                         </button>
                     </div>
                 </div>
@@ -117,12 +118,15 @@
         </div>
     </div>
 </div>
+<script>
+    $(`.form-radio[name="action"][value="{{ $policy['action'] }}"]`).prop('checked', true);
+</script>
 <script src="{{ asset('js/utility.js') }}"></script>
 <script>
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('firewall.policy-store', explode('/', request()->path())[2]) }}", formData, true);
+        fetchUtility("{{ route('firewall.policy-update', ['fw' => request()->segment(3), 'policyId' => request()->segment(4)]) }}", formData, false);
     });
 </script>
 </body>

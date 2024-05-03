@@ -163,9 +163,10 @@ return [
 
         //policy control
         'source_ip_object' => 'source ip',
+        'source_ip_object_list' => 'source ip',
         'destination_ip_object' => 'destination ip',
+        'destination_ip_object_list' => 'destination ip',
         'service_object' => 'service',
-        'action' => 'action',
     ],
 
 ];

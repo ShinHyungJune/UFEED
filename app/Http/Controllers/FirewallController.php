@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PolicyPatchRequest;
 use App\Http\Requests\PolicyRequest;
 use App\Models\FirewallApi;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class FirewallController extends Controller
 
     public function policy(Request $request)
     {
-        $firewallApi = new FirewallApi([], $this->getUrl($request->path()));
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
         $items = $firewallApi->policyIndex();
 
         return view('user.quick-function.policy.policy_control')->with('items', $items);
@@ -29,23 +30,83 @@ class FirewallController extends Controller
         $validated = $request->validated();
         $validated['index'] = 0;
 
-        $firewallApi = new FirewallApi([], $this->getUrl($request->path()));
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
         $firewallApi->policyStore($validated);
 
-        return redirect()->route('firewall.policy', explode('/', request()->path())[2]);
+        return redirect()->route('firewall.policy', $request->segment(3));
     }
 
-    public function interface()
+    public function policyEdit(Request $request)
     {
-        return view('user.quick-function.interface.interface_control');
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $policy = $firewallApi->policyShow(['rule_id' => $request->segment(4)]);
+
+        return view('user.quick-function.policy.policy_control_modify')->with('policy', $policy);
+    }
+
+    public function policyUpdate(PolicyPatchRequest $request)
+    {
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $policy = $firewallApi->policyShow(['rule_id' => $request->segment(4)]);
+
+        $validated = array_merge($policy, $request->validated());
+
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $firewallApi->policyUpdate($validated);
+
+        return redirect()->route('firewall.policy', $request->segment(3));
+    }
+
+    public function policyEnable(Request $request)
+    {
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $policy = $firewallApi->policyShow(['rule_id' => $request->segment(4)]);
+        $policy['enable'] = ($policy['enable'] == 1) ? 0 : 1;
+
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $firewallApi->policyUpdate($policy);
+
+        return redirect()->route('firewall.policy', $request->segment(3));
+    }
+
+    public function policyDestroy(Request $request)
+    {
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $firewallApi->policyDestroy(['index' => $request->segment(4), 'rule_id' => $request->segment(5)]);
+
+        return redirect()->route('firewall.policy', $request->segment(3));
+    }
+
+    public function interface(Request $request)
+    {
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $items = $firewallApi->interfaceIndex();
+
+        $enables = array_column(array_filter($items, function($item) {
+            return $item['interface_up_down_enable'] == 1;
+        }), 'name');
+
+        return view('user.quick-function.interface.interface_control')->with('items', $items)->with('enables', $enables);
+    }
+
+    public function interfaceEnable(Request $request)
+    {
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $interface = $firewallApi->interfaceShow(['name' => $request->segment(4)]);
+        $interface['interface_up_down_enable'] = ($interface['interface_up_down_enable'] == 1) ? 0 : 1;
+
+        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
+        $firewallApi->interfaceUpdate($interface);
+
+        return redirect()->route('firewall.interface', $request->segment(3));
     }
 
     /**
-     * @param string $path
+     * @param array $path
      * @return string
      */
-    private function getUrl(string $path): string
+    private function getUrl(array $path): string
     {
-        return $this->urls[Str::after($path, 'fw')];
+        return $this->urls[Str::after($path[2], 'fw')];
     }
 }

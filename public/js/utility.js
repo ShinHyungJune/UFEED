@@ -54,4 +54,20 @@ function showModal(responseUrl = null) {
 
 function hideModal() {
     document.querySelector('.modal-alert').style.display = 'none';
+    document.querySelectorAll('.validation-txt').forEach(element => {
+        element.style.display = 'none';
+        element.innerHTML = '';
+    })
+}
+
+function showConfirmModal(url = null) {
+    document.querySelector('.modal-confirm').style.display = '';
+}
+
+function hideConfirmModal() {
+    document.querySelector('.modal-confirm').style.display = 'none';
+    document.querySelectorAll('.validation-txt').forEach(element => {
+        element.style.display = 'none';
+        element.innerHTML = '';
+    })
 }
