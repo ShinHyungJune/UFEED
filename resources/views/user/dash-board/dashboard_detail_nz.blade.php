@@ -102,7 +102,7 @@
             <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">VR-7011</h3>
+                <h3 class="device-detail-item-title">VDR Recording Control UNIT</h3>
             </div>
         </div>
     </div>

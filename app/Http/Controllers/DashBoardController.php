@@ -177,7 +177,7 @@ class DashBoardController extends Controller
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "VR-7011")->first()
+                    Device::where("title", "VDR Recording Control UNIT")->first()
                 ]
             ]
         ];
