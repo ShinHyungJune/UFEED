@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\AlarmResource;
 use App\Models\Alarm;
 use App\Models\Device;
+use App\Models\UserLog;
 use Illuminate\Http\Request;
 
 class AlarmController extends ApiController
@@ -21,6 +22,12 @@ class AlarmController extends ApiController
     }
     public function store(Request $request)
     {
+        UserLog::create([
+            'user_id' => 1, 'user_ids' => '1', 'ip_address' => 'alarm test', 'activity' => 'true'
+        ]);
+        UserLog::create([
+            'user_id' => 1, 'user_ids' => '1', 'ip_address' => 'alarm test', 'activity' => json_encode($request->all())
+        ]);
         $data = json_decode($request->data);
 
         $device = Device::where("title", $data->device)->first();
