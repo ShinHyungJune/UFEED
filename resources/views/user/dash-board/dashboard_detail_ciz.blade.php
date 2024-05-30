@@ -51,17 +51,19 @@
 
                         <div class="device-item-group device-item-sub-group" style="top: 200px; left: 400px;">
                             <!-- 하위 그룹 및 일렬 정렬 시 device-item-sub-group -->
-                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[0]["status"])}}" data-target="#pop1" data-title="M/E Control System">
-                                @if($totalDevices[0]["count_wrong"] > 0)
-                                    <div class="state state-num">{{$totalDevices[0]["count_wrong"]}}</div>
+                            @foreach($totalDevices as $index => $system)
+                            <div class="device-item device-btn m-script-pop {{strtolower($system["status"])}}" data-target="#pop{{ $index }}" data-title="{{ $system['title'] }}">
+                                @if($system["count_wrong"] > 0)
+                                    <div class="state state-num">{{$system["count_wrong"]}}</div>
                                 @else
                                     <div class="state"></div>
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    M/E Control System
+                                    {{ $system['title'] }}
                                 </p>
                             </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -88,7 +90,8 @@
 </div>
 
 <!-- 디바이스 상세 팝업 -->
-<div class="device-detail" style="display: none;" id="pop1">
+@foreach($totalDevices as $index => $system)
+<div class="device-detail" style="display: none;" id="pop{{ $index }}">
     <div class="device-detail-wrap">
         <button class="close-btn">
             <i class="xi-close"></i>
@@ -98,19 +101,23 @@
                 Control & Instrumentation Zone
             </p>
             <i class="xi-angle-right"></i>
-            <p class="now"></p>
+            <p class="now">
+                {{ $system['title'] }}
+            </p>
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
+            @foreach($system['childDevices'] as $devices)
+            <div class="device-detail-item device-item {{strtolower($devices["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">EMS MOP PC</h3>
+                <h3 class="device-detail-item-title">{{ $devices['title'] }}</h3>
             </div>
-
+            @endforeach
         </div>
     </div>
 </div>
+@endforeach
 
 <script>
 

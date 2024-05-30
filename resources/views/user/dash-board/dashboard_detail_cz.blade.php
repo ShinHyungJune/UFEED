@@ -31,7 +31,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Communication Zone
+                    Propulsion Zone
                 </h2>
             </div>
 
@@ -45,7 +45,10 @@
                             </div>
                             <div class="device-item up">
                                 <div class="state"></div>
-                                <img src="/images/dashboard_icon_firewall_cz.png" alt="">
+                                <img src="/images/dashboard_icon_firewall.png" alt="">
+                                <p class="device-item-title main">
+                                    Propulsion Zone
+                                </p>
                             </div>
                         </div>
 
@@ -59,21 +62,21 @@
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    MF/HF/DSC Radio
+                                    M/E RMS
                                 </p>
                             </div>
 
-                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="VSAT">
-                                @if($totalDevices[1]["count_wrong"] > 0)
-                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
-                                @else
-                                    <div class="state"></div>
-                                @endif
-                                <img src="/images/dashboard_icon_system.png" alt="">
-                                <p class="device-item-title">
-                                    VSAT
-                                </p>
-                            </div>
+{{--                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="VSAT">--}}
+{{--                                @if($totalDevices[1]["count_wrong"] > 0)--}}
+{{--                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>--}}
+{{--                                @else--}}
+{{--                                    <div class="state"></div>--}}
+{{--                                @endif--}}
+{{--                                <img src="/images/dashboard_icon_system.png" alt="">--}}
+{{--                                <p class="device-item-title">--}}
+{{--                                    VSAT--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
 
@@ -107,7 +110,7 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                Communication Zone
+                Propulsion Zone
             </p>
             <i class="xi-angle-right"></i>
             <p class="now"></p>
@@ -118,34 +121,34 @@
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
 
-                <h3 class="device-detail-item-title">GMDSS</h3>
+                <h3 class="device-detail-item-title">M/E DCM Server</h3>
             </div>
         </div>
     </div>
 </div>
 
-<div class="device-detail" style="display: none;" id="pop2">
-    <div class="device-detail-wrap">
-        <button class="close-btn">
-            <i class="xi-close"></i>
-        </button>
-        <div class="device-detail-title-wrap">
-            <p class="before">
-                Communication Zone
-            </p>
-            <i class="xi-angle-right"></i>
-            <p class="now"></p>
-        </div>
+{{--<div class="device-detail" style="display: none;" id="pop2">--}}
+{{--    <div class="device-detail-wrap">--}}
+{{--        <button class="close-btn">--}}
+{{--            <i class="xi-close"></i>--}}
+{{--        </button>--}}
+{{--        <div class="device-detail-title-wrap">--}}
+{{--            <p class="before">--}}
+{{--                Propulsion Zone--}}
+{{--            </p>--}}
+{{--            <i class="xi-angle-right"></i>--}}
+{{--            <p class="now"></p>--}}
+{{--        </div>--}}
 
-        <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">Switch</h3>
-            </div>
-        </div>
-    </div>
-</div>
+{{--        <div class="device-detail-group">--}}
+{{--            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">--}}
+{{--                <div class="state"></div>--}}
+{{--                <img src="/images/dashboard_icon_server.png" alt="">--}}
+{{--                <h3 class="device-detail-item-title">Switch</h3>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <script>
     $('.device-detail .close-btn').click(function () {

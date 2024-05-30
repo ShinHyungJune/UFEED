@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Device;
 use App\Models\Firewall;
+use App\Models\Hardware;
 use App\Models\Message;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
@@ -190,26 +191,52 @@ class DashBoardController extends Controller
     {
         $totalDevices = [
             [
-                "title" => "MF/HF/DSC Radio",
+                "title" => "M/E RMS",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "GMDSS")->first()
+                    Device::where("title", "M/E DCM Server")->first()
                 ]
             ],
-            [
-                "title" => "VSAT",
-                "count_wrong" => 0,
-                "status" => "Up",
-                "childDevices" => [
-                    Device::where("title", "Switch")->first()
-                ]
-            ]
+//            [
+//                "title" => "VSAT",
+//                "count_wrong" => 0,
+//                "status" => "Up",
+//                "childDevices" => [
+//                    Device::where("title", "Switch")->first()
+//                ]
+//            ]
         ];
 
         $data = $this->getDetailDashboardInfo($totalDevices);
 
         return view('user.dash-board.dashboard_detail_cz', $data);
+    }
+
+    public function powerZone()
+    {
+        $totalDevices = [
+            [
+                "title" => "ISS",
+                "count_wrong" => 0,
+                "status" => "Up",
+                "childDevices" => [
+                    Device::where("title", "ISS Server")->first()
+                ]
+            ],
+//            [
+//                "title" => "Refeer Container Monitoring System",
+//                "count_wrong" => 0,
+//                "status" => "Up",
+//                "childDevices" => [
+//                    Device::where("title", "R.C.M.S COMPUTER")->first()
+//                ]
+//            ]
+        ];
+
+        $data = $this->getDetailDashboardInfo($totalDevices);
+
+        return view('user.dash-board.dashboard_detail_pz', $data);
     }
 
     public function crewLanZone()
@@ -238,44 +265,36 @@ class DashBoardController extends Controller
         return view('user.dash-board.dashboard_detail_clz', $data);
     }
 
-    public function powerZone()
-    {
-        $totalDevices = [
-            [
-                "title" => "Shaft Generator System",
-                "count_wrong" => 0,
-                "status" => "Up",
-                "childDevices" => [
-                    Device::where("title", "Client PC")->first()
-                ]
-            ],
-            [
-                "title" => "Refeer Container Monitoring System",
-                "count_wrong" => 0,
-                "status" => "Up",
-                "childDevices" => [
-                    Device::where("title", "R.C.M.S COMPUTER")->first()
-                ]
-            ]
-        ];
-
-        $data = $this->getDetailDashboardInfo($totalDevices);
-
-        return view('user.dash-board.dashboard_detail_pz', $data);
-    }
-
     public function controlInstrumentationZone()
     {
         $totalDevices = [
             [
-                "title" => "M/E Control System",
+                "title" => "ICMS",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "EMS MOP PC")->first()
+                    Device::where("title", "ICMS")->first()
                 ]
             ],
         ];
+
+//        $hardwares = Hardware::whereHas('system.category', function ($query) {
+//            $query->where('name', 'Control & Instrumentation');
+//        })->with(['system', 'device'])->get()->groupBy('system.name');
+//        $totalDevices = [];
+//        foreach ($hardwares as $systemName => $hardwareGroup) {
+//            $childDevices = [];
+//            foreach ($hardwareGroup as $hardware) {
+//                $childDevices[] = $hardware->device;
+//            }
+//
+//            $totalDevices[] = [
+//                "title" => $systemName,
+//                "count_wrong" => 0,
+//                "status" => "Up",
+//                "childDevices" => $childDevices
+//            ];
+//        }
 
         $data = $this->getDetailDashboardInfo($totalDevices);
 

@@ -138,8 +138,7 @@
                                 FW#3
                             </p>
                             <p class="device-item-title main">
-                                Communication <br>
-                                Zone
+                                Propulsion Zone
                             </p>
                         </a>
 
@@ -191,7 +190,7 @@
                                 Hi-Secure
                             </p>
                         </div>
-                        <a href="{{ route('crew-lan') }}" data-id="FW#4" class="device-item up"
+                        <a href="{{ route('power') }}" data-id="FW#4" class="device-item up"
                            style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -199,10 +198,11 @@
                                 FW#4
                             </p>
                             <p class="device-item-title main">
-                                Crew Lan Zone
+                                Smart Solution <br>
+                                Zone
                             </p>
                         </a>
-                        <a href="{{ route('power') }}" data-id="FW#5" class="device-item up"
+                        <a href="{{ route('crew-lan') }}" data-id="FW#5" class="device-item up"
                            style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -210,7 +210,7 @@
                                 FW#5
                             </p>
                             <p class="device-item-title main">
-                                Power Zone
+                                Crew Lan Zone
                             </p>
                         </a>
                         <a href="{{ route('control-instrumentation') }}" data-id="FW#6" class="device-item up"

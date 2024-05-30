@@ -31,7 +31,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Power Zone
+                    Smart Solution Zone
                 </h2>
             </div>
 
@@ -45,7 +45,10 @@
                             </div>
                             <div class="device-item up">
                                 <div class="state"></div>
-                                <img src="/images/dashboard_icon_firewall_pz.png" alt="">
+                                <img src="/images/dashboard_icon_firewall.png" alt="">
+                                <p class="device-item-title main">
+                                    Smart Solution Zone
+                                </p>
                             </div>
                         </div>
 
@@ -59,20 +62,20 @@
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    Shaft Generator System
+                                    ISS
                                 </p>
                             </div>
-                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="Refeer Container Monitoring System">
-                                @if($totalDevices[1]["count_wrong"] > 0)
-                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
-                                @else
-                                    <div class="state"></div>
-                                @endif
-                                <img src="/images/dashboard_icon_system.png" alt="">
-                                <p class="device-item-title">
-                                    Refeer Container Monitoring System
-                                </p>
-                            </div>
+{{--                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="Refeer Container Monitoring System">--}}
+{{--                                @if($totalDevices[1]["count_wrong"] > 0)--}}
+{{--                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>--}}
+{{--                                @else--}}
+{{--                                    <div class="state"></div>--}}
+{{--                                @endif--}}
+{{--                                <img src="/images/dashboard_icon_system.png" alt="">--}}
+{{--                                <p class="device-item-title">--}}
+{{--                                    Refeer Container Monitoring System--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
 
@@ -107,7 +110,7 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                Power Zone
+                Smart Solution Zone
             </p>
             <i class="xi-angle-right"></i>
             <p class="now"></p>
@@ -117,34 +120,34 @@
             <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">Client PC</h3>
+                <h3 class="device-detail-item-title">ISS Server</h3>
             </div>
         </div>
     </div>
 </div>
 
-<div class="device-detail" style="display: none;" id="pop2">
-    <div class="device-detail-wrap">
-        <button class="close-btn">
-            <i class="xi-close"></i>
-        </button>
-        <div class="device-detail-title-wrap">
-            <p class="before">
-                Power Zone
-            </p>
-            <i class="xi-angle-right"></i>
-            <p class="now"></p>
-        </div>
+{{--<div class="device-detail" style="display: none;" id="pop2">--}}
+{{--    <div class="device-detail-wrap">--}}
+{{--        <button class="close-btn">--}}
+{{--            <i class="xi-close"></i>--}}
+{{--        </button>--}}
+{{--        <div class="device-detail-title-wrap">--}}
+{{--            <p class="before">--}}
+{{--                Smart Solution Zone--}}
+{{--            </p>--}}
+{{--            <i class="xi-angle-right"></i>--}}
+{{--            <p class="now"></p>--}}
+{{--        </div>--}}
 
-        <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">R.C.M.S COMPUTER</h3>
-            </div>
-        </div>
-    </div>
-</div>
+{{--        <div class="device-detail-group">--}}
+{{--            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">--}}
+{{--                <div class="state"></div>--}}
+{{--                <img src="/images/dashboard_icon_server.png" alt="">--}}
+{{--                <h3 class="device-detail-item-title">R.C.M.S COMPUTER</h3>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <script>
 
