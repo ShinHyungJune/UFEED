@@ -31,9 +31,6 @@ class AlarmController extends ApiController
         UserLog::create([
             'user_id' => 1, 'user_ids' => '1', 'ip_address' => 'alarm test', 'activity' => json_encode($request->json())
         ]);
-        UserLog::create([
-            'user_id' => 1, 'user_ids' => '1', 'ip_address' => 'alarm test', 'activity' => json_encode($request->data)
-        ]);
         $data = json_decode($request->data);
 
         $device = Device::where("title", $data->device)->first();
