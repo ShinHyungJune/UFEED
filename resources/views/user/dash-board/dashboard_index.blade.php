@@ -1896,6 +1896,82 @@
     </div>
 </div>
 <script>
+    let firstSwiper = true;
+    let swiper = null;
+
+    function getAlarms() {
+        axios.get("/api/alarms")
+            .then(response => {
+                let items = response.data.data;
+
+                if (firstSwiper && items.length === 0) {
+                    $(".m-swiper.type01").hide();
+
+                    firstSwiper = false;
+                }
+
+                if (items.length > 0) {
+                    if (swiper)
+                        swiper.destroy();
+
+                    $(".m-swiper.type01").show();
+
+                    items.map(item => {
+                        $(".m-swiper.type01 .swiper-wrapper").append(`
+                    <div class="swiper-slide">
+                        <div class="m-swiper-title">${item.device} <button class="btn-close"><i class="xi-close"></i></button></div>
+                        <div class="m-swiper-bodies">
+
+                                  <div class="swiper-body">
+                            <div class="swiper-body-head">Name :</div>
+                            <div class="swiper-body-content">${item.name}</div>
+                        </div>
+                        <div class="swiper-body">
+                            <div class="swiper-body-head">IP :</div>
+                            <div class="swiper-body-content">${item.host}</div>
+                        </div>
+                        <div class="swiper-body">
+                            <div class="swiper-body-head">Status :</div>
+                            <div class="swiper-body-content">${item.status}</div>
+                        </div>
+
+                        <div class="swiper-body">
+                            <div class="swiper-body-head">Value :</div>
+                            <div class="swiper-body-content">${item.value}</div>
+                        </div>
+                        </div>
+                    </div>
+                    `)
+                    });
+
+                    $(".m-swiper.type01 .btn-close").unbind("click").bind("click", function () {
+                        $(".m-swiper.type01 .swiper-wrapper").html("");
+                        $(".m-swiper").hide();
+                    });
+
+                    swiper = new Swiper('.m-swiper.type01 .swiper-container', {
+                        slidesPerView: 1,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true, // Allow clicking on pagination bullets
+                        },
+                        navigation: {
+                            nextEl: '.swiper-btn-next',
+                            prevEl: '.swiper-btn-prev',
+                        },
+                    });
+                }
+
+            });
+    }
+
+    setInterval(function () {
+        getAlarms();
+    }, 5000);
+
+    getAlarms();
+</script>
+<script>
     //Real-Time Notification Status 열고닫기
     $('.down-btn').click(function () {
         $(this).closest('.dashboard-gnb-wrap').toggleClass('active');

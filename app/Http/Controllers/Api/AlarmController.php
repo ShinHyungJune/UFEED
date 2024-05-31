@@ -14,11 +14,14 @@ class AlarmController extends ApiController
 {
     public function index(Request $request)
     {
-        $items = Alarm::oldest()->where("read", 0)->take(10)->get();
+        $response = \Http::withoutVerifying()->get('https://alarm.coworkerweb.com/api/alarms');
+        return $response->json();
 
-        Alarm::whereIn("id", $items->pluck("id"))->update(["read" => 1]);
-
-        return AlarmResource::collection($items);
+//        $items = Alarm::oldest()->where("read", 0)->take(10)->get();
+//
+//        Alarm::whereIn("id", $items->pluck("id"))->update(["read" => 1]);
+//
+//        return AlarmResource::collection($items);
     }
     public function store(Request $request)
     {
