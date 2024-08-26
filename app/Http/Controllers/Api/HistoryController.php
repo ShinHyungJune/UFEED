@@ -67,7 +67,7 @@ class HistoryController extends ApiController
             ->orderByDesc('total_byte')
             ->get();*/
 
-        $devices = Device::get();
+        $devices = Device::whereNotIn('title', ["DMZ", "IC"])->get();
 
         foreach($devices as $device){
             /*if($device->title == "FW#2" || $device->title == "FW#3" || $device->title == "FW#4" || $device->title == "FW#5" || $device->title == "FW#6")
