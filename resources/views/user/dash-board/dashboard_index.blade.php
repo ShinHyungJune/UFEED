@@ -191,7 +191,7 @@
                                 Hi-Secure
                             </p>
                         </div>
-                        <a href="{{ route('dmz') }}" data-id="FW#4" class="device-item up"
+                        <a href="{{ route('dmz') }}" data-id="DMZ" class="device-item up"
                            style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -202,7 +202,7 @@
                                 DMZ Zone
                             </p>
                         </a>
-                        <a href="{{ route('internal-comm') }}" data-id="FW#5" class="device-item up"
+                        <a href="{{ route('internal-comm') }}" data-id="IC" class="device-item up"
                            style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -214,7 +214,7 @@
                                 Comm Zone
                             </p>
                         </a>
-                        <a href="{{ route('navigation-radio') }}" data-id="FW#6" class="device-item up"
+                        <a href="{{ route('navigation-radio') }}" data-id="FW#4" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
