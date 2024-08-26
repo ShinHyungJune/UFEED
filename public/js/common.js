@@ -53,6 +53,11 @@ $(document).ready(function(){
                     if(!$(`[data-id="${device.title}"]`).hasClass(totalStatus))
                         $(`[data-id="${device.title}"]`).addClass(totalStatus);
 
+                    // IC, DMZ 제거
+                    if (device.title === "IC" || device.title === "DMZ") {
+                        return;
+                    }
+
                     // $(".device-wrap").append(`<div class="device ${device.status} device-${device.title} ${device.title.includes('OT') ? 'device-OT' : ''}" style="left:${device.left}%;top:${device.top}%"></div>`);
 
                     if (device.status === "Up") {
