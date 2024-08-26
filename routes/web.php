@@ -79,12 +79,12 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('dash-board')->group(function () {
         Route::get('/', [\App\Http\Controllers\DashBoardController::class, 'index'])->name('dash-board.index');
-        Route::get('/security-monitoring', [\App\Http\Controllers\DashBoardController::class, 'securityMonitoring'])->name('security-monitoring');
-        Route::get('/navigation', [\App\Http\Controllers\DashBoardController::class, 'navigationZone'])->name('navigation');
-        Route::get('/communication', [\App\Http\Controllers\DashBoardController::class, 'communicationZone'])->name('communication');
-        Route::get('/crew-lan', [\App\Http\Controllers\DashBoardController::class, 'crewLanZone'])->name('crew-lan');
-        Route::get('/power', [\App\Http\Controllers\DashBoardController::class, 'powerZone'])->name('power');
-        Route::get('/control-instrumentation', [\App\Http\Controllers\DashBoardController::class, 'controlInstrumentationZone'])->name('control-instrumentation');
+//        Route::get('/security-monitoring', [\App\Http\Controllers\DashBoardController::class, 'securityMonitoring'])->name('security-monitoring');
+        Route::get('/icms', [\App\Http\Controllers\DashBoardController::class, 'icmsZone'])->name('icms');
+        Route::get('/propulsion', [\App\Http\Controllers\DashBoardController::class, 'propulsionZone'])->name('propulsion');
+        Route::get('/dmz', [\App\Http\Controllers\DashBoardController::class, 'dmzZone'])->name('dmz');
+        Route::get('/internal-comm', [\App\Http\Controllers\DashBoardController::class, 'InternalCommZone'])->name('internal-comm');
+        Route::get('/navigation-radio', [\App\Http\Controllers\DashBoardController::class, 'navigationRadioZone'])->name('navigation-radio');
     });
 
     Route::prefix('main-menu')->group(function () {

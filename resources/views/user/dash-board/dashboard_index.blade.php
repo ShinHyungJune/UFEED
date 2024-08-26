@@ -114,11 +114,12 @@
 
                 <div class="dashboard-content-wrap">
                     <div class="device-wrap" style="width: 970px; height: 770px; margin: 40px auto;">
-                        <video class="bg-video" autoplay muted loop>
-                            <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
-                        </video>
+{{--                        <video class="bg-video" autoplay muted loop>--}}
+{{--                            <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>--}}
+{{--                        </video>--}}
+                        <img class="bg-video" src="/images/main_dashboard_bg_line.png" alt="" srcset="">
 
-                        <a href="{{ route('navigation') }}" data-id="FW#2" class="device-item up"
+                        <a href="{{ route('icms') }}" data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -126,11 +127,11 @@
                                 FW#2
                             </p>
                             <p class="device-item-title main">
-                                Navigation Zone
+                                ICMS Zone
                             </p>
                         </a>
 
-                        <a href="{{ route('communication') }}" data-id="FW#3" class="device-item up"
+                        <a href="{{ route('propulsion') }}" data-id="FW#3" class="device-item up"
                            style="top: 400px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -169,13 +170,13 @@
                                 L3 Switch
                             </p>
                         </div>
-                        <div class="device-item up" style="top: 600px; left: 0;">
-                            <div class="state"></div>
-                            <img src="/images/dashboard_icon_pc.png" alt="">
-                            <p class="device-item-title main">
-                                Client PC
-                            </p>
-                        </div>
+{{--                        <div class="device-item up" style="top: 600px; left: 0;">--}}
+{{--                            <div class="state"></div>--}}
+{{--                            <img src="/images/dashboard_icon_pc.png" alt="">--}}
+{{--                            <p class="device-item-title main">--}}
+{{--                                Client PC--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
                         <div class="device-item up" data-id="TMS" style="top: 600px; left: 200px">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_server.png" alt="">
@@ -190,39 +191,39 @@
                                 Hi-Secure
                             </p>
                         </div>
-                        <a href="{{ route('power') }}" data-id="FW#4" class="device-item up"
+                        <a href="{{ route('dmz') }}" data-id="FW#4" class="device-item up"
                            style="top: 0; left: 800px;">
+                            <div class="state"></div>
+                            <img src="/images/dashboard_icon_firewall.png" alt="">
+{{--                            <p class="device-item-zone">--}}
+{{--                                FW#4--}}
+{{--                            </p>--}}
+                            <p class="device-item-title main">
+                                DMZ Zone
+                            </p>
+                        </a>
+                        <a href="{{ route('internal-comm') }}" data-id="FW#5" class="device-item up"
+                           style="top: 200px; left: 800px;">
+                            <div class="state"></div>
+                            <img src="/images/dashboard_icon_firewall.png" alt="">
+{{--                            <p class="device-item-zone">--}}
+{{--                                FW#5--}}
+{{--                            </p>--}}
+                            <p class="device-item-title main">
+                                Internal <br>
+                                Comm Zone
+                            </p>
+                        </a>
+                        <a href="{{ route('navigation-radio') }}" data-id="FW#6" class="device-item up"
+                           style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
                                 FW#4
                             </p>
                             <p class="device-item-title main">
-                                Smart Solution <br>
-                                Zone
-                            </p>
-                        </a>
-                        <a href="{{ route('crew-lan') }}" data-id="FW#5" class="device-item up"
-                           style="top: 200px; left: 800px;">
-                            <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall.png" alt="">
-                            <p class="device-item-zone">
-                                FW#5
-                            </p>
-                            <p class="device-item-title main">
-                                Crew Lan Zone
-                            </p>
-                        </a>
-                        <a href="{{ route('control-instrumentation') }}" data-id="FW#6" class="device-item up"
-                           style="top: 400px; left: 800px;">
-                            <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall.png" alt="">
-                            <p class="device-item-zone">
-                                FW#6
-                            </p>
-                            <p class="device-item-title main">
-                                Control & <br>
-                                Instrumentation Zone
+                                Navigation & Radio <br>
+                                System Zone
                             </p>
                         </a>
                         <div class="device-item up" style="top: 600px; left: 600px;">

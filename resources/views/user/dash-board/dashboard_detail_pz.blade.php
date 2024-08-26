@@ -31,7 +31,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Smart Solution Zone
+                    DMZ Zone
                 </h2>
             </div>
 
@@ -47,7 +47,7 @@
                                 <div class="state"></div>
                                 <img src="/images/dashboard_icon_firewall.png" alt="">
                                 <p class="device-item-title main">
-                                    Smart Solution Zone
+                                    DMZ Zone
                                 </p>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    ISS
+                                    {{ $totalDevices[0]["title"] }}
                                 </p>
                             </div>
 {{--                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-target="#pop2" data-title="Refeer Container Monitoring System">--}}
@@ -110,18 +110,22 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                Smart Solution Zone
+                DMZ Zone
             </p>
             <i class="xi-angle-right"></i>
-            <p class="now"></p>
+            <p class="now">
+                {{ $totalDevices[0]["title"] }}
+            </p>
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
+            @foreach($totalDevices[0]["childDevices"] as $device)
+            <div class="device-detail-item device-item {{strtolower($device["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">ISS Server</h3>
+                <h3 class="device-detail-item-title">{{ $device["title"] }}</h3>
             </div>
+            @endforeach
         </div>
     </div>
 </div>

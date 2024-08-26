@@ -169,15 +169,18 @@ class DashBoardController extends Controller
         ];
     }
 
-    public function navigationZone()
+    public function icmsZone()
     {
         $totalDevices = [
             [
-                "title" => "VDR",
+                "title" => "ICMS System",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "VDR Recording Control UNIT")->first()
+                    Device::where("title", "SW#1")->first(),
+                    Device::where("title", "SW#2")->first(),
+                    Device::where("title", "OWS1")->first(),
+                    Device::where("title", "OWS2")->first(),
                 ]
             ]
         ];
@@ -187,15 +190,16 @@ class DashBoardController extends Controller
         return view('user.dash-board.dashboard_detail_nz', $data);
     }
 
-    public function communicationZone()
+    public function propulsionZone()
     {
         $totalDevices = [
             [
-                "title" => "M/E RMS",
+                "title" => "M/E System",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "M/E DCM Server")->first()
+                    Device::where("title", "EMS MOP")->first(),
+                    Device::where("title", "EMS MOP#2")->first(),
                 ]
             ],
 //            [
@@ -213,15 +217,15 @@ class DashBoardController extends Controller
         return view('user.dash-board.dashboard_detail_cz', $data);
     }
 
-    public function powerZone()
+    public function dmzZone()
     {
         $totalDevices = [
             [
-                "title" => "ISS",
+                "title" => "RMS System",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "ISS Server")->first()
+                    Device::where("title", "RMS")->first()
                 ]
             ],
 //            [
@@ -239,25 +243,25 @@ class DashBoardController extends Controller
         return view('user.dash-board.dashboard_detail_pz', $data);
     }
 
-    public function crewLanZone()
+    public function InternalCommZone()
     {
         $totalDevices = [
             [
-                "title" => "Desktop",
+                "title" => "Internal comm System",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "PC#1")->first()
+                    Device::where("title", "Office PC")->first()
                 ]
             ],
-            [
-                "title" => "Notebook",
-                "count_wrong" => 0,
-                "status" => "Up",
-                "childDevices" => [
-                    Device::where("title", "Notebook#1")->first()
-                ]
-            ]
+//            [
+//                "title" => "Notebook",
+//                "count_wrong" => 0,
+//                "status" => "Up",
+//                "childDevices" => [
+//                    Device::where("title", "Notebook#1")->first()
+//                ]
+//            ]
         ];
 
         $data = $this->getDetailDashboardInfo($totalDevices);
@@ -265,15 +269,15 @@ class DashBoardController extends Controller
         return view('user.dash-board.dashboard_detail_clz', $data);
     }
 
-    public function controlInstrumentationZone()
+    public function navigationRadioZone()
     {
         $totalDevices = [
             [
-                "title" => "ICMS",
+                "title" => "ECDIS System",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "ICMS")->first()
+                    Device::where("title", "NO.1 ECDIS")->first()
                 ]
             ],
         ];

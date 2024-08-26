@@ -31,7 +31,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Crew Lan Zone
+                    Internal Comm Zone
                 </h2>
             </div>
 
@@ -45,7 +45,10 @@
                             </div>
                             <div class="device-item up">
                                 <div class="state"></div>
-                                <img src="/images/dashboard_icon_firewall_clz.png" alt="">
+                                <img src="/images/dashboard_icon_firewall.png" alt="">
+                                <p class="device-item-title main">
+                                    Internal Comm Zone
+                                </p>
                             </div>
                         </div>
 
@@ -59,14 +62,14 @@
                                 @endif
                                 <img src="/images/dashboard_icon_desktop.png" alt="">
                             </div>
-                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-title="Notebook" data-target="#pop2">
-                                @if($totalDevices[1]["count_wrong"] > 0)
-                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>
-                                @else
-                                    <div class="state"></div>
-                                @endif
-                                <img src="/images/dashboard_icon_notebook.png" alt="">
-                            </div>
+{{--                            <div class="device-item device-btn m-script-pop {{strtolower($totalDevices[1]["status"])}}" data-title="Notebook" data-target="#pop2">--}}
+{{--                                @if($totalDevices[1]["count_wrong"] > 0)--}}
+{{--                                    <div class="state state-num">{{$totalDevices[1]["count_wrong"]}}</div>--}}
+{{--                                @else--}}
+{{--                                    <div class="state"></div>--}}
+{{--                                @endif--}}
+{{--                                <img src="/images/dashboard_icon_notebook.png" alt="">--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -99,43 +102,47 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                Crew Lan Zone
+                Internal Comm Zone
             </p>
             <i class="xi-angle-right"></i>
-            <p class="now"></p>
+            <p class="now">
+                {{ $totalDevices[0]["title"] }}
+            </p>
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
+            @foreach($totalDevices[0]["childDevices"] as $device)
+            <div class="device-detail-item device-item {{strtolower($device["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">PC#1</h3>
+                <h3 class="device-detail-item-title">{{ $device["title"] }}</h3>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
-<div class="device-detail" style="display: none;" id="pop2">
-    <div class="device-detail-wrap">
-        <button class="close-btn">
-            <i class="xi-close"></i>
-        </button>
-        <div class="device-detail-title-wrap">
-            <p class="before">
-                Crew Lan Zone
-            </p>
-            <i class="xi-angle-right"></i>
-            <p class="now"></p>
-        </div>
+{{--<div class="device-detail" style="display: none;" id="pop2">--}}
+{{--    <div class="device-detail-wrap">--}}
+{{--        <button class="close-btn">--}}
+{{--            <i class="xi-close"></i>--}}
+{{--        </button>--}}
+{{--        <div class="device-detail-title-wrap">--}}
+{{--            <p class="before">--}}
+{{--                Crew Lan Zone--}}
+{{--            </p>--}}
+{{--            <i class="xi-angle-right"></i>--}}
+{{--            <p class="now"></p>--}}
+{{--        </div>--}}
 
-        <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">Notebook#1</h3>
-            </div>
-        </div>
-    </div>
-</div>
+{{--        <div class="device-detail-group">--}}
+{{--            <div class="device-detail-item device-item {{strtolower($totalDevices[1]["childDevices"][0]["status"])}}">--}}
+{{--                <div class="state"></div>--}}
+{{--                <img src="/images/dashboard_icon_server.png" alt="">--}}
+{{--                <h3 class="device-detail-item-title">Notebook#1</h3>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <script>
 

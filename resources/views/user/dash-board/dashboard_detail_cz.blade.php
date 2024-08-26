@@ -62,7 +62,7 @@
                                 @endif
                                 <img src="/images/dashboard_icon_system.png" alt="">
                                 <p class="device-item-title">
-                                    M/E RMS
+                                    {{ $totalDevices[0]["title"] }}
                                 </p>
                             </div>
 
@@ -113,16 +113,19 @@
                 Propulsion Zone
             </p>
             <i class="xi-angle-right"></i>
-            <p class="now"></p>
+            <p class="now">
+                {{ $totalDevices[0]["title"] }}
+            </p>
         </div>
 
         <div class="device-detail-group">
-            <div class="device-detail-item device-item {{strtolower($totalDevices[0]["childDevices"][0]["status"])}}">
+            @foreach($totalDevices[0]["childDevices"] as $device)
+            <div class="device-detail-item device-item {{strtolower($device["status"])}}">
                 <div class="state"></div>
                 <img src="/images/dashboard_icon_server.png" alt="">
-
-                <h3 class="device-detail-item-title">M/E DCM Server</h3>
+                <h3 class="device-detail-item-title">{{ $device["title"] }}</h3>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
