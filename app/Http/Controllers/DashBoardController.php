@@ -198,7 +198,7 @@ class DashBoardController extends Controller
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => [
-                    Device::where("title", "EMS MOP")->first(),
+                    Device::where("title", "EMS MOP#1")->first(),
                     Device::where("title", "EMS MOP#2")->first(),
                 ]
             ],
