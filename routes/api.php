@@ -50,14 +50,14 @@ Route::get("/alarms", [\App\Http\Controllers\Api\AlarmController::class, "index"
 
 Route::post('/secureAlarms', [\App\Http\Controllers\Api\SecureAlarmController::class, 'store']);
 
-Route::middleware('auth')->group(function () {
-    Route::middleware('admin')->group(function () {
+//Route::middleware('auth')->group(function () {
+//    Route::middleware('admin')->group(function () {
         Route::get("/nac/allows", [\App\Http\Controllers\Api\NacController::class, "allows"]);
         Route::get("/nac/blocks", [\App\Http\Controllers\Api\NacController::class, "blocks"]);
         Route::post("/nac/allows", [\App\Http\Controllers\Api\NacController::class, "storeAllow"]);
         Route::post("/nac/blocks", [\App\Http\Controllers\Api\NacController::class, "storeBlock"]);
-    });
-});
+//    });
+//});
 
 
 
