@@ -133,6 +133,7 @@
                                                 IP Address
                                             </p>
                                             <input type="text" class="form-input" name="ip_address" value="{{ $hardware->ip_address }}">
+                                            <p class="error-txt validation-txt" id="validation-ip_address" style="display: none"></p>
                                         </div>
                                     </div>
                                 </div>

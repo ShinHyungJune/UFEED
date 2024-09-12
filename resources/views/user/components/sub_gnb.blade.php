@@ -14,7 +14,6 @@
             MAIN MENU
         </div>
         <div class="gnb-menu-list row-group">
-
             <div class="gnb-menu">
                 <div class="gnb-menu-title col-group">
                     Firewall
@@ -92,9 +91,27 @@
 
             @if(Auth::user()->authority_id === 1)
                 <div class="gnb-menu">
-                    <a href="{{ route('log.index') }}" class="gnb-menu-title col-group">
+                    <div class="gnb-menu-title col-group">
                         Log
-                    </a>
+                        <i class="xi-angle-down-min icon toggle-icon"></i>
+                    </div>
+                    <div class="sub-gnb-menu-list row-group">
+                        <a href="{{ route('log.device-status') }}" class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                Device status
+                            </div>
+                        </a>
+                        <a href="{{ route('log.user-logs') }}" class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                User Logs
+                            </div>
+                        </a>
+                        <a href="{{ route('log.inventory-log') }}" class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                Inventory Log
+                            </div>
+                        </a>
+                    </div>
                 </div>
             @endif
 

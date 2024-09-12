@@ -18,7 +18,7 @@ class HardwareRequest extends FormRequest
             'rj45' => ['nullable'],
             'usb' => ['nullable'],
             'serial' => ['nullable'],
-            'ip_address' => ['nullable'],
+            'ip_address' => ['required'],
         ];
     }
 

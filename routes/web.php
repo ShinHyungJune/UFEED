@@ -124,7 +124,9 @@ Route::middleware('auth')->group(function () {
 //            });
 //        });
         Route::prefix('log')->group(function () {
-            Route::get('/', [\App\Http\Controllers\LogController::class, 'index'])->name('log.index');
+            Route::get('/device-status', [\App\Http\Controllers\LogController::class, 'deviceStatus'])->name('log.device-status');
+            Route::get('/user-logs', [\App\Http\Controllers\LogController::class, 'userLogs'])->name('log.user-logs');
+            Route::get('/inventory-log', [\App\Http\Controllers\LogController::class, 'inventoryLog'])->name('log.inventory-log');
         });
     });
 
