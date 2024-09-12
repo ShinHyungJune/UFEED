@@ -35,8 +35,7 @@
                     <a href="#" class="btn-login" id="submit">Sign In</a>
 
                     <p class="error-txt">
-                        Legal and privacy information. <br>
-                        Unauthorized users prohibited.
+                        {!! nl2br($login->warning_text ?? null) !!}
                     </p>
                     <!-- <p class="error-txt">
                         You entered your ID (login-only ID) or password incorrectly. <br>

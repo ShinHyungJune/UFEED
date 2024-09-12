@@ -6,6 +6,7 @@ use App\Http\Requests\HiSecurePatchRequest;
 use App\Http\Requests\HiSecureRequest;
 use App\Models\Authority;
 use App\Models\Group;
+use App\Models\Login;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
@@ -96,15 +97,16 @@ class HiSecureController extends Controller
     }
     public function globalSetting()
     {
-        return view('user.hi-secure.HiSecure_account_setting');
+        $login = Login::first();
+        return view('user.hi-secure.HiSecure_account_setting')->with('login', $login);
     }
 
     public function globalSettingUpdate(Request $request)
     {
-        $request->validate([
-            'lifetime' => 'required|integer|min:1'
+        $validated = $request->validate([
+            'lifetime' => ['required', 'integer', 'min:1'],
+            'warning_text' => ['required', 'string']
         ]);
-        $lifetime = $request->input('lifetime');
 
         // .env 파일의 경로 설정
         $envFilePath = base_path('.env');
@@ -113,10 +115,15 @@ class HiSecureController extends Controller
         $envFileContent = File::get($envFilePath);
 
         // SESSION_LIFETIME 값을 업데이트
-        $newEnvFileContent = preg_replace('/SESSION_LIFETIME=\d+/', 'SESSION_LIFETIME=' . $lifetime, $envFileContent);
+        $newEnvFileContent = preg_replace('/SESSION_LIFETIME=\d+/', 'SESSION_LIFETIME=' . $validated['lifetime'], $envFileContent);
 
         // 업데이트된 내용을 .env 파일에 쓰기
         File::put($envFilePath, $newEnvFileContent);
+
+        Login::updateOrCreate(
+            ['id' => 1],
+            ['warning_text' => $validated['warning_text']]
+        );
         return redirect()->route('hi-secure.global-setting');
     }
 }

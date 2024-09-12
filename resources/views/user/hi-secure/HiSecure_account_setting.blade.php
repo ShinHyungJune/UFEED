@@ -55,6 +55,15 @@
                                 </div>
                             </div>
 
+                            <div class="setting-txt-wrap">
+                                <div class="setting-txt">
+                                    Set Login Warning Text
+                                </div>
+                                <textarea name="warning_text" id="" cols="30" rows="5">{{ $login->warning_text ?? null }}</textarea>
+                                <p class="error-txt validation-txt" id="validation-warning_text" style="display: none"></p>
+
+                            </div>
+
 
                             <div class="form-btn-wrap col-group">
                                 <button class="form-btn hardware_del_btn" type="button" id="submit">

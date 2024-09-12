@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserLogController;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Login;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.index');
+        $login = Login::first();
+        return view('auth.index')->with('login', $login);
     }
 
     /**
