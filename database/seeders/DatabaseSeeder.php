@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             AuthoritySeeder::class,
             UserSeeder::class,
             SystemSeeder::class,
-            InitSeeder::class
+            InitSeeder::class,
+            LoginSeeder::class
         ]);
     }
 }

@@ -35,7 +35,7 @@
                     <a href="#" class="btn-login" id="submit">Sign In</a>
 
                     <p class="error-txt">
-                        {!! nl2br($login->warning_text ?? null) !!}
+                        {!! nl2br($login->warning_text) !!}
                     </p>
                     <!-- <p class="error-txt">
                         You entered your ID (login-only ID) or password incorrectly. <br>

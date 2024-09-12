@@ -120,10 +120,9 @@ class HiSecureController extends Controller
         // 업데이트된 내용을 .env 파일에 쓰기
         File::put($envFilePath, $newEnvFileContent);
 
-        Login::updateOrCreate(
-            ['id' => 1],
-            ['warning_text' => $validated['warning_text']]
-        );
+        Login::first()->update([
+            'warning_text' => $validated['warning_text']
+        ]);
         return redirect()->route('hi-secure.global-setting');
     }
 }
