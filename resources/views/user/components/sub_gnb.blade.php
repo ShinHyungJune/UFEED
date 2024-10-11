@@ -21,49 +21,49 @@
                 </div>
 
                 <div class="sub-gnb-menu-list row-group">
-                    <a href="https://118.130.110.156:40007" target="_blank">
+                    <a href="https://121.141.225.29:40007" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 TMS
                             </div>
                         </div>
                     </a>
-                    <a href="https://118.130.110.156:50005" target="_blank">
+                    <a href="https://121.141.225.29:50005" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#1
                             </div>
                         </div>
                     </a>
-                    <a href="https://118.130.110.156:40002" target="_blank">
+                    <a href="https://121.141.225.29:40002" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#2
                             </div>
                         </div>
                     </a>
-                    <a href="https://118.130.110.156:40003" target="_blank">
+                    <a href="https://121.141.225.29:40003" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#3
                             </div>
                         </div>
                     </a>
-                    <a href="https://118.130.110.156:40004" target="_blank">
+                    <a href="https://121.141.225.29:40004" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#4
                             </div>
                         </div>
                     </a>
-                    <a href="https://118.130.110.156:40005" target="_blank">
+                    <a href="https://121.141.225.29:40005" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#5
                             </div>
                         </div>
                     </a>
-                    <a href="https://118.130.110.156:40006" target="_blank">
+                    <a href="https://121.141.225.29:40006" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#6
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <a href="https://118.130.110.156:9554" target="_blank">
+            <a href="https://121.141.225.29:9554" target="_blank">
                 <div class="gnb-menu">
                     <div class="gnb-menu-title col-group">
                         NAC
@@ -81,7 +81,7 @@
                 </div>
             </a>
 
-            <a href="http://118.130.110.156:8080/index.htm" target="_blank">
+            <a href="http://121.141.225.29:8080/index.htm" target="_blank">
                 <div class="gnb-menu">
                     <div class="gnb-menu-title col-group">
                         NMS

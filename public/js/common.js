@@ -2,7 +2,7 @@ var ipsChart = null;
 var cncChart = null;
 
 // window.domain = "http://localhost:90";
-window.domain = "http://118.130.110.156:90";
+window.domain = "http://121.141.225.29:90";
 // window.domain = "http://hi-secure.ufeed.co.kr";
 function openLoading(){
     $("html").append('<span class="loader"></span>')
