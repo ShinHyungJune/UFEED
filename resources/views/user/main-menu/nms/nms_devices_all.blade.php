@@ -287,7 +287,8 @@
                                                     Ping
                                                 </p>
                                                 <p class="directory-detail-item-txt">
-                                                    {{ $deviceOT1->ping_value }} mses
+{{--                                                    {{ $deviceOT1->ping_value }} mses--}}
+                                                    0 mses
                                                 </p>
                                             </li>
                                             <li class="directory-detail-item">
@@ -296,7 +297,8 @@
                                                     CPU Load
                                                 </p>
                                                 <p class="directory-detail-item-txt">
-                                                    {{ $deviceOT1->cpu_load_value }}%
+{{--                                                    {{ $deviceOT1->cpu_load_value }}%--}}
+                                                    0%
                                                 </p>
                                             </li>
 <!--                                            <li class="directory-detail-item">
@@ -330,7 +332,8 @@
                                                     Ping
                                                 </p>
                                                 <p class="directory-detail-item-txt">
-                                                    {{ $deviceOT2->cpu_load_value }} mses
+{{--                                                    {{ $deviceOT2->cpu_load_value }} mses--}}
+                                                    0 mses
                                                 </p>
                                             </li>
                                             <li class="directory-detail-item">
@@ -339,7 +342,8 @@
                                                     CPU Load
                                                 </p>
                                                 <p class="directory-detail-item-txt">
-                                                    {{ $deviceOT2->cpu_load_value }}%
+{{--                                                    {{ $deviceOT2->cpu_load_value }}%--}}
+                                                    0%
                                                 </p>
                                             </li>
                                             <!--                                            <li class="directory-detail-item">
@@ -373,7 +377,8 @@
                                                     Ping
                                                 </p>
                                                 <p class="directory-detail-item-txt">
-                                                    {{ $deviceOT3->cpu_load_value }} mses
+{{--                                                    {{ $deviceOT3->cpu_load_value }} mses--}}
+                                                    0 mses
                                                 </p>
                                             </li>
                                             <li class="directory-detail-item">
@@ -382,7 +387,8 @@
                                                     CPU Load
                                                 </p>
                                                 <p class="directory-detail-item-txt">
-                                                    {{ $deviceOT3->cpu_load_value }}%
+{{--                                                    {{ $deviceOT3->cpu_load_value }}%--}}
+                                                    0%
                                                 </p>
                                             </li>
                                             <!--                                            <li class="directory-detail-item">
