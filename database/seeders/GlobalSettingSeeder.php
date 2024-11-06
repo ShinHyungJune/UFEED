@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Login;
+use App\Models\GlobalSetting;
 use Illuminate\Database\Seeder;
 
-class LoginSeeder extends Seeder
+class GlobalSettingSeeder extends Seeder
 {
     public function run(): void
     {
-        Login::create([
+        GlobalSetting::create([
             'warning_text' => "Legal and privacy information.
 Unauthorized users prohibited."
         ]);

@@ -59,7 +59,7 @@
                                 <div class="setting-txt">
                                     Set Login Warning Text
                                 </div>
-                                <textarea name="warning_text" id="" cols="30" rows="3" class="setting-txt red" style="text-align: center">{{ $login->warning_text }}</textarea>
+                                <textarea name="warning_text" id="" cols="30" rows="3" class="setting-txt red" style="text-align: center">{{ $globalSetting->warning_text }}</textarea>
                                 <p class="error-txt validation-txt" id="validation-warning_text" style="display: none"></p>
 
                             </div>

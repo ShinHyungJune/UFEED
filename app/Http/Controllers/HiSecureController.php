@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\HiSecurePatchRequest;
 use App\Http\Requests\HiSecureRequest;
 use App\Models\Authority;
+use App\Models\GlobalSetting;
 use App\Models\Group;
-use App\Models\Login;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
@@ -97,8 +97,8 @@ class HiSecureController extends Controller
     }
     public function globalSetting()
     {
-        $login = Login::first();
-        return view('user.hi-secure.HiSecure_account_setting')->with('login', $login);
+        $globalSetting = GlobalSetting::first();
+        return view('user.hi-secure.HiSecure_account_setting')->with('globalSetting', $globalSetting);
     }
 
     public function globalSettingUpdate(Request $request)
@@ -120,7 +120,7 @@ class HiSecureController extends Controller
         // 업데이트된 내용을 .env 파일에 쓰기
         File::put($envFilePath, $newEnvFileContent);
 
-        Login::first()->update([
+        GlobalSetting::first()->update([
             'warning_text' => $validated['warning_text']
         ]);
         return redirect()->route('hi-secure.global-setting');

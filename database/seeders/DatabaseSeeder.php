@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SystemSeeder::class,
             InitSeeder::class,
-            LoginSeeder::class
+            GlobalSettingSeeder::class
         ]);
     }
 }

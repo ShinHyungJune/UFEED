@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('logins', function (Blueprint $table) {
+        Schema::create('global_settings', function (Blueprint $table) {
             $table->id();
-            $table->longText('warning_text');
+            $table->string('warning_text');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -17,6 +17,6 @@ return new class extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('logins');
+        Schema::dropIfExists('global_settings');
     }
 };
