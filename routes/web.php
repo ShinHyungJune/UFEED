@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('powershell', function () {
+    $scriptPath = public_path('powershell/exportEventLog.ps1');
+    shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
+});
+
 Route::get("/test", function(){
     $client = null;
     $token = null;
