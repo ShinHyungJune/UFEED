@@ -20,12 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('powershell', function () {
+Route::get('/powershell-test', function () {
     $scriptPath = public_path('powershell/exportEventLog.ps1');
     shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
 });
 
 Route::get("/test", function(){
+    dd('test');
     $client = null;
     $token = null;
     $domain = "https://localhost:9398/api";
