@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\IdentifyLog;
 use App\Models\Message;
+use App\Models\SystemLog;
 use App\Models\UserLog;
 
 class LogController extends Controller
@@ -30,7 +31,13 @@ class LogController extends Controller
 
     public function inventoryLog()
     {
-        $items = IdentifyLog::with(['hardware', 'software'])->orderByDesc('id')->take(5)->get();
+        $items = IdentifyLog::with(['hardware', 'software'])->orderByDesc('id')->take(400)->get();
         return view('user.main-menu.log.inventory_log_index')->with('items', $items);
+    }
+
+    public function systemLog()
+    {
+        $items = SystemLog::orderByDesc('created_at')->take(400)->get();
+        return view('user.main-menu.log.system_log_index')->with('items', $items);
     }
 }

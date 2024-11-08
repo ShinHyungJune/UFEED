@@ -7,6 +7,7 @@ use App\Models\History;
 use App\Models\Message;
 use App\Models\PreProduct;
 use App\Models\StatusHistory;
+use App\Models\SystemLog;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
@@ -29,8 +30,6 @@ class RecordHistories extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
     public function handle()
     {
@@ -41,5 +40,7 @@ class RecordHistories extends Command
         Message::record();
 
         StatusHistory::record();
+
+        SystemLog::store();
     }
 }

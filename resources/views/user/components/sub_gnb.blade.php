@@ -111,6 +111,11 @@
                                 Inventory Log
                             </div>
                         </a>
+                        <a href="{{ route('log.system-log') }}" class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                System Log
+                            </div>
+                        </a>
                     </div>
                 </div>
             @endif

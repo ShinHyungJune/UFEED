@@ -8,6 +8,7 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/powershell-test', function () {
-    $scriptPath = public_path('powershell/exportEventLog.ps1');
-    shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
-});
+//Route::get('/powershell-test', function () {
+//    $scriptPath = storage_path('powershell/exportEventLog.ps1');
+//    $csvPath = "C:\Temp\FilteredSystemEvents.csv";
+//
+//    shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
+//
+//    Excel::import(new \App\Imports\SystemEventImport(), $csvPath);
+//});
 
 Route::get("/test", function(){
     dd('test');
@@ -134,6 +139,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/device-status', [\App\Http\Controllers\LogController::class, 'deviceStatus'])->name('log.device-status');
             Route::get('/user-logs', [\App\Http\Controllers\LogController::class, 'userLogs'])->name('log.user-logs');
             Route::get('/inventory-log', [\App\Http\Controllers\LogController::class, 'inventoryLog'])->name('log.inventory-log');
+            Route::get('/system-log', [\App\Http\Controllers\LogController::class, 'systemLog'])->name('log.system-log');
         });
     });
 
