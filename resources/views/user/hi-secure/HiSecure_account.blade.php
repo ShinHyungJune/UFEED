@@ -93,7 +93,7 @@
                             Authority
                         </th>
                         <th>
-                            Active/Paused
+                            Active/Disable
                         </th>
                         </thead>
                         <tbody>
@@ -123,7 +123,7 @@
                                     {{ $user->authority ? $user->authority->name : "" }}
                                 </td>
                                 <td>
-                                    {{ $user->period_of_use >= \Carbon\Carbon::now()->toDateString() ? 'Active' : 'Paused' }}
+                                    {{ $user->period_of_use >= \Carbon\Carbon::now()->toDateString() ? 'Active' : 'Disable' }}
                                 </td>
                             </tr>
                         @endforeach

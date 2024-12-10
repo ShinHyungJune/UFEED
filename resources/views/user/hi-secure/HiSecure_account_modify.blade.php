@@ -64,8 +64,8 @@
                                         </p>
                                         <input type="password" class="form-input" id="password" name="password">
                                         <p class="sub-txt">
-                                            Password must be at least 8 characters long, <br>
-                                            must contain letters in mixed case and must contain numbers.
+                                            Passwords must be at least 8 characters long and <br>
+                                            contain a mix of upper and lower case letters, numbers, and special characters.
                                         </p>
                                         <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
                                     </div>
@@ -90,16 +90,16 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-item row-group">
-                                        <p class="item-title">
-                                            Authority
-                                        </p>
-                                        <select class="form-select" id="authority" name="authority_id">
-                                            @foreach($authorities as $authority)
-                                                <option value="{{ $authority->id }}">{{ $authority->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+{{--                                    <div class="form-item row-group">--}}
+{{--                                        <p class="item-title">--}}
+{{--                                            Authority--}}
+{{--                                        </p>--}}
+{{--                                        <select class="form-select" id="authority" name="authority_id">--}}
+{{--                                            @foreach($authorities as $authority)--}}
+{{--                                                <option value="{{ $authority->id }}">{{ $authority->name }}</option>--}}
+{{--                                            @endforeach--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             E-Mail
@@ -135,7 +135,7 @@
 <script src="{{ asset('js/utility.js') }}"></script>
 <script>
     $('#group').val('{{ $user->group_id }}');
-    $('#authority').val('{{ $user->authority_id }}');
+    {{--$('#authority').val('{{ $user->authority_id }}');--}}
 </script>
 <script>
     document.getElementById('submit').addEventListener('click', function () {

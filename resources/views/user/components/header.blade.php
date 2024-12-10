@@ -66,6 +66,11 @@
 			<i class="xi-angle-down-min icon toggle-icon"></i>
 		</button>-->
 	</div>
+    <div class="header-menu-btn header-menu-btn_ISS">
+        <p class="txt">
+            Ver. 1.5
+        </p>
+    </div>
 </div>
 
 <script>

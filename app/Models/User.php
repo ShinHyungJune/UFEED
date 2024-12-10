@@ -49,6 +49,16 @@ class User extends Authenticatable
 //        'password' => 'hashed',
     ];
 
+    protected static function booted()
+    {
+        static::creating(function (User $user) {
+            $user->authority_id = $user->group_id;
+        });
+        static::updating(function (User $user) {
+            $user->authority_id = $user->group_id;
+        });
+    }
+
     public function incrementPasswordCount(): void
     {
         $this->increment('password_count');

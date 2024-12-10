@@ -1,9 +1,14 @@
 var ipsChart = null;
 var cncChart = null;
 
-window.domain = "https://localhost:8443";
-// window.domain = "http://121.141.225.29:90";
+// window.domain = "https://localhost:8443";
+window.domain = "https://210.91.170.99:8443";
 // window.domain = "http://hi-secure.ufeed.co.kr";
+
+document.oncontextmenu = function () {
+    return false;
+};
+
 function openLoading(){
     $("html").append('<span class="loader"></span>')
 }

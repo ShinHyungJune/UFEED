@@ -54,7 +54,7 @@ class LoginRequest extends FormRequest
                     $user->period_of_use = Carbon::yesterday()->toDateString();
                     $user->save();
                     throw ValidationException::withMessages([
-                        'ids' => trans('Please contact the administrator.'),
+                        'ids' => trans('The account is deactivated, so please contact the administrator.'),
                     ]);
                 } else {
                     throw ValidationException::withMessages([
