@@ -81,7 +81,7 @@
                 </div>
             </a>
 
-            <a href="http://210.91.170.99:8080/index.htm" target="_blank">
+            <a href="http://210.91.170.99:8888/index.htm" target="_blank">
                 <div class="gnb-menu">
                     <div class="gnb-menu-title col-group">
                         NMS
