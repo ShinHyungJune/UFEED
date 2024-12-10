@@ -19,7 +19,7 @@ class Message extends Model
     {
         parent::__construct($attributes);
 
-        $this->domain = config("app.env") === "local" ? "http://118.130.110.156:8080" : "http://localhost:8080";
+        $this->domain = config("app.env") === "local" ? "http://118.130.110.156:8080" : "http://localhost:8888";
     }
 
     public function device()
@@ -31,7 +31,7 @@ class Message extends Model
     {
         $response = Http::withoutVerifying()->get($this->domain . "/api/table.json", [
             "page" => 1,
-            "username" => "prtgadmin",
+            "username" => "manager",
             "password" => "hgs_1qa@WS",
             "content" => "messages",
             // "content" => "logs",
