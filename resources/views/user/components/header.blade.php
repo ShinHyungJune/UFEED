@@ -68,7 +68,7 @@
 	</div>
     <div class="header-menu-btn header-menu-btn_ISS">
         <p class="txt">
-            Ver. 1.5
+            Ver. 1.8
         </p>
     </div>
 </div>
