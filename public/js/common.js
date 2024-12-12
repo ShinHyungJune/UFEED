@@ -159,73 +159,73 @@ $(document).ready(function(){
             });
     }
 
-    function getDashboard() {
-        axios.get(window.domain + "/api/firewalls/dashboard")
-            .then(response => {
-                // # START : Traffic 차트
-                var traffics = response.data.data.traffics;
-
-
-                $(".dashboard-table-traffic tbody").html("");
-
-                traffics.map(traffic => {
-                    $(".dashboard-table-traffic tbody").append(`
-                        <tr>
-                            <td><div class="state state-bar"></div></td>
-                            <td>${traffic.key}</td>
-                            <td>${traffic.avg} KB</td>
-                        <tr/>
-                    `);
-                });
-                // # END : Traffic 차트
-
-
-                // # START : 대시보드 상단 CBS Protection 차트
-                var counts = response.data.data;
-
-                var countsWrapArr = document.querySelectorAll('.protection-item');
-
-                if(countsWrapArr.length > 0){
-                    countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
-                    countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
-                    countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
-                }
-                // # END : 대시보드 상단 CBS Protection 차트
-
-
-                // # START : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
-                //polar-area-chart tab
-                $('.dashboard-gnb-tab').click(function () {
-                    $('.dashboard-gnb-tab').removeClass('active');
-                    $(this).addClass('active');
-
-                    var data_tab = $(this).attr('data-tab');
-
-                    $('.polar-area-chart').hide();
-                    $('.polar-area-chart#' + data_tab).fadeIn(300);
-                });
-
-                var cncs = response.data.data.cncs;
-
-                cncs.sort((a,b) => b.count - a.count);
-
-                var ipses = response.data.data.ipses;
-
-                ipses.sort((a,b) => b.count - a.count);
-
-                if(ipsChart)
-                    ipsChart.destroy();
-
-                ipsChart = drawPolarChart("polar_area_chart_01", ipses.map(ips => ips.count), ipses.map(ips => ips.key));
-
-                if(cncChart)
-                    cncChart.destroy();
-
-                cncChart = drawPolarChart("polar_area_chart_02", cncs.map(cnc => cnc.count), ipses.map(cnc => cnc.key));
-                // # END : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
-
-            })
-    }
+    // function getDashboard() {
+    //     axios.get(window.domain + "/api/firewalls/dashboard")
+    //         .then(response => {
+    //             // # START : Traffic 차트
+    //             var traffics = response.data.data.traffics;
+    //
+    //
+    //             $(".dashboard-table-traffic tbody").html("");
+    //
+    //             traffics.map(traffic => {
+    //                 $(".dashboard-table-traffic tbody").append(`
+    //                     <tr>
+    //                         <td><div class="state state-bar"></div></td>
+    //                         <td>${traffic.key}</td>
+    //                         <td>${traffic.avg} KB</td>
+    //                     <tr/>
+    //                 `);
+    //             });
+    //             // # END : Traffic 차트
+    //
+    //
+    //             // # START : 대시보드 상단 CBS Protection 차트
+    //             var counts = response.data.data;
+    //
+    //             var countsWrapArr = document.querySelectorAll('.protection-item');
+    //
+    //             if(countsWrapArr.length > 0){
+    //                 countsWrapArr[0].querySelector('.num').innerText = counts.count_ddos;
+    //                 countsWrapArr[1].querySelector('.num').innerText = counts.count_malware;
+    //                 countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
+    //             }
+    //             // # END : 대시보드 상단 CBS Protection 차트
+    //
+    //
+    //             // # START : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
+    //             //polar-area-chart tab
+    //             $('.dashboard-gnb-tab').click(function () {
+    //                 $('.dashboard-gnb-tab').removeClass('active');
+    //                 $(this).addClass('active');
+    //
+    //                 var data_tab = $(this).attr('data-tab');
+    //
+    //                 $('.polar-area-chart').hide();
+    //                 $('.polar-area-chart#' + data_tab).fadeIn(300);
+    //             });
+    //
+    //             var cncs = response.data.data.cncs;
+    //
+    //             cncs.sort((a,b) => b.count - a.count);
+    //
+    //             var ipses = response.data.data.ipses;
+    //
+    //             ipses.sort((a,b) => b.count - a.count);
+    //
+    //             if(ipsChart)
+    //                 ipsChart.destroy();
+    //
+    //             ipsChart = drawPolarChart("polar_area_chart_01", ipses.map(ips => ips.count), ipses.map(ips => ips.key));
+    //
+    //             if(cncChart)
+    //                 cncChart.destroy();
+    //
+    //             cncChart = drawPolarChart("polar_area_chart_02", cncs.map(cnc => cnc.count), ipses.map(cnc => cnc.key));
+    //             // # END : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
+    //
+    //         })
+    // }
 
     var realTimeTrafficChart = null;
 
