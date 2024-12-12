@@ -16,4 +16,12 @@ class UserLogController extends Controller
             'activity' => $activity,
         ]);
     }
+
+    public function failLog()
+    {
+        UserLog::create([
+            'ip_address' => request()->ip(),
+            'activity' => "login failed",
+        ]);
+    }
 }

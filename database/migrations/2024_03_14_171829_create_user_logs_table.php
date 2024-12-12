@@ -10,8 +10,8 @@ return new class extends Migration {
     {
         Schema::create('user_logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->string('user_ids');
+            $table->foreignIdFor(User::class)->nullable();
+            $table->string('user_ids')->nullable();
             $table->string('ip_address');
             $table->string('activity');
             $table->softDeletes();

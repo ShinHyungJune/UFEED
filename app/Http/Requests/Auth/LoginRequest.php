@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Http\Controllers\UserLogController;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
@@ -42,6 +44,9 @@ class LoginRequest extends FormRequest
      */
     public function authenticate(): void
     {
+        $userLog = App::make(UserLogController::class);
+//        $userLogController = new UserLogController();
+
         $this->ensureIsNotRateLimited();
 
         if (! Auth::attempt($this->only('ids', 'password'), $this->boolean('remember'))) {
@@ -53,15 +58,18 @@ class LoginRequest extends FormRequest
                 if ($user->password_count >= 5) {
                     $user->period_of_use = Carbon::yesterday()->toDateString();
                     $user->save();
+                    $userLog->failLog();
                     throw ValidationException::withMessages([
                         'ids' => trans('The account is deactivated, so please contact the administrator.'),
                     ]);
                 } else {
+                    $userLog->failLog();
                     throw ValidationException::withMessages([
                         'ids' => trans($user->password_count.'/5 Wrong password. Try again or click Forgot password to reset it.'),
                     ]);
                 }
             } else {
+                $userLog->failLog();
                 throw ValidationException::withMessages([
                     'ids' => trans('auth.failed'),
                 ]);
@@ -70,6 +78,7 @@ class LoginRequest extends FormRequest
 
         if (Auth::user()->period_of_use < Carbon::now()->toDateString()) {
             Auth::logout();
+            $userLog->failLog();
             throw ValidationException::withMessages([
                 'ids' => trans('The account is deactivated, so please contact the administrator.'),
             ]);
