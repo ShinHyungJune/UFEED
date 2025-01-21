@@ -4,12 +4,20 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\HiSecureController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+//Route::middleware('guest')->group(function () {
+//    Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
+//    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+//});
+Route::middleware('auth')->group(function () {
+    Route::get('/two-factor-authentication-form', function () {
+        if (auth()->user()->two_factor_confirmed_at) {
+            return redirect()->route('dash-board.index');
+        }
+        return view('auth.two-factor-authentication-form');
+    })->name('two-factor-authentication-form');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'two.factor'])->group(function () {
     Route::prefix('hi-secure')->group(function () {
         Route::get('/', [HiSecureController::class, 'index'])->name('hi-secure.index');
         Route::middleware('admin')->group(function () {
@@ -23,5 +31,5 @@ Route::middleware('auth')->group(function () {
         });
     });
 
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+//    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });

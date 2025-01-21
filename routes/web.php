@@ -84,7 +84,7 @@ Route::get('hash-test/{password}', function ($password) {
     echo \Illuminate\Support\Facades\Hash::make($password);
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'two.factor'])->group(function () {
     Route::get('/', function () {
         return redirect()->route('dash-board.index');
     });
