@@ -14,9 +14,9 @@
 .login_wrap .login_box .input_wrap .label_wrap p { color: #202020; }
 .login_wrap .login_box .input_wrap input { width: calc(100% - 28px ); font-size: 16px; color: #202020; font-weight: bold; }
 .login_wrap .login_box .input_wrap input::placeholder { color: #a4a4a4; font-weight: 500; }
-.login_wrap .login_box a { display: flex; justify-content: center; align-items: center; border-radius: 32px; background-color: #01ae42; color: #fff; width: 100%; height: 64px; font-size: 24px; font-weight: 600; margin-top: 56px; transition: .3s; box-shadow: 0 3px 16px 0 rgba(1, 174, 66, 0.24); }
-.login_wrap .login_box a:hover { background-color: #109242; }
-.login_wrap .error-txt-box { position: absolute; left: 50%; transform: translateX(-50%); top: 208px; width: calc( 100% - 160px ); }
+.login_wrap .btn-login { display: flex; justify-content: center; align-items: center; border-radius: 32px; background-color: #01ae42; color: #fff; width: 100%; height: 64px; font-size: 24px; font-weight: 600; transition: .3s; box-shadow: 0 3px 16px 0 rgba(1, 174, 66, 0.24); }
+.login_wrap .btn-login:hover { background-color: #109242; }
+/* .login_wrap .error-txt-box { position: absolute; left: 50%; transform: translateX(-50%); top: 208px; width: calc( 100% - 160px ); } */
 .login_wrap .error-txt { text-align: center; font-size: 14px; color: #ff4620; font-weight: 600; line-height: 1.5; }
 .login_wrap .error-txt i { font-size: 14px; color: #ff4620; }
 .login_wrap .validation-txt { margin-top: 0; font-size: 12px; font-weight: normal; }
