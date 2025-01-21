@@ -9,49 +9,38 @@
             <div class="logo_wrap">
                 <img src="/images/login_top.png" alt="">
             </div>
-            <form action="" method="post" id="form">
-                @csrf
-                <div class="login_box">
-                    <div class="input_wrap">
-                        <div class="label_wrap">
-                            <i class="xi-user"></i>
+            <div class="login_box_wrap">
+                <form action="" method="post" id="form">
+                    @csrf
+                    <div class="login_box">
+                        <div class="input_wrap">
+                            <div class="label_wrap">
+                                <i class="xi-user"></i>
+                            </div>
+                            <input type="text" name="ids" id="id" placeholder="ID">
                         </div>
-{{--                        <input type="text" name="" id="name" placeholder="Username">--}}
-                        <input type="text" name="ids" id="id" placeholder="ID">
-                    </div>
-                    <div class="input_wrap">
-                        <div class="label_wrap">
-                            <i class="xi-lock"></i>
+                        <div class="input_wrap">
+                            <div class="label_wrap">
+                                <i class="xi-lock"></i>
+                            </div>
+                            <input type="password" name="password" id="pwd" placeholder="PASSWORD">
                         </div>
-{{--                        <input type="password" name="" id="password" placeholder="Password">--}}
-                        <input type="password" name="password" id="pwd" placeholder="PASSWORD">
+
+                        <div class="error-txt-box">
+                            <p class="error-txt validation-txt" id="validation-ids" style="display: none"></p>
+                            <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
+                        </div>
+
+                        <a href="#" class="btn-login" id="submit">Sign In</a>
+
+                        <p class="error-txt">
+                            {!! nl2br($globalSetting->warning_text) !!}
+                        </p>
                     </div>
-
-                    <div class="error-txt-box">
-                        <p class="error-txt validation-txt" id="validation-ids" style="display: none"></p>
-                        <p class="error-txt validation-txt" id="validation-password" style="display: none"></p>
-                    </div>
-
-                    <a href="#" class="btn-login" id="submit">Sign In</a>
-
-                    <p class="error-txt">
-                        {!! nl2br($globalSetting->warning_text) !!}
-                    </p>
-                    <!-- <p class="error-txt">
-                        You entered your ID (login-only ID) or password incorrectly. <br>
-                        Please check the information you entered again.
-                    </p>
-                    <p class="error-txt">
-                        You entered your password incorrectly. <br>
-                        (1/5) If you enter incorrect information more than 4 times, <br>
-                        your account will be locked for a certain period of time. <br>
-                        If you have forgotten, please contact the administrator.
-                    </p> -->
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </main>
-    <!-- //main -->
 
 </div>
 {{--<script>--}}
