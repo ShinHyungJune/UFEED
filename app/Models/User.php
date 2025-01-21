@@ -23,6 +23,7 @@ class User extends Authenticatable
         'ids',
         'name',
         'password',
+        'password_count',
         'group_id',
         'authority_id',
         'email',
