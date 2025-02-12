@@ -2,18 +2,16 @@
 
 namespace App\Models;
 
-use App\Imports\SystemEventImport;
+use App\Imports\SystemRemoteImport;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Maatwebsite\Excel\Facades\Excel;
 
-class SystemLog extends Model
+class RemoteLog extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'entry_type',
-        'source',
         'event_id',
         'message',
         'created_at',
@@ -22,10 +20,10 @@ class SystemLog extends Model
 
     public static function store()
     {
-        $scriptPath = storage_path('powershell/exportEventLog.ps1');
+        $scriptPath = storage_path('powershell/exportRemoteLog.ps1');
         shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
 
-        $csvPath = "C:\Temp\FilteredSystemEvents.csv";
-        Excel::import(new SystemEventImport(), $csvPath);
+        $csvPath = "C:\Temp\RDPLogs.csv";
+        Excel::import(new SystemRemoteImport(), $csvPath);
     }
 }

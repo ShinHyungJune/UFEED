@@ -116,6 +116,11 @@
                                 System Log
                             </div>
                         </a>
+                        <a href="{{ route('log.remote-log') }}" class="sub-gnb-menu">
+                            <div class="sub-gnb-menu-title col-group">
+                                Remote Log
+                            </div>
+                        </a>
                     </div>
                 </div>
             @endif

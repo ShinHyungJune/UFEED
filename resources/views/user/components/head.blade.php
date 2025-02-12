@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="/XEIcon/xeicon.min.css">
     <link rel="stylesheet" href="/css/swiper.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/dashboard_style.css">

@@ -23,11 +23,16 @@ use Maatwebsite\Excel\Facades\Excel;
 
 //Route::get('/powershell-test', function () {
 //    $scriptPath = storage_path('powershell/exportEventLog.ps1');
-//    $csvPath = "C:\Temp\FilteredSystemEvents.csv";
-//
 //    shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
 //
+//    $csvPath = "C:\Temp\FilteredSystemEvents.csv";
 //    Excel::import(new \App\Imports\SystemEventImport(), $csvPath);
+//
+//    $scriptPath = storage_path('powershell/exportRemoteLog.ps1');
+//    shell_exec("powershell -ExecutionPolicy Bypass -File \"$scriptPath\"");
+//
+//    $csvPath = "C:\Temp\RDPLogs.csv";
+//    Excel::import(new \App\Imports\SystemRemoteImport(), $csvPath);
 //});
 
 Route::get("/test", function(){
@@ -140,6 +145,7 @@ Route::middleware(['auth', 'two.factor'])->group(function () {
             Route::get('/user-logs', [\App\Http\Controllers\LogController::class, 'userLogs'])->name('log.user-logs');
             Route::get('/inventory-log', [\App\Http\Controllers\LogController::class, 'inventoryLog'])->name('log.inventory-log');
             Route::get('/system-log', [\App\Http\Controllers\LogController::class, 'systemLog'])->name('log.system-log');
+            Route::get('/remote-log', [\App\Http\Controllers\LogController::class, 'remoteLog'])->name('log.remote-log');
         });
     });
 

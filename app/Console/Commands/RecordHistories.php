@@ -6,6 +6,7 @@ use App\Enums\State;
 use App\Models\History;
 use App\Models\Message;
 use App\Models\PreProduct;
+use App\Models\RemoteLog;
 use App\Models\StatusHistory;
 use App\Models\SystemLog;
 use Carbon\Carbon;
@@ -42,5 +43,7 @@ class RecordHistories extends Command
         StatusHistory::record();
 
         SystemLog::store();
+
+        RemoteLog::store();
     }
 }
