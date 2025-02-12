@@ -17,9 +17,11 @@ class UserLogController extends Controller
         ]);
     }
 
-    public function failLog()
+    public function failLog($id, $ids)
     {
         UserLog::create([
+            'user_id' => $id,
+            'user_ids' =>  $ids,
             'ip_address' => request()->ip(),
             'activity' => "login failed",
         ]);

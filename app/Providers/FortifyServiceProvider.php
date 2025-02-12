@@ -55,7 +55,7 @@ class FortifyServiceProvider extends ServiceProvider
             if ($user) {
                 if (Hash::check($request->password, $user->password)) {
                     if ($user->period_of_use < now()->toDateString()) {
-                        $userLog->failLog();
+                        $userLog->failLog($user->id, $user->ids);
                         throw ValidationException::withMessages([
                             'ids' => trans('auth.deactivated'),
                         ]);
@@ -64,7 +64,7 @@ class FortifyServiceProvider extends ServiceProvider
                     return $user;
                 } else {
                     $user->incrementPasswordCount();
-                    $userLog->failLog();
+                    $userLog->failLog($user->id, $user->ids);
                     if ($user->password_count >= 5) {
                         $user->period_of_use = Carbon::yesterday()->toDateString();
                         $user->save();
